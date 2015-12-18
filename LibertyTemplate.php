@@ -32,17 +32,22 @@ class LibertyTemplate extends BaseTemplate {
     function nav_menu() {
     ?>
         <nav class="navbar">
-            <!--<div class="navbar-header">
-            <a class="navbar-brand" href="#">Project name</a>
-            </div>-->
-            <ul class="nav navbar-nav">
-                <li><a class="nav-link" href="#">최근바뀜</a></li>
-                <li><a class="nav-link" href="/sp/RandomPage">임의문서</a></li>
-                <li><a class="nav-link" href="#contact">위키방</a></li>
-                <li><a class="nav-link" href="#contact">익명게시판</a></li>
-                <li><a class="nav-link" href="#contact">도구</a></li>
-                <li><a class="nav-link" href="#contact">도움말</a></li>
-            </ul>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="navgation">
+                <ul class="nav navbar-nav">
+                    <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', array( 'class' => 'nav-link', 'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]', 'accesskey' => 'r') ); ?></li>
+                    <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-gear"></span><span class="hide-title">도구</span></a></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-book"></span><span class="hide-title">도움말</span></a></li>
+                </ul>
+            </div>
+            <div class="right-nav">
+                <?php $this->searchBox(); ?>
+            </div>
         </nav>
     <?php
     }
@@ -82,41 +87,27 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function searchBox() {
-		?>
-		<div id="p-search" class="portlet" role="search">
-			<h3><label for="searchInput"><?php $this->msg( 'search' ) ?></label></h3>
-
-			<div id="searchBody" class="pBody">
-				<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
-					<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-					<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ); ?>
-
-					<?php
-					echo $this->makeSearchButton(
-						"go",
-						array( "id" => "searchGoButton", "class" => "searchButton" )
-					);
-
-					if ( $this->config->get( 'UseTwoButtonsSearchForm' ) ) {
-						?>&#160;
-						<?php echo $this->makeSearchButton(
-							"fulltext",
-							array( "id" => "mw-searchButton", "class" => "searchButton" )
-						);
-					} else {
-						?>
-
-						<div><a href="<?php
-						$this->text( 'searchaction' )
-						?>" rel="search"><?php $this->msg( 'powersearch-legend' ) ?></a></div><?php
-					} ?>
-
-				</form>
-
-				<?php $this->renderAfterPortlet( 'search' ); ?>
-			</div>
-		</div>
-	<?php
+        ?>
+        <div id="p-search" class="portlet" role="search">
+            <div id="searchBody" class="pBody">
+                <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
+                    <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+                    <?php echo $this->makeSearchInput( array( "class" => "search-form", "id" => "searchInput" ) ); ?>
+                    <span class="search-icon">
+                        <button type="submit" name="fulltext" value="검색" class="fa fa-search" id="mw-searchButton" tabindex="-1">
+                            <span class="visuallyhidden">검색</span>
+                        </button>
+                    </span>
+                    <span class="go-icon">
+                        <button type="submit" name="go" value="보기" class="fa fa-eye" id="searchGoButton" tabindex="-1">
+                            <span class="visuallyhidden">보기</span>
+                        </button>
+                    </span>
+                </form>
+                <?php $this->renderAfterPortlet( 'search' ); ?>
+            </div>
+        </div>
+        <?php
 	}
 
 	/**
