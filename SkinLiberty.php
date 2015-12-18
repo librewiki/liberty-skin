@@ -12,10 +12,16 @@ class SkinLiberty extends SkinTemplate {
 		parent::setupSkinUserCss( $out );
 
 		$out->addModuleStyles( array(
-			'mediawiki.skinning.interface',
-			'mediawiki.skinning.content.externallinks',
 			'skins.liberty.styles'
 		) );
-
+        $out->addModuleScripts(
+            array(
+                'skins.liberty.bootstrap'
+            )
+        );
+        $out->addHeadItem( 'csshover', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
 	}
+	function addToBodyAttributes( $out, &$bodyAttrs ) {
+        $bodyAttrs['class'] .= " Liberty width-size";
+    }
 }

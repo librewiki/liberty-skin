@@ -25,7 +25,7 @@
  */
 
 /**
- * @ingroup Skins
+ * @ingroup
  */
 class LibertyTemplate extends BaseTemplate {
 

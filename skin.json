@@ -20,9 +20,23 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
+				"bootstrap/css/bootstrap.min.css": {
+					"media": "all"
+				},
+				"css/w3/w3.css": {
+					"media": "all"
+				},
 				"css/default.css": {
-					"media": "screen"
+					"media": "all"
 				}
+			},
+
+			"skins.liberty.bootstrap": {
+				"script": [
+					"js/lib/bootstrap.min.js",
+					"js/lib/jquery.min.js"
+				],
+				"position": "bottom"
 			}
 		}
 	},

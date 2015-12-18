@@ -1,0 +1,84 @@
+body {
+    font-size: 0.95rem;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.Liberty {
+    background-color: #f5f5f5;
+}
+
+.Liberty .nav-wrapper {
+    background-color: #1fa67a;
+    z-index: 1111;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.Liberty.width-size .navbar, .Liberty.width-size .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Liberty.width-size .navbar {
+    min-height: 30px;
+    border: 0;
+}
+
+.Liberty.width-size .content-wrapper {
+    margin-top: 41px;
+}
+
+.Liberty .nav-wrapper .navbar-header {
+    float: left;
+}
+
+.Liberty .nav-wrapper .navbar-nav {
+    float: left;
+    margin: 0;
+}
+
+.Liberty .navbar-nav ul, li {
+    float: left;
+}
+
+.Liberty .nav-wrapper .nav-link {
+    color: #fff;
+}
+
+.Liberty .nav-wrapper .nav-link:hover, .Liberty .nav-wrapper .nav-link:focus {
+    background-color: #24c18e;
+    transition: 0.3s;
+}
+
+.navbar-nav>li>a {
+    padding: 0.7rem 0.8rem;
+    font-size: 1rem;
+}
+
+.Liberty .liberty-content {
+    background-color: #fff;
+    margin-right: 16rem;
+    padding: 1.5rem;
+}
+
+.Liberty .liberty-sidebar {
+    float: right;
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed {
+    position: fixed;
+    width: 15rem;
+    background-color: #fff;
+}
+
+.Liberty .liberty-footer {
+    border-top: 1px solid #dfdfdf;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}

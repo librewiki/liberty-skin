@@ -6,9 +6,19 @@ class LibertyTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
-		
-
-
+        <div class="nav-wrapper navbar-fixed-top">
+         <?php $this->nav_menu(); ?>
+        </div>
+        <div class="content-wrapper">
+            <div class="liberty-sidebar">
+                <div class="liberty-right-fixed">
+                test
+                </div>
+            </div>
+            <div class="container-fluid liberty-content">
+                <i class="fa fa-car"></i>
+            </div>
+        </div>
 		<?php
 		$this->printTrail();
 		echo Html::closeElement( 'body' );
@@ -18,6 +28,24 @@ class LibertyTemplate extends BaseTemplate {
 	} // end of execute() method
 
 	/*************************************************************************************************/
+
+    function nav_menu() {
+    ?>
+        <nav class="navbar">
+            <!--<div class="navbar-header">
+            <a class="navbar-brand" href="#">Project name</a>
+            </div>-->
+            <ul class="nav navbar-nav">
+                <li><a class="nav-link" href="#">최근바뀜</a></li>
+                <li><a class="nav-link" href="/sp/RandomPage">임의문서</a></li>
+                <li><a class="nav-link" href="#contact">위키방</a></li>
+                <li><a class="nav-link" href="#contact">익명게시판</a></li>
+                <li><a class="nav-link" href="#contact">도구</a></li>
+                <li><a class="nav-link" href="#contact">도움말</a></li>
+            </ul>
+        </nav>
+    <?php
+    }
 
 	/**
 	 * @param array $sidebar
