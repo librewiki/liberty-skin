@@ -20,7 +20,7 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
-				"main.css": {
+				"css/default.css": {
 					"media": "screen"
 				}
 			}

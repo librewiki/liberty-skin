@@ -10,5 +10,5 @@ if ( function_exists( 'wfLoadSkin' ) ) {
 	); */
 	return true;
 } else {
-	die( 'This version of the MonoBook skin requires MediaWiki 1.25+' );
+	die( 'This version of the Liberty skin requires MediaWiki 1.25+' );
 }
