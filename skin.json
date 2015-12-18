@@ -1,0 +1,37 @@
+{
+	"name": "리버티",
+	"author": [
+		"이츠레아"
+	],
+	"url": "https://librewiki.net/wiki/Skin:Liberty",
+	"descriptionmsg": "liberty-desc",
+	"namemsg": "skinname-liberty",
+	"license-name": "GPL-3.0+",
+	"type": "skin",
+	"version": "0.1",
+	"ValidSkinNames": {
+		"liberty": "Liberty"
+	},
+	"MessagesDirs": {
+		"Liberty": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.liberty.styles": {
+			"styles": {
+				"main.css": {
+					"media": "screen"
+				}
+			}
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Liberty"
+	},
+	"AutoloadClasses": {
+		"SkinLiberty": "SkinLiberty.php",
+		"LibertyTemplate": "LibertyTemplate.php"
+	}
+}
