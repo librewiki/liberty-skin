@@ -17,6 +17,9 @@ class LibertyTemplate extends BaseTemplate {
             </div>
             <div class="container-fluid liberty-content">
                 <i class="fa fa-car"></i>
+                <?php
+                echo SpecialPage::getTitleFor('Userlogin')
+                ?>
             </div>
         </div>
 		<?php
@@ -78,18 +81,64 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function loginBox() {
+	    global $wgUser;
 	    ?>
 	    <div class="dropdown nav-login">
-            <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                <span class="caret"></span>
-            </a>
+            <?php
+            if ($wgUser->isLoggedIn()) {
+            ?>
+                <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                    로그인<span class="caret"></span>
+                </a>
+                <?php
+            } else {
+            ?>
+                <a href="#" class="none-outline" data-toggle="modal" data-target="#loginform">
+                    <span class="fa fa-sign-in"></span>
+                </a>
+            <?php
+            }
+            ?>
+            <?php
+                if ($wgUser->isLoggedIn()) {
+            ?>
             <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
             </ul>
+            <?php
+            } else {
+            ?>
+            <div class="modal fade modal-login" id="loginform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">로그인</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="userlogin" class="modal-loginform" method="post" action="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;action=submitlogin&amp;type=login&amp;returnto=<?php $this->html( 'title' ); ?>">
+                                <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="wpName" autofocus="">
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="wpPassword">
+                                <div class="modal-checkbox">
+                                    <input name="wpRemember" type="checkbox" value="1" id="wpRemember" tabindex="3">
+                                    <label for="wpRemember">로그인 상태를 유지하기</label>
+                                </div>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" tabindex="4">로그인</button>
+                                <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-lg btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+                                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            ?>
 	    </div>
 	    <?php
 	}

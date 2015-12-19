@@ -1,11 +1,11 @@
 body {
     font-size: 0.95rem;
-    font-family: sans-serif;
+    font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: sans-serif;
+    font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 .Liberty {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .Liberty.width-size .content-wrapper {
-    margin-top: 41px;
+    margin-top: 56px;
 }
 
 .Liberty .nav-wrapper .navbar-header {
@@ -42,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
     background: transparent url("../img/logo.png") no-repeat scroll left center/auto 1.9rem;
     padding: 0;
     margin: 0;
+    margin-left: 1rem;
 }
 
 .Liberty .nav-wrapper .navbar-nav {
@@ -75,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 .Liberty .nav-wrapper .right-nav {
     float: right;
     text-align: left;
+    margin-right: 1rem;
 }
 
 .Liberty .nav-wrapper .right-nav .portlet {
@@ -99,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .Liberty .nav-wrapper .right-nav .search-icon {
     position: absolute;
-    top: 0.5rem;
+    top: 9px;
     right: 2rem;
     display: block;
     cursor: pointer;
@@ -107,13 +109,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .Liberty .nav-wrapper .right-nav .go-icon {
     position: absolute;
-    top: 0.5rem;
+    top: 9px;
     right: 0.3rem;
     display: block;
     cursor: pointer;
 }
 
-.Liberty .nav-wrapper .right-nav .fa {
+.Liberty .nav-wrapper .right-nav .pBody .fa {
     width: auto;
     height: auto;
     background-color: transparent;
@@ -139,8 +141,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 1rem;
 }
 
+.Liberty .nav-wrapper .right-nav .nav-login .fa {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0.6rem 0;
+}
+
 .Liberty .liberty-content {
-    background-color: #fff;
     margin-right: 16rem;
     padding: 1.5rem;
 }
@@ -165,4 +173,101 @@ h1, h2, h3, h4, h5, h6 {
 
 [tabindex="-1"]:focus {
     outline: none;
+}
+
+.none-outline, .none-outline:focus {
+    outline: none;
+}
+
+.modal-login .modal-title {
+    text-align: center;
+}
+
+.modal-login .modal-dialog {
+    width: 25rem;
+}
+
+.modal-login .modal-dialog .modal-header {
+    padding: 0.7rem;
+}
+
+.modal-loginform {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.modal-loginform .form-field {
+    display: block;
+    margin: 0 0 1rem;
+    padding: 0;
+    width: 100%;
+}
+
+.modal-loginform .form-control {
+    margin-bottom: 0.7rem;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) {
+    position: relative;
+    display: table;
+}
+
+.modal-loginform .modal-checkbox {
+    vertical-align: middle;
+    margin-bottom: 0.7rem;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) input[type="checkbox"] {
+    opacity: 0;
+    width: 2em;
+    height: 2em;
+    max-width: none;
+    margin: 0;
+    margin-right: 0.4em;
+    display: table-cell;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) * {
+    vertical-align: middle;
+    font: inherit;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) input[type="checkbox"]+label {
+    display: table-cell;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) input[type="checkbox"]+label::before {
+    -webkit-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+    -moz-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+    -o-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+    transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+    content: '';
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    border: 1px solid #777;
+    top: 50%;
+    margin-top: -1em;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) input[type="checkbox"]+label:hover::before {
+    border: 3px solid #777;
+}
+
+.modal-loginform .modal-checkbox:not(#noop) input[type="checkbox"]:checked+label::before {
+    border: 3px solid #777;
+    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
+}
+
+.modal-loginform .btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
 }

@@ -23,6 +23,9 @@
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},
+				"bootstrap/css/bootstrap-theme.min.css": {
+					"media": "all"
+				},
 				"css/w3/w3.css": {
 					"media": "all"
 				},
@@ -35,7 +38,7 @@
 		"skins.liberty.bootstrap": {
 			"scripts": [
 				"js/lib/bootstrap.min.js",
-				"js/lib/jquery.min.js"
+				"js/layout.js"
 			],
 			"position": "bottom"
 		}
