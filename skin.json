@@ -29,15 +29,15 @@
 				"css/default.css": {
 					"media": "all"
 				}
-			},
-
-			"skins.liberty.bootstrap": {
-				"script": [
-					"js/lib/bootstrap.min.js",
-					"js/lib/jquery.min.js"
-				],
-				"position": "bottom"
 			}
+		},
+
+		"skins.liberty.bootstrap": {
+			"scripts": [
+				"js/lib/bootstrap.min.js",
+				"js/lib/jquery.min.js"
+			],
+			"position": "bottom"
 		}
 	},
 	"ResourceFileModulePaths": {

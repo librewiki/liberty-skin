@@ -79,6 +79,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .Liberty .nav-wrapper .right-nav .portlet {
     padding: 0.3rem 0;
+    float: left;
+    position: relative;
 }
 
 .Liberty .nav-wrapper .right-nav .search-form {
@@ -98,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 .Liberty .nav-wrapper .right-nav .search-icon {
     position: absolute;
     top: 0.5rem;
-    right: 1.7rem;
+    right: 2rem;
     display: block;
     cursor: pointer;
 }
@@ -106,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 .Liberty .nav-wrapper .right-nav .go-icon {
     position: absolute;
     top: 0.5rem;
-    right: 0.2rem;
+    right: 0.3rem;
     display: block;
     cursor: pointer;
 }
@@ -130,6 +132,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.Liberty .nav-wrapper .right-nav .nav-login {
+    float: left;
+    margin-left: 1rem;
 }
 
 .Liberty .liberty-content {

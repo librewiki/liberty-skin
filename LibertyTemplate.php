@@ -47,44 +47,11 @@ class LibertyTemplate extends BaseTemplate {
             </div>
             <div class="right-nav">
                 <?php $this->searchBox(); ?>
+                <?php $this->loginBox(); ?>
             </div>
         </nav>
     <?php
     }
-
-	/**
-	 * @param array $sidebar
-	 */
-	protected function renderPortals( $sidebar ) {
-		if ( !isset( $sidebar['SEARCH'] ) ) {
-			$sidebar['SEARCH'] = true;
-		}
-		if ( !isset( $sidebar['TOOLBOX'] ) ) {
-			$sidebar['TOOLBOX'] = true;
-		}
-		if ( !isset( $sidebar['LANGUAGES'] ) ) {
-			$sidebar['LANGUAGES'] = true;
-		}
-
-		foreach ( $sidebar as $boxName => $content ) {
-			if ( $content === false ) {
-				continue;
-			}
-
-			// Numeric strings gets an integer when set as key, cast back - T73639
-			$boxName = (string)$boxName;
-
-			if ( $boxName == 'SEARCH' ) {
-				$this->searchBox();
-			} elseif ( $boxName == 'TOOLBOX' ) {
-				$this->toolbox();
-			} elseif ( $boxName == 'LANGUAGES' ) {
-				$this->languageBox();
-			} else {
-				$this->customBox( $boxName, $content );
-			}
-		}
-	}
 
 	function searchBox() {
         ?>
@@ -110,27 +77,21 @@ class LibertyTemplate extends BaseTemplate {
         <?php
 	}
 
-	/**
-	 * Prints the cactions bar.
-	 * Shared between MonoBook and Modern
-	 */
-	function cactions() {
-		?>
-		<div id="p-cactions" class="portlet" role="navigation">
-			<h3><?php $this->msg( 'views' ) ?></h3>
-
-			<div class="pBody">
-				<ul><?php
-					foreach ( $this->data['content_actions'] as $key => $tab ) {
-						echo '
-				' . $this->makeListItem( $key, $tab );
-					} ?>
-
-				</ul>
-				<?php $this->renderAfterPortlet( 'cactions' ); ?>
-			</div>
-		</div>
-	<?php
+	function loginBox() {
+	    ?>
+	    <div class="dropdown nav-login">
+            <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+            </ul>
+	    </div>
+	    <?php
 	}
 
 	/*************************************************************************************************/
