@@ -16,19 +16,159 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="liberty-right-fixed">
                 test
                 </div>
+                <div>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                </div>
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
                 title부분
                 </div>
                 <div class="liberty-content-main">
-                content부분
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                <?php echo $this->makeSearchInput( array( "class" => "search-form", "id" => "searchInput" ) ); ?>
+                <input type="search" value="test">
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+                content부분</br>
+
                 <?php
                     echo $wgRequest->getSessionData( 'wsCreateaccountToken' );
                 ?>
                 </div>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">로그인</h4>
+                    </div>
+                    <div class="modal-body">
+                    <div id="modal-login-alert" class="alert alert-hidden" role="alert">
+                    </div>
+                    <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
+                    <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+                    <div class="modal-checkbox">
+                    <input name="wpRemember" type="checkbox" value="1" id="lgremember" tabindex="3">
+                    <label for="lgremember">로그인 상태를 유지하기</label>
+                    </div>
+                    <input class="btn btn-lg btn-success btn-block" type="submit" value="로그인" tabindex="4">
+                    <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-lg btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+                    <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="format" value="json">
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,8 +194,8 @@ class LibertyTemplate extends BaseTemplate {
                     <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?></li>
                     <li><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
                     <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-gear"></span><span class="hide-title">도구</span></a></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-book"></span><span class="hide-title">도움말</span></a></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-gear"></span><span class="hide-title">도구</span><span class="caret"></span></a></li>
+                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-book"></span><span class="hide-title">도움말</span><span class="caret"></a></li>
                 </ul>
             </div>
             <div class="right-nav">
@@ -113,7 +253,7 @@ class LibertyTemplate extends BaseTemplate {
                 <?php
             } else {
             ?>
-                <a href="#" class="none-outline" data-toggle="modal" data-target="#loginform">
+                <a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
                     <span class="fa fa-sign-in"></span>
                 </a>
             <?php
@@ -132,37 +272,6 @@ class LibertyTemplate extends BaseTemplate {
                 <li role="presentation" class="divider"></li>
                 <li id="pt-preferences"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'preferences', null ), '환경설정', array( 'title' => '환경설정을 불러옵니다.' ) ); ?></li>
             </ul>
-            <?php
-            } else {
-            ?>
-            <div class="modal fade modal-login" id="loginform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">로그인</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div id="modal-login-alert" class="alert alert-hidden" role="alert">
-                            </div>
-                            <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
-                                <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
-                                <label for="inputPassword" class="sr-only">Password</label>
-                                <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
-                                <div class="modal-checkbox">
-                                    <input name="wpRemember" type="checkbox" value="1" id="lgremember" tabindex="3">
-                                    <label for="lgremember">로그인 상태를 유지하기</label>
-                                </div>
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="로그인" tabindex="4">
-                                <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-lg btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
-                                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
-                                <input type="hidden" name="action" value="login">
-                                <input type="hidden" name="format" value="json">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <?php
             }
             ?>

@@ -7,6 +7,7 @@ class SkinLiberty extends SkinTemplate {
 
     public function initPage( OutputPage $out ) {
         parent::initPage( $out );
+        $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
         ) );

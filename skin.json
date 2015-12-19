@@ -34,6 +34,9 @@
 				},
 				"css/default.css": {
 					"media": "all"
+				},
+				"css/wiki.css": {
+					"media": "all"
 				}
 			}
 		},
