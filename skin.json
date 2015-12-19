@@ -20,6 +20,9 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
+				"css/font/Noto Sans KR.css": {
+					"media": "all"
+				},
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},
@@ -38,7 +41,8 @@
 		"skins.liberty.bootstrap": {
 			"scripts": [
 				"js/lib/bootstrap.min.js",
-				"js/layout.js"
+				"js/layout.js",
+				"js/login_request.js"
 			],
 			"position": "bottom"
 		}

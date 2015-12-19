@@ -1,13 +1,15 @@
 <?php
 class LibertyTemplate extends BaseTemplate {
+
 	function execute() {
-		// Suppress warnings to prevent notices about missing indexes in $this->data
+		global $wgRequest;
+
 		wfSuppressWarnings();
 
 		$this->html( 'headelement' );
 		?>
         <div class="nav-wrapper navbar-fixed-top">
-         <?php $this->nav_menu(); ?>
+            <?php $this->nav_menu(); ?>
         </div>
         <div class="content-wrapper">
             <div class="liberty-sidebar">
@@ -16,10 +18,18 @@ class LibertyTemplate extends BaseTemplate {
                 </div>
             </div>
             <div class="container-fluid liberty-content">
-                <i class="fa fa-car"></i>
+                <div class="liberty-content-header">
+                title부분
+                </div>
+                <div class="liberty-content-main">
+                content부분
                 <?php
-                echo SpecialPage::getTitleFor('Userlogin')
+                    echo $wgRequest->getSessionData( 'wsCreateaccountToken' );
                 ?>
+                </div>
+                <div class="liberty-footer">
+                    <?php $this->footer(); ?>
+                </div>
             </div>
         </div>
 		<?php
@@ -36,7 +46,7 @@ class LibertyTemplate extends BaseTemplate {
     ?>
         <nav class="navbar">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"></a>
+                <a class="navbar-brand" href="/"></a>
             </div>
             <div class="navgation">
                 <ul class="nav navbar-nav">
@@ -81,7 +91,7 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function loginBox() {
-	    global $wgUser;
+	    global $wgUser, $wgRequest;
 	    ?>
 	    <div class="dropdown nav-login">
             <?php
@@ -90,6 +100,7 @@ class LibertyTemplate extends BaseTemplate {
                 <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                     로그인<span class="caret"></span>
                 </a>
+                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'title' => '로그아웃' ) ); ?>
                 <?php
             } else {
             ?>
@@ -120,17 +131,21 @@ class LibertyTemplate extends BaseTemplate {
                             <h4 class="modal-title" id="myModalLabel">로그인</h4>
                         </div>
                         <div class="modal-body">
-                            <form name="userlogin" class="modal-loginform" method="post" action="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;action=submitlogin&amp;type=login&amp;returnto=<?php $this->html( 'title' ); ?>">
-                                <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="wpName" autofocus="">
+                            <div id="modal-login-alert" class="alert alert-hidden" role="alert">
+                            </div>
+                            <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage(); return false;">
+                                <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
                                 <label for="inputPassword" class="sr-only">Password</label>
-                                <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="wpPassword">
+                                <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
                                 <div class="modal-checkbox">
-                                    <input name="wpRemember" type="checkbox" value="1" id="wpRemember" tabindex="3">
-                                    <label for="wpRemember">로그인 상태를 유지하기</label>
+                                    <input name="wpRemember" type="checkbox" value="1" id="lgremember" tabindex="3">
+                                    <label for="lgremember">로그인 상태를 유지하기</label>
                                 </div>
-                                <button class="btn btn-lg btn-success btn-block" type="submit" tabindex="4">로그인</button>
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="로그인" tabindex="4">
                                 <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-lg btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
                                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+                                <input type="hidden" name="action" value="login">
+                                <input type="hidden" name="format" value="json">
                             </form>
                         </div>
                     </div>
@@ -142,6 +157,16 @@ class LibertyTemplate extends BaseTemplate {
 	    </div>
 	    <?php
 	}
+
+    function footer() {
+        foreach ( $this->getFooterLinks() as $category => $links ) { ?>
+        <ul id="footer-<?php echo $category ?>">
+        <?php foreach ( $links as $link ) { ?>
+        <li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
+        <?php } ?>
+        </ul>
+        <?php }
+    }
 
 	/*************************************************************************************************/
 	function toolbox() {
