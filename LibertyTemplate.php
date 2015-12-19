@@ -97,8 +97,17 @@ class LibertyTemplate extends BaseTemplate {
             <?php
             if ($wgUser->isLoggedIn()) {
             ?>
-                <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                    로그인<span class="caret"></span>
+                <a id="drop1" href="#" class="dropdown-toggle profile-link" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                    <?php
+                        if ($wgUser->getEmailAuthenticationTimestamp()) {
+                            $email = trim($wgUser->getEmail());
+                            $email = strtolower($email);
+                            $email = md5($email) . "?d=identicon";
+                        } else {
+                            $email = "00000000000000000000000000000000?d=identicon&f=y";
+                        }
+                    ?>
+                    <img class="profile-img" src="//secure.gravatar.com/avatar/<?=$email?>" />
                 </a>
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'title' => '로그아웃' ) ); ?>
                 <?php
@@ -113,12 +122,15 @@ class LibertyTemplate extends BaseTemplate {
             <?php
                 if ($wgUser->isLoggedIn()) {
             ?>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Another action</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Something else here</a></li>
+            <ul class="dropdown-menu dropdown-menu-right login-menu" role="menu" aria-labelledby="drop1">
+                <li id="pt-userpage"><?php echo Linker::linkKnown( Title::makeTitle( NS_USER, $wgUser->getName() ), $wgUser->getName(), array( 'title' => '내 사용자 문서. [alt+shift+u]', 'accesskey' => 'u' ) ); ?></li>
                 <li role="presentation" class="divider"></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
+                <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'notifications', null ), '알림', array( 'title' => '알림 목록을 불러옵니다.' )); ?></li>
+                <li id="pt-mycontris"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ), '내 기여 목록', array( 'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]', 'accesskey' => 'y' ) ); ?></li>
+                <li id="pt-mytalk"><?php echo Linker::linkKnown( Title::makeTitle( NS_USER_TALK, $wgUser->getName() ), '내 토론 문서', array( 'title' => '내 토론 문서. [alt+shift+m]', 'accesskey' => 'm' ) ); ?></li>
+                <li id="pt-watchlist"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'watchlist', null ), '내 주시 문서', array( 'title' => '주시문서를 불러옵니다. [alt+shift+l]', 'accesskey' => 'l' ) ); ?></li>
+                <li role="presentation" class="divider"></li>
+                <li id="pt-preferences"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'preferences', null ), '환경설정', array( 'title' => '환경설정을 불러옵니다.' ) ); ?></li>
             </ul>
             <?php
             } else {
@@ -133,7 +145,7 @@ class LibertyTemplate extends BaseTemplate {
                         <div class="modal-body">
                             <div id="modal-login-alert" class="alert alert-hidden" role="alert">
                             </div>
-                            <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage(); return false;">
+                            <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
                                 <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
                                 <label for="inputPassword" class="sr-only">Password</label>
                                 <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
