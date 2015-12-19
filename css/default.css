@@ -66,7 +66,7 @@ img {
     margin: 0;
 }
 
-.Liberty .navgation .navbar-nav ul, .Liberty .navgation .navbar-nav li {
+.Liberty .navgation .navbar-nav>ul, .Liberty .navgation .navbar-nav>li {
     float: left;
 }
 
@@ -363,6 +363,20 @@ img {
     background-color: #e8e8e8;
 }
 
-.caret {
-    margin-left: 0.4rem;
+.dropdown-toggle-fix:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .35rem;
+    vertical-align: middle;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.3s;
 }

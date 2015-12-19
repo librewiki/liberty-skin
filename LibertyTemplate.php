@@ -194,8 +194,19 @@ class LibertyTemplate extends BaseTemplate {
                     <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?></li>
                     <li><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
                     <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-gear"></span><span class="hide-title">도구</span><span class="caret"></span></a></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-book"></span><span class="hide-title">도움말</span><span class="caret"></a></li>
+                    <li class="dropdown"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?></li>
+                            <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '<span class="fa fa-book"></span><span class="hide-title">도움말</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법' ) ; ?></li>
+                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법' ) ; ?></li>
+                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그' ) ; ?></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="right-nav">
