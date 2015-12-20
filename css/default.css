@@ -8,6 +8,30 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
 button {
     padding: 0;
 }
@@ -238,7 +262,35 @@ img {
     border: 1px solid #e1e8ed;
     border-radius: 5px 5px 0px 0px;
     background-color: #f5f8fa;
+    /*padding: 1rem;*/
+}
+
+.Liberty .liberty-content .liberty-content-header .content-tools {
+    float: right;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+.Liberty .liberty-content .liberty-content-header .content-tools .tools-btn {
+    background-image: none;
+    border-color: #e1e8ed;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.Liberty .liberty-content .liberty-content-header .content-tools .tools-btn:hover, .Liberty .liberty-content .liberty-content-header .content-tools .tools-btn:focus {
+    background-color: #4188f1;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.Liberty .liberty-content .liberty-content-header .title {
     padding: 1rem;
+}
+
+.Liberty .liberty-content .liberty-content-header .title>h1 {
+    color: #000;
+    font-weight: bold;
 }
 
 .Liberty .liberty-content .liberty-content-main {
@@ -259,7 +311,7 @@ img {
     outline: none;
 }
 
-.none-outline, .none-outline:focus {
+.none-outline, .none-outline:focus, .none-outline:hover {
     outline: none;
 }
 
@@ -367,7 +419,8 @@ img {
 .dropdown-menu>li>a:hover {
     transition: 0.3s;
     background-image: none;
-    background-color: #e8e8e8;
+    background-color: #5997f3;
+    color: #fff;
 }
 
 .dropdown-toggle-fix:after {
@@ -380,6 +433,11 @@ img {
     border-top: .3em solid;
     border-right: .3em solid transparent;
     border-left: .3em solid transparent;
+}
+
+.dropdown-right {
+    right: 0;
+    left: auto;
 }
 
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {

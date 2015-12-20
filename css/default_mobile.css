@@ -20,6 +20,19 @@
 /* Max-width: 768px; */
 @media (max-width: 768px) {
 
+    .Liberty .liberty-content .liberty-content-header .content-tools {
+        float: none;
+        text-align: right;
+        border-bottom: 1px solid #e1e8ed;
+        padding-top: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .Liberty .liberty-content .liberty-content-header .title {
+        padding: 0.5rem;
+    }
+
     .Liberty .liberty-content {
         margin: 0;
     }
