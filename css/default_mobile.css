@@ -2,7 +2,7 @@
 @media (max-width: 977px) {
 
     .Liberty.width-size .content-wrapper {
-        margin-top: 5.7rem;
+        margin-top: 5.6rem;
     }
 
     .Liberty .nav-wrapper .portlet {
@@ -56,6 +56,12 @@
     .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
         padding: 3px 20px;
     }
+
+    .navbar-nav .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
 }
 
 /* Max-width: 450px; */

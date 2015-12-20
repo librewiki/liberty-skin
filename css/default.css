@@ -45,7 +45,7 @@ img {
 }
 
 .Liberty.width-size .content-wrapper {
-    margin-top: 3.73rem;
+    margin-top: 3.27rem;
 }
 
 .Liberty .nav-wrapper .navbar-header {
@@ -118,23 +118,26 @@ img {
 
 .Liberty .nav-wrapper .search-icon {
     position: absolute;
-    top: 9px;
+    top: 0.6rem;
     right: 2.5rem;
+    height: 17px;
     display: block;
     cursor: pointer;
 }
 
 .Liberty .nav-wrapper .go-icon {
     position: absolute;
-    top: 9px;
+    top: 0.6rem;
     right: 0.8rem;
+    height: 17px;
     display: block;
     cursor: pointer;
 }
 
 .Liberty .nav-wrapper .pBody .fa {
     width: auto;
-    height: auto;
+    height: 17px;
+    line-height: 0;
     background-color: transparent;
     border: 0;
     color: #4f5b63;
