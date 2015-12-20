@@ -8,51 +8,40 @@ class LibertyTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
-        <div class="nav-wrapper navbar-fixed-top">
+		<div class="nav-wrapper">
             <?php $this->nav_menu(); ?>
+        </div>
+        <div class="content-wrapper">
+        </div>
+        처음부터~~~~~~~ 다시~~~~~~시작하는거~시야~
+        <div class="dropdown open">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button">Action</button>
+            <button class="dropdown-item" type="button">Another action</button>
+            <button class="dropdown-item" type="button">Something else here</button>
+          </div>
+        </div>
+        <!--<div class="nav-wrapper navbar-fixed-top">
+            <?php //$this->nav_menu(); ?>
         </div>
         <div class="content-wrapper">
             <div class="liberty-sidebar">
                 <div class="liberty-right-fixed">
+                    <?php //$this->liverecent(); ?>
                 test
                 </div>
                 <div>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
-                content부분</br>
                 </div>
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
-                    <?php $this->contents_toolbox(); ?>
+                    <?php //$this->contents_toolbox(); ?>
                     <div class="title">
                         <h1>
-                            <?php $this->html( 'title' ) ?>
+                            <?php //$this->html( 'title' ) ?>
                         </h1>
                     </div>
                 </div>
@@ -66,40 +55,12 @@ class LibertyTemplate extends BaseTemplate {
                     <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
                 </div>
                 <div class="liberty-footer">
-                    <?php $this->footer(); ?>
+                    <?php //$this->footer(); ?>
                 </div>
             </div>
         </div>
-        <div class="modal fade modal-login" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">로그인</h4>
-                    </div>
-                    <div class="modal-body">
-                    <div id="modal-login-alert" class="alert alert-hidden" role="alert">
-                    </div>
-                    <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
-                    <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
-                    <div class="modal-checkbox">
-                    <input name="wpRemember" type="checkbox" value="1" id="lgremember" tabindex="3">
-                    <label for="lgremember">로그인 상태를 유지하기</label>
-                    </div>
-                    <input class="btn btn-lg btn-success btn-block" type="submit" value="로그인" tabindex="4">
-                    <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-lg btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
-                    <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
-                    <input type="hidden" name="action" value="login">
-                    <input type="hidden" name="format" value="json">
-                    </form>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
-            </div>
-        </div>
+        -->
+        <?php $this->login_modal(); ?>
 		<?php
 		$this->printTrail();
 		echo Html::closeElement( 'body' );
@@ -112,111 +73,142 @@ class LibertyTemplate extends BaseTemplate {
 
     function nav_menu() {
     ?>
-        <nav class="navbar">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/"></a>
-            </div>
-            <div class="navgation">
-                <ul class="nav navbar-nav">
-                    <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', array( 'class' => 'nav-link', 'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]', 'accesskey' => 'r') ); ?></li>
-                    <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?></li>
-                    <li class="dropdown"><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a></li>
-                    <li class="dropdown"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?></li>
-                            <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?></li>
-                            <li><a href="https://maps.librewiki.net">리브레맵스</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '<span class="fa fa-book"></span><span class="hide-title">도움말</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법' ) ; ?></li>
-                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법' ) ; ?></li>
-                            <li><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그' ) ; ?></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <?php $this->loginBox(); ?>
-            <?php $this->searchBox(); ?>
-        </nav>
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="/"></a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', array( 'class' => 'nav-link', 'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]', 'accesskey' => 'r') ); ?>
+            </li>
+            <li class="nav-item">
+                <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
+                <div class="dropdown-menu" role="menu">
+                    <?=Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'class' => 'dropdown-item', 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?>
+                    <?=Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'class' => 'dropdown-item', 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?>
+                    <a class="dropdown-item" href="https://maps.librewiki.net">리브레맵스</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '<span class="fa fa-book"></span><span class="hide-title">도움말</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
+                <div class="dropdown-menu" role="menu">
+                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법', array( 'class' => 'dropdown-item' ) ); ?>
+                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법', array( 'class' => 'dropdown-item' ) ); ?>
+                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그', array( 'class' => 'dropdown-item' ) ); ?>
+                </div>
+            </li>
+        </ul>
+        <?php $this->loginBox(); ?>
+        <!--알람 만들곳<span style="float: right;">asdf</span>-->
+        <?php $this->searchBox(); ?>
+    </nav>
     <?php
     }
 
 	function searchBox() {
-        ?>
-        <div id="p-search" class="portlet" role="search">
-            <div id="searchBody" class="pBody">
-                <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
-                    <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-                    <?php echo $this->makeSearchInput( array( "class" => "search-form", "id" => "searchInput" ) ); ?>
-                    <span class="search-icon">
-                        <button type="submit" name="fulltext" value="검색" class="fa fa-search" id="mw-searchButton" tabindex="-1">
-                            <span class="visuallyhidden">검색</span>
-                        </button>
-                    </span>
-                    <span class="go-icon">
-                        <button type="submit" name="go" value="보기" class="fa fa-eye" id="searchGoButton" tabindex="-1">
-                            <span class="visuallyhidden">보기</span>
-                        </button>
-                    </span>
-                </form>
-                <?php $this->renderAfterPortlet( 'search' ); ?>
+    ?>
+        <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline pull-xs-right">
+            <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+            <div class="input-group">
+                <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput", "type" => "text") ); ?>
+                <span class="input-group-btn">
+                    <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
+                    <button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+                </span>
             </div>
-        </div>
-        <?php
+        </form>
+    <?php
 	}
 
 	function loginBox() {
 	    global $wgUser, $wgRequest;
 	    ?>
-	    <div class="dropdown nav-login">
-            <?php
-            if ($wgUser->isLoggedIn()) {
+        <div class="navbar-login">
+            <?php if ($wgUser->isLoggedIn()) {
+                if ($wgUser->getEmailAuthenticationTimestamp()) {
+                    $email = trim($wgUser->getEmail());
+                    $email = strtolower($email);
+                    $email = md5($email) . "?d=identicon";
+                } else {
+                    $email = "00000000000000000000000000000000?d=identicon&f=y";
+                }
             ?>
-                <a id="drop1" href="#" class="dropdown-toggle profile-link" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                    <?php
-                        if ($wgUser->getEmailAuthenticationTimestamp()) {
-                            $email = trim($wgUser->getEmail());
-                            $email = strtolower($email);
-                            $email = md5($email) . "?d=identicon";
-                        } else {
-                            $email = "00000000000000000000000000000000?d=identicon&f=y";
-                        }
-                    ?>
-                    <img class="profile-img" src="//secure.gravatar.com/avatar/<?=$email?>" />
-                </a>
-                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout', 'title' => '로그아웃' ) ); ?>
-                <?php
-            } else {
-            ?>
-                <a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
-                    <span class="fa fa-sign-in"></span>
-                </a>
-            <?php
-            }
-            ?>
-            <?php
-                if ($wgUser->isLoggedIn()) {
-            ?>
-            <ul class="dropdown-menu dropdown-menu-right login-menu" role="menu" aria-labelledby="drop1">
-                <li id="pt-userpage"><?php echo Linker::linkKnown( Title::makeTitle( NS_USER, $wgUser->getName() ), $wgUser->getName(), array( 'title' => '내 사용자 문서. [alt+shift+u]', 'accesskey' => 'u' ) ); ?></li>
-                <li role="presentation" class="divider"></li>
-                <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'notifications', null ), '알림', array( 'title' => '알림 목록을 불러옵니다.' )); ?></li>
-                <li id="pt-mycontris"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ), '내 기여 목록', array( 'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]', 'accesskey' => 'y' ) ); ?></li>
-                <li id="pt-mytalk"><?php echo Linker::linkKnown( Title::makeTitle( NS_USER_TALK, $wgUser->getName() ), '내 토론 문서', array( 'title' => '내 토론 문서. [alt+shift+m]', 'accesskey' => 'm' ) ); ?></li>
-                <li id="pt-watchlist"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'watchlist', null ), '내 주시 문서', array( 'title' => '주시문서를 불러옵니다. [alt+shift+l]', 'accesskey' => 'l' ) ); ?></li>
-                <li role="presentation" class="divider"></li>
-                <li id="pt-preferences"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'preferences', null ), '환경설정', array( 'title' => '환경설정을 불러옵니다.' ) ); ?></li>
-                <li role="presentation" class="divider mobile-menu"></li>
-                <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '로그아웃', array( 'class' => 'mobile-menu', 'title' => '로그아웃' ) ); ?></li>
-            </ul>
-            <?php
-            }
-            ?>
-	    </div>
+                <div class="dropdown login-menu">
+                    <a class="dropdown-toggle" type="button" id="login-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="profile-img" src="//secure.gravatar.com/avatar/<?=$email?>" />
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right login-dropdown-menu" aria-labelledby="login-menu">
+                        <?=Linker::linkKnown( Title::makeTitle( NS_USER, $wgUser->getName() ), $wgUser->getName(), array( 'class' => 'dropdown-item', 'title' => '내 사용자 문서. [alt+shift+u]', 'accesskey' => 'u' ) ); ?>
+                        <div class="dropdown-divider"></div>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'notifications', null ), '알림', array( 'class' => 'dropdown-item', 'title' => '알림 목록을 불러옵니다.' )); ?>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ), '내 기여 목록', array( 'class' => 'dropdown-item', 'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]', 'accesskey' => 'y' ) ); ?>
+                        <?=Linker::linkKnown( Title::makeTitle( NS_USER_TALK, $wgUser->getName() ), '내 토론 문서', array( 'class' => 'dropdown-item', 'title' => '내 토론 문서. [alt+shift+m]', 'accesskey' => 'm' ) ); ?>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'watchlist', null ), '내 주시 문서', array( 'class' => 'dropdown-item', 'title' => '주시문서를 불러옵니다. [alt+shift+l]', 'accesskey' => 'l' ) ); ?>
+                        <div class="dropdown-divider"></div>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'preferences', null ), '환경설정', array( 'class' => 'dropdown-item', 'title' => '환경설정을 불러옵니다.' ) ); ?>
+                        <div class="dropdown-divider view-logout"></div>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '로그아웃', array( 'class' => 'dropdown-item view-logout', 'title' => '로그아웃' ) ); ?></li>
+                    </div>
+                </div>
+                <?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout logout-btn', 'title' => '로그아웃' ) ); ?>
+            <?php } else { ?>
+            <a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
+                <span class="fa fa-sign-in"></span>
+            </a>
+            <?php } ?>
+        </div>
 	    <?php
+	}
+
+    function login_modal() {
+    ?>
+        <div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">로그인</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
+                        </div>
+                        <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
+                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname" autofocus="">
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2" autofocus="" placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+                            <div class="modal-checkbox">
+                                <input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
+                                <label for="lgremember">로그인 상태를 유지하기</label>
+                            </div>
+                            <input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
+                            <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+                            <?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+                            <input type="hidden" name="action" value="login">
+                            <input type="hidden" name="format" value="json">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+
+	function liverecent() {
+	?>
+	<?php
 	}
 
 	function contents_toolbox() {

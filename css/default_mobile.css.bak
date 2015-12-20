@@ -1,0 +1,139 @@
+/* Max-width: 977px; */
+@media (max-width: 977px) {
+
+    .Liberty.width-size .content-wrapper {
+        margin-top: 5.6rem;
+    }
+
+    .Liberty .nav-wrapper .portlet {
+        width: 100%;
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+        padding-left: 0.54rem;
+    }
+
+    .Liberty .nav-wrapper .search-form {
+        width: 100%;
+    }
+}
+
+/* Max-width: 768px; */
+@media (max-width: 768px) {
+
+    .Liberty .liberty-content .liberty-content-header .content-tools {
+        float: none;
+        text-align: right;
+        border-bottom: 1px solid #e1e8ed;
+        padding-top: 0.5rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .Liberty .liberty-content .liberty-content-header .title {
+        padding: 0.5rem;
+    }
+
+    .Liberty .liberty-content .liberty-content-main {
+        padding: 0.5rem;
+    }
+
+    .Liberty .liberty-footer {
+        padding: 0.5rem;
+    }
+
+    .Liberty .liberty-content {
+        margin: 0;
+    }
+
+    .Liberty .liberty-sidebar {
+        display: none;
+    }
+
+    .hide-title {
+        display: none;
+    }
+
+    .Liberty .nav-wrapper .right-nav .portlet {
+        float: left;
+    }
+
+    .Liberty .nav-wrapper .navbar-brand {
+        max-width: 5.8rem;
+    }
+
+    .Liberty .nav-wrapper .fa {
+        margin-right: 0;
+    }
+
+    .navbar-nav .open .dropdown-menu {
+        position: absolute;
+        float: left;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0,0,0,.15);
+        -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+    .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
+        padding: 3px 20px;
+    }
+
+    .navbar-nav .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
+}
+
+/* Max-width: 450px; */
+@media (max-width: 450px) {
+    .dropdown-toggle-fix:after {
+        display: none;
+    }
+
+    .Liberty .nav-wrapper .nav-login .mobile-menu {
+        display: block;
+    }
+
+    .hide-logout {
+        display: none;
+    }
+
+    .Liberty .nav-wrapper .nav-login .login-menu:before, .Liberty .nav-wrapper .nav-login .login-menu:after {
+        right: 0.47rem;
+    }
+}
+
+/* Max-width: 400px; */
+@media (max-width: 400px) {
+
+    .Liberty .nav-wrapper .nav-link {
+        padding: 0.7rem 0.6rem;
+    }
+
+    .Liberty .nav-wrapper .navbar-brand {
+        margin-left: 0.4rem;
+    }
+    .Liberty .nav-wrapper .nav-login {
+        margin-right: 0.4rem;
+    }
+
+    .Liberty .nav-wrapper .nav-login .profile-link {
+        margin: 0;
+    }
+
+    .Liberty .nav-wrapper .nav-login .login-menu:before, .Liberty .nav-wrapper .nav-login .login-menu:after {
+        right: 0.13rem;
+    }
+}
+
+/* Max-width: 350px; */
+@media (max-width: 324px) {
+    .hide-anon {
+        display: none !important;
+    }
+
+    .Liberty .nav-wrapper .navbar-brand {
+        max-width: 5.4rem;
+    }
+}
