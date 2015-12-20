@@ -198,6 +198,7 @@ class LibertyTemplate extends BaseTemplate {
                         <ul class="dropdown-menu" role="menu">
                             <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?></li>
                             <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?></li>
+                            <li><a href="https://maps.librewiki.net">리브레맵스</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '<span class="fa fa-book"></span><span class="hide-title">도움말</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
