@@ -192,7 +192,7 @@ class LibertyTemplate extends BaseTemplate {
                 <ul class="nav navbar-nav">
                     <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', array( 'class' => 'nav-link', 'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]', 'accesskey' => 'r') ); ?></li>
                     <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?></li>
-                    <li><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
+                    <li class="dropdown"><a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a></li>
                     <li><a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a></li>
                     <li class="dropdown"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
                         <ul class="dropdown-menu" role="menu">
@@ -209,10 +209,8 @@ class LibertyTemplate extends BaseTemplate {
                     </li>
                 </ul>
             </div>
-            <div class="right-nav">
-                <?php $this->searchBox(); ?>
-                <?php $this->loginBox(); ?>
-            </div>
+            <?php $this->loginBox(); ?>
+            <?php $this->searchBox(); ?>
         </nav>
     <?php
     }
@@ -260,7 +258,7 @@ class LibertyTemplate extends BaseTemplate {
                     ?>
                     <img class="profile-img" src="//secure.gravatar.com/avatar/<?=$email?>" />
                 </a>
-                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'title' => '로그아웃' ) ); ?>
+                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout', 'title' => '로그아웃' ) ); ?>
                 <?php
             } else {
             ?>
@@ -282,6 +280,8 @@ class LibertyTemplate extends BaseTemplate {
                 <li id="pt-watchlist"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'watchlist', null ), '내 주시 문서', array( 'title' => '주시문서를 불러옵니다. [alt+shift+l]', 'accesskey' => 'l' ) ); ?></li>
                 <li role="presentation" class="divider"></li>
                 <li id="pt-preferences"><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'preferences', null ), '환경설정', array( 'title' => '환경설정을 불러옵니다.' ) ); ?></li>
+                <li role="presentation" class="divider mobile-menu"></li>
+                <li><?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '로그아웃', array( 'class' => 'mobile-menu', 'title' => '로그아웃' ) ); ?></li>
             </ul>
             <?php
             }

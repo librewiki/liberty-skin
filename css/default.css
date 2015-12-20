@@ -45,7 +45,7 @@ img {
 }
 
 .Liberty.width-size .content-wrapper {
-    margin-top: 56px;
+    margin-top: 3.73rem;
 }
 
 .Liberty .nav-wrapper .navbar-header {
@@ -89,20 +89,19 @@ img {
     font-size: 1rem;
 }
 
-.Liberty .nav-wrapper .right-nav {
-    float: right;
+.Liberty .nav-wrapper {
+    float: left;
     text-align: left;
-    margin-right: 1rem;
 }
 
-.Liberty .nav-wrapper .right-nav .portlet {
+.Liberty .nav-wrapper .portlet {
     padding: 0.3rem 0;
-    float: left;
+    float: right;
     position: relative;
     margin-right: 0.3rem;
 }
 
-.Liberty .nav-wrapper .right-nav .search-form {
+.Liberty .nav-wrapper .search-form {
     display: block;
     box-sizing: border-box;
     width: 14rem;
@@ -117,7 +116,7 @@ img {
     position:relative;
 }
 
-.Liberty .nav-wrapper .right-nav .search-icon {
+.Liberty .nav-wrapper .search-icon {
     position: absolute;
     top: 9px;
     right: 2.5rem;
@@ -125,7 +124,7 @@ img {
     cursor: pointer;
 }
 
-.Liberty .nav-wrapper .right-nav .go-icon {
+.Liberty .nav-wrapper .go-icon {
     position: absolute;
     top: 9px;
     right: 0.8rem;
@@ -133,7 +132,7 @@ img {
     cursor: pointer;
 }
 
-.Liberty .nav-wrapper .right-nav .pBody .fa {
+.Liberty .nav-wrapper .pBody .fa {
     width: auto;
     height: auto;
     background-color: transparent;
@@ -143,7 +142,7 @@ img {
     margin: 0;
 }
 
-.Liberty .nav-wrapper .right-nav .visuallyhidden {
+.Liberty .nav-wrapper .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -154,11 +153,12 @@ img {
     width: 1px;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login {
-    float: left;
+.Liberty .nav-wrapper .nav-login {
+    float: right;
+    margin-right: 1rem;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .fa {
+.Liberty .nav-wrapper .nav-login .fa {
     color: #fff;
     font-size: 1.5rem;
     margin-left: 0.3rem;
@@ -166,14 +166,14 @@ img {
     padding: 0.6rem 0;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .profile-link {
+.Liberty .nav-wrapper .nav-login .profile-link {
     display: block;
     float: left;
     padding: 0.3rem 0;
     margin: 0 0.3rem;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .profile-img {
+.Liberty .nav-wrapper .nav-login .profile-img {
     width: 2rem;
     height: 2rem;
     border-radius: 5px;
@@ -181,14 +181,14 @@ img {
     border: 1px solid #126aed;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .login-menu {
+.Liberty .nav-wrapper .nav-login .login-menu {
     right: 0;
     left: auto;
     border-color: #e1e8ed;
     top: 120%;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .login-menu:before, .Liberty .nav-wrapper .right-nav .nav-login .login-menu:after {
+.Liberty .nav-wrapper .nav-login .login-menu:before, .Liberty .nav-wrapper .nav-login .login-menu:after {
     bottom: 100%;
     border: solid transparent;
     content: " ";
@@ -197,18 +197,22 @@ img {
     right: auto;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .login-menu:before {
+.Liberty .nav-wrapper .nav-login .login-menu:before {
     border-bottom-color: #e1e8ed;
     border-width: 0.8rem;
     left: auto;
-    right: 2.1rem;
+    right: 2.2rem;
 }
 
-.Liberty .nav-wrapper .right-nav .nav-login .login-menu:after {
+.Liberty .nav-wrapper .nav-login .login-menu:after {
     border-bottom-color: #fff;
     border-width: 0.78rem;
     left: auto;
-    right: 2.15rem;
+    right: 2.2rem;
+}
+
+.Liberty .nav-wrapper .nav-login .mobile-menu {
+    display: none;
 }
 
 .Liberty .liberty-content {
