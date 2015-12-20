@@ -49,28 +49,11 @@ class LibertyTemplate extends BaseTemplate {
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
-                    <div class="content-tools">
-                        <div class="btn-group" role="group" aria-label="content-tools">
-                            <button type="button" class="btn btn-default none-outline tools-btn">읽기</button>
-                            <button type="button" class="btn btn-default none-outline tools-btn">편집</button>
-                            <button type="button" class="btn btn-default none-outline tools-btn">추가</button>
-                            <button type="button" class="btn btn-default none-outline tools-btn">토론</button>
-                            <button type="button" class="btn btn-default none-outline tools-btn">역사</button>
-                            <button type="button" class="btn btn-default none-outline tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-right" role="menu">
-                                <li><a href="#">주시</a></li>
-                                <li><a href="#">역링크</a></li>
-                                <li><a href="#">옮기기</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">보호</a></li>
-                                <li><a href="#">삭제</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php $this->contents_toolbox(); ?>
                     <div class="title">
-                        <h1>하하</h1>
+                        <h1>
+                            <?php $this->html( 'title' ) ?>
+                        </h1>
                     </div>
                 </div>
                 <div class="liberty-content-main">
@@ -80,6 +63,7 @@ class LibertyTemplate extends BaseTemplate {
                     <h4>h4</h4>
                     <h5>h5</h5>
                     <h6>h6</h6>
+                    <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
                 </div>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
@@ -235,14 +219,64 @@ class LibertyTemplate extends BaseTemplate {
 	    <?php
 	}
 
+	function contents_toolbox() {
+	?>
+    <div class="content-tools">
+        <div class="btn-group" role="group" aria-label="content-tools">
+            <button type="button" class="btn btn-default none-outline tools-btn">읽기</button>
+            <button type="button" class="btn btn-default none-outline tools-btn">편집</button>
+            <button type="button" class="btn btn-default none-outline tools-btn">추가</button>
+            <button type="button" class="btn btn-default none-outline tools-btn">토론</button>
+            <button type="button" class="btn btn-default none-outline tools-btn">역사</button>
+            <button type="button" class="btn btn-default none-outline tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-right" role="menu">
+                <li><a href="#">주시</a></li>
+                <li><a href="#">역링크</a></li>
+                <li><a href="#">옮기기</a></li>
+                <li class="divider"></li>
+                <li><a href="#">보호</a></li>
+                <li><a href="#">삭제</a></li>
+            </ul>
+        </div>
+    </div>
+	<?php
+	}
+
     function footer() {
-        foreach ( $this->getFooterLinks() as $category => $links ) { ?>
-        <ul id="footer-<?php echo $category ?>">
-        <?php foreach ( $links as $link ) { ?>
-        <li id="footer-<?php echo $category ?>-<?php echo $link ?>"><?php $this->html( $link ) ?></li>
-        <?php } ?>
-        </ul>
-        <?php }
+        foreach ( $this->getFooterLinks() as $category => $links ) {
+            ?>
+            <ul class="footer-<?=$category;?>">
+                <?php foreach ( $links as $link ) {
+                ?>
+                    <li class="footer-<?=$category;?>-<?=$link;?>"><?php $this->html( $link ); ?></li>
+                <?php
+                }
+                ?>
+            </ul>
+            <?php
+        }
+        $footericons = $this->getFooterIcons( "icononly" );
+        if ( count( $footericons ) > 0 ) {
+        ?>
+            <ul class="footer-icons">
+                <?php
+                    foreach ( $footericons as $blockName => $footerIcons ) {
+                    ?>
+                        <li class="footer-<?=htmlspecialchars( $blockName );?>ico">
+                        <?php
+                            foreach ( $footerIcons as $icon ) {
+                                echo $this->getSkin()->makeFooterIcon( $icon );
+                            }
+                        ?>
+                        </li>
+                    <?php
+                    }
+                ?>
+            </ul>
+        <?php
+        }
     }
 
 	/*************************************************************************************************/

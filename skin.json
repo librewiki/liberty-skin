@@ -40,6 +40,9 @@
 				},
 				"css/wiki.css": {
 					"media": "all"
+				},
+				"css/only-mw.css": {
+					"media": "all"
 				}
 			}
 		},

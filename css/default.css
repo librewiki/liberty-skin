@@ -3,6 +3,11 @@ body {
     font-family: "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
+ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
@@ -28,7 +33,7 @@ h5 {
     font-size: 1.4rem;
 }
 
-h5 {
+h6 {
     font-size: 1.2rem;
 }
 
@@ -305,6 +310,15 @@ img {
     border-radius: 0px 0px 5px 5px;
     background-color: #fff;
     padding: 1rem;
+}
+
+.Liberty .liberty-footer ul {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.Liberty .liberty-footer ul>li {
+    text-align: center;
 }
 
 [tabindex="-1"]:focus {
