@@ -8,24 +8,8 @@ class LibertyTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
-		<div class="nav-wrapper">
+		<div class="nav-wrapper navbar-fixed-top">
             <?php $this->nav_menu(); ?>
-        </div>
-        <div class="content-wrapper">
-        </div>
-        처음부터~~~~~~~ 다시~~~~~~시작하는거~시야~
-        <div class="dropdown open">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button">Action</button>
-            <button class="dropdown-item" type="button">Another action</button>
-            <button class="dropdown-item" type="button">Something else here</button>
-          </div>
-        </div>
-        <!--<div class="nav-wrapper navbar-fixed-top">
-            <?php //$this->nav_menu(); ?>
         </div>
         <div class="content-wrapper">
             <div class="liberty-sidebar">
@@ -38,10 +22,10 @@ class LibertyTemplate extends BaseTemplate {
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
-                    <?php //$this->contents_toolbox(); ?>
+                    <?php $this->contents_toolbox(); ?>
                     <div class="title">
                         <h1>
-                            <?php //$this->html( 'title' ) ?>
+                            <?php $this->html( 'title' ) ?>
                         </h1>
                     </div>
                 </div>
@@ -51,15 +35,14 @@ class LibertyTemplate extends BaseTemplate {
                     <h3>h3</h3>
                     <h4>h4</h4>
                     <h5>h5</h5>
-                    <h6>h6</h6>
+                    <h6>h6</h6>                                                                                                                                                                                                   <h6>h6</h6>
                     <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
                 </div>
                 <div class="liberty-footer">
-                    <?php //$this->footer(); ?>
+                    <?php $this->footer(); ?>
                 </div>
             </div>
         </div>
-        -->
         <?php $this->login_modal(); ?>
 		<?php
 		$this->printTrail();
@@ -215,22 +198,22 @@ class LibertyTemplate extends BaseTemplate {
 	?>
     <div class="content-tools">
         <div class="btn-group" role="group" aria-label="content-tools">
-            <button type="button" class="btn btn-default none-outline tools-btn">읽기</button>
-            <button type="button" class="btn btn-default none-outline tools-btn">편집</button>
-            <button type="button" class="btn btn-default none-outline tools-btn">추가</button>
-            <button type="button" class="btn btn-default none-outline tools-btn">토론</button>
-            <button type="button" class="btn btn-default none-outline tools-btn">역사</button>
-            <button type="button" class="btn btn-default none-outline tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-secondary tools-btn">읽기</button>
+            <button type="button" class="btn btn-secondary tools-btn">편집</button>
+            <button type="button" class="btn btn-secondary tools-btn">추가</button>
+            <button type="button" class="btn btn-secondary tools-btn">토론</button>
+            <button type="button" class="btn btn-secondary tools-btn">역사</button>
+            <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu dropdown-right" role="menu">
-                <li><a href="#">주시</a></li>
-                <li><a href="#">역링크</a></li>
-                <li><a href="#">옮기기</a></li>
-                <li class="divider"></li>
-                <li><a href="#">보호</a></li>
-                <li><a href="#">삭제</a></li>
-            </ul>
+            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                <a class="dropdown-item" href="#">주시</a>
+                <a class="dropdown-item" href="#">역링크</a>
+                <a class="dropdown-item" href="#">옮기기</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">보호</a>
+                <a class="dropdown-item" href="#">삭제</a>
+            </div>
         </div>
     </div>
 	<?php

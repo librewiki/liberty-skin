@@ -17,6 +17,7 @@ body {
 
 body, h1, h2, h3, h4, h5 {
     font-family: "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
+    margin: 0;
 }
 
 h1 {
@@ -43,6 +44,11 @@ h6 {
     font-size: 1.2rem;
 }
 
+ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
 a:focus {
     outline: 0;
 }
@@ -55,7 +61,7 @@ a:focus {
 /* 백그라운드 색 지정 End*/
 
 /* 컨텐츠 넓이 수정 및 가운대 정렬 */
-.Liberty .nav-wrapper .navbar, .Liberty .nav-wrapper .content-wrapper {
+.Liberty .nav-wrapper .navbar, .Liberty .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -221,12 +227,91 @@ a:focus {
 /* 네비 수정 End */
 
 /* 오른쪽 메뉴 수정 */
+.Liberty .liberty-sidebar {
+    float: right;
+    width: 15rem;
+    background-color: #fff;
+}
 /* 오른쪽 메뉴 수정 End */
 
 /* 컨텐츠 수정 */
+.Liberty .content-wrapper {
+    margin-top: 3.33rem;
+}
+
+.Liberty .content-wrapper .liberty-content {
+    margin-right: 16rem;
+    padding: 0;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header {
+    border: 1px solid #e1e8ed;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background-color: #f5f8fa;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools {
+    float: right;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .dropdown-toggle {
+    padding: 0.4rem 0.3rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover,
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus,
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
+    background-color: #4188f1;
+    color: #fff;
+    transition: 0.3s;
+    outline: 0;
+    border-color: #e1e8ed;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .dropdown-menu {
+    top: 92%;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .title {
+    padding: 1rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .title>h1 {
+    color: #000;
+    font-weight: bold;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main {
+    border-left: 1px solid #e1e8ed;
+    border-right: 1px solid #e1e8ed;
+    background-color: #fff;
+    padding: 1rem;
+}
 /* 컨텐츠 수정 End */
 
 /* 컨텐츠 하단 수정 */
+.Liberty .content-wrapper .liberty-footer {
+    border: 1px solid #e1e8ed;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.Liberty .content-wrapper .liberty-footer ul {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.Liberty .content-wrapper .liberty-footer ul>li {
+    text-align: left;
+}
 /* 컨텐츠 하단 수정 End */
 
 /* 모달 수정 */
