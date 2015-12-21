@@ -37,6 +37,10 @@ class LibertyTemplate extends BaseTemplate {
                     <h5>h5</h5>
                     <h6>h6</h6>                                                                                                                                                                                                   <h6>h6</h6>
                     <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
+                    <br>
+                    <?php
+                        $this->getNotification();
+                    ?>
                 </div>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
@@ -89,7 +93,7 @@ class LibertyTemplate extends BaseTemplate {
             </li>
         </ul>
         <?php $this->loginBox(); ?>
-        <!--알람 만들곳<span style="float: right;">asdf</span>-->
+        <?php $this->getNotification(); ?>
         <?php $this->searchBox(); ?>
     </nav>
     <?php
@@ -254,6 +258,17 @@ class LibertyTemplate extends BaseTemplate {
         }
     }
 
+    function getNotification() {
+        $personalTools = $this->getPersonalTools();
+        $noti_count = $personalTools['notifications']['links']['0']['text'];
+        if ($noti_count != "0") {
+            ?>
+            <div id="pt-notifications" class="navbar-notification">
+                <a href="#"><span class="label label-danger"><?=$noti_count;?></span></a>
+            </div>
+            <?php
+        }
+    }
 	/*************************************************************************************************/
 	function toolbox() {
 		?>

@@ -85,7 +85,7 @@ a:focus {
 
 .Liberty .nav-wrapper .navbar .navbar-brand {
     height: 2.8rem;
-    width: 7rem;
+    width: 6.6rem;
     background: transparent url("../img/logo.png") no-repeat scroll left center/auto 1.9rem;
     padding: 0;
     margin: 0;
@@ -156,6 +156,17 @@ a:focus {
 
 .Liberty .nav-wrapper .navbar .form-inline .btn .fa {
     width: 0.9rem;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-notification {
+    float: right;
+    padding-left: 0.8rem;
+}
+
+.Liberty .nav-wrapper .navbar .navbar-notification .label {
+    padding: 0.25rem 0.4rem;
+    line-height: 1rem;
+    margin: 0.6rem 0;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-login {
@@ -246,7 +257,7 @@ a:focus {
 
 .Liberty .content-wrapper .liberty-content .liberty-content-header {
     border: 1px solid #e1e8ed;
-    border-radius: 0.4rem 0.4rem 0 0;
+    border-radius: 0.35rem 0.35rem 0 0;
     background-color: #f5f8fa;
 }
 
@@ -299,7 +310,7 @@ a:focus {
 /* 컨텐츠 하단 수정 */
 .Liberty .content-wrapper .liberty-footer {
     border: 1px solid #e1e8ed;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 0 0 0.35rem 0.35rem;
     background-color: #fff;
     padding: 1rem;
 }

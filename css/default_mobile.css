@@ -1,3 +1,11 @@
+/* Max-width: 986 */
+@media (max-width: 986px) {
+    .Liberty .nav-wrapper .navbar .form-inline .form-control {
+        width: 100%;
+    }
+}
+
+
 /* Max-width: 51.2rem; */
 @media (max-width: 51.2rem) {
     .hide-title {
@@ -7,9 +15,6 @@
 
 /* Max-width: 34rem; */
 @media (max-width: 34rem) {
-    .Liberty .nav-wrapper .navbar .form-inline .form-control {
-        width: 100%;
-    }
 
     .Liberty .login-modal .modal-sm {
         width: auto;
