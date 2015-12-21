@@ -14,10 +14,7 @@ class LibertyTemplate extends BaseTemplate {
         <div class="content-wrapper">
             <div class="liberty-sidebar">
                 <div class="liberty-right-fixed">
-                    <?php //$this->liverecent(); ?>
-                test
-                </div>
-                <div>
+                    <?php $this->live_recent(); ?>
                 </div>
             </div>
             <div class="container-fluid liberty-content">
@@ -35,7 +32,50 @@ class LibertyTemplate extends BaseTemplate {
                     <h3>h3</h3>
                     <h4>h4</h4>
                     <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                                   <h6>h6</h6>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <h3>h3</h3>
+                    <h4>h4</h4>
+                    <h5>h5</h5>
+                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
+
                     <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
                     <br>
                     <?php
@@ -193,8 +233,28 @@ class LibertyTemplate extends BaseTemplate {
     <?php
     }
 
-	function liverecent() {
+	function live_recent() {
 	?>
+	<div class="live-recent">
+	    <div class="live-recent-header">
+	        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                <a class="nav-link active" href="#">최근바뀜</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">최근토론</a>
+                </li>
+            </ul>
+	    </div>
+	    <div class="live-recent-content">
+	        <ul class = "live-recent-list" id="live-recent-list">
+	            <li><a href="/wiki/%EC%9E%A5%ED%95%9C%ED%8F%89%EC%97%AD" title="장한평역">[18:03:40] 장한평역</a></li><li><a href="/wiki/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%8C%80%EA%B3%B5%EC%9B%90%EC%97%AD" title="어린이대공원역">[17:52:56] 어린이대공원역</a></li><li><a href="/wiki/%EC%9D%B4%EC%88%98%EC%97%AD" title="이수역">[17:46:41] 이수역</a></li><li><a href="/wiki/%EA%B1%B4%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD" title="건대입구역">[17:39:32] 건대입구역</a></li><li><a href="/wiki/%ED%8B%80%3ADeemo%EC%9D%98%20%EC%88%98%EB%A1%9D%EA%B3%A1" title="틀:Deemo의 수록곡">[16:32:08] 틀:Deemo의 수록곡</a></li><li><a href="/wiki/%ED%8B%80%3ADecimals" title="틀:Decimals">[16:29:12] 틀:Decimals</a></li><li><a href="/wiki/%EC%9C%A4%EC%84%9D%EC%98%81" title="윤석영">[16:27:38] 윤석영</a></li><li><a href="/wiki/%ED%8B%80%3AClarify" title="틀:Clarify">[16:20:30] 틀:Clarify</a></li><li><a href="/wiki/%ED%8B%80%3A%EC%82%AC%EC%9A%A9%EC%9E%90%20%EB%AC%B8%EC%84%9C" title="틀:사용자 문서">[16:19:13] 틀:사용자 문서</a></li><li><a href="/wiki/%ED%8B%80%3A100%25%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EC%A3%BC%EC%8A%A4%20%EC%B9%B4%EB%93%9C" title="틀:100% 오렌지 주스 카드">[16:18:00] 틀:100% 오렌지 주...</a></li>
+	        </ul>
+	    </div>
+	    <div class="live-recent-footer">
+            <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="label label-info">더보기</span>'); ?>
+	    </div>
+	</div>
 	<?php
 	}
 

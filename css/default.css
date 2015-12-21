@@ -15,7 +15,7 @@ body {
     font-size: 0.95rem;
 }
 
-body, h1, h2, h3, h4, h5 {
+body, h1, h2, h3, h4, h5, h6 {
     font-family: "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
     margin: 0;
 }
@@ -241,7 +241,95 @@ a:focus {
 .Liberty .liberty-sidebar {
     float: right;
     width: 15rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed {
+    position: fixed;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent {
+    width: 15rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav {
+    border: 0;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item {
+    width: 7.5rem;
+    border: 1px solid #e1e8ed;
+    border-top-left-radius: 0.35rem;
     background-color: #fff;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item {
+    margin-left: 0;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0.35rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link {
+    border: 0;
+    border-radius: 0;
+    border-top-left-radius: 0.35rem;
+    text-align: center;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    color: #6e7478;
+    position: relative;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item .nav-link {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0.35rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active {
+    color: #373a3c;
+    background-color: #f5f8fa;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
+    position: absolute;
+    left: -1px;
+    bottom: -1px;
+    content: " ";
+    width: 7.5rem;
+    display: block;
+    border-bottom: 2px solid #4188f1;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-top: 0;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
+    list-style: none;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    border-top: 0;
+    border-bottom-left-radius: 0.35rem;
+    border-bottom-right-radius: 0.35rem;
+    text-align: right;
+    padding: 0.4rem 0.6rem;
+}
+
+.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
+    background-color: #5997f3;
+    padding: 0.4rem;
+    font-size: 0.8rem;
 }
 /* 오른쪽 메뉴 수정 End */
 
