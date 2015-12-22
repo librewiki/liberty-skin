@@ -110,7 +110,7 @@ class LibertyTemplate extends BaseTemplate {
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-leaf"></span><span class="hide-title">위키방</span></a>
+                <a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-comments"></span><span class="hide-title">위키방</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a>
@@ -141,7 +141,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	function searchBox() {
     ?>
-        <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline pull-xs-right">
+        <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
             <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
             <div class="input-group">
                 <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput", "type" => "text") ); ?>
@@ -248,7 +248,16 @@ class LibertyTemplate extends BaseTemplate {
 	    </div>
 	    <div class="live-recent-content">
 	        <ul class = "live-recent-list" id="live-recent-list">
-	            <li><a href="/wiki/%EC%9E%A5%ED%95%9C%ED%8F%89%EC%97%AD" title="장한평역">[18:03:40] 장한평역</a></li><li><a href="/wiki/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%8C%80%EA%B3%B5%EC%9B%90%EC%97%AD" title="어린이대공원역">[17:52:56] 어린이대공원역</a></li><li><a href="/wiki/%EC%9D%B4%EC%88%98%EC%97%AD" title="이수역">[17:46:41] 이수역</a></li><li><a href="/wiki/%EA%B1%B4%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD" title="건대입구역">[17:39:32] 건대입구역</a></li><li><a href="/wiki/%ED%8B%80%3ADeemo%EC%9D%98%20%EC%88%98%EB%A1%9D%EA%B3%A1" title="틀:Deemo의 수록곡">[16:32:08] 틀:Deemo의 수록곡</a></li><li><a href="/wiki/%ED%8B%80%3ADecimals" title="틀:Decimals">[16:29:12] 틀:Decimals</a></li><li><a href="/wiki/%EC%9C%A4%EC%84%9D%EC%98%81" title="윤석영">[16:27:38] 윤석영</a></li><li><a href="/wiki/%ED%8B%80%3AClarify" title="틀:Clarify">[16:20:30] 틀:Clarify</a></li><li><a href="/wiki/%ED%8B%80%3A%EC%82%AC%EC%9A%A9%EC%9E%90%20%EB%AC%B8%EC%84%9C" title="틀:사용자 문서">[16:19:13] 틀:사용자 문서</a></li><li><a href="/wiki/%ED%8B%80%3A100%25%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EC%A3%BC%EC%8A%A4%20%EC%B9%B4%EB%93%9C" title="틀:100% 오렌지 주스 카드">[16:18:00] 틀:100% 오렌지 주...</a></li>
+	            <li><a class="recent-item" href="/wiki/%EC%9E%A5%ED%95%9C%ED%8F%89%EC%97%AD" title="장한평역">[18:03:40] 장한평역</a></li>
+	            <li><a class="recent-item" href="/wiki/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%8C%80%EA%B3%B5%EC%9B%90%EC%97%AD" title="어린이대공원역">[17:52:56] 어린이대공원역</a></li>
+	            <li><a class="recent-item" href="/wiki/%EC%9D%B4%EC%88%98%EC%97%AD" title="이수역">[17:46:41] 이수역</a></li>
+	            <li><a class="recent-item" href="/wiki/%EA%B1%B4%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD" title="건대입구역">[17:39:32] 건대입구역</a></li>
+	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3ADeemo%EC%9D%98%20%EC%88%98%EB%A1%9D%EA%B3%A1" title="틀:Deemo의 수록곡">[16:32:08] 틀:Deemo의 수록곡</a></li>
+	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3ADecimals" title="틀:Decimals">[16:29:12] 틀:Decimals</a></li>
+	            <li><a class="recent-item" href="/wiki/%EC%9C%A4%EC%84%9D%EC%98%81" title="윤석영">[16:27:38] 윤석영</a></li>
+	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3AClarify" title="틀:Clarify">[16:20:30] 틀:Clarify</a></li>
+	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3A%EC%82%AC%EC%9A%A9%EC%9E%90%20%EB%AC%B8%EC%84%9C" title="틀:사용자 문서">[16:19:13] 틀:사용자 문서</a></li>
+	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3A100%25%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EC%A3%BC%EC%8A%A4%20%EC%B9%B4%EB%93%9C" title="틀:100% 오렌지 주스 카드">[16:18:00] 틀:100% 오렌지 주...</a></li>
 	        </ul>
 	    </div>
 	    <div class="live-recent-footer">

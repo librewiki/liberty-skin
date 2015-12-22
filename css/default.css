@@ -76,11 +76,9 @@ a:focus {
 }
 
 .Liberty .nav-wrapper .navbar {
-    padding: 0;
+    padding: 0 1rem;
     border: 0;
     border-radius: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-brand {
@@ -125,12 +123,13 @@ a:focus {
 
 .Liberty .nav-wrapper .navbar .form-inline {
     padding: 0.4rem 0;
+    float: right;
 }
 
 .Liberty .nav-wrapper .navbar .form-inline .form-control {
     font-size: 0.8rem;
     height: 2rem;
-    width: 11rem;
+    width: 10.8rem;
     padding: 0.2rem 0.4rem;
     border-color: #e1e8ed;
     border-top-left-radius: 5px;
@@ -238,38 +237,38 @@ a:focus {
 /* 네비 수정 End */
 
 /* 오른쪽 메뉴 수정 */
-.Liberty .liberty-sidebar {
+.Liberty .content-wrapper .liberty-sidebar {
     float: right;
     width: 15rem;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed {
     position: fixed;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent {
     width: 15rem;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav {
     border: 0;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item {
     width: 7.5rem;
     border: 1px solid #e1e8ed;
     border-top-left-radius: 0.35rem;
-    background-color: #fff;
+    background-color: #f5f8fa;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item {
     margin-left: 0;
     border-left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0.35rem;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link {
     border: 0;
     border-radius: 0;
     border-top-left-radius: 0.35rem;
@@ -280,23 +279,23 @@ a:focus {
     position: relative;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item .nav-link {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item .nav-link {
     border-top-left-radius: 0;
     border-top-right-radius: 0.35rem;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active {
     color: #373a3c;
-    background-color: #f5f8fa;
+    background-color: #fff;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
     position: absolute;
     left: -1px;
     bottom: -1px;
@@ -306,17 +305,31 @@ a:focus {
     border-bottom: 2px solid #4188f1;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
     background-color: #fff;
     border: 1px solid #e1e8ed;
     border-top: 0;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
     list-style: none;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li {
+    border-bottom: 1px solid #e1e8ed;
+    padding: 0.2rem 0.6rem;
+}
+
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li:last-child {
+    border-bottom: none;
+}
+
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item {
+    font-size: 0.85rem;
+    color: #373a3c;
+}
+
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
     background-color: #f5f8fa;
     border: 1px solid #e1e8ed;
     border-top: 0;
@@ -326,10 +339,11 @@ a:focus {
     padding: 0.4rem 0.6rem;
 }
 
-.Liberty .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
     background-color: #5997f3;
     padding: 0.4rem;
     font-size: 0.8rem;
+    font-weight: 400;
 }
 /* 오른쪽 메뉴 수정 End */
 
@@ -410,6 +424,11 @@ a:focus {
 
 .Liberty .content-wrapper .liberty-footer ul>li {
     text-align: left;
+}
+
+.Liberty .content-wrapper .liberty-footer ul {
+    margin-bottom: 0.8rem;
+
 }
 /* 컨텐츠 하단 수정 End */
 
