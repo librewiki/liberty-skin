@@ -187,10 +187,10 @@ class LibertyTemplate extends BaseTemplate {
 	    <div class="live-recent-header">
 	        <ul class="nav nav-tabs">
                 <li class="nav-item">
-                <a class="nav-link active" href="#">최근바뀜</a>
+                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">최근토론</a>
+                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
                 </li>
             </ul>
 	    </div>

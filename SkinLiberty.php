@@ -11,6 +11,9 @@ class SkinLiberty extends SkinTemplate {
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
         ) );
+        $out->addModuleScripts( array(
+            'skins.liberty.layoutjs'
+        ) );
     }
 
 	function setupSkinUserCss( OutputPage $out ) {

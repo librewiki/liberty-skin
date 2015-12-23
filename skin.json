@@ -46,9 +46,17 @@
 
 		"skins.liberty.bootstrap": {
 			"scripts": [
-				"js/lib/bootstrap.min.js",
+				"js/lib/jquery.min.js",
+				"js/lib/bootstrap.min.js"
+			],
+			"position": "bottom"
+		},
+
+		"skins.liberty.layoutjs": {
+			"scripts": [
 				"js/layout.js",
-				"js/login_request.js"
+				"js/login_request.js",
+				"js/live_Recents.js"
 			],
 			"position": "bottom"
 		}

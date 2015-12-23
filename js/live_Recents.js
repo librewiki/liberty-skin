@@ -181,7 +181,7 @@ function ShowAjaxRecentList(parent)
 			for(var i = 0 ; i < res.query.recentchanges.length ; i++)
 			{
 				var item = res.query.recentchanges[i];
-        html += '<li><a href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">';
+        html += '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">';
 				var timestamp = item.timestamp;
 				var timeStartIdx = timestamp.indexOf("T") + 1;
 				var time = timestamp.substr(timeStartIdx,timestamp.length- timeStartIdx - 1);
@@ -232,7 +232,7 @@ jQuery( function ( $ ) {
 	if(width > 1023)
 	{
 		isAllowRequestList = true;
-		ShowAjaxRecentList($("#recent-list"));
+		ShowAjaxRecentList($("#live-recent-list"));
 	}
 	else
 	{
@@ -245,23 +245,24 @@ jQuery( function ( $ ) {
 
 
 jQuery( function ( $ ) {
-  $("#libre_recent-tab1").click(function(e){
-    $(this).addClass('libre_recent-selected');
-    $("#libre_recent-tab2").removeClass('libre_recent-selected');
-    _rcnamespace = "0|4|10|12|14|1600";
-    ShowAjaxRecentList($("#recent-list"));
-  });
-  $("#libre_recent-tab2").click(function(e){
-    $(this).addClass('libre_recent-selected');
-    $("#libre_recent-tab1").removeClass('libre_recent-selected');
-    _rcnamespace = "1|3|5|7|9|11|13|15|2600|1601";
-    ShowAjaxRecentList($("#recent-list"));
-  });
+    $("#liberty-recent-tab1").click(function(e){
+        $(this).addClass('active');
+        $("#liberty-recent-tab2").removeClass('active');
+        _rcnamespace = "0|4|10|12|14|1600";
+        ShowAjaxRecentList($("#live-recent-list"));
+    });
+
+    $("#liberty-recent-tab2").click(function(e){
+        $(this).addClass('active');
+        $("#liberty-recent-tab1").removeClass('active');
+        _rcnamespace = "1|3|5|7|9|11|13|15|2600|1601";
+        ShowAjaxRecentList($("#live-recent-list"));
+    });
 } );
 
 var recentIntervalCheck = function(){
 	var width = $(window).width();
-	if(width <= 750){
+	if(width <= 1023){
 		if(recentIntervalHandle != null){
 			clearInterval(recentIntervalHandle);
 			recentIntervalHandle = null;
@@ -270,7 +271,7 @@ var recentIntervalCheck = function(){
 	}else{
 		if(recentIntervalHandle == null){
 			recentIntervalHandle = setInterval(function(){
-				ShowAjaxRecentList($("#recent-list"));
+				ShowAjaxRecentList($("#live-recent-list"));
 			},10 * 1000);
 		}
 		isAllowRequestList = true;

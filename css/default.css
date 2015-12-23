@@ -333,6 +333,11 @@ p {
     color: #373a3c;
 }
 
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item .new {
+    font-size: 0.85rem;
+    color: #b73333;
+}
+
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer {
     background-color: #f5f8fa;
     border: 1px solid #e1e8ed;
