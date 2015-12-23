@@ -28,6 +28,8 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul,
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc li {
     list-style-type: none;
+    list-style-image: none;
+    lien-height: 2rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
@@ -39,7 +41,7 @@
     border-bottom-left-radius: 0.35rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul>li>ul {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul>li ul {
     margin-left: 1.5rem !important;
 }
 
@@ -80,3 +82,26 @@
     margin: 0.3em 0 0 1.6em;
 }
 /* 본문 관련 */
+
+/* 스페셜 페이지 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-specialpages-table {
+    margin-top: 0;
+}
+/* 스페셜 페이지 관련 End */
+
+/* 검색결과 관련 */
+.suggestions-results {
+    border-color: #e1e8ed !important;
+    padding: 0.5rem !important;
+    border-top-right-radius: 0.35rem;
+    border-top-left-radius: 0.35rem;
+}
+
+.suggestions-special {
+    border-color: #e1e8ed !important;
+    padding: 0.5rem !important;
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+    background-color: #f5f8fa !important;
+}
+/* 검색결과 관련 End */
