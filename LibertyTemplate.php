@@ -27,60 +27,7 @@ class LibertyTemplate extends BaseTemplate {
                     </div>
                 </div>
                 <div class="liberty-content-main">
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-                    <h1>h1</h1>
-                    <h2>h2</h2>
-                    <h3>h3</h3>
-                    <h4>h4</h4>
-                    <h5>h5</h5>
-                    <h6>h6</h6>                                                                                                                                                                                               <h6>h6</h6>
-
-                    <a href="#" class="new">와아ㅏㅏㅏㅏㅏㅏㅏㅏㅏ 없는문서다ㅏㅏㅏㅏㅏㅏㅏㅏ</a>
-                    <br>
-                    <?php
-                        $this->getNotification();
-                    ?>
+                    <?php $this->html( 'bodycontent' ) ?>
                 </div>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
@@ -90,6 +37,7 @@ class LibertyTemplate extends BaseTemplate {
         <?php $this->login_modal(); ?>
 		<?php
 		$this->printTrail();
+		$this->html('debughtml');
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
 		echo "\n";

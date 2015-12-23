@@ -1,0 +1,74 @@
+/* 목차 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc {
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    border-top-right-radius: 0.35rem;
+    border-top-left-radius: 0.35rem;
+    padding: 0.6rem 1rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle h2 {
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle .toctoggle {
+    display: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul,
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc li {
+    list-style-type: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
+    margin: 0 !important;
+    padding: 0.6rem 1rem;
+    border: 1px solid #e1e8ed;
+    border-top: none;
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul>li>ul {
+    margin-left: 1.5rem !important;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctext {
+    color: #373a3c;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a:hover {
+    text-decoration: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a>.tocnumber:hover {
+    text-decoration: underline;
+}
+/* 목차 관련 End */
+
+/* 제목 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main h1,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h2,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h3,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h4,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h5,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h6 {
+    margin-top: 1.5rem;
+    border-bottom: 1px solid #e1e8ed;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+    overflow: hidden;
+}

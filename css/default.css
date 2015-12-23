@@ -21,36 +21,40 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2.0rem;
 }
 
 h2 {
-    font-size: 2rem;
-}
-
-h3 {
     font-size: 1.8rem;
 }
 
-h4 {
+h3 {
     font-size: 1.6rem;
 }
 
+h4 {
+    font-size: 1.5rem;
+}
+
 h5 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 h6 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
-ol, ul {
+ol, ul, p {
     margin: 0;
     padding: 0;
 }
 
 a:focus {
     outline: 0;
+}
+
+p {
+    overflow-wrap: break-word;
 }
 /* 태그 수정 End */
 
@@ -424,11 +428,20 @@ a:focus {
 
 .Liberty .content-wrapper .liberty-footer ul>li {
     text-align: left;
+    float: left;
 }
 
 .Liberty .content-wrapper .liberty-footer ul {
     margin-bottom: 0.8rem;
+    display: inline-block;
+    width: 100%;
+}
 
+.Liberty .content-wrapper .liberty-footer .footer-places li {
+    margin-right: 0.8rem;
+}
+.Liberty .content-wrapper .liberty-footer .footer-icons li {
+    margin-right: 0.8rem;
 }
 /* 컨텐츠 하단 수정 End */
 
