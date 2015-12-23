@@ -3,7 +3,6 @@ class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
 		global $wgRequest;
-
 		wfSuppressWarnings();
 
 		$this->html( 'headelement' );
@@ -94,8 +93,8 @@ class LibertyTemplate extends BaseTemplate {
             <div class="input-group">
                 <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput", "type" => "text") ); ?>
                 <span class="input-group-btn">
-                    <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
                     <button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+                    <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
                 </span>
             </div>
         </form>
@@ -196,16 +195,16 @@ class LibertyTemplate extends BaseTemplate {
 	    </div>
 	    <div class="live-recent-content">
 	        <ul class = "live-recent-list" id="live-recent-list">
-	            <li><a class="recent-item" href="/wiki/%EC%9E%A5%ED%95%9C%ED%8F%89%EC%97%AD" title="장한평역">[18:03:40] 장한평역</a></li>
-	            <li><a class="recent-item" href="/wiki/%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%8C%80%EA%B3%B5%EC%9B%90%EC%97%AD" title="어린이대공원역">[17:52:56] 어린이대공원역</a></li>
-	            <li><a class="recent-item" href="/wiki/%EC%9D%B4%EC%88%98%EC%97%AD" title="이수역">[17:46:41] 이수역</a></li>
-	            <li><a class="recent-item" href="/wiki/%EA%B1%B4%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD" title="건대입구역">[17:39:32] 건대입구역</a></li>
-	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3ADeemo%EC%9D%98%20%EC%88%98%EB%A1%9D%EA%B3%A1" title="틀:Deemo의 수록곡">[16:32:08] 틀:Deemo의 수록곡</a></li>
-	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3ADecimals" title="틀:Decimals">[16:29:12] 틀:Decimals</a></li>
-	            <li><a class="recent-item" href="/wiki/%EC%9C%A4%EC%84%9D%EC%98%81" title="윤석영">[16:27:38] 윤석영</a></li>
-	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3AClarify" title="틀:Clarify">[16:20:30] 틀:Clarify</a></li>
-	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3A%EC%82%AC%EC%9A%A9%EC%9E%90%20%EB%AC%B8%EC%84%9C" title="틀:사용자 문서">[16:19:13] 틀:사용자 문서</a></li>
-	            <li><a class="recent-item" href="/wiki/%ED%8B%80%3A100%25%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EC%A3%BC%EC%8A%A4%20%EC%B9%B4%EB%93%9C" title="틀:100% 오렌지 주스 카드">[16:18:00] 틀:100% 오렌지 주...</a></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
+	            <li><span class="recent-item">&nbsp;</span></li>
 	        </ul>
 	    </div>
 	    <div class="live-recent-footer">
@@ -216,28 +215,68 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function contents_toolbox() {
-	?>
-    <div class="content-tools">
-        <div class="btn-group" role="group" aria-label="content-tools">
-            <button type="button" class="btn btn-secondary tools-btn">읽기</button>
-            <button type="button" class="btn btn-secondary tools-btn">편집</button>
-            <button type="button" class="btn btn-secondary tools-btn">추가</button>
-            <button type="button" class="btn btn-secondary tools-btn">토론</button>
-            <button type="button" class="btn btn-secondary tools-btn">역사</button>
-            <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <span class="caret"></span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" role="menu">
-                <a class="dropdown-item" href="#">주시</a>
-                <a class="dropdown-item" href="#">역링크</a>
-                <a class="dropdown-item" href="#">옮기기</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">보호</a>
-                <a class="dropdown-item" href="#">삭제</a>
+	    global $wgUser;
+        $title = $this->getSkin()->getTitle();
+        $revid = $this->getSkin()->getRequest()->getText( 'oldid' );
+        $watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
+        $user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
+
+	    if ( $title->getNamespace() != NS_SPECIAL ) {
+            $companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
+            ?>
+            <div class="content-tools">
+                <div class="btn-group" role="group" aria-label="content-tools">
+                    <?=Linker::linkKnown( $title, '읽기', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
+                    <?php
+                    if ($revid) {
+                        $editaction = array( 'action' => 'edit', 'oldid' => $revid );
+                    } else {
+                        $editaction = array( 'action' => 'edit' );
+                    }
+                    ?>
+                    <?=Linker::linkKnown( $title, '편집', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서를 편집합니다. [alt+shift+e]', 'accesskey' => 'e' ), $editaction ); ?>
+                    <?=Linker::linkKnown( $title, '추가', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '새 문단을 추가합니다. [alt+shift+n]', 'accesskey' => 'n' ), array( 'action' => 'edit', 'section' => 'new' ) ); ?>
+                    <?php
+                        if ($companionTitle) {
+                            if ($title->getNamespace() == NS_TALK || $title->getNamespace() == NS_PROJECT_TALK || $title->getNamespace() == NS_FILE_TALK || $title->getNamespace() == NS_TEMPLATE_TALK) {
+                                $titlename = '본문';
+                            } else {
+                                $titlename = '토론';
+                            }
+                            echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
+                        }
+                    ?>
+                    <?=Linker::linkKnown( $title, '기록', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
+                    <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                        <?php
+                            if ($watched != 'watch') {
+                                $watchname = '주시해제';
+                            } else {
+                                $watchname = '주시';
+                            }
+                            echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item'), array( 'action' => $mode ) );
+                        ?>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '옮기기', array( 'class' => 'dropdown-item', 'title' => '문서를 옮깁니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
+                        <?php
+                            if ( $title->quickUserCan( 'protect', $user ) ) { ?>
+                                <div class="dropdown-divider"></div>
+                                <?=Linker::linkKnown( $title, '보호', array( 'class' => 'dropdown-item', 'title' => '문서를 보호합니다. [alt+shift+s]', 'accesskey' => 's' ), array( 'action' => 'protect' ) ); ?>
+                                <a class="dropdown-item" href="#">보호</a>
+                            <?php } ?>
+                            <?php if ( $title->quickUserCan( 'delete', $user ) ) { ?>
+                                <div class="dropdown-divider"></div>
+                                <?=Linker::linkKnown( $title, '삭제', array( 'class' => 'dropdown-item', 'title' => '문서를 삭제합니다. [alt+shift+d]', 'accesskey' => 'd' ), array( 'action' => 'delete' ) ); ?>
+                            <?php }
+                         ?>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-	<?php
+        <?php
+        }
 	}
 
     function footer() {

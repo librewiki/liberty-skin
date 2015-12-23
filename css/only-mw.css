@@ -4,9 +4,6 @@
     border-bottom-left-radius: 0.35rem;
     display: inline-block;
     font-size: 0.9rem;
-    float: right;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle {
@@ -72,3 +69,14 @@
     padding-bottom: 0.6rem;
     overflow: hidden;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
+    color: #4188f1;
+}
+/* 제목 관련 End */
+
+/* 본문 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main ul {
+    margin: 0.3em 0 0 1.6em;
+}
+/* 본문 관련 */
