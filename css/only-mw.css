@@ -99,6 +99,8 @@
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox {
     float: right;
+    margin-left: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table caption {
@@ -111,84 +113,6 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.jquery-tablesorter th.headerSort {
     padding-right: 1.5rem;
 }
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table>tr>th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table>tr>td,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table>*>tr>th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table>*>tr>td {
-    border: none;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>*,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>* {
-    border-top: 1px solid #e1e8ed !important;
-    border-left: 1px solid #e1e8ed !important;
-    padding: 0.25rem 0.5rem;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:first-child>* {
-    border-top: none !important;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*:first-child {
-    border-left: none !important;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>td,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*>th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*>td {
-    border-top: 1px solid #e1e8ed !important;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th {
-    background-color: #f5f8fa;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child td,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child td {
-    border-top: none;
-    border-bottom: 1px solid #e1e8ed;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child td {
-    border: none;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>*:last-child,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>*:last-child {
-    border-right: 1px solid #e1e8ed;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*:last-child {
-    border: none;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:first-child *:first-child,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child *:first-child {
-    border-top-left-radius: 0.35rem;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:first-child *:last-child,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child *:last-child {
-    border-top-right-radius: 0.35rem;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child *:first-child,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:first-child {
-    border-bottom-left-radius: 0.35rem;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child *:last-child,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:last-child {
-    border-bottom-right-radius: 0.35rem;
-}
-
-
 /* 본문 관련 */
 
 /* 스페셜 페이지 관련 */
