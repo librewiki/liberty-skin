@@ -11,7 +11,11 @@
     border: 1px solid #e1e8ed;
     border-top-right-radius: 0.35rem;
     border-top-left-radius: 0.35rem;
+<<<<<<< HEAD
     padding: 0.6rem 1.2rem;
+=======
+    padding: 0.6rem 1rem;
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle h2 {
@@ -27,7 +31,10 @@
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul,
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc li {
+<<<<<<< HEAD
     background-color: #fff;
+=======
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
     list-style-type: none;
     list-style-image: none;
     lien-height: 2rem;
@@ -35,7 +42,11 @@
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
     margin: 0 !important;
+<<<<<<< HEAD
     padding: 0.6rem 1.2rem;
+=======
+    padding: 0.6rem 1rem;
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
     border: 1px solid #e1e8ed;
     border-top: none;
     border-bottom-right-radius: 0.35rem;
@@ -82,6 +93,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main ul {
     margin: 0.3em 0 0 1.6em;
 }
+<<<<<<< HEAD
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox {
@@ -155,6 +167,8 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:last-child {
     border-bottom-right-radius: 0.35rem;
 }
+=======
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
 /* 본문 관련 */
 
 /* 스페셜 페이지 관련 */

@@ -26,6 +26,12 @@
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},
+<<<<<<< HEAD
+=======
+				"css/w3/w3.css": {
+					"media": "all"
+				},
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
 				"css/default.css": {
 					"media": "all"
 				},
@@ -53,8 +59,12 @@
 			"scripts": [
 				"js/layout.js",
 				"js/login_request.js",
+<<<<<<< HEAD
 				"js/live_Recents.js",
 				"js/index_botton.js"
+=======
+				"js/live_Recents.js"
+>>>>>>> f8e0d09981118387205289bd31f0d94b525b65fd
 			],
 			"position": "bottom"
 		}
