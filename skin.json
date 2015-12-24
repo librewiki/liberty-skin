@@ -1,0 +1,70 @@
+{
+	"name": "리버티",
+	"author": [
+		"이츠레아"
+	],
+	"url": "https://librewiki.net/wiki/Skin:Liberty",
+	"descriptionmsg": "liberty-desc",
+	"namemsg": "skinname-liberty",
+	"license-name": "GPL-3.0+",
+	"type": "skin",
+	"version": "0.1",
+	"ValidSkinNames": {
+		"liberty": "Liberty"
+	},
+	"MessagesDirs": {
+		"Liberty": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.liberty.styles": {
+			"styles": {
+				"css/font/Noto Sans KR.css": {
+					"media": "all"
+				},
+				"bootstrap/css/bootstrap.min.css": {
+					"media": "all"
+				},
+				"css/default.css": {
+					"media": "all"
+				},
+				"css/default_mobile.css": {
+					"media": "all"
+				},
+				"css/wiki.css": {
+					"media": "all"
+				},
+				"css/only-mw.css": {
+					"media": "all"
+				}
+			}
+		},
+
+		"skins.liberty.bootstrap": {
+			"scripts": [
+				"js/lib/jquery.min.js",
+				"js/lib/bootstrap.min.js"
+			],
+			"position": "bottom"
+		},
+
+		"skins.liberty.layoutjs": {
+			"scripts": [
+				"js/layout.js",
+				"js/login_request.js",
+				"js/live_Recents.js",
+				"js/index_botton.js"
+			],
+			"position": "bottom"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Liberty"
+	},
+	"AutoloadClasses": {
+		"SkinLiberty": "SkinLiberty.php",
+		"LibertyTemplate": "LibertyTemplate.php"
+	}
+}

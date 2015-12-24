@@ -1,0 +1,181 @@
+/* 목차 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc {
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    border-top-right-radius: 0.35rem;
+    border-top-left-radius: 0.35rem;
+    padding: 0.6rem 1.2rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle h2 {
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle .toctoggle {
+    display: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul,
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc li {
+    background-color: #fff;
+    list-style-type: none;
+    list-style-image: none;
+    lien-height: 2rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
+    margin: 0 !important;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #e1e8ed;
+    border-top: none;
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul>li ul {
+    margin-left: 1.5rem !important;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctext {
+    color: #373a3c;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a:hover {
+    text-decoration: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a>.tocnumber:hover {
+    text-decoration: underline;
+}
+/* 목차 관련 End */
+
+/* 제목 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main h1,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h2,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h3,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h4,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h5,
+.Liberty .content-wrapper .liberty-content .liberty-content-main h6 {
+    margin-top: 1.5rem;
+    border-bottom: 1px solid #e1e8ed;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+    overflow: hidden;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
+    color: #4188f1;
+}
+/* 제목 관련 End */
+
+/* 본문 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main ul {
+    margin: 0.3em 0 0 1.6em;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox {
+    width: auto;
+    background: #fff;
+    border: none;
+    border-radius: 0.35rem;
+    border-collapse: separate;
+    border-spacing: 0 ;
+    float: none;
+    margin: 0.8rem 0;
+    padding: 0;
+    color: #373a3c;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table caption {
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table>tr>th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table>tr>td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table>*>tr>th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table>*>tr>td {
+    border: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>*,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>* {
+    border-top: 1px solid #e1e8ed !important;
+    border-left: 1px solid #e1e8ed !important;
+    padding: 0.25rem 0.5rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th {
+    background-color: #f5f8fa;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child td {
+    border-top: none;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>*:last-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>*:last-child {
+    border-right: 1px solid #e1e8ed;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:first-child *:first-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child *:first-child {
+    border-top-left-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:first-child *:last-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child *:last-child {
+    border-top-right-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child *:first-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:first-child {
+    border-bottom-left-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:last-child *:last-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:last-child {
+    border-bottom-right-radius: 0.35rem;
+}
+/* 본문 관련 */
+
+/* 스페셜 페이지 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-specialpages-table {
+    margin-top: 0;
+}
+/* 스페셜 페이지 관련 End */
+
+/* 검색결과 관련 */
+.suggestions-results {
+    border-color: #e1e8ed !important;
+    padding: 0.5rem !important;
+    border-top-right-radius: 0.35rem;
+    border-top-left-radius: 0.35rem;
+}
+
+.suggestions-special {
+    border-color: #e1e8ed !important;
+    padding: 0.5rem !important;
+    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem;
+    background-color: #f5f8fa !important;
+}
+/* 검색결과 관련 End */
