@@ -48,6 +48,10 @@ ol, ul, p {
     padding: 0;
 }
 
+p {
+    margin-bottom: 0.8rem;
+}
+
 ol {
     margin: 0 !important;
     margin-left: 2.2rem !important;

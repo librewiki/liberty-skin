@@ -66,7 +66,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main h4,
 .Liberty .content-wrapper .liberty-content .liberty-content-main h5,
 .Liberty .content-wrapper .liberty-content .liberty-content-main h6 {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     border-bottom: 1px dashed #e1e8ed;
     margin-bottom: 0.6rem;
     padding-bottom: 0.6rem;
@@ -81,6 +81,12 @@
 /* 본문 관련 */
 .Liberty .content-wrapper .liberty-content .liberty-content-main ul {
     margin: 0.3em 0 0 1.6em;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours {
+    background-color: #f5f8fa;
+    border-color: #e1e8ed;
+    border-radius: 0.35rem;
 }
 /* 본문 관련 */
 
