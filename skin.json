@@ -40,6 +40,9 @@
 				},
 				"css/wiki-table.css": {
 					"media": "all"
+				},
+				"css/wikiedittor-liberty.css": {
+					"media": "all"
 				}
 			}
 		},

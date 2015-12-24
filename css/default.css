@@ -100,8 +100,15 @@ th[rowspan]:after, td[rowspan]:after {
     height: 100%;
     /*background: #e0e0e0;*/
 }
+
 input[type=search] {
     -webkit-appearance: none; /* iOS 잡다한 css설정 제거 */
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #e1e8ed;
+    padding: 0.5rem;
 }
 /* 태그 수정 End */
 
@@ -463,7 +470,7 @@ input[type=search] {
     background-color: #fff;
     padding: 1rem;
     overflow: hidden;
-    line-height: 1.8rem;
+    line-height: 1.6rem;
 }
 /* 컨텐츠 수정 End */
 
@@ -481,11 +488,6 @@ input[type=search] {
     list-style-image: none;
 }
 
-.Liberty .content-wrapper .liberty-footer ul>li {
-    text-align: left;
-    float: left;
-}
-
 .Liberty .content-wrapper .liberty-footer ul {
     margin-bottom: 0.8rem;
     display: inline-block;
@@ -493,6 +495,8 @@ input[type=search] {
 }
 
 .Liberty .content-wrapper .liberty-footer .footer-places li {
+    text-align: left;
+    float: left;
     margin-right: 0.8rem;
 }
 .Liberty .content-wrapper .liberty-footer .footer-icons li {

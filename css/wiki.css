@@ -27,3 +27,24 @@ a.external:hover, a.external:focus {
     text-decoration: underline;
     transition: 0.3s;
 }
+
+a.external:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    text-align: center;
+    color: #33b733;
+    content: "\f0c1";
+}
+
+.plainlinks a.external {
+    color: #337ab7;
+}
+
+.plainlinks a.external:hover, .plainlinks a.external:focus {
+    color: #23527c;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.plainlinks a.external:before {
+    content: '';
+}

@@ -1,0 +1,121 @@
+/* 버튼 css 적용 */
+html input[type=button], html input[type=submit], button, #mw-editform-cancel {
+    box-shadow: none;
+    display: inline-block;
+    padding: .375rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    /* btn-success */
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+#wpSave {
+    background-color: #0275d8;
+}
+
+#wpSave:hover, #wpSave:active {
+    background-color: #025aa5;
+}
+
+#wpPreview {
+    background-color: #5bc0de;
+}
+
+#wpPreview:hover, #wpPreview:active {
+    background-color: #31b0d5;
+}
+
+#wpDiff {
+    background-color: #f0ad4e;
+}
+
+#wpDiff:hover, #wpDiff:active {
+    background-color: #ec971f;
+}
+
+#mw-editform-cancel {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+#mw-editform-cancel:hover, #mw-editform-cancel:active {
+    background-color: #c9302c;
+}
+
+.editButtons input {
+    margin-right: 0.2rem;
+    margin-left: 0 !important;
+}
+
+.editButtons .cancelLink {
+    margin: 0;
+}
+.editButtons * {
+    margin-top: 0.2rem;
+}
+/* 버튼 css 적용 End */
+.wikiEditor-ui-tabs {
+    border-left: 1px solid #e1e8ed !important;
+    border-top: 1px solid #e1e8ed !important;
+}
+
+.wikiEditor-ui-tabs div {
+    border-right: 1px solid #e1e8ed !important;
+    border-bottom: 1px solid #e1e8ed !important;
+    background-color: #fff !important;
+}
+
+.wikiEditor-ui-tabs div.current {
+    border-bottom: 1px solid #f5f8fa !important;
+    background-color: #f5f8fa !important;
+}
+
+.wikiEditor-ui .wikiEditor-ui-view {
+    border: 1px solid #e1e8ed !important;
+    border-bottom: 0 !important;
+}
+
+.wikiEditor-ui-toolbar {
+    background-image: none !important;
+    background-color: #f5f8fa !important;
+}
+
+.wikiEditor-ui .wikiEditor-ui-top {
+    border-bottom: 1px solid #e1e8ed !important;
+}
+
+#upload-drop {
+    height: auto !important;
+}
+
+.editOptions input.mw-summary {
+    display: block;
+    width: 100% !important;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+}
+
+.editOptions input.mw-summary:focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.editCheckboxes label {
+    margin-right: 0.5rem;
+}

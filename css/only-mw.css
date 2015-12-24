@@ -80,7 +80,7 @@
 
 /* 본문 관련 */
 .Liberty .content-wrapper .liberty-content .liberty-content-main ul {
-    margin: 0.3em 0 0 1.6em;
+    margin: 0.5rem 0 0.5rem 1.6rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours {
@@ -120,3 +120,11 @@
     margin: auto;
 }
 /* 섬네일 관련 End */
+
+/* 편집 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .editOptions {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    padding: 1rem;
+}
+/* 편집 관련 End */

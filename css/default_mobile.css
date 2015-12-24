@@ -55,6 +55,10 @@
         padding: 0.5rem;
     }
 
+    .Liberty .content-wrapper .liberty-content .liberty-content-main #upload-div {
+        display: none;
+    }
+
     .Liberty .content-wrapper .liberty-footer {
         padding: 0.5rem;
     }
@@ -83,6 +87,13 @@
 
     .Liberty .nav-wrapper .navbar .navbar-login .hide-logout {
         display: none;
+    }
+
+    .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox,
+    .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable {
+        float: none !important;
+        width: 100% !important;
+        margin: auto !important;
     }
 }
 
