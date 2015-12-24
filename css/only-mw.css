@@ -126,6 +126,21 @@
     padding: 0.25rem 0.5rem;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:first-child>* {
+    border-top: none !important;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*:first-child {
+    border-left: none !important;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*>th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*>td {
+    border-top: 1px solid #e1e8ed !important;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th {
     background-color: #f5f8fa;
@@ -139,9 +154,18 @@
     border-bottom: 1px solid #e1e8ed;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child td {
+    border: none;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>*:last-child,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>*:last-child {
     border-right: 1px solid #e1e8ed;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>*:last-child {
+    border: none;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr:first-child *:first-child,
@@ -163,6 +187,8 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child *:last-child {
     border-bottom-right-radius: 0.35rem;
 }
+
+
 /* 본문 관련 */
 
 /* 스페셜 페이지 관련 */
