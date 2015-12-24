@@ -4,7 +4,6 @@
 /* 태그 수정 */
 * {
     outline: none;
-    -webkit-appearance: none; /* iOS 잡다한 css설정 제거 */
 }
 
 html {
@@ -96,6 +95,9 @@ th[rowspan]:after, td[rowspan]:after {
     width: 1px;
     height: 100%;
     /*background: #e0e0e0;*/
+}
+input[type=search] {
+    -webkit-appearance: none; /* iOS 잡다한 css설정 제거 */
 }
 /* 태그 수정 End */
 
@@ -456,6 +458,8 @@ th[rowspan]:after, td[rowspan]:after {
     border-right: 1px solid #e1e8ed;
     background-color: #fff;
     padding: 1rem;
+    overflow: hidden;
+    line-height: 1.8rem;
 }
 /* 컨텐츠 수정 End */
 
@@ -463,8 +467,9 @@ th[rowspan]:after, td[rowspan]:after {
 .Liberty .content-wrapper .liberty-footer {
     border: 1px solid #e1e8ed;
     border-radius: 0 0 0.35rem 0.35rem;
-    background-color: #fff;
+    background-color: #f5f8fa;
     padding: 1rem;
+    clear: both;
 }
 
 .Liberty .content-wrapper .liberty-footer ul {

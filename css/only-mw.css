@@ -67,10 +67,10 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main h5,
 .Liberty .content-wrapper .liberty-content .liberty-content-main h6 {
     margin-top: 1.5rem;
-    border-bottom: 1px solid #e1e8ed;
+    border-bottom: 1px dashed #e1e8ed;
     margin-bottom: 0.6rem;
     padding-bottom: 0.6rem;
-    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
@@ -97,11 +97,19 @@
     color: #373a3c;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox {
+    float: right;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main table caption {
     font-size: 1.2rem;
     padding: 0.2rem 0;
     font-weight: bold;
     text-align: center;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.jquery-tablesorter th.headerSort {
+    padding-right: 1.5rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table>tr>th,
@@ -179,3 +187,13 @@
     background-color: #f5f8fa !important;
 }
 /* 검색결과 관련 End */
+
+/* 섬네일 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .center {
+    margin: auto;
+    text-align: center;
+}
+.Liberty .content-wrapper .liberty-content .liberty-content-main .thumbinner {
+    margin: auto;
+}
+/* 섬네일 관련 End */

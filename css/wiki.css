@@ -17,3 +17,13 @@ a.new:hover, a.new:focus {
     text-decoration: underline;
     transition: 0.3s;
 }
+
+a.external {
+    color: #33b733;
+}
+
+a.external:hover, a.external:focus {
+    color: #2ca02c;
+    text-decoration: underline;
+    transition: 0.3s;
+}

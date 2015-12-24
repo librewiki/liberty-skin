@@ -91,7 +91,7 @@ class LibertyTemplate extends BaseTemplate {
         <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
             <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
             <div class="input-group">
-                <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput", "type" => "text") ); ?>
+                <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput") ); ?>
                 <span class="input-group-btn">
                     <button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
                     <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
