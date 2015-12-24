@@ -58,7 +58,7 @@
 				"js/login_request.js",
 				"js/live_Recents.js",
 				"js/index_botton.js",
-				"js/toc_scroll.js"
+				"js/delay_scrolling.js"
 			],
 			"position": "bottom"
 		}

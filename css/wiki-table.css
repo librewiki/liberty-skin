@@ -121,6 +121,18 @@
     text-align: center;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th[rowspan]:first-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>td[rowspan]:first-child {
+    border-right: 0;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th[rowspan]:first-child + th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>td[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>td[rowspan]:first-child + th {
+    border-left: 1px solid #e1e8ed;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox {
     border-collapse: separate;
     border-radius: 0.35rem;
@@ -191,6 +203,23 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>th:only-child,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>td:only-child{
     border-radius: 0.35rem 0.35rem 0.35rem 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox th {
+    background-color: #f5f8fa;
+    text-align: center;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child {
+    border-right: 0;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child + th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child + th {
+    border-left: 1px solid #e1e8ed;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr>th,
