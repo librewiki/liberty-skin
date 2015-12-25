@@ -110,6 +110,10 @@ textarea {
     border: 1px solid #e1e8ed;
     padding: 0.5rem;
 }
+
+hr {
+    border-top: 1px solid #e1e8ed;
+}
 /* 태그 수정 End */
 
 /* 백그라운드 색 지정 */
@@ -499,8 +503,14 @@ textarea {
     float: left;
     margin-right: 0.8rem;
 }
+
+.Liberty .content-wrapper .liberty-footer .footer-icons {
+    margin-bottom: 0;
+}
+
 .Liberty .content-wrapper .liberty-footer .footer-icons li {
     margin-right: 0.8rem;
+    float: left;
 }
 /* 컨텐츠 하단 수정 End */
 

@@ -164,3 +164,8 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
 .templatesUsed {
     margin-top: 0.8rem;
 }
+
+td.diff-context {
+    background-color: #f5f8fa !important;
+    border-color: #e1e8ed !important;
+}
