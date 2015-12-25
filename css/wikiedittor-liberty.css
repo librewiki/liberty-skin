@@ -15,7 +15,7 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     border-radius: .25rem;
     /* btn-success */
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #0275d8;
 }
 
 #wpSave {
@@ -98,6 +98,12 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     height: auto !important;
 }
 
+.editOptions {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    padding: 1rem;
+}
+
 .editOptions input.mw-summary {
     display: block;
     width: 100% !important;
@@ -118,4 +124,43 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
 
 .editCheckboxes label {
     margin-right: 0.5rem;
+}
+
+.mw-charinsert-buttons {
+    margin-top: 1rem !important;
+    border: 1px solid #e1e8ed !important;
+    padding: 0.8rem !important;
+}
+
+.mw-charinsert-buttons select {
+    display: block;
+    width: 100% !important;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    margin-bottom: 0.5rem !important;
+}
+
+.mw-charinsert-buttons select:focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.mw-charinsert-buttons input {
+    padding: 0.2rem 0.5rem !important;
+    margin-top: 0.3rem !important;
+}
+
+.mw-charinsert-buttons input:hover,
+.mw-charinsert-buttons input:active {
+    background-color: #025aa5;
+}
+
+.templatesUsed {
+    margin-top: 0.8rem;
 }

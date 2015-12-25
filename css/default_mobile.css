@@ -59,6 +59,11 @@
         display: none;
     }
 
+    .Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
+        width: 80%;
+        height: 30rem;
+    }
+
     .Liberty .content-wrapper .liberty-footer {
         padding: 0.5rem;
     }
@@ -70,8 +75,14 @@
         text-align: center;
         margin: 0 0.25rem;
     }
+
     .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link .hide-title {
         display: none;
+    }
+
+    .Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
+        width: 90%;
+        height: 20rem;
     }
 }
 
@@ -94,6 +105,11 @@
         float: none !important;
         width: 100% !important;
         margin: auto !important;
+    }
+
+    .Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
+        width: 100%;
+        height: 15rem;
     }
 }
 
