@@ -71,6 +71,7 @@
     margin-bottom: 0.6rem;
     padding-bottom: 0.6rem;
     overflow-wrap: break-word;
+    overflow: hidden;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {

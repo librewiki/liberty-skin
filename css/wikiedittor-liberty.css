@@ -15,7 +15,7 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     border-radius: .25rem;
     /* btn-success */
     color: #fff;
-    background-color: #0275d8;
+    background-color: #5cb85c;
 }
 
 #wpSave {
@@ -158,7 +158,7 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
 
 .mw-charinsert-buttons input:hover,
 .mw-charinsert-buttons input:active {
-    background-color: #025aa5;
+    background-color: #449d44;
 }
 
 .templatesUsed {
