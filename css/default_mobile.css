@@ -55,6 +55,12 @@
         padding: 0.5rem;
     }
 
+    .Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {
+        margin-top: -0.25rem;
+        padding: 0.5rem;
+        padding-top: 0;
+    }
+
     .Liberty .content-wrapper .liberty-content .liberty-content-main {
         padding: 0.5rem;
     }

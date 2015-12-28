@@ -89,6 +89,24 @@
     border-color: #e1e8ed;
     border-radius: 0.35rem;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks {
+    border: 1px solid #e1e8ed;
+    padding: 0.4rem;
+    padding-left: 1rem;
+    box-shadow: 0.15rem 0.15rem 0 0 #cfdae2;
+    margin-bottom: 0.8rem;
+    border-radius: 0.35rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul {
+    padding: 0;
+    margin-left: 0.5rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul>li {
+    margin: 0;
+}
 /* 본문 관련 */
 
 /* 스페셜 페이지 관련 */

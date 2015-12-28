@@ -474,6 +474,12 @@ hr {
     padding: 1rem;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-header .contentSub {
+    margin-top: -0.5rem;
+    padding: 1rem;
+    padding-top: 0;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-header .title>h1 {
     color: #000;
     font-weight: bold;

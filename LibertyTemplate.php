@@ -32,8 +32,14 @@ class LibertyTemplate extends BaseTemplate {
                             <?php $this->html( 'title' ) ?>
                         </h1>
                     </div>
+                    <div class="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
+                        <?php $this->html( 'subtitle' ) ?>
+                    </div>
                 </div>
                 <div class="liberty-content-main">
+                    <?php if ( $this->data['catlinks'] ) {
+                        $this->html( 'catlinks' );
+                    } ?>
                     <?php $this->html( 'bodycontent' ) ?>
                 </div>
                 <div class="liberty-footer">
