@@ -21,3 +21,17 @@ $('#login-modal').on('shown.bs.modal', function () {
     $('#wpName1').focus();
 })
 /* 모달 포커스잡기 End */
+
+/* 광고 로드 */
+var width = $(window).width();
+if (width < 1024) {
+    $(document).ready(function() {
+        var right_ads = $(".right-ads").html();
+        $(".bottom-ads").html(right_ads);
+        $(".right-ads").remove();
+        $('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});
+    });
+} else {
+    $('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});
+}
+/* 광고 로드 End */

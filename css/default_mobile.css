@@ -62,6 +62,11 @@
         padding-top: 0;
     }
 
+    .Liberty .content-wrapper .liberty-content .liberty-content-header .header-ads {
+        margin: 0.5rem;
+        margin-bottom: 0;
+    }
+
     .Liberty .content-wrapper .liberty-content .liberty-content-main {
         padding: 0.5rem;
     }
@@ -77,6 +82,13 @@
 
     .Liberty .content-wrapper .liberty-content .liberty-content-main .mobile-table-wrapper {
         overflow: scroll;
+    }
+
+    .Liberty .content-wrapper .liberty-content .bottom-ads {
+        padding: 0.5rem;
+        background-color: #fff;
+        border-left: 1px solid #e1e8ed;
+        border-right: 1px solid #e1e8ed;
     }
 
     .Liberty .content-wrapper .liberty-footer {

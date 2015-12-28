@@ -17,7 +17,7 @@ class LibertyTemplate extends BaseTemplate {
                 </div>
                 <div class="right-ads">
                     <ins class="adsbygoogle"
-                        style="display:block;max-width: 15rem;"
+                        style="display:block; min-width: 15rem; width: 100%;"
                         data-ad-client="ca-pub-2664061841343191"
                         data-ad-slot="2751059465"
                         data-ad-format="auto">
@@ -69,11 +69,6 @@ class LibertyTemplate extends BaseTemplate {
 		<?php
 		$this->printTrail();
 		$this->html('debughtml');
-		?>
-		<script>
-            $('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});
-        </script>
-		<?php
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
 		echo "\n";
