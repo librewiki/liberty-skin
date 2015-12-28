@@ -40,6 +40,10 @@
         margin-right: auto;
     }
 
+    .Liberty .content-wrapper .liberty-content .liberty-content-header .liberty-notice {
+        margin: 0.5rem;
+    }
+
     .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools {
         float: none;
         text-align: right;

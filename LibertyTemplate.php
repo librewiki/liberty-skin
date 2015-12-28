@@ -18,6 +18,14 @@ class LibertyTemplate extends BaseTemplate {
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
+                    <?php if ( $this->data['sitenotice'] ) { ?>
+                        <div class="alert alert-dismissible fade in alert-warning liberty-notice" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <?php $this->html( 'sitenotice' ) ?>
+                        </div>
+                    <?php } ?>
                     <?php $this->contents_toolbox(); ?>
                     <div class="title">
                         <h1>
@@ -37,6 +45,8 @@ class LibertyTemplate extends BaseTemplate {
 		<?php
 		$this->printTrail();
 		$this->html('debughtml');
+		?>
+		<?php
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
 		echo "\n";

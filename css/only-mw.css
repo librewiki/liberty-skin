@@ -143,3 +143,15 @@
     padding: 0.5rem 0;
 }
 /* 최근바뀜 관련(메뉴) End */
+
+/* 이미지 관련 */
+.Liberty .content-wrapper .liberty-content .liberty-content-main .tright {
+    margin-left: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .thumb .thumbcaption {
+    padding-top: 0.4rem;
+    text-align: center;
+}
+/* 이미지 관련 End */

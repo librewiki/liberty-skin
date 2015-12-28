@@ -430,6 +430,18 @@ hr {
     background-color: #f5f8fa;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-header .liberty-notice {
+    margin: 1rem;
+    display: none;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .liberty-notice ul {
+    list-style-image: none;
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools {
     float: right;
     padding-right: 1rem;
