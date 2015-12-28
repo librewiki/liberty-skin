@@ -154,4 +154,8 @@
     padding-top: 0.4rem;
     text-align: center;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .thumb img {
+    box-shadow: 0.25rem 0.25rem 0 0 #e1e8ed;
+}
 /* 이미지 관련 End */
