@@ -4,6 +4,11 @@
 /* 태그 수정 */
 * {
     outline: none;
+
+}
+
+input:hover, button:hover, select:hover {
+    transition: 0.3s;
 }
 
 html {
@@ -148,7 +153,9 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     color: #fff;
     background-color: #5cb85c;
 }
-
+html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
+    background-color: #449d44;
+}
 label {
     vertical-align: middle;
     word-break: keep-all;
@@ -456,6 +463,11 @@ label {
     font-weight: 400;
 }
 
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover {
+    background-color: #2979f0;
+    transition: 0.3s;
+}
+
 .Liberty .content-wrapper .liberty-sidebar .right-ads {
     position: absolute;
     top: 24.6rem;
@@ -714,13 +726,16 @@ label {
 }
 
 .btn {
-    border-color: #e1e8ed;
     box-shadow: none;
     border-radius: 0.35rem;
 }
 
 .btn:hover {
     transition: 0.3s;
+}
+
+.btn:active, .btn:focus {
+    outline: 0;
 }
 
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {

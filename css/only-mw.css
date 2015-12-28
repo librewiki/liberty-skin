@@ -265,3 +265,26 @@
     background-color: #fff;
 }
 /* 환경설정 End */
+
+/* 좌측 목록 */
+#fixed-toc ul {
+    list-style-image: none;
+    list-style-type: none;
+}
+
+#fixed-toc .toctext {
+    color: #373a3c;
+}
+
+#fixed-toc #toctitle h2 {
+    display: inline-block;
+}
+
+#fixed-toc #toctitle .toctoggle {
+    display: inline-block;
+}
+
+#fixed-toc .toc ul ul, #fixed-toc ul ul, #fixed-toc .toc ul ul, #fixed-toc ul ul {
+    margin-left: 2rem;
+}
+/* 좌측 목록 End */

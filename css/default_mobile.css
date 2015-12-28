@@ -81,7 +81,7 @@
     }
 
     .Liberty .content-wrapper .liberty-content .liberty-content-main .mobile-table-wrapper {
-        overflow: scroll;
+        overflow-x: auto;
     }
 
     .Liberty .content-wrapper .liberty-content .bottom-ads {
