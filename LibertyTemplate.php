@@ -15,6 +15,14 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="liberty-right-fixed">
                     <?php $this->live_recent(); ?>
                 </div>
+                <div class="right-ads">
+                    <ins class="adsbygoogle"
+                        style="display:block;max-width: 15rem;"
+                        data-ad-client="ca-pub-2664061841343191"
+                        data-ad-slot="2751059465"
+                        data-ad-format="auto">
+                    </ins>
+                </div>
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
@@ -26,6 +34,14 @@ class LibertyTemplate extends BaseTemplate {
                             <?php $this->html( 'sitenotice' ) ?>
                         </div>
                     <?php } ?>
+                    <div class="header-ads">
+                        <ins class="adsbygoogle"
+                            style="display:block; min-width:20rem; width:100%;"
+                            data-ad-client="ca-pub-2664061841343191"
+                            data-ad-slot="6502738263"
+                            data-ad-format="auto">
+                        </ins>
+                    </div>
                     <?php $this->contents_toolbox(); ?>
                     <div class="title">
                         <h1>
@@ -42,6 +58,8 @@ class LibertyTemplate extends BaseTemplate {
                     } ?>
                     <?php $this->html( 'bodycontent' ) ?>
                 </div>
+                <div class="bottom-ads">
+                </div>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
                 </div>
@@ -52,6 +70,9 @@ class LibertyTemplate extends BaseTemplate {
 		$this->printTrail();
 		$this->html('debughtml');
 		?>
+		<script>
+            $('.adsbygoogle').each(function(){(adsbygoogle = window.adsbygoogle || []).push({});});
+        </script>
 		<?php
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
@@ -341,100 +362,4 @@ class LibertyTemplate extends BaseTemplate {
             <?php
         }
     }
-	/*************************************************************************************************/
-	function toolbox() {
-		?>
-		<div class="portlet" id="p-tb" role="navigation">
-			<h3><?php $this->msg( 'toolbox' ) ?></h3>
-
-			<div class="pBody">
-				<ul>
-					<?php
-					foreach ( $this->getToolbox() as $key => $tbitem ) {
-						?>
-						<?php echo $this->makeListItem( $key, $tbitem ); ?>
-
-					<?php
-					}
-					wfRunHooks( 'LibertyTemplateToolboxEnd', array( &$this ) );
-					wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this, true ) );
-					?>
-				</ul>
-				<?php $this->renderAfterPortlet( 'tb' ); ?>
-			</div>
-		</div>
-	<?php
-	}
-
-	/*************************************************************************************************/
-	function languageBox() {
-		if ( $this->data['language_urls'] !== false ) {
-			?>
-			<div id="p-lang" class="portlet" role="navigation">
-				<h3<?php $this->html( 'userlangattributes' ) ?>><?php $this->msg( 'otherlanguages' ) ?></h3>
-
-				<div class="pBody">
-					<ul>
-						<?php foreach ( $this->data['language_urls'] as $key => $langlink ) { ?>
-							<?php echo $this->makeListItem( $key, $langlink ); ?>
-
-						<?php
-}
-						?>
-					</ul>
-
-					<?php $this->renderAfterPortlet( 'lang' ); ?>
-				</div>
-			</div>
-		<?php
-		}
-	}
-
-	/*************************************************************************************************/
-	/**
-	 * @param string $bar
-	 * @param array|string $cont
-	 */
-	function customBox( $bar, $cont ) {
-		$portletAttribs = array(
-			'class' => 'generated-sidebar portlet',
-			'id' => Sanitizer::escapeId( "p-$bar" ),
-			'role' => 'navigation'
-		);
-
-		$tooltip = Linker::titleAttrib( "p-$bar" );
-		if ( $tooltip !== false ) {
-			$portletAttribs['title'] = $tooltip;
-		}
-		echo '	' . Html::openElement( 'div', $portletAttribs );
-		$msgObj = wfMessage( $bar );
-		?>
-
-		<h3><?php echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $bar ); ?></h3>
-		<div class='pBody'>
-			<?php
-			if ( is_array( $cont ) ) {
-				?>
-				<ul>
-					<?php
-					foreach ( $cont as $key => $val ) {
-						?>
-						<?php echo $this->makeListItem( $key, $val ); ?>
-
-					<?php
-					}
-					?>
-				</ul>
-			<?php
-			} else {
-				# allow raw HTML block to be defined by extensions
-				print $cont;
-			}
-
-			$this->renderAfterPortlet( $bar );
-			?>
-		</div>
-		</div>
-	<?php
-	}
 } // end of class

@@ -114,6 +114,45 @@ textarea {
 hr {
     border-top: 1px solid #e1e8ed;
 }
+
+select, input:not([type=button]):not([type=checkbox]):not([type=submit]) {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+}
+
+select:focus, input:not([type=button]):not([type=checkbox]):not([type=submit]):focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+html input[type=button], html input[type=submit], button, #mw-editform-cancel {
+    box-shadow: none;
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    /* btn-success */
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+label {
+    vertical-align: middle;
+    word-break: keep-all;
+}
 /* 태그 수정 End */
 
 /* 백그라운드 색 지정 */
@@ -268,6 +307,7 @@ hr {
 .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu {
     top: 120%;
     right: -1rem;
+    z-index: 1002;
 }
 
 .Liberty .nav-wrapper .navbar .navbar-login .view-logout {
@@ -302,10 +342,12 @@ hr {
 .Liberty .content-wrapper .liberty-sidebar {
     float: right;
     width: 15rem;
+    position: relative;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed {
     position: fixed;
+    z-index: 999;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent {
@@ -412,7 +454,13 @@ hr {
     font-size: 0.8rem;
     font-weight: 400;
 }
-/* 오른쪽 메뉴 수정 End */
+
+.Liberty .content-wrapper .liberty-sidebar .right-ads {
+    position: absolute;
+    top: 24.6rem;
+    width: 15rem;
+}
+    /* 오른쪽 메뉴 수정 End */
 
 /* 컨텐츠 수정 */
 .Liberty .content-wrapper {
@@ -422,6 +470,7 @@ hr {
 .Liberty .content-wrapper .liberty-content {
     margin-right: 16rem;
     padding: 0;
+    padding-bottom: 1rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-header {
@@ -483,6 +532,11 @@ hr {
 .Liberty .content-wrapper .liberty-content .liberty-content-header .title>h1 {
     color: #000;
     font-weight: bold;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-header .header-ads {
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main {

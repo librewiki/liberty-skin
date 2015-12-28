@@ -1,23 +1,4 @@
 /* 버튼 css 적용 */
-html input[type=button], html input[type=submit], button, #mw-editform-cancel {
-    box-shadow: none;
-    display: inline-block;
-    padding: .375rem 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.2;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    /* btn-success */
-    color: #fff;
-    background-color: #5cb85c;
-}
-
 #wpSave {
     background-color: #0275d8;
 }
@@ -102,6 +83,8 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     background-color: #f5f8fa;
     border: 1px solid #e1e8ed;
     padding: 1rem;
+    border-bottom-left-radius: 0.35rem;
+    border-bottom-right-radius: 0.35rem;
 }
 
 .editOptions input.mw-summary {
@@ -135,15 +118,6 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
 .mw-charinsert-buttons select {
     display: block;
     width: 100% !important;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #55595c;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 0.35rem;
-    margin-bottom: 0.5rem !important;
 }
 
 .mw-charinsert-buttons select:focus {

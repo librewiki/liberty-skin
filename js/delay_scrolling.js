@@ -77,4 +77,18 @@ $(document).ready(function() {
         }
     });
     /* 주석 클릭시 처리 End */
+
+    /* 환경설정 탭 클릭시 처리 */
+    $("#preftoc li > a").click(function(){
+        if ($(this).attr('href') [0] == '#') {
+            var id = $(this).attr('href') + "";
+            if(id.indexOf(".") != -1) {
+                id = document.getElementById(id.replace("#",""));
+            }
+            $('html,body').animate({
+                scrollTop: (0)
+            }, 350);
+        }
+    });
+    /* 환경설정 탭 클릭시 처리 End */
 });
