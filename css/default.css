@@ -561,6 +561,41 @@ label {
     overflow: hidden;
     line-height: 1.6rem;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons {
+    float: right;
+    margin-bottom: 1rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>div {
+    float: left;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.45rem;
+    margin-left: 0.25rem;
+    border-radius: 0.35rem;
+    text-align: center;
+    cursor: pointer;
+    background: #ccc;
+    color: #fff;
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.facebook {
+    background-color: #5d82d1;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.twitter {
+    background-color: #40bff5;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.google {
+    background-color: #eb5e4c;
+    display: none;
+}
 /* 컨텐츠 수정 End */
 
 /* 컨텐츠 하단 수정 */

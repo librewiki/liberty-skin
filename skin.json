@@ -64,6 +64,7 @@
 				"js/index_botton.js",
 				"js/delay_scrolling.js",
 				"js/notice_view.js",
+				"js/sns_button.js",
 				"js/layout.js"
 			],
 			"position": "bottom"

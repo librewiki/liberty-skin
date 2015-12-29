@@ -97,6 +97,12 @@
     box-shadow: 0.15rem 0.15rem 0 0 #cfdae2;
     margin-bottom: 0.8rem;
     border-radius: 0.35rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks-allhidden {
+    display: none;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul {
