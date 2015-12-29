@@ -59,9 +59,9 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="liberty-content-main">
                     <?php if ( $title->getNamespace() != NS_SPECIAL ) { ?>
                         <div class="social-buttons">
-                            <div class="facebook" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
-                            <div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="<?php $this->html( 'title' ) ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
                             <div class="google" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="구글플러스"><div><i class="fa fa-google-plus"></i></div></div>
+                            <div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php $this->html( 'title' ) ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+                            <div class="facebook" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
                         </div>
                     <?php } ?>
                     <?php if ( $this->data['catlinks'] ) {
