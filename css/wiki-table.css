@@ -1,10 +1,13 @@
 /* 이 거지같은 테이블은 뭐죠 시발! */
 /* 도움주신분 : well-made-plush(거즌 다작성해줌 ㅠ.ㅠ) */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .liberty-table-wrapper {
-    display: block;
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .table-right {
+    float: right;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable,
@@ -32,6 +35,10 @@
     padding: 0.2rem 0;
     font-weight: bold;
     text-align: center;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-collapsed caption {
+    display: inline-block;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.jquery-tablesorter th.headerSort {

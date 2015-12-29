@@ -41,6 +41,22 @@ if($("#toc").html() && width > 1649) {
                 window.damezuma.doc = null;
                 return false;
             });
+
+            /* 왼쪽목차 클릭시 처리 */
+            var nav_height = $('.nav-wrapper').height();
+            $("#fixed-toc ul li > a").click(function(){
+                if ($(this).attr('href') [0] == '#') {
+                    var id = $(this).attr('href') + "";
+                    if(id.indexOf(".") != -1) {
+                        id = document.getElementById(id.replace("#",""));
+                    }
+                    $('html,body').animate({
+                        scrollTop: ($(id).offset().top - nav_height - 10)
+                    }, 350);
+                    return false;
+                }
+            });
+            /* 왼쪽목차 클릭시 처리 End */
         }
 
 

@@ -202,9 +202,9 @@ function ShowAjaxRecentList(parent)
 					text += "[New]";
 				}
 				text += item.title;
-				if(text.length > 12)
+				if(text.length > 13)
 				{
-					text = text.substr(0,12);
+					text = text.substr(0,13);
 					text +="...";
 				}
 				text =text.replace("[New]","<span class='new'>[New] </span>");

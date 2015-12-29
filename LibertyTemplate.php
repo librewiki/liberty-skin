@@ -151,7 +151,7 @@ class LibertyTemplate extends BaseTemplate {
                         <img class="profile-img" src="//secure.gravatar.com/avatar/<?=$email?>" />
                     </a>
                     <div class="dropdown-menu dropdown-menu-right login-dropdown-menu" aria-labelledby="login-menu">
-                        <?=Linker::linkKnown( Title::makeTitle( NS_USER, $wgUser->getName() ), $wgUser->getName(), array( 'class' => 'dropdown-item', 'title' => '내 사용자 문서. [alt+shift+u]', 'accesskey' => 'u' ) ); ?>
+                        <?=Linker::linkKnown( Title::makeTitle( NS_USER, $wgUser->getName() ), $wgUser->getName(), array( 'id' => 'pt-userpage', 'class' => 'dropdown-item', 'title' => '내 사용자 문서. [alt+shift+u]', 'accesskey' => 'u' ) ); ?>
                         <div class="dropdown-divider"></div>
                         <?=Linker::linkKnown( SpecialPage::getTitleFor( 'notifications', null ), '알림', array( 'class' => 'dropdown-item', 'title' => '알림 목록을 불러옵니다.' )); ?>
                         <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ), '내 기여 목록', array( 'class' => 'dropdown-item', 'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]', 'accesskey' => 'y' ) ); ?>
@@ -297,7 +297,6 @@ class LibertyTemplate extends BaseTemplate {
                             if ( $title->quickUserCan( 'protect', $user ) ) { ?>
                                 <div class="dropdown-divider"></div>
                                 <?=Linker::linkKnown( $title, '보호', array( 'class' => 'dropdown-item', 'title' => '문서를 보호합니다. [alt+shift+s]', 'accesskey' => 's' ), array( 'action' => 'protect' ) ); ?>
-                                <a class="dropdown-item" href="#">보호</a>
                             <?php } ?>
                             <?php if ( $title->quickUserCan( 'delete', $user ) ) { ?>
                                 <div class="dropdown-divider"></div>

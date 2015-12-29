@@ -141,6 +141,12 @@
     border-bottom-left-radius: 0.35rem;
     background-color: #f5f8fa !important;
 }
+
+.suggestions-result-current {
+    background-color: #4c59a6 !important;
+    color: #373a3c;
+    transition: 0.3s;
+}
 /* 검색결과 관련 End */
 
 /* 섬네일 관련 */

@@ -49,8 +49,9 @@
 
 		"skins.liberty.bootstrap": {
 			"scripts": [
-				"js/lib/jquery.min.js",
+				"js/lib/jquery.ba-throttle-debounce.js",
 				"js/lib/jquery.cookie.js",
+				"js/lib/jquery.min.js",
 				"js/lib/bootstrap.min.js"
 			],
 			"position": "bottom"
@@ -58,12 +59,12 @@
 
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/layout.js",
 				"js/login_request.js",
 				"js/live_Recents.js",
 				"js/index_botton.js",
 				"js/delay_scrolling.js",
-				"js/notice_view.js"
+				"js/notice_view.js",
+				"js/layout.js"
 			],
 			"position": "bottom"
 		}

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
     /* 주소에 앵커 있을 경우 처리 */
     var hash = window.location.hash;
     var nav_height = $('.nav-wrapper').height();
@@ -14,7 +14,7 @@ $(document).ready(function() {
     /* 주소에 앵커 있을 경우 처리 End */
 
     /* 목차 클릭시 처리 */
-    $("#toc ul li > a").click(function(){
+    $(".toc ul li > a").click(function(){
         if ($(this).attr('href') [0] == '#') {
             var id = $(this).attr('href') + "";
             if(id.indexOf(".") != -1) {
