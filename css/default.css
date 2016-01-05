@@ -62,6 +62,7 @@ ol {
     margin: 0 !important;
     margin-left: 2.2rem !important;
     margin-right: 1rem !important;
+    list-style-image: none;
 }
 
 pre {
