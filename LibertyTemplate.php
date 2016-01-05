@@ -3,7 +3,8 @@ class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
 		global $wgRequest;
-
+        $request = $this->getSkin()->getRequest();
+        $action = $request->getVal( 'action', 'view' );
 		$title = $this->getSkin()->getTitle();
 		$curid = $this->getSkin()->getTitle()->getArticleID();
 
@@ -57,7 +58,7 @@ class LibertyTemplate extends BaseTemplate {
                     </div>
                 </div>
                 <div class="liberty-content-main">
-                    <?php if ( $title->getNamespace() != NS_SPECIAL ) { ?>
+                    <?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
                         <div class="social-buttons">
                             <div class="google" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="구글플러스"><div><i class="fa fa-google-plus"></i></div></div>
                             <div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php $this->html( 'title' ) ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>

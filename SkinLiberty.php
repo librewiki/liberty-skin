@@ -8,6 +8,9 @@ class SkinLiberty extends SkinTemplate {
     public function initPage( OutputPage $out ) {
         parent::initPage( $out );
         $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
+        $out->addMeta( 'description', 'librewiki' );
+        $out->addMeta( 'keywords', 'wiki,librewiki,리브레위키,리브레 위키,' . $this->getSkin()->getTitle() );
+        $out->addMeta( 'description', 'librewiki' );
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
         ) );
