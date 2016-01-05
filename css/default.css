@@ -154,12 +154,18 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
     color: #fff;
     background-color: #5cb85c;
 }
+
 html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
     background-color: #449d44;
 }
+
 label {
     vertical-align: middle;
     word-break: keep-all;
+}
+
+del, s, strike {
+    color: gray;
 }
 /* 태그 수정 End */
 
