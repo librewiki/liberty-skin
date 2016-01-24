@@ -23,6 +23,9 @@
 				"css/font/Noto Sans KR.css": {
 					"media": "all"
 				},
+				"css/font/KoPub.css": {
+					"media": "all"
+				},
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},
