@@ -23,8 +23,8 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="right-ads">
                     <ins class="adsbygoogle"
                         style="display:block; min-width: 15rem; width: 100%;"
-                        data-ad-client="ca-pub-2664061841343191"
-                        data-ad-slot="2751059465"
+                        data-ad-client="ca-pub-9526107750460253"
+                        data-ad-slot="6581447128"
                         data-ad-format="auto">
                     </ins>
                 </div>
@@ -42,8 +42,8 @@ class LibertyTemplate extends BaseTemplate {
                     <div class="header-ads">
                         <ins class="adsbygoogle"
                             style="display:block; min-width:20rem; width:100%;"
-                            data-ad-client="ca-pub-2664061841343191"
-                            data-ad-slot="6502738263"
+                            data-ad-client="ca-pub-9526107750460253"
+                            data-ad-slot="3627980722"
                             data-ad-format="auto">
                         </ins>
                     </div>
