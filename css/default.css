@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* 메인 색깔 #4188f1 */
 /* 테두리 색깔 #e1e8ed */
 
@@ -21,7 +22,7 @@ body {
 }
 
 body, h1, h2, h3, h4, h5, h6 {
-    font-family: "KoPubDotum M", "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-family: "Nanum Gothic", "KoPubDotum M", "Noto Sans Korean", "Noto Sans", "Malgun Gothic", "맑은 고딕", sans-serif;
     margin: 0;
 }
 
@@ -453,12 +454,12 @@ del, s, strike {
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item {
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     color: #373a3c;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item .new {
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     color: #b73333;
 }
 
