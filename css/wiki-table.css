@@ -4,6 +4,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
+    display: inline;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .table-right {

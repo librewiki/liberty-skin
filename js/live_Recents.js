@@ -143,7 +143,7 @@ URLDecode : function (string) {
         };
 
 
-var _rcnamespace = "0|4|10|12|14|1600";
+var _rcnamespace = "0|4|10|12|14|1600|1602";
 //윈도우 사이즈에 따라 변경을 할지 않할 지 체크한다.
 var isAllowRequestList = true;
 //매개 변수 parent는 ul태그여야 합니다
@@ -255,7 +255,7 @@ jQuery( function ( $ ) {
     $("#liberty-recent-tab2").click(function(e){
         $(this).addClass('active');
         $("#liberty-recent-tab1").removeClass('active');
-        _rcnamespace = "1|3|5|7|9|11|13|15|2600|1601";
+        _rcnamespace = "1|3|5|7|9|11|13|15|2600|1601|1063";
         ShowAjaxRecentList($("#live-recent-list"));
     });
 } );

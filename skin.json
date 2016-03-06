@@ -47,7 +47,8 @@
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
 				}
-			}
+			},
+			"position": "bottom"
 		},
 
 		"skins.liberty.bootstrap": {
