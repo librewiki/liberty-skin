@@ -106,6 +106,9 @@ class LibertyTemplate extends BaseTemplate {
             <li class="nav-item">
                 <a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://issue.librewiki.net/"><span class="fa fa-anchor"></span><span class="hide-title">이슈트래커</span></a>
+            </li>
             <li class="nav-item dropdown">
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
                 <div class="dropdown-menu" role="menu">
@@ -120,6 +123,7 @@ class LibertyTemplate extends BaseTemplate {
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법', array( 'class' => 'dropdown-item' ) ); ?>
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법', array( 'class' => 'dropdown-item' ) ); ?>
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그', array( 'class' => 'dropdown-item' ) ); ?>
+                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '이슈 트래커' ), '이슈 트래커', array( 'class' => 'dropdown-item' ) ); ?>
                 </div>
             </li>
         </ul>
