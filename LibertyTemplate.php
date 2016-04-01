@@ -123,7 +123,7 @@ class LibertyTemplate extends BaseTemplate {
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법', array( 'class' => 'dropdown-item' ) ); ?>
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법', array( 'class' => 'dropdown-item' ) ); ?>
                     <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그', array( 'class' => 'dropdown-item' ) ); ?>
-                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '도움말:이슈_트래커' ), '이슈 트래커', array( 'class' => 'dropdown-item' ) ); ?>
+                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '이슈 트래커' ), '이슈 트래커', array( 'class' => 'dropdown-item' ) ); ?>
                 </div>
             </li>
         </ul>
