@@ -100,21 +100,23 @@ class LibertyTemplate extends BaseTemplate {
             <li class="nav-item">
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-comments"></span><span class="hide-title">위키방</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://bbs.librewiki.net/anon"><span class="fa fa-users"></span><span class="hide-title">익명방</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://issue.librewiki.net/"><span class="fa fa-anchor"></span><span class="hide-title">이슈트래커</span></a>
+            <li class="nav-item dropdown">
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다.">
+                	<span class="fa fa-comments"></span><span class="hide-title">게시판</span>
+                </span>
+                <div class="dropdown-menu" role="menu">
+					<a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
+					<a class="dropdown-item" href="https://bbs.librewiki.net/anon">익명게시판</a>
+					<a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
+                </div>
             </li>
             <li class="nav-item dropdown">
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
                 <div class="dropdown-menu" role="menu">
                     <?=Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'class' => 'dropdown-item', 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?>
                     <?=Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'class' => 'dropdown-item', 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?>
-                    <a class="dropdown-item" href="https://maps.librewiki.net">리브레맵스</a>
+                    <a class="dropdown-item" href="https://maps.librewiki.net">리브레 맵스</a>
+	                <a class="dropdown-item" href="https://issue.librewiki.net/">이슈 트래커</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
