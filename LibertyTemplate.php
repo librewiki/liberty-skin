@@ -107,7 +107,6 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="dropdown-menu" role="menu">
 					<a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
 					<a class="dropdown-item" href="https://bbs.librewiki.net/anon">익명게시판</a>
-					<a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
