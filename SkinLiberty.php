@@ -10,6 +10,10 @@ class SkinLiberty extends SkinTemplate {
         $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
         $out->addMeta( 'description', 'librewiki' );
         $out->addMeta( 'keywords', 'wiki,librewiki,리브레위키,리브레 위키,' . $this->getSkin()->getTitle() );
+//	크롬, 파이어폭스 OS, 오페라
+	$out->addMeta('theme-color', '#4188F1');
+//	윈도우 폰
+	$out->addMeta('msapplication-navbutton-color', '#4188F1'); 
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
         ) );
