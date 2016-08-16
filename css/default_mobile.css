@@ -138,6 +138,10 @@
         width: 100%;
         height: 15rem;
     }
+	
+	#searchform {
+		width:100%;
+	}
 }
 
 /* Max-width: 397px 대형폰 이하 시작 부분 */
