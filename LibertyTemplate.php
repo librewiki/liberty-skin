@@ -105,10 +105,8 @@ class LibertyTemplate extends BaseTemplate {
             </li>
 			<!-- 조합게시판 대기
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다.">
-                	<span class="fa fa-comments"></span><span class="hide-title">게시판</span>
-                </span>
-				
+            
+                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-comments"></span><span class="hide-title">게시판</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '게시판에 접속합니다.') ); ?>
                 <div class="dropdown-menu" role="menu">
 					<a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
 					<a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
