@@ -100,18 +100,12 @@ class LibertyTemplate extends BaseTemplate {
             <li class="nav-item">
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
             </li>
-			<li class="nav-item">
-                <a class="nav-link" href="https://bbs.librewiki.net/wiki"><span class="fa fa-comments"></span><span class="hide-title">위키방</span></a>
-            </li>
-			<!-- 조합게시판 대기
             <li class="nav-item dropdown">
-            
-                <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-comments"></span><span class="hide-title">게시판</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '게시판에 접속합니다.') ); ?>
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다."><span class="fa fa-comments"></span><span class="hide-title">게시판</span></span>
                 <div class="dropdown-menu" role="menu">
 					<a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
-					<a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
+					<a class="dropdown-item" href="https://bbs.librewiki.net/anon">익명게시판</a>
                 </div>
-				-->
             </li>
             <li class="nav-item dropdown">
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
