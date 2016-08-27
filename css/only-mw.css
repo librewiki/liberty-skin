@@ -300,3 +300,41 @@
     margin-left: 2rem;
 }
 /* 좌측 목록 End */
+
+select, input:not([type=button]):not([type=checkbox]):not([type=submit]) {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+}
+
+select:focus, input:not([type=button]):not([type=checkbox]):not([type=submit]):focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+html input[type=button], html input[type=submit], button, #mw-editform-cancel {
+    box-shadow: none;
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    /* btn-success */
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
+    background-color: #449d44;
+}
