@@ -28,6 +28,14 @@ class SkinLiberty extends SkinTemplate {
 
 	function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
+			/* 스킨 깨짐 방지 임시조치 */
+			$out->addHeadItem( 'maincss', '<link rel="stylesheet" href="skins/Liberty/css/default.css" />' );
+			$out->addHeadItem( 'mobilecss', '<link rel="stylesheet" href="skins/Liberty/css/default_mobile.css" />' );
+			$out->addHeadItem( 'mobilecss', '<link rel="stylesheet" href="skins/Liberty/css/default_mobile.css" />' );
+			$out->addHeadItem( 'onlymwcss', '<link rel="stylesheet" href="skins/Liberty/css/only-mw.css" />' );
+			$out->addHeadItem( 'wikitablecss', '<link rel="stylesheet" href="skins/Liberty/css/wiki-table.css" />' );
+			
+			
  	        $out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
 	        $out->addHeadItem( 'google-ads', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
 		$out->addModuleStyles( array(
