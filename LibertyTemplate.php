@@ -180,9 +180,9 @@ class LibertyTemplate extends BaseTemplate {
                 </div>
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout logout-btn', 'title' => '로그아웃' ) ); ?>
             <?php } else { ?>
-            <a href="//librewiki.net/wiki/특수:로그인" class="none-outline">
-                <span class="fa fa-sign-in"></span>
-            </a>
+							<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
+ 									<span class="fa fa-sign-in"></span>
+							</a>
             <?php } ?>
         </div>
 	    <?php
