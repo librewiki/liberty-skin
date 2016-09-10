@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Liberty LLC","Itsurea","well-made-plush","nessun","revi","zlzleking","katinor","nuxe"
+            ]
+        },
+        "skinname-liberty": "Liberty",
+        "liberty-desc": "Default skin of Liberty Skin",
+        "liberty.css": "/* This CSS settings are applied for those who uses Liberty Skin. */",
+        "liberty.js": "/* This js settings are applied for those who uses Liberty Skin. */"
+    }
