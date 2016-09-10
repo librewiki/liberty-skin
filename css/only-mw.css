@@ -342,5 +342,5 @@ html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-
 /* Postedit 관련 */
 .postedit-container
 {
-z-index:3000;
+z-index:3000 !important;
 }
