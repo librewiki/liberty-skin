@@ -338,3 +338,9 @@ html input[type=button], html input[type=submit], button, #mw-editform-cancel {
 html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
     background-color: #449d44;
 }
+
+/* Postedit 관련 */
+.postedit-container
+{
+z-index:3000;
+}
