@@ -344,3 +344,8 @@ html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-
 {
 z-index:3000 !important;
 }
+
+/* 필드셋 오버플로우 */
+fieldset {
+	overflow-x:scroll;
+}
