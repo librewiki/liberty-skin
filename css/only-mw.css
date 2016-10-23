@@ -350,3 +350,11 @@ z-index:3000 !important;
 fieldset {
 	overflow-x:scroll;
 }
+
+/* 확장기능 관련 */
+
+/* msupload */
+
+#msupload {
+	height: auto !important;
+}
