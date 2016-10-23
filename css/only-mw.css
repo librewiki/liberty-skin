@@ -304,6 +304,7 @@
 select, input:not([type=button]):not([type=checkbox]):not([type=submit]) {
     display: inline-block;
     padding: 0.2rem 0.4rem;
+	padding-left: 2.5em;
     font-size: 1rem;
     line-height: 1.5;
     color: #55595c;
