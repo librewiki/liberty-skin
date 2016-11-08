@@ -304,7 +304,6 @@
 select, input:not([type=button]):not([type=checkbox]):not([type=submit]) {
     display: inline-block;
     padding: 0.2rem 0.4rem;
-	padding-left: 2.5em;
     font-size: 1rem;
     line-height: 1.5;
     color: #55595c;
@@ -312,6 +311,10 @@ select, input:not([type=button]):not([type=checkbox]):not([type=submit]) {
     background-image: none;
     border: 1px solid #ccc;
     border-radius: .25rem;
+}
+
+input.oo-ui-inputWidget-input[type=search]{
+	padding-left: 2.5em!important;
 }
 
 select:focus, input:not([type=button]):not([type=checkbox]):not([type=submit]):focus {
