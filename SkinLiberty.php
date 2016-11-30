@@ -22,6 +22,14 @@ class SkinLiberty extends SkinTemplate {
 		//윈도우 폰
 		$out->addMeta('msapplication-navbutton-color', '#4188F1'); 
 		
+		/* OpenGraph */
+		$out->addMeta('og:title', $this->getSkin()->getTitle());
+		$out->addMeta('og:description', strip_tags($out->mBodytext),'<br>');
+		$out->addMeta('og:image','https://librewiki.net/skins/Liberty/img/logo.png' );
+		$out->addMeta('og:locale', 'ko_KR' );
+		$out->addMeta('og:site_name', 'Librewiki' );
+		$out->addMeta('og:url', Title::newFromText("Title")->getFullURL() );
+		
 		
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
