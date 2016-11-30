@@ -27,7 +27,7 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('twitter:site', '@librewiki');
 		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
 		$out->addMeta('twitter:description', $out->mBodytext );
-		$out->addMeta('twitter:creator', '@CocoaYT');
+		$out->addMeta('twitter:creator', '@librewiki');
 		$out->addMeta('twitter:image', 'https://librewiki.net/skins/Liberty/img/logo.png');
 		//트위터 카드 완료
 		
