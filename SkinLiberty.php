@@ -30,6 +30,15 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('og:site_name', 'Librewiki' );
 		$out->addMeta('og:url', Title::newFromText("Title")->getFullURL() );
 		
+		/* 트위터 카드 */
+		$out->addMeta('twitter:card', 'summary');
+		$out->addMeta('twitter:site', '@librewiki');
+		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
+		$out->addMeta('twitter:description', strip_tags($out->mBodytext),'<br>' );
+		$out->addMeta('twitter:creator', '@librewiki');
+		$out->addMeta('twitter:image', 'https://librewiki.net/skins/Liberty/img/logo.png');
+		
+		
 		
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
