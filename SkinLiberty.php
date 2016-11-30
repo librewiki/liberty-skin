@@ -22,6 +22,15 @@ class SkinLiberty extends SkinTemplate {
 		//윈도우 폰
 		$out->addMeta('msapplication-navbutton-color', '#4188F1'); 
 		
+		//트위터 카드 시작
+		$out->addMeta('twitter:card', 'summary');
+		$out->addMeta('twitter:site', '@librewiki');
+		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
+		$out->addMeta('twitter:description', $out->mBodytext );
+		$out->addMeta('twitter:creator', '@CocoaYT');
+		$out->addMeta('twitter:image', 'https://librewiki.net/skins/Liberty/img/logo.png');
+		//트위터 카드 완료
+		
 		
         $out->addModuleScripts( array(
             'skins.liberty.bootstrap'
