@@ -202,7 +202,7 @@ class LibertyTemplate extends BaseTemplate {
                     <div class="modal-body">
                         <div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
                         </div>
-                        <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php Title::newFromText("Title")->getFullURL() ?>');">
+                        <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
                             <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
                             <label for="inputPassword" class="sr-only">Password</label>
                             <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
