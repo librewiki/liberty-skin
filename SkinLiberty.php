@@ -24,7 +24,7 @@ class SkinLiberty extends SkinTemplate {
 		
 		/* OpenGraph */
 		$out->addMeta('og:title', $this->getSkin()->getTitle());
-		$out->addMeta('og:description', strip_tags($out->mBodytext),'<br>');
+		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
 		$out->addMeta('og:image','https://librewiki.net/skins/Liberty/img/logo.png' );
 		$out->addMeta('og:locale', 'ko_KR' );
 		$out->addMeta('og:site_name', 'Librewiki' );
@@ -34,7 +34,7 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('twitter:card', 'summary');
 		$out->addMeta('twitter:site', '@librewiki');
 		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
-		$out->addMeta('twitter:description', strip_tags($out->mBodytext),'<br>' );
+		$out->addMeta('twitter:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
 		$out->addMeta('twitter:creator', '@librewiki');
 		$out->addMeta('twitter:image', 'https://librewiki.net/skins/Liberty/img/logo.png');
 		
