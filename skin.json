@@ -1,14 +1,14 @@
 {
 	"name": "리버티",
 	"author": [
-		"Liberty LLC","이츠레아","well-made-plush","nessun","revi","zlzleking","katinor","nuxe"
+		"Liberty LLC", "..."
 	],
-	"url": "https://librewiki.net/wiki/Skin:Liberty",
+	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
 	"descriptionmsg": "liberty-desc",
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.1.8",
+	"version": "1.1.9",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
