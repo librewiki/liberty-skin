@@ -15,7 +15,12 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('apple-mobile-web-app-capable', 'Yes');
 		$out->addMeta('apple-mobile-web-app-status-bar-style', 'black-translucent');
 		$out->addMeta('mobile-web-app-capable', 'Yes');
-
+		
+		/* 모바일에서의 테마 컬러 적용 */
+        //크롬, 파이어폭스 OS, 오페라
+    	$out->addMeta('theme-color', '#4188F1');
+        //윈도우 폰
+        $out->addMeta('msapplication-navbutton-color', '#4188F1'); 
 		
 		
         $out->addModuleScripts( array(
