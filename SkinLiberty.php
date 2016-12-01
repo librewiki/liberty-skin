@@ -25,7 +25,7 @@ class SkinLiberty extends SkinTemplate {
 		/* OpenGraph */
 		$out->addMeta('og:title', $this->getSkin()->getTitle());
 		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
-		$out->addMeta('og:image','https://librewiki.net/skins/Liberty/img/logo.png' );
+		$out->addMeta('og:image','https://librewiki.net/images/6/6a/Libre_favicon.png' );
 		$out->addMeta('og:locale', 'ko_KR' );
 		$out->addMeta('og:site_name', 'Librewiki' );
 		$out->addMeta('og:url', Title::newFromText("Title")->getFullURL() );
