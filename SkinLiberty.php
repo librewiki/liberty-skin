@@ -36,7 +36,7 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
 		$out->addMeta('twitter:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
 		$out->addMeta('twitter:creator', '@librewiki');
-		$out->addMeta('twitter:image', 'https://librewiki.net/skins/Liberty/img/logo.png');
+		$out->addMeta('twitter:image', 'https://librewiki.net/images/6/6a/Libre_favicon.png');
 		
 		
 		
