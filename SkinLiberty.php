@@ -11,6 +11,9 @@ class SkinLiberty extends SkinTemplate {
         $out->addMeta( 'description', 'librewiki' );
         $out->addMeta( 'keywords', 'wiki,librewiki,리브레위키,리브레 위키,' . $this->getSkin()->getTitle() );
 		
+		/* 네이버 웹마스터 도구 */
+		$out->addMeta('naver-site-verification', '0b20790abdd5720e293968109acb489744366ae9');
+		
 		/* IOS 기기 및 모바일 크롬에서의 웹앱 옵션 켜기 및 상단바 투명화 */
 		$out->addMeta('apple-mobile-web-app-capable', 'Yes');
 		$out->addMeta('apple-mobile-web-app-status-bar-style', 'black-translucent');
@@ -23,12 +26,9 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('msapplication-navbutton-color', '#4188F1'); 
 		
 		/* OpenGraph */
-		$out->addMeta('og:title', $this->getSkin()->getTitle());
-		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
 		$out->addMeta('og:image','https://librewiki.net/images/6/6a/Libre_favicon.png' );
 		$out->addMeta('og:locale', 'ko_KR' );
-		$out->addMeta('og:site_name', 'Librewiki' );
-		$out->addMeta('og:url', Title::newFromText("Title")->getFullURL() );
+
 		
 		/* 트위터 카드 */
 		$out->addMeta('twitter:card', 'summary');
