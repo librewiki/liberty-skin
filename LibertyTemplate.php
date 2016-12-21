@@ -12,9 +12,12 @@ class LibertyTemplate extends BaseTemplate {
 
 		$this->html( 'headelement' );
 		?>
+		<header>
 		<div class="nav-wrapper navbar-fixed-top">
             <?php $this->nav_menu(); ?>
         </div>
+		</header>
+		<section>
         <div class="content-wrapper">
             <div class="liberty-sidebar">
                 <div class="liberty-right-fixed">
@@ -68,16 +71,21 @@ class LibertyTemplate extends BaseTemplate {
                     <?php if ( $this->data['catlinks'] ) {
                         $this->html( 'catlinks' );
                     } ?>
+					<article>
                     <?php $this->html( 'bodycontent' ) ?>
+					</article>
                 </div>
                 <div class="bottom-ads">
                 </div>
+				<footer>
                 <div class="liberty-footer">
                     <?php $this->footer(); ?>
                 </div>
+				</footer>
             </div>
         </div>
-        <?php $this->login_modal(); ?>
+        </section>
+		<?php $this->login_modal(); ?>
 		<?php
 		$this->printTrail();
 		$this->html('debughtml');
