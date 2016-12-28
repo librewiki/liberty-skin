@@ -19,6 +19,7 @@ class LibertyTemplate extends BaseTemplate {
 		</header>
 		<section>
         <div class="content-wrapper">
+			<aside>
             <div class="liberty-sidebar">
                 <div class="liberty-right-fixed">
                     <?php $this->live_recent(); ?>
@@ -32,6 +33,7 @@ class LibertyTemplate extends BaseTemplate {
                     </ins>
                 </div>
             </div>
+			</aside>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
                     <?php if ( $this->data['sitenotice'] && $_COOKIE['alertcheck'] != "yes" ) { ?>
