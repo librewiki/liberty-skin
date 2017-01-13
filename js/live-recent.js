@@ -30,13 +30,13 @@ $(function() {
       rclimit: 10,
       format: 'json',
       rcnamespace: isDocumentTab? documentNamespaces : topicNamespaces,
-      rctoponly:""
+      rctoponly: true
     };
     $.ajax({
       url: mw.util.wikiScript('api'),
       data: getParameter,
-      'xhrFields': {
-        'withCredentials': true
+      xhrFields: {
+        withCredentials: true
       },
       dataType:'json'
     })
