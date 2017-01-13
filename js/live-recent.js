@@ -43,8 +43,8 @@ $(function() {
     .then(function(data) {
       var recentChanges = data.query.recentchanges;
       var html = data.map(function(item) {
-        var time = new Date(item.date);
-        var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">[' + dateFormat(time) + '] ';
+        var time = new Date(item.timestamp);
+        var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">[' + timeFormat(time) + '] ';
         var text = '';
         if (item.type === 'new') {
           text += '[New] ';
@@ -65,15 +65,15 @@ $(function() {
     });
   };
 
-  function dateFormat(date) {
+  function timeFormat(time) {
     let aDayAgo = new Date();
     aDayAgo.setDate(aDayAgo.getDate() - 1);
-    if (date < aDayAgo) {
-      return (date.getFullYear())+ '/' + (date.getMonth() + 1) + '/' + date.getDate();
+    if (time < aDayAgo) {
+      return (time.getFullYear())+ '/' + (time.getMonth() + 1) + '/' + time.getDate();
     }
-    var hour = date.getHours();
-    var minute = date.getMinutes();
-    var second = date.getSeconds();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
     if (hour < 10) {
       hour = '0' + hour;
     }
