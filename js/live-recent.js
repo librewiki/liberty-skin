@@ -42,7 +42,7 @@ $(function() {
     })
     .then(function(data) {
       var recentChanges = data.query.recentchanges;
-      var html = data.map(function(item) {
+      var html = recentChanges.map(function(item) {
         var time = new Date(item.timestamp);
         var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">[' + timeFormat(time) + '] ';
         var text = '';
