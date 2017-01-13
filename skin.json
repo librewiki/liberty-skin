@@ -64,7 +64,7 @@
 		"skins.liberty.layoutjs": {
 			"scripts": [
 				"js/login_request.js",
-				"js/live_Recents.js",
+				"js/live-recent.js",
 				"js/index_botton.js",
 				"js/delay_scrolling.js",
 				"js/notice_view.js",
