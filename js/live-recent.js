@@ -47,14 +47,14 @@ $(function() {
         var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">[' + timeFormat(time) + '] ';
         var text = '';
         if (item.type === 'new') {
-          text += '[New] ';
+          text += '[New]';
         }
         text += item.title;
-        if (text.length > 14) {
-          text = text.substr(0, 14);
+        if (text.length > 13) {
+          text = text.substr(0, 13);
           text += '...';
         }
-        text = text.replace('[New] ', '<span class="new">[New] </span>');
+        text = text.replace('[New]', '<span class="new">[New] </span>');
         line += text;
         line += '</a></li>';
         return line;
