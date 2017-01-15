@@ -2,7 +2,7 @@ function LoginManage(lasturl) {
     try {
         var url = '/wiki/' + lasturl;
         $.ajax({
-            url: '/api.php',
+            url: mw.util.wikiScript('api'),
             type: 'post',
             data: {
                 action: 'query',
@@ -15,7 +15,7 @@ function LoginManage(lasturl) {
         .done(function(result) {
             var token = result.query.tokens.logintoken;
             $.ajax({
-                url: '/api.php',
+                url: mw.util.wikiScript('api'),
                 type: 'post',
                 data: {
                     action: 'clientlogin',
