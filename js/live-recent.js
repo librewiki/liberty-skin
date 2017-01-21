@@ -66,7 +66,7 @@ $(function() {
   };
 
   function timeFormat(time) {
-    let aDayAgo = new Date();
+    var aDayAgo = new Date();
     aDayAgo.setDate(aDayAgo.getDate() - 1);
     if (time < aDayAgo) {
       return (time.getFullYear())+ '/' + (time.getMonth() + 1) + '/' + time.getDate();
