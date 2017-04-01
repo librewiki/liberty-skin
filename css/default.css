@@ -163,7 +163,7 @@ del, s, strike {
 /* 네비 수정 */
 .Liberty .nav-wrapper {
     min-height: 2.8rem;
-    background-color: #4188f1;
+    background-color: #008275;
     z-index: 1001;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
