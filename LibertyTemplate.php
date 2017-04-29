@@ -4,6 +4,7 @@ class LibertyTemplate extends BaseTemplate {
 	function execute() {
 		global $wgRequest;
 		global $wgLibertyRightAd, $wgLibertyHeaderAd, $wgLibertyBottomAd;
+		global $wgServer, $wgScriptPath, $wgArticlePath;
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
@@ -70,8 +71,8 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-content-main">
 					<?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
 						<div class="social-buttons">
-							<div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php echo $title; ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-							<div class="facebook" data-url="https://librewiki.net/wiki/<?php echo $title; ?>" data-text="<?php echo $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+							<div class="twitter" data-url="<?php echo $wgServer.$wgScriptPath; ?>/?curid=<?=$curid;?>" data-text="<?php echo $title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+							<div class="facebook" data-url="<?php echo str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?php echo $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
 						</div>
 					<?php } ?>
 					<?php if ( $this->data['catlinks'] ) {
