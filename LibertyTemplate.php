@@ -118,6 +118,9 @@ class LibertyTemplate extends BaseTemplate {
 					<a class="dropdown-item" href="https://bbs.librewiki.net/freeboard">자유게시판</a>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://issue.librewiki.net/"><span class="fa fa-anchor"></span><span class="hide-title">이슈트래커</span></a>
+            </li>
             <li class="nav-item dropdown">
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
                 <div class="dropdown-menu" role="menu">
