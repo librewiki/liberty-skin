@@ -213,37 +213,30 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function live_recent() {
-	?>
-	<div class="live-recent">
-		<div class="live-recent-header">
-		<ul class="nav nav-tabs">
-			<li class="nav-item">
-				<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
-			</li>
-			<li class="nav-item">
-				<a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
-			</li>
-		  </ul>
-		</div>
-		<div class="live-recent-content">
-			<ul class="live-recent-list" id="live-recent-list">
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
-				<li><span class="recent-item">&nbsp;</span></li>
+		global $wgLibertyMaxRecent;
+		isset($wgLibertyMaxRecent) ? '' : $wgLibertyMaxRecent = 10;
+		?>
+		<div class="live-recent">
+			<div class="live-recent-header">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
+				</li>
+				<li class="nav-item">
+					<a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
+				</li>
 			</ul>
+			</div>
+			<div class="live-recent-content">
+				<ul class="live-recent-list" id="live-recent-list">
+					<?php echo str_repeat('<li><span class="recent-item">&nbsp;</span></li>', $wgLibertyMaxRecent); ?>
+				</ul>
+			</div>
+			<div class="live-recent-footer">
+			<?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="label label-info">더보기</span>'); ?>
+			</div>
 		</div>
-		<div class="live-recent-footer">
-		  <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="label label-info">더보기</span>'); ?>
-		</div>
-	</div>
-	<?php
+		<?php
 	}
 
 	function contents_toolbox() {
