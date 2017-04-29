@@ -5,7 +5,7 @@ class LibertyTemplate extends BaseTemplate {
 		global $wgRequest;
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
-		$title = $this->getSkin()->getTitle();
+		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
 		$curid = $this->getSkin()->getTitle()->getArticleID();
 
 		wfSuppressWarnings();
@@ -55,7 +55,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php $this->contents_toolbox(); ?>
 					<div class="title">
 						<h1>
-							<?php $this->html( 'title' ) ?>
+							<?php $this->html( 'title' ); ?>
 						</h1>
 					</div>
 					<div class="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
@@ -65,9 +65,9 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-content-main">
 					<?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
 						<div class="social-buttons">
-							<div class="google" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="구글플러스"><div><i class="fa fa-google-plus"></i></div></div>
-							<div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php $this->html( 'title' ) ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-							<div class="facebook" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+							<div class="google" data-url="https://librewiki.net/wiki/<?php echo $title; ?>" data-text="<?php echo $title; ?>" title="구글플러스"><div><i class="fa fa-google-plus"></i></div></div>
+							<div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php echo $title; ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+							<div class="facebook" data-url="https://librewiki.net/wiki/<?php echo $title; ?>" data-text="<?php echo $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
 						</div>
 					<?php } ?>
 					<?php if ( $this->data['catlinks'] ) {
@@ -166,7 +166,7 @@ class LibertyTemplate extends BaseTemplate {
 				</div>
 				<?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout logout-btn', 'title' => '로그아웃' ) ); ?>
 			<?php } else { ?>
-							<a href="/wiki/특수:로그인" class="none-outline">
+							<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
  									<span class="fa fa-sign-in"></span>
 							</a>
 			<?php } ?>
@@ -188,7 +188,7 @@ class LibertyTemplate extends BaseTemplate {
 					<div class="modal-body">
 						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
 						</div>
-						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
+						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php echo $title; ?>');">
 							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
 							<label for="inputPassword" class="sr-only">Password</label>
 							<input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
@@ -197,7 +197,7 @@ class LibertyTemplate extends BaseTemplate {
 								<label for="lgremember">로그인 상태를 유지하기</label>
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-							<a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+							<a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
 							<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
 							<input type="hidden" name="action" value="login">
 							<input type="hidden" name="format" value="json">
