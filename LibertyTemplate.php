@@ -3,6 +3,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
 		global $wgRequest;
+		global $wgLibertyRightAd, $wgLibertyHeaderAd, $wgLibertyBottomAd;
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
@@ -24,14 +25,16 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-right-fixed">
 					<?php $this->live_recent(); ?>
 				</div>
-				<div class="right-ads">
-					<ins class="adsbygoogle"
-						style="display:block; min-width: 15rem; width: 100%;"
-						data-ad-client="ca-pub-9526107750460253"
-						data-ad-slot="6581447128"
-						data-ad-format="auto">
-					</ins>
-				</div>
+				<?php if(is_array($wgLibertyRightAd)) { ?>
+					<div class="right-ads">
+						<ins class="adsbygoogle"
+							style="display:block; min-width: 15rem; width: 100%;"
+							data-ad-client="<?php echo $wgLibertyRightAd[0]; ?>"
+							data-ad-slot="<?php echo $wgLibertyRightAd[1]; ?>"
+							data-ad-format="auto">
+						</ins>
+					</div>
+				<?php } ?>
 			</div>
 			</aside>
 			<div class="container-fluid liberty-content">
@@ -43,16 +46,18 @@ class LibertyTemplate extends BaseTemplate {
 							</button>
 							<?php $this->html( 'sitenotice' ) ?>
 						</div>
-					<?php } ?>
-					<div class="header-ads">
-						<ins class="adsbygoogle"
-							style="display:block; min-width:20rem; width:100%;"
-							data-ad-client="ca-pub-9526107750460253"
-							data-ad-slot="3627980722"
-							data-ad-format="auto">
-						</ins>
-					</div>
-					<?php $this->contents_toolbox(); ?>
+					<?php }
+					if(is_array($wgLibertyHeaderAd)) { ?>
+						<div class="header-ads">
+							<ins class="adsbygoogle"
+								style="display:block; min-width:20rem; width:100%;"
+								data-ad-client="<?php echo $wgLibertyHeaderAd[0]; ?>"
+								data-ad-slot="<?php echo $wgLibertyHeaderAd[1]; ?>"
+								data-ad-format="auto">
+							</ins>
+						</div>
+					<?php }
+					$this->contents_toolbox(); ?>
 					<div class="title">
 						<h1>
 							<?php $this->html( 'title' ); ?>
@@ -76,10 +81,18 @@ class LibertyTemplate extends BaseTemplate {
 					<?php $this->html( 'bodycontent' ) ?>
 					</article>
 				</div>
-				<div class="bottom-ads">
-				</div>
 				<footer>
 				<div class="liberty-footer">
+					<?php if(is_array($wgLibertyBottomAd)) { ?>
+						<div class="bottom-ads">
+							<ins class="adsbygoogle"
+								style="display:block; min-width:20rem; width:100%;"
+								data-ad-client="<?php echo $wgLibertyBottomAd[0]; ?>"
+								data-ad-slot="<?php echo $wgLibertyBottomAd[1]; ?>"
+								data-ad-format="auto">
+							</ins>
+						</div>
+					<?php } ?>
 					<?php $this->footer(); ?>
 				</div>
 				</footer>
