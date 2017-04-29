@@ -349,8 +349,4 @@ class LibertyTemplate extends BaseTemplate {
 			<?php
 		}
 	}
-
-	function getPage($title) {
-		return WikiPage::factory(new Title($title))->getText( Revision::RAW );
-	}
 } // end of class
