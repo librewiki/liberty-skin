@@ -196,29 +196,47 @@ class LibertyTemplate extends BaseTemplate {
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title">로그인</h4>
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">로그인</a></li>
+							<li role="presentation"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">가입하기</a></li>
+						</ul>
 					</div>
+				
 					<div class="modal-body">
-						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
-						</div>
-						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage();">
-							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
-							<label for="inputPassword" class="sr-only">Password</label>
-							<input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
-							<div class="modal-checkbox">
-								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-								<label for="lgremember">로그인 상태를 유지하기</label>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="login">
+								<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert"></div>
+								<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage();">
+									<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
+									<label for="inputPassword" class="sr-only">Password</label>
+									<input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+									<div class="modal-checkbox">
+										<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
+										<label for="lgremember">로그인 상태를 유지하기</label>
+									</div>
+									<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
+									<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+									<input type="hidden" name="action" value="login">
+									<input type="hidden" name="format" value="json">
+								</form>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-							<a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
-							<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
-							<input type="hidden" name="action" value="login">
-							<input type="hidden" name="format" value="json">
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+							<div role="tabpanel" class="tab-pane" id="register">
+								<div id="modal-register-alert" class="alert alert-hidden alert-danger" role="alert"></div>
+								<form id="modal-registerform" name="userregister" class="modal-registerform" method="post" onsubmit="return RegisterManage();">
+									<input class="registerText form-control" id="regName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="regname">
+									<label for="inputPassword" class="sr-only">Password</label>
+									<input class="registerPassword form-control" id="regPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="regpassword1">
+									<label for="inputPassword" class="sr-only">Repeat Password</label>
+									<input class="registerPassword form-control" id="regPassword2" tabindex="3"  placeholder="비밀번호를 한번 더 입력하세요" type="password" name="regpassword2">
+									<input class="registerText form-control" id="regEmail" tabindex="4" placeholder="이메일 주소를 입력하세요 (선택)" value="" name="regname">
+									<input class="registerText form-control" id="regRealname" tabindex="5" placeholder="실명을 입력하세요 (선택)" value="" name="regname">
+									<?php $this->reCAPTCHA(); ?>
+									<input class="btn btn-success btn-block" type="submit" value="가입하기">
+									<input type="hidden" name="action" value="createaccount">
+									<input type="hidden" name="format" value="json">
+								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -362,5 +380,33 @@ class LibertyTemplate extends BaseTemplate {
 			</div>
 			<?php
 		}
+	}
+
+	function reCAPTCHA() {
+		global $wgReCaptchaSiteKey, $wgLanguageCode;
+		?>
+		<div class="g-recaptcha" data-sitekey="<?php echo $wgReCaptchaSiteKey; ?>"></div>
+		<noscript>
+			<div>
+				<div style="width: 302px; height: 422px; position: relative;">
+				<div style="width: 302px; height: 422px; position: absolute;">
+					<iframe src="https://www.google.com/recaptcha/api/fallback?k=<?php echo $wgReCaptchaSiteKey; ?>&hl=<?php echo $wgLanguageCode; ?>"
+							frameborder="0" scrolling="no"
+							style="width: 302px; height:422px; border-style: none;">
+					</iframe>
+				</div>
+				</div>
+				<div style="width: 300px; height: 60px; border-style: none;
+							bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+							background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+				<textarea id="g-recaptcha-response" name="g-recaptcha-response"
+							class="g-recaptcha-response"
+							style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+									margin: 10px 25px; padding: 0px; resize: none;" >
+				</textarea>
+				</div>
+			</div>
+		</noscript>
+		<?php
 	}
 } // end of class

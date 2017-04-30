@@ -616,47 +616,43 @@ del, s, strike {
 /* 컨텐츠 하단 수정 End */
 
 /* 모달 수정 */
-.Liberty .login-modal {
-
-}
-
-.Liberty .login-modal .modal-sm {
+.Liberty .login-modal .modal-sm, .Liberty .register-modal .modal-sm {
     width: 25rem;
 }
 
-.Liberty .login-modal .modal-header {
+.Liberty .login-modal .modal-header, .Liberty .register-modal .modal-header {
     padding: 0.7rem;
 }
 
-.Liberty .login-modal .modal-title {
+.Liberty .login-modal .modal-title, .Liberty .register-modal .modal-title {
     text-align: center;
     padding-left: 1.5rem;
 }
 
-.Liberty .login-modal .alert {
+.Liberty .login-modal .alert, .Liberty .register-modal .alert {
     padding: 0.8rem;
     margin-bottom: 0.8rem;
 }
 
-.Liberty .login-modal .alert-hidden {
+.Liberty .login-modal .alert-hidden, .Liberty .register-modal .alert-hidden {
     display: none;
 }
 
-.Liberty .login-modal .form-control {
+.Liberty .login-modal .form-control, .Liberty .register-modal .form-control {
     margin-bottom: 0.8rem;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) {
+.Liberty .login-modal .modal-checkbox:not(#noop), .Liberty .register-modal .modal-checkbox:not(#noop) {
     position: relative;
     display: table;
 }
 
-.Liberty .login-modal .modal-checkbox {
+.Liberty .login-modal .modal-checkbox, .Liberty .register-modal .modal-checkbox {
     vertical-align: middle;
     margin-bottom: 0.7rem;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"] {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"], .Liberty .register-modal .modal-checkbox:not(#noop) input[type="checkbox"] {
     opacity: 0;
     width: 2em;
     height: 2em;
@@ -665,17 +661,17 @@ del, s, strike {
     display: table-cell;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) * {
+.Liberty .login-modal .modal-checkbox:not(#noop) *, .Liberty .register-modal .modal-checkbox:not(#noop) * {
     vertical-align: middle;
     font: inherit;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label, .Liberty .register-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label {
     padding-left: 0.4em;
     display: table-cell;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label::before {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label::before, .Liberty .register-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label::before {
     -webkit-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
     -moz-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
     -o-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
@@ -696,20 +692,20 @@ del, s, strike {
     margin-top: -1em;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label:hover::before {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label:hover::before, .Liberty .register-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label:hover::before {
     border: 3px solid #777;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]:checked+label::before {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]:checked+label::before, .Liberty .register-modal .modal-checkbox:not(#noop) input[type="checkbox"]:checked+label::before {
     border: 3px solid #777;
     background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
 }
 
-.Liberty .login-modal .btn {
+.Liberty .login-modal .btn, .Liberty .register-modal .btn {
     margin-bottom: 0.8rem;
 }
 
-.Liberty .login-modal .modal-footer {
+.Liberty .login-modal .modal-footer, .Liberty .register-modal .modal-footer {
     display: none;
 }
 /* 모달 수정 End*/
