@@ -57,7 +57,7 @@ class SkinLiberty extends SkinTemplate {
 		parent::setupSkinUserCss( $out );
  	        $out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
 	        $out->addHeadItem( 'google-ads', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
-	    $out->addModuleStyles( array(
+	    	$out->addModuleStyles( array(
 			'skins.liberty.styles'
 		) );
 	}
