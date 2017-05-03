@@ -24,9 +24,9 @@ class SkinLiberty extends SkinTemplate {
 		
 		/* 모바일에서의 테마 컬러 적용 */
 		//크롬, 파이어폭스 OS, 오페라
-		$out->addMeta('theme-color', "#$wgLibertyMainColor");
+		$out->addMeta('theme-color', $wgLibertyMainColor);
 		//윈도우 폰
-		$out->addMeta('msapplication-navbutton-color', "#$wgLibertyMainColor"); 
+		$out->addMeta('msapplication-navbutton-color', $wgLibertyMainColor); 
 		
 		/* OpenGraph */
 		$out->addMeta('og:image', $wgLogo);
