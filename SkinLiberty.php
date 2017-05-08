@@ -12,7 +12,7 @@ class SkinLiberty extends SkinTemplate {
         parent::initPage( $out );
         $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1');
         $out->addMeta( 'description', $wgSitename);
-        $out->addMeta( 'keywords', $wgSitename);
+        $out->addMeta( 'keywords', $wgSitename.",".$this->getSkin()->getTitle());
 		
 		/* 네이버 웹마스터 도구 */
 		if(isset($wgNaverVerification)) { $out->addMeta('naver-site-verification', $wgNaverVerification); }
