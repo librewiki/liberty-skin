@@ -3,7 +3,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
 		global $wgRequest;
-		global $wgLibertyRightAd, $wgLibertyHeaderAd, $wgLibertyBottomAd;
+		global $wgLibertyAdSetting;
 		global $wgServer, $wgScriptPath, $wgArticlePath;
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
@@ -26,12 +26,12 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-right-fixed">
 					<?php $this->live_recent(); ?>
 				</div>
-				<?php if(is_array($wgLibertyRightAd)) { ?>
+				<?php if(!is_null($wgLibertyAdSetting['right'])) { ?>
 					<div class="right-ads">
 						<ins class="adsbygoogle"
 							style="display:block; min-width: 15rem; width: 100%;"
-							data-ad-client="<?php echo $wgLibertyRightAd[0]; ?>"
-							data-ad-slot="<?php echo $wgLibertyRightAd[1]; ?>"
+							data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
+							data-ad-slot="<?php echo $wgLibertyAdSetting['right']; ?>"
 							data-ad-format="auto">
 						</ins>
 					</div>
@@ -48,12 +48,12 @@ class LibertyTemplate extends BaseTemplate {
 							<?php $this->html( 'sitenotice' ) ?>
 						</div>
 					<?php }
-					if(is_array($wgLibertyHeaderAd)) { ?>
+					if(!is_null($wgLibertyAdSetting['header'])) { ?>
 						<div class="header-ads">
 							<ins class="adsbygoogle"
 								style="display:block; min-width:20rem; width:100%;"
-								data-ad-client="<?php echo $wgLibertyHeaderAd[0]; ?>"
-								data-ad-slot="<?php echo $wgLibertyHeaderAd[1]; ?>"
+								data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
+								data-ad-slot="<?php echo $wgLibertyAdSetting['header']; ?>"
 								data-ad-format="auto">
 							</ins>
 						</div>
@@ -84,12 +84,12 @@ class LibertyTemplate extends BaseTemplate {
 				</div>
 				<footer>
 				<div class="liberty-footer">
-					<?php if(is_array($wgLibertyBottomAd)) { ?>
+					<?php if(!is_null($wgLibertyAdSetting['bottom'])) { ?>
 						<div class="bottom-ads">
 							<ins class="adsbygoogle"
 								style="display:block; min-width:20rem; width:100%;"
-								data-ad-client="<?php echo $wgLibertyBottomAd[0]; ?>"
-								data-ad-slot="<?php echo $wgLibertyBottomAd[1]; ?>"
+								data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
+								data-ad-slot="<?php echo $wgLibertyAdSetting['bottom']; ?>"
 								data-ad-format="auto">
 							</ins>
 						</div>
