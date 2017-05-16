@@ -6,13 +6,13 @@ class SkinLiberty extends SkinTemplate {
 	public $template = 'LibertyTemplate';
 
     public function initPage( OutputPage $out ) {
-		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLogo, $wgLanguageCode, $wgNaverVerification;
+		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
 		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
 
         parent::initPage( $out );
-        $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1');
-        $out->addMeta( 'description', $wgSitename);
-        $out->addMeta( 'keywords', $wgSitename.",".$this->getSkin()->getTitle());
+        $out->addMeta('viewport', 'width=device-width, initial-scale=1, maximum-scale=1');
+        $out->addMeta('description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>'));
+        $out->addMeta('keywords', $wgSitename.",".$this->getSkin()->getTitle());
 		
 		/* 네이버 웹마스터 도구 */
 		if(isset($wgNaverVerification)) { $out->addMeta('naver-site-verification', $wgNaverVerification); }
@@ -29,18 +29,18 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('msapplication-navbutton-color', $wgLibertyMainColor); 
 		
 		/* OpenGraph */
+		$out->addMeta('og:title', $this->getSkin()->getTitle());
+		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>'));
 		$out->addMeta('og:image', $wgLogo);
 		$out->addMeta('og:locale', $wgLanguageCode);
+		$out->addMeta('og:site_name', $wgSitename);
+		$out->addMeta('og:url', Title::newFromText( $wgRequest->getVal( 'title' ))->getFullURL());
 
-		
 		/* 트위터 카드 */
+		$out->addMeta('twitter:card', 'summary');
 		if(isset($wgTwitterAccount)) {
-			$out->addMeta('twitter:card', 'summary');
 			$out->addMeta('twitter:site', "@$wgTwitterAccount");
-			$out->addMeta('twitter:title', $this->getSkin()->getTitle());
-			$out->addMeta('twitter:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
 			$out->addMeta('twitter:creator', "@$wgTwitterAccount");
-			$out->addMeta('twitter:image', $wgLogo);
 		}
 		
 		
