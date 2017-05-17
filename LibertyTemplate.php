@@ -318,7 +318,7 @@ class LibertyTemplate extends BaseTemplate {
                             echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item'), array( 'action' => $mode ) );
                         ?>
                         <?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
-                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '옮기기', array( 'class' => 'dropdown-item', 'title' => '문서를 옮깁니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
+                        <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '이동', array( 'class' => 'dropdown-item', 'title' => '문서를 옮깁니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
                         <?php
                             if ( $title->quickUserCan( 'protect', $user ) ) { ?>
                                 <div class="dropdown-divider"></div>
