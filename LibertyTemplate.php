@@ -279,7 +279,7 @@ class LibertyTemplate extends BaseTemplate {
 						<?php
 							if($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) echo Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $title->getText() ), '기여', array('class' => 'dropdown-item', 'title' => '사용자의 기여 목록을 불러옵니다.'), array( 'action' => $mode ) );
 							$watchname = $watched ? '주시 해제' : '주시';
-							echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item', 'title' => '문서롤 '.$watchname.'합니다.'), array( 'action' => $mode ) );
+							echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item', 'title' => '문서를 '.$watchname.'합니다.'), array( 'action' => $mode ) );
 						?>
 						<?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
 						<?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '이동', array( 'class' => 'dropdown-item', 'title' => '문서를 이동합니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
