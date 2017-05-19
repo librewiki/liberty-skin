@@ -254,7 +254,7 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function contents_toolbox() {
-		global $wgUser;
+		global $wgUser, $wgServer, $wgArticlePath;
 		$title = $this->getSkin()->getTitle();
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
 		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
@@ -291,12 +291,13 @@ class LibertyTemplate extends BaseTemplate {
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
 						<?php
+							if($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) echo Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $title->getText() ), '기여', array('class' => 'dropdown-item', 'title' => '사용자의 기여 목록을 불러옵니다.'), array( 'action' => $mode ) );
 							if ($watched != 'watch') {
 								$watchname = '주시 해제';
 							} else {
 								$watchname = '주시';
 							}
-							echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item'), array( 'action' => $mode ) );
+							echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item', 'title' => '문서롤 '.$watchname.'합니다.'), array( 'action' => $mode ) );
 						?>
 						<?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
 						<?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '이동', array( 'class' => 'dropdown-item', 'title' => '문서를 이동합니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
