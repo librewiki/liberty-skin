@@ -2,9 +2,7 @@
 class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
-		global $wgRequest;
-		global $wgLibertyAdSetting;
-		global $wgServer, $wgScriptPath, $wgArticlePath;
+		global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath;
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
@@ -123,7 +121,7 @@ class LibertyTemplate extends BaseTemplate {
 			<li class="nav-item">
 				<?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
 			</li>
-			<?php echo WikiPage::factory(Title::newFromText( 'Navbar', $defaultNamespace=NS_MEDIAWIKI ))->getText( Revision::RAW ); ?>
+			<?=WikiPage::factory(Title::newFromText( 'Navbar', $defaultNamespace=NS_MEDIAWIKI ))->getText( Revision::RAW ); ?>
 		</ul>
 		<?php $this->loginBox(); ?>
 		<?php $this->getNotification(); ?>
@@ -137,7 +135,7 @@ class LibertyTemplate extends BaseTemplate {
 		<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
 			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 			<div class="input-group">
-				<?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput") ); ?>
+				<?=$this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput") ); ?>
 				<span class="input-group-btn">
 					<button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
 					<button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
@@ -153,9 +151,7 @@ class LibertyTemplate extends BaseTemplate {
 		<div class="navbar-login">
 			<?php if ($wgUser->isLoggedIn()) {
 				if ($wgUser->getEmailAuthenticationTimestamp()) {
-					$email = trim($wgUser->getEmail());
-					$email = strtolower($email);
-					$email = md5($email) . "?d=identicon";
+					$email = md5(strtolower(trim($wgUser->getEmail())))."?d=identicon";
 				} else {
 					$email = "00000000000000000000000000000000?d=identicon&f=y";
 				}
@@ -179,9 +175,9 @@ class LibertyTemplate extends BaseTemplate {
 				</div>
 				<?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout logout-btn', 'title' => '로그아웃' ) ); ?>
 			<?php } else { ?>
-							<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
- 									<span class="fa fa-sign-in"></span>
-							</a>
+				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
+					<span class="fa fa-sign-in"></span>
+				</a>
 			<?php } ?>
 		</div>
 		<?php
@@ -228,7 +224,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	function live_recent() {
 		global $wgLibertyMaxRecent;
-		isset($wgLibertyMaxRecent) ? '' : $wgLibertyMaxRecent = 10;
+		if(!isset($wgLibertyMaxRecent)) $wgLibertyMaxRecent = 10;
 		?>
 		<div class="live-recent">
 			<div class="live-recent-header">
@@ -243,7 +239,7 @@ class LibertyTemplate extends BaseTemplate {
 			</div>
 			<div class="live-recent-content">
 				<ul class="live-recent-list" id="live-recent-list">
-					<?php echo str_repeat('<li><span class="recent-item">&nbsp;</span></li>', $wgLibertyMaxRecent); ?>
+					<?=str_repeat('<li><span class="recent-item">&nbsp;</span></li>', $wgLibertyMaxRecent); ?>
 				</ul>
 			</div>
 			<div class="live-recent-footer">
@@ -257,7 +253,7 @@ class LibertyTemplate extends BaseTemplate {
 		global $wgUser, $wgServer, $wgArticlePath;
 		$title = $this->getSkin()->getTitle();
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
-		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() );
 		$user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
@@ -267,23 +263,13 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="btn-group" role="group" aria-label="content-tools">
 					<?=Linker::linkKnown( $title, '갱신', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
 					<?php
-					if ($revid) {
-						$editaction = array( 'action' => 'edit', 'oldid' => $revid );
-					} else {
-						$editaction = array( 'action' => 'edit' );
-					}
+					$editaction = $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' );
 					?>
 					<?=Linker::linkKnown( $title, '편집', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서를 편집합니다. [alt+shift+e]', 'accesskey' => 'e' ), $editaction ); ?>
 					<?=Linker::linkKnown( $title, '추가', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '새 문단을 추가합니다. [alt+shift+n]', 'accesskey' => 'n' ), array( 'action' => 'edit', 'section' => 'new' ) ); ?>
 					<?php
-						if ($companionTitle) {
-							if ($title->getNamespace() == NS_TALK || $title->getNamespace() == NS_PROJECT_TALK || $title->getNamespace() == NS_FILE_TALK || $title->getNamespace() == NS_TEMPLATE_TALK) {
-								$titlename = '본문';
-							} else {
-								$titlename = '토론';
-							}
-							echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
-						}
+						$titlename = $title->getNamespace() == NS_TALK || $title->getNamespace() == NS_PROJECT_TALK || $title->getNamespace() == NS_FILE_TALK || $title->getNamespace() == NS_TEMPLATE_TALK ? '본문' : '토론';
+						echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
 					?>
 					<?=Linker::linkKnown( $title, '기록', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
 					<button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -292,11 +278,7 @@ class LibertyTemplate extends BaseTemplate {
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
 						<?php
 							if($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) echo Linker::linkKnown( SpecialPage::getTitleFor( 'Contributions', $title->getText() ), '기여', array('class' => 'dropdown-item', 'title' => '사용자의 기여 목록을 불러옵니다.'), array( 'action' => $mode ) );
-							if ($watched != 'watch') {
-								$watchname = '주시 해제';
-							} else {
-								$watchname = '주시';
-							}
+							$watchname = $watched ? '주시 해제' : '주시';
 							echo Linker::linkKnown( $title, $watchname, array('class' => 'dropdown-item', 'title' => '문서롤 '.$watchname.'합니다.'), array( 'action' => $mode ) );
 						?>
 						<?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
