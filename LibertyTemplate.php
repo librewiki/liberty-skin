@@ -250,7 +250,7 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function contents_toolbox() {
-		global $wgUser, $wgServer, $wgArticlePath;
+		global $wgUser;
 		$title = $this->getSkin()->getTitle();
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
 		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() );
