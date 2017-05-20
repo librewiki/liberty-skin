@@ -82,16 +82,7 @@ class LibertyTemplate extends BaseTemplate {
 				</div>
 				<footer>
 				<div class="liberty-footer">
-					<?php if(!is_null($wgLibertyAdSetting['bottom'])) { ?>
-						<div class="bottom-ads">
-							<ins class="adsbygoogle"
-								style="display:block; min-width:20rem; width:100%;"
-								data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
-								data-ad-slot="<?php echo $wgLibertyAdSetting['bottom']; ?>"
-								data-ad-format="auto">
-							</ins>
-						</div>
-					<?php } ?>
+					<div class="bottom-ads"></div>
 					<?php $this->footer(); ?>
 				</div>
 				</footer>
@@ -206,7 +197,7 @@ class LibertyTemplate extends BaseTemplate {
 								<label for="lgremember">로그인 상태를 유지하기</label>
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-							<a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+							<a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?= $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
 							<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
 							<input type="hidden" name="action" value="login">
 							<input type="hidden" name="format" value="json">
@@ -255,6 +246,8 @@ class LibertyTemplate extends BaseTemplate {
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
 		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() );
 		$user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
+		$editaction = $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' );
+		$titlename = $title->isTalkPage() ? '본문' : '토론';
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
@@ -262,15 +255,9 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
 					<?=Linker::linkKnown( $title, '갱신', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
-					<?php
-					$editaction = $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' );
-					?>
 					<?=Linker::linkKnown( $title, '편집', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서를 편집합니다. [alt+shift+e]', 'accesskey' => 'e' ), $editaction ); ?>
 					<?=Linker::linkKnown( $title, '추가', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '새 문단을 추가합니다. [alt+shift+n]', 'accesskey' => 'n' ), array( 'action' => 'edit', 'section' => 'new' ) ); ?>
-					<?php
-						$titlename = $title->isTalkPage() ? '본문' : '토론';
-						echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
-					?>
+					<?=Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') ); ?>
 					<?=Linker::linkKnown( $title, '기록', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
 					<button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 						<span class="caret"></span>
