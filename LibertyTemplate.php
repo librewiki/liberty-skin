@@ -200,8 +200,6 @@ class LibertyTemplate extends BaseTemplate {
 							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
 							<a href="<?=$wgScriptPath?>/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?=Title::newFromText($wgRequest->getVal('title'));?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
 							<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
-							<input type="hidden" name="action" value="login">
-							<input type="hidden" name="format" value="json">
 						</form>
 					</div>
 					<div class="modal-footer">
