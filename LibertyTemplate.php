@@ -28,8 +28,8 @@ class LibertyTemplate extends BaseTemplate {
 					<div class="right-ads">
 						<ins class="adsbygoogle"
 							style="display:block; min-width: 15rem; width: 100%;"
-							data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
-							data-ad-slot="<?php echo $wgLibertyAdSetting['right']; ?>"
+							data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
+							data-ad-slot="<?=$wgLibertyAdSetting['right']; ?>"
 							data-ad-format="auto">
 						</ins>
 					</div>
@@ -50,8 +50,8 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="header-ads">
 							<ins class="adsbygoogle"
 								style="display:block; min-width:20rem; width:100%;"
-								data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
-								data-ad-slot="<?php echo $wgLibertyAdSetting['header']; ?>"
+								data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
+								data-ad-slot="<?=$wgLibertyAdSetting['header']; ?>"
 								data-ad-format="auto">
 							</ins>
 						</div>
@@ -69,8 +69,8 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-content-main">
 					<?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
 						<div class="social-buttons">
-							<div class="twitter" data-url="<?php echo $wgServer.$wgScriptPath; ?>/?curid=<?=$curid;?>" data-text="<?php echo $title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-							<div class="facebook" data-url="<?php echo str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?php echo $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+							<div class="twitter" data-url="<?=$wgServer.$wgScriptPath; ?>/?curid=<?=$curid;?>" data-text="<?=$title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+							<div class="facebook" data-url="<?=str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?=$title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
 						</div>
 					<?php } ?>
 					<?php if ( $this->data['catlinks'] ) {
@@ -320,7 +320,7 @@ class LibertyTemplate extends BaseTemplate {
 	function getNotification() {
 		$personalTools = $this->getPersonalTools();
 		$noti_count = $personalTools['notifications']['links']['0']['text'];
-		if ($noti_count != "0") {
+		if ($noti_count) {
 			?>
 			<div id="pt-notifications" class="navbar-notification">
 				<a href="#"><span class="label label-danger"><?=$noti_count;?></span></a>
