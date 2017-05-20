@@ -268,7 +268,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?=Linker::linkKnown( $title, '편집', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서를 편집합니다. [alt+shift+e]', 'accesskey' => 'e' ), $editaction ); ?>
 					<?=Linker::linkKnown( $title, '추가', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '새 문단을 추가합니다. [alt+shift+n]', 'accesskey' => 'n' ), array( 'action' => 'edit', 'section' => 'new' ) ); ?>
 					<?php
-						$titlename = $title->getNamespace() == NS_TALK || $title->getNamespace() == NS_PROJECT_TALK || $title->getNamespace() == NS_FILE_TALK || $title->getNamespace() == NS_TEMPLATE_TALK ? '본문' : '토론';
+						$titlename = $title->isTalkPage() ? '본문' : '토론';
 						echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
 					?>
 					<?=Linker::linkKnown( $title, '기록', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
