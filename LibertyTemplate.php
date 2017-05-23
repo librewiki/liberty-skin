@@ -2,10 +2,10 @@
 class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
-		global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath;
-		$request = $this->getSkin()->getRequest();
-		$action = $request->getVal( 'action', 'view' );
-		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
+		global $wgRequest;
+        $request = $this->getSkin()->getRequest();
+        $action = $request->getVal( 'action', 'view' );
+		$title = $this->getSkin()->getTitle();
 		$curid = $this->getSkin()->getTitle()->getArticleID();
 
 		wfSuppressWarnings();
@@ -122,18 +122,18 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function searchBox() {
-	?>
-		<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
-			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-			<div class="input-group">
-				<?=$this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput") ); ?>
-				<span class="input-group-btn">
-					<button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-					<button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
-				</span>
-			</div>
-		</form>
-	<?php
+    ?>
+        <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
+            <input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+            <div class="input-group">
+                <?php echo $this->makeSearchInput( array( "class" => "form-control", "id" => "searchInput") ); ?>
+                <span class="input-group-btn">
+                    <button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+                    <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
+                </span>
+            </div>
+        </form>
+    <?php
 	}
 
 	function loginBox() {
@@ -174,39 +174,44 @@ class LibertyTemplate extends BaseTemplate {
 		<?php
 	}
 
-	function login_modal() {
-		global $wgScriptPath, $wgRequest;
-		?>
-		<div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-sm" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title">로그인</h4>
-					</div>
-					<div class="modal-body">
-						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
-						</div>
-						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage();">
-							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
-							<label for="inputPassword" class="sr-only">Password</label>
-							<input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
-							<div class="modal-checkbox">
-								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-								<label for="lgremember">로그인 상태를 유지하기</label>
-							</div>
-							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-							<a href="<?=$wgScriptPath?>/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?=Title::newFromText($wgRequest->getVal('title'));?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
-							<?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php
-	}
+    function login_modal() {
+    ?>
+        <div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">로그인</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
+                        </div>
+                        <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage('<?php $this->html( 'title' ); ?>');">
+                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+                            <div class="modal-checkbox">
+                                <input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
+                                <label for="lgremember">로그인 상태를 유지하기</label>
+                            </div>
+                            <input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
+                            <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+                            <?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
+                            <input type="hidden" name="action" value="login">
+                            <input type="hidden" name="format" value="json">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
 
 	function live_recent() {
 		global $wgLibertyMaxRecent;
@@ -236,13 +241,11 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	function contents_toolbox() {
-		global $wgUser;
-		$title = $this->getSkin()->getTitle();
-		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
-		$watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() );
-		$user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
-		$editaction = $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' );
-		$titlename = $title->isTalkPage() ? '본문' : '토론';
+	    global $wgUser;
+        $title = $this->getSkin()->getTitle();
+        $revid = $this->getSkin()->getRequest()->getText( 'oldid' );
+        $watched = $this->getSkin()->getUser()->isWatched( $this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
+        $user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
@@ -282,50 +285,50 @@ class LibertyTemplate extends BaseTemplate {
 		}
 	}
 
-	function footer() {
-		foreach ( $this->getFooterLinks() as $category => $links ) {
-			?>
-			<ul class="footer-<?=$category;?>">
-				<?php foreach ( $links as $link ) {
-				?>
-					<li class="footer-<?=$category;?>-<?=$link;?>"><?php $this->html( $link ); ?></li>
-				<?php
-				}
-				?>
-			</ul>
-			<?php
-		}
-		$footericons = $this->getFooterIcons( "icononly" );
-		if ( count( $footericons ) > 0 ) {
-		?>
-			<ul class="footer-icons">
-				<?php
-					foreach ( $footericons as $blockName => $footerIcons ) {
-					?>
-						<li class="footer-<?=htmlspecialchars( $blockName );?>ico">
-						<?php
-							foreach ( $footerIcons as $icon ) {
-								echo $this->getSkin()->makeFooterIcon( $icon );
-							}
-						?>
-						</li>
-					<?php
-					}
-				?>
-			</ul>
-		<?php
-		}
-	}
+    function footer() {
+        foreach ( $this->getFooterLinks() as $category => $links ) {
+            ?>
+            <ul class="footer-<?=$category;?>">
+                <?php foreach ( $links as $link ) {
+                ?>
+                    <li class="footer-<?=$category;?>-<?=$link;?>"><?php $this->html( $link ); ?></li>
+                <?php
+                }
+                ?>
+            </ul>
+            <?php
+        }
+        $footericons = $this->getFooterIcons( "icononly" );
+        if ( count( $footericons ) > 0 ) {
+        ?>
+            <ul class="footer-icons">
+                <?php
+                    foreach ( $footericons as $blockName => $footerIcons ) {
+                    ?>
+                        <li class="footer-<?=htmlspecialchars( $blockName );?>ico">
+                        <?php
+                            foreach ( $footerIcons as $icon ) {
+                                echo $this->getSkin()->makeFooterIcon( $icon );
+                            }
+                        ?>
+                        </li>
+                    <?php
+                    }
+                ?>
+            </ul>
+        <?php
+        }
+    }
 
-	function getNotification() {
-		$personalTools = $this->getPersonalTools();
-		$noti_count = $personalTools['notifications']['links']['0']['text'];
-		if ($noti_count) {
-			?>
-			<div id="pt-notifications" class="navbar-notification">
-				<a href="#"><span class="label label-danger"><?=$noti_count;?></span></a>
-			</div>
-			<?php
-		}
-	}
+    function getNotification() {
+        $personalTools = $this->getPersonalTools();
+        $noti_count = $personalTools['notifications']['links']['0']['text'];
+        if ($noti_count != "0") {
+            ?>
+            <div id="pt-notifications" class="navbar-notification">
+                <a href="#"><span class="label label-danger"><?=$noti_count;?></span></a>
+            </div>
+            <?php
+        }
+    }
 } // end of class

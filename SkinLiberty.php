@@ -6,13 +6,10 @@ class SkinLiberty extends SkinTemplate {
 	public $template = 'LibertyTemplate';
 
     public function initPage( OutputPage $out ) {
-		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
-		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
-
         parent::initPage( $out );
-        $out->addMeta('viewport', 'width=device-width, initial-scale=1, maximum-scale=1');
-        $out->addMeta('description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>'));
-        $out->addMeta('keywords', $wgSitename.",".$this->getSkin()->getTitle());
+        $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
+        $out->addMeta( 'description', 'librewiki' );
+        $out->addMeta( 'keywords', 'wiki,librewiki,리브레위키,리브레 위키,' . $this->getSkin()->getTitle() );
 		
 		/* 네이버 웹마스터 도구 */
 		if(isset($wgNaverVerification)) { $out->addMeta('naver-site-verification', $wgNaverVerification); }
@@ -36,12 +33,6 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta('og:site_name', $wgSitename);
 		$out->addMeta('og:url', Title::newFromText( $wgRequest->getVal( 'title' ))->getFullURL());
 
-		/* 트위터 카드 */
-		$out->addMeta('twitter:card', 'summary');
-		if(isset($wgTwitterAccount)) {
-			$out->addMeta('twitter:site', "@$wgTwitterAccount");
-			$out->addMeta('twitter:creator', "@$wgTwitterAccount");
-		}
 		
 		
 		
@@ -55,8 +46,8 @@ class SkinLiberty extends SkinTemplate {
 
 	function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
-		$out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
-		$out->addHeadItem( 'google-ads', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
+ 	        $out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
+	        $out->addHeadItem( 'google-ads', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
 		$out->addModuleStyles( array(
 			'skins.liberty.styles'
 		) );
