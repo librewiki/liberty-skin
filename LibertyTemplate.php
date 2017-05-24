@@ -284,7 +284,7 @@ class LibertyTemplate extends BaseTemplate {
             ?>
             <div class="content-tools">
                 <div class="btn-group" role="group" aria-label="content-tools">
-                    <?=Linker::linkKnown( $title, '읽기', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
+                    <?=Linker::linkKnown( $title, '갱신', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
                     <?php
                     if ($revid) {
                         $editaction = array( 'action' => 'edit', 'oldid' => $revid );
