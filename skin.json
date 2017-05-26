@@ -63,12 +63,12 @@
 
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/login_request.js",
+				"js/login-request.js",
 				"js/live-recent.js",
-				"js/index_botton.js",
-				"js/delay_scrolling.js",
-				"js/notice_view.js",
-				"js/sns_button.js",
+				"js/index-button.js",
+				"js/delay-scrolling.js",
+				"js/disable-notice.js",
+				"js/sns-button.js",
 				"js/layout.js"
 			],
 			"position": "bottom"

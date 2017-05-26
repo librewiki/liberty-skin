@@ -12,9 +12,12 @@
   },
   "rules": {
     "semi" : [2],
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "quotes": ["error", "single"],
-    "arrow-spacing": [2, {"before": true, "after": true}],
+    "space-infix-ops": ["error"],
+    "arrow-spacing": [2, { "before": true, "after": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "key-spacing": ["error", { "mode": "strict" }],
     "space-before-function-paren": ["error", {
       "anonymous": "always",
       "named": "never",
@@ -26,7 +29,7 @@
     "keyword-spacing": [2],
     "eqeqeq": [2],
     "space-before-blocks": [2],
-    "strict": [2]
+    "strict": [2],
   },
   "extends": "eslint:recommended"
 }

@@ -1,18 +1,19 @@
-$(function() {
+$(function () {
+  'use strict';
   var documentNamespaces = '0|4|10|12|14|1600';
   var topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
   var isDocumentTab = true;
 
-  $('#liberty-recent-tab1').click(function(e){
+  $('#liberty-recent-tab1').click(function () {
     $(this).addClass('active');
     $('#liberty-recent-tab2').removeClass('active');
     isDocumentTab = true;
     refreshLiveRecent();
   });
 
-  $('#liberty-recent-tab2').click(function(e){
+  $('#liberty-recent-tab2').click(function () {
     $(this).addClass('active');
-    $("#liberty-recent-tab1").removeClass('active');
+    $('#liberty-recent-tab1').removeClass('active');
     isDocumentTab = false;
     refreshLiveRecent();
   });
@@ -29,7 +30,7 @@ $(function() {
       rctype: 'edit|new',
       rclimit: 10,
       format: 'json',
-      rcnamespace: isDocumentTab? documentNamespaces : topicNamespaces,
+      rcnamespace: isDocumentTab ? documentNamespaces : topicNamespaces,
       rctoponly: true
     };
     $.ajax({
@@ -38,13 +39,13 @@ $(function() {
       xhrFields: {
         withCredentials: true
       },
-      dataType:'json'
+      dataType: 'json'
     })
-    .then(function(data) {
+    .then(function (data) {
       var recentChanges = data.query.recentchanges;
-      var html = recentChanges.map(function(item) {
+      var html = recentChanges.map(function (item) {
         var time = new Date(item.timestamp);
-        var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title +'">[' + timeFormat(time) + '] ';
+        var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
         var text = '';
         if (item.type === 'new') {
           text += '[New]';
@@ -60,16 +61,16 @@ $(function() {
         return line;
       }).join('\n');
       $('#live-recent-list').html(html);
-    }, function() {
+    }, function () {
       return;
     });
-  };
+  }
 
   function timeFormat(time) {
     var aDayAgo = new Date();
     aDayAgo.setDate(aDayAgo.getDate() - 1);
     if (time < aDayAgo) {
-      return (time.getFullYear())+ '/' + (time.getMonth() + 1) + '/' + time.getDate();
+      return (time.getFullYear()) + '/' + (time.getMonth() + 1) + '/' + time.getDate();
     }
     var hour = time.getHours();
     var minute = time.getMinutes();
