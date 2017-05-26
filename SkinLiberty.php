@@ -6,7 +6,7 @@ class SkinLiberty extends SkinTemplate {
 	public $template = 'LibertyTemplate';
 
     public function initPage( OutputPage $out ) {
-		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
+		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLibertyOGLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
 		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
 
         parent::initPage( $out );
@@ -33,7 +33,7 @@ class SkinLiberty extends SkinTemplate {
 		/* OpenGraph */
 		$out->addMeta('og:title', $this->getSkin()->getTitle());
 		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>'));
-		$out->addMeta('og:image', $wgLogo);
+		$out->addMeta('og:image', $wgLibertyOGLogo);
 		$out->addMeta('og:locale', $wgLanguageCode);
 		$out->addMeta('og:site_name', $wgSitename);
 		$out->addMeta('og:url', Title::newFromText($wgRequest->getVal('title'))->getFullURL());
