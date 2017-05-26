@@ -46,7 +46,7 @@ $(function () {
       var recentChanges = data.query.recentchanges;
       var html = recentChanges.map(function (item) {
         var time = new Date(item.timestamp);
-        var line = '<li><a class="recent-item" href = "' + (mw.config.values.wgArticlePath).replace("$1", encodeURIComponent(item.title)) + '" title="' + item.title +'">[' + timeFormat(time) + '] ';
+        var line = '<li><a class="recent-item" href = "' + (mw.config.values.wgArticlePath).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
         var text = '';
         if (item.type === 'new') {
           text += '[New]';
