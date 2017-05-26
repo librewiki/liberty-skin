@@ -36,7 +36,7 @@ class LibertyTemplate extends BaseTemplate {
 			</aside>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
-                    <?php if ( $this->data['sitenotice'] && $_COOKIE['disable-notice'] != "yes" ) { ?>
+                    <?php if ( $this->data['sitenotice'] && $wgRequest->getCookie('disable-notice') != 'yes' ) { ?>
                         <div class="alert alert-dismissible fade in alert-info liberty-notice" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
