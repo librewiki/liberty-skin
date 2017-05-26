@@ -1,0 +1,30 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "script"
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "$": true,
+    "mw": true
+  },
+  "rules": {
+    "semi" : [2],
+    "arrow-spacing": [2, {"before": true, "after": true}],
+    "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+    }],
+    "no-console": [1],
+    "brace-style": [2],
+    "camelcase": [1],
+    "keyword-spacing": [2],
+    "eqeqeq": [2],
+    "space-before-blocks": [2],
+    "strict": [2]
+  },
+  "extends": "eslint:recommended"
+}
