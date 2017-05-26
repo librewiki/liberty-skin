@@ -1,5 +1,6 @@
-// eslint-disable-next-line
-function disableNotice() {
+$(function () {
   'use strict';
-  $.cookie('disable-notice', 'yes', { expires: 1, path: '/', domain: 'librewiki.net', secure: false });
-}
+  $('.liberty-notice').on('closed.bs.alert', function () {
+    $.cookie('disable-notice', 'yes', { expires: 1, path: '/', domain: 'librewiki.net', secure: false });
+  });
+});
