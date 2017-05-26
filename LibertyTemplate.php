@@ -2,7 +2,7 @@
 class LibertyTemplate extends BaseTemplate {
 
 	function execute() {
-		global $wgRequest;
+		global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath;
         $request = $this->getSkin()->getRequest();
         $action = $request->getVal( 'action', 'view' );
 		$title = $this->getSkin()->getTitle();
@@ -24,14 +24,16 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="liberty-right-fixed">
                     <?php $this->live_recent(); ?>
                 </div>
-                <div class="right-ads">
-                    <ins class="adsbygoogle"
-                        style="display:block; min-width: 15rem; width: 100%;"
-                        data-ad-client="ca-pub-9526107750460253"
-                        data-ad-slot="6581447128"
-                        data-ad-format="auto">
-                    </ins>
-                </div>
+                <?php if(!is_null($wgLibertyAdSetting['right'])) { ?>
+                    <div class="right-ads">
+                        <ins class="adsbygoogle"
+                            style="display:block; min-width: 15rem; width: 100%;"
+                            data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
+                            data-ad-slot="<?=$wgLibertyAdSetting['right']; ?>"
+                            data-ad-format="auto">
+                        </ins>
+                    </div>
+                <?php } ?>
             </div>
 			</aside>
             <div class="container-fluid liberty-content">
@@ -43,16 +45,18 @@ class LibertyTemplate extends BaseTemplate {
                             </button>
                             <?php $this->html( 'sitenotice' ) ?>
                         </div>
-                    <?php } ?>
-                    <div class="header-ads">
-                        <ins class="adsbygoogle"
-                            style="display:block; min-width:20rem; width:100%;"
-                            data-ad-client="ca-pub-9526107750460253"
-                            data-ad-slot="3627980722"
-                            data-ad-format="auto">
-                        </ins>
-                    </div>
-                    <?php $this->contents_toolbox(); ?>
+                    <?php }
+                    if(!is_null($wgLibertyAdSetting['header'])) { ?>
+                        <div class="header-ads">
+                            <ins class="adsbygoogle"
+                                style="display:block; min-width:20rem; width:100%;"
+                                data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
+                                data-ad-slot="<?=$wgLibertyAdSetting['header']; ?>"
+                                data-ad-format="auto">
+                            </ins>
+                        </div>
+                    <?php }
+                    $this->contents_toolbox(); ?>
                     <div class="title">
                         <h1>
                             <?php $this->html( 'title' ) ?>
@@ -65,9 +69,8 @@ class LibertyTemplate extends BaseTemplate {
                 <div class="liberty-content-main">
                     <?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
                         <div class="social-buttons">
-                            <div class="google" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="구글플러스"><div><i class="fa fa-google-plus"></i></div></div>
-                            <div class="twitter" data-url="https://librewiki.net/?curid=<?=$curid;?>" data-text="[<?php $this->html( 'title' ) ?>]%0A" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-                            <div class="facebook" data-url="https://librewiki.net/wiki/<?php $this->html( 'title' ) ?>" data-text="<?php $this->html( 'title' ) ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+                            <div class="twitter" data-url="<?=$wgServer.$wgScriptPath; ?>/?curid=<?=$curid;?>" data-text="<?=$title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+                            <div class="facebook" data-url="<?=str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?=$title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
                         </div>
                     <?php } ?>
                     <?php if ( $this->data['catlinks'] ) {
@@ -77,10 +80,9 @@ class LibertyTemplate extends BaseTemplate {
                     <?php $this->html( 'bodycontent' ) ?>
 					</article>
                 </div>
-                <div class="bottom-ads">
-                </div>
 				<footer>
                 <div class="liberty-footer">
+                    <div class="bottom-ads"></div>
                     <?php $this->footer(); ?>
                 </div>
 				</footer>
@@ -200,6 +202,7 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
     function login_modal() {
+    global $wgScriptPath;
     ?>
         <div class="modal fade login-modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
@@ -222,7 +225,7 @@ class LibertyTemplate extends BaseTemplate {
                                 <label for="lgremember">로그인 상태를 유지하기</label>
                             </div>
                             <input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-                            <a href="/index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+                            <a href="/<?=$wgScriptPath; ?>index.php?title=<?=SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php $this->html( 'title' ); ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
                             <?=Linker::linkKnown( SpecialPage::getTitleFor( 'PasswordReset', null ), '비밀번호를 잊으셨나요?', array() ); ?>
                             <input type="hidden" name="action" value="login">
                             <input type="hidden" name="format" value="json">
@@ -239,36 +242,29 @@ class LibertyTemplate extends BaseTemplate {
     }
 
 	function live_recent() {
-	?>
-	<div class="live-recent">
-	    <div class="live-recent-header">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
-            </li>
-          </ul>
-	    </div>
-	    <div class="live-recent-content">
-	        <ul class="live-recent-list" id="live-recent-list">
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	            <li><span class="recent-item">&nbsp;</span></li>
-	        </ul>
-	    </div>
-	    <div class="live-recent-footer">
-          <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="label label-info">더보기</span>'); ?>
-	    </div>
-	</div>
+        global $wgLibertyMaxRecent;
+        if(!isset($wgLibertyMaxRecent)) $wgLibertyMaxRecent = 10;
+        ?>
+        <div class="live-recent">
+            <div class="live-recent-header">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
+                </li>
+            </ul>
+            </div>
+            <div class="live-recent-content">
+                <ul class="live-recent-list" id="live-recent-list">
+                    <?=str_repeat('<li><span class="recent-item">&nbsp;</span></li>', $wgLibertyMaxRecent); ?>
+                </ul>
+            </div>
+            <div class="live-recent-footer">
+          	    <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Recentchanges', null ), '<span class="label label-info">더보기</span>'); ?>
+            </div>
+        </div>
 	<?php
 	}
 
