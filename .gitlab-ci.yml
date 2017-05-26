@@ -1,0 +1,14 @@
+image: node:latest
+
+stages:
+  - lint
+
+eslint:
+  stage: lint
+  script:
+    # Install ESLint in this docker container
+    - npm install -g eslint
+    # Configure ESLint (will read your .eslintrc file)
+    - eslint --init
+    # Run ESLint
+    - eslint js --ignore-pattern 'lib/'
