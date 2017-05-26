@@ -12,11 +12,13 @@
   },
   "rules": {
     "semi" : [2],
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
     "arrow-spacing": [2, {"before": true, "after": true}],
     "space-before-function-paren": ["error", {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
     }],
     "no-console": [1],
     "brace-style": [2],
