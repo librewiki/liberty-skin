@@ -1,14 +1,14 @@
 {
-	"name": "리버티",
+	"name": "리버티 수정 버전",
 	"author": [
 		"Liberty LLC", "..."
 	],
-	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
+	"url": "https://github.com/rwikidev/liberty-skin/",
 	"descriptionmsg": "liberty-desc",
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.1.9",
+	"version": "1.0",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
