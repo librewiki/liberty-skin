@@ -173,7 +173,6 @@ class LibertyTemplate extends BaseTemplate
                             'accesskey' => 'g'
                         )
                     ); ?>
-                    <a class="dropdown-item" href="https://maps.librewiki.net">리브레 맵스</a>
                     <a class="dropdown-item" href="https://issue.librewiki.net/">이슈 트래커</a>
                 </div>
             </li>
