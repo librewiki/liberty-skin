@@ -487,6 +487,17 @@ class LibertyTemplate extends BaseTemplate
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
                         <?php
+                        if ($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) {
+                            echo Linker::linkKnown( 
+                                SpecialPage::getTitleFor('Contributions', $title->getText()),
+                                '기여',
+                                array(
+                                    'class' => 'dropdown-item',
+                                    'title' => '사용자의 기여 목록을 불러옵니다.'
+                                ),
+                                array( 'action' => $mode )
+                            );
+                        }
                         if ($watched != 'watch') {
                             $watchname = '주시해제';
                         } else {
