@@ -13,7 +13,7 @@ eslint:
     - eslint js --ignore-pattern 'lib/'
 
 phpcs:
-  image: gitlab-ci-phpcs:latest
+  image: texthtml/phpcs
   stage: lint
   script:
     - phpcs **.php
