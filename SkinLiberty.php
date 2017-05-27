@@ -6,13 +6,18 @@ class SkinLiberty extends SkinTemplate {
 	public $template = 'LibertyTemplate';
 
     public function initPage( OutputPage $out ) {
+		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLibertyOGLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
+		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
+
         parent::initPage( $out );
         $out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
-        $out->addMeta( 'description', 'librewiki' );
-        $out->addMeta( 'keywords', 'wiki,librewiki,리브레위키,리브레 위키,' . $this->getSkin()->getTitle() );
+        $out->addMeta( 'description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>') );
+        $out->addMeta( 'keywords', $wgSitename.",".$this->getSkin()->getTitle() );
 		
 		/* 네이버 웹마스터 도구 */
-		$out->addMeta('naver-site-verification', '0b20790abdd5720e293968109acb489744366ae9');
+		if (isset($wgNaverVerification)) { 
+			$out->addMeta('naver-site-verification', $wgNaverVerification);
+		}
 		
 		/* IOS 기기 및 모바일 크롬에서의 웹앱 옵션 켜기 및 상단바 투명화 */
 		$out->addMeta('apple-mobile-web-app-capable', 'Yes');
@@ -21,22 +26,24 @@ class SkinLiberty extends SkinTemplate {
 		
 		/* 모바일에서의 테마 컬러 적용 */
 		//크롬, 파이어폭스 OS, 오페라
-		$out->addMeta('theme-color', '#4188F1');
+		$out->addMeta('theme-color', $wgLibertyMainColor);
 		//윈도우 폰
-		$out->addMeta('msapplication-navbutton-color', '#4188F1'); 
+		$out->addMeta('msapplication-navbutton-color', $wgLibertyMainColor); 
 		
 		/* OpenGraph */
-		$out->addMeta('og:image','https://librewiki.net/images/6/6a/Libre_favicon.png' );
-		$out->addMeta('og:locale', 'ko_KR' );
+		$out->addMeta('og:title', $this->getSkin()->getTitle());
+		$out->addMeta('og:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext),'<br>'));
+		$out->addMeta('og:image', $wgLibertyOGLogo);
+		$out->addMeta('og:locale', $wgLanguageCode);
+		$out->addMeta('og:site_name', $wgSitename);
+		$out->addMeta('og:url', Title::newFromText($wgRequest->getVal('title'))->getFullURL());
 
-		
 		/* 트위터 카드 */
 		$out->addMeta('twitter:card', 'summary');
-		$out->addMeta('twitter:site', '@librewiki');
-		$out->addMeta('twitter:title', $this->getSkin()->getTitle() );
-		$out->addMeta('twitter:description', strip_tags(preg_replace('/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext)),'<br>');
-		$out->addMeta('twitter:creator', '@librewiki');
-		$out->addMeta('twitter:image', 'https://librewiki.net/images/6/6a/Libre_favicon.png');
+		if (isset($wgTwitterAccount)) {
+			$out->addMeta('twitter:site', "@$wgTwitterAccount");
+			$out->addMeta('twitter:creator', "@$wgTwitterAccount");
+		}
 		
 		
 		

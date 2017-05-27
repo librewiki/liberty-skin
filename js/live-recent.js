@@ -3,6 +3,7 @@ $(function () {
   var documentNamespaces = '0|4|10|12|14|1600';
   var topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
   var isDocumentTab = true;
+  var limit = $('#live-recent-list')[0].childElementCount;
 
   $('#liberty-recent-tab1').click(function () {
     $(this).addClass('active');
@@ -28,7 +29,7 @@ $(function () {
       rcprop: 'title|timestamp',
       rcshow: '!bot|!redirect',
       rctype: 'edit|new',
-      rclimit: 10,
+      rclimit: limit,
       format: 'json',
       rcnamespace: isDocumentTab ? documentNamespaces : topicNamespaces,
       rctoponly: true
@@ -45,7 +46,7 @@ $(function () {
       var recentChanges = data.query.recentchanges;
       var html = recentChanges.map(function (item) {
         var time = new Date(item.timestamp);
-        var line = '<li><a class="recent-item" href = "/wiki/' + encodeURIComponent(item.title) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
+        var line = '<li><a class="recent-item" href = "' + (mw.config.values.wgArticlePath).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
         var text = '';
         if (item.type === 'new') {
           text += '[New]';
