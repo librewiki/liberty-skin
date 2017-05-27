@@ -53,6 +53,8 @@
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable {
     width: auto;
+    display: block;
+    overflow-x: auto;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable th {
