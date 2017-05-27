@@ -133,7 +133,7 @@ class LibertyTemplate extends BaseTemplate
                     )
                 ); ?>
             </li>
-            <?= preg_replace('/<script(.*?)>(.*?)<\/script>/', '', WikiPage::factory(Title::newFromText('Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW)); ?>
+            <?= WikiPage::factory(Title::newFromText('Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW); ?>
         </ul>
         <?php $this->loginBox(); ?>
         <?php $this->getNotification(); ?>
