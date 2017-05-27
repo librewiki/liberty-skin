@@ -16,4 +16,4 @@ phpcs:
   image: texthtml/phpcs
   stage: lint
   script:
-    - phpcs **.php
+    - phpcs --standard=ZEND **.php
