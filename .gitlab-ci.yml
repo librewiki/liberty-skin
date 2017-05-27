@@ -17,3 +17,4 @@ phpcs:
   stage: lint
   script:
     - phpcs --standard=PSR2 **.php
+  allow_failure: true
