@@ -1,9 +1,8 @@
-image: node:latest
-
 stages:
   - lint
 
 eslint:
+  image: node:latest
   stage: lint
   script:
     # Install ESLint in this docker container
@@ -12,3 +11,9 @@ eslint:
     - eslint --init
     # Run ESLint
     - eslint js --ignore-pattern 'lib/'
+
+phpcs:
+  image: gitlab-ci-phpcs:latest
+  stage: lint
+  script:
+    - phpcs **.php
