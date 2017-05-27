@@ -71,7 +71,7 @@ class SkinLiberty extends SkinTemplate
             array('skins.liberty.styles')
         );
     }
-    public function addToBodyAttributes(OutputPage $out, &$bodyAttrs)
+    public function addToBodyAttributes($out, &$bodyAttrs)
     {
         $bodyAttrs['class'] .= " Liberty width-size";
     }
