@@ -1,5 +1,4 @@
 Liberty LLC and Librewiki Developers
-
 itsurea
 well-made-plush
 nessun
@@ -8,8 +7,9 @@ zlzleking
 katinor
 
 And Special Thanks for Contributing to
-
 nuxe
 Hoto Cocoa
 
-And, you
+Edit by DDark (admin@ddark.kr)
+
+Thanks for Github Contributors
