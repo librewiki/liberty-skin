@@ -1,8 +1,7 @@
 // eslint-disable-next-line
-function LoginManage(lasturl) {
+function LoginManage() {
   'use strict';
   try {
-    var url = '/wiki/' + lasturl;
     $.ajax({
       url: mw.util.wikiScript('api'),
       type: 'post',
@@ -48,7 +47,7 @@ function LoginManage(lasturl) {
 
           }
         } else {
-          $(location).attr('href', url);
+          window.location.reload();
         }
       });
     });
