@@ -47,7 +47,11 @@ function LoginManage() {
 
           }
         } else {
-          mw.config.get('wgNamespaceNumber') === -1 ? $(location).attr('href', '/wiki') : window.location.reload();
+          if (mw.config.get('wgNamespaceNumber') === -1) {
+            $(location).attr('href', '/wiki');
+          } else {
+            window.location.reload();
+          }
         }
       });
     });
