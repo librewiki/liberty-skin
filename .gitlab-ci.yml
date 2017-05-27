@@ -16,5 +16,5 @@ phpcs:
   image: texthtml/phpcs
   stage: lint
   script:
-    - phpcs --standard=PSR2 **.php
+    - phpcs --standard=./phpcs-ruleset.xml **.php
   allow_failure: true
