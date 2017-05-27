@@ -488,7 +488,7 @@ class LibertyTemplate extends BaseTemplate
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
                         <?php
                         if ($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) {
-                            echo Linker::linkKnown( 
+                            echo Linker::linkKnown(
                                 SpecialPage::getTitleFor('Contributions', $title->getText()),
                                 '기여',
                                 array(
