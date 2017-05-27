@@ -47,7 +47,7 @@ function LoginManage() {
 
           }
         } else {
-          window.location == '/wiki/%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83' ? $(location).attr('href', '/wiki') : window.location.reload();
+          mw.config.get('wgNamespaceNumber') == -1 ? $(location).attr('href', '/wiki') : window.location.reload();
         }
       });
     });
