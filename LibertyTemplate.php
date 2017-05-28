@@ -133,7 +133,7 @@ class LibertyTemplate extends BaseTemplate
                     )
                 ); ?>
             </li>
-            <?= WikiPage::factory(Title::newFromText('Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW); ?>
+            <?= $this->renderPortals($this->data['sidebar']); ?>
         </ul>
         <?php $this->loginBox(); ?>
         <?php $this->getNotification(); ?>
@@ -525,5 +525,59 @@ class LibertyTemplate extends BaseTemplate
             </div>
         <?php
         }
+    }
+
+    protected function renderPortals($portals)
+    {
+        foreach ($portals as $name => $content) {
+            if ($content === false) {
+                continue;
+            }
+
+            $name = (string)$name;
+
+            switch ($name) {
+                default:
+                    $this->renderPortal($name, $content);
+                    break;
+            }
+        }
+    }
+
+    protected function renderPortal($name, $content, $msg = null, $hook = null)
+    {
+        if ($msg === null) {
+            $msg = $name;
+        }
+        $msgObj = wfMessage($msg);
+        ?>
+            <li class="nav-item dropdown">
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <?= strip_tags($msgObj->exists() ? $msgObj->text() : $msg, '<span>'); ?>
+                </span>
+                <div class="dropdown-menu" role="menu">
+                    <?php
+                    if (is_array($content)) {
+                    ?>
+                        <ul>
+                            <?php
+                            foreach ($content as $key => $val) {
+                                ?><a href="<?= $val['href']; ?>" class="dropdown-item" title="<?= $val['text']; ?>"><?= $val['text']; ?></a><?php
+                            }
+                            if ($hook !== null) {
+                                Hooks::run($hook, [&$this, true]);
+                            }
+                            ?>
+                        </ul>
+                    <?php
+                    } else {
+                        echo $content;
+                    }
+
+                    $this->renderAfterPortlet($name);
+                    ?>
+            </div>
+        </li>
+    <?php
     }
 } // end of class
