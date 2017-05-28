@@ -133,7 +133,7 @@ class LibertyTemplate extends BaseTemplate
                     )
                 ); ?>
             </li>
-            <?= $this->renderPortals($this->data['sidebar']); ?>
+            <?= $this->renderPortal($this->parseNavbar()); ?>
         </ul>
         <?php $this->loginBox(); ?>
         <?php $this->getNotification(); ?>
@@ -527,57 +527,75 @@ class LibertyTemplate extends BaseTemplate
         }
     }
 
-    protected function renderPortals($portals)
+    protected function renderPortal($contents)
     {
-        foreach ($portals as $name => $content) {
+        foreach ($contents as $content) {
             if ($content === false) {
-                continue;
+                break;
             }
-
-            $name = (string)$name;
-
-            switch ($name) {
-                default:
-                    $this->renderPortal($name, $content);
-                    break;
-            }
-        }
-    }
-
-    protected function renderPortal($name, $content, $msg = null, $hook = null)
-    {
-        if ($msg === null) {
-            $msg = $name;
-        }
-        $msgObj = wfMessage($msg);
-        ?>
+            ?>
             <li class="nav-item dropdown">
                 <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <?= strip_tags($msgObj->exists() ? $msgObj->text() : $msg, '<span>'); ?>
+                    <?= strip_tags($content['text'], '<span>'); ?>
                 </span>
                 <div class="dropdown-menu" role="menu">
                     <?php
-                    if (is_array($content)) {
+                    if (is_array($content['child'])) {
                     ?>
                         <ul>
                             <?php
-                            foreach ($content as $key => $val) {
+                            foreach ($content['child'] as $val) {
                                 ?><a href="<?= $val['href']; ?>" class="dropdown-item" title="<?= $val['text']; ?>"><?= $val['text']; ?></a><?php
-                            }
-                            if ($hook !== null) {
-                                Hooks::run($hook, [&$this, true]);
                             }
                             ?>
                         </ul>
                     <?php
-                    } else {
-                        echo $content;
                     }
-
-                    $this->renderAfterPortlet($name);
                     ?>
-            </div>
-        </li>
-    <?php
+                </div>
+            </li>
+            <?php
+        }
+    }
+
+    protected function parseNavbar()
+    {
+        $navbar = array();
+        $heading = null;
+        $data = WikiPage::factory(Title::newFromText('Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW);
+        $lines = explode("\n", $data);
+
+        foreach ($lines as $line) {
+            if (strpos($line, '*') !== 0) {
+                break;
+            }
+
+            $line = rtrim($line, "\r");
+            
+            if (strpos($line, '**') !== 0) {
+                $item = $this->getItem($line);
+                $item['child'] = array();
+                $heading = &$item['child'];
+                $navbar[] = $item;
+            } else {
+                $item = $this->getItem($line);
+                $heading[] = $item;
+            }
+        }
+
+        return $navbar;
+    }
+
+    protected function getItem($line)
+    {
+        global $wgArticlePath;
+
+        $item = array();
+        $line = array_map('trim', explode('|', trim($line, '* '), 3));
+
+        $item['text'] = (isset($line[1])) ? $line[1] : $line[0];
+        $item['href'] = preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath);
+        
+        return $item;
     }
 } // end of class
