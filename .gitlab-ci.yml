@@ -17,4 +17,3 @@ phpcs:
   stage: lint
   script:
     - phpcs --standard=./phpcs-ruleset.xml **.php
-  allow_failure: true
