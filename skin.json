@@ -55,7 +55,8 @@
 			"scripts": [
 				"js/lib/jquery.ba-throttle-debounce.js",
 				"js/lib/jquery.min.js",
-				"js/lib/bootstrap.min.js"
+				"js/lib/bootstrap.min.js",
+				"js/lib/twitter-widgets.js"
 			],
 			"position": "bottom"
 		},
