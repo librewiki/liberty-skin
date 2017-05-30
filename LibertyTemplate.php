@@ -536,16 +536,16 @@ class LibertyTemplate extends BaseTemplate
             ?>
             <li class="nav-item dropdown">
                 <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <?= strip_tags($content['text'], '<span>'); ?>
+                    <span class="fa fa-<?= $content['icon']; ?>"></span><?= $content['text']; ?>
                 </span>
                 <div class="dropdown-menu" role="menu">
                     <?php
-                    if (is_array($content['child'])) {
+                    if (is_array($content['children'])) {
                     ?>
                         <ul>
                             <?php
-                            foreach ($content['child'] as $val) {
-                                ?><a href="<?= $val['href']; ?>" class="dropdown-item" title="<?= $val['text']; ?>"><?= $val['text']; ?></a><?php
+                            foreach ($content['children'] as $child) {
+                                ?><a href="<?= $child['href']; ?>" class="dropdown-item" title="<?= $child['text']; ?>"><?= $child['text']; ?></a><?php
                             }
                             ?>
                         </ul>
@@ -560,44 +560,46 @@ class LibertyTemplate extends BaseTemplate
 
     protected function parseNavbar()
     {
-        $navbar = array();
-        $heading = null;
+        global $wgArticlePath;
+        $headings = array();
+        $currentHeading = null;
         $data = WikiPage::factory(Title::newFromText('Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW);
         $lines = explode("\n", $data);
 
         foreach ($lines as $line) {
-            if (strpos($line, '*') !== 0) {
-                break;
-            }
-
             $line = rtrim($line, "\r");
-
-            if (strpos($line, '**') !== 0) {
-                $item = $this->getItem($line);
-                $item['child'] = array();
-                $heading = &$item['child'];
-                $navbar[] = $item;
+            if ($line[0] !== '*') {
+                continue;
+            }
+            if ($line[1] !== '*') {
+                $splited = explode('|', $line, 3);
+                $item = array(
+                    'icon' => htmlentities(trim(substr($splited[0], 1)), ENT_QUOTES, 'UTF-8'),
+                    'text' => htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8'),
+                    'children' => array()
+                );
+                $currentChildren = &$item['children'];
+                $headings[] = $item;
             } else {
-                $item = $this->getItem($line);
-                $heading[] = $item;
+                $splited = explode('|', $line, 3);
+                $href = '';
+                $splited[0] = trim(substr($splited[0], 2));
+                if (preg_match('/http(?:s)?:\/\/(.*)/', $splited[0])) {
+                    $href = htmlentities($splited[0], ENT_QUOTES, 'UTF-8');
+                } else {
+                    $href = str_replace('$1', str_replace('%3A', ':', urlencode($splited[0])), $wgArticlePath);
+                }
+                if (!isset($splited[1])) {
+                    $splited[] = '';
+                }
+                $text = htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8');
+                $item = array(
+                    'text' => $text,
+                    'href' => $href
+                );
+                $currentChildren[] = $item;
             }
         }
-
-        return $navbar;
-    }
-
-    protected function getItem($line)
-    {
-        global $wgArticlePath;
-
-        $item = array();
-        $line = array_map('trim', explode('|', trim($line, '* '), 3));
-
-        $item['text'] = htmlspecialchars((isset($line[1])) ? $line[1] : $line[0]);
-        $item['href'] = htmlspecialchars(
-          preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath)
-        );
-
-        return $item;
+        return $headings;
     }
 } // end of class
