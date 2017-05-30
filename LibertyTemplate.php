@@ -533,7 +533,7 @@ class LibertyTemplate extends BaseTemplate
             ?>
             <li class="nav-item dropdown">
                 <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="fa fa-<?= $content['icon']; ?>"></span><?= $content['text']; ?>
+                    <span class="fa fa-<?= $content['icon']; ?>"></span><span class="hide-title"><?= $content['text']; ?></span>
                 </span>
                 <div class="dropdown-menu" role="menu">
                     <?php
