@@ -571,7 +571,7 @@ class LibertyTemplate extends BaseTemplate
             }
 
             $line = rtrim($line, "\r");
-            
+
             if (strpos($line, '**') !== 0) {
                 $item = $this->getItem($line);
                 $item['child'] = array();
@@ -594,8 +594,10 @@ class LibertyTemplate extends BaseTemplate
         $line = array_map('trim', explode('|', trim($line, '* '), 3));
 
         $item['text'] = (isset($line[1])) ? $line[1] : $line[0];
-        $item['href'] = preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath);
-        
+        $item['href'] = htmlspecialchars(
+          preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath)
+        );
+
         return $item;
     }
 } // end of class
