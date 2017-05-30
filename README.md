@@ -14,4 +14,4 @@
 | `$wgLibertyMaxRecent`  	| 사이드바 최근 변경 최대 개수          	| `10`                                                                                                                   	| `10`           	|
 
 ## 상단바
-위키 내부의 `미디어위키:Sidebar` 문서를 수정해주세요. 예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Sidebar)에 있습니다.
+위키 내부의 `미디어위키:Liberty-Navbar` 문서를 수정해주세요. 예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에 있습니다.
