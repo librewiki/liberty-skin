@@ -593,7 +593,7 @@ class LibertyTemplate extends BaseTemplate
         $item = array();
         $line = array_map('trim', explode('|', trim($line, '* '), 3));
 
-        $item['text'] = (isset($line[1])) ? $line[1] : $line[0];
+        $item['text'] = htmlspecialchars((isset($line[1])) ? $line[1] : $line[0]);
         $item['href'] = htmlspecialchars(
           preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath)
         );
