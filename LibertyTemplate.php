@@ -133,82 +133,7 @@ class LibertyTemplate extends BaseTemplate
                     )
                 ); ?>
             </li>
-            <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다."><span class="fa fa-comments"></span><span class="hide-title">게시판</span></span>
-                <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
-                    <a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
-                    <a class="dropdown-item" href="https://bbs.librewiki.net/freeboard">자유게시판</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <?= Linker::linkKnown(
-                    SpecialPage::getTitleFor('Specialpages', null),
-                    '<span class="fa fa-gear"></span><span class="hide-title">도구</span>',
-                    array(
-                        'class' => 'nav-link dropdown-toggle dropdown-toggle-fix',
-                        'data-toggle' => 'dropdown',
-                        'role' => 'button',
-                        'aria-haspopup' => 'true',
-                        'aria-expanded' => 'false',
-                        'title' => '도구를 보여줍니다.'
-                    )
-                ); ?>
-                <div class="dropdown-menu" role="menu">
-                    <?= Linker::linkKnown(
-                        SpecialPage::getTitleFor('SpecialPages', null),
-                        '특수 문서 목록',
-                        array(
-                            'class' => 'dropdown-item',
-                            'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]',
-                            'accesskey' => 'q'
-                        )
-                    ); ?>
-                    <?= Linker::linkKnown(
-                        SpecialPage::getTitleFor('upload', null),
-                        '업로드',
-                        array(
-                            'class' => 'dropdown-item',
-                            'title' => '파일을 올립니다. [alt+shift+g]',
-                            'accesskey' => 'g'
-                        )
-                    ); ?>
-                    <a class="dropdown-item" href="https://issue.librewiki.net/">이슈 트래커</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <?= Linker::linkKnown(
-                    Title::makeTitle(NS_HELP, '위키 문법'),
-                    '<span class="fa fa-book"></span><span class="hide-title">도움말</span>',
-                    array(
-                        'class' => 'nav-link dropdown-toggle dropdown-toggle-fix',
-                        'data-toggle' => 'dropdown',
-                        'role' => 'button',
-                        'aria-haspopup' => 'true',
-                        'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.')); ?>
-                <div class="dropdown-menu" role="menu">
-                    <?= Linker::linkKnown(
-                        Title::makeTitle(NS_HELP, '위키 문법'),
-                        '위키 문법',
-                        array( 'class' => 'dropdown-item' )
-                    ); ?>
-                    <?= Linker::linkKnown(
-                        Title::makeTitle(NS_HELP, 'Tex 문법'),
-                        'Tex 문법',
-                        array( 'class' => 'dropdown-item' )
-                    ); ?>
-                    <?= Linker::linkKnown(
-                        Title::makeTitle(NS_HELP, '태그'),
-                        '태그',
-                        array( 'class' => 'dropdown-item' )
-                    ); ?>
-                    <?= Linker::linkKnown(
-                        Title::makeTitle(NS_HELP, '이슈 트래커'),
-                        '이슈 트래커',
-                        array( 'class' => 'dropdown-item' )
-                    ); ?>
-                </div>
-            </li>
+            <?= $this->renderPortal($this->parseNavbar()); ?>
         </ul>
         <?php $this->loginBox(); ?>
         <?php $this->getNotification(); ?>
@@ -600,5 +525,77 @@ class LibertyTemplate extends BaseTemplate
             </div>
         <?php
         }
+    }
+
+    protected function renderPortal($contents)
+    {
+        foreach ($contents as $content) {
+            if ($content === false) {
+                break;
+            }
+            ?>
+            <li class="nav-item dropdown">
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <?= strip_tags($content['text'], '<span>'); ?>
+                </span>
+                <div class="dropdown-menu" role="menu">
+                    <?php
+                    if (is_array($content['child'])) {
+                    ?>
+                        <ul>
+                            <?php
+                            foreach ($content['child'] as $val) {
+                                ?><a href="<?= $val['href']; ?>" class="dropdown-item" title="<?= $val['text']; ?>"><?= $val['text']; ?></a><?php
+                            }
+                            ?>
+                        </ul>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </li>
+            <?php
+        }
+    }
+
+    protected function parseNavbar()
+    {
+        $navbar = array();
+        $heading = null;
+        $data = WikiPage::factory(Title::newFromText('Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW);
+        $lines = explode("\n", $data);
+
+        foreach ($lines as $line) {
+            if (strpos($line, '*') !== 0) {
+                break;
+            }
+
+            $line = rtrim($line, "\r");
+            
+            if (strpos($line, '**') !== 0) {
+                $item = $this->getItem($line);
+                $item['child'] = array();
+                $heading = &$item['child'];
+                $navbar[] = $item;
+            } else {
+                $item = $this->getItem($line);
+                $heading[] = $item;
+            }
+        }
+
+        return $navbar;
+    }
+
+    protected function getItem($line)
+    {
+        global $wgArticlePath;
+
+        $item = array();
+        $line = array_map('trim', explode('|', trim($line, '* '), 3));
+
+        $item['text'] = (isset($line[1])) ? $line[1] : $line[0];
+        $item['href'] = preg_match('/http(?:s)?:\/\/(.*)/', $line[0]) ? $line[0] : str_replace('$1', str_replace('%3A', ':', urlencode($line[0])), $wgArticlePath);
+        
+        return $item;
     }
 } // end of class
