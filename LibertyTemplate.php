@@ -307,10 +307,7 @@ class LibertyTemplate extends BaseTemplate
 
     protected function liveRecent()
     {
-        global $wgLibertyMaxRecent;
-        if (!isset($wgLibertyMaxRecent)) {
-            $wgLibertyMaxRecent = 10;
-        }
+        $wgLibertyMaxRecent = isset($GLOBALS['wgLibertyMaxRecent']) ? $GLOBALS['wgLibertyMaxRecent'] : 10;
         ?>
         <div class="live-recent">
             <div class="live-recent-header">

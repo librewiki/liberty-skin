@@ -8,9 +8,9 @@ class SkinLiberty extends SkinTemplate
 
     public function initPage(OutputPage $out)
     {
-        global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLibertyOGLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
-        $wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
-        $wgLibertyOGLogo = isset($wgLibertyOGLogo) ? $wgLibertyOGLogo : $wgLogo;
+        global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgRequest, $wgLogo;
+        $wgLibertyMainColor = isset($GLOBALS['wgLibertyMainColor']) ? $wgLibertyMainColor : '#4188F1';
+        $wgLibertyOGLogo = isset($GLOBALS['wgLibertyOGLogo']) ? $wgLibertyOGLogo : $wgLogo;
 
         parent::initPage($out);
         $out->addMeta('viewport', 'width=device-width, initial-scale=1, maximum-scale=1');
