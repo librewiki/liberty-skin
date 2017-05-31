@@ -532,21 +532,13 @@ class LibertyTemplate extends BaseTemplate
             }
             ?>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="fa fa-<?= $content['icon']; ?>"></span><?= $content['text']; ?>
-                </span>
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다."><span class="fa fa-<?= $content['icon']; ?>"></span><span class="hide-title"><?= $content['text']; ?></span></span>
                 <div class="dropdown-menu" role="menu">
                     <?php
                     if (is_array($content['children'])) {
-                    ?>
-                        <ul>
-                            <?php
-                            foreach ($content['children'] as $child) {
-                                ?><a href="<?= $child['href']; ?>" class="dropdown-item" title="<?= $child['text']; ?>"><?= $child['text']; ?></a><?php
-                            }
-                            ?>
-                        </ul>
-                    <?php
+                        foreach ($content['children'] as $child) {
+                            ?><a href="<?= $child['href']; ?>" class="dropdown-item" title="<?= $child['text']; ?>"><?= $child['text']; ?></a><?php
+                        }
                     }
                     ?>
                 </div>
