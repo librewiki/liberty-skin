@@ -245,13 +245,14 @@ class LibertyTemplate extends BaseTemplate
                     </div>
                 </div>
                 <?= Linker::linkKnown(
-                    SpecialPage::getTitleFor('logout', null),
-                    '<span class="fa fa-sign-out"></span>',
-                    array(
-                        'class' => 'hide-logout logout-btn',
-                        'title' => '로그아웃'
-                    )
-                ); ?>
+                        SpecialPage::getTitleFor('logout', null),
+                        '<span class="fa fa-sign-out"></span>',
+                        array(
+                            'class' => 'hide-logout logout-btn',
+                            'title' => '로그아웃'
+                        )
+                    );
+                ?>
             <?php } else { ?>
                 <a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
                     <span class="fa fa-sign-in"></span>
@@ -289,7 +290,8 @@ class LibertyTemplate extends BaseTemplate
                             <a href="/<?= $wgScriptPath; ?>index.php?title=<?= SpecialPage::getTitleFor('UserLogin', null); ?>&amp;type=signup&amp;returnto=<?= $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg('userlogin-joinproject'); ?></a>
                             <?= Linker::linkKnown(
                                 SpecialPage::getTitleFor('PasswordReset', null),
-                                '비밀번호를 잊으셨나요?', array()
+                                '비밀번호를 잊으셨나요?',
+                                array()
                             ); ?>
                             <input type="hidden" name="action" value="login">
                             <input type="hidden" name="format" value="json">
@@ -484,7 +486,7 @@ class LibertyTemplate extends BaseTemplate
         foreach ($this->getFooterLinks() as $category => $links) { ?>
             <ul class="footer-<?= $category;?>">
                 <?php foreach ($links as $link) { ?>
-                    <li class="footer-<? $category; ?>-<? $link; ?>"><?php $this->html($link); ?></li>
+                    <li class="footer-<?= $category; ?>-<?= $link; ?>"><?php $this->html($link); ?></li>
                 <?php } ?>
             </ul>
         <?php

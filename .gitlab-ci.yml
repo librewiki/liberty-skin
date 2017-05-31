@@ -16,4 +16,4 @@ phpcs:
   image: texthtml/phpcs
   stage: lint
   script:
-    - phpcs --standard=./phpcs-ruleset.xml **.php
+    - phpcs --standard=./phpcs.ruleset.xml **.php
