@@ -534,12 +534,15 @@ class LibertyTemplate extends BaseTemplate
             }
             ?>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다."><span class="fa fa-<?= $content['icon']; ?>"></span><span class="hide-title"><?= $content['text']; ?></span></span>
+                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="<?= $content['title']; ?>">
+                    <span class="fa fa-<?= $content['icon']; ?>"></span>
+                    <span class="hide-title"><?= $content['text']; ?></span>
+                </span>
                 <div class="dropdown-menu" role="menu">
                     <?php
                     if (is_array($content['children'])) {
                         foreach ($content['children'] as $child) {
-                            ?><a href="<?= $child['href']; ?>" class="dropdown-item" title="<?= $child['text']; ?>"><?= $child['text']; ?></a><?php
+                            ?><a href="<?= $child['href']; ?>" class="dropdown-item" title="<?= $child['title']; ?>" accesskey="<?= $child['access']; ?>"><?= $child['text']; ?></a><?php
                         }
                     }
                     ?>
@@ -567,26 +570,39 @@ class LibertyTemplate extends BaseTemplate
                 $item = array(
                     'icon' => htmlentities(trim(substr($splited[0], 1)), ENT_QUOTES, 'UTF-8'),
                     'text' => htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8'),
+                    'title' => htmlentities(trim($splited[2]), ENT_QUOTES, 'UTF-8'),
                     'children' => array()
                 );
                 $currentChildren = &$item['children'];
                 $headings[] = $item;
             } else {
-                $splited = explode('|', $line, 3);
+                $splited = explode(' | ', $line, 4);
                 $href = '';
+                $title = '';
+                $access = '';
                 $splited[0] = trim(substr($splited[0], 2));
-                if (preg_match('/http(?:s)?:\/\/(.*)/', $splited[0])) {
-                    $href = htmlentities($splited[0], ENT_QUOTES, 'UTF-8');
+                $text = htmlentities(trim($splited[0]), ENT_QUOTES, 'UTF-8');
+                if (preg_match('/http(?:s)?:\/\/(.*)/', $splited[1])) {
+                    $href = htmlentities($splited[1], ENT_QUOTES, 'UTF-8');
                 } else {
-                    $href = str_replace('$1', str_replace('%3A', ':', urlencode($splited[0])), $wgArticlePath);
+                    $href = str_replace('$1', str_replace('%3A', ':', urlencode($splited[1])), $wgArticlePath);
                 }
                 if (!isset($splited[1])) {
                     $splited[] = '';
                 }
-                $text = htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8');
+                if (isset($splited[2])) {
+                    $title = htmlentities(trim($splited[2]), ENT_QUOTES, 'UTF-8');
+                } else {
+                    $title = $text;
+                }
+                if (isset($splited[3])) {
+                    $access = htmlentities(trim($splited[3]), ENT_QUOTES, 'UTF-8');
+                }
                 $item = array(
                     'text' => $text,
-                    'href' => $href
+                    'href' => $href,
+                    'title' => $title,
+                    'access' => $access
                 );
                 $currentChildren[] = $item;
             }
