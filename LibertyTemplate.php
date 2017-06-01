@@ -569,9 +569,9 @@ class LibertyTemplate extends BaseTemplate
                 $item = array(
                     'icon' => htmlentities(trim(substr($splited[0], 1)), ENT_QUOTES, 'UTF-8'),
                     'text' => htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8'),
-                    'title' => htmlentities(trim($splited[2]), ENT_QUOTES, 'UTF-8'),
                     'children' => array()
                 );
+                $item['title'] = (isset($splited[2])) ? htmlentities(trim($splited[2]), ENT_QUOTES, 'UTF-8') : htmlentities(trim($splited[1]), ENT_QUOTES, 'UTF-8');
                 $currentChildren = &$item['children'];
                 $headings[] = $item;
             } else {

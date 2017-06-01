@@ -21,4 +21,9 @@
 | `$wgLibertyMaxRecent`  	| 사이드바 최근 변경에 등장하는 편집의 최대 개수          	| `10`                                                                                                                   	| `10`           	|
 
 ## 상단바
-위키 내부의 `미디어위키:Liberty-Navbar` 문서를 수정해주세요. 예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에 있습니다.
+
+다음과 같은 형식을 따릅니다.  
+  
+최상단 메뉴의 경우에는 `* (FontAwesome Icon Code) | 보여질 이름 | Hover 상태에 표시되는 설명(선택)`와 같이 설정해주시면 됩니다.  
+하위 메뉴의 경우에는 `** 보여질 이름 | 연결 될 곳(문서 제목 또는 링크) | Hover 상태에 표시되는 설명(선택) | 단축키(선택)`와 같이 설정해주시면 됩니다.  
+예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에서 보실 수 있습니다.
