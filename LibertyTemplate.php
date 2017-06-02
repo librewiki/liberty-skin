@@ -71,7 +71,7 @@ class LibertyTemplate extends BaseTemplate
                 <div class="liberty-content-main">
                     <?php if ($title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
                         <div class="social-buttons">
-                            <div class="twitter" data-url="<?= $wgServer.$wgScriptPath; ?>/?curid=<?= $curid;?>" data-text="<?= $title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
+                            <div class="twitter" data-url="<?= str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?= $title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
                             <div class="facebook" data-url="<?= str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?= $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
                         </div>
                     <?php } ?>
