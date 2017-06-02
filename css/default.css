@@ -14,7 +14,7 @@ input:hover, button:hover, select:hover {
 
 html {
     font-size: 15px;
-    -font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
