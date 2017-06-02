@@ -6,7 +6,7 @@ $('.social-buttons>div').click(function () {
     host = location.protocol + host;
   }
   var url = encodeURIComponent(
-    host + mw.config.get('wgScriptPath') + '/?curid=' + mw.config.get('wgArticleId')
+    host + mw.config.get('wgScriptPath') + '/index.php?curid=' + mw.config.get('wgArticleId')
   );
   var text = $(this).attr('data-text');
   switch (selectedMedia) {
