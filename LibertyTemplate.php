@@ -7,7 +7,7 @@ class LibertyTemplate extends BaseTemplate
         global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath;
         $request = $this->getSkin()->getRequest();
         $action = $request->getVal('action', 'view');
-        $title = Title::newFromText($wgRequest->getVal('title'));
+        $title = $this->getSkin()->getTitle();
         $curid = $this->getSkin()->getTitle()->getArticleID();
 
         wfSuppressWarnings();

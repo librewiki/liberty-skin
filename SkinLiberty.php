@@ -39,7 +39,7 @@ class SkinLiberty extends SkinTemplate
         $out->addMeta('og:image', $wgLibertyOGLogo);
         $out->addMeta('og:locale', $wgLanguageCode);
         $out->addMeta('og:site_name', $wgSitename);
-        $out->addMeta('og:url', Title::newFromText($wgRequest->getVal('title'))->getFullURL());
+        $out->addMeta('og:url', $this->getSkin()->getTitle()->getFullURL());
 
         /* 트위터 카드 */
         $out->addMeta('twitter:card', 'summary');
