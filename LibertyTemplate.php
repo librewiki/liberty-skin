@@ -25,14 +25,6 @@ class LibertyTemplate extends BaseTemplate {
                     <?php $this->live_recent(); ?>
                 </div>
                 <?php if(!is_null($wgLibertyAdSetting['right'])) { ?>
-                    <div class="right-ads">
-                        <ins class="adsbygoogle"
-                            style="display:block; min-width: 15rem; width: 100%;"
-                            data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
-                            data-ad-slot="<?=$wgLibertyAdSetting['right']; ?>"
-                            data-ad-format="auto">
-                        </ins>
-                    </div>
                 <?php } ?>
             </div>
 			</aside>
@@ -48,12 +40,6 @@ class LibertyTemplate extends BaseTemplate {
                     <?php }
                     if(!is_null($wgLibertyAdSetting['header'])) { ?>
                         <div class="header-ads">
-                            <ins class="adsbygoogle"
-                                style="display:block; min-width:20rem; width:100%;"
-                                data-ad-client="<?=$wgLibertyAdSetting['client']; ?>"
-                                data-ad-slot="<?=$wgLibertyAdSetting['header']; ?>"
-                                data-ad-format="auto">
-                            </ins>
                         </div>
                     <?php }
                     $this->contents_toolbox(); ?>
@@ -67,19 +53,19 @@ class LibertyTemplate extends BaseTemplate {
                     </div>
                 </div>
                 <div class="liberty-content-main">
-                    <?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
-                        <div class="social-buttons">
-                            <div class="twitter" data-url="<?=$wgServer.$wgScriptPath; ?>/?curid=<?=$curid;?>" data-text="<?=$title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-                            <div class="facebook" data-url="<?=str_replace("$1", $title, $wgServer.$wgArticlePath); ?>" data-text="<?=$title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
-                        </div>
-                    <?php } ?>
-                    <?php if ( $this->data['catlinks'] ) {
+                    <?php if ( $title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") {
+					} 
+					if ( $this->data['catlinks'] ) {
                         $this->html( 'catlinks' );
                     } ?>
 					<article>
                     <?php $this->html( 'bodycontent' ) ?>
 					</article>
                 </div>
+				<div class="scroll-buttons">
+					<a class="scroll-button" href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+					<a class="scroll-bottom" href="#footer"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+				</div>
 				<footer>
                 <div class="liberty-footer">
                     <div class="bottom-ads"></div>
@@ -113,29 +99,10 @@ class LibertyTemplate extends BaseTemplate {
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Randompage', null ), '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', array( 'class' => 'nav-link', 'title' => '임의 문서를 불러옵니다. [alt+shift+x]', 'accesskey' => 'x' ) ); ?>
             </li>
             <li class="nav-item dropdown">
-                <span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="게시판에 접속합니다."><span class="fa fa-comments"></span><span class="hide-title">게시판</span></span>
-                <div class="dropdown-menu" role="menu">
-					<a class="dropdown-item" href="https://bbs.librewiki.net/wiki">위키방</a>
-					<a class="dropdown-item" href="https://bbs.librewiki.net/coop">조합게시판</a>
-					<a class="dropdown-item" href="https://bbs.librewiki.net/freeboard">자유게시판</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
                 <?php echo Linker::linkKnown( SpecialPage::getTitleFor( 'Specialpages', null ), '<span class="fa fa-gear"></span><span class="hide-title">도구</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
                 <div class="dropdown-menu" role="menu">
                     <?=Linker::linkKnown( SpecialPage::getTitleFor( 'SpecialPages', null ), '특수 문서 목록', array( 'class' => 'dropdown-item', 'title' => '특수 문서 목록을 불러옵니다. [alt+shift+q]', 'accesskey' => 'q') ); ?>
                     <?=Linker::linkKnown( SpecialPage::getTitleFor( 'upload', null ), '업로드', array( 'class' => 'dropdown-item', 'title' => '파일을 올립니다. [alt+shift+g]', 'accesskey' => 'g') ); ?>
-                    <a class="dropdown-item" href="https://maps.librewiki.net">리브레 맵스</a>
-	                <a class="dropdown-item" href="https://issue.librewiki.net/">이슈 트래커</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <?php echo Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '<span class="fa fa-book"></span><span class="hide-title">도움말</span>', array( 'class' => 'nav-link dropdown-toggle dropdown-toggle-fix', 'data-toggle' => 'dropdown', ' role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'title' => '도구를 보여줍니다.') ); ?>
-                <div class="dropdown-menu" role="menu">
-                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '위키 문법' ), '위키 문법', array( 'class' => 'dropdown-item' ) ); ?>
-                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, 'Tex 문법' ), 'Tex 문법', array( 'class' => 'dropdown-item' ) ); ?>
-                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '태그' ), '태그', array( 'class' => 'dropdown-item' ) ); ?>
-                    <?=Linker::linkKnown( Title::makeTitle( NS_HELP, '이슈 트래커' ), '이슈 트래커', array( 'class' => 'dropdown-item' ) ); ?>
                 </div>
             </li>
         </ul>
@@ -193,7 +160,7 @@ class LibertyTemplate extends BaseTemplate {
                 </div>
                 <?=Linker::linkKnown( SpecialPage::getTitleFor( 'logout', null ), '<span class="fa fa-sign-out"></span>', array( 'class' => 'hide-logout logout-btn', 'title' => '로그아웃' ) ); ?>
             <?php } else { ?>
-							<a href="/wiki/특수:로그인" class="none-outline">
+							<a href="/w/특수:로그인" class="none-outline">
  									<span class="fa fa-sign-in"></span>
 							</a>
             <?php } ?>
@@ -247,14 +214,7 @@ class LibertyTemplate extends BaseTemplate {
         ?>
         <div class="live-recent">
             <div class="live-recent-header">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
-                </li>
-            </ul>
+            <h5><b>최근 변경됨</b></h5>
             </div>
             <div class="live-recent-content">
                 <ul class="live-recent-list" id="live-recent-list">
@@ -280,7 +240,6 @@ class LibertyTemplate extends BaseTemplate {
             ?>
             <div class="content-tools">
                 <div class="btn-group" role="group" aria-label="content-tools">
-                    <?=Linker::linkKnown( $title, '갱신', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
                     <?php
                     if ($revid) {
                         $editaction = array( 'action' => 'edit', 'oldid' => $revid );
@@ -289,7 +248,6 @@ class LibertyTemplate extends BaseTemplate {
                     }
                     ?>
                     <?=Linker::linkKnown( $title, '편집', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서를 편집합니다. [alt+shift+e]', 'accesskey' => 'e' ), $editaction ); ?>
-                    <?=Linker::linkKnown( $title, '추가', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '새 문단을 추가합니다. [alt+shift+n]', 'accesskey' => 'n' ), array( 'action' => 'edit', 'section' => 'new' ) ); ?>
                     <?php
                         if ($companionTitle) {
                             if ($title->getNamespace() == NS_TALK || $title->getNamespace() == NS_PROJECT_TALK || $title->getNamespace() == NS_FILE_TALK || $title->getNamespace() == NS_TEMPLATE_TALK) {
@@ -300,7 +258,7 @@ class LibertyTemplate extends BaseTemplate {
                             echo Linker::linkKnown( $companionTitle, $titlename, array( 'class' => 'btn btn-secondary tools-btn', 'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't') );
                         }
                     ?>
-                    <?=Linker::linkKnown( $title, '기록', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
+                    <?=Linker::linkKnown( $title, '역사', array( 'class' => 'btn btn-secondary tools-btn', 'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]', 'accesskey' => 'h' ), array( 'action' => 'history' ) ); ?>
                     <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <span class="caret"></span>
                     </button>
@@ -315,6 +273,7 @@ class LibertyTemplate extends BaseTemplate {
                         ?>
                         <?=Linker::linkKnown( SpecialPage::getTitleFor( 'WhatLinksHere', $title ), '역링크', array('class' => 'dropdown-item')  ); ?>
                         <?=Linker::linkKnown( SpecialPage::getTitleFor( 'Movepage', $title ), '이동', array( 'class' => 'dropdown-item', 'title' => '문서를 옮깁니다. [alt+shift+b]', 'accesskey' => 'b' )); ?>
+						<?=Linker::linkKnown( $title, '갱신', array( 'class' => 'dropdown-item', 'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p' ), array( 'action' => 'purge' ) ); ?>
                         <?php
                             if ( $title->quickUserCan( 'protect', $user ) ) { ?>
                                 <div class="dropdown-divider"></div>

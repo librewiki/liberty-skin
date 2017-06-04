@@ -46,7 +46,7 @@ $(function () {
       var recentChanges = data.query.recentchanges;
       var html = recentChanges.map(function (item) {
         var time = new Date(item.timestamp);
-        var line = '<li><a class="recent-item" href = "' + (mw.config.values.wgArticlePath).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
+        var line = '<li><a class="recent-item" style="font-size: 0.90rem;" href = "' + (mw.config.values.wgArticlePath).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">';
         var text = '';
         if (item.type === 'new') {
           text += '[New]';
@@ -56,9 +56,9 @@ $(function () {
           text = text.substr(0, 13);
           text += '...';
         }
-        text = text.replace('[New]', '<span class="new">[New] </span>');
+        text = text.replace('[New]', '<span class="new"><i class="fa fa-plus-square" aria-hidden="true"></i> </span>');
         line += text;
-        line += '</a></li>';
+        line += '</a> <span style="float: right;font-size: 0.80rem;"> [' + timeFormat(time) + '] </span>' + '</li>';
         return line;
       }).join('\n');
       $('#live-recent-list').html(html);
@@ -85,7 +85,7 @@ $(function () {
     if (second < 10) {
       second = '0' + second;
     }
-    return hour + ':' + minute + ':' + second;
+    return hour + ':' + minute;
   }
 
   setInterval(refreshLiveRecent, 10 * 1000);

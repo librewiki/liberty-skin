@@ -7,7 +7,7 @@ class SkinLiberty extends SkinTemplate {
 
     public function initPage( OutputPage $out ) {
 		global $wgLibertyMainColor, $wgSitename, $wgTwitterAccount, $wgLibertyOGLogo, $wgLanguageCode, $wgNaverVerification, $wgRequest;
-		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#4188F1';
+		$wgLibertyMainColor = isset($wgLibertyMainColor) ? $wgLibertyMainColor : '#c0392b';
 		$wgLibertyOGLogo = isset($wgLibertyOGLogo) ? $wgLibertyOGLogo : $wgLogo;
 
         parent::initPage( $out );
@@ -58,7 +58,7 @@ class SkinLiberty extends SkinTemplate {
 
 	function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
- 	        $out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
+ 	        $out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />' );
 		$out->addModuleStyles( array(
 			'skins.liberty.styles'
 		) );

@@ -1,29 +1,29 @@
 a {
-    color: #337ab7;
+    color: #2980b9;
 }
 
 a.new {
-    color: #b73333;
+    color: #2980b9;
 }
 
 a:hover, a:focus {
-    color: #23527c;
+    color: #3498db;
     text-decoration: underline;
     transition: 0.3s;
 }
 
 a.new:hover, a.new:focus {
-    color: #7c2323;
+    color: #3498db;
     text-decoration: underline;
     transition: 0.3s;
 }
 
 a.external {
-    color: #33b733;
+    color: #27ae60;
 }
 
 a.external:hover, a.external:focus {
-    color: #2ca02c;
+    color: #2ecc71;
     text-decoration: underline;
     transition: 0.3s;
 }
@@ -31,16 +31,16 @@ a.external:hover, a.external:focus {
 a.external:before {
     font: normal normal normal 14px/1 FontAwesome;
     text-align: center;
-    color: #33b733;
-    content: "\f0c1";
+    color: #27ae60;
+    content: "\f14c ";
 }
 
 .plainlinks a.external {
-    color: #337ab7;
+    color: #27ae60;
 }
 
 .plainlinks a.external:hover, .plainlinks a.external:focus {
-    color: #23527c;
+    color: #2ecc71;
     text-decoration: underline;
     transition: 0.3s;
 }
