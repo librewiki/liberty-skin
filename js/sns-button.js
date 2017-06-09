@@ -6,7 +6,7 @@ $('.social-buttons>div').click(function () {
     host = location.protocol + host;
   }
   var url = encodeURIComponent(
-    host + mw.config.get('wgArticlePath').replace('$1', mw.config.get('wgPageName'))
+    host + mw.config.get('wgScriptPath') + '/index.php?curid=' + mw.config.get('wgArticleId')
   );
   var text = $(this).attr('data-text');
   switch (selectedMedia) {
@@ -14,7 +14,7 @@ $('.social-buttons>div').click(function () {
       window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, 'facebook', 'width=800, height=400');
       break;
     case 'twitter':
-      window.open('https://twitter.com/intent/tweet?text=[[' + text + ']]%0A&url=' + url + '&via=' + mw.config.get('wgSiteName') + '&hashtags=' + text + ',' + mw.config.get('wgSiteName'), 'twitter', 'width=800, height=350');
+      window.open('https://twitter.com/intent/tweet?text=' + mw.config.get('wgSiteName') + ' [[' + text + ']]&url=' + url + '&hashtags=' + mw.config.get('wgSiteName').replace(/ /g, '_'), 'twitter', 'width=800, height=350');
       break;
     default:
       break;
