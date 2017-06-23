@@ -6,7 +6,7 @@ Default skin of [Libre Wiki](https://librewiki.net). This skin will be the main 
 
 ## Development
 
-Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin), and we receive bug reports via [LibreWiki Phabricator](https://issue.librewiki.net). Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
+Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin), and we receive bug reports via [LibreWiki Phabricator](https://issue.librewiki.net) and patches via GitLab.com only. Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
 
 ## Configurations
 
