@@ -9,5 +9,7 @@
 	"liberty.css": "/* CSS placed here will affect users of the Liberty skin */",
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
 	"liberty-twitter": "Twitter",
-	"liberty-facebook": "Facebook"
+	"liberty-facebook": "Facebook",
+	"liberty-random": "Random page",
+	"liberty-recenttalk": "Recent discussion"
 }
