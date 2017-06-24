@@ -1,3 +1,3 @@
-console.log(new(require("eslint").CLIEngine)({ignorePattern:['lib/']}).executeOnFiles(["js/"]));
+console.log(new(require("eslint").CLIEngine)().executeOnFiles(["js/"]));
 
 /* RIP LONG CODE HERE BECAUSE NODEJS IS ASYNC BUT ESLINT REQUIRED EXTERNAL PLUGIN TO DO SUPPORT THAT BUT THAT WILL MAKE SLOWLY PIPELINE MORE */
