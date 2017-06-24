@@ -71,8 +71,8 @@ class LibertyTemplate extends BaseTemplate
                 <div class="liberty-content-main">
                     <?php if ($title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
                         <div class="social-buttons">
-                            <div class="twitter" data-text="<?= $title; ?>" title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-                            <div class="facebook" data-text="<?= $title; ?>" title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+                            <div class="twitter" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-twitter'); ?>"><div><i class="fa fa-twitter"></i></div></div>
+                            <div class="facebook" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-facebook'); ?>"><div><i class="fa fa-facebook"></i></div></div>
                         </div>
                     <?php } ?>
                     <?php
@@ -114,10 +114,10 @@ class LibertyTemplate extends BaseTemplate
             <li class="nav-item">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Recentchanges', null),
-                    '<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>',
+                    '<span class="fa fa-refresh"></span><span class="hide-title">'.wfMessage('liberty-recent').'</span>',
                     array(
                         'class' => 'nav-link',
-                        'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]',
+                        'title' => wfMessage('liberty-recent-desc'),
                         'accesskey' => 'r'
                     )
                 ); ?>
@@ -125,10 +125,10 @@ class LibertyTemplate extends BaseTemplate
             <li class="nav-item">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Randompage', null),
-                    '<span class="fa fa-random"></span><span class="hide-title">임의문서</span>',
+                    '<span class="fa fa-random"></span><span class="hide-title">'.wfMessage('liberty-random').'</span>',
                     array(
                         'class' => 'nav-link',
-                        'title' => '임의 문서를 불러옵니다. [alt+shift+x]',
+                        'title' => wfMessage('liberty-random-desc'),
                         'accesskey' => 'x'
                     )
                 ); ?>
@@ -150,8 +150,8 @@ class LibertyTemplate extends BaseTemplate
             <div class="input-group">
                 <?= $this->makeSearchInput(array( 'class' => 'form-control', 'id' => 'searchInput')); ?>
                 <span class="input-group-btn">
-                    <button type="submit" name="go" value="보기" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-                    <button type="submit" name="fulltext" value="검색" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
+                    <button type="submit" name="go" value="<?= wfMessage('liberty-view'); ?>" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+                    <button type="submit" name="fulltext" value="<?= wfMessage('liberty-search'); ?>" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
                 </span>
             </div>
         </form>
@@ -184,62 +184,62 @@ class LibertyTemplate extends BaseTemplate
                             array(
                                 'id' => 'pt-userpage',
                                 'class' => 'dropdown-item',
-                                'title' => '내 사용자 문서. [alt+shift+u]',
+                                'title' => wfMessage('liberty-mypage-desc'),
                                 'accesskey' => 'u'
                             )
                         ); ?>
                         <div class="dropdown-divider"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('notifications', null),
-                            '알림',
+                            wfMessage('liberty-noti'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '알림 목록을 불러옵니다.'
+                                'title' => wfMessage('liberty-noti-desc')
                             )
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('Contributions', $wgUser->getName()),
-                            '내 기여 목록',
+                            wfMessage('liberty-mycont'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]',
+                                'title' => wfMessage('liberty-mycont-desc'),
                                 'accesskey' => 'y'
                             )
                         ); ?>
                         <?= Linker::linkKnown(
                             Title::makeTitle(NS_USER_TALK, $wgUser->getName()),
-                            '내 토론 문서',
+                            wfMessage('liberty-mytalk'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '내 토론 문서. [alt+shift+m]',
+                                'title' => wfMessage('liberty-mytalk-desc'),
                                 'accesskey' => 'm'
                             )
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('watchlist', null),
-                            '내 주시 문서',
+                            wfMessage('liberty-mywatch'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '주시문서를 불러옵니다. [alt+shift+l]',
+                                'title' => wfMessage('liberty-mywatch-desc'),
                                 'accesskey' => 'l'
                             )
                         ); ?>
                         <div class="dropdown-divider"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('preferences', null),
-                            '환경설정',
+                            wfMessage('liberty-setting'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '환경설정을 불러옵니다.'
+                                'title' => wfMessage('liberty-setting-desc')
                             )
                         ); ?>
                         <div class="dropdown-divider view-logout"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('logout', null),
-                            '로그아웃',
+                            wfMessage('liberty-logout'),
                             array(
                                 'class' => 'dropdown-item view-logout',
-                                'title' => '로그아웃'
+                                'title' => wfMessage('liberty-logout-desc')
                             )
                         ); ?>
                     </div>
@@ -249,7 +249,7 @@ class LibertyTemplate extends BaseTemplate
                         '<span class="fa fa-sign-out"></span>',
                         array(
                             'class' => 'hide-logout logout-btn',
-                            'title' => '로그아웃'
+                            'title' => wfMessage('liberty-logout')
                         )
                     );
                 ?>
@@ -273,24 +273,24 @@ class LibertyTemplate extends BaseTemplate
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title">로그인</h4>
+                        <h4 class="modal-title"><?= wfMessage('liberty-login'); ?></h4>
                     </div>
                     <div class="modal-body">
                         <div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
                         </div>
                         <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage();">
-                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
+                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?= wfMessage('liberty-nameholder'); ?>" value="" name="lgname">
                             <label for="inputPassword" class="sr-only">Password</label>
-                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="<?= wfMessage('liberty-passholder'); ?>" type="password" name="lgpassword">
                             <div class="modal-checkbox">
                                 <input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-                                <label for="lgremember">로그인 상태를 유지하기</label>
+                                <label for="lgremember"><?= wfMessage('liberty-rememberme'); ?></label>
                             </div>
-                            <input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
+                            <input class="btn btn-success btn-block" type="submit" value="<?= wfMessage('liberty-login'); ?>" tabindex="4">
                             <a href="/<?= $wgScriptPath; ?>index.php?title=<?= SpecialPage::getTitleFor('UserLogin', null); ?>&amp;type=signup&amp;returnto=<?= $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg('userlogin-joinproject'); ?></a>
                             <?= Linker::linkKnown(
                                 SpecialPage::getTitleFor('PasswordReset', null),
-                                '비밀번호를 잊으셨나요?',
+                                wfMessage('liberty-lostpassword'),
                                 array()
                             ); ?>
                             <input type="hidden" name="action" value="login">
@@ -315,10 +315,10 @@ class LibertyTemplate extends BaseTemplate
             <div class="live-recent-header">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
+                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1"><?= wfMessage('liberty-recentdoc'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
+                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2"><?= wfMessage('liberty-recenttalk'); ?></a>
                 </li>
             </ul>
             </div>
@@ -330,7 +330,7 @@ class LibertyTemplate extends BaseTemplate
             <div class="live-recent-footer">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Recentchanges', null),
-                    '<span class="label label-info">더보기</span>'
+                    '<span class="label label-info">'.wfMessage('liberty-more').'</span>'
                 ); ?>
             </div>
         </div>
@@ -342,7 +342,7 @@ class LibertyTemplate extends BaseTemplate
         global $wgUser;
         $title = $this->getSkin()->getTitle();
         $revid = $this->getSkin()->getRequest()->getText('oldid');
-        $watched = $this->getSkin()->getUser()->isWatched($this->getSkin()->getRelevantTitle()) ? 'unwatch' : 'watch';
+        $watched = $this->getSkin()->getUser()->isWatched($this->getSkin()->getRelevantTitle());
         $user = ( $wgUser->isLoggedIn() ) ? array_shift($userLinks) : array_pop($userLinks);
 
         if ($title->getNamespace() != NS_SPECIAL) {
@@ -352,56 +352,53 @@ class LibertyTemplate extends BaseTemplate
                 <div class="btn-group" role="group" aria-label="content-tools">
                     <?= Linker::linkKnown(
                         $title,
-                        '갱신',
+                        wfMessage('liberty-toolpurge'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p'
+                            'title' => wfMessage('liberty-toolpurge-desc'),
+                            'accesskey' => 'p'
                         ),
                         array( 'action' => 'purge' )
                     ); ?>
                     <?= Linker::linkKnown(
                         $title,
-                        '편집',
+                        wfMessage('liberty-tooledit'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => '문서를 편집합니다. [alt+shift+e]',
+                            'title' => wfMessage('liberty-tooledit-desc'),
                             'accesskey' => 'e'
                         ),
                         $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' )
                     ); ?>
                     <?= Linker::linkKnown(
                         $title,
-                        '추가',
+                        wfMessage('liberty-toolnew'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => '새 문단을 추가합니다. [alt+shift+n]',
+                            'title' => wfMessage('liberty-toolnew-desc'),
                             'accesskey' => 'n'
                         ),
                         array( 'action' => 'edit', 'section' => 'new' )
                     ); ?>
                     <?php
                     if ($companionTitle) {
-                        if ($title->isTalkPage()) {
-                            $titlename = '본문';
-                        } else {
-                            $titlename = '토론';
-                        }
                         echo Linker::linkKnown(
                             $companionTitle,
-                            $titlename,
+                            $title->isTalkPage() ? wfMessage('liberty-tooldocu') : wfMessage('liberty-tooltalk'),
                             array(
                                 'class' => 'btn btn-secondary tools-btn',
-                                'title' => $titlename.'을 불러옵니다. [alt+shift+t]', 'accesskey' => 't'
+                                'title' => $title->isTalkPage() ? wfMessage('liberty-tooldocu-desc') : wfMessage('liberty-tooltalk-desc'),
+                                'accesskey' => 't'
                             )
                         );
                     }
                     ?>
                     <?= Linker::linkKnown(
                         $title,
-                        '기록',
+                        wfMessage('liberty-toolhist'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]',
+                            'title' => wfMessage('liberty-toolhist-desc'),
                             'accesskey' => 'h'
                         ),
                         array( 'action' => 'history' )
@@ -414,36 +411,31 @@ class LibertyTemplate extends BaseTemplate
                         if ($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) {
                             echo Linker::linkKnown(
                                 SpecialPage::getTitleFor('Contributions', $title->getText()),
-                                '기여',
+                                wfMessage('liberty-toolcont'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => '사용자의 기여 목록을 불러옵니다.'
+                                    'title' => wfMessage('liberty-toolcont-desc')
                                 ),
                                 array( 'action' => $mode )
                             );
                         }
-                        if ($watched != 'watch') {
-                            $watchname = '주시해제';
-                        } else {
-                            $watchname = '주시';
-                        }
                         echo Linker::linkKnown(
                             $title,
-                            $watchname,
+                            $watched ? wfMessage('liberty-toolwatch') : wfMessage('liberty-toolunwatch'),
                             array('class' => 'dropdown-item'),
                             array( 'action' => 'watch' )
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('WhatLinksHere', $title),
-                            '역링크',
+                            wfMessage('liberty-toolxref'),
                             array('class' => 'dropdown-item')
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('Movepage', $title),
-                            '이동',
+                            wfMessage('liberty-toolmove'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => '문서를 옮깁니다. [alt+shift+b]',
+                                'title' => wfMessage('liberty-toolmove-desc'),
                                 'accesskey' => 'b'
                             )
                         ); ?>
@@ -452,10 +444,10 @@ class LibertyTemplate extends BaseTemplate
                             <div class="dropdown-divider"></div>
                             <?= Linker::linkKnown(
                                 $title,
-                                '보호',
+                                wfMessage('liberty-toolprotect'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => '문서를 보호합니다. [alt+shift+s]',
+                                    'title' => wfMessage('liberty-toolprotect-desc'),
                                     'accesskey' => 's'
                                 ),
                                 array( 'action' => 'protect' )
@@ -465,10 +457,10 @@ class LibertyTemplate extends BaseTemplate
                             <div class="dropdown-divider"></div>
                             <?= Linker::linkKnown(
                                 $title,
-                                '삭제',
+                                wfMessage('liberty-tooldelete'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => '문서를 삭제합니다. [alt+shift+d]',
+                                    'title' => wfMessage('liberty-tooldelete-desc'),
                                     'accesskey' => 'd'
                                 ),
                                 array( 'action' => 'delete' )

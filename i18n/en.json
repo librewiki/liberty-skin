@@ -7,5 +7,7 @@
 	"skinname-liberty": "Liberty",
 	"liberty-desc": "Default skin of Libre Wiki.",
 	"liberty.css": "/* CSS placed here will affect users of the Liberty skin */",
-	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */"
+	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
+	"liberty-twitter": "Twitter",
+	"liberty-facebook": "Facebook"
 }
