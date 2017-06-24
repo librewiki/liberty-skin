@@ -1,4 +1,4 @@
-# Liberty MediaWiki Engine
+# Liberty MediaWiki Skin
 
 [한국어](README.md)
 
