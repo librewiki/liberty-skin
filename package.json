@@ -1,0 +1,22 @@
+{
+  "name": "liberty-mw-skin",
+  "version": "1.0.0",
+  "description": "ESLint for Developers.",
+  "main": "eslint.js",
+  "scripts": {
+    "test": "exit 0;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Akaza-Akari/Liberty-MW-Skin.git"
+  },
+  "author": "Akaza Akari",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://gitlab.com/Akaza-Akari/Liberty-MW-Skin/issues"
+  },
+  "homepage": "https://gitlab.com/Akaza-Akari/Liberty-MW-Skin#README",
+  "devDependencies": {
+    "eslint": "^4.1.0"
+  }
+}
