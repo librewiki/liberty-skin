@@ -516,7 +516,7 @@ class LibertyTemplate extends BaseTemplate
     protected function getNotification()
     {
         $personalTools = $this->getPersonalTools();
-        $notiCount = $personalTools['notifications']['links']['0']['text'];
+        $notiCount = $personalTools['notifications-alert']['links']['0']['text'] + $personalTools['notifications-message']['links']['0']['text'];
         if ($notiCount != "0") {
         ?>
             <div id="pt-notifications" class="navbar-notification">
