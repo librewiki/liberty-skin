@@ -30,9 +30,10 @@ $( function () {
 /* load ads */
 $( function () {
 	'use strict';
-	var width = $( window ).width();
+	var width, rightAds;
+	width = $( window ).width();
 	if ( width < 1024 ) {
-		var rightAds = $( '.right-ads' ).html();
+		rightAds = $( '.right-ads' ).html();
 		$( '.bottom-ads' ).html( rightAds );
 		$( '.right-ads' ).remove();
 		$( '.adsbygoogle' ).each( function () {
