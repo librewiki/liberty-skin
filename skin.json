@@ -15,6 +15,9 @@
 	"SpecialPages": {
 		"Liberty": "LibertySpecialPage"
 	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": "LibertyHooks::onLoadExtensionSchemaUpdates"
+	},
 	"MessagesDirs": {
 		"Liberty": [
 			"i18n"
@@ -83,7 +86,8 @@
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
 		"LibertyTemplate": "LibertyTemplate.php",
-		"LibertySpecialPage": "LibertySpecialPage.php"
+		"LibertySpecialPage": "LibertySpecialPage.php",
+		"LibertyHooks": "LibertyHooks.php"
 	},
 	"ExtensionMessagesFiles": {
 		"LibertyAlias": "LibertySpecialPage.alias.php"
