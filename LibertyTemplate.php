@@ -1,4 +1,4 @@
-<?php
+<?php // @codingStandardsIgnoreLine
 class LibertyTemplate extends BaseTemplate {
 	/**
 	 * execute() Method
