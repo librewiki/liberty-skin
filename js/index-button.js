@@ -3,10 +3,11 @@ author: Damezuma
 */
 $( function () {
 	'use strict';
-	var width = $( window ).width();
+	var width, contentHeaderOffset, indexButton, navHeight, id;
+	width = $( window ).width();
 	if ( $( '#toc' ).html() && width > 1649 ) {
-		var contentHeaderOffset = $( '.liberty-content-header' ).offset();
-		var indexButton = document.createElement( 'button' );
+		contentHeaderOffset = $( '.liberty-content-header' ).offset();
+		indexButton = document.createElement( 'button' );
 		indexButton.id = 'fixed-toc-button';
 		indexButton.type = 'button';
 		indexButton.className = 'btn btn-primary';
@@ -44,10 +45,10 @@ $( function () {
 				} );
 
 				/* 왼쪽목차 클릭시 처리 */
-				var navHeight = $( '.nav-wrapper' ).height();
+				navHeight = $( '.nav-wrapper' ).height();
 				$( '#fixed-toc ul li > a' ).click( function () {
 					if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-						var id = String( $( this ).attr( 'href' ) );
+						id = String( $( this ).attr( 'href' ) );
 						if ( id.indexOf( '.' ) !== -1 ) {
 							id = document.getElementById( id.replace( '#', '' ) );
 						}
