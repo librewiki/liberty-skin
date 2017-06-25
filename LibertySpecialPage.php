@@ -29,7 +29,14 @@ class LibertySpecialPage extends SpecialPage
     protected function body()
     {
         ob_start(); ?>
-        <h1 style="text-align: center;">MY AWESOME PAGE</h1>
+        <form>
+            <?= wfMessage('liberty-sp-colorSetting'); ?> : 
+            <input type="text" name="mainColor" value="#4188F1" placeholder="<?= wfMessage('liberty-sp-colorMain'); ?>">
+            <input type="text" name="focusColor" value="#71A5F4" placeholder="<?= wfMessage('liberty-sp-colorFocus'); ?>">
+            <hr />
+            <?= wfMessage('liberty-sp-navSetting'); ?> : 
+            <input type="text" name="navArticle" value="MediaWiki:Liberty-Navbar" placeholder="<?= wfMessage('liberty-sp-navArticle'); ?>">
+        </form>
         <?php return ob_get_clean();
     }
 }
