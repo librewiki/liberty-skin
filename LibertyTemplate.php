@@ -71,8 +71,8 @@ class LibertyTemplate extends BaseTemplate
                 <div class="liberty-content-main">
                     <?php if ($title->getNamespace() != NS_SPECIAL && $action != "edit" && $action != "history") { ?>
                         <div class="social-buttons">
-                            <div class="twitter" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-twitter'); ?>"><div><i class="fa fa-twitter"></i></div></div>
-                            <div class="facebook" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-facebook'); ?>"><div><i class="fa fa-facebook"></i></div></div>
+                            <div class="twitter" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-twitter')->plain(); ?>"><div><i class="fa fa-twitter"></i></div></div>
+                            <div class="facebook" data-text="<?= $title; ?>" title="<?= wfMessage('liberty-facebook')->plain(); ?>"><div><i class="fa fa-facebook"></i></div></div>
                         </div>
                     <?php } ?>
                     <?php
@@ -114,7 +114,7 @@ class LibertyTemplate extends BaseTemplate
             <li class="nav-item">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Recentchanges', null),
-                    '<span class="fa fa-refresh"></span><span class="hide-title">'.wfMessage('recentchanges').'</span>',
+                    '<span class="fa fa-refresh"></span><span class="hide-title">'.wfMessage('recentchanges')->plain().'</span>',
                     array(
                         'class' => 'nav-link',
                         'title' => Linker::titleAttrib('n-recentchanges'),
@@ -125,7 +125,7 @@ class LibertyTemplate extends BaseTemplate
             <li class="nav-item">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Randompage', null),
-                    '<span class="fa fa-random"></span><span class="hide-title">'.wfMessage('liberty-random').'</span>',
+                    '<span class="fa fa-random"></span><span class="hide-title">'.wfMessage('liberty-random')->plain().'</span>',
                     //I Know MW have message about 'randompage', but that too long to use liberty navbar.
                     array(
                         'class' => 'nav-link',
@@ -151,8 +151,8 @@ class LibertyTemplate extends BaseTemplate
             <div class="input-group">
                 <?= $this->makeSearchInput(array( 'class' => 'form-control', 'id' => 'searchInput')); ?>
                 <span class="input-group-btn">
-                    <button type="submit" name="go" value="<?= wfMessage('searcharticle'); ?>" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-                    <button type="submit" name="fulltext" value="<?= wfMessage('searchbutton'); ?>" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
+                    <button type="submit" name="go" value="<?= wfMessage('searcharticle')->plain(); ?>" id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+                    <button type="submit" name="fulltext" value="<?= wfMessage('searchbutton')->plain(); ?>" id="mw-searchButton" class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
                 </span>
             </div>
         </form>
@@ -192,7 +192,7 @@ class LibertyTemplate extends BaseTemplate
                         <div class="dropdown-divider"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('notifications', null),
-                            wfMessage('notifications'),
+                            wfMessage('notifications')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('pt-notifications-alert')
@@ -201,7 +201,7 @@ class LibertyTemplate extends BaseTemplate
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('Contributions', $wgUser->getName()),
-                            wfMessage('mycontris'),
+                            wfMessage('mycontris')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('pt-mycontris', 'withaccess'),
@@ -210,7 +210,7 @@ class LibertyTemplate extends BaseTemplate
                         ); ?>
                         <?= Linker::linkKnown(
                             Title::makeTitle(NS_USER_TALK, $wgUser->getName()),
-                            wfMessage('mytalk'),
+                            wfMessage('mytalk')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('pt-mytalk', 'withaccess'),
@@ -219,7 +219,7 @@ class LibertyTemplate extends BaseTemplate
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('watchlist', null),
-                            wfMessage('watchlist'),
+                            wfMessage('watchlist')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('pt-watchlist', 'withaccess'),
@@ -229,7 +229,7 @@ class LibertyTemplate extends BaseTemplate
                         <div class="dropdown-divider"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('preferences', null),
-                            wfMessage('preferences'),
+                            wfMessage('preferences')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('pt-preferences')
@@ -238,7 +238,7 @@ class LibertyTemplate extends BaseTemplate
                         <div class="dropdown-divider view-logout"></div>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('logout', null),
-                            wfMessage('logout'),
+                            wfMessage('logout')->plain(),
                             array(
                                 'class' => 'dropdown-item view-logout',
                                 'title' => Linker::titleAttrib('pt-logout')
@@ -275,24 +275,24 @@ class LibertyTemplate extends BaseTemplate
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <h4 class="modal-title"><?= wfMessage('login'); ?></h4>
+                        <h4 class="modal-title"><?= wfMessage('login')->plain(); ?></h4>
                     </div>
                     <div class="modal-body">
                         <div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
                         </div>
                         <form id="modal-loginform" name="userlogin" class="modal-loginform" method="post" onsubmit="return LoginManage();">
-                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?= wfMessage('userlogin-yourname-ph'); ?>" value="" name="lgname">
+                            <input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?= wfMessage('userlogin-yourname-ph')->plain(); ?>" value="" name="lgname">
                             <label for="inputPassword" class="sr-only">Password</label>
-                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="<?= wfMessage('userlogin-yourpassword-ph'); ?>" type="password" name="lgpassword">
+                            <input class="loginPassword form-control" id="wpPassword1" tabindex="2"  placeholder="<?= wfMessage('userlogin-yourpassword-ph')->plain(); ?>" type="password" name="lgpassword">
                             <div class="modal-checkbox">
                                 <input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-                                <label for="lgremember"><?= wfMessage('userlogin-remembermypassword'); ?></label>
+                                <label for="lgremember"><?= wfMessage('userlogin-remembermypassword')->plain(); ?></label>
                             </div>
-                            <input class="btn btn-success btn-block" type="submit" value="<?= wfMessage('login'); ?>" tabindex="4">
+                            <input class="btn btn-success btn-block" type="submit" value="<?= wfMessage('login')->plain(); ?>" tabindex="4">
                             <a href="/<?= $wgScriptPath; ?>index.php?title=<?= SpecialPage::getTitleFor('UserLogin', null); ?>&amp;type=signup&amp;returnto=<?= $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg('userlogin-joinproject'); ?></a>
                             <?= Linker::linkKnown(
                                 SpecialPage::getTitleFor('PasswordReset', null),
-                                wfMessage('userlogin-resetpassword-link')
+                                wfMessage('userlogin-resetpassword-link')->plain()
                             ); ?>
                         </form>
                     </div>
@@ -310,10 +310,10 @@ class LibertyTemplate extends BaseTemplate
             <div class="live-recent-header">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" id="liberty-recent-tab1"><?= wfMessage('recentchanges'); ?></a>
+                    <a class="nav-link active" id="liberty-recent-tab1"><?= wfMessage('recentchanges')->plain(); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="liberty-recent-tab2"><?= wfMessage('liberty-recenttalk'); ?></a>
+                    <a class="nav-link" id="liberty-recent-tab2"><?= wfMessage('liberty-recenttalk')->plain(); ?></a>
                 </li>
             </ul>
             </div>
@@ -325,7 +325,7 @@ class LibertyTemplate extends BaseTemplate
             <div class="live-recent-footer">
                 <?= Linker::linkKnown(
                     SpecialPage::getTitleFor('Recentchanges', null),
-                    '<span class="label label-info">'.str_replace('...', '', wfMessage('moredotdotdot')).'</span>'
+                    '<span class="label label-info">'.str_replace('...', '', wfMessage('moredotdotdot')->plain()).'</span>'
                 ); ?>
             </div>
         </div>
@@ -347,18 +347,18 @@ class LibertyTemplate extends BaseTemplate
                 <div class="btn-group" role="group" aria-label="content-tools">
                     <?= Linker::linkKnown(
                         $title,
-                        wfMessage('botpasswords-label-update'),
+                        wfMessage('botpasswords-label-update')->plain(),
                         //I know this using for update bot password label, but works well!
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => wfMessage('action-purge'),
+                            'title' => wfMessage('action-purge')->plain(),
                             'accesskey' => 'p'
                         ),
                         array( 'action' => 'purge' )
                     ); ?>
                     <?= Linker::linkKnown(
                         $title,
-                        wfMessage('edit'),
+                        wfMessage('edit')->plain(),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
                             'title' => Linker::titleAttrib('ca-edit', 'withaccess'),
@@ -368,7 +368,7 @@ class LibertyTemplate extends BaseTemplate
                     ); ?>
                     <?= Linker::linkKnown(
                         $title,
-                        wfMessage('addsection'),
+                        wfMessage('addsection')->plain(),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
                             'title' => Linker::titleAttrib('ca-addsection', 'withaccess'),
@@ -380,7 +380,7 @@ class LibertyTemplate extends BaseTemplate
                     if ($companionTitle) {
                         echo Linker::linkKnown(
                             $companionTitle,
-                            $title->isTalkPage() ? wfMessage('article') : wfMessage('talk'),
+                            $title->isTalkPage() ? wfMessage('article')->plain() : wfMessage('talk')->plain(),
                             array(
                                 'class' => 'btn btn-secondary tools-btn',
                                 'title' => $title->isTalkPage() ? Linker::titleAttrib('ca-nstab-main', 'withaccess') : Linker::titleAttrib('ca-talk', 'withaccess'),
@@ -391,7 +391,7 @@ class LibertyTemplate extends BaseTemplate
                     ?>
                     <?= Linker::linkKnown(
                         $title,
-                        wfMessage('hist'),
+                        wfMessage('hist')->plain(),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
                             'title' => Linker::titleAttrib('ca-history', 'withaccess'),
@@ -407,7 +407,7 @@ class LibertyTemplate extends BaseTemplate
                         if ($title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK) {
                             echo Linker::linkKnown(
                                 SpecialPage::getTitleFor('Contributions', $title->getText()),
-                                wfMessage('contributions'),
+                                wfMessage('contributions')->plain(),
                                 array(
                                     'class' => 'dropdown-item',
                                     'title' => Linker::titleAttrib('t-contributions')
@@ -416,18 +416,18 @@ class LibertyTemplate extends BaseTemplate
                         }
                         echo Linker::linkKnown(
                             $title,
-                            $watched ? wfMessage('unwatch') : wfMessage('watch'),
+                            $watched ? wfMessage('unwatch')->plain() : wfMessage('watch')->plain(),
                             array('class' => 'dropdown-item'),
                             array( 'action' => $watched ? 'unwatch' : 'watch' )
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('WhatLinksHere', $title),
-                            wfMessage('whatlinkshere'),
+                            wfMessage('whatlinkshere')->plain(),
                             array('class' => 'dropdown-item')
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('Movepage', $title),
-                            wfMessage('move'),
+                            wfMessage('move')->plain(),
                             array(
                                 'class' => 'dropdown-item',
                                 'title' => Linker::titleAttrib('ca-move', 'withaccess'),
@@ -439,7 +439,7 @@ class LibertyTemplate extends BaseTemplate
                             <div class="dropdown-divider"></div>
                             <?= Linker::linkKnown(
                                 $title,
-                                wfMessage('protect'),
+                                wfMessage('protect')->plain(),
                                 array(
                                     'class' => 'dropdown-item',
                                     'title' => Linker::titleAttrib('ca-protect', 'withaccess'),
@@ -452,7 +452,7 @@ class LibertyTemplate extends BaseTemplate
                             <div class="dropdown-divider"></div>
                             <?= Linker::linkKnown(
                                 $title,
-                                wfMessage('delete'),
+                                wfMessage('delete')->plain(),
                                 array(
                                     'class' => 'dropdown-item',
                                     'title' => Linker::titleAttrib('ca-delete', 'withaccess'),
