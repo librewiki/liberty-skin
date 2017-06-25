@@ -117,8 +117,8 @@ class LibertyTemplate extends BaseTemplate
                     '<span class="fa fa-refresh"></span><span class="hide-title">'.wfMessage('recentchanges').'</span>',
                     array(
                         'class' => 'nav-link',
-                        'title' => wfMessage('tooltip-n-recentchanges'),
-                        'accesskey' => 'r'
+                        'title' => Linker::titleAttrib('n-recentchanges'),
+                        'accesskey' => Linker::accesskey('n-recentchanges')
                     )
                 ); ?>
             </li>
@@ -129,8 +129,8 @@ class LibertyTemplate extends BaseTemplate
                     //I Know MW have message about 'randompage', but that too long to use liberty navbar.
                     array(
                         'class' => 'nav-link',
-                        'title' => wfMessage('tooltip-n-randompage'),
-                        'accesskey' => 'x'
+                        'title' => Linker::titleAttrib('n-randompage'),
+                        'accesskey' => Linker::accesskey('n-randompage')
                     )
                 ); ?>
             </li>
@@ -185,8 +185,8 @@ class LibertyTemplate extends BaseTemplate
                             array(
                                 'id' => 'pt-userpage',
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-userpage'),
-                                'accesskey' => 'u'
+                                'title' => Linker::titleAttrib('pt-userpage', 'withaccess'),
+                                'accesskey' => Linker::accesskey('pt-userpage')
                             )
                         ); ?>
                         <div class="dropdown-divider"></div>
@@ -195,7 +195,7 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('notifications'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-notifications-alert')
+                                'title' => Linker::titleAttrib('pt-notifications-alert')
                                 //I KNOW THIS IS OUTDATED BUT LIBRE USE OUTDATED MW SO I USE THIS
                             )
                         ); ?>
@@ -204,8 +204,8 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('mycontris'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-mycontris'),
-                                'accesskey' => 'y'
+                                'title' => Linker::titleAttrib('pt-mycontris', 'withaccess'),
+                                'accesskey' => Linker::accesskey('pt-mycontris')
                             )
                         ); ?>
                         <?= Linker::linkKnown(
@@ -213,8 +213,8 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('mytalk'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-mytalk'),
-                                'accesskey' => 'm'
+                                'title' => Linker::titleAttrib('pt-mytalk', 'withaccess'),
+                                'accesskey' => Linker::accesskey('pt-mytalk')
                             )
                         ); ?>
                         <?= Linker::linkKnown(
@@ -222,8 +222,8 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('watchlist'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-watchlist'),
-                                'accesskey' => 'l'
+                                'title' => Linker::titleAttrib('pt-watchlist', 'withaccess'),
+                                'accesskey' => Linker::accesskey('pt-watchlist')
                             )
                         ); ?>
                         <div class="dropdown-divider"></div>
@@ -232,7 +232,7 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('preferences'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-pt-preferences')
+                                'title' => Linker::titleAttrib('pt-preferences')
                             )
                         ); ?>
                         <div class="dropdown-divider view-logout"></div>
@@ -241,7 +241,7 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('logout'),
                             array(
                                 'class' => 'dropdown-item view-logout',
-                                'title' => wfMessage('tooltip-pt-logout')
+                                'title' => Linker::titleAttrib('pt-logout')
                             )
                         ); ?>
                     </div>
@@ -251,7 +251,7 @@ class LibertyTemplate extends BaseTemplate
                         '<span class="fa fa-sign-out"></span>',
                         array(
                             'class' => 'hide-logout logout-btn',
-                            'title' => wfMessage('tooltip-pt-logout')
+                            'title' => Linker::titleAttrib('pt-logout')
                         )
                     );
                 ?>
@@ -292,8 +292,7 @@ class LibertyTemplate extends BaseTemplate
                             <a href="/<?= $wgScriptPath; ?>index.php?title=<?= SpecialPage::getTitleFor('UserLogin', null); ?>&amp;type=signup&amp;returnto=<?= $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg('userlogin-joinproject'); ?></a>
                             <?= Linker::linkKnown(
                                 SpecialPage::getTitleFor('PasswordReset', null),
-                                wfMessage('userlogin-resetpassword-link'),
-                                array()
+                                wfMessage('userlogin-resetpassword-link')
                             ); ?>
                             <input type="hidden" name="action" value="login">
                             <input type="hidden" name="format" value="json">
@@ -368,8 +367,8 @@ class LibertyTemplate extends BaseTemplate
                         wfMessage('edit'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => wfMessage('tooltip-ca-edit'),
-                            'accesskey' => 'e'
+                            'title' => Linker::titleAttrib('ca-edit', 'withaccess'),
+                            'accesskey' => Linker::accesskey('ca-edit')
                         ),
                         $revid ? array( 'action' => 'edit', 'oldid' => $revid ) : array( 'action' => 'edit' )
                     ); ?>
@@ -378,8 +377,8 @@ class LibertyTemplate extends BaseTemplate
                         wfMessage('addsection'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => wfMessage('tooltip-ca-addsection'),
-                            'accesskey' => 'n'
+                            'title' => Linker::titleAttrib('ca-addsection', 'withaccess'),
+                            'accesskey' => Linker::accesskey('ca-addsection')
                         ),
                         array( 'action' => 'edit', 'section' => 'new' )
                     ); ?>
@@ -390,8 +389,8 @@ class LibertyTemplate extends BaseTemplate
                             $title->isTalkPage() ? wfMessage('article') : wfMessage('talk'),
                             array(
                                 'class' => 'btn btn-secondary tools-btn',
-                                'title' => $title->isTalkPage() ? wfMessage('tooltip-ca-nstab-main') : wfMessage('tooltip-ca-talk'),
-                                'accesskey' => 't'
+                                'title' => $title->isTalkPage() ? Linker::titleAttrib('ca-nstab-main', 'withaccess') : Linker::titleAttrib('ca-talk', 'withaccess'),
+                                'accesskey' => Linker::accesskey('ca-talk')
                             )
                         );
                     }
@@ -401,8 +400,8 @@ class LibertyTemplate extends BaseTemplate
                         wfMessage('hist'),
                         array(
                             'class' => 'btn btn-secondary tools-btn',
-                            'title' => wfMessage('tooltip-ca-history'),
-                            'accesskey' => 'h'
+                            'title' => Linker::titleAttrib('ca-history', 'withaccess'),
+                            'accesskey' => Linker::accesskey('ca-history')
                         ),
                         array( 'action' => 'history' )
                     ); ?>
@@ -417,9 +416,8 @@ class LibertyTemplate extends BaseTemplate
                                 wfMessage('contributions'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => wfMessage('tooltip-t-contributions')
-                                ),
-                                array( 'action' => $mode )
+                                    'title' => Linker::titleAttrib('t-contributions')
+                                )
                             );
                         }
                         echo Linker::linkKnown(
@@ -450,8 +448,8 @@ class LibertyTemplate extends BaseTemplate
                                 wfMessage('protect'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => wfMessage('tooltip-ca-protect'),
-                                    'accesskey' => 's'
+                                    'title' => Linker::titleAttrib('ca-protect', 'withaccess'),
+                                    'accesskey' => Linker::accesskey('ca-protect')
                                 ),
                                 array( 'action' => 'protect' )
                             ); ?>
@@ -463,8 +461,8 @@ class LibertyTemplate extends BaseTemplate
                                 wfMessage('delete'),
                                 array(
                                     'class' => 'dropdown-item',
-                                    'title' => wfMessage('tooltip-ca-delete'),
-                                    'accesskey' => 'd'
+                                    'title' => Linker::titleAttrib('ca-delete', 'withaccess'),
+                                    'accesskey' => Linker::accesskey('ca-delete')
                                 ),
                                 array( 'action' => 'delete' )
                             ); ?>
