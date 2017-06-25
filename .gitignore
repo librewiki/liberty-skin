@@ -55,3 +55,7 @@ fabric.properties
 
 # Node Modules
 node_modules/
+
+# Composer
+composer.lock
+vendor/

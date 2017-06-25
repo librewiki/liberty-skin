@@ -1,0 +1,14 @@
+{
+	"name": "Liberty-MW-Skin",
+	"description": "Liberty MediaWiki Skin",
+	"license": "GPL-3.0+",
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "0.9.0"
+	},
+    "scripts": {
+		"test": [
+			"phpcs -p -s"
+		],
+		"fix": "phpcbf"
+	}
+}
