@@ -424,9 +424,9 @@ class LibertyTemplate extends BaseTemplate
                         }
                         echo Linker::linkKnown(
                             $title,
-                            $watched ? wfMessage('watch') : wfMessage('unwatch'),
+                            $watched ? wfMessage('unwatch') : wfMessage('watch'),
                             array('class' => 'dropdown-item'),
-                            array( 'action' => 'watch' )
+                            array( 'action' => $watched ? 'unwatch' : 'watch' )
                         ); ?>
                         <?= Linker::linkKnown(
                             SpecialPage::getTitleFor('WhatLinksHere', $title),
@@ -438,8 +438,8 @@ class LibertyTemplate extends BaseTemplate
                             wfMessage('move'),
                             array(
                                 'class' => 'dropdown-item',
-                                'title' => wfMessage('tooltip-ca-move'),
-                                'accesskey' => 'b'
+                                'title' => Linker::titleAttrib('ca-move', 'withaccess'),
+                                'accesskey' => Linker::accesskey('ca-move')
                             )
                         ); ?>
                         <?php
