@@ -1,14 +1,15 @@
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url( //fonts.googleapis.com/earlyaccess/nanumgothic.css );
 /* 메인 색깔 #4188f1 */
 /* 테두리 색깔 #e1e8ed */
 
 /* 태그 수정 */
 * {
     outline: none;
-
 }
 
-input:hover, button:hover, select:hover {
+input:hover,
+button:hover,
+select:hover {
     transition: 0.3s;
 }
 
@@ -20,14 +21,25 @@ body {
     font-size: 0.95rem;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Noto Sans Korean", "Noto Sans", "Nanum Gothic", "KoPub Dotum", "Malgun Gothic", "맑은 고딕", sans-serif;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, b {
-    font-family: "Noto Sans Korean", "Noto Sans", "Nanum Gothic", "KoPub Dotum", "Malgun Gothic", "맑은 고딕", sans-serif;
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+    font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 }
 
 input[type=password] {
@@ -58,7 +70,9 @@ h6 {
     font-size: 1.1rem;
 }
 
-ol, ul, p {
+ol,
+ul,
+p {
     margin: 0;
     padding: 0;
 }
@@ -94,7 +108,7 @@ p {
 }
 
 ul {
-    list-style-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%23373a3c%22%2F%3E%0A%3C%2Fsvg%3E%0A);
+    list-style-image: url( data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%23373a3c%22%2F%3E%0A%3C%2Fsvg%3E%0A );
 }
 
 img {
@@ -103,11 +117,13 @@ img {
     margin: 0;
 }
 
-th[rowspan], td[rowspan] {
+th[rowspan],
+td[rowspan] {
     position: relative;
 }
 
-th[rowspan]:after, td[rowspan]:after {
+th[rowspan]:after,
+td[rowspan]:after {
     content: '';
     position: absolute;
     top: 0;
@@ -118,7 +134,8 @@ th[rowspan]:after, td[rowspan]:after {
 }
 
 input[type=search] {
-    -webkit-appearance: none; /* iOS 잡다한 css설정 제거 */
+    -webkit-appearance: none;
+    /* iOS 잡다한 css설정 제거 */
 }
 
 textarea {
@@ -132,7 +149,10 @@ hr {
 }
 
 
-html input[type=button]:hover, html input[type=submit]:hover, button:hover, #mw-editform-cancel:hover {
+html input[type=button]:hover,
+html input[type=submit]:hover,
+button:hover,
+#mw-editform-cancel:hover {
     background-color: #449d44;
 }
 
@@ -141,7 +161,9 @@ label {
     word-break: keep-all;
 }
 
-del, s, strike {
+del,
+s,
+strike {
     color: gray;
 }
 /* 태그 수정 End */
@@ -153,7 +175,8 @@ del, s, strike {
 /* 백그라운드 색 지정 End*/
 
 /* 컨텐츠 넓이 수정 및 가운대 정렬 */
-.Liberty .nav-wrapper .navbar, .Liberty .content-wrapper {
+.Liberty .nav-wrapper .navbar,
+.Liberty .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -164,7 +187,7 @@ del, s, strike {
     min-height: 2.8rem;
     background-color: #4188f1;
     z-index: 1001;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 4px 0 rgba( 0, 0, 0, 0.16 ), 0 2px 10px 0 rgba( 0, 0, 0, 0.12 );
 }
 
 .Liberty .nav-wrapper .navbar {
@@ -176,7 +199,7 @@ del, s, strike {
 .Liberty .nav-wrapper .navbar .navbar-brand {
     height: 2.8rem;
     width: 6.6rem;
-    background: transparent url("../img/logo.png") no-repeat scroll left center/auto 1.9rem;
+    background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.9rem;
     padding: 0;
     margin: 0;
 }
@@ -197,7 +220,8 @@ del, s, strike {
     line-height: 1.4rem;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover, .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
     background-color: #71a5f4;
     transition: 0.3s;
 }
@@ -239,7 +263,8 @@ del, s, strike {
     line-height: 22px;
 }
 
-.Liberty .nav-wrapper .navbar .form-inline .btn:hover, .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
+.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
+.Liberty .nav-wrapper .navbar .form-inline .btn:focus {
     background-color: #4188f1;
     border-color: #5997f3;
     color: #fff;
@@ -302,10 +327,11 @@ del, s, strike {
     z-index: 1002;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:before, .Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:after {
+.Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:before,
+.Liberty .nav-wrapper .navbar .navbar-login .login-dropdown-menu:after {
     bottom: 100%;
     border: solid transparent;
-    content: " ";
+    content: ' ';
     position: absolute;
     left: 0;
     right: auto;
@@ -391,7 +417,7 @@ del, s, strike {
     position: absolute;
     left: -1px;
     bottom: -1px;
-    content: " ";
+    content: ' ';
     width: 7.5rem;
     display: block;
     border-bottom: 2px solid #4188f1;
@@ -453,7 +479,7 @@ del, s, strike {
     top: 25.73rem;
     width: 15rem;
 }
-    /* 오른쪽 메뉴 수정 End */
+/* 오른쪽 메뉴 수정 End */
 
 /* 컨텐츠 수정 */
 .Liberty .content-wrapper {
@@ -655,7 +681,7 @@ del, s, strike {
     margin-bottom: 0.7rem;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"] {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox'] {
     opacity: 0;
     width: 2em;
     height: 2em;
@@ -669,16 +695,16 @@ del, s, strike {
     font: inherit;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label {
+.Liberty .login-modal .modal-checkbox:not( #noop ) input[type='checkbox']+label {
     padding-left: 0.4em;
     display: table-cell;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label::before {
-    -webkit-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
-    -moz-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
-    -o-transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
-    transition: 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+.Liberty .login-modal .modal-checkbox:not( #noop ) input[type='checkbox']+label::before {
+    -webkit-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
+    -moz-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
+    -o-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
+    transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
     content: '';
     cursor: pointer;
     -webkit-box-sizing: border-box;
@@ -695,13 +721,13 @@ del, s, strike {
     margin-top: -1em;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]+label:hover::before {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox']+label:hover::before {
     border: 3px solid #777;
 }
 
-.Liberty .login-modal .modal-checkbox:not(#noop) input[type="checkbox"]:checked+label::before {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox']:checked+label::before {
     border: 3px solid #777;
-    background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A);
+    background-image: linear-gradient( transparent, transparent ), url( data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A );
 }
 
 .Liberty .login-modal .btn {
@@ -716,7 +742,7 @@ del, s, strike {
 /* 부트스트랩 커스텀 */
 .dropdown-menu {
     font-size: 0.95rem;
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba( 0, 0, 0, .175 );
     border-color: #e1e8ed;
 }
 
@@ -737,7 +763,7 @@ del, s, strike {
 .form-control:focus {
     border-color: #66afe9;
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba( 0, 0, 0, .075 ), 0 0 8px rgba( 102, 175, 233, .6 );
     transition: 0.3s;
 }
 
@@ -750,15 +776,18 @@ del, s, strike {
     transition: 0.3s;
 }
 
-.btn:active, .btn:focus {
+.btn:active,
+.btn:focus {
     outline: 0;
 }
 
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group {
     z-index: 3; /* 파폭, IE 테두리관련 버그 */
 }
 
-.close:focus, .close:hover {
+.close:focus,
+.close:hover {
     transition: 0.3s;
 }
 
