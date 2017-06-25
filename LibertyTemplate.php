@@ -316,10 +316,10 @@ class LibertyTemplate extends BaseTemplate
             <div class="live-recent-header">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link active" id="liberty-recent-tab1"><?= wfMessage('recentchanges'); ?></a>
+                    <a class="nav-link active" id="liberty-recent-tab1"><?= wfMessage('recentchanges'); ?></a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link" id="liberty-recent-tab2"><?= wfMessage('liberty-recenttalk'); ?></a>
+                    <a class="nav-link" id="liberty-recent-tab2"><?= wfMessage('liberty-recenttalk'); ?></a>
                 </li>
             </ul>
             </div>
