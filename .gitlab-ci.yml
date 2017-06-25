@@ -1,16 +1,17 @@
 stages:
   - lint
 
-#eslint:
-#  image: node:latest
-#  stage: lint
-#  script:
-    # Install ESLint in this docker container
-#    - npm install -g eslint
-    # Configure ESLint (will read your .eslintrc file)
-#    - eslint --init
-    # Run ESLint
-    - eslint js
+eslint:
+  image: node:latest
+  stage: lint
+  script:
+    - npm install -g eslint
+    - npm install eslint-config-wikimedia
+    - eslint --init
+    - eslint js --ignore-pattern 'lib/'
+  cache:
+    paths:
+      - node_modules/
 
 phpcs:
   image: php:7.1
