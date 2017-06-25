@@ -81,10 +81,12 @@ p {
     margin-bottom: 0.8rem;
 }
 
-ol {
-    margin: 0 !important;
-    margin-left: 2.2rem !important;
-    margin-right: 1rem !important;
+ol,
+.mw-content-ltr ol,
+.mw-content-rtl .mw-content-ltr ol {
+    margin: 0;
+    margin-left: 2.2rem;
+    margin-right: 1rem;
     list-style-image: none;
 }
 
