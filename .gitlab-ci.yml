@@ -16,8 +16,7 @@ phpcs:
   image: php:7.1
   stage: lint
   script:
-    - composer update
-    - composer phpcs
+    - composer.phar phpcs
   cache:
     paths:
       - vendor/
