@@ -79,6 +79,13 @@
 	},
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
-		"LibertyTemplate": "LibertyTemplate.php"
+		"LibertyTemplate": "LibertyTemplate.php",
+		"LibertySpecialPage": "LibertySpecialPage.php"
+	},
+	"SpecialPages": {
+		"Liberty": "LibertySpecialPage"
+	},
+	"ExtensionMessagesFiles": {
+		"MyExtensionAlias": "LibertySpecialPage.alias.php"
 	}
 }
