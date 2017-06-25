@@ -129,7 +129,6 @@
 
 	.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox,
 	.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable {
-		float: none !important;
 		width: 100% !important;
 		margin: auto !important;
 	}
