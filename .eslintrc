@@ -5,10 +5,7 @@
     "jquery": true
   },
   "globals": {
-    "require": false,
-    "module": false,
-    "mediaWiki": false,
-    "OO": false
+    "mw": false
   },
   "rules": {
     "dot-notation": 0
