@@ -1,8 +1,9 @@
 $( window ).load( function () {
 	'use strict';
+	var hash, navHeight, id;
 	/* 주소에 앵커 있을 경우 처리 */
-	var hash = window.location.hash;
-	var navHeight = $( '.nav-wrapper' ).height();
+	hash = window.location.hash;
+	navHeight = $( '.nav-wrapper' ).height();
 
 	if ( hash.indexOf( '.' ) !== -1 ) {
 		hash = String( hash );
@@ -17,7 +18,7 @@ $( window ).load( function () {
 	/* 목차 클릭시 처리 */
 	$( '.toc ul li > a' ).click( function () {
 		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-			var id = String( $( this ).attr( 'href' ) );
+			id = String( $( this ).attr( 'href' ) );
 			if ( id.indexOf( '.' ) !== -1 ) {
 				id = document.getElementById( id.replace( '#', '' ) );
 			}
@@ -41,7 +42,7 @@ $( window ).load( function () {
 	/* 주석 클릭시 처리 */
 	$( '.mw-cite-backlink > a' ).click( function () {
 		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-			var id = String( $( this ).attr( 'href' ) );
+			id = String( $( this ).attr( 'href' ) );
 			if ( id.indexOf( '.' ) !== -1 ) {
 				id = document.getElementById( id.replace( '#', '' ) );
 			}
@@ -54,7 +55,7 @@ $( window ).load( function () {
 
 	$( '.mw-cite-backlink > * > a' ).click( function () {
 		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-			var id = String( $( this ).attr( 'href' ) );
+			id = String( $( this ).attr( 'href' ) );
 			if ( id.indexOf( '.' ) !== -1 ) {
 				id = document.getElementById( id.replace( '#', '' ) );
 			}
@@ -67,7 +68,7 @@ $( window ).load( function () {
 
 	$( '.reference > a' ).click( function () {
 		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-			var id = String( $( this ).attr( 'href' ) );
+			id = String( $( this ).attr( 'href' ) );
 			if ( id.indexOf( '.' ) !== -1 ) {
 				id = document.getElementById( id.replace( '#', '' ) );
 			}
@@ -82,7 +83,7 @@ $( window ).load( function () {
 	/* 환경설정 탭 클릭시 처리 */
 	$( '#preftoc li > a' ).click( function () {
 		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
-			var id = String( $( this ).attr( 'href' ) );
+			id = String( $( this ).attr( 'href' ) );
 			if ( id.indexOf( '.' ) !== -1 ) {
 				id = document.getElementById( id.replace( '#', '' ) );
 			}
