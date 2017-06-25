@@ -30,11 +30,10 @@
 	background-color: #fff;
 	list-style-type: none;
 	list-style-image: none;
-	line-height: 2rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
-	margin: 0 !important;
+	margin: 0;
 	padding: 0.6rem 1.2rem;
 	border: 1px solid #e1e8ed;
 	border-top: none;
@@ -42,8 +41,8 @@
 	border-bottom-left-radius: 0.35rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul>li ul {
-	margin-left: 1.5rem !important;
+#toc ul, .toc ul {
+	margin: 0;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctext {
@@ -135,21 +134,21 @@
 /* 스페셜 페이지 관련 End */
 
 /* 검색결과 관련 */
-.suggestions-results {
-	border-color: #e1e8ed !important;
-	padding: 0.5rem !important;
+html .suggestions-results {
+	border-color: #e1e8ed;
+	padding: 0.5rem;
 }
 
-.suggestions-special {
-	border-color: #e1e8ed !important;
-	padding: 0.5rem !important;
+html .suggestions-special {
+	border-color: #e1e8ed;
+	padding: 0.5rem;
 	border-bottom-right-radius: 0.35rem;
 	border-bottom-left-radius: 0.35rem;
-	background-color: #f5f8fa !important;
+	background-color: #f5f8fa;
 }
 
-.suggestions-result-current {
-	background-color: #4c59a6 !important;
+html .suggestions-result-current {
+	background-color: #4c59a6;
 	color: #373a3c;
 	transition: 0.3s;
 }
@@ -208,8 +207,8 @@
 	width: 100%;
 	float: left;
 	clear: both;
-	margin: 0 !important;
-	padding: 0 !important;
+	margin: 0;
+	padding: 0;
 }
 
 #preftoc li:first-child {
@@ -314,8 +313,8 @@ input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
 	border-radius: .25rem;
 }
 
-input.oo-ui-inputWidget-input[type=search]{
-	padding-left: 2.5em !important;
+html input.oo-ui-inputWidget-input[type=search]{
+	padding-left: 2.5em;
 }
 
 select:focus,
@@ -352,8 +351,8 @@ button:hover,
 }
 
 /* Postedit 관련 */
-.postedit-container {
-	z-index: 3000 !important;
+html .postedit-container {
+	z-index: 3000;
 }
 
 /* 필드셋 오버플로우 */
@@ -364,6 +363,6 @@ fieldset {
 /* 확장기능 관련 */
 
 /* msupload */
-#msupload-dropzone {
-	height: auto !important;
+html #msupload-dropzone {
+	height: auto;
 }
