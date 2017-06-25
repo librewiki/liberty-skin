@@ -85,7 +85,7 @@ class LibertyTemplate extends BaseTemplate {
 					}
 					?>
 					<article>
-					<?php $this->html( 'bodycontent' ) ?>
+						<?php $this->html( 'bodycontent' ) ?>
 					</article>
 				</div>
 				<footer>
