@@ -10,8 +10,8 @@
 }
 
 /* 테이블 안 리스트 간격 제거 */
-.liberty-table-wrapper table ul {
-	margin: 0.3rem 0 0.3rem 0.2rem !important;
+.Liberty .content-wrapper .liberty-content .liberty-content-main .liberty-table-wrapper table ul {
+	margin: 0.3rem 0 0.3rem 0.2rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable,
