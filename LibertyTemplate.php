@@ -560,7 +560,7 @@ class LibertyTemplate extends BaseTemplate {
 				</span>
 				<div class="dropdown-menu" role="menu">
 					<?php
-					if ( is_arra( $content['children'] ) ) {
+					if ( is_array( $content['children'] ) ) {
 						foreach ( $content['children'] as $child ) {
 							?><a href="<?php echo $child['href']; ?>" class="dropdown-item"
 								 title="<?php echo $child['text']; ?>"><?php echo $child['text']; ?></a><?php
