@@ -294,13 +294,7 @@ class LibertyTemplate extends BaseTemplate
                                 SpecialPage::getTitleFor('PasswordReset', null),
                                 wfMessage('userlogin-resetpassword-link')
                             ); ?>
-                            <input type="hidden" name="action" value="login">
-                            <input type="hidden" name="format" value="json">
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
