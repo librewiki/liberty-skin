@@ -5,8 +5,7 @@ eslint:
   image: node:latest
   stage: lint
   script:
-    - npm install -g eslint
-    - npm install eslint-config-wikimedia
+    - npm install -g eslint eslint-config-wikimedia
     - eslint --init
     - eslint js --ignore-pattern 'lib/'
   cache:
