@@ -1,29 +1,39 @@
 $( function () {
 	'use strict';
-	var documentNamespaces = '0|4|10|12|14|1600';
-	var topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
-	var isDocumentTab = true;
-	var limit = $( '#live-recent-list' )[ 0 ].childElementCount;
+	var documentNamespaces, topicNamespaces, isDocumentTab, limit;
+	documentNamespaces = '0|4|10|12|14|1600';
+	topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
+	isDocumentTab = true;
+	limit = $( '#live-recent-list' )[ 0 ].childElementCount;
 
-	$( '#liberty-recent-tab1' ).click( function () {
-		$( this ).addClass( 'active' );
-		$( '#liberty-recent-tab2' ).removeClass( 'active' );
-		isDocumentTab = true;
-		refreshLiveRecent();
-	} );
-
-	$( '#liberty-recent-tab2' ).click( function () {
-		$( this ).addClass( 'active' );
-		$( '#liberty-recent-tab1' ).removeClass( 'active' );
-		isDocumentTab = false;
-		refreshLiveRecent();
-	} );
+	function timeFormat( time ) {
+		var aDayAgo, hour, minute, second;
+		aDayAgo = new Date();
+		aDayAgo.setDate( aDayAgo.getDate() - 1 );
+		if ( time < aDayAgo ) {
+			return ( time.getFullYear() ) + '/' + ( time.getMonth() + 1 ) + '/' + time.getDate();
+		}
+		hour = time.getHours();
+		minute = time.getMinutes();
+		second = time.getSeconds();
+		if ( hour < 10 ) {
+			hour = '0' + hour;
+		}
+		if ( minute < 10 ) {
+			minute = '0' + minute;
+		}
+		if ( second < 10 ) {
+			second = '0' + second;
+		}
+		return hour + ':' + minute + ':' + second;
+	}
 
 	function refreshLiveRecent() {
+		var getParameter;
 		if ( !$( '#live-recent-list' ).length || $( '#live-recent-list' ).is( ':hidden' ) ) {
 			return;
 		}
-		var getParameter = {
+		getParameter = {
 			action: 'query',
 			list: 'recentchanges',
 			rcprop: 'title|timestamp',
@@ -43,11 +53,12 @@ $( function () {
 			dataType: 'json'
 		} )
 			.then( function ( data ) {
-				var recentChanges = data.query.recentchanges;
-				var html = recentChanges.map( function ( item ) {
-					var time = new Date( item.timestamp );
-					var line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
-					var text = '';
+				var recentChanges, html, time, line, text;
+				recentChanges = data.query.recentchanges;
+				html = recentChanges.map( function ( item ) {
+					time = new Date( item.timestamp );
+					line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
+					text = '';
 					if ( item.type === 'new' ) {
 						text += '[New]';
 					}
@@ -67,19 +78,34 @@ $( function () {
 			} );
 	}
 
+
+	$( '#liberty-recent-tab1' ).click( function () {
+		$( this ).addClass( 'active' );
+		$( '#liberty-recent-tab2' ).removeClass( 'active' );
+		isDocumentTab = true;
+		refreshLiveRecent();
+	} );
+
+	$( '#liberty-recent-tab2' ).click( function () {
+		$( this ).addClass( 'active' );
+		$( '#liberty-recent-tab1' ).removeClass( 'active' );
+		isDocumentTab = false;
+		refreshLiveRecent();
+	} );
 	function timeFormat( time ) {
-		var aDayAgo = new Date();
+	    var aDayAgo, hour, minute, second;
+		aDayAgo = new Date();
 		aDayAgo.setDate( aDayAgo.getDate() - 1 );
-		if ( time < aDayAgo ) {
+		if( time < aDayAgo ) {
 			return ( time.getFullYear() ) + '/' + ( time.getMonth() + 1 ) + '/' + time.getDate();
 		}
-		var hour = time.getHours();
-		var minute = time.getMinutes();
-		var second = time.getSeconds();
-		if ( hour < 10 ) {
+		hour = time.getHours();
+		minute = time.getMinutes();
+		second = time.getSeconds();
+		if( hour < 10 ) {
 			hour = '0' + hour;
 		}
-		if ( minute < 10 ) {
+		if( minute < 10 ) {
 			minute = '0' + minute;
 		}
 		if ( second < 10 ) {
@@ -88,6 +114,6 @@ $( function () {
 		return hour + ':' + minute + ':' + second;
 	}
 
-  setInterval(refreshLiveRecent, 5 * 60 * 1000);
+  setInterval( refreshLiveRecent, 5 * 60 * 1000 );
   refreshLiveRecent();
 });
