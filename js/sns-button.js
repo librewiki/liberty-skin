@@ -1,14 +1,15 @@
 $( '.social-buttons>div' ).click( function () {
 	'use strict';
-	var selectedMedia = $( this ).attr( 'class' );
-	var host = mw.config.get( 'wgServer' );
+	var selectedMedia, host, url, text;
+	selectedMedia = $( this ).attr( 'class' );
+	host = mw.config.get( 'wgServer' );
 	if ( host.startsWith( '//' ) ) {
 		host = location.protocol + host;
 	}
-	var url = encodeURIComponent(
+	url = encodeURIComponent(
 		host + mw.config.get( 'wgScriptPath' ) + '/index.php?curid=' + mw.config.get( 'wgArticleId' )
 	);
-	var text = $( this ).attr( 'data-text' );
+	text = $( this ).attr( 'data-text' );
 	switch ( selectedMedia ) {
 		case 'facebook':
 			window.open( 'https://www.facebook.com/sharer/sharer.php?u=' + url, 'facebook', 'width=800, height=400' );
