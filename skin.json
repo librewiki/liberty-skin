@@ -5,12 +5,15 @@
 	],
 	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
 	"descriptionmsg": "liberty-desc",
-	"namemsg": "skinname-liberty",
+	"namemsg": "liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
 	"version": "1.1.9",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
+	},
+	"SpecialPages": {
+		"Liberty": "LibertySpecialPage"
 	},
 	"MessagesDirs": {
 		"Liberty": [
@@ -82,10 +85,7 @@
 		"LibertyTemplate": "LibertyTemplate.php",
 		"LibertySpecialPage": "LibertySpecialPage.php"
 	},
-	"SpecialPages": {
-		"Liberty": "LibertySpecialPage"
-	},
 	"ExtensionMessagesFiles": {
-		"MyExtensionAlias": "LibertySpecialPage.alias.php"
+		"LibertyAlias": "LibertySpecialPage.alias.php"
 	}
 }

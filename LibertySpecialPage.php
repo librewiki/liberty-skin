@@ -18,10 +18,18 @@ class LibertySpecialPage extends SpecialPage
         $output->setPageTitle(wfMessage('liberty-sp-title')->plain());
         $output->addHTML($this->body());
     }
+    
+    public function getGroupName()
+    {
+        return 'maintenance';
+    }
 
     /* Protected Function here */
 
     protected function body()
     {
+        ob_start(); ?>
+        <h1 style="text-align: center;">MY AWESOME PAGE</h1>
+        <?php return ob_get_clean();
     }
 }
