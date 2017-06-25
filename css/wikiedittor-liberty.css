@@ -11,7 +11,8 @@
     background-color: #5bc0de;
 }
 
-#wpPreview:hover, #wpPreview:active {
+#wpPreview:hover,
+#wpPreview:active {
     background-color: #31b0d5;
 }
 
@@ -19,7 +20,8 @@
     background-color: #f0ad4e;
 }
 
-#wpDiff:hover, #wpDiff:active {
+#wpDiff:hover,
+#wpDiff:active {
     background-color: #ec971f;
 }
 
@@ -29,7 +31,8 @@
     border-color: #d43f3a;
 }
 
-#mw-editform-cancel:hover, #mw-editform-cancel:active {
+#mw-editform-cancel:hover,
+#mw-editform-cancel:active {
     background-color: #c9302c;
 }
 
@@ -45,6 +48,7 @@
     margin-top: 0.2rem;
 }
 /* 버튼 css 적용 End */
+
 .wikiEditor-ui-tabs {
     border-left: 1px solid #e1e8ed !important;
     border-top: 1px solid #e1e8ed !important;
