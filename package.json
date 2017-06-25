@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/Akaza-Akari/Liberty-MW-Skin.git"
+    "url": "git+ssh://git@gitlab.com/librewiki/Liberty-MW-Skin.git"
   },
   "author": "Akaza Akari",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://gitlab.com/Akaza-Akari/Liberty-MW-Skin/issues"
+    "url": "https://gitlab.com/librewiki/Liberty-MW-Skin/issues"
   },
-  "homepage": "https://gitlab.com/Akaza-Akari/Liberty-MW-Skin#README",
+  "homepage": "https://gitlab.com/librewiki/Liberty-MW-Skin#README",
   "devDependencies": {
     "eslint": "^4.1.0"
   }
