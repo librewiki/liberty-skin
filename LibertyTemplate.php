@@ -8,7 +8,7 @@ class LibertyTemplate extends BaseTemplate {
 		$request = $this->getSkin()->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = $this->getSkin()->getTitle();
-		$curid = $this->getSkin()->getTitle()->getArticleID();
+		$curid = $title->getArticleID();
 
 		wfSuppressWarnings();
 
@@ -41,12 +41,12 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="container-fluid liberty-content">
 				<div class="liberty-content-header">
 					<?php if ( $this->data['sitenotice'] &&
-							   $wgRequest->getCookie( 'disable-notice' ) != 'yes' ) { ?>
+							   !$wgRequest->getCookie( 'disable-notice' ) ) { ?>
 						<div class="alert alert-dismissible fade in alert-info liberty-notice" role="alert">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<?php $this->html( 'sitenotice' ) ?>
+							<?php $this->html( 'sitenotice' ); ?>
 						</div>
 					<?php } ?>
 					<?php if ( !is_null( $wgLibertyAdSetting['header'] ) ) { ?>
@@ -62,11 +62,11 @@ class LibertyTemplate extends BaseTemplate {
 					$this->contentsToolbox(); ?>
 					<div class="title">
 						<h1>
-							<?php $this->html( 'title' ) ?>
+							<?php $this->html( 'title' ); ?>
 						</h1>
 					</div>
-					<div class="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
-						<?php $this->html( 'subtitle' ) ?>
+					<div class="contentSub"<?php $this->html( 'userlangattributes' ); ?>>
+						<?php $this->html( 'subtitle' ); ?>
 					</div>
 				</div>
 				<div class="liberty-content-main">
@@ -85,13 +85,13 @@ class LibertyTemplate extends BaseTemplate {
 					}
 					?>
 					<article>
-						<?php $this->html( 'bodycontent' ) ?>
+						<?php $this->html( 'bodycontent' ); ?>
 					</article>
 				</div>
 				<footer>
 				<div class="liberty-footer">
 					<div class="bottom-ads"></div>
-					<?php $this->footer() ?>
+					<?php $this->footer(); ?>
 				</div>
 				</footer>
 			</div>
@@ -111,36 +111,36 @@ class LibertyTemplate extends BaseTemplate {
 	 * Nav menu function, build top menu.
 	 */
 	protected function navMenu() {
-	?>
-	<nav class="navbar navbar-dark">
-		<a class="navbar-brand" href="/"></a>
-		<ul class="nav navbar-nav">
-			<li class="nav-item">
-				<?php echo Linker::linkKnown(
-					SpecialPage::getTitleFor( 'Recentchanges', null ),
-					'<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', [
-						'class' => 'nav-link',
-						'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]',
-						'accesskey' => 'r'
-					]
-				); ?>
-			</li>
-			<li class="nav-item">
-				<?php echo Linker::linkKnown(
-					SpecialPage::getTitleFor( 'Randompage', null ),
-					'<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', [
-						'class' => 'nav-link',
-						'title' => '임의 문서를 불러옵니다. [alt+shift+x]',
-						'accesskey' => 'x'
-					]
-				); ?>
-			</li>
-			<?php echo $this->renderPortal( $this->parseNavbar() ); ?>
-		</ul>
-		<?php $this->loginBox(); ?>
-		<?php $this->getNotification(); ?>
-		<?php $this->searchBox(); ?>
-	</nav>
+		?>
+		<nav class="navbar navbar-dark">
+			<a class="navbar-brand" href="<?php echo Title::newMainPage()->getLocalURL(); ?>"></a>
+			<ul class="nav navbar-nav">
+				<li class="nav-item">
+					<?php echo Linker::linkKnown(
+						SpecialPage::getTitleFor( 'Recentchanges', null ),
+						'<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', [
+							'class' => 'nav-link',
+							'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]',
+							'accesskey' => 'r'
+						]
+					); ?>
+				</li>
+				<li class="nav-item">
+					<?php echo Linker::linkKnown(
+						SpecialPage::getTitleFor( 'Randompage', null ),
+						'<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', [
+							'class' => 'nav-link',
+							'title' => '임의 문서를 불러옵니다. [alt+shift+x]',
+							'accesskey' => 'x'
+						]
+					); ?>
+				</li>
+				<?php echo $this->renderPortal( $this->parseNavbar() ); ?>
+			</ul>
+			<?php $this->loginBox(); ?>
+			<?php $this->getNotification(); ?>
+			<?php $this->searchBox(); ?>
+		</nav>
 	<?php
 	}
 
@@ -149,8 +149,8 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function searchBox() {
 	?>
-		<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
-			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+		<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="form-inline">
+			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ); ?>"/>
 			<div class="input-group">
 				<?php echo $this->makeSearchInput( [ 'class' => 'form-control', 'id' => 'searchInput' ] ); ?>
 				<span class="input-group-btn">
@@ -255,7 +255,7 @@ class LibertyTemplate extends BaseTemplate {
 						]
 					);
 				?>
-			<?php                                                                               } else { ?>
+			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
 					<span class="fa fa-sign-in"></span>
 				</a>
@@ -296,7 +296,9 @@ class LibertyTemplate extends BaseTemplate {
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
 							<?php //@codingStandardsIgnoreLine ?>
-							<a href="<?php echo $wgScript; ?>?title=<?php echo SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit"><?php $this->msg( 'userlogin-joinproject' ); ?></a>
+							<a href="<?php echo $wgScript; ?>?title=<?php echo SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit">
+								<?php $this->msg( 'userlogin-joinproject' ); ?>
+							</a>
 							<?php echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'PasswordReset', null ),
 								'비밀번호를 잊으셨나요?',
@@ -357,8 +359,8 @@ class LibertyTemplate extends BaseTemplate {
 		global $wgUser;
 		$title = $this->getSkin()->getTitle();
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
-		$watched = $this->getSkin()->getUser()->isWatched(
-				$this->getSkin()->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		$notWatched = $this->getSkin()->getUser()->isWatched(
+				$this->getSkin()->getRelevantTitle() ) ? true : false;
 		$user = ( $wgUser->isLoggedIn() ) ? array_shift( $userLinks ) : array_pop( $userLinks );
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
@@ -393,15 +395,9 @@ class LibertyTemplate extends BaseTemplate {
 						[ 'action' => 'edit', 'section' => 'new' ]
 					); ?>
 					<?php
-					if ( $companionTitle ) {
-						if ( $title->isTalkPage() ) {
-							$titlename = '본문';
-						} else {
-							$titlename = '토론';
-						}
-						echo Linker::linkKnown(
+					if ( $companionTitle ) {Known(
 							$companionTitle,
-							$titlename, [
+							$title->isTalkPage() ? '본문' : '토론', [
 								'class' => 'btn btn-secondary tools-btn',
 								'title' => $titlename.'을 불러옵니다. [alt+shift+t]',
 								'accesskey' => 't'
@@ -431,18 +427,12 @@ class LibertyTemplate extends BaseTemplate {
 								'기여', [
 									'class' => 'dropdown-item',
 									'title' => '사용자의 기여 목록을 불러옵니다.'
-								],
-								[ 'action' => $mode ]
+								]
 							);
-						}
-						if ( $watched != 'watch' ) {
-							$watchname = '주시해제';
-						} else {
-							$watchname = '주시';
 						}
 						echo Linker::linkKnown(
 							$title,
-							$watchname,
+							$notWatched ? '주시' : '주시해제',
 							[ 'class' => 'dropdown-item' ],
 							[ 'action' => 'watch' ]
 						); ?>
@@ -495,7 +485,7 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function footer() {
 		foreach ( $this->getFooterLinks() as $category => $links ) { ?>
-			<ul class="footer-<?php echo $category;?>">
+			<ul class="footer-<?php echo $category; ?>">
 				<?php foreach ( $links as $link ) { ?>
 					<li class="footer-<?php echo $category; ?>-<?php echo $link; ?>">
 						<?php $this->html( $link ); ?>
@@ -505,13 +495,13 @@ class LibertyTemplate extends BaseTemplate {
 		<?php
 		}
 		$footericons = $this->getFooterIcons( "icononly" );
-		if ( count( $footericons ) > 0 ) {
+		if ( count( $footericons ) ) {
 		?>
 			<ul class="footer-icons">
 				<?php
 				foreach ( $footericons as $blockName => $footerIcons ) {
 					?>
-					<li class="footer-<?php echo htmlspecialchars( $blockName );?>ico">
+					<li class="footer-<?php echo htmlspecialchars( $blockName ); ?>ico">
 						<?php
 						foreach ( $footerIcons as $icon ) {
 							echo $this->getSkin()->makeFooterIcon( $icon );
@@ -531,11 +521,12 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function getNotification() {
 		$personalTools = $this->getPersonalTools();
-		$notiCount = $personalTools['notifications']['links']['0']['text'];
-		if ( $notiCount != "0" ) {
+		$notiCount = $personalTools['notifications-alert']['links']['0']['text'] +
+					 $personalTools['notifications-message']['links']['0']['text'];
+		if ( $notiCount ) {
 		?>
 			<div id="pt-notifications" class="navbar-notification">
-				<a href="#"><span class="label label-danger"><?php echo $notiCount;?></span></a>
+				<a href="#"><span class="label label-danger"><?php echo $notiCount; ?></span></a>
 			</div>
 		<?php
 		}
@@ -547,7 +538,7 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function renderPortal( $contents ) {
 		foreach ( $contents as $content ) {
-			if ( $content === false ) {
+			if ( !$content ) {
 				break;
 			}
 			?>
@@ -589,9 +580,11 @@ class LibertyTemplate extends BaseTemplate {
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, "\r" );
 			if ( $line[0] !== '*' ) {
+				// Line not starts with '*'
 				continue;
 			}
 			if ( $line[1] !== '*' ) {
+				// Root menu
 				$splited = explode( '|', $line, 3 );
 				$item = [
 					'icon' => htmlentities( trim( substr( $splited[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
@@ -601,12 +594,15 @@ class LibertyTemplate extends BaseTemplate {
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
 			} else {
+				// Sub menu
 				$splited = explode( '|', $line, 3 );
 				$href = '';
 				$splited[0] = trim( substr( $splited[0], 2 ) );
 				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $splited[0] ) ) {
+					//'http://' or 'https://'
 					$href = htmlentities( $splited[0], ENT_QUOTES, 'UTF-8' );
 				} else {
+					//Internal Wiki Document Link
 					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $splited[0] ) ),
 							$wgArticlePath );
 				}
