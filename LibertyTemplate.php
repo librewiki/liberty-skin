@@ -395,7 +395,8 @@ class LibertyTemplate extends BaseTemplate {
 						[ 'action' => 'edit', 'section' => 'new' ]
 					); ?>
 					<?php
-					if ( $companionTitle ) {Known(
+					if ( $companionTitle ) {
+						echo Linker::linkKnown(
 							$companionTitle,
 							$title->isTalkPage() ? '본문' : '토론', [
 								'class' => 'btn btn-secondary tools-btn',
@@ -407,8 +408,7 @@ class LibertyTemplate extends BaseTemplate {
 					?>
 					<?php echo Linker::linkKnown(
 						$title,
-						'기록',
-						[
+						'기록', [
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]',
 							'accesskey' => 'h'
@@ -599,10 +599,10 @@ class LibertyTemplate extends BaseTemplate {
 				$href = '';
 				$splited[0] = trim( substr( $splited[0], 2 ) );
 				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $splited[0] ) ) {
-					//'http://' or 'https://'
+					// 'http://' or 'https://'
 					$href = htmlentities( $splited[0], ENT_QUOTES, 'UTF-8' );
 				} else {
-					//Internal Wiki Document Link
+					// Internal Wiki Document Link
 					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $splited[0] ) ),
 							$wgArticlePath );
 				}
