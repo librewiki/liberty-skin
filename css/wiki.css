@@ -1,54 +1,54 @@
 a {
-    color: #337ab7;
+	color: #337ab7;
 }
 
 a.new {
-    color: #b73333;
+	color: #b73333;
 }
 
 a:hover,
 a:focus {
-    color: #23527c;
-    text-decoration: underline;
-    transition: 0.3s;
+	color: #23527c;
+	text-decoration: underline;
+	transition: 0.3s;
 }
 
 a.new:hover,
 a.new:focus {
-    color: #7c2323;
-    text-decoration: underline;
-    transition: 0.3s;
+	color: #7c2323;
+	text-decoration: underline;
+	transition: 0.3s;
 }
 
 a.external {
-    color: #33b733;
+	color: #33b733;
 }
 
 a.external:hover,
 a.external:focus {
-    color: #2ca02c;
-    text-decoration: underline;
-    transition: 0.3s;
+	color: #2ca02c;
+	text-decoration: underline;
+	transition: 0.3s;
 }
 
 a.external:before {
-    font: normal normal normal 14px/1 FontAwesome;
-    text-align: center;
-    color: #33b733;
-    content: '\f0c1';
+	font: normal normal normal 14px/1 FontAwesome;
+	text-align: center;
+	color: #33b733;
+	content: '\f0c1';
 }
 
 .plainlinks a.external {
-    color: #337ab7;
+	color: #337ab7;
 }
 
 .plainlinks a.external:hover,
 .plainlinks a.external:focus {
-    color: #23527c;
-    text-decoration: underline;
-    transition: 0.3s;
+	color: #23527c;
+	text-decoration: underline;
+	transition: 0.3s;
 }
 
 .plainlinks a.external:before {
-    content: '';
+	content: '';
 }
