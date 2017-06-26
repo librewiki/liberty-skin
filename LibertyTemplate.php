@@ -103,7 +103,7 @@ class LibertyTemplate extends BaseTemplate {
 		$this->html( 'debughtml' );
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
-		echo '\n';
+		echo "\n";
 		wfRestoreWarnings();
 	}
 
@@ -578,7 +578,7 @@ class LibertyTemplate extends BaseTemplate {
 		$data = WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI )
 		)->getText( Revision::RAW );
-		$lines = explode( '\n', $data );
+		$lines = explode( "\n", $data );
 
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, '\r' );
