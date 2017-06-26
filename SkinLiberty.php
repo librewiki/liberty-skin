@@ -10,14 +10,14 @@ class SkinLiberty extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo;
-		// @codingStandardsIgnoreLine
-		$wgLibertyMainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#4188F1';
-		$wgLibertyOGLogo = isset( $GLOBALS['wgLibertyOGLogo'] ) ? $GLOBALS['wgLibertyOGLogo'] : $wgLogo;
+		$mainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#4188F1';
+		$ogLogo = isset( $GLOBALS['wgLibertyOGLogo'] ) ? $GLOBALS['wgLibertyOGLogo'] : $wgLogo;
 
 		parent::initPage( $out );
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
-		// @codingStandardsIgnoreLine
-		$out->addMeta( 'description', strip_tags( preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>' ) );
+		$out->addMeta( 'description', strip_tags(
+			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
+		) );
 		$out->addMeta( 'keywords', $wgSitename.','.$this->getSkin()->getTitle() );
 
 		/* 네이버 웹마스터 도구 */
@@ -32,15 +32,16 @@ class SkinLiberty extends SkinTemplate {
 
 		/* 모바일에서의 테마 컬러 적용 */
 		// 크롬, 파이어폭스 OS, 오페라
-		$out->addMeta( 'theme-color', $wgLibertyMainColor );
+		$out->addMeta( 'theme-color', $mainColor );
 		// 윈도우 폰
-		$out->addMeta( 'msapplication-navbutton-color', $wgLibertyMainColor );
+		$out->addMeta( 'msapplication-navbutton-color', $mainColor );
 
 		/* OpenGraph */
 		$out->addMeta( 'og:title', $this->getSkin()->getTitle() );
-		// @codingStandardsIgnoreLine
-		$out->addMeta( 'og:description', strip_tags( preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>' ) );
-		$out->addMeta( 'og:image', $wgLibertyOGLogo );
+		$out->addMeta( 'og:description', strip_tags(
+			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
+		) );
+		$out->addMeta( 'og:image', $ogLogo );
 		$out->addMeta( 'og:locale', $wgLanguageCode );
 		$out->addMeta( 'og:site_name', $wgSitename );
 		$out->addMeta( 'og:url', $this->getSkin()->getTitle()->getFullURL() );
@@ -66,18 +67,24 @@ class SkinLiberty extends SkinTemplate {
 	 */
 	public function setupSkinUserCss( OutputPage $out ) {
 		parent::setupSkinUserCss( $out );
-		// @codingStandardsIgnoreStart
-		$out->addHeadItem( 'font-awesome', '<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />' );
-		$out->addHeadItem( 'google-ads', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
-		// @codingStandardsIgnoreEnd
+		$out->addHeadItem(
+			'font-awesome',
+			// @codingStandardsIgnoreLine
+			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+		);
+		$out->addHeadItem(
+			'google-ads',
+			'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+		);
 		$out->addModuleStyles( [
 			'skins.liberty.styles'
 		] );
 	}
 
-	// @codingStandardsIgnoreLine
 	/**
 	 * Set body class.
+	 * @param OutputPage $out OutputPage
+	 * @param Mixed &$bodyAttrs Body Attributes
 	 */
 	public function addToBodyAttributes( $out, &$bodyAttrs ) {
 		$bodyAttrs['class'] .= ' Liberty width-size';

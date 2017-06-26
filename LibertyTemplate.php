@@ -59,10 +59,12 @@ class LibertyTemplate extends BaseTemplate {
 					<?php if ( $title->getNamespace() != NS_SPECIAL &&
 							   $action != 'edit' && $action != 'history' ) { ?>
 						<div class="social-buttons">
-							<div class="twitter" data-text="<?php echo $title; ?>"
-								 title="트위터"><div><i class="fa fa-twitter"></i></div></div>
-							<div class="facebook" data-text="<?php echo $title; ?>"
-								 title="페이스북"><div><i class="fa fa-facebook"></i></div></div>
+							<div class="twitter" data-text="<?php echo $title; ?>" title="트위터">
+								<div><i class="fa fa-twitter"></i></div>
+							</div>
+							<div class="facebook" data-text="<?php echo $title; ?>" title="페이스북">
+								<div><i class="fa fa-facebook"></i></div>
+							</div>
 						</div>
 					<?php } ?>
 					<?php
@@ -254,7 +256,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * Login model function, build login menu model.
 	 */
 	protected function loginModal() {
-		global $wgScript;
+		$title = $this->getSkin()->getTitle();
 		?>
 		<div class="modal fade login-modal" id="login-modal" tabindex="-1"
 			 role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
@@ -281,14 +283,20 @@ class LibertyTemplate extends BaseTemplate {
 								<label for="lgremember">로그인 상태를 유지하기</label>
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
-							<?php //@codingStandardsIgnoreLine ?>
-							<a href="<?php echo $wgScript; ?>?title=<?php echo SpecialPage::getTitleFor( 'UserLogin', null ); ?>&amp;type=signup&amp;returnto=<?php echo $title; ?>" tabindex="5" class="btn btn-primary btn-block" type="submit">
-								<?php $this->msg( 'userlogin-joinproject' ); ?>
-							</a>
+							<?php echo Linker::linkKnown(
+								SpecialPage::getTitleFor( 'UserLogin', null ),
+								wfMessage( 'userlogin-joinproject' ), [
+									'class' => 'btn btn-primary btn-block',
+									'tabindex' => 5,
+									'type' => 'submit'
+								], [
+									'type' => 'signup',
+									'returnto' => $title
+								]
+							); ?>
 							<?php echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'PasswordReset', null ),
-								'비밀번호를 잊으셨나요?',
-								[]
+								'비밀번호를 잊으셨나요?'
 							); ?>
 							<input type="hidden" name="action" value="login">
 							<input type="hidden" name="format" value="json">

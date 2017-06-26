@@ -1,4 +1,4 @@
-<?php
+<?php // @codingStandardsIgnoreLine
 if ( function_exists( 'wfLoadSkin' ) ) {
 	wfLoadSkin( 'Liberty' );
 	$wgMessagesDirs['Liberty'] = __DIR__.'/i18n';
