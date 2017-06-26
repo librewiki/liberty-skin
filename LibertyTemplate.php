@@ -26,16 +26,9 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-right-fixed">
 					<?php $this->liveRecent(); ?>
 				</div>
-				<?php if ( !is_null( $wgLibertyAdSetting['right'] ) ) { ?>
-					<div class="right-ads">
-						<ins class="adsbygoogle"
-							style="display:block; min-width: 15rem; width: 100%;"
-							data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
-							data-ad-slot="<?php echo $wgLibertyAdSetting['right']; ?>"
-							data-ad-format="auto">
-						</ins>
-					</div>
-				<?php } ?>
+				<?php if ( !is_null( $wgLibertyAdSetting['right'] ) ) {
+					$this->buildAd( 'right' );
+				} ?>
 			</div>
 			</aside>
 			<div class="container-fluid liberty-content">
@@ -49,16 +42,9 @@ class LibertyTemplate extends BaseTemplate {
 							<?php $this->html( 'sitenotice' ); ?>
 						</div>
 					<?php } ?>
-					<?php if ( !is_null( $wgLibertyAdSetting['header'] ) ) { ?>
-						<div class="header-ads">
-							<ins class="adsbygoogle"
-								style="display:block; min-width:20rem; width:100%;"
-								data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
-								data-ad-slot="<?php echo $wgLibertyAdSetting['header']; ?>"
-								data-ad-format="auto">
-							</ins>
-						</div>
-					<?php }
+					<?php if ( !is_null( $wgLibertyAdSetting['header'] ) ) {
+						$this->buildAd( 'header' );
+					}
 					$this->contentsToolbox(); ?>
 					<div class="title">
 						<h1>
@@ -621,5 +607,22 @@ class LibertyTemplate extends BaseTemplate {
 			}
 		}
 		return $headings;
+	}
+
+	/**
+	 * Build Adsense Function.
+	 * @param String $position Ad Position
+	 */
+	protected function buildAd( $position ) {
+		global $wgLibertyAdSetting;
+		?>
+			<div class="<?php echo $position; ?>-ads">
+				<ins class="adsbygoogle"
+					data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
+					data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>"
+					data-ad-format="auto">
+				</ins>
+			</div>
+		<?php
 	}
 }

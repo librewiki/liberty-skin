@@ -794,3 +794,19 @@ caption {
     caption-side: top;
 }
 /* Bootstrap Custom End*/
+
+/* Adsense */
+ins.adsbygoogle {
+    display: block;
+    width: 100%;
+    height: 90px;
+}
+
+.header-ads>ins {
+    min-width: 20rem;
+}
+
+.right-ads>ins {
+    min-width: 15rem;
+}
+/* Adsense End */
