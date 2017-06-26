@@ -20,11 +20,12 @@ phpcs:
   cache:
     paths:
       - vendor/
+      - composer.phar
 
   before_script:
     - apt-get update -yqq
-    - apt-get install git libmcrypt-dev libpq-dev libcurl4-gnutls-dev libicu-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev -yqq
-    - docker-php-ext-install mbstring mcrypt pdo_pgsql curl json intl gd xml zip bz2 opcache
+    - apt-get install git -yqq
+    #- docker-php-ext-install mbstring mcrypt pdo_pgsql curl json intl gd xml zip bz2 opcache
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install
 
