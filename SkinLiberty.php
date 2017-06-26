@@ -18,7 +18,7 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
 		// @codingStandardsIgnoreLine
 		$out->addMeta( 'description', strip_tags( preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>' ) );
-		$out->addMeta( 'keywords', $wgSitename.",".$this->getSkin()->getTitle() );
+		$out->addMeta( 'keywords', $wgSitename.','.$this->getSkin()->getTitle() );
 
 		/* 네이버 웹마스터 도구 */
 		if ( isset( $wgNaverVerification ) ) {
@@ -80,6 +80,6 @@ class SkinLiberty extends SkinTemplate {
 	 * Set body class.
 	 */
 	public function addToBodyAttributes( $out, &$bodyAttrs ) {
-		$bodyAttrs['class'] .= " Liberty width-size";
+		$bodyAttrs['class'] .= ' Liberty width-size';
 	}
 }

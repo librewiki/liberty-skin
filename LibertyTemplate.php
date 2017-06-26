@@ -338,8 +338,10 @@ class LibertyTemplate extends BaseTemplate {
 			</div>
 			<div class="live-recent-content">
 				<ul class="live-recent-list" id="live-recent-list">
-					<?php echo str_repeat( '<li><span class="recent-item">&nbsp;</span></li>',
-										   $wgLibertyMaxRecent ); ?>
+					<?php echo str_repeat(
+						'<li><span class="recent-item">&nbsp;</span></li>',
+						$wgLibertyMaxRecent
+					); ?>
 				</ul>
 			</div>
 			<div class="live-recent-footer">
@@ -372,7 +374,8 @@ class LibertyTemplate extends BaseTemplate {
 						$title,
 						'갱신', [
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]', 'accesskey' => 'p'
+							'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]',
+							'accesskey' => 'p'
 						],
 						[ 'action' => 'purge' ]
 					); ?>
