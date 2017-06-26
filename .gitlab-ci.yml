@@ -25,7 +25,6 @@ phpcs:
   before_script:
     - apt-get update -yqq
     - apt-get install git -yqq
-    #- docker-php-ext-install mbstring mcrypt pdo_pgsql curl json intl gd xml zip bz2 opcache
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install
 
