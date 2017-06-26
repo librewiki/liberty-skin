@@ -1,3 +1,4 @@
+// eslint-disable-next-line 
 function LoginManage() {
 	'use strict';
 	try {
