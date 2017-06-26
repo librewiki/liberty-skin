@@ -36,9 +36,10 @@
     background-color: #c9302c;
 }
 
-.editButtons input {
+html .editButtons input,
+html .editButtons input:first-child {
     margin-right: 0.2rem;
-    margin-left: 0 !important;
+    margin-left: 0;
 }
 
 .editButtons .cancelLink {
@@ -49,34 +50,34 @@
 }
 /* Button End */
 
-.wikiEditor-ui-tabs {
-    border-left: 1px solid #e1e8ed !important;
-    border-top: 1px solid #e1e8ed !important;
+html .wikiEditor-ui-tabs {
+    border-left: 1px solid #e1e8ed;
+    border-top: 1px solid #e1e8ed;
 }
 
-.wikiEditor-ui-tabs div {
-    border-right: 1px solid #e1e8ed !important;
-    border-bottom: 1px solid #e1e8ed !important;
-    background-color: #fff !important;
+html .wikiEditor-ui-tabs div {
+    border-right: 1px solid #e1e8ed;
+    border-bottom: 1px solid #e1e8ed;
+    background-color: #fff;
 }
 
-.wikiEditor-ui-tabs div.current {
-    border-bottom: 1px solid #f5f8fa !important;
-    background-color: #f5f8fa !important;
+html .wikiEditor-ui-tabs div.current {
+    border-bottom: 1px solid #f5f8fa;
+    background-color: #f5f8fa;
 }
 
-.wikiEditor-ui .wikiEditor-ui-view {
-    border: 1px solid #e1e8ed !important;
-    border-bottom: 0 !important;
+html .wikiEditor-ui .wikiEditor-ui-view {
+    border: 1px solid #e1e8ed;
+    border-bottom: 0;
 }
 
-.wikiEditor-ui-toolbar {
-    background-image: none !important;
-    background-color: #f5f8fa !important;
+html .wikiEditor-ui-toolbar {
+    background-image: none;
+    background-color: #f5f8fa;
 }
 
-.wikiEditor-ui .wikiEditor-ui-top {
-    border-bottom: 1px solid #e1e8ed !important;
+html .wikiEditor-ui .wikiEditor-ui-top {
+    border-bottom: 1px solid #e1e8ed;
 }
 
 .editOptions {
@@ -87,9 +88,9 @@
     border-bottom-right-radius: 0.35rem;
 }
 
-.editOptions input.mw-summary {
+html .editOptions input#wpSummary {
     display: block;
-    width: 100% !important;
+    width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -100,7 +101,7 @@
     border-radius: 0.35rem;
 }
 
-.editOptions input.mw-summary:focus {
+html .editOptions input#wpSummary:focus {
     border-color: #66afe9;
     outline: 0;
 }
@@ -110,14 +111,14 @@
 }
 
 .mw-charinsert-buttons {
-    margin-top: 1rem !important;
-    border: 1px solid #e1e8ed !important;
-    padding: 0.8rem !important;
+    margin-top: 1rem;
+    border: 1px solid #e1e8ed;
+    padding: 0.8rem;
 }
 
 .mw-charinsert-buttons select {
     display: block;
-    width: 100% !important;
+    width: 100%;
 }
 
 .mw-charinsert-buttons select:focus {
@@ -126,8 +127,8 @@
 }
 
 .mw-charinsert-buttons input {
-    padding: 0.2rem 0.5rem !important;
-    margin-top: 0.3rem !important;
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.3rem;
 }
 
 .mw-charinsert-buttons input:hover,
@@ -139,7 +140,7 @@
     margin-top: 0.8rem;
 }
 
-td.diff-context {
-    background-color: #f5f8fa !important;
-    border-color: #e1e8ed !important;
+html td.diff-context {
+    background-color: #f5f8fa;
+    border-color: #e1e8ed;
 }
