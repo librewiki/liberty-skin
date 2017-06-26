@@ -71,7 +71,7 @@ class LibertyTemplate extends BaseTemplate {
 				</div>
 				<div class="liberty-content-main">
 					<?php if ( $title->getNamespace() != NS_SPECIAL &&
-							   $action != "edit" && $action != "history" ) { ?>
+							   $action != 'edit' && $action != 'history' ) { ?>
 						<div class="social-buttons">
 							<div class="twitter" data-text="<?php echo $title; ?>"
 								 title="트위터"><div><i class="fa fa-twitter"></i></div></div>
@@ -103,7 +103,7 @@ class LibertyTemplate extends BaseTemplate {
 		$this->html( 'debughtml' );
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
-		echo "\n";
+		echo '\n';
 		wfRestoreWarnings();
 	}
 
@@ -156,7 +156,7 @@ class LibertyTemplate extends BaseTemplate {
 				<span class="input-group-btn">
 					<button type="submit" name="go" value="보기" id="searchGoButton"
 							class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-					<button type="submit" name="ful]text" value="검색" id="mw-searchButton"
+					<button type="submit" name="fulltext" value="검색" id="mw-searchButton"
 							class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
 				</span>
 			</div>
@@ -176,7 +176,7 @@ class LibertyTemplate extends BaseTemplate {
 				if ( $wgUser->getEmailAuthenticationTimestamp() ) {
 					$email = trim( $wgUser->getEmail() );
 					$email = strtolower( $email );
-					$email = md5( $email ) . "?d=identicon";
+					$email = md5( $email )."?d=identicon";
 				} else {
 					$email = "00000000000000000000000000000000?d=identicon&f=y";
 				}
@@ -494,7 +494,7 @@ class LibertyTemplate extends BaseTemplate {
 			</ul>
 		<?php
 		}
-		$footericons = $this->getFooterIcons( "icononly" );
+		$footericons = $this->getFooterIcons( 'icononly' );
 		if ( count( $footericons ) ) {
 		?>
 			<ul class="footer-icons">
@@ -521,8 +521,8 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function getNotification() {
 		$personalTools = $this->getPersonalTools();
-		$notiCount = $personalTools['notifications-alert']['links']['0']['text'] +
-					 $personalTools['notifications-message']['links']['0']['text'];
+		$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
+					 $personalTools['notifications-message']['links'][0]['text'];
 		if ( $notiCount ) {
 		?>
 			<div id="pt-notifications" class="navbar-notification">
@@ -575,10 +575,10 @@ class LibertyTemplate extends BaseTemplate {
 		$data = WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI )
 		)->getText( Revision::RAW );
-		$lines = explode( "\n", $data );
+		$lines = explode( '\n', $data );
 
 		foreach ( $lines as $line ) {
-			$line = rtrim( $line, "\r" );
+			$line = rtrim( $line, '\r' );
 			if ( $line[0] !== '*' ) {
 				// Line not starts with '*'
 				continue;
