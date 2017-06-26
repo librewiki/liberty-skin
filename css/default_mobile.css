@@ -127,10 +127,11 @@
 		display: none;
 	}
 
-	.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox,
-	.Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable {
-		width: 100% !important;
-		margin: auto !important;
+	html .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox,
+	html .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable {
+		float: none;
+		width: 100%;
+		margin: auto;
 	}
 
 	.Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
