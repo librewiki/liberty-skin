@@ -1,8 +1,4 @@
-/* 부트스트랩 기본 폰트가 16이라 기본폰트 15인 리버티스킨은 bootstrap 반응형 부분을 쓰기가 힘듬
-   그래서 그냥 px로 때려박는걸로
-*/
-
-/* Max-width: 1023 데스크탑 마지노선 */
+/* Max-width: 1023 Desktop deadline */
 @media (max-width: 1023px) {
 	.Liberty .nav-wrapper .navbar {
 		padding: 0 0.5rem;
@@ -96,7 +92,7 @@
 	}
 }
 
-/* Max-width: 798 메뉴 마지노선 테블릿 모드로 전환 시작하기위한 부분 */
+/* Max-width: 798 Menu deadline, convert for tablet mode */
 @media (max-width: 798px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
 		text-align: center;
@@ -113,7 +109,7 @@
 	}
 }
 
-/* Max-width: 520px 테블릿 이하 시작 부분 */
+/* Max-width: 520px Under tablet */
 @media (max-width: 520px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
 		padding: 0.7rem 0.3rem;
@@ -144,7 +140,7 @@
 	}
 }
 
-/* Max-width: 397px 대형폰 이하 시작 부분 */
+/* Max-width: 397px Under Big-phone */
 @media (max-width: 397px) {
 	.Liberty .nav-wrapper .navbar .navbar-brand {
 		width: 5rem;

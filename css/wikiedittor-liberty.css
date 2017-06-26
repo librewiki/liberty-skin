@@ -1,4 +1,4 @@
-/* 버튼 css 적용 */
+/* Button */
 #wpSave {
     background-color: #0275d8;
 }
@@ -47,7 +47,7 @@
 .editButtons * {
     margin-top: 0.2rem;
 }
-/* 버튼 css 적용 End */
+/* Button End */
 
 .wikiEditor-ui-tabs {
     border-left: 1px solid #e1e8ed !important;

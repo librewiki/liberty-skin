@@ -1,8 +1,8 @@
 @import url( //fonts.googleapis.com/earlyaccess/nanumgothic.css );
-/* 메인 색깔 #4188f1 */
-/* 테두리 색깔 #e1e8ed */
+/* Main Color #4188f1 */
+/* Border Color #e1e8ed */
 
-/* 태그 수정 */
+/* HTML Tag */
 * {
     outline: none;
 }
@@ -137,7 +137,7 @@ td[rowspan]:after {
 
 input[type=search] {
     -webkit-appearance: none;
-    /* iOS 잡다한 css설정 제거 */
+    /* Removes some iOS CSS Settings */
 }
 
 textarea {
@@ -168,23 +168,23 @@ s,
 strike {
     color: gray;
 }
-/* 태그 수정 End */
+/* HTML Tag End */
 
-/* 백그라운드 색 지정 */
+/* Background Color */
 .Liberty {
     background-color: #f5f5f5;
 }
-/* 백그라운드 색 지정 End*/
+/* Background Color End*/
 
-/* 컨텐츠 넓이 수정 및 가운대 정렬 */
+/* Content width, alian center */
 .Liberty .nav-wrapper .navbar,
 .Liberty .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
 }
-/* 컨텐츠 넓이 수정 및 가운대 정렬 End */
+/* Content width, alian center End */
 
-/* 네비 수정 */
+/* Nav */
 .Liberty .nav-wrapper {
     min-height: 2.8rem;
     background-color: #4188f1;
@@ -352,9 +352,9 @@ strike {
     left: auto;
     right: 1.15rem;
 }
-/* 네비 수정 End */
+/* Nav End */
 
-/* 오른쪽 메뉴 수정 */
+/* Right menu */
 .Liberty .content-wrapper .liberty-sidebar {
     float: right;
     width: 15rem;
@@ -481,9 +481,9 @@ strike {
     top: 25.73rem;
     width: 15rem;
 }
-/* 오른쪽 메뉴 수정 End */
+/* Right menu End */
 
-/* 컨텐츠 수정 */
+/* Content */
 .Liberty .content-wrapper {
     margin-top: 3.33rem;
 }
@@ -604,9 +604,9 @@ strike {
     background-color: #eb5e4c;
     display: none;
 }
-/* 컨텐츠 수정 End */
+/* Content End */
 
-/* 컨텐츠 하단 수정 */
+/* Footer */
 .Liberty .content-wrapper .liberty-footer {
     border: 1px solid #e1e8ed;
     border-radius: 0 0 0.35rem 0.35rem;
@@ -640,13 +640,9 @@ strike {
     margin-right: 0.8rem;
     float: left;
 }
-/* 컨텐츠 하단 수정 End */
+/* Footer End */
 
-/* 모달 수정 */
-.Liberty .login-modal {
-
-}
-
+/* Login model */
 .Liberty .login-modal .modal-sm {
     width: 25rem;
 }
@@ -739,9 +735,9 @@ strike {
 .Liberty .login-modal .modal-footer {
     display: none;
 }
-/* 모달 수정 End*/
+/* Login model End*/
 
-/* 부트스트랩 커스텀 */
+/* Bootstrap Custom */
 .dropdown-menu {
     font-size: 0.95rem;
     box-shadow: 0 6px 12px rgba( 0, 0, 0, .175 );
@@ -785,7 +781,7 @@ strike {
 
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
-    z-index: 3; /* 파폭, IE 테두리관련 버그 */
+    z-index: 3; /* Firefox, IE border bug fix */
 }
 
 .close:focus,
@@ -797,4 +793,4 @@ caption {
     color: #373a3c;
     caption-side: top;
 }
-/* 부트스트랩 커스텀 End*/
+/* Bootstrap Custom End*/

@@ -1,4 +1,4 @@
-/* 목차 관련 */
+/* Toc */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc {
 	border-bottom-right-radius: 0.35rem;
 	border-bottom-left-radius: 0.35rem;
@@ -56,9 +56,9 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc a>.tocnumber:hover {
 	text-decoration: underline;
 }
-/* 목차 관련 End */
+/* Toc End */
 
-/* 제목 관련 */
+/* Title */
 .Liberty .content-wrapper .liberty-content .liberty-content-main h1,
 .Liberty .content-wrapper .liberty-content .liberty-content-main h2,
 .Liberty .content-wrapper .liberty-content .liberty-content-main h3,
@@ -76,9 +76,9 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
 	color: #4188f1;
 }
-/* 제목 관련 End */
+/* Title End */
 
-/* 본문 관련 */
+/* Content */
 .Liberty .content-wrapper .liberty-content .liberty-content-main ul {
 	margin: 0.5rem 0 0.5rem 1.6rem;
 }
@@ -112,9 +112,9 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul>li {
 	margin: 0;
 }
-/* 본문 관련 */
+/* Content */
 
-/* 스페셜 페이지 관련 */
+/* Special Pages */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-specialpages-table {
 	margin-top: 0;
 }
@@ -131,9 +131,9 @@
 	width: auto;
 	margin: 0;
 }
-/* 스페셜 페이지 관련 End */
+/* Special Pages End */
 
-/* 검색결과 관련 */
+/* Search results */
 html .suggestions-results {
 	border-color: #e1e8ed;
 	padding: 0.5rem;
@@ -152,9 +152,9 @@ html .suggestions-result-current {
 	color: #373a3c;
 	transition: 0.3s;
 }
-/* 검색결과 관련 End */
+/* Search results End */
 
-/* 섬네일 관련 */
+/* Thumbnail */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .center {
 	margin: auto;
 	text-align: center;
@@ -163,9 +163,9 @@ html .suggestions-result-current {
 .Liberty .content-wrapper .liberty-content .liberty-content-main .thumbinner {
 	margin: auto;
 }
-/* 섬네일 관련 End */
+/* Thumbnail End */
 
-/* 최근바뀜 관련(메뉴) */
+/* Recent Changes (Menu) */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-changeslist>h4 {
 	margin-bottom: 0.2rem;
 }
@@ -184,9 +184,9 @@ html .suggestions-result-current {
 	border-bottom: 1px solid #e1e8ed;
 	padding: 0.5rem 0;
 }
-/* 최근바뀜 관련(메뉴) End */
+/* Recent Changes (Menu) End */
 
-/* 이미지 관련 */
+/* Image */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .tright {
 	margin-left: 0.8rem;
 	margin-bottom: 0.8rem;
@@ -200,9 +200,9 @@ html .suggestions-result-current {
 .Liberty .content-wrapper .liberty-content .liberty-content-main .thumb img {
 	box-shadow: 0.25rem 0.25rem 0 0 #e1e8ed;
 }
-/* 이미지 관련 End */
+/* Image End */
 
-/* 환경설정 */
+/* Preferences */
 #preftoc {
 	width: 100%;
 	float: left;
@@ -275,9 +275,9 @@ html .suggestions-result-current {
 	padding: 1rem;
 	background-color: #fff;
 }
-/* 환경설정 End */
+/* Preferences End */
 
-/* 좌측 목록 */
+/* Left Toc */
 #fixed-toc ul {
 	list-style-image: none;
 	list-style-type: none;
@@ -298,8 +298,9 @@ html .suggestions-result-current {
 #fixed-toc ul ul {
 	margin-left: 2rem;
 }
-/* 좌측 목록 End */
+/* Left Toc End */
 
+/* Input */
 select,
 input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
 	display: inline-block;
@@ -349,20 +350,24 @@ button:hover,
 #mw-editform-cancel:hover {
 	background-color: #449d44;
 }
+/* Input End */
 
-/* Postedit 관련 */
+/* Postedit */
 html .postedit-container {
 	z-index: 3000;
 }
 
-/* 필드셋 오버플로우 */
+/* Fieldset overflow */
 fieldset {
 	overflow-x: scroll;
 }
 
-/* 확장기능 관련 */
+/* Extensions */
 
-/* msupload */
+/* MsUpload */
 html #msupload-dropzone {
 	height: auto;
 }
+/* MsUpload End */
+
+/* Extensions End */
