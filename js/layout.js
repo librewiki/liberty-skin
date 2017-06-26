@@ -1,7 +1,7 @@
 $( function () {
 	'use strict';
 
-	/* 드롭다운 페이드인 */
+	/* Dropdown fade in */
 	$( '.dropdown' ).on( 'show.bs.dropdown', function () {
 		$( this ).find( '.dropdown-menu' ).first().stop( true, true ).fadeToggle( 200 );
 	} );
@@ -17,17 +17,17 @@ $( function () {
 	$( '.btn-group' ).on( 'hide.bs.dropdown', function () {
 		$( this ).find( '.dropdown-menu' ).first().stop( true, true ).fadeToggle( 200 );
 	} );
-	/* 드롭다운 페이드인 End */
+	/* Dropdown fade in End */
 
-	/* 모달 포커스잡기 */
+	/* Modal Focus */
 	$( '#login-modal' ).on( 'shown.bs.modal', function () {
 		$( '#wpName1' ).focus();
 	} );
-	/* 모달 포커스잡기 End */
+	/* Model Focus End */
 
 } );
 
-/* load ads */
+/* Load Ads */
 $( function () {
 	'use strict';
 	var width, rightAds;
@@ -45,4 +45,4 @@ $( function () {
 		} );
 	}
 } );
-/* load ads end */
+/* Load Ads End */

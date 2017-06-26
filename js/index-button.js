@@ -1,6 +1,4 @@
-/* 목차리스트를 고정해서 볼 수 있는 버튼을 만들어 줍니다.
-author: Damezuma
-*/
+/* Make button to make fixed toc */
 $( function () {
 	'use strict';
 	var width, contentHeaderOffset, indexButton, navHeight, id;
@@ -44,7 +42,7 @@ $( function () {
 					return false;
 				} );
 
-				/* 왼쪽목차 클릭시 처리 */
+				/* Left toc click process */
 				navHeight = $( '.nav-wrapper' ).height();
 				$( '#fixed-toc ul li > a' ).click( function () {
 					if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
@@ -58,7 +56,7 @@ $( function () {
 						return false;
 					}
 				} );
-				/* 왼쪽목차 클릭시 처리 End */
+				/* Left toc click process End */
 			}
 		} );
 		$( document.body ).append( indexButton );
