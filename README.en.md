@@ -10,10 +10,10 @@ Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Ski
 
 ## Configurations
 
-| Name | Description | Example Variable | Default Variable | 
+| Name | Description | Example Variable | Default Variable |
 | ---- | ---- | ---- | ---- |
 | `$wgLibertyMainColor` | `theme-color` configurations | `#4188F1` | `#4188F1` |
-| `$wgTwitterAccount` | Default Twitter account to set a mention | `librewiki` | (none) | 
+| `$wgTwitterAccount` | Default Twitter account to set a mention | `librewiki` | (none) |
 | `$wgLibertyOGLogo` | OpenGraph Image Logo | `https://librewiki.net/images/6/6a/Libre_favicon.png` | (Value of `$wgLogo`) |
 | `$wgNaverVerification` | Naver Webmater Tool Verification Code | (Value supplied by Naver.com) | (none) |
 | `$wgLibertyAdSetting` | Google Adsense Settings | `array( "client" => "(Value supplied by Google)", "header" => "3627980722", "right" => "6581447128" )` | (none) |
@@ -21,4 +21,4 @@ Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Ski
 
 ## NavVar
 
-Edit `MediaWiki:Liberty-NavVar` page to modify the value. Example is on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
+Edit `MediaWiki:Liberty-Navbar` page to modify the value. Example is on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
