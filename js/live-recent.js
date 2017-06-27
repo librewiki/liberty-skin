@@ -42,29 +42,29 @@ $(function () {
       },
       dataType: 'json'
     })
-    .then(function (data) {
-      var recentChanges = data.query.recentchanges;
-      var html = recentChanges.map(function (item) {
-        var time = new Date(item.timestamp);
-        var line = '<li><a class="recent-item" href = "' + (mw.config.get('wgArticlePath')).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
-        var text = '';
-        if (item.type === 'new') {
-          text += '[New]';
-        }
-        text += item.title;
-        if (text.length > 13) {
-          text = text.substr(0, 13);
-          text += '...';
-        }
-        text = text.replace('[New]', '<span class="new">[New] </span>');
-        line += text;
-        line += '</a></li>';
-        return line;
-      }).join('\n');
-      $('#live-recent-list').html(html);
-    }, function () {
-      return;
-    });
+      .then(function (data) {
+        var recentChanges = data.query.recentchanges;
+        var html = recentChanges.map(function (item) {
+          var time = new Date(item.timestamp);
+          var line = '<li><a class="recent-item" href = "' + (mw.config.get('wgArticlePath')).replace('$1', encodeURIComponent(item.title)) + '" title="' + item.title + '">[' + timeFormat(time) + '] ';
+          var text = '';
+          if (item.type === 'new') {
+            text += '[New]';
+          }
+          text += item.title;
+          if (text.length > 13) {
+            text = text.substr(0, 13);
+            text += '...';
+          }
+          text = text.replace('[New]', '<span class="new">[New] </span>');
+          line += text;
+          line += '</a></li>';
+          return line;
+        }).join('\n');
+        $('#live-recent-list').html(html);
+      }, function () {
+        return;
+      });
   }
 
   function timeFormat(time) {

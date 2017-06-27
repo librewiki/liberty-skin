@@ -10,7 +10,7 @@ eslint:
     # Configure ESLint (will read your .eslintrc file)
     - eslint --init
     # Run ESLint
-    - eslint js --ignore-pattern 'lib/'
+    - eslint js
 
 phpcs:
   image: texthtml/phpcs
