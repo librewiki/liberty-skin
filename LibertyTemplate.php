@@ -575,7 +575,7 @@ class LibertyTemplate extends BaseTemplate {
 		$lines = explode( "\n", $data );
 
 		foreach ( $lines as $line ) {
-			$line = rtrim( $line, '\r' );
+			$line = rtrim( $line, "\r" );
 			if ( $line[0] !== '*' ) {
 				// Line not starts with '*'
 				continue;
