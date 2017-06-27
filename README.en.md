@@ -19,6 +19,6 @@ Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Ski
 | `$wgLibertyAdSetting` | Google Adsense Settings | `array( "client" => "(Value supplied by Google)", "header" => "3627980722", "right" => "6581447128" )` | (none) |
 | `$wgLibertyMaxRecent` | Recent X edits appearing in "Recent Changes" bar in the skin | `10` | `10` |
 
-## NavVar
+## Navbar
 
 Edit `MediaWiki:Liberty-Navbar` page to modify the value. Example is on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
