@@ -1,22 +1,16 @@
 {
-  "name": "liberty-mw-skin",
-  "version": "1.0.0",
-  "description": "ESLint for Developers.",
-  "main": "eslint.js",
+  "private": true,
   "scripts": {
-    "test": "exit 0;"
+    "test": "grunt test",
+    "doc": "jsduck"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/librewiki/Liberty-MW-Skin.git"
-  },
-  "author": "SEE AUTHOR IN <AUTHORS.txt>",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://gitlab.com/librewiki/Liberty-MW-Skin/issues"
-  },
-  "homepage": "https://gitlab.com/librewiki/Liberty-MW-Skin#README",
   "devDependencies": {
-    "eslint": "^4.1.0"
+    "grunt": "1.0.1",
+    "grunt-banana-checker": "0.4.0",
+    "grunt-contrib-jshint": "0.11.3",
+    "grunt-jscs": "2.3.0",
+    "grunt-jsonlint": "1.0.7",
+    "grunt-stylelint": "0.6.0",
+    "stylelint-config-wikimedia": "0.4.1"
   }
 }
