@@ -10,5 +10,43 @@
 	"liberty.css": "/* 이 CSS 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
 	"liberty.js": "/* 이 자바스크립트 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
 
-	"liberty-sp-title": "리버티 스킨 설정"
+	"liberty-sp-title": "리버티 스킨 설정",
+
+	"liberty-sp-colorMain": "주 색상",
+	"liberty-sp-colorSub": "보조 색상",
+	"liberty-sp-colorAutoSub": "자동으로 계산",
+
+	"liberty-sp-sidebarPosition": "사이드바 위치",
+	"liberty-sp-sidebarPosition_0": "없음",
+	"liberty-sp-sidebarPosition_1": "왼쪽",
+	"liberty-sp-sidebarPosition_2": "오른쪽 (기본)",
+
+	"liberty-sp-sidebarContent": "사이드바 내용",
+	"liberty-sp-sidebarContent_0": "최근 편집만",
+	"liberty-sp-sidebarContent_1": "최근 토론만",
+	"liberty-sp-sidebarContent_2": "전체",
+
+	"liberty-sp-navbarLogo": "상단바 로고",
+
+	"liberty-sp-navbarHideGeneral": "상단바 기본 메뉴 숨기기",
+	"liberty-sp-navbarHideGeneral_0": "최근 변경만",
+	"liberty-sp-navbarHideGeneral_1": "임의 문서만",
+	"liberty-sp-navbarHideGeneral_2": "전체",
+	"liberty-sp-navbarHideGeneral_3": "숨기지 않음 (기본)",
+
+	"liberty-sp-navbarHideName": "PC에서도 상단바 메뉴 이름 숨기기",
+	
+	"liberty-sp-navbarFastOut": "상단바에서 빠른 로그아웃 버튼 숨기기",
+
+	"liberty-sp-navbarHideLogin": "상단바에서 로그인 버튼 숨기기",
+
+	"liberty-sp-loginUseModel": "로그인 모델 사용하기",
+
+	"liberty-sp-editToolsHide": "편집 메뉴 숨기기",
+	"liberty-sp-editToolsHide_0": "로그인하지 않은 사용자만",
+	"liberty-sp-editToolsHide_1": "권한이 부족한 사용자만",
+	"liberty-sp-editToolsHide_2": "모든 사용자",
+	"liberty-sp-editToolsHide_3": "숨기지 않음 (기본)",
+
+	"liberty-sp-metaOpenGraphLogo": "OpenGraph 로고 (이미지 비율 1:1 권장)"
 }
