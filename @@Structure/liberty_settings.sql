@@ -2,7 +2,7 @@
 -- Table structure for table `liberty_settings`
 --
 
-CREATE TABLE /*_*/liberty_navbar(
+CREATE TABLE /*_*/liberty_settings(
   date int(10) NOT NULL,
   modifier int NOT NULL,
   colorMain text(18) DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE /*_*/liberty_navbar(
   colorAutoSub boolean DEFAULT true,
   sidebarPosition int(2) DEFAULT 2,
   sidebarContent int(2) DEFAULT 3,
-  navbarLogo text DEFAULT NULL;
+  navbarLogo text DEFAULT NULL,
   navbarHideGeneral int(3), 0,
   navbarHideName boolean DEFAULT false,
   navbarFastOut boolean DEFAULT false,
