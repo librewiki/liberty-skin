@@ -16,7 +16,8 @@
 		"Liberty": "LibertySpecialPage"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "LibertyHooks::onLoadExtensionSchemaUpdates"
+		"LoadExtensionSchemaUpdates": "LibertyHooks::onLoadExtensionSchemaUpdates",
+		"GetPreferences": "LibertyHooks::onGetPreferences"
 	},
 	"MessagesDirs": {
 		"Liberty": [
