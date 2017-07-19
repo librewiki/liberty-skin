@@ -9,5 +9,23 @@
 	"liberty.css": "/* CSS placed here will affect users of the Liberty skin */",
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
 
-	"liberty-sp-title": "Liberty Skin Setting"
+	"prefs-liberty": "Liberty Skin Setting",
+
+	"liberty-sp-colorMain": "Main Color",
+	"liberty-sp-colorSub": "Sub Color",
+	"liberty-sp-colorAutoSub": "Automatic Calculate",
+
+	"liberty-sp-sidebarPosition": "Sidebar Position",
+	"liberty-sp-sidebarPosition_0": "Right (Default)",
+	"liberty-sp-sidebarPosition_1": "Left",
+	"liberty-sp-sidebarPosition_2": "None",
+
+	"liberty-sp-sidebarContent": "Sidebar Content",
+	"liberty-sp-sidebarContent_0": "All (Default)",
+	"liberty-sp-sidebarContent_1": "Recent Edit Only",
+	"liberty-sp-sidebarContent_2": "Recent Discuss Only",
+
+	"liberty-sp-navbarHideName": "Hide Navbar item name in PC",
+	
+	"liberty-sp-navbarFastOut": "Remove fast logout button in navbar"
 }

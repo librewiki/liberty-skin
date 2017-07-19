@@ -17,8 +17,8 @@
 
 	"liberty-sp-sidebarPosition": "사이드바 위치",
 	"liberty-sp-sidebarPosition_0": "오른쪽 (기본)",
-	"liberty-sp-sidebarPosition_1": "없음",
-	"liberty-sp-sidebarPosition_2": "왼쪽",
+	"liberty-sp-sidebarPosition_1": "왼쪽",
+	"liberty-sp-sidebarPosition_2": "없음",
 
 	"liberty-sp-sidebarContent": "사이드바 내용",
 	"liberty-sp-sidebarContent_0": "전체 (기본)",
