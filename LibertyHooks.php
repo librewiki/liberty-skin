@@ -15,61 +15,60 @@ class LibertyHooks
     $preferences['colorMain'] = array(
         'type' => 'toggle',
         'label-message' => 'liberty-sp-colorMain',
-        'section' => 'rendering'
+        'section' => 'rendering/liberty'
     );
 
     $preferences['colorSub'] = array(
         'type' => 'toggle',
         'label-message' => 'liberty-sp-colorSub',
-        'section' => 'rendering'
+        'section' => 'rendering/liberty'
     );
 
     $preferences['colorAutoSub'] = array(
         'type' => 'toggle',
         'label-message' => 'liberty-sp-colorAutoSub',
-        'section' => 'rendering',
+        'section' => 'rendering/liberty',
         'default' => 'true'
     );
 
     $preferences['sidebarPosition'] = array(
         'type' => 'radio',
         'label-message' => 'liberty-sp-sidebarPosition',
-        'section' => 'rendering',
+        'section' => 'rendering/liberty',
         'options' => array(
-            'liberty-sp-sidebarPosition_0' => '0',
-            'liberty-sp-sidebarPosition_1' => '1',
-            'liberty-sp-sidebarPosition_2' => '2'
+            wfMessage('liberty-sp-sidebarPosition_0')->plain() => '0',
+            wfMessage('liberty-sp-sidebarPosition_1')->plain() => '1',
+            wfMessage('liberty-sp-sidebarPosition_2')->plain() => '2'
         ),
-        'default' => '2'
+        'default' => '0'
     );
 
     $preferences['sidebarContent'] = array(
         'type' => 'radio',
         'label-message' => 'liberty-sp-sidebarContent',
-        'section' => 'rendering',
+        'section' => 'rendering/liberty',
         'options' => array(
-            'liberty-sp-sidebarContent_0' => '0',
-            'liberty-sp-sidebarContent_1' => '1',
-            'liberty-sp-sidebarContent_2' => '2',
-            'liberty-sp-sidebarContent_3' => '3'
+            wfMessage('liberty-sp-sidebarContent_0')->plain() => '0',
+            wfMessage('liberty-sp-sidebarContent_1')->plain() => '1',
+            wfMessage('liberty-sp-sidebarContent_2')->plain() => '2'
         ),
-        'default' => '2'
+        'default' => '0'
     );
 
-    $preferences['navbarFastout'] = array(
+    $preferences['navbarFastOut'] = array(
         'type' => 'toggle',
-        'label-message' => 'liberty-sp-navbarFastout',
-        'section' => 'rendering',
+        'label-message' => 'liberty-sp-navbarFastOut',
+        'section' => 'rendering/liberty',
         'default' => 'true'
     );
 
     $preferences['navbarHideName'] = array(
         'type' => 'toggle',
         'label-message' => 'liberty-sp-navbarHideName',
-        'section' => 'rendering',
+        'section' => 'rendering/liberty',
         'default' => 'false'
     );
 
-    return true;
+		return true;
     }
 }
