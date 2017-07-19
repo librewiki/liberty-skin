@@ -11,21 +11,21 @@
 
 	"prefs-liberty": "리버티 스킨 설정",
 
-	"liberty-sp-colorMain": "주 색상",
-	"liberty-sp-colorSub": "보조 색상",
-	"liberty-sp-colorAutoSub": "자동으로 계산",
+	"prefs-liberty-colorMain": "주 색상",
+	"prefs-liberty-colorSub": "보조 색상",
+	"prefs-liberty-colorAutoSub": "자동으로 계산",
 
-	"liberty-sp-sidebarPosition": "사이드바 위치",
-	"liberty-sp-sidebarPosition_0": "오른쪽 (기본)",
-	"liberty-sp-sidebarPosition_1": "왼쪽",
-	"liberty-sp-sidebarPosition_2": "없음",
+	"prefs-liberty-sidebarPosition": "사이드바 위치",
+	"prefs-liberty-sidebarPosition_0": "오른쪽 (기본)",
+	"prefs-liberty-sidebarPosition_1": "왼쪽",
+	"prefs-liberty-sidebarPosition_2": "없음",
 
-	"liberty-sp-sidebarContent": "사이드바 내용",
-	"liberty-sp-sidebarContent_0": "전체 (기본)",
-	"liberty-sp-sidebarContent_1": "최근 편집만",
-	"liberty-sp-sidebarContent_2": "최근 토론만",
+	"prefs-liberty-sidebarContent": "사이드바 내용",
+	"prefs-liberty-sidebarContent_0": "전체 (기본)",
+	"prefs-liberty-sidebarContent_1": "최근 편집만",
+	"prefs-liberty-sidebarContent_2": "최근 토론만",
 
-	"liberty-sp-navbarHideName": "PC에서도 상단바 메뉴 이름 숨기기",
+	"prefs-liberty-navbarHideName": "PC에서도 상단바 메뉴 이름 숨기기",
 	
-	"liberty-sp-navbarFastOut": "상단바에서 빠른 로그아웃 버튼 숨기기"
+	"prefs-liberty-navbarFastOut": "상단바에서 빠른 로그아웃 버튼 숨기기"
 }

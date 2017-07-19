@@ -11,21 +11,21 @@
 
 	"prefs-liberty": "Liberty Skin Setting",
 
-	"liberty-sp-colorMain": "Main Color",
-	"liberty-sp-colorSub": "Sub Color",
-	"liberty-sp-colorAutoSub": "Automatic Calculate",
+	"prefs-liberty-colorMain": "Main Color",
+	"prefs-liberty-colorSub": "Sub Color",
+	"prefs-liberty-colorAutoSub": "Automatic Calculate",
 
-	"liberty-sp-sidebarPosition": "Sidebar Position",
-	"liberty-sp-sidebarPosition_0": "Right (Default)",
-	"liberty-sp-sidebarPosition_1": "Left",
-	"liberty-sp-sidebarPosition_2": "None",
+	"prefs-liberty-sidebarPosition": "Sidebar Position",
+	"prefs-liberty-sidebarPosition_0": "Right (Default)",
+	"prefs-liberty-sidebarPosition_1": "Left",
+	"prefs-liberty-sidebarPosition_2": "None",
 
-	"liberty-sp-sidebarContent": "Sidebar Content",
-	"liberty-sp-sidebarContent_0": "All (Default)",
-	"liberty-sp-sidebarContent_1": "Recent Edit Only",
-	"liberty-sp-sidebarContent_2": "Recent Discuss Only",
+	"prefs-liberty-sidebarContent": "Sidebar Content",
+	"prefs-liberty-sidebarContent_0": "All (Default)",
+	"prefs-liberty-sidebarContent_1": "Recent Edit Only",
+	"prefs-liberty-sidebarContent_2": "Recent Discuss Only",
 
-	"liberty-sp-navbarHideName": "Hide Navbar item name in PC",
+	"prefs-liberty-navbarHideName": "Hide Navbar item name in PC",
 	
-	"liberty-sp-navbarFastOut": "Remove fast logout button in navbar"
+	"prefs-liberty-navbarFastOut": "Remove fast logout button in navbar"
 }
