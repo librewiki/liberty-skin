@@ -13,6 +13,9 @@ class LibertyTemplate extends BaseTemplate
         wfSuppressWarnings();
 
         $this->html('headelement');
+		if($wgUser->getOption('liberty-navbarHideName')) {
+			echo '<style>.hide-title { display: none; }</style>';
+		}
         ?>
         <header>
         <div class="nav-wrapper navbar-fixed-top">
@@ -244,14 +247,17 @@ class LibertyTemplate extends BaseTemplate
                         ); ?>
                     </div>
                 </div>
-                <?= Linker::linkKnown(
-                        SpecialPage::getTitleFor('logout', null),
-                        '<span class="fa fa-sign-out"></span>',
-                        array(
-                            'class' => 'hide-logout logout-btn',
-                            'title' => '로그아웃'
-                        )
-                    );
+                <?php if(!$wgUser->getOption('liberty-navbarFastOut'))
+				{
+				echo Linker::linkKnown(
+                    SpecialPage::getTitleFor('logout', null),
+                    '<span class="fa fa-sign-out"></span>',
+                   array(
+                        'class' => 'hide-logout logout-btn',
+                        'title' => '로그아웃'
+                    )
+                );
+				}
                 ?>
             <?php } else { ?>
                 <a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">

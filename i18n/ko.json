@@ -11,10 +11,6 @@
 
 	"prefs-liberty": "리버티 스킨 설정",
 
-	"prefs-liberty-colorMain": "주 색상",
-	"prefs-liberty-colorSub": "보조 색상",
-	"prefs-liberty-colorAutoSub": "보조 색상을 자동으로 계산",
-
 	"prefs-liberty-sidebarPosition": "사이드바 위치",
 	"prefs-liberty-sidebarPosition_0": "오른쪽 (기본)",
 	"prefs-liberty-sidebarPosition_1": "왼쪽",

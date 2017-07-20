@@ -10,11 +10,6 @@
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
 
 	"prefs-liberty": "Liberty Skin Setting",
-
-	"prefs-liberty-colorMain": "Main Color",
-	"prefs-liberty-colorSub": "Sub Color",
-	"prefs-liberty-colorAutoSub": "Automatic Calculate",
-
 	"prefs-liberty-sidebarPosition": "Sidebar Position",
 	"prefs-liberty-sidebarPosition_0": "Right (Default)",
 	"prefs-liberty-sidebarPosition_1": "Left",
