@@ -10,6 +10,7 @@
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
 
 	"prefs-liberty": "Liberty Skin Setting",
+	
 	"prefs-liberty-sidebarPosition": "Sidebar Position",
 	"prefs-liberty-sidebarPosition_0": "Right (Default)",
 	"prefs-liberty-sidebarPosition_1": "Left",
