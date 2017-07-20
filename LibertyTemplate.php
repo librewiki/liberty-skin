@@ -62,7 +62,6 @@ class LibertyTemplate extends BaseTemplate
                     <div class="title">
                         <h1>
                             <?php $this->html('title') ?>
-							<?= var_dump($wgUser->getOptions()); ?>
                         </h1>
                     </div>
                     <div class="contentSub"<?php $this->html('userlangattributes') ?>>

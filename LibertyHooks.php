@@ -13,7 +13,8 @@ class LibertyHooks
 		$preferences['liberty-colorSub'] = array(
 			'type' => 'int',
 			'label-message' => 'prefs-liberty-colorSub',
-			'section' => 'rendering/liberty'
+			'section' => 'rendering/liberty',
+			'disabled' => (!$user->getOption('liberty-colorAutoSub'))
 		);
 
 		$preferences['liberty-colorAutoSub'] = array(
