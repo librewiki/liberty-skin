@@ -12,9 +12,6 @@
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
-	"SpecialPages": {
-		"Liberty": "LibertySpecialPage"
-	},
 	"Hooks": {
 		"GetPreferences": "LibertyHooks::onGetPreferences"
 	},
@@ -86,10 +83,6 @@
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
 		"LibertyTemplate": "LibertyTemplate.php",
-		"LibertySpecialPage": "LibertySpecialPage.php",
 		"LibertyHooks": "LibertyHooks.php"
-	},
-	"ExtensionMessagesFiles": {
-		"LibertyAlias": "LibertySpecialPage.alias.php"
 	}
 }

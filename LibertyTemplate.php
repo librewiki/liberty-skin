@@ -4,7 +4,7 @@ class LibertyTemplate extends BaseTemplate
 {
     public function execute()
     {
-        global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath;
+        global $wgRequest, $wgLibertyAdSetting, $wgServer, $wgScriptPath, $wgArticlePath, $wgUser;
         $request = $this->getSkin()->getRequest();
         $action = $request->getVal('action', 'view');
         $title = $this->getSkin()->getTitle();
@@ -62,6 +62,7 @@ class LibertyTemplate extends BaseTemplate
                     <div class="title">
                         <h1>
                             <?php $this->html('title') ?>
+							<?= var_dump($wgUser->getOptions()); ?>
                         </h1>
                     </div>
                     <div class="contentSub"<?php $this->html('userlangattributes') ?>>
