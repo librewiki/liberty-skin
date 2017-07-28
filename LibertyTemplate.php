@@ -554,9 +554,8 @@ class LibertyTemplate extends BaseTemplate
         global $wgArticlePath;
         $headings = array();
         $currentHeading = null;
-        $data = WikiPage::factory(Title::newFromText('Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI))->getText(Revision::RAW);
-        $lines = explode("\n", $data);
-
+        $data = WikiPage::factory(Title::newFromText('Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI))->getContent(Revision::RAW);
+        $lines = explode("\n", $data->mText);
         foreach ($lines as $line) {
             $line = rtrim($line, "\r");
             if ($line[0] !== '*') {
