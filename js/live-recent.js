@@ -88,6 +88,6 @@ $(function () {
     return hour + ':' + minute + ':' + second;
   }
 
-  setInterval(refreshLiveRecent, 10 * 1000);
+  setInterval(refreshLiveRecent, 5 * 60 * 1000);
   refreshLiveRecent();
 });
