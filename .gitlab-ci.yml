@@ -5,11 +5,7 @@ eslint:
   image: node:latest
   stage: lint
   script:
-    # Install ESLint in this docker container
     - npm install -g eslint
-    # Configure ESLint (will read your .eslintrc file)
-    - eslint --init
-    # Run ESLint
     - eslint js
 
 phpcs:
