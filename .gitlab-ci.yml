@@ -6,7 +6,6 @@ eslint:
   stage: lint
   script:
     - npm install -g eslint eslint-config-wikimedia
-    - eslint --init
     - eslint js --ignore-pattern 'lib/'
   cache:
     paths:
