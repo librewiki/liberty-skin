@@ -78,7 +78,6 @@ $( function () {
 			} );
 	}
 
-
 	$( '#liberty-recent-tab1' ).click( function () {
 		$( this ).addClass( 'active' );
 		$( '#liberty-recent-tab2' ).removeClass( 'active' );
@@ -92,28 +91,7 @@ $( function () {
 		isDocumentTab = false;
 		refreshLiveRecent();
 	} );
-	function timeFormat( time ) {
-	    var aDayAgo, hour, minute, second;
-		aDayAgo = new Date();
-		aDayAgo.setDate( aDayAgo.getDate() - 1 );
-		if( time < aDayAgo ) {
-			return ( time.getFullYear() ) + '/' + ( time.getMonth() + 1 ) + '/' + time.getDate();
-		}
-		hour = time.getHours();
-		minute = time.getMinutes();
-		second = time.getSeconds();
-		if( hour < 10 ) {
-			hour = '0' + hour;
-		}
-		if( minute < 10 ) {
-			minute = '0' + minute;
-		}
-		if ( second < 10 ) {
-			second = '0' + second;
-		}
-		return hour + ':' + minute + ':' + second;
-	}
 
-  setInterval( refreshLiveRecent, 5 * 60 * 1000 );
-  refreshLiveRecent();
-});
+	setInterval( refreshLiveRecent, 5 * 60 * 1000 );
+	refreshLiveRecent();
+} );
