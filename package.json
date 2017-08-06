@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/librewiki/Liberty-MW-Skin#README",
   "devDependencies": {
-    "eslint": "^4.1.0"
+    "eslint": "^4.1.0",
+    "eslint-config-wikimedia": "^0.4.0"
   }
 }

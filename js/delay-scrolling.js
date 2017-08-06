@@ -1,95 +1,96 @@
-$(window).load(function () {
-  'use strict';
-  /* 주소에 앵커 있을 경우 처리 */
-  var hash = window.location.hash;
-  var navHeight = $('.nav-wrapper').height();
+$( window ).load( function () {
+	'use strict';
+	var hash, navHeight, id;
+	/* Anchor Process */
+	hash = window.location.hash;
+	navHeight = $( '.nav-wrapper' ).height();
 
-  if (hash.indexOf('.') !== -1) {
-    hash = hash + '';
-    hash = document.getElementById(hash.replace('#', ''));
-  }
+	if ( hash.indexOf( '.' ) !== -1 ) {
+		hash = String( hash );
+		hash = document.getElementById( hash.replace( '#', '' ) );
+	}
 
-  if (hash) {
-    $('html, body').animate({ scrollTop: $(hash).offset().top - navHeight - 10 }, 350);
-  }
-  /* 주소에 앵커 있을 경우 처리 End */
+	if ( hash ) {
+		$( 'html, body' ).animate( { scrollTop: $( hash ).offset().top - navHeight - 10 }, 350 );
+	}
+	/* Anchor Process End */
 
-  /* 목차 클릭시 처리 */
-  $('.toc ul li > a').click(function () {
-    if ($(this).attr('href') [0] === '#') {
-      var id = $(this).attr('href') + '';
-      if (id.indexOf('.') !== -1) {
-        id = document.getElementById(id.replace('#', ''));
-      }
-      $('html,body').animate({
-        scrollTop: ($(id).offset().top - navHeight - 10)
-      }, 350);
-      return false;
-    }
-  });
-  /* 목차 클릭시 처리 End */
+	/* Toc click process */
+	$( '.toc ul li > a' ).click( function () {
+		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
+			id = String( $( this ).attr( 'href' ) );
+			if ( id.indexOf( '.' ) !== -1 ) {
+				id = document.getElementById( id.replace( '#', '' ) );
+			}
+			$( 'html,body' ).animate( {
+				scrollTop: ( $( id ).offset().top - navHeight - 10 )
+			}, 350 );
+			return false;
+		}
+	} );
+	/* Toc click process End */
 
-  /* 타이틀 번호 클릭시 처리 */
-  $('.mw-headline-number').click(function () {
-    $('html,body').animate({
-      scrollTop: ($('#toctitle').offset().top - navHeight - 10)
-    }, 350);
-    return false;
-  });
-  /* 타이틀 번호 클릭시 처리 End */
+	/* Title number click process */
+	$( '.mw-headline-number' ).click( function () {
+		$( 'html,body' ).animate( {
+			scrollTop: ( $( '#toctitle' ).offset().top - navHeight - 10 )
+		}, 350 );
+		return false;
+	} );
+	/* Title number click process End */
 
-  /* 주석 클릭시 처리 */
-  $('.mw-cite-backlink > a').click(function () {
-    if ($(this).attr('href') [0] === '#') {
-      var id = $(this).attr('href') + '';
-      if (id.indexOf('.') !== -1) {
-        id = document.getElementById(id.replace('#', ''));
-      }
-      $('html,body').animate({
-        scrollTop: ($(id).offset().top - navHeight - 10)
-      }, 400);
-      return false;
-    }
-  });
+	/* Toc Click Process */
+	$( '.mw-cite-backlink > a' ).click( function () {
+		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
+			id = String( $( this ).attr( 'href' ) );
+			if ( id.indexOf( '.' ) !== -1 ) {
+				id = document.getElementById( id.replace( '#', '' ) );
+			}
+			$( 'html,body' ).animate( {
+				scrollTop: ( $( id ).offset().top - navHeight - 10 )
+			}, 400 );
+			return false;
+		}
+	} );
 
-  $('.mw-cite-backlink > * > a').click(function () {
-    if ($(this).attr('href') [0] === '#') {
-      var id = $(this).attr('href') + '';
-      if (id.indexOf('.') !== -1) {
-        id = document.getElementById(id.replace('#', ''));
-      }
-      $('html,body').animate({
-        scrollTop: ($(id).offset().top - navHeight - 10)
-      }, 400);
-      return false;
-    }
-  });
+	$( '.mw-cite-backlink > * > a' ).click( function () {
+		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
+			id = String( $( this ).attr( 'href' ) );
+			if ( id.indexOf( '.' ) !== -1 ) {
+				id = document.getElementById( id.replace( '#', '' ) );
+			}
+			$( 'html,body' ).animate( {
+				scrollTop: ( $( id ).offset().top - navHeight - 10 )
+			}, 400 );
+			return false;
+		}
+	} );
 
-  $('.reference > a').click(function () {
-    if ($(this).attr('href') [0] === '#') {
-      var id = $(this).attr('href') + '';
-      if (id.indexOf('.') !== -1) {
-        id = document.getElementById(id.replace('#', ''));
-      }
-      $('html,body').animate({
-        scrollTop: ($(id).offset().top - navHeight - 10)
-      }, 400);
-      return false;
-    }
-  });
-  /* 주석 클릭시 처리 End */
+	$( '.reference > a' ).click( function () {
+		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
+			id = String( $( this ).attr( 'href' ) );
+			if ( id.indexOf( '.' ) !== -1 ) {
+				id = document.getElementById( id.replace( '#', '' ) );
+			}
+			$( 'html,body' ).animate( {
+				scrollTop: ( $( id ).offset().top - navHeight - 10 )
+			}, 400 );
+			return false;
+		}
+	} );
+	/* Toc Click Process End */
 
-  /* 환경설정 탭 클릭시 처리 */
-  $('#preftoc li > a').click(function () {
-    if ($(this).attr('href') [0] === '#') {
-      var id = $(this).attr('href') + '';
-      if (id.indexOf('.') !== -1) {
-        id = document.getElementById(id.replace('#', ''));
-      }
-      $('html,body').animate({
-        scrollTop: (0)
-      }, 350);
-    }
-  });
-  /* 환경설정 탭 클릭시 처리 End */
-});
+	/* Preference Tab Click Process */
+	$( '#preftoc li > a' ).click( function () {
+		if ( $( this ).attr( 'href' )[ 0 ] === '#' ) {
+			id = String( $( this ).attr( 'href' ) );
+			if ( id.indexOf( '.' ) !== -1 ) {
+				id = document.getElementById( id.replace( '#', '' ) );
+			}
+			$( 'html,body' ).animate( {
+				scrollTop: ( 0 )
+			}, 350 );
+		}
+	} );
+	/* Preference Tab Click Process End */
+} );

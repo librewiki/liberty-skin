@@ -1,35 +1,13 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "sourceType": "script"
-  },
+  "extends": "wikimedia",
   "env": {
-    "browser": true
+    "browser": true,
+    "jquery": true
   },
   "globals": {
-    "$": true,
-    "mw": true
+    "mw": false
   },
   "rules": {
-    "semi" : [2],
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "quotes": ["error", "single"],
-    "space-infix-ops": ["error"],
-    "arrow-spacing": [2, { "before": true, "after": true }],
-    "comma-spacing": ["error", { "before": false, "after": true }],
-    "key-spacing": ["error", { "mode": "strict" }],
-    "space-before-function-paren": ["error", {
-      "anonymous": "always",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
-    "no-console": [1],
-    "brace-style": [2],
-    "camelcase": [1],
-    "keyword-spacing": [2],
-    "eqeqeq": [2],
-    "space-before-blocks": [2],
-    "strict": [2]
-  },
-  "extends": "eslint:recommended"
+    "dot-notation": 0
+  }
 }
