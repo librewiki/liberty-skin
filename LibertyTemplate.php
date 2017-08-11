@@ -550,8 +550,12 @@ class LibertyTemplate extends BaseTemplate {
 					<?php
 					if ( is_array( $content['children'] ) ) {
 						foreach ( $content['children'] as $child ) {
-							?><a href="<?php echo $child['href']; ?>" class="dropdown-item"
-								 title="<?php echo $child['text']; ?>"><?php echo $child['text']; ?></a><?php
+							?><a href="<?php echo $child['href']; ?>"
+								 class="dropdown-item"
+								 title="<?php echo $child['title']; ?>"
+								 accesskey="<?php $child['access']; ?>">
+								 <?php echo $child['text']; ?></a>
+							<?php
 						}
 					}
 					?>
@@ -582,34 +586,49 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[1] !== '*' ) {
 				// Root menu
-				$splited = explode( '|', $line, 3 );
+				$splited = explode( ' | ', $line, 4 );
 				$item = [
 					'icon' => htmlentities( trim( substr( $splited[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
 					'text' => htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' ),
 					'children' => []
 				];
+				$item['title'] = ( isset( $splited[2] ) ) ?
+					htmlentities( trim( $splited[2] ), ENT_QUOTES, 'UTF-8' ):
+					htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
 			} else {
 				// Sub menu
-				$splited = explode( '|', $line, 3 );
+				$splited = explode( '|', $line, 4 );
 				$href = '';
+				$title = '';
+				$access = '';
 				$splited[0] = trim( substr( $splited[0], 2 ) );
-				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $splited[0] ) ) {
+				$text = htmlentities( trim( $splited[0] ), ENT_QUOTES, 'UTF-8' );
+				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $splited[1] ) ) {
 					// 'http://' or 'https://'
-					$href = htmlentities( $splited[0], ENT_QUOTES, 'UTF-8' );
+					$href = htmlentities( $splited[1], ENT_QUOTES, 'UTF-8' );
 				} else {
 					// Internal Wiki Document Link
-					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $splited[0] ) ),
+					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $splited[1] ) ),
 							$wgArticlePath );
 				}
 				if ( !isset( $splited[1] ) ) {
 					$splited[] = '';
 				}
-				$text = htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
+				if ( isset( $splited[2] ) ) {
+					$title = htmlentities( trim( $splited[2] ), ENT_QUOTES, 'UTF-8' );
+				} else {
+					$title = $text;
+				}
+				if ( isset( $splited[3] ) ) {
+					$access = htmlentities( trim( $splited[3] ), ENT_QUOTES, 'UTF-8');
+				}
 				$item = [
 					'text' => $text,
-					'href' => $href
+					'href' => $href,
+					'title' => $title,
+					'access' => $access
 				];
 				$currentChildren[] = $item;
 			}
