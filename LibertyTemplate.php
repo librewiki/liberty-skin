@@ -622,7 +622,7 @@ class LibertyTemplate extends BaseTemplate {
 					$title = $text;
 				}
 				if ( isset( $splited[3] ) ) {
-					$access = htmlentities( trim( $splited[3] ), ENT_QUOTES, 'UTF-8');
+					$access = htmlentities( trim( $splited[3] ), ENT_QUOTES, 'UTF-8' );
 				}
 				$item = [
 					'text' => $text,
