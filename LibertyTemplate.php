@@ -569,10 +569,10 @@ class LibertyTemplate extends BaseTemplate {
 		global $wgArticlePath;
 		$headings = [];
 		$currentHeading = null;
-		$data = get_object_vars( WikiPage::factory(
+		$data = WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI )
-		)->getContent( Revision::RAW ) )['mText'];
-		$lines = explode( "\n", $data );
+		)->getContent( Revision::RAW );
+		$lines = explode( "\n", $data->mText );
 
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, "\r" );
