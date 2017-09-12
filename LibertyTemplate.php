@@ -571,8 +571,8 @@ class LibertyTemplate extends BaseTemplate {
 		$currentHeading = null;
 		$data = WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI )
-		)->getText( Revision::RAW );
-		$lines = explode( "\n", $data );
+		)->getContent( Revision::RAW );
+		$lines = explode( "\n", $data->mText );
 
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, "\r" );
