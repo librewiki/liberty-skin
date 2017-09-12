@@ -7,47 +7,86 @@
 	background-color: #025aa5;
 }
 
-#wpPreview {
+#wpPreview,
+#wpPreview > input {
 	background-color: #5bc0de;
+	color: #fff;
 }
 
 #wpPreview:hover,
-#wpPreview:active {
+#wpPreview:active,
+#wpPreview:hover > input,
+#wpPreview:active > input {
 	background-color: #31b0d5;
 }
 
-#wpDiff {
+#wpDiff,
+#wpDiff > input {
 	background-color: #f0ad4e;
+	color: #fff;
 }
 
 #wpDiff:hover,
-#wpDiff:active {
+#wpDiff:active,
+#wpDiff:hover > input,
+#wpDiff:active > input {
 	background-color: #ec971f;
 }
 
-#mw-editform-cancel {
+#mw-editform-cancel,
+#mw-editform-cancel > a {
 	color: #fff;
 	background-color: #d9534f;
 	border-color: #d43f3a;
 }
 
+#mw-editform-cancel > a {
+	border: none;
+}
+
 #mw-editform-cancel:hover,
-#mw-editform-cancel:active {
+#mw-editform-cancel:active,
+#mw-editform-cancel:hover > a,
+#mw-editform-cancel:active > a {
 	background-color: #c9302c;
 }
 
 html .editButtons input,
 html .editButtons input:first-child {
-	margin-right: 0.2rem;
 	margin-left: 0;
 }
 
 .editButtons .cancelLink {
 	margin: 0;
 }
-.editButtons * {
-	margin-top: 0.2rem;
+
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active,
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	box-shadow: none;
+	display: inline-block;
+	padding: 0.2rem 1rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: .25rem;
 }
+
+.oo-ui-inputWidget {
+	border-radius: .25rem;
+}
+
+.oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button {
+	color: #fff;
+}
+
+/*.oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button {
+	padding: 0;
+}*/
 /* Button End */
 
 html .wikiEditor-ui-tabs {
