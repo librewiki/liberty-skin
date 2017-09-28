@@ -596,9 +596,19 @@ class LibertyTemplate extends BaseTemplate {
 			if ( $line[1] !== '*' ) {
 				// Root menu
 				$split = explode( '|', $line, 3 );
+				// support the usual [[MediaWiki:Sidebar]] syntax of
+				// ** link target|<some MW: message name> and if the
+				// thing on the right side of the pipe isn't the name of a MW:
+				// message, then and _only_ then render it as-is
+				$descObj = wfMessage( trim( $split[1] ) );
+				if ( $descObj->isDisabled() ) {
+					$text = htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' );
+				} else {
+					$text = $descObj->text();
+				}
 				$item = [
 					'icon' => htmlentities( trim( substr( $split[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
-					'text' => htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' ),
+					'text' => $text,
 					'children' => []
 				];
 				$currentChildren = &$item['children'];
@@ -625,7 +635,11 @@ class LibertyTemplate extends BaseTemplate {
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
 				$descObj = wfMessage( trim( $split[1] ) );
-				$text = $descObj->isDisabled() ? htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' ) : $descObj->text();
+				if ( $descObj->isDisabled() ) {
+					$text = htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' );
+				} else {
+					$text = $descObj->text();
+				}
 				$item = [
 					'text' => $text,
 					'href' => $href
