@@ -562,51 +562,70 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Parse Navbar function.
-	 * @return Array Menu data.
+	 * Parse [[MediaWiki:Liberty-Navbar]].
+	 *
+	 * Its format is:
+	 * * <icon name>|Name of the menu displayed to the user
+	 * ** link target|Link title (can be the name of an interface message)
+	 *
+	 * @return array Menu data
 	 */
 	protected function parseNavbar() {
 		global $wgArticlePath;
+
 		$headings = [];
 		$currentHeading = null;
-		$data = WikiPage::factory(
-			Title::newFromText( 'Liberty-Navbar', $defaultNamespace = NS_MEDIAWIKI )
-		)->getText( Revision::RAW );
+		$data = ContentHandler::getContentText( WikiPage::factory(
+			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
+		)->getContent( Revision::RAW ) );
+		// Well, [[MediaWiki:Liberty-Navbar]] *should* have some content, but
+		// if it doesn't, bail out here so that we don't trigger E_NOTICEs
+		// about undefined indexes later on
+		if ( empty( $data ) ) {
+			return $headings;
+		}
+
 		$lines = explode( "\n", $data );
 
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, "\r" );
 			if ( $line[0] !== '*' ) {
-				// Line not starts with '*'
+				// Line does not start with '*'
 				continue;
 			}
 			if ( $line[1] !== '*' ) {
 				// Root menu
-				$splited = explode( '|', $line, 3 );
+				$split = explode( '|', $line, 3 );
 				$item = [
-					'icon' => htmlentities( trim( substr( $splited[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
-					'text' => htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' ),
+					'icon' => htmlentities( trim( substr( $split[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
+					'text' => htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' ),
 					'children' => []
 				];
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
 			} else {
 				// Sub menu
-				$splited = explode( '|', $line, 3 );
+				$split = explode( '|', $line, 3 );
 				$href = '';
-				$splited[0] = trim( substr( $splited[0], 2 ) );
-				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $splited[0] ) ) {
+				$split[0] = trim( substr( $split[0], 2 ) );
+				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $split[0] ) ) {
 					// 'http://' or 'https://'
-					$href = htmlentities( $splited[0], ENT_QUOTES, 'UTF-8' );
+					$href = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
 				} else {
 					// Internal Wiki Document Link
-					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $splited[0] ) ),
+					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $split[0] ) ),
 							$wgArticlePath );
 				}
-				if ( !isset( $splited[1] ) ) {
-					$splited[] = '';
+				if ( !isset( $split[1] ) ) {
+					$split[] = '';
 				}
-				$text = htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
+				// support the usual [[MediaWiki:Sidebar]] syntax of
+				// ** link target|<some MW: message name> and if the
+				// thing on the right side of the pipe isn't the name of a MW:
+				// message, then and _only_ then render it as-is
+				$descObj = wfMessage( trim( $split[1] ) );
+				$text = $descObj->isDisabled() ? htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' ) : $descObj->text();
 				$item = [
 					'text' => $text,
 					'href' => $href
@@ -614,6 +633,7 @@ class LibertyTemplate extends BaseTemplate {
 				$currentChildren[] = $item;
 			}
 		}
+
 		return $headings;
 	}
 
