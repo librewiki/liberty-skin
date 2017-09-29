@@ -264,6 +264,10 @@ class LibertyTemplate extends BaseTemplate {
 		if ( $skin->getUser()->isLoggedIn() ) {
 			return;
 		}
+
+		// Turn off Continuous Integration warnings about "too long" lines which are
+		// perfectly acceptable in this particular context
+		// @codingStandardsIgnoreStart
 		?>
 		<div class="modal fade login-modal" id="login-modal" tabindex="-1"
 			 role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
@@ -317,6 +321,8 @@ class LibertyTemplate extends BaseTemplate {
 			</div>
 		</div>
 	<?php
+		// Turn Continuous Integration stuff back on
+		// @codingStandardsIgnoreEnd
 	}
 
 	/**

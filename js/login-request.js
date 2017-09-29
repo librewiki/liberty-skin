@@ -67,14 +67,14 @@ function LoginManage() {
 	}
 }
 
-$( function() {
+$( function () {
 	$( '#modal-loginform' ).on( {
-		'keypress': function( e ) {
-			if ( e.which == 13 /* Enter was pressed */ ) {
+		keypress: function ( e ) {
+			if ( e.which === 13 /* Enter was pressed */ ) {
 				return LoginManage();
 			}
 		},
-		'submit': function() {
+		submit: function () {
 			return LoginManage();
 		}
 	} );
