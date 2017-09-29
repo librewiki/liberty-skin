@@ -1,11 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liberty LLC","..."
+			"Liberty LLC",
+			"..."
 		]
 	},
 	"skinname-liberty": "리버티",
 	"liberty-desc": "리브레 위키의 기본스킨입니다.",
+	"liberty-forgot-pw": "비밀번호를 잊으셨나요?",
+	"liberty-login": "로그인",
+	"liberty-login-btn": "로그인",
+	"liberty-remember": "로그인 상태를 유지하기",
+	"liberty-warning": "경고",
+	"liberty-warning-text": "아이디와 비밀번호를 정확히 입력하세요.",
 	"liberty.css": "/* 이 CSS 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
 	"liberty.js": "/* 이 자바스크립트 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */"
 }

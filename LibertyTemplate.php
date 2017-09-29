@@ -256,7 +256,14 @@ class LibertyTemplate extends BaseTemplate {
 	 * Login model function, build login menu model.
 	 */
 	protected function loginModal() {
-		$title = $this->getSkin()->getTitle();
+		$skin = $this->getSkin();
+		$title = $skin->getTitle();
+
+		// Probably no point in rendering a login window for the users who are
+		// already logged in?
+		if ( $skin->getUser()->isLoggedIn() ) {
+			return;
+		}
 		?>
 		<div class="modal fade login-modal" id="login-modal" tabindex="-1"
 			 role="dialog" aria-labelledby="login-modalLabel" aria-hidden="true">
@@ -266,26 +273,26 @@ class LibertyTemplate extends BaseTemplate {
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title">로그인</h4>
+						<h4 class="modal-title"><?php echo $skin->msg( 'liberty-login' )->plain() ?></h4>
 					</div>
 					<div class="modal-body">
 						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
 						</div>
 						<form id="modal-loginform" name="userlogin" class="modal-loginform"
-							  method="post" onsubmit="return LoginManage();">
+							  method="post">
 							<input class="loginText form-control" id="wpName1" tabindex="1"
-								   placeholder="사용자 계정 이름을 입력하세요" value="" name="lgname">
-							<label for="inputPassword" class="sr-only">Password</label>
+								   placeholder="<?php echo $skin->msg( 'userlogin-yourname-ph' )->plain() ?>" value="" name="lgname">
+							<label for="inputPassword" class="sr-only"><?php echo $skin->msg( 'userlogin-yourpassword' )->plain() ?></label>
 							<input class="loginPassword form-control" id="wpPassword1" tabindex="2"
-								   placeholder="비밀번호를 입력하세요" type="password" name="lgpassword">
+								   placeholder="<?php echo $skin->msg( 'userlogin-yourpassword-ph' )->plain() ?>" type="password" name="lgpassword">
 							<div class="modal-checkbox">
 								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-								<label for="lgremember">로그인 상태를 유지하기</label>
+								<label for="lgremember"><?php echo $skin->msg( 'liberty-remember' )->plain() ?></label>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="로그인" tabindex="4">
+							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
 							<?php echo Linker::linkKnown(
-								SpecialPage::getTitleFor( 'UserLogin', null ),
-								wfMessage( 'userlogin-joinproject' ), [
+								SpecialPage::getTitleFor( 'UserLogin' ),
+								$skin->msg( 'userlogin-joinproject' ), [
 									'class' => 'btn btn-primary btn-block',
 									'tabindex' => 5,
 									'type' => 'submit'
@@ -295,16 +302,16 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							); ?>
 							<?php echo Linker::linkKnown(
-								SpecialPage::getTitleFor( 'PasswordReset', null ),
-								'비밀번호를 잊으셨나요?'
+								SpecialPage::getTitleFor( 'PasswordReset' ),
+								$skin->msg( 'liberty-forgot-pw' )->plain()
 							); ?>
-							<input type="hidden" name="action" value="login">
-							<input type="hidden" name="format" value="json">
+							<input type="hidden" name="action" value="login" />
+							<input type="hidden" name="format" value="json" />
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain() ?></button>
+						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain() ?></button>
 					</div>
 				</div>
 			</div>
