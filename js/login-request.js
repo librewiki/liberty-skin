@@ -1,7 +1,9 @@
-// eslint-disable-next-line 
+// eslint-disable-next-line
 function LoginManage() {
 	'use strict';
 	try {
+		// @todo FIXME: could probably simplify this code a bit by using
+		// ( new mw.Api() ).postWithToken( 'edit', paramsGoHere ).done( ... );
 		$.ajax( {
 			url: mw.util.wikiScript( 'api' ),
 			type: 'post',
@@ -33,10 +35,14 @@ function LoginManage() {
 						if ( result.clientlogin.status !== 'PASS' ) {
 							switch ( result.clientlogin.status ) {
 								case 'FAIL':
+									// @todo CHECKME: Isn't this rather English-specific?
 									if ( result.clientlogin.message === 'The supplied credentials could not be authenticated.' ) {
 										$( '#modal-login-alert' ).addClass( 'alert-warning' );
 										$( '#modal-login-alert' ).fadeIn( 'slow' );
-										$( '#modal-login-alert' ).html( '<strong>경고</strong></br>아이디와 비밀번호를 정확히 입력하세요.' );
+										$( '#modal-login-alert' ).html(
+											'<strong>' + mw.msg( 'liberty-warning' ) +
+											'</strong><br />' + mw.msg( 'liberty-warning-text' )
+										);
 									} else {
 										$( '#modal-login-alert' ).addClass( 'alert-warning' );
 										$( '#modal-login-alert' ).fadeIn( 'slow' );
@@ -60,3 +66,16 @@ function LoginManage() {
 		return false;
 	}
 }
+
+$( function () {
+	$( '#modal-loginform' ).on( {
+		keypress: function ( e ) {
+			if ( e.which === 13 /* Enter was pressed */ ) {
+				return LoginManage();
+			}
+		},
+		submit: function () {
+			return LoginManage();
+		}
+	} );
+} );

@@ -62,7 +62,6 @@
 
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/login-request.js",
 				"js/live-recent.js",
 				"js/index-button.js",
 				"js/delay-scrolling.js",
@@ -70,6 +69,12 @@
 				"js/sns-button.js",
 				"js/layout.js"
 			],
+			"position": "bottom"
+		},
+		"skins.liberty.loginjs": {
+			"scripts": "js/login-request.js",
+			"dependencies": "mediawiki.util",
+			"messages": [ "liberty-warning", "liberty-warning-text" ],
 			"position": "bottom"
 		}
 	},
