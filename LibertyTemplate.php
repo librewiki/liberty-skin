@@ -446,7 +446,8 @@ class LibertyTemplate extends BaseTemplate {
 						if ( $title->isTalkPage() ) {
 							$titlename = $skin->msg( 'articlepage' )->plain();
 							$additionalArrayStuff = [
-								'title' => $titlename . '을 불러옵니다. [alt+shift+t]', // @todo FIXME!
+								// @todo FIXME!
+								'title' => $titlename . '을 불러옵니다. [alt+shift+t]',
 								'accesskey' => 't'
 							];
 						} else {
