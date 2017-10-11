@@ -58,23 +58,15 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-content-main">
 					<?php if ( $title->getNamespace() != NS_SPECIAL &&
 							   $action != 'edit' && $action != 'history' ) { ?>
-						<div class="social-buttons">
-							<div class="twitter" data-text="<?php echo $title; ?>" title="트위터">
-								<div><i class="fa fa-twitter"></i></div>
-							</div>
-							<div class="facebook" data-text="<?php echo $title; ?>" title="페이스북">
-								<div><i class="fa fa-facebook"></i></div>
-							</div>
-						</div>
 					<?php } ?>
+					<article>
+						<?php $this->html( 'bodycontent' ); ?>
+					</article>
 					<?php
 					if ( $this->data['catlinks'] ) {
 						$this->html( 'catlinks' );
 					}
 					?>
-					<article>
-						<?php $this->html( 'bodycontent' ); ?>
-					</article>
 				</div>
 				<footer>
 				<div class="liberty-footer">
@@ -106,7 +98,7 @@ class LibertyTemplate extends BaseTemplate {
 				<li class="nav-item">
 					<?php echo Linker::linkKnown(
 						SpecialPage::getTitleFor( 'Recentchanges', null ),
-						'<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', [
+						'<span class="fa fa-refresh"></span><span class="hide-title">최근 변경</span>', [
 							'class' => 'nav-link',
 							'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]',
 							'accesskey' => 'r'
@@ -114,16 +106,29 @@ class LibertyTemplate extends BaseTemplate {
 					); ?>
 				</li>
 				<li class="nav-item">
-					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'Randompage', null ),
-						'<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', [
-							'class' => 'nav-link',
-							'title' => '임의 문서를 불러옵니다. [alt+shift+x]',
-							'accesskey' => 'x'
-						]
-					); ?>
+					<a href="/w/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C?namespace=1" class="nav-link" title=""><span class="fa fa-comments"></span><span class="hide-title">최근 토론</span></a>
 				</li>
-				<?php echo $this->renderPortal( $this->parseNavbar() ); ?>
+				<li class="nav-item dropdown">
+					<span class="nav-link dropdown-toggle dropdown-toggle-fix" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="메뉴">
+						<span class="fa fa-gear"></span>
+						<span class="hide-title">특수 기능</span>
+					</span>
+					<div class="dropdown-menu" role="menu">
+						<a href="/w/%EA%B2%8C%EC%8B%9C%ED%8C%90" class="dropdown-item" title="게시판"><span class="fa fa-list-alt fa-fw"></span>게시판 (준비중)</a>
+						<div class="dropdown-divider"></div>
+						<a href="/w/%ED%8A%B9%EC%88%98:%ED%8A%B9%EC%88%98%EB%AC%B8%EC%84%9C" class="dropdown-item" title="특수 문서 목록"><span class="fa fa-cog fa-fw"></span>특수 문서 목록</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EC%98%AC%EB%A6%AC%EA%B8%B0" class="dropdown-item" title="파일 업로드"><span class="fa fa-upload fa-fw"></span>파일 업로드</a>
+						<div class="dropdown-divider"></div>
+						<a href="/w/%ED%8A%B9%EC%88%98:%ED%95%84%EC%9A%94%ED%95%9C%EB%AC%B8%EC%84%9C" class="dropdown-item" title="작성이 필요한 문서"><span class="fa fa-pencil fa-fw"></span>작성이 필요한 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EC%99%B8%ED%86%A8%EC%9D%B4%EB%AC%B8%EC%84%9C" class="dropdown-item" title="고립된 문서"><span class="fa fa-frown-o fa-fw"></span>고립된 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EB%B6%84%EB%A5%98%EC%95%88%EB%90%9C%EB%AC%B8%EC%84%9C" class="dropdown-item" title="분류가 되지 않은 문서"><span class="fa fa-question-circle fa-fw"></span>분류가 되지 않은 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EC%98%A4%EB%9E%98%EB%90%9C%EB%AC%B8%EC%84%9C" class="dropdown-item" title="편집된 지 오래된 문서"><span class="fa fa-hourglass-end fa-fw"></span>편집된 지 오래된 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EC%A7%A7%EC%9D%80%EB%AC%B8%EC%84%9C" class="dropdown-item" title="내용이 짧은 문서"><span class="fa fa-battery-quarter fa-fw"></span>내용이 짧은 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EA%B8%B4%EB%AC%B8%EC%84%9C" class="dropdown-item" title="내용이 긴 문서"><span class="fa fa-battery-full fa-fw"></span>내용이 긴 문서</a>
+						<a href="/w/%ED%8A%B9%EC%88%98:%EC%B0%A8%EB%8B%A8%EB%AA%A9%EB%A1%9D" class="dropdown-item" title="차단 내역"><span class="fa fa-ban fa-fw"></span>차단 내역</a>
+						<a href="/w/%EB%B0%94%EB%8B%A4%EC%9C%84%ED%82%A4:%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4" class="dropdown-item" title="라이선스"><span class="fa fa-tags fa-fw"></span>라이선스</a>
+					</div>
+				</li>
 			</ul>
 			<?php $this->loginBox(); ?>
 			<?php $this->getNotification(); ?>
@@ -140,6 +145,9 @@ class LibertyTemplate extends BaseTemplate {
 		<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="form-inline">
 			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ); ?>"/>
 			<div class="input-group">
+				<span class="input-group-btn">
+					<a href="https://badawiki.kr/random" class="btn btn-secondary" type="button"><span class="fa fa-random"></span></a>
+				</span>
 				<?php echo $this->makeSearchInput( [ 'class' => 'form-control', 'id' => 'searchInput' ] ); ?>
 				<span class="input-group-btn">
 					<button type="submit" name="go" value="보기" id="searchGoButton"
@@ -336,10 +344,10 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="live-recent-header">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
+					<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근 변경</a>
 				</li>
 				<li class="nav-item">
-					<a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
+					<a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근 토론</a>
 				</li>
 			</ul>
 			</div>
@@ -395,15 +403,6 @@ class LibertyTemplate extends BaseTemplate {
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					); ?>
-					<?php echo Linker::linkKnown(
-						$title,
-						'추가', [
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => '새 문단을 추가합니다. [alt+shift+n]',
-							'accesskey' => 'n'
-						],
-						[ 'action' => 'edit', 'section' => 'new' ]
-					); ?>
 					<?php
 					if ( $companionTitle ) {
 						echo Linker::linkKnown(
@@ -418,9 +417,9 @@ class LibertyTemplate extends BaseTemplate {
 					?>
 					<?php echo Linker::linkKnown(
 						$title,
-						'기록', [
+						'역사', [
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]',
+							'title' => '문서의 편집 역사을 불러옵니다. [alt+shift+h]',
 							'accesskey' => 'h'
 						],
 						[ 'action' => 'history' ]
@@ -450,6 +449,14 @@ class LibertyTemplate extends BaseTemplate {
 							SpecialPage::getTitleFor( 'WhatLinksHere', $title ),
 							'역링크',
 							[ 'class' => 'dropdown-item' ]
+						); ?>
+						<?php echo Linker::linkKnown(
+						$title,
+						'원본 보기', [
+							'class' => 'dropdown-item',
+							'title' => '문서의 원본(raw) 를 봅니다.'
+						],
+						[ 'action' => 'raw' ]
 						); ?>
 						<?php echo Linker::linkKnown(
 							SpecialPage::getTitleFor( 'Movepage', $title ),
@@ -555,7 +562,7 @@ class LibertyTemplate extends BaseTemplate {
 			<li class="nav-item dropdown">
 				<span class="nav-link dropdown-toggle dropdown-toggle-fix"
 					  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-					  title="게시판에 접속합니다.">
+					  title="메뉴">
 					<span class="fa fa-<?php echo $content['icon']; ?>"></span>
 					<span class="hide-title"><?php echo $content['text']; ?></span>
 				</span>

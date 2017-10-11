@@ -1,5 +1,4 @@
-@import url( //fonts.googleapis.com/earlyaccess/nanumgothic.css );
-/* Main Color #4188f1 */
+/* Main Color #008CFF */
 /* Border Color #e1e8ed */
 
 /* HTML Tag */
@@ -28,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Noto Sans KR', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 	margin: 0;
 }
 
@@ -39,7 +38,7 @@ h4,
 h5,
 h6,
 b {
-	font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Noto Sans KR', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 }
 
 input[type=password] {
@@ -97,7 +96,7 @@ pre {
 	word-wrap: break-word;
 	background-color: #f5f8fa;
 	border: 1px solid #e1e8ed;
-	border-radius: 0.35rem;
+	border-radius: 0;
 	padding: 0.8rem;
 }
 
@@ -179,7 +178,7 @@ strike {
 /* Content width, alian center */
 .Liberty .nav-wrapper .navbar,
 .Liberty .content-wrapper {
-	max-width: 1200px;
+	max-width: 1350px;
 	margin: 0 auto;
 }
 /* Content width, alian center End */
@@ -187,7 +186,7 @@ strike {
 /* Nav */
 .Liberty .nav-wrapper {
 	min-height: 2.8rem;
-	background-color: #4188f1;
+	background-color: #008CFF;
 	z-index: 1001;
 	box-shadow: 0 2px 4px 0 rgba( 0, 0, 0, 0.16 ), 0 2px 10px 0 rgba( 0, 0, 0, 0.12 );
 }
@@ -199,9 +198,9 @@ strike {
 }
 
 .Liberty .nav-wrapper .navbar .navbar-brand {
-	height: 2.8rem;
+	height: 2.6rem;
 	width: 6.6rem;
-	background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.9rem;
+	background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.7rem;
 	padding: 0;
 	margin: 0;
 }
@@ -224,7 +223,8 @@ strike {
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
-	background-color: #71a5f4;
+	background-color: #fff;
+	color:#4f5b63;
 	transition: 0.3s;
 }
 
@@ -251,8 +251,6 @@ strike {
 	padding: 0.2rem 0.4rem;
 	border-color: #e1e8ed;
 	border-radius: 0;
-	border-top-left-radius: 0.35rem;
-	border-bottom-left-radius: 0.35rem;
 }
 
 .Liberty .nav-wrapper .navbar .form-inline .form-control:focus {
@@ -261,13 +259,13 @@ strike {
 
 .Liberty .nav-wrapper .navbar .form-inline .btn {
 	color: #4f5b63;
-	padding: 0.2rem 0.4rem;
+	padding: 0.2rem 0.6rem;
 	line-height: 22px;
 }
 
 .Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
-	background-color: #4188f1;
+	background-color: #008CFF;
 	border-color: #5997f3;
 	color: #fff;
 	outline: 0;
@@ -313,7 +311,7 @@ strike {
 .Liberty .nav-wrapper .navbar .navbar-login .profile-img {
 	width: 2rem;
 	height: 2rem;
-	border-radius: 0.35rem;
+	border-radius:0;
 	margin: 0;
 	border: 1px solid #e1e8ed;
 }
@@ -377,7 +375,7 @@ strike {
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item {
 	width: 7.5rem;
 	border: 1px solid #e1e8ed;
-	border-top-left-radius: 0.35rem;
+	border-top-left-radius: 0;
 	background-color: #f5f8fa;
 }
 
@@ -385,13 +383,13 @@ strike {
 	margin-left: 0;
 	border-left: 0;
 	border-top-left-radius: 0;
-	border-top-right-radius: 0.35rem;
+	border-top-right-radius:0;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link {
 	border: 0;
 	border-radius: 0;
-	border-top-left-radius: 0.35rem;
+	border-top-left-radius: 0;
 	text-align: center;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
@@ -422,7 +420,7 @@ strike {
 	content: ' ';
 	width: 7.5rem;
 	display: block;
-	border-bottom: 2px solid #4188f1;
+	border-bottom: 2px solid #008CFF;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
@@ -458,8 +456,6 @@ strike {
 	background-color: #f5f8fa;
 	border: 1px solid #e1e8ed;
 	border-top: 0;
-	border-bottom-left-radius: 0.35rem;
-	border-bottom-right-radius: 0.35rem;
 	text-align: right;
 	padding: 0.4rem 0.6rem;
 }
@@ -469,6 +465,7 @@ strike {
 	padding: 0.4rem;
 	font-size: 0.8rem;
 	font-weight: 400;
+	border-radius:0;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover {
@@ -496,7 +493,7 @@ strike {
 
 .Liberty .content-wrapper .liberty-content .liberty-content-header {
 	border: 1px solid #e1e8ed;
-	border-radius: 0.35rem 0.35rem 0 0;
+	border-radius: 0;
 	background-color: #f5f8fa;
 }
 
@@ -529,7 +526,7 @@ strike {
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
-	background-color: #4188f1;
+	background-color: #008CFF;
 	color: #fff;
 	transition: 0.3s;
 	outline: 0;
@@ -583,7 +580,7 @@ strike {
 	padding: 0;
 	padding-top: 0.45rem;
 	margin-left: 0.25rem;
-	border-radius: 0.35rem;
+	border-radius: 0;
 	text-align: center;
 	cursor: pointer;
 	background: #ccc;
@@ -609,7 +606,7 @@ strike {
 /* Footer */
 .Liberty .content-wrapper .liberty-footer {
 	border: 1px solid #e1e8ed;
-	border-radius: 0 0 0.35rem 0.35rem;
+	border-radius: 0;
 	background-color: #f5f8fa;
 	padding: 1rem;
 	clear: both;
@@ -710,7 +707,7 @@ strike {
 	box-sizing: border-box;
 	position: absolute;
 	left: 0;
-	border-radius: 2px;
+	border-radius: 0;
 	width: 2em;
 	height: 2em;
 	line-height: 2em;
@@ -745,7 +742,7 @@ strike {
 }
 
 .dropdown-menu .dropdown-item:hover {
-	background-color: #5997f3;
+	background-color: #008CFF;
 	color: #fff;
 	transition: 0.3s;
 }
@@ -767,7 +764,7 @@ strike {
 
 .btn {
 	box-shadow: none;
-	border-radius: 0.35rem;
+	border-radius: 0;
 }
 
 .btn:hover {

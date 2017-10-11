@@ -20,12 +20,6 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
-				"css/font/Nanum Gothic.css": {
-					"media": "all"
-				},
-				"css/font/Noto Sans KR.css": {
-					"media": "all"
-				},
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},

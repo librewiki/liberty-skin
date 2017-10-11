@@ -11,7 +11,7 @@ class SkinLiberty extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo;
 
-		$mainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#4188F1';
+		$mainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#008CFF';
 		$ogLogo = isset( $GLOBALS['wgLibertyOGLogo'] ) ? $GLOBALS['wgLibertyOGLogo'] : $wgLogo;
 
 		$skin = $this->getSkin();
@@ -80,11 +80,27 @@ class SkinLiberty extends SkinTemplate {
 		$out->addHeadItem(
 			'font-awesome',
 			// @codingStandardsIgnoreLine
-			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />'
+		);
+		$out->addHeadItem(
+			'noto-sans-kr',
+			// @codingStandardsIgnoreLine
+			'<link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanskr.css" />'
+		);
+		$out->addHeadItem(
+			'favicon',
+			// @codingStandardsIgnoreLine
+			'<link rel="shortcut icon" href="/favicon.ico">'
 		);
 		$out->addHeadItem(
 			'google-ads',
-			'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+			'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<script>
+			  (adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-2600511505621563",
+				enable_page_level_ads: true
+			  });
+			</script>'
 		);
 		$out->addModuleStyles( [
 			'skins.liberty.styles'
@@ -97,6 +113,6 @@ class SkinLiberty extends SkinTemplate {
 	 * @param Mixed &$bodyAttrs Body Attributes
 	 */
 	public function addToBodyAttributes( $out, &$bodyAttrs ) {
-		$bodyAttrs['class'] .= ' Liberty width-size';
+		$bodyAttrs['class'] .= ' Liberty width-size doda';
 	}
 }

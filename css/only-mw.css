@@ -71,6 +71,7 @@
 	padding-bottom: 0.6rem;
 	overflow-wrap: break-word;
 	overflow: hidden;
+	font-weight:600;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
@@ -86,16 +87,14 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours {
 	background-color: #f5f8fa;
 	border-color: #e1e8ed;
-	border-radius: 0.35rem;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks {
-	border: 1px solid #e1e8ed;
+	margin-top: 1rem;
+	border: 1px solid #ccc;
 	padding: 0.4rem;
 	padding-left: 1rem;
-	box-shadow: 0.15rem 0.15rem 0 0 #cfdae2;
 	margin-bottom: 0.8rem;
-	border-radius: 0.35rem;
 	display: inline-block;
 	width: 100%;
 }

@@ -138,13 +138,14 @@
 	#searchform {
 		width: 100%;
 	}
+	.footer-mobile{display:none}
 }
 
 /* Max-width: 397px Under Big-phone */
 @media (max-width: 397px) {
 	.Liberty .nav-wrapper .navbar .navbar-brand {
-		width: 5rem;
-		background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.5rem;
+		width: 5.3rem;
+		background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.4rem;
 	}
 
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link::after {
