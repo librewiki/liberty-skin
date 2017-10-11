@@ -90,7 +90,17 @@ class SkinLiberty extends SkinTemplate {
 		$out->addHeadItem(
 			'favicon',
 			// @codingStandardsIgnoreLine
-			'<link rel="shortcut icon" href="/favicon.ico">'
+			'<link rel="shortcut icon" href="/img/favicon.ico">'
+		);
+		$out->addHeadItem(
+			'icon1',
+			// @codingStandardsIgnoreLine
+			'<link rel="icon" sizes="128x128" href="/img/icon.png">'
+		);
+		$out->addHeadItem(
+			'icon2',
+			// @codingStandardsIgnoreLine
+			'<link rel="apple-touch-icon" href="/img/apple_icon.png">'
 		);
 		$out->addHeadItem(
 			'google-ads',
