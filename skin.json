@@ -1,14 +1,14 @@
 {
-	"name": "Liberty",
+	"name": "Badawiki Liberty",
 	"author": [
-		"Liberty LLC", "..."
+		"Liberty LLC", "Badawiki Team", "..."
 	],
-	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
+	"url": "https://gitlab.com/badawiki/Liberty",
 	"descriptionmsg": "liberty-desc",
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.1.9",
+	"version": "1.2",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
