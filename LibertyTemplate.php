@@ -624,12 +624,12 @@ class LibertyTemplate extends BaseTemplate {
 				} else {
 					$text = $textObj->text();
 				}
-				
+
 				// If icon and text both empty
-				if( empty( $icon ) && empty( $text ) ) continue;
-				
+				if ( empty( $icon ) && empty( $text ) ) { continue; }
+
 				// Title
-				if( isset( $split[2] ) ) {
+				if ( isset( $split[2] ) ) {
 					$titleObj = wfMessage( trim( $split[2] ) );
 					if ( $titleObj->isDisabled() ) {
 						$title = htmlentities( trim( $split[2] ), ENT_QUOTES, 'UTF-8' );
@@ -639,13 +639,13 @@ class LibertyTemplate extends BaseTemplate {
 				} else {
 					$title = $text;
 				}
-				
+
 				// Link href
-				if( preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ) $item['href'] = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
-				
+				$item['href'] = preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ? htmlentities( $split[3], ENT_QUOTES, 'UTF-8' ) : '';
+
 				// Access
-				if( preg_match( '/([0-9a-z]{1})/ig', $split[4] ) ) $item['access'] = $split[4];
-				
+				$item['access'] = preg_match( '/([0-9a-z]{1})/ig', $split[4] ) ? $split[4] : '';
+
 				$item = [
 					'icon' => $icon,
 					'text' => $text,
