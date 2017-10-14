@@ -314,8 +314,8 @@ class LibertyTemplate extends BaseTemplate {
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain() ?></button>
-						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain() ?></button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain(); ?></button>
+						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain(); ?></button>
 					</div>
 				</div>
 			</div>
@@ -610,25 +610,50 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[1] !== '*' ) {
 				// Root menu
-				$split = explode( '|', $line, 3 );
+				$split = explode( '|', $line );
+
+				$icon = htmlentities( trim( substr( $split[0], 1 ) ), ENT_QUOTES, 'UTF-8' );
+
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$descObj = wfMessage( trim( $split[1] ) );
-				if ( $descObj->isDisabled() ) {
+				$textObj = wfMessage( trim( $split[1] ) );
+				if ( $textObj->isDisabled() ) {
 					$text = htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' );
 				} else {
-					$text = $descObj->text();
+					$text = $textObj->text();
 				}
+				
+				// If icon and text both empty
+				if( empty( $icon ) && empty( $text ) ) continue;
+				
+				// Title
+				if( isset( $split[2] ) ) {
+					$titleObj = wfMessage( trim( $split[2] ) );
+					if ( $titleObj->isDisabled() ) {
+						$title = htmlentities( trim( $split[2] ), ENT_QUOTES, 'UTF-8' );
+					} else {
+						$title = $titleObj->text();
+					}
+				} else {
+					$title = $text;
+				}
+				
+				// Link href
+				if( preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ) $item['href'] = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				
+				// Access
+				if( preg_match( '/([0-9a-z]{1})/ig', $split[4] ) ) $item['access'] = $split[4];
+				
 				$item = [
-					'icon' => htmlentities( trim( substr( $split[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
+					'icon' => $icon,
 					'text' => $text,
+					'title' => $title,
+					'href' => $href,
+					'access' => $access,
 					'children' => []
 				];
-				$item['title'] = ( isset( $splited[2] ) ) ?
-					htmlentities( trim( $splited[2] ), ENT_QUOTES, 'UTF-8' ):
-					htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
 			} else {
@@ -661,9 +686,11 @@ class LibertyTemplate extends BaseTemplate {
 				$item = [
 					'text' => $text,
 					'href' => $href,
-					'title' => $title,
 					'access' => $access
 				];
+				$item['title'] = ( isset( $splited[2] ) ) ?
+					htmlentities( trim( $splited[2] ), ENT_QUOTES, 'UTF-8' ):
+					htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
 				$currentChildren[] = $item;
 			}
 		}
