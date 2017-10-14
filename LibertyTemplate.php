@@ -553,10 +553,11 @@ class LibertyTemplate extends BaseTemplate {
 			}
 
 			echo Html::openElement( 'li', [
-				'class' => [ 'nav-item', 'dropdown' ]
+				'class' => [ 'dropdown', 'nav-item' ]
 			] );
+				array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix', 'nav-link' );
 				echo Html::openElement( 'span', [
-					'class' => [ 'nav-link', 'dropdown-toggle', 'dropdown-toggle-fix' ],
+					'class' => $content['classes'],
 					'data-toggle' => 'dropdown',
 					'role' => 'button',
 					'aria-haspopup' => 'true',
@@ -582,11 +583,12 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 					if ( is_array( $content['children'] ) ) {
 						foreach ( $content['children'] as $child ) {
+							array_push( $child['classes'], 'dropdown-item' );
 							echo Html::openElement( 'a', [
+								'accesskey' => $child['access'],
+								'class' => $child['classes'],
 								'href' => $child['href'],
-								'class' => 'dropdown-item',
-								'title' => $child['title'],
-								'accesskey' => $child['access']
+								'title' => $child['title']
 							] );
 								if ( isset( $child['icon'] ) ) {
 									echo Html::rawElement( 'span', [
@@ -645,6 +647,7 @@ class LibertyTemplate extends BaseTemplate {
 					$split[$key] = trim( $value );
 				}
 
+				// Icon
 				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
@@ -687,13 +690,19 @@ class LibertyTemplate extends BaseTemplate {
 				// Access
 				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
 
+				// Classes
+				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				foreach ( $classes as $key => $value ) {
+					$classes[$key] = trim( $value );
+				}
+	
 				$item = [
+					'access' => $access,
+					'classes' => $classes,
+					'href' => $href,
 					'icon' => $icon,
 					'text' => $text,
-					'title' => $title,
-					'href' => $href,
-					'access' => $access,
-					'children' => []
+					'title' => $title
 				];
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
@@ -705,6 +714,7 @@ class LibertyTemplate extends BaseTemplate {
 					$split[$key] = trim( $value );
 				}
 
+				// Icon
 				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
@@ -747,12 +757,19 @@ class LibertyTemplate extends BaseTemplate {
 				// Access
 				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
 
+				// Classes
+				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				foreach ( $classes as $key => $value ) {
+					$classes[$key] = trim( $value );
+				}
+
 				$item = [
+					'access' => $access,
+					'classes' => $classes,
+					'href' => $href,
 					'icon' => $icon,
 					'text' => $text,
-					'title' => $title,
-					'href' => $href,
-					'access' => $access
+					'title' => $title
 				];
 				$currentChildren[] = $item;
 			}
