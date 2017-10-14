@@ -13,7 +13,9 @@ class SkinLiberty extends SkinTemplate {
 
 		$mainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#4188F1';
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
-		$ogLogo = preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ? $ogLogo : $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
+		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
+			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
+		}
 
 		$skin = $this->getSkin();
 
