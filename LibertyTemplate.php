@@ -314,8 +314,8 @@ class LibertyTemplate extends BaseTemplate {
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain() ?></button>
-						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain() ?></button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain(); ?></button>
+						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain(); ?></button>
 					</div>
 				</div>
 			</div>
@@ -551,26 +551,94 @@ class LibertyTemplate extends BaseTemplate {
 			if ( !$content ) {
 				break;
 			}
-			?>
-			<li class="nav-item dropdown">
-				<span class="nav-link dropdown-toggle dropdown-toggle-fix"
-					  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-					  title="게시판에 접속합니다.">
-					<span class="fa fa-<?php echo $content['icon']; ?>"></span>
-					<span class="hide-title"><?php echo $content['text']; ?></span>
-				</span>
-				<div class="dropdown-menu" role="menu">
-					<?php
-					if ( is_array( $content['children'] ) ) {
-						foreach ( $content['children'] as $child ) {
-							?><a href="<?php echo $child['href']; ?>" class="dropdown-item"
-								 title="<?php echo $child['text']; ?>"><?php echo $child['text']; ?></a><?php
-						}
+
+			echo Html::openElement( 'li', [
+				'class' => [ 'dropdown', 'nav-item' ]
+			] );
+				array_push( $content['classes'], 'nav-link' );
+				if ( is_array( $content['children'] ) ) {
+					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
+				}
+
+				echo Html::openElement( 'a', [
+					'class' => $content['classes'],
+					'data-toggle' => 'dropdown',
+					'role' => 'button',
+					'aria-haspopup' => 'true',
+					'aria-expanded' => 'true',
+					'title' => $content['title']
+				] );
+					if ( isset( $content['icon'] ) ) {
+						echo Html::rawElement( 'span', [
+							'class' => 'fa fa-'.$content['icon']
+						] );
 					}
-					?>
-				</div>
-			</li>
-			<?php
+
+					if ( isset( $content['text'] ) ) {
+						echo Html::rawElement( 'span', [
+							'class' => 'hide-title'
+						], $content['text'] );
+					}
+				echo Html::closeElement( 'a' );
+
+				if ( is_array( $content['children'] ) ) {
+					echo Html::openElement( 'div', [
+						'class' => 'dropdown-menu',
+						'role' => 'menu'
+					] );
+						foreach ( $content['children'] as $child ) {
+							array_push( $child['classes'], 'dropdown-item' );
+							if ( is_array( $child['children'] ) ) {
+								array_push( $child['classes'], 'dropdown-toggle', 'dropdown-toggle-sub' );
+							}
+
+							echo Html::openElement( 'a', [
+								'accesskey' => $child['access'],
+								'class' => $child['classes'],
+								'href' => $child['href'],
+								'title' => $child['title']
+							] );
+								if ( isset( $child['icon'] ) ) {
+									echo Html::rawElement( 'span', [
+										'class' => 'fa fa-'.$child['icon']
+									] );
+								}
+
+								if ( isset( $child['text'] ) ) {
+									echo $child['text'];
+								}
+							echo Html::closeElement( 'a' );
+
+							if ( is_array( $child['children'] ) ) {
+								echo Html::openElement( 'div', [
+									'class' => 'dropdown-menu dropdown-submenu',
+									'role' => 'menu'
+								] );
+								foreach ( $child['children'] as $sub ) {
+									array_push( $sub['classes'], 'dropdown-item' );
+									echo Html::openElement( 'a', [
+										'accesskey' => $sub['access'],
+										'class' => $sub['classes'],
+										'href' => $sub['href'],
+										'title' => $sub['title']
+									] );
+										if ( isset( $sub['icon'] ) ) {
+											echo Html::rawElement( 'span', [
+												'class' => 'fa fa-'.$sub['icon']
+											] );
+										}
+
+										if ( isset( $sub['text'] ) ) {
+											echo $sub['text'];
+										}
+									echo Html::closeElement( 'a' );
+								}
+								echo Html::closeElement( 'div' );
+							}
+						}
+					echo Html::closeElement( 'div' );
+				}
+			echo Html::closeElement( 'li' );
 		}
 	}
 
@@ -607,57 +675,206 @@ class LibertyTemplate extends BaseTemplate {
 				continue;
 			}
 			if ( $line[1] !== '*' ) {
-				// Root menu
-				$split = explode( '|', $line, 3 );
+				// First level menu
+				$split = explode( '|', $line );
+				$split[0] = substr( $split[0], 1 );
+				foreach ( $split as $key => $value ) {
+					$split[$key] = trim( $value );
+				}
+
+				// Icon
+				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$descObj = wfMessage( trim( $split[1] ) );
-				if ( $descObj->isDisabled() ) {
-					$text = htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' );
+				$textObj = wfMessage( $split[1] );
+				if ( $textObj->isDisabled() ) {
+					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
 				} else {
-					$text = $descObj->text();
+					$text = $textObj->text();
 				}
-				$item = [
-					'icon' => htmlentities( trim( substr( $split[0], 1 ) ), ENT_QUOTES, 'UTF-8' ),
-					'text' => $text,
-					'children' => []
-				];
-				$currentChildren = &$item['children'];
-				$headings[] = $item;
-			} else {
-				// Sub menu
-				$split = explode( '|', $line, 3 );
-				$href = '';
-				$split[0] = trim( substr( $split[0], 2 ) );
+
+				// If icon and text both empty
+				if ( empty( $icon ) && empty( $text ) ) {
+					continue;
+				}
+
+				// Title
+				if ( isset( $split[2] ) ) {
+					$titleObj = wfMessage( $split[2] );
+					if ( $titleObj->isDisabled() ) {
+						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$title = $titleObj->text();
+					}
+				} else {
+					$title = $text;
+				}
+
+				// Link href
 				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $split[0] ) ) {
-					// 'http://' or 'https://'
-					$href = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
 				} else {
-					// Internal Wiki Document Link
-					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $split[0] ) ),
-							$wgArticlePath );
+					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+					$href = str_replace( '$1', $href, $wgArticlePath );
 				}
-				if ( !isset( $split[1] ) ) {
-					$split[] = '';
+
+				// Access
+				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+
+				// Classes
+				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				foreach ( $classes as $key => $value ) {
+					$classes[$key] = trim( $value );
 				}
+
+				$item = [
+					'access' => $access,
+					'classes' => $classes,
+					'href' => $href,
+					'icon' => $icon,
+					'text' => $text,
+					'title' => $title
+				];
+				$level2Children = &$item['children'];
+				$headings[] = $item;
+			}
+			if ( $line[2] !== '*' ) {
+				// Second level menu
+				$split = explode( '|', $line );
+				$split[0] = substr( $split[0], 2 );
+				foreach ( $split as $key => $value ) {
+					$split[$key] = trim( $value );
+				}
+
+				// Icon
+				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$descObj = wfMessage( trim( $split[1] ) );
-				if ( $descObj->isDisabled() ) {
-					$text = htmlentities( trim( $split[1] ), ENT_QUOTES, 'UTF-8' );
+				$textObj = wfMessage( $split[1] );
+				if ( $textObj->isDisabled() ) {
+					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
 				} else {
-					$text = $descObj->text();
+					$text = $textObj->text();
 				}
+
+				// If icon and text both empty
+				if ( empty( $icon ) && empty( $text ) ) {
+					continue;
+				}
+
+				// Title
+				if ( isset( $split[2] ) ) {
+					$titleObj = wfMessage( $split[2] );
+					if ( $titleObj->isDisabled() ) {
+						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$title = $titleObj->text();
+					}
+				} else {
+					$title = $text;
+				}
+
+				// Link href
+				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				} else {
+					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+					$href = str_replace( '$1', $href, $wgArticlePath );
+				}
+
+				// Access
+				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+
+				// Classes
+				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				foreach ( $classes as $key => $value ) {
+					$classes[$key] = trim( $value );
+				}
+
 				$item = [
+					'access' => $access,
+					'classes' => $classes,
+					'href' => $href,
+					'icon' => $icon,
 					'text' => $text,
-					'href' => $href
+					'title' => $title
 				];
-				$currentChildren[] = $item;
+				$level3Children = &$item['children'];
+				$level2Children[] = $item;
+			} else {
+				// Third level menu
+				$split = explode( '|', $line );
+				$split[0] = substr( $split[0], 3 );
+				foreach ( $split as $key => $value ) {
+					$split[$key] = trim( $value );
+				}
+
+				// Icon
+				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+
+				// support the usual [[MediaWiki:Sidebar]] syntax of
+				// ** link target|<some MW: message name> and if the
+				// thing on the right side of the pipe isn't the name of a MW:
+				// message, then and _only_ then render it as-is
+				$textObj = wfMessage( $split[1] );
+				if ( $textObj->isDisabled() ) {
+					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
+				} else {
+					$text = $textObj->text();
+				}
+
+				// If icon and text both empty
+				if ( empty( $icon ) && empty( $text ) ) {
+					continue;
+				}
+
+				// Title
+				if ( isset( $split[2] ) ) {
+					$titleObj = wfMessage( $split[2] );
+					if ( $titleObj->isDisabled() ) {
+						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$title = $titleObj->text();
+					}
+				} else {
+					$title = $text;
+				}
+
+				// Link href
+				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				} else {
+					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+					$href = str_replace( '$1', $href, $wgArticlePath );
+				}
+
+				// Access
+				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+
+				// Classes
+				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				foreach ( $classes as $key => $value ) {
+					$classes[$key] = trim( $value );
+				}
+
+				$item = [
+					'access' => $access,
+					'classes' => $classes,
+					'href' => $href,
+					'icon' => $icon,
+					'text' => $text,
+					'title' => $title
+				];
+				$level3Children[] = $item;
 			}
 		}
 

@@ -352,6 +352,11 @@ strike {
 	left: auto;
 	right: 1.15rem;
 }
+
+.dropdown-submenu {
+	position: relative;
+	min-width: 158px;
+}
 /* Nav End */
 
 /* Right menu */
