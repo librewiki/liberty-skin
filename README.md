@@ -1,4 +1,4 @@
 # Liberty MediaWiki Skin
 
 * [English](README.en.md)
-* [ÇÑ±¹¾î](README.ko.md)
+* [í•œêµ­ì–´](README.ko.md)
