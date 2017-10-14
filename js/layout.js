@@ -46,3 +46,20 @@ $( function () {
 	}
 } );
 /* Load Ads End */
+
+/* Sub menu */
+$( function() {
+	var display;
+	
+	$( '.dropdown-toggle-sub' ).on( 'click', function( element ) {
+		display = $( this ).next( 'div.dropdown-menu' );
+		display.toggle();
+		element.stopPropagation();
+		element.preventDefault();
+	} );
+	
+	$( 'html' ).on( 'click', function() {
+		display.hide();
+	} );
+} );
+/* Sub menu end */
