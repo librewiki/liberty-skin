@@ -564,7 +564,9 @@ class LibertyTemplate extends BaseTemplate {
 					if ( is_array( $content['children'] ) ) {
 						foreach ( $content['children'] as $child ) {
 							?><a href="<?php echo $child['href']; ?>" class="dropdown-item"
-								 title="<?php echo $child['text']; ?>"><?php echo $child['text']; ?></a><?php
+								title="<?php echo $child['title']; ?>" accesskey="<?php echo $child['access']; ?>">
+								<?php echo $child['text']; ?>
+							</a><?php
 						}
 					}
 					?>
@@ -624,6 +626,9 @@ class LibertyTemplate extends BaseTemplate {
 					'text' => $text,
 					'children' => []
 				];
+				$item['title'] = ( isset( $splited[2] ) ) ?
+					htmlentities( trim( $splited[2] ), ENT_QUOTES, 'UTF-8' ):
+					htmlentities( trim( $splited[1] ), ENT_QUOTES, 'UTF-8' );
 				$currentChildren = &$item['children'];
 				$headings[] = $item;
 			} else {
@@ -632,13 +637,13 @@ class LibertyTemplate extends BaseTemplate {
 				$href = '';
 				$split[0] = trim( substr( $split[0], 2 ) );
 				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/http(?:s)?:\/\/(.*)/', $split[0] ) ) {
+				if ( preg_match( '/^(http?(s?):)?\/\/(.*)/', $split[0] ) ) {
 					// 'http://' or 'https://'
 					$href = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
 				} else {
 					// Internal Wiki Document Link
 					$href = str_replace( '$1', str_replace( '%3A', ':', urlencode( $split[0] ) ),
-							$wgArticlePath );
+						$wgArticlePath );
 				}
 				if ( !isset( $split[1] ) ) {
 					$split[] = '';
@@ -655,7 +660,9 @@ class LibertyTemplate extends BaseTemplate {
 				}
 				$item = [
 					'text' => $text,
-					'href' => $href
+					'href' => $href,
+					'title' => $title,
+					'access' => $access
 				];
 				$currentChildren[] = $item;
 			}
