@@ -563,13 +563,13 @@ class LibertyTemplate extends BaseTemplate {
 					'aria-expanded' => 'true',
 					'title' => $content['title']
 				] );
-					if( isset( $content['icon'] ) ) {
+					if ( isset( $content['icon'] ) ) {
 						echo Html::rawElement( 'span', [
 							'class' => 'fa fa-'.$content['icon']
 						] );
 					}
 
-					if( isset( $content['text'] ) ) {
+					if ( isset( $content['text'] ) ) {
 						echo Html::rawElement( 'span', [
 							'class' => 'hide-title'
 						], $content['text'] );
@@ -588,13 +588,13 @@ class LibertyTemplate extends BaseTemplate {
 								'title' => $child['title'],
 								'accesskey' => $child['access']
 							] );
-								if( isset( $child['icon'] ) ) {
+								if ( isset( $child['icon'] ) ) {
 									echo Html::rawElement( 'span', [
 										'class' => 'fa fa-'.$child['icon']
 									] );
 								}
 
-								if( isset( $child['text'] ) ) {
+								if ( isset( $child['text'] ) ) {
 									echo $child['text'];
 								}
 							echo Html::closeElement( 'a' );
