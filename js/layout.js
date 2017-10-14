@@ -48,17 +48,17 @@ $( function () {
 /* Load Ads End */
 
 /* Sub menu */
-$( function() {
+$( function () {
 	var display;
 	
-	$( '.dropdown-toggle-sub' ).on( 'click', function( element ) {
+	$( '.dropdown-toggle-sub' ).on( 'click', function ( element ) {
 		display = $( this ).next( 'div.dropdown-menu' );
 		display.toggle();
 		element.stopPropagation();
 		element.preventDefault();
 	} );
 	
-	$( 'html' ).on( 'click', function() {
+	$( 'html' ).on( 'click', function () {
 		display.hide();
 	} );
 } );
