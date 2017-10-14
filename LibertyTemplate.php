@@ -368,8 +368,10 @@ class LibertyTemplate extends BaseTemplate {
 		global $wgUser;
 		$title = $this->getSkin()->getTitle();
 		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
-		$notWatched = $this->getSkin()->getUser()->isWatched(
-				$this->getSkin()->getRelevantTitle() ) ? true : false;
+		$isWatched = $this->getSkin()->getUser()->isWatched(
+				$this->getSkin()->getRelevantTitle() );
+		$watchMsg = $isWatched ? '주시해제' : '주시';
+		$watchAct = $isWatched ? 'unwatch' : 'watch';
 		$user = ( $wgUser->isLoggedIn() ) ? array_shift( $userLinks ) : array_pop( $userLinks );
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
@@ -442,9 +444,9 @@ class LibertyTemplate extends BaseTemplate {
 						}
 						echo Linker::linkKnown(
 							$title,
-							$notWatched ? '주시' : '주시해제',
+							$watchMsg,
 							[ 'class' => 'dropdown-item' ],
-							[ 'action' => 'watch' ]
+							[ 'action' => $watchAct ]
 						); ?>
 						<?php echo Linker::linkKnown(
 							SpecialPage::getTitleFor( 'WhatLinksHere', $title ),
