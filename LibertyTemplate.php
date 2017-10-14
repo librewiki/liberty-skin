@@ -551,28 +551,47 @@ class LibertyTemplate extends BaseTemplate {
 			if ( !$content ) {
 				break;
 			}
-			?>
-			<li class="nav-item dropdown">
-				<span class="nav-link dropdown-toggle dropdown-toggle-fix"
-					  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
-					  title="게시판에 접속합니다.">
-					<span class="fa fa-<?php echo $content['icon']; ?>"></span>
-					<span class="hide-title"><?php echo $content['text']; ?></span>
-				</span>
-				<div class="dropdown-menu" role="menu">
-					<?php
+
+			echo Html::openElement( 'li', [
+				'class' => [ 'nav-item', 'dropdown' ]
+			] );
+				echo Html::openElement( 'span', [
+					'class' => [ 'nav-link', 'dropdown-toggle', 'dropdown-toggle-fix' ],
+					'data-toggle' => 'dropdown',
+					'role' => 'button',
+					'aria-haspopup' => 'true',
+					'aria-expanded' => 'true',
+					'title' => $content['title']
+				] );
+					if( isset( $content['icon'] ) ) {
+						echo Html::rawElement( 'span', [
+							'class' => 'fa fa-'.$content['icon']
+						] );
+					}
+
+					if( isset( $content['text'] ) ) {
+						echo Html::rawElement( 'span', [
+							'class' => 'hide-title'
+						], $content['text'] );
+					}
+				echo Html::closeElement( 'span' );
+
+				echo Html::openElement( 'div', [
+					'class' => 'dropdown-menu',
+					'role' => 'menu'
+				] );
 					if ( is_array( $content['children'] ) ) {
 						foreach ( $content['children'] as $child ) {
-							?><a href="<?php echo $child['href']; ?>" class="dropdown-item"
-								title="<?php echo $child['title']; ?>" accesskey="<?php echo $child['access']; ?>">
-								<?php echo $child['text']; ?>
-							</a><?php
+							echo Html::rawElement( 'a', [
+								'href' => $child['href'],
+								'class' => 'dropdown-item',
+								'title' => $child['title'],
+								'accesskey' => $child['access']
+							], $child['text'] );
 						}
 					}
-					?>
-				</div>
-			</li>
-			<?php
+				echo Html::closeElement( 'div' );
+			echo Html::closeElement( 'li' );
 		}
 	}
 
@@ -646,8 +665,8 @@ class LibertyTemplate extends BaseTemplate {
 				if ( preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ) {
 					$item['href'] = urlencode( $split[3], ENT_QUOTES, 'UTF-8' );
 				} else {
-					$item['href'] = str_replace( '%3A', ':', urlencode( $split[3] );
-					$item['href'] = str_replace( '$1', $item['href'] ), $wgArticlePath );
+					$item['href'] = str_replace( '%3A', ':', urlencode( $split[3] ) );
+					$item['href'] = str_replace( '$1', $item['href'], $wgArticlePath );
 				}
 
 				// Access
