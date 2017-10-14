@@ -12,7 +12,7 @@ Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Ski
 | ---- | ---- | ---- | ---- |
 | `$wgLibertyMainColor` | `theme-color` configurations | `#4188F1` | `#4188F1` |
 | `$wgTwitterAccount` | Default Twitter account to set a mention | `librewiki` | (none) |
-| `$wgLibertyOGLogo` | OpenGraph Image Logo | `https://librewiki.net/images/6/6a/Libre_favicon.png` | (Value of `$wgLogo`) |
+| `$wgLibertyOgLogo` | OpenGraph Image Logo | `https://librewiki.net/images/6/6a/Libre_favicon.png` | (Value of `$wgLogo`) |
 | `$wgNaverVerification` | Naver Webmater Tool Verification Code | (Value supplied by Naver.com) | (none) |
 | `$wgLibertyAdSetting` | Google Adsense Settings | `array( 'client' => '(Value supplied by Google)', 'header' => '1234567890', 'right' => '0987654321' )` | (none) |
 | `$wgLibertyMaxRecent` | Recent X edits appearing in 'Recent Changes' bar in the skin | `10` | `10` |
