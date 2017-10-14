@@ -643,7 +643,11 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Link href
-				$item['href'] = preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ? htmlentities( $split[3], ENT_QUOTES, 'UTF-8' ) : '';
+				if ( preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ) {
+					$item['href'] = urlencode( $split[3], ENT_QUOTES, 'UTF-8' );
+				} else {
+					$item['href'] = str_replace( '$1', str_replace( '%3A', ':', urlencode( $split[3] ) ), $wgArticlePath );
+				}
 
 				// Access
 				$item['access'] = preg_match( '/([0-9a-z]{1})/ig', $split[4] ) ? $split[4] : '';
