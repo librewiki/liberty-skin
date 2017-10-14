@@ -12,7 +12,7 @@
 | ---- | ---- | ---- | ---- |
 | `$wgLibertyMainColor` | `theme-color` 메타 설정 | `#4188F1` | `#4188F1` |
 | `$wgTwitterAccount` | 트위터 카드 계정 설정 | `librewiki` | (없음) |
-| `$wgLibertyOGLogo` | 오픈그래프 태그에 사용 될 이미지 설정 | `https://librewiki.net/images/6/6a/Libre_favicon.png` | `$wgLogo`의 값 |
+| `$wgLibertyOgLogo` | 오픈그래프 태그에 사용 될 이미지 설정 | `https://librewiki.net/images/6/6a/Libre_favicon.png` | `$wgLogo`의 값 |
 | `$wgNaverVerification` | 네이버 사이트 도구 인증 코드 | (네이버에서 제공된 값) | (없음) |
 | `$wgLibertyAdSetting` | 구글 애드센스 설정 | `array( 'client' => '(Google Adsense에서 제공한 값)', 'header' => '1234567890', 'right' => '0987654321' )` | (없음) |
 | `$wgLibertyMaxRecent` | 사이드바 최근 변경에 등장하는 편집의 최대 개수 | `10` | `10` |
