@@ -591,7 +591,7 @@ class LibertyTemplate extends BaseTemplate {
 							if ( is_array( $child['children'] ) ) {
 								array_push( $child['classes'], 'dropdown-toggle', 'dropdown-toggle-sub' );
 							}
-							
+
 							echo Html::openElement( 'a', [
 								'accesskey' => $child['access'],
 								'class' => $child['classes'],
@@ -730,7 +730,7 @@ class LibertyTemplate extends BaseTemplate {
 				foreach ( $classes as $key => $value ) {
 					$classes[$key] = trim( $value );
 				}
-	
+
 				$item = [
 					'access' => $access,
 					'classes' => $classes,
@@ -741,7 +741,7 @@ class LibertyTemplate extends BaseTemplate {
 				];
 				$level2Children = &$item['children'];
 				$headings[] = $item;
-			} 
+			}
 			if ( $line[2] !== '*' ) {
 				// Second level menu
 				$split = explode( '|', $line );
