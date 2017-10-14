@@ -641,7 +641,7 @@ class LibertyTemplate extends BaseTemplate {
 				// Root menu
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 1 );
-				foreach( $split as $key => $value ) {
+				foreach ( $split as $key => $value ) {
 					$split[$key] = trim( $value );
 				}
 
@@ -701,7 +701,7 @@ class LibertyTemplate extends BaseTemplate {
 				// Sub menu
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
-				foreach( $split as $key => $value ) {
+				foreach ( $split as $key => $value ) {
 					$split[$key] = trim( $value );
 				}
 
