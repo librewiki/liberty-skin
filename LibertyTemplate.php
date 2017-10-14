@@ -646,7 +646,8 @@ class LibertyTemplate extends BaseTemplate {
 				if ( preg_match( '/((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))/ig', $split[3] ) ) {
 					$item['href'] = urlencode( $split[3], ENT_QUOTES, 'UTF-8' );
 				} else {
-					$item['href'] = str_replace( '$1', str_replace( '%3A', ':', urlencode( $split[3] ) ), $wgArticlePath );
+					$item['href'] = str_replace( '%3A', ':', urlencode( $split[3] );
+					$item['href'] = str_replace( '$1', $item['href'] ), $wgArticlePath );
 				}
 
 				// Access
