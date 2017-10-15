@@ -22,7 +22,7 @@ Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 
 First-Level menu : `* Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`  
 Second-Level menu : `** Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`  
-Third-Level menu : `** Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`
+Third-Level menu : `*** Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`
 * One of `Icon` or `Text to display` must be set.
 * If `Text to display when hover` is not set, It is set to `Text to display` value automatically.
 * When set `Text to display` or `Text to display when hover`, You can type MediaWiki i18n message name to display that i18n message value. (Example: Displays `Recent changes` when type `recentchanges`)
