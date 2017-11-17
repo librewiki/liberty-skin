@@ -5,10 +5,11 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	public function execute() {
 		global $wgRequest, $wgLibertyAdSetting;
-		$request = $this->getSkin()->getRequest();
+
+		$skin = $this->getSkin();
+		$request = $skin->getRequest();
 		$action = $request->getVal( 'action', 'view' );
-		$title = $this->getSkin()->getTitle();
-		$curid = $title->getArticleID();
+		$title = $skin->getTitle();
 
 		wfSuppressWarnings();
 
@@ -56,18 +57,22 @@ class LibertyTemplate extends BaseTemplate {
 					</div>
 				</div>
 				<div class="liberty-content-main">
-					<?php if ( $title->getNamespace() != NS_SPECIAL &&
+					<?php
+					// @codingStandardsIgnoreStart
+					if ( $title->getNamespace() != NS_SPECIAL &&
 							   $action != 'edit' && $action != 'history' ) { ?>
 						<div class="social-buttons">
-							<div class="twitter" data-text="<?php echo $title; ?>" title="트위터">
+							<div class="twitter" data-text="<?php echo $title; ?>" title="<?php echo $skin->msg( 'liberty-twitter' )->plain() ?>">
 								<div><i class="fa fa-twitter"></i></div>
 							</div>
-							<div class="facebook" data-text="<?php echo $title; ?>" title="페이스북">
+							<div class="facebook" data-text="<?php echo $title; ?>" title="<?php echo $skin->msg( 'liberty-facebook' )->plain() ?>">
 								<div><i class="fa fa-facebook"></i></div>
 							</div>
 						</div>
-					<?php } ?>
 					<?php
+					}
+					// @codingStandardsIgnoreEnd
+
 					if ( $this->data['catlinks'] ) {
 						$this->html( 'catlinks' );
 					}
@@ -99,27 +104,34 @@ class LibertyTemplate extends BaseTemplate {
 	 * Nav menu function, build top menu.
 	 */
 	protected function navMenu() {
+		$skin = $this->getSkin();
 		?>
 		<nav class="navbar navbar-dark">
 			<a class="navbar-brand" href="<?php echo Title::newMainPage()->getLocalURL(); ?>"></a>
 			<ul class="nav navbar-nav">
 				<li class="nav-item">
 					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'Recentchanges', null ),
-						'<span class="fa fa-refresh"></span><span class="hide-title">최근바뀜</span>', [
+						SpecialPage::getTitleFor( 'Recentchanges' ),
+						// @codingStandardsIgnoreStart
+						'<span class="fa fa-refresh"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
+						// @codingStandardsIgnoreEnd
+						[
 							'class' => 'nav-link',
-							'title' => '최근 변경 문서를 불러옵니다. [alt+shift+r]',
-							'accesskey' => 'r'
+							'title' => Linker::titleAttrib( 'n-recentchanges', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'n-recentchanges' )
 						]
 					); ?>
 				</li>
 				<li class="nav-item">
 					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'Randompage', null ),
-						'<span class="fa fa-random"></span><span class="hide-title">임의문서</span>', [
+						SpecialPage::getTitleFor( 'Randompage' ),
+						// @codingStandardsIgnoreStart
+						'<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg( 'randompage' )->plain() . '</span>',
+						// @codingStandardsIgnoreEnd
+						[
 							'class' => 'nav-link',
-							'title' => '임의 문서를 불러옵니다. [alt+shift+x]',
-							'accesskey' => 'x'
+							'title' => Linker::titleAttrib( 'n-randompage', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'n-randompage' )
 						]
 					); ?>
 				</li>
@@ -136,16 +148,20 @@ class LibertyTemplate extends BaseTemplate {
 	 * Search box function, build top menu's search box.
 	 */
 	protected function searchBox() {
+		$skin = $this->getSkin();
 	?>
 		<form action="<?php $this->text( 'wgScript' ); ?>" id="searchform" class="form-inline">
-			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ); ?>"/>
+			<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ); ?>"/>
 			<div class="input-group">
 				<?php echo $this->makeSearchInput( [ 'class' => 'form-control', 'id' => 'searchInput' ] ); ?>
 				<span class="input-group-btn">
-					<button type="submit" name="go" value="보기" id="searchGoButton"
+					<button type="submit" name="go"
+						value="<?php echo $skin->msg( 'go' )->plain() ?>" id="searchGoButton"
 							class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-					<button type="submit" name="fulltext" value="검색" id="mw-searchButton"
-							class="btn btn-secondary" type="button"><span class="fa fa-search"></span></button>
+					<button type="submit" name="fulltext"
+						value="<?php echo $skin->msg( 'searchbutton' )->plain() ?>"
+						id="mw-searchButton" class="btn btn-secondary" type="button">
+						<span class="fa fa-search"></span></button>
 				</span>
 			</div>
 		</form>
@@ -157,6 +173,8 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function loginBox() {
 		global $wgUser;
+
+		$skin = $this->getSkin();
 		?>
 		<div class="navbar-login">
 			<?php
@@ -164,9 +182,9 @@ class LibertyTemplate extends BaseTemplate {
 				if ( $wgUser->getEmailAuthenticationTimestamp() ) {
 					$email = trim( $wgUser->getEmail() );
 					$email = strtolower( $email );
-					$email = md5( $email )."?d=identicon";
+					$email = md5( $email ) . '?d=identicon';
 				} else {
-					$email = "00000000000000000000000000000000?d=identicon&f=y";
+					$email = '00000000000000000000000000000000?d=identicon&f=y';
 				}
 			?>
 				<div class="dropdown login-menu">
@@ -178,68 +196,79 @@ class LibertyTemplate extends BaseTemplate {
 						 aria-labelledby="login-menu">
 						<?php echo Linker::linkKnown(
 							Title::makeTitle( NS_USER, $wgUser->getName() ),
-							$wgUser->getName(), [
+							$wgUser->getName(),
+							[
 								'id' => 'pt-userpage',
 								'class' => 'dropdown-item',
-								'title' => '내 사용자 문서. [alt+shift+u]',
-								'accesskey' => 'u'
+								'title' => Linker::titleAttrib( 'pt-userpage', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-userpage' )
 							]
 						); ?>
 						<div class="dropdown-divider"></div>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'notifications', null ),
-							'알림', [
+							SpecialPage::getTitleFor( 'Notifications' ),
+							$skin->msg( 'notifications' )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '알림 목록을 불러옵니다.'
+								'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->plain()
 							]
 						); ?>
 						<?php echo Linker::linkKnown(
 							SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ),
-							'내 기여 목록', [
+							$skin->msg( 'mycontris' )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '내 기여 목록을 >불러옵니다. [alt+shift+y]',
-								'accesskey' => 'y'
+								'title' => Linker::titleAttrib( 'pt-mycontris', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-mycontris' )
 							]
 						); ?>
 						<?php echo Linker::linkKnown(
 							Title::makeTitle( NS_USER_TALK, $wgUser->getName() ),
-							'내 토론 문서', [
+							$skin->msg( 'mytalk' )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '내 토론 문서. [alt+shift+m]',
-								'accesskey' => 'm'
+								'title' => Linker::titleAttrib( 'pt-mytalk', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-mytalk' )
 							]
 						); ?>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'watchlist', null ),
-							'내 주시 문서', [
+							SpecialPage::getTitleFor( 'Watchlist' ),
+							$skin->msg( 'watchlist' )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '주시문서를 불러옵니다. [alt+shift+l]',
-								'accesskey' => 'l'
+								'title' => Linker::titleAttrib( 'pt-watchlist', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-watchlist' )
 							]
 						); ?>
 						<div class="dropdown-divider"></div>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'preferences', null ),
-							'환경설정', [
+							SpecialPage::getTitleFor( 'Preferences' ),
+							$skin->msg( 'preferences' )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '환경설정을 불러옵니다.'
+								'title' => Linker::titleAttrib( 'pt-preferences', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-preferences' )
 							]
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'logout', null ),
-							'로그아웃', [
+							SpecialPage::getTitleFor( 'UserLogout' ),
+							$skin->msg( 'logout' )->plain(),
+							[
 								'class' => 'dropdown-item view-logout',
-								'title' => '로그아웃'
+								'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-logout' )
 							]
 						); ?>
 					</div>
 				</div>
 				<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'logout', null ),
-						'<span class="fa fa-sign-out"></span>', [
+						SpecialPage::getTitleFor( 'UserLogout' ),
+						'<span class="fa fa-sign-out"></span>',
+						[
 							'class' => 'hide-logout logout-btn',
-							'title' => '로그아웃'
+							'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'pt-logout' )
 						]
 					);
 				?>
@@ -329,6 +358,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * Live recent function, build right side's Recent menus.
 	 */
 	protected function liveRecent() {
+		$skin = $this->getSkin();
 		$wgLibertyMaxRecent = isset( $GLOBALS['wgLibertyMaxRecent'] ) ?
 							  $GLOBALS['wgLibertyMaxRecent'] : 10;
 		?>
@@ -336,10 +366,14 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="live-recent-header">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">최근바뀜</a>
+					<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">
+						<?php echo $skin->msg( 'recentchanges' )->plain() ?>
+					</a>
 				</li>
 				<li class="nav-item">
-					<a href="javascript:" class="nav-link" id="liberty-recent-tab2">최근토론</a>
+					<a href="javascript:" class="nav-link" id="liberty-recent-tab2">
+						<?php echo $skin->msg( 'liberty-recent-discussions' )->plain() ?>
+					</a>
 				</li>
 			</ul>
 			</div>
@@ -353,8 +387,10 @@ class LibertyTemplate extends BaseTemplate {
 			</div>
 			<div class="live-recent-footer">
 				<?php echo Linker::linkKnown(
-					SpecialPage::getTitleFor( 'Recentchanges', null ),
-					'<span class="label label-info">더보기</span>'
+					SpecialPage::getTitleFor( 'Recentchanges' ),
+					'<span class="label label-info">' .
+						$skin->msg( 'liberty-view-more' )->plain() .
+					'</span>'
 				); ?>
 			</div>
 		</div>
@@ -365,14 +401,11 @@ class LibertyTemplate extends BaseTemplate {
 	 * Contents tool box function, build article tool menu that will show at article title right.
 	 */
 	protected function contentsToolbox() {
-		global $wgUser;
-		$title = $this->getSkin()->getTitle();
-		$revid = $this->getSkin()->getRequest()->getText( 'oldid' );
-		$isWatched = $this->getSkin()->getUser()->isWatched(
-				$this->getSkin()->getRelevantTitle() );
-		$watchMsg = $isWatched ? '주시해제' : '주시';
-		$watchAct = $isWatched ? 'unwatch' : 'watch';
-		$user = ( $wgUser->isLoggedIn() ) ? array_shift( $userLinks ) : array_pop( $userLinks );
+		$skin = $this->getSkin();
+		$user = $skin->getUser();
+		$title = $skin->getTitle();
+		$revid = $skin->getRequest()->getText( 'oldid' );
+		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
 
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
@@ -381,49 +414,64 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="btn-group" role="group" aria-label="content-tools">
 					<?php echo Linker::linkKnown(
 						$title,
-						'갱신', [
+						$skin->msg( 'liberty-purge' )->plain(),
+						[
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '문서 캐쉬를 새로 지정하여 문서를 불러옵니다. [alt+shift+p]',
+							'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
 							'accesskey' => 'p'
 						],
 						[ 'action' => 'purge' ]
-					); ?>
-					<?php echo Linker::linkKnown(
+					);
+					echo Linker::linkKnown(
 						$title,
-						'편집', [
+						$skin->msg( 'edit' )->plain(),
+						[
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '문서를 편집합니다. [alt+shift+e]',
-							'accesskey' => 'e'
+							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-edit' )
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
-					); ?>
-					<?php echo Linker::linkKnown(
+					);
+					echo Linker::linkKnown(
 						$title,
-						'추가', [
+						$skin->msg( 'addsection' )->plain(),
+						[
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '새 문단을 추가합니다. [alt+shift+n]',
-							'accesskey' => 'n'
+							'title' => Linker::titleAttrib( 'ca-addsection', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-addsection' )
 						],
 						[ 'action' => 'edit', 'section' => 'new' ]
-					); ?>
-					<?php
+					);
 					if ( $companionTitle ) {
+						if ( $title->isTalkPage() ) {
+							$titlename = $skin->msg( 'articlepage' )->plain();
+							$additionalArrayStuff = [
+								// @todo FIXME!
+								'title' => $titlename . '을 불러옵니다. [alt+shift+t]',
+								'accesskey' => 't'
+							];
+						} else {
+							$titlename = $skin->msg( 'talk' )->plain();
+							$additionalArrayStuff = [
+								'title' => Linker::titleAttrib( 'ca-talk', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-talk' )
+							];
+						}
 						echo Linker::linkKnown(
 							$companionTitle,
-							$title->isTalkPage() ? '본문' : '토론', [
+							$titlename,
+							[
 								'class' => 'btn btn-secondary tools-btn',
-								'title' => $titlename.'을 불러옵니다. [alt+shift+t]',
-								'accesskey' => 't'
-							]
+							] + $additionalArrayStuff
 						);
 					}
-					?>
-					<?php echo Linker::linkKnown(
+					echo Linker::linkKnown(
 						$title,
-						'기록', [
+						$skin->msg( 'history' )->plain(),
+						[
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => '문서의 편집 기록을 불러옵니다. [alt+shift+h]',
-							'accesskey' => 'h'
+							'title' => Linker::titleAttrib( 'ca-history', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-history' )
 						],
 						[ 'action' => 'history' ]
 					); ?>
@@ -433,54 +481,73 @@ class LibertyTemplate extends BaseTemplate {
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
 						<?php
-						if ( $title->getNamespace() == NS_USER || $title->getNamespace() == NS_USER_TALK ) {
+						if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
+							// "User contributions" link on user and user talk pages
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Contributions', $title->getText() ),
-								'기여', [
+								$skin->msg( 'contributions' )->escaped(),
+								[
 									'class' => 'dropdown-item',
-									'title' => '사용자의 기여 목록을 불러옵니다.'
+									'title' => Linker::titleAttrib( 't-contributions', 'withaccess' ),
+									'accesskey' => Linker::accesskey( 't-contributions' )
 								]
 							);
 						}
 						echo Linker::linkKnown(
 							$title,
-							$watchMsg,
-							[ 'class' => 'dropdown-item' ],
-							[ 'action' => $watchAct ]
-						); ?>
-						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'WhatLinksHere', $title ),
-							'역링크',
-							[ 'class' => 'dropdown-item' ]
-						); ?>
-						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'Movepage', $title ),
-							'이동', [
+							$skin->msg( $watched )->plain(),
+							[
 								'class' => 'dropdown-item',
-								'title' => '문서를 옮깁니다. [alt+shift+b]',
-								'accesskey' => 'b'
+								'title' => Linker::titleAttrib( 'ca-' . $watched, 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-' . $watched )
+							],
+							[ 'action' => $watched ]
+						);
+						echo Linker::linkKnown(
+							SpecialPage::getTitleFor( 'WhatLinksHere', $title ),
+							$skin->msg( 'whatlinkshere' )->plain(),
+							[
+								'class' => 'dropdown-item',
+								'title' => Linker::titleAttrib( 't-whatlinkshere', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 't-whatlinkshere' )
 							]
-						); ?>
-						<?php if ( $title->quickUserCan( 'protect', $user ) ) { ?>
-							<div class="dropdown-divider"></div>
-							<?php echo Linker::linkKnown(
-								$title,
-								'보호', [
+						);
+						if ( $title->quickUserCan( 'move', $user ) && $title->exists() ) {
+							echo Linker::linkKnown(
+								SpecialPage::getTitleFor( 'Movepage', $title ),
+								$skin->msg( 'move' )->plain(),
+								[
 									'class' => 'dropdown-item',
-									'title' => '문서를 보호합니다. [alt+shift+s]',
-									'accesskey' => 's'
+									'title' => Linker::titleAttrib( 'ca-move', 'withaccess' ),
+									'accesskey' => Linker::accesskey( 'ca-move' )
+								]
+							);
+						}
+						if ( $title->quickUserCan( 'protect', $user ) ) { ?>
+							<div class="dropdown-divider"></div>
+							<?php
+							// different labels depending on whether the page is or isn't protected
+							$protectionMsg = $title->isProtected() ? 'unprotect' : 'protect';
+							echo Linker::linkKnown(
+								$title,
+								$skin->msg( $protectionMsg )->plain(),
+								[
+									'class' => 'dropdown-item',
+									'title' => Linker::titleAttrib( 'ca-' . $protectionMsg, 'withaccess' ),
+									'accesskey' => Linker::accesskey( 'ca-' . $protectionMsg )
 								],
 								[ 'action' => 'protect' ]
 							); ?>
 						<?php } ?>
-						<?php if ( $title->quickUserCan( 'delete', $user ) ) { ?>
+						<?php if ( $title->quickUserCan( 'delete', $user ) && $title->exists() ) { ?>
 							<div class="dropdown-divider"></div>
 							<?php echo Linker::linkKnown(
 								$title,
-								'삭제', [
+								$skin->msg( 'delete' )->plain(),
+								[
 									'class' => 'dropdown-item',
-									'title' => '문서를 삭제합니다. [alt+shift+d]',
-									'accesskey' => 'd'
+									'title' => Linker::titleAttrib( 'ca-delete', 'withaccess' ),
+									'accesskey' => Linker::accesskey( 'ca-delete' )
 								],
 								[ 'action' => 'delete' ]
 							); ?>
@@ -546,7 +613,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	/**
 	 * Render Portal function, build top menu contents.
-	 * @param Array $contents Menu data that will made by parseNavbar function.
+	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
 	protected function renderPortal( $contents ) {
 		foreach ( $contents as $content ) {
@@ -885,7 +952,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	/**
 	 * Build Adsense Function.
-	 * @param String $position Ad Position
+	 * @param string $position Ad position
 	 */
 	protected function buildAd( $position ) {
 		global $wgLibertyAdSetting;
