@@ -80,6 +80,11 @@ class LibertyTemplate extends BaseTemplate {
 					<article>
 						<?php $this->html( 'bodycontent' ); ?>
 					</article>
+					<?php
+					if ( $this->data['dataAfterContent'] ) {
+						$this->html( 'dataAfterContent' );
+					}
+					?>
 				</div>
 				<footer>
 				<div class="liberty-footer">
