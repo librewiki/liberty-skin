@@ -85,5 +85,6 @@
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
 		"LibertyTemplate": "LibertyTemplate.php"
-	}
+	},
+	"manifest_version": 1
 }
