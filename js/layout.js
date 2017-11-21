@@ -59,7 +59,9 @@ $( function () {
 	} );
 
 	$( 'html' ).on( 'click', function () {
-		display.hide();
+		if ( display !== undefined ) {
+			display.hide();
+		}
 	} );
 } );
 /* Sub menu end */
