@@ -11,8 +11,6 @@ class LibertyTemplate extends BaseTemplate {
 		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
 
-		wfSuppressWarnings();
-
 		$this->html( 'headelement' );
 		?>
 		<header>
@@ -102,7 +100,6 @@ class LibertyTemplate extends BaseTemplate {
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
 		echo "\n";
-		wfRestoreWarnings();
 	}
 
 	/**
