@@ -62,10 +62,10 @@ class LibertyTemplate extends BaseTemplate {
 					if ( $title->getNamespace() != NS_SPECIAL &&
 							   $action != 'edit' && $action != 'history' ) { ?>
 						<div class="social-buttons">
-							<div class="twitter" data-text="<?php echo $title; ?>" title="<?php echo $skin->msg( 'liberty-twitter' )->plain() ?>">
+							<div class="twitter" data-text="<?php echo htmlspecialchars( $title, ENT_QUOTES ); ?>" title="<?php echo $skin->msg( 'liberty-twitter' )->escaped() ?>">
 								<div><i class="fa fa-twitter"></i></div>
 							</div>
-							<div class="facebook" data-text="<?php echo $title; ?>" title="<?php echo $skin->msg( 'liberty-facebook' )->plain() ?>">
+							<div class="facebook" data-text="<?php echo htmlspecialchars( $title, ENT_QUOTES ); ?>" title="<?php echo $skin->msg( 'liberty-facebook' )->escaped() ?>">
 								<div><i class="fa fa-facebook"></i></div>
 							</div>
 						</div>
