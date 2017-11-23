@@ -19,7 +19,7 @@
 	},
 	"config": {
 		"LibertyUseGravatar": true
-	}
+	},
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
