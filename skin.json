@@ -72,6 +72,7 @@
 				"js/sns-button.js",
 				"js/layout.js"
 			],
+			"dependencies": "mediawiki.cookie",
 			"position": "bottom"
 		},
 		"skins.liberty.loginjs": {
