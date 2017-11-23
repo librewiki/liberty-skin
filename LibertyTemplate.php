@@ -215,7 +215,7 @@ class LibertyTemplate extends BaseTemplate {
 							$skin->msg( 'notifications' )->plain(),
 							[
 								'class' => 'dropdown-item',
-								'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->plain()
+								'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
 							]
 						); ?>
 						<?php echo Linker::linkKnown(
