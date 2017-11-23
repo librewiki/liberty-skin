@@ -174,31 +174,52 @@ class LibertyTemplate extends BaseTemplate {
 	 * Login box function, build top menu's login button.
 	 */
 	protected function loginBox() {
-		global $wgUser;
+		global $wgLibertyUseGravatar;
 
 		$skin = $this->getSkin();
+		$user = $skin->getUser();
 		?>
 		<div class="navbar-login">
 			<?php
-			if ( $wgUser->isLoggedIn() ) {
-				if ( $wgUser->getEmailAuthenticationTimestamp() ) {
-					$email = trim( $wgUser->getEmail() );
-					$email = strtolower( $email );
-					$email = md5( $email ) . '?d=identicon';
+			// If the user is logged in...
+			if ( $user->isLoggedIn() ) {
+				// ...and Gravatar is enabled in site config...
+				if ( $wgLibertyUseGravatar ) {
+					// ...and the user has a confirmed email...
+					if ( $user->getEmailAuthenticationTimestamp() ) {
+						// ...then, and only then, build the correct Gravatar URL
+						$email = trim( $user->getEmail() );
+						$email = strtolower( $email );
+						$email = md5( $email ) . '?d=identicon';
+					} else {
+						$email = '00000000000000000000000000000000?d=identicon&f=y';
+					}
+					$avatar = Html::element( 'img', [
+						'class' => 'profile-img',
+						'src' => '//secure.gravatar.com/avatar/' . $email
+					] );
 				} else {
-					$email = '00000000000000000000000000000000?d=identicon&f=y';
+					$avatar = '';
+				}
+
+				// SocialProfile support
+				if ( class_exists( 'wAvatar' ) ) {
+					$avatar = new wAvatar( $user->getId(), 'm' );
+					$avatar = $avatar->getAvatarURL( [
+						'class' => 'profile-img'
+					] );
 				}
 			?>
 				<div class="dropdown login-menu">
 					<a class="dropdown-toggle" type="button" id="login-menu"
 					   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img class="profile-img" src="//secure.gravatar.com/avatar/<?php echo $email; ?>" />
+						<?php echo $avatar; ?>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu"
 						 aria-labelledby="login-menu">
 						<?php echo Linker::linkKnown(
-							Title::makeTitle( NS_USER, $wgUser->getName() ),
-							$wgUser->getName(),
+							Title::makeTitle( NS_USER, $user->getName() ),
+							$user->getName(),
 							[
 								'id' => 'pt-userpage',
 								'class' => 'dropdown-item',
@@ -207,16 +228,20 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider"></div>
+						<?php
+						if ( class_exists( 'EchoEvent' ) ) {
+							echo Linker::linkKnown(
+								SpecialPage::getTitleFor( 'Notifications' ),
+								$skin->msg( 'notifications' )->plain(),
+								[
+									'class' => 'dropdown-item',
+									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
+								]
+							);
+						}
+						?>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'Notifications' ),
-							$skin->msg( 'notifications' )->plain(),
-							[
-								'class' => 'dropdown-item',
-								'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
-							]
-						); ?>
-						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'Contributions', $wgUser->getName() ),
+							SpecialPage::getTitleFor( 'Contributions', $user->getName() ),
 							$skin->msg( 'mycontris' )->plain(),
 							[
 								'class' => 'dropdown-item',
@@ -225,7 +250,7 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<?php echo Linker::linkKnown(
-							Title::makeTitle( NS_USER_TALK, $wgUser->getName() ),
+							Title::makeTitle( NS_USER_TALK, $user->getName() ),
 							$skin->msg( 'mytalk' )->plain(),
 							[
 								'class' => 'dropdown-item',
