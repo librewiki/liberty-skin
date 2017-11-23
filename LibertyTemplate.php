@@ -4,7 +4,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * execute() Method
 	 */
 	public function execute() {
-		global $wgRequest, $wgLibertyAdSetting;
+		global $wgLibertyAdSetting;
 
 		$skin = $this->getSkin();
 		$request = $skin->getRequest();
@@ -33,7 +33,7 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="container-fluid liberty-content">
 				<div class="liberty-content-header">
 					<?php if ( $this->data['sitenotice'] &&
-							   !$wgRequest->getCookie( 'disable-notice' ) ) { ?>
+							   !$request->getCookie( 'disable-notice' ) ) { ?>
 						<div class="alert alert-dismissible fade in alert-info liberty-notice" role="alert">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
