@@ -22,6 +22,7 @@ class SkinLiberty extends SkinTemplate {
 		parent::initPage( $out );
 
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
+
 		$out->addMeta( 'description', strip_tags(
 			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
 		) );
@@ -79,19 +80,26 @@ class SkinLiberty extends SkinTemplate {
 	 * @param OutputPage $out OutputPage
 	 */
 	public function setupSkinUserCss( OutputPage $out ) {
+		global $wgLibertyAdSetting;
+
 		parent::setupSkinUserCss( $out );
+
 		$out->addHeadItem(
 			'font-awesome',
 			// @codingStandardsIgnoreLine
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
 		);
-		$out->addHeadItem(
-			'google-ads',
-			'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
-		);
-		$out->addModuleStyles( [
-			'skins.liberty.styles'
-		] );
+
+		// Only load AdSense JS is ads are enabled in site configuration
+		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+			$out->addHeadItem(
+				'google-ads',
+				// @codingStandardsIgnoreLine
+				'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+			);
+		}
+
+		$out->addModuleStyles( [ 'skins.liberty.styles' ] );
 	}
 
 	/**
