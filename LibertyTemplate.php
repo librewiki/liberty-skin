@@ -231,13 +231,15 @@ class LibertyTemplate extends BaseTemplate {
 						<?php
 						if ( class_exists( 'EchoEvent' ) ) {
 							echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'Notifications' ),
-							$skin->msg( 'notifications' )->plain(),
-							[
-								'class' => 'dropdown-item',
-								'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
-							]
-						); ?>
+								SpecialPage::getTitleFor( 'Notifications' ),
+								$skin->msg( 'notifications' )->plain(),
+								[
+									'class' => 'dropdown-item',
+									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
+								]
+							);
+						}
+						?>
 						<?php echo Linker::linkKnown(
 							SpecialPage::getTitleFor( 'Contributions', $user->getName() ),
 							$skin->msg( 'mycontris' )->plain(),
