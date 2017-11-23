@@ -23,9 +23,18 @@ class SkinLiberty extends SkinTemplate {
 
 		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1, maximum-scale=1' );
 
-		$out->addMeta( 'description', strip_tags(
-			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
-		) );
+		if (
+			!class_exists( ArticleMetaDescription::class ) ||
+			!class_exists( Description2::class )
+		) {
+			// The validator complains if there's more than one description,
+			// so output this here only if none of the aforementioned SEO
+			// extensions aren't installed
+			$out->addMeta( 'description', strip_tags(
+				preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ),
+				'<br>'
+			) );
+		}
 		$out->addMeta( 'keywords', $wgSitename . ',' . $skin->getTitle() );
 
 		/* 네이버 웹마스터 도구 */
