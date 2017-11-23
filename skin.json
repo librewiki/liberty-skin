@@ -18,6 +18,7 @@
 		]
 	},
 	"config": {
+		"LibertyEnableLiveRC": true,
 		"LibertyUseGravatar": true
 	},
 	"ResourceModules": {
@@ -65,7 +66,6 @@
 
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/live-recent.js",
 				"js/index-button.js",
 				"js/delay-scrolling.js",
 				"js/disable-notice.js",
@@ -73,6 +73,12 @@
 				"js/layout.js"
 			],
 			"dependencies": "mediawiki.cookie",
+			"position": "bottom"
+		},
+		"skins.liberty.liverc": {
+			"scripts": "js/live-recent.js",
+			"messages": [ "liberty-feed-new" ],
+			"dependencies": "mediawiki.util",
 			"position": "bottom"
 		},
 		"skins.liberty.loginjs": {
