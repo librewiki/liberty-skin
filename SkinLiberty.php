@@ -9,7 +9,8 @@ class SkinLiberty extends SkinTemplate {
 	 * @param OutputPage $out OutputPage
 	 */
 	public function initPage( OutputPage $out ) {
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo;
+		// @codingStandardsIgnoreLine
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
 
 		$mainColor = isset( $GLOBALS['wgLibertyMainColor'] ) ? $GLOBALS['wgLibertyMainColor'] : '#4188F1';
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
@@ -74,6 +75,11 @@ class SkinLiberty extends SkinTemplate {
 			'skins.liberty.bootstrap',
 			'skins.liberty.layoutjs'
 		];
+
+		// Only load LiveRC JS is we have enabled that feature in site config
+		if ( $wgLibertyEnableLiveRC ) {
+			$modules[] = 'skins.liberty.liverc';
+		}
 
 		// Only load modal login JS for anons, no point in loading it for logged-in
 		// users since the modal HTML isn't even rendered for them.

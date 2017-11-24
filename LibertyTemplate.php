@@ -385,9 +385,17 @@ class LibertyTemplate extends BaseTemplate {
 	 * Live recent function, build right side's Recent menus.
 	 */
 	protected function liveRecent() {
+		global $wgLibertyEnableLiveRC;
+
 		$skin = $this->getSkin();
 		$wgLibertyMaxRecent = isset( $GLOBALS['wgLibertyMaxRecent'] ) ?
 							  $GLOBALS['wgLibertyMaxRecent'] : 10;
+
+		// Don't bother outputting this if the live RC feature is disabled in
+		// site configuration
+		if ( !$wgLibertyEnableLiveRC ) {
+			return;
+		}
 		?>
 		<div class="live-recent">
 			<div class="live-recent-header">
