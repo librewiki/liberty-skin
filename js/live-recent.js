@@ -1,13 +1,13 @@
 $( function () {
 	'use strict';
-	var documentNamespaces, topicNamespaces, isDocumentTab, limit;
-	documentNamespaces = '0|4|10|12|14|1600';
-	topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
-	isDocumentTab = true;
-	limit = $( '#live-recent-list' )[ 0 ].childElementCount;
+	const documentNamespaces = '0|4|10|12|14|1600',
+		topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063',
+		limit = $( '#live-recent-list' )[ 0 ].childElementCount;
+
+	let isDocumentTab = true;
 
 	function timeFormat( time ) {
-		var aDayAgo, hour, minute, second;
+		let aDayAgo, hour, minute, second;
 		aDayAgo = new Date();
 		aDayAgo.setDate( aDayAgo.getDate() - 1 );
 		if ( time < aDayAgo ) {
@@ -29,7 +29,7 @@ $( function () {
 	}
 
 	function refreshLiveRecent() {
-		var getParameter;
+		let getParameter;
 		if ( !$( '#live-recent-list' ).length || $( '#live-recent-list' ).is( ':hidden' ) ) {
 			return;
 		}
@@ -52,7 +52,7 @@ $( function () {
 			},
 			dataType: 'json'
 		} ).then( function ( data ) {
-			var recentChanges, html, time, line, text;
+			let recentChanges, html, time, line, text;
 			recentChanges = data.query.recentchanges;
 			html = recentChanges.map( function ( item ) {
 				time = new Date( item.timestamp );

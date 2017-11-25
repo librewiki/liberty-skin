@@ -55,22 +55,9 @@
 			"position": "bottom"
 		},
 
-		"skins.liberty.bootstrap": {
-			"scripts": [
-				"js/lib/jquery.ba-throttle-debounce.js",
-				"js/lib/jquery.min.js",
-				"js/lib/bootstrap.min.js"
-			],
-			"position": "bottom"
-		},
-
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/index-button.js",
-				"js/delay-scrolling.js",
-				"js/disable-notice.js",
-				"js/sns-button.js",
-				"js/layout.js"
+				"dist/bundle.js"
 			],
 			"dependencies": "mediawiki.cookie",
 			"position": "bottom"

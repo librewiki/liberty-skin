@@ -1,5 +1,12 @@
 {
   "extends": "wikimedia",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
   "env": {
     "browser": true,
     "jquery": true
