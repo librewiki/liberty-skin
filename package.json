@@ -27,6 +27,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.1.0",
     "eslint-config-wikimedia": "^0.4.0",
+    "uglifyjs-webpack-plugin": "^1.1.1",
     "webpack": "^3.8.1"
   }
 }

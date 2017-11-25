@@ -1,4 +1,6 @@
 /* eslint-disable */
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
 	entry: __dirname + '/js/index.js',
 	output: {
@@ -13,5 +15,8 @@ module.exports = {
 				exclude: /node_modules/
 			}
 		]
-	}
+	},
+	plugins: [
+    new UglifyJsPlugin()
+  ]
 };
