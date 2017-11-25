@@ -349,7 +349,7 @@ class LibertyTemplate extends BaseTemplate {
 								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
 								<label for="lgremember"><?php echo $skin->msg( 'liberty-remember' )->plain() ?></label>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
+							<input id="loginform-submit" class="btn btn-success btn-block" type="button" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
 							<?php echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'UserLogin' ),
 								$skin->msg( 'userlogin-joinproject' ), [

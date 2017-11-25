@@ -54,10 +54,10 @@
 			},
 			"position": "bottom"
 		},
-
 		"skins.liberty.bootstrap": {
 			"scripts": [
-				"js/lib/bootstrap.min.js"
+				"bootstrap/js/tether.min.js",
+				"bootstrap/js/bootstrap.min.js"
 			],
 			"position": "bottom"
 		},
@@ -69,13 +69,13 @@
 			"position": "bottom"
 		},
 		"skins.liberty.liverc": {
-			"scripts": "js/live-recent.js",
+			"scripts": "dist/live-recent.js",
 			"messages": [ "liberty-feed-new" ],
 			"dependencies": "mediawiki.util",
 			"position": "bottom"
 		},
 		"skins.liberty.loginjs": {
-			"scripts": "js/login-request.js",
+			"scripts": "dist/login-request.js",
 			"dependencies": "mediawiki.util",
 			"messages": [ "liberty-warning", "liberty-warning-text" ],
 			"position": "bottom"
