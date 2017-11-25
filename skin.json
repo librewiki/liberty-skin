@@ -55,9 +55,15 @@
 			"position": "bottom"
 		},
 
+		"skins.liberty.bootstrap": {
+			"scripts": [
+				"js/lib/bootstrap.min.js"
+			],
+			"position": "bottom"
+		},
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"dist/bundle.js"
+				"dist/layout.js"
 			],
 			"dependencies": "mediawiki.cookie",
 			"position": "bottom"

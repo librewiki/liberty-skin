@@ -2,10 +2,14 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-	entry: __dirname + '/js/index.js',
+	entry: {
+		"layout": __dirname + '/js/index.js',
+		"live-recent": __dirname + '/js/live-recent.js',
+		"login-request": __dirname + '/js/login-request.js'
+	},
 	output: {
 		path: __dirname + '/dist',
-		filename: 'bundle.js'
+		filename: '[name].js'
 	},
 	module: {
 		rules: [
