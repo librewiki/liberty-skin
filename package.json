@@ -5,7 +5,8 @@
   "main": "eslint.js",
   "scripts": {
     "build": "webpack",
-    "test": "exit 0;"
+    "test": "exit 0;",
+    "lint": "eslint js"
   },
   "repository": {
     "type": "git",
