@@ -1,0 +1,74 @@
+/* Preferences */
+#preftoc {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+#preftoc li:first-child {
+	border-left: 1px solid #e1e8ed;
+}
+
+#preftoc li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	padding-right: 1px;
+	white-space: nowrap;
+	list-style-type: none;
+	list-style-image: none;
+	border: 1px solid #e1e8ed;
+	border-left: 0;
+	border-bottom: 0;
+}
+
+#preftoc li.selected {
+	background-color: #f5f8fa;
+	margin-bottom: -1rem;
+}
+
+#preftoc a, #preftoc a:active {
+	display: inline-block;
+	position: relative;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.9rem;
+}
+
+#preferences {
+	float: left;
+	width: 100%;
+	margin: 0;
+	clear: both;
+	border: solid 1px #e1e8ed;
+	background-color: #f5f8fa;
+	border-radius: 0.35rem;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#preferences td {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+#preferences fieldset.prefsection {
+	border: none;
+}
+
+#preferences fieldset.prefsection legend.mainLegend {
+	display: none;
+}
+
+#preferences fieldset:not(.prefsection) {
+	background-color: #fff;
+	border-radius: 0.35rem;
+}
+
+#preferences div.mw-prefs-buttons {
+	border-top: 1px solid #e1e8ed;
+	padding: 1rem;
+	background-color: #fff;
+}
+/* Preferences End */
