@@ -1,0 +1,7 @@
+/**
+ * Ensure that #filetoc remains separate from the social sharing buttons on
+ * File: pages
+ */
+#filetoc {
+	margin-top: 3rem;
+}

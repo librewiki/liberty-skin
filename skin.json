@@ -92,6 +92,12 @@
 		"localBasePath": "",
 		"remoteSkinPath": "Liberty"
 	},
+	"ResourceModuleSkinStyles": {
+		"liberty": {
+			"+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
+			"+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
+		}
+	},
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
 		"LibertyTemplate": "LibertyTemplate.php"
