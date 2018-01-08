@@ -51,8 +51,7 @@
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
 				}
-			},
-			"position": "bottom"
+			}
 		},
 
 		"skins.liberty.bootstrap": {
@@ -60,8 +59,7 @@
 				"js/lib/jquery.ba-throttle-debounce.js",
 				"js/lib/jquery.min.js",
 				"js/lib/bootstrap.min.js"
-			],
-			"position": "bottom"
+			]
 		},
 
 		"skins.liberty.layoutjs": {
@@ -72,20 +70,17 @@
 				"js/sns-button.js",
 				"js/layout.js"
 			],
-			"dependencies": "mediawiki.cookie",
-			"position": "bottom"
+			"dependencies": "mediawiki.cookie"
 		},
 		"skins.liberty.liverc": {
 			"scripts": "js/live-recent.js",
 			"messages": [ "liberty-feed-new" ],
-			"dependencies": "mediawiki.util",
-			"position": "bottom"
+			"dependencies": "mediawiki.util"
 		},
 		"skins.liberty.loginjs": {
 			"scripts": "js/login-request.js",
 			"dependencies": "mediawiki.util",
-			"messages": [ "liberty-warning", "liberty-warning-text" ],
-			"position": "bottom"
+			"messages": [ "liberty-warning", "liberty-warning-text" ]
 		}
 	},
 	"ResourceFileModulePaths": {
