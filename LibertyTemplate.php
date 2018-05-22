@@ -648,6 +648,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	/**
 	 * Render Portal function, build top menu contents.
+	 * @todo Fix parser to remove `count( $content['children'] ) > 2`
 	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
 	protected function renderPortal( $contents ) {
@@ -660,7 +661,7 @@ class LibertyTemplate extends BaseTemplate {
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
 				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
 					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
 				}
 
@@ -685,7 +686,8 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				echo Html::closeElement( 'a' );
 
-				if ( is_array( $content['children'] ) ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
+					array_shift( $content['children'] ); // We should fix this
 					echo Html::openElement( 'div', [
 						'class' => 'dropdown-menu',
 						'role' => 'menu'
@@ -713,7 +715,7 @@ class LibertyTemplate extends BaseTemplate {
 								}
 							echo Html::closeElement( 'a' );
 
-							if ( is_array( $child['children'] ) ) {
+							if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
 								echo Html::openElement( 'div', [
 									'class' => 'dropdown-menu dropdown-submenu',
 									'role' => 'menu'
