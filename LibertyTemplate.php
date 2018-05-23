@@ -687,7 +687,8 @@ class LibertyTemplate extends BaseTemplate {
 				echo Html::closeElement( 'a' );
 
 				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
-					array_shift( $content['children'] ); // We should fix this
+					// We should fix this
+					array_shift( $content['children'] );
 					echo Html::openElement( 'div', [
 						'class' => 'dropdown-menu',
 						'role' => 'menu'
