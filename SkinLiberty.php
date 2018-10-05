@@ -13,7 +13,7 @@ class SkinLiberty extends SkinTemplate {
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
 
 		$mainColor = $GLOBALS['wgLibertyMainColor'];
-		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper(dechex(hexdec(substr($mainColor, 1, 6)) - hexdec('1A1415')));
+		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
 			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
@@ -90,7 +90,8 @@ class SkinLiberty extends SkinTemplate {
 
 		$out->addModuleScripts( $modules );
 
-		$out->addInlineStyle(".Liberty .nav-wrapper,
+		// @codingStandardsIgnoreStart
+		$out->addInlineStyle( ".Liberty .nav-wrapper,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:focus,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
@@ -121,7 +122,8 @@ class SkinLiberty extends SkinTemplate {
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus,
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
-		}");
+		}" );
+		// @codingStandardsIgnoreEnd
 	}
 
 	/**
