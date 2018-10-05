@@ -19,7 +19,8 @@
 	},
 	"config": {
 		"LibertyEnableLiveRC": true,
-		"LibertyUseGravatar": true
+		"LibertyUseGravatar": true,
+		"LibertyMainColor": "#4188F1"
 	},
 	"ResourceModules": {
 		"skins.liberty.styles": {

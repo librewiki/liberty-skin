@@ -12,7 +12,8 @@ Security vulnerability should be reported using [Phabricator](https://issue.libr
 
 | Name | Description | Example Variable | Default Variable |
 | ---- | ---- | ---- | ---- |
-| `$wgLibertyMainColor` | `theme-color` configurations | `#4188F1` | `#4188F1` |
+| `$wgLibertyMainColor` | `theme-color` configurations, main color of site | `#4188F1` | `#4188F1` |
+| `$wgLibertySecondColor` | Configure of second color of site | `#2774DC` | The value of `$wgLibertyMainColor` subtracted by `1A1415` |
 | `$wgTwitterAccount` | Default Twitter account to set a mention | `librewiki` | (none) |
 | `$wgLibertyOgLogo` | OpenGraph Image Logo | `https://librewiki.net/images/6/6a/Libre_favicon.png` | (Value of `$wgLogo`) |
 | `$wgNaverVerification` | Naver Webmater Tool Verification Code | (Value supplied by Naver.com) | (none) |

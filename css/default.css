@@ -187,7 +187,6 @@ strike {
 /* Nav */
 .Liberty .nav-wrapper {
 	min-height: 2.8rem;
-	background-color: #4188f1;
 	z-index: 1001;
 	box-shadow: 0 2px 4px 0 rgba( 0, 0, 0, 0.16 ), 0 2px 10px 0 rgba( 0, 0, 0, 0.12 );
 }
@@ -224,7 +223,6 @@ strike {
 
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
 .Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus {
-	background-color: #71a5f4;
 	transition: 0.3s;
 }
 
@@ -267,8 +265,6 @@ strike {
 
 .Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 .Liberty .nav-wrapper .navbar .form-inline .btn:focus {
-	background-color: #4188f1;
-	border-color: #5997f3;
 	color: #fff;
 	outline: 0;
 }
@@ -427,7 +423,6 @@ strike {
 	content: ' ';
 	width: 7.5rem;
 	display: block;
-	border-bottom: 2px solid #4188f1;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
@@ -470,14 +465,12 @@ strike {
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label {
-	background-color: #5997f3;
 	padding: 0.4rem;
 	font-size: 0.8rem;
 	font-weight: 400;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover {
-	background-color: #2979f0;
 	transition: 0.3s;
 }
 
@@ -534,7 +527,6 @@ strike {
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus,
 .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
-	background-color: #4188f1;
 	color: #fff;
 	transition: 0.3s;
 	outline: 0;
@@ -750,7 +742,6 @@ strike {
 }
 
 .dropdown-menu .dropdown-item:hover {
-	background-color: #5997f3;
 	color: #fff;
 	transition: 0.3s;
 }
