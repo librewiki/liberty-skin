@@ -669,7 +669,7 @@ class LibertyTemplate extends BaseTemplate {
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
 				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
 					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
 				}
 
@@ -694,7 +694,7 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				echo Html::closeElement( 'a' );
 
-				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
 					// We should fix this
 					array_shift( $content['children'] );
 					echo Html::openElement( 'div', [
