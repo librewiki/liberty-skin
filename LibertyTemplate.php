@@ -243,7 +243,7 @@ class LibertyTemplate extends BaseTemplate {
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
-								$skin->msg( 'notifications' )->plain()." ($notiCount)",
+								$skin->msg( 'notifications' )->plain().( $notiCount ?  " ($notiCount)" : "" ),
 								[
 									'class' => 'dropdown-item',
 									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
