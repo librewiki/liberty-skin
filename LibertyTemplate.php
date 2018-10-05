@@ -230,9 +230,20 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="dropdown-divider"></div>
 						<?php
 						if ( class_exists( 'EchoEvent' ) ) {
+							$personalTools = $this->getPersonalTools();
+							$notiCount = 0;
+							if (
+								isset( $personalTools['notifications-alert'] ) &&
+								$personalTools['notifications-alert'] &&
+								isset( $personalTools['notifications-message'] ) &&
+								$personalTools['notifications-message']
+							) {
+								$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
+											$personalTools['notifications-message']['links'][0]['text'];
+							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
-								$skin->msg( 'notifications' )->plain(),
+								$skin->msg( 'notifications' )->plain()." ($notiCount)",
 								[
 									'class' => 'dropdown-item',
 									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
@@ -669,7 +680,7 @@ class LibertyTemplate extends BaseTemplate {
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
 				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
 					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
 				}
 
@@ -694,7 +705,7 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				echo Html::closeElement( 'a' );
 
-				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
 					// We should fix this
 					array_shift( $content['children'] );
 					echo Html::openElement( 'div', [
