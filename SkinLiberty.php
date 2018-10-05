@@ -13,8 +13,8 @@ class SkinLiberty extends SkinTemplate {
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
 
 		$mainColor = $GLOBALS['wgLibertyMainColor'];
-		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ?
-			$GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		// @codingStandardsIgnoreLine
+		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
 			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
