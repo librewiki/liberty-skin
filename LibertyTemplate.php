@@ -376,6 +376,10 @@ class LibertyTemplate extends BaseTemplate {
 								SpecialPage::getTitleFor( 'PasswordReset' ),
 								$skin->msg( 'liberty-forgot-pw' )->plain()
 							); ?>
+							<?php echo Linker::linkKnown(
+								SpecialPage::getTitleFor( 'login' ),
+								$skin->msg( 'liberty-login-alter' )->plain()
+							); ?>
 							<input type="hidden" name="action" value="login" />
 							<input type="hidden" name="format" value="json" />
 						</form>
