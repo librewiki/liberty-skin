@@ -143,6 +143,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th[rowspan]:first-child,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>td[rowspan]:first-child {
 	border-right: 0;
+    border-bottom: 1px solid #e1e8ed;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr>th[rowspan]:first-child + td,
