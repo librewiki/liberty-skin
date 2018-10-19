@@ -376,6 +376,7 @@ class LibertyTemplate extends BaseTemplate {
 								SpecialPage::getTitleFor( 'PasswordReset' ),
 								$skin->msg( 'liberty-forgot-pw' )->plain()
 							); ?>
+                            <br>
 							<?php echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'login' ),
 								$skin->msg( 'liberty-login-alter' )->plain()

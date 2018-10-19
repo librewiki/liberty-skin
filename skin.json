@@ -8,7 +8,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.1.9",
+	"version": "1.1.10a2",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
