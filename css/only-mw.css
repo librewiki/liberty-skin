@@ -253,8 +253,9 @@ input[type=button],
 input[type=submit],
 button,
 #mw-editform-cancel {
+    display: inline-block;
+	/* For 1.32 
 	box-shadow: none;
-	display: inline-block;
 	padding: 0.2rem 1rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -264,9 +265,11 @@ button,
 	cursor: pointer;
 	border: 1px solid transparent;
 	border-radius: .25rem;
-	/* btn-success */
+	*/
+	/* btn-success 
 	color: #fff;
 	background-color: #5cb85c;
+	*/
 }
 
 input[type=button]:hover,
