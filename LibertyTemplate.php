@@ -870,7 +870,7 @@ class LibertyTemplate extends BaseTemplate {
 						$classes[$key] = trim( $value );
 					}
 				} else {
-					$classes = array();
+					$classes = [];
 				}
 
 				$item = [
