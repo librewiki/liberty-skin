@@ -153,8 +153,7 @@ hr {
 
 html input[type=button]:hover,
 html input[type=submit]:hover,
-button:hover,
-#mw-editform-cancel:hover {
+button:hover {
 	background-color: #449d44;
 }
 
