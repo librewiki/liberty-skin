@@ -249,35 +249,10 @@ input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ):focus {
 	outline: 0;
 }
 
-input[type=button],
-input[type=submit],
-button,
-#mw-editform-cancel {
-    display: inline-block;
-	/* For 1.32 
-	box-shadow: none;
-	padding: 0.2rem 1rem;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	text-align: center;
-	white-space: nowrap;
-	cursor: pointer;
-	border: 1px solid transparent;
-	border-radius: .25rem;
-	*/
-	/* btn-success 
-	color: #fff;
-	background-color: #5cb85c;
-	*/
-}
-
 input[type=button]:hover,
 input[type=submit]:hover,
 button:hover,
-#mw-editform-cancel:hover {
-	background-color: #449d44;
-}
+
 /* Input End */
 
 /* Postedit */

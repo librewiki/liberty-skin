@@ -70,6 +70,7 @@
 				"js/disable-notice.js",
 				"js/sns-button.js",
 				"js/layout.js"
+				"js/table.js"
 			],
 			"dependencies": "mediawiki.cookie"
 		},
