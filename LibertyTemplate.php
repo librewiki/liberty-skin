@@ -844,21 +844,33 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Link href
-				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				if ( isset( $split[3] ) ) {
+					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '$1', $href, $wgArticlePath );
+					}
 				} else {
-					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
-					$href = str_replace( '$1', $href, $wgArticlePath );
+					$href = null;
 				}
 
-				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				if ( isset( $split[4] ) ) {
+					// Access
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				} else {
+					$access = null;
+				}
 
-				// Classes
-				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
-				foreach ( $classes as $key => $value ) {
-					$classes[$key] = trim( $value );
+				if ( isset( $split[5] ) ) {
+					// Classes
+					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					foreach ( $classes as $key => $value ) {
+						$classes[$key] = trim( $value );
+					}
+				} else {
+					$classes = array();
 				}
 
 				$item = [
@@ -911,22 +923,28 @@ class LibertyTemplate extends BaseTemplate {
 					$title = $text;
 				}
 
-				// Link href
-				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
-				} else {
-					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
-					$href = str_replace( '$1', $href, $wgArticlePath );
+				if ( isset( $split[3] ) ) {
+					// Link href
+					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '$1', $href, $wgArticlePath );
+					}
 				}
 
-				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				if ( isset( $split[4] ) ) {
+					// Access
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				}
 
-				// Classes
-				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
-				foreach ( $classes as $key => $value ) {
-					$classes[$key] = trim( $value );
+				if ( isset( $split[5] ) ) {
+					// Classes
+					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					foreach ( $classes as $key => $value ) {
+						$classes[$key] = trim( $value );
+					}
 				}
 
 				$item = [
