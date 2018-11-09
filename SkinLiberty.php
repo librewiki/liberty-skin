@@ -163,7 +163,3 @@ class SkinLiberty extends SkinTemplate {
 		$bodyAttrs['class'] .= ' Liberty width-size';
 	}
 }
-
-/* Disable mediawiki contents wrapper */
-ParserOptions::setWrapOutputClass();
-
