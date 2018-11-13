@@ -6,7 +6,7 @@
 	font-size: 0.9rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle {
 	background-color: #f5f8fa;
 	border: 1px solid #e1e8ed;
 	border-top-right-radius: 0.35rem;
@@ -14,14 +14,14 @@
 	padding: 0.6rem 1.2rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle h2 {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle h2 {
 	display: inline;
 	font-size: 1.2rem;
 	font-weight: bold;
 	border: none;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc #toctitle .toctoggle {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle .toctoggle {
 	display: none;
 }
 
@@ -41,8 +41,8 @@
 	border-bottom-left-radius: 0.35rem;
 }
 
-#toc ul, .toc ul {
-	margin: 0;
+.toc ul {
+	margin: 0 !important;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctext {
@@ -212,11 +212,11 @@ html .suggestions-result-current {
 	color: #373a3c;
 }
 
-#fixed-toc #toctitle h2 {
+#fixed-toc .toctitle h2 {
 	display: inline-block;
 }
 
-#fixed-toc #toctitle .toctoggle {
+#fixed-toc .toctitle .toctoggle {
 	display: inline-block;
 }
 
