@@ -37,6 +37,10 @@
 	border-bottom-left-radius: 0.35rem;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul ul {
+	margin: 0 0 0 1rem !important;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctext {
 	color: #373a3c;
 }
