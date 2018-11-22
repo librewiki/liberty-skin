@@ -363,7 +363,6 @@ strike {
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed {
 	position: fixed;
-	z-index: 999;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent {
