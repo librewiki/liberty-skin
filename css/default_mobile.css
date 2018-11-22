@@ -91,7 +91,25 @@
 		padding: 0.5rem;
 	}
 }
+/* Max-width: 890 convert for tablet mode alt */
+@media (max-width: 890px) {
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
+		text-align: center;
+		margin: 0 0.25rem;
+	}
 
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link .hide-title {
+		display: none;
+	}
+
+	.Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
+		width: 90%;
+		height: 20rem;
+	}
+		#searchform {
+		width: 100%;
+	}	
+}
 /* Max-width: 798 Menu deadline, convert for tablet mode */
 @media (max-width: 798px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
@@ -107,8 +125,8 @@
 		width: 90%;
 		height: 20rem;
 	}
-}
 
+}
 /* Max-width: 520px Under tablet */
 @media (max-width: 520px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
