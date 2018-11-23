@@ -476,6 +476,7 @@ strike {
 	position: absolute;
 	top: 25.73rem;
 	width: 15rem;
+	z-index: -2;
 }
 /* Right menu End */
 
