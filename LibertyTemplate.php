@@ -641,6 +641,11 @@ class LibertyTemplate extends BaseTemplate {
 					<?php
 				}
 				?>
+				<li class="designedbylibre">
+					<a href="//librewiki.net">
+						<img src="../img/designed by libre.png" height="31">
+					</a>
+				</li>
 			</ul>
 		<?php
 		}
