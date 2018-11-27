@@ -643,7 +643,8 @@ class LibertyTemplate extends BaseTemplate {
 				?>
 				<li class="designedbylibre">
 					<a href="//librewiki.net">
-						<img src="<?php echo $this->getSkin()->getSkinStylePath('img/designedbylibre.png')?>" style="height:31px" alt="Designed by Librewiki">
+						<?php // @codingStandardsIgnoreLine ?>
+						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); ?>" style="height:31px" alt="Designed by Librewiki">
 					</a>
 				</li>
 			</ul>
@@ -744,6 +745,7 @@ class LibertyTemplate extends BaseTemplate {
 								}
 							echo Html::closeElement( 'a' );
 
+							// @codingStandardsIgnoreLine
 							if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 && !empty( $child['children'] ) ) {
 								echo Html::openElement( 'div', [
 									'class' => 'dropdown-menu dropdown-submenu',
