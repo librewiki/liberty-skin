@@ -15,6 +15,10 @@
 			}
 		}
 	}
-	window.onresize = function () { tablewrap(); };
-	window.onload = function () { tablewrap(); };
+	window.onresize = function () {
+		tablewrap();
+	};
+	window.onload = function () {
+		tablewrap();
+	};
 }() );
