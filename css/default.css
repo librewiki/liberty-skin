@@ -427,6 +427,7 @@ strike {
 	background-color: #fff;
 	border: 1px solid #e1e8ed;
 	border-top: 0;
+	z-index : 1;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
@@ -476,13 +477,13 @@ strike {
 	position: absolute;
 	top: 25.73rem;
 	width: 15rem;
-	z-index: -2;
 }
 /* Right menu End */
 
 /* Content */
 .Liberty .content-wrapper {
 	margin-top: 3.33rem;
+	z-index: -1;
 }
 
 .Liberty .content-wrapper .liberty-content {
