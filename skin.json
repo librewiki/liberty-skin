@@ -97,7 +97,11 @@
 	},
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
-		"LibertyTemplate": "LibertyTemplate.php"
+		"LibertyTemplate": "LibertyTemplate.php",
+		"LibertyHooks": "LibertyHooks.php"
+	},
+	"Hooks": {
+		"GetPreferences": "LibertyHooks::onGetPreferences"
 	},
 	"manifest_version": 1
 }

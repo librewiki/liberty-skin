@@ -11,10 +11,13 @@ class SkinLiberty extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
+		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
 
-		$mainColor = $GLOBALS['wgLibertyMainColor'];
+		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
-		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
 			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
