@@ -2,6 +2,8 @@
 class LibertyHooks extends Hooks {
 	/**
 	 * Preference
+	 * @param $user User
+	 * @param $preferences Preferences
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 		$preferences['liberty-color-main'] = [
