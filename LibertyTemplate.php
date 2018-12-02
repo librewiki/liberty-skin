@@ -83,6 +83,8 @@ class LibertyTemplate extends BaseTemplate {
 						$this->html( 'dataAfterContent' );
 					}
 					?>
+					<div class="read-more-container post-content"
+					</div>
 				</div>
 				<footer>
 				<div class="liberty-footer">
