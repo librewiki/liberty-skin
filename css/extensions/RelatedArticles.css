@@ -1,0 +1,12 @@
+.read-more-container {
+  margin: 0;
+}
+.read-more-container .ra-read-more {
+  padding: 0;
+}
+.read-more-container .ext-related-articles-card-list {
+  display: flex;
+}
+.read-more-container .ext-related-articles-card-detail {
+  margin-right: 1rem;
+}

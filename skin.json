@@ -51,6 +51,9 @@
 				},
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
+				},
+				"css/extensions/RelatedArticles.css": {
+					"media": "all"
 				}
 			}
 		},
