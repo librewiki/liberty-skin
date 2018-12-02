@@ -59,16 +59,6 @@ class SkinLiberty extends SkinTemplate {
 		// 윈도우 폰
 		$out->addMeta( 'msapplication-navbutton-color', $mainColor );
 
-		/* OpenGraph */
-		$out->addMeta( 'og:title', $skin->getTitle() );
-		$out->addMeta( 'og:description', strip_tags(
-			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
-		) );
-		$out->addMeta( 'og:image', $ogLogo );
-		$out->addMeta( 'og:locale', $wgLanguageCode );
-		$out->addMeta( 'og:site_name', $wgSitename );
-		$out->addMeta( 'og:url', $skin->getTitle()->getFullURL() );
-
 		/* 트위터 카드 */
 		$out->addMeta( 'twitter:card', 'summary' );
 		if ( isset( $wgTwitterAccount ) ) {
