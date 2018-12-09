@@ -57,7 +57,9 @@ a.external:before {
 	color: unset;
 	font-weight: bold;
 }
-.selflink:hover .selflink:focus {
+
+.selflink:hover,
+.selflink:focus {
 	color: unset;
 	text-decoration: none;
 }
