@@ -2,7 +2,7 @@
 
 [English](.gitlab/README.en.md)
 
-[리브레 위키](https://librewiki.net)의 기본 스킨입니다. 위키 엔진 '리버티'의 기본 레이아웃이 될 예정입니다.
+[리브레 위키](https://librewiki.net)의 기본 스킨입니다. 위키 엔진 '리버티'의 기본 레이아웃입니다.
 
 ## 개발
 

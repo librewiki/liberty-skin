@@ -8,7 +8,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.1.10a2",
+	"version": "1.2.12",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -51,6 +51,9 @@
 				},
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
+				},
+				"css/extensions/RelatedArticles.css": {
+					"media": "all"
 				}
 			}
 		},
@@ -69,7 +72,8 @@
 				"js/delay-scrolling.js",
 				"js/disable-notice.js",
 				"js/sns-button.js",
-				"js/layout.js"
+				"js/layout.js",
+				"js/table.js"
 			],
 			"dependencies": "mediawiki.cookie"
 		},
@@ -96,7 +100,11 @@
 	},
 	"AutoloadClasses": {
 		"SkinLiberty": "SkinLiberty.php",
-		"LibertyTemplate": "LibertyTemplate.php"
+		"LibertyTemplate": "LibertyTemplate.php",
+		"LibertyHooks": "LibertyHooks.php"
+	},
+	"Hooks": {
+		"GetPreferences": "LibertyHooks::onGetPreferences"
 	},
 	"manifest_version": 1
 }

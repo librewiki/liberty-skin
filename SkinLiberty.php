@@ -11,13 +11,16 @@ class SkinLiberty extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
+		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
 
-		$mainColor = $GLOBALS['wgLibertyMainColor'];
+		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
-		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
-			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
+			$ogLogo = $GLOBALS['wgServer'] . $GLOBALS['wgLogo'];
 		}
 
 		$skin = $this->getSkin();
@@ -55,16 +58,6 @@ class SkinLiberty extends SkinTemplate {
 		$out->addMeta( 'theme-color', $mainColor );
 		// 윈도우 폰
 		$out->addMeta( 'msapplication-navbutton-color', $mainColor );
-
-		/* OpenGraph */
-		$out->addMeta( 'og:title', $skin->getTitle() );
-		$out->addMeta( 'og:description', strip_tags(
-			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
-		) );
-		$out->addMeta( 'og:image', $ogLogo );
-		$out->addMeta( 'og:locale', $wgLanguageCode );
-		$out->addMeta( 'og:site_name', $wgSitename );
-		$out->addMeta( 'og:url', $skin->getTitle()->getFullURL() );
 
 		/* 트위터 카드 */
 		$out->addMeta( 'twitter:card', 'summary' );

@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Noto Sans Korean', 'Noto Sans', 'Noto Sans CJK KR', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 	margin: 0;
 }
 
@@ -39,7 +39,7 @@ h4,
 h5,
 h6,
 b {
-	font-family: 'Noto Sans Korean', 'Noto Sans', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Noto Sans Korean', 'Noto Sans', 'Noto Sans CJK KR', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 }
 
 input[type=password] {
@@ -153,8 +153,7 @@ hr {
 
 html input[type=button]:hover,
 html input[type=submit]:hover,
-button:hover,
-#mw-editform-cancel:hover {
+button:hover {
 	background-color: #449d44;
 }
 
@@ -364,7 +363,7 @@ strike {
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed {
 	position: fixed;
-	z-index: 999;
+	z-index: 1;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent {
@@ -429,6 +428,7 @@ strike {
 	background-color: #fff;
 	border: 1px solid #e1e8ed;
 	border-top: 0;
+	z-index : 1;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
@@ -484,6 +484,7 @@ strike {
 /* Content */
 .Liberty .content-wrapper {
 	margin-top: 3.33rem;
+	z-index: -1;
 }
 
 .Liberty .content-wrapper .liberty-content {

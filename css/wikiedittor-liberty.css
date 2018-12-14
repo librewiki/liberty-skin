@@ -25,17 +25,6 @@
 	background-color: #ec971f;
 }
 
-#mw-editform-cancel {
-	color: #fff;
-	background-color: #d9534f;
-	border-color: #d43f3a;
-}
-
-#mw-editform-cancel:hover,
-#mw-editform-cancel:active {
-	background-color: #c9302c;
-}
-
 html .editButtons input,
 html .editButtons input:first-child {
 	margin-right: 0.2rem;
