@@ -468,7 +468,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php
 					echo Linker::linkKnown(
 						$title,
-						'<i class="fa fa-edit"></i> '. $skin->msg( 'edit' )->plain(),
+						'<i class="fa fa-edit"></i> ' . $skin->msg( 'edit' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
