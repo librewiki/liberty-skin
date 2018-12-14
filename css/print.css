@@ -7,7 +7,9 @@ header,
 .content-tools,
 .social-buttons,
 .footer-places,
-.catlinks {
+.catlinks,
+.liberty-notice,
+.header-ads {
   display: none !important;
 }
 
