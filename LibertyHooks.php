@@ -1,4 +1,4 @@
-<?php
+<?php //phpcs:ignore
 class LibertyHooks extends Hooks {
 	/**
 	 * Preference
