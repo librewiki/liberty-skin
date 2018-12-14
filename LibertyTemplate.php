@@ -646,7 +646,7 @@ class LibertyTemplate extends BaseTemplate {
 				<li class="designedbylibre">
 					<a href="//librewiki.net">
 						<?php // @codingStandardsIgnoreLine ?>
-						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); ?>" style="height:31px" alt="Designed by Librewiki">
+						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki"> 
 					</a>
 				</li>
 			</ul>
