@@ -245,7 +245,7 @@ class LibertyTemplate extends BaseTemplate {
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
-								$skin->msg( 'notifications' )->plain().( $notiCount ?  " ($notiCount)" : "" ),
+								$skin->msg( 'notifications' ) - > plain() . ( $notiCount ? " ($notiCount)" : "" ),
 								[
 									'class' => 'dropdown-item',
 									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
@@ -706,7 +706,7 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 					if ( isset( $content['icon'] ) ) {
 						echo Html::rawElement( 'span', [
-							'class' => 'fa fa-'.$content['icon']
+							'class' => "fa fa-".$content['icon']  // phpcs:ignore
 						] );
 					}
 
@@ -738,7 +738,7 @@ class LibertyTemplate extends BaseTemplate {
 							] );
 								if ( isset( $child['icon'] ) ) {
 									echo Html::rawElement( 'span', [
-										'class' => 'fa fa-'.$child['icon']
+										'class' => 'fa fa-'.$child['icon'] // phpcs:ignore
 									] );
 								}
 
@@ -763,7 +763,7 @@ class LibertyTemplate extends BaseTemplate {
 									] );
 										if ( isset( $sub['icon'] ) ) {
 											echo Html::rawElement( 'span', [
-												'class' => 'fa fa-'.$sub['icon']
+												'class' => 'fa fa-'.$sub['icon'] // phpcs:ignore
 											] );
 										}
 
