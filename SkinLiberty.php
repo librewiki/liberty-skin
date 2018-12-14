@@ -20,7 +20,7 @@ class SkinLiberty extends SkinTemplate {
 		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
-			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
+			$ogLogo = $GLOBALS['wgServer'] . $GLOBALS['wgLogo'];
 		}
 
 		$skin = $this->getSkin();
