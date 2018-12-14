@@ -8,7 +8,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.12",
+	"version": "1.2.13",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -54,6 +54,9 @@
 				},
 				"css/extensions/RelatedArticles.css": {
 					"media": "all"
+				},
+				"css/print.css": {
+					"media": "print"
 				}
 			}
 		},
