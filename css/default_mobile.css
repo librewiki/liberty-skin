@@ -146,6 +146,7 @@
 		float: none;
 		width: 100%;
 		margin: auto;
+		margin-bottom: 1rem;
 	}
 
 	.Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
