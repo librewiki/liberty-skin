@@ -465,19 +465,10 @@ class LibertyTemplate extends BaseTemplate {
 			?>
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
-					<?php echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'liberty-purge' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
-							'accesskey' => 'p'
-						],
-						[ 'action' => 'purge' ]
-					);
+					<?php
 					echo Linker::linkKnown(
 						$title,
-						$skin->msg( 'edit' )->plain(),
+						'<i class="fa fa-edit"></i> ' . $skin->msg( 'edit' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
@@ -487,13 +478,13 @@ class LibertyTemplate extends BaseTemplate {
 					);
 					echo Linker::linkKnown(
 						$title,
-						$skin->msg( 'addsection' )->plain(),
+						$skin->msg( 'liberty-purge' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
-							'title' => Linker::titleAttrib( 'ca-addsection', 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'ca-addsection' )
+							'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
+							'accesskey' => 'p'
 						],
-						[ 'action' => 'edit', 'section' => 'new' ]
+						[ 'action' => 'purge' ]
 					);
 					if ( $companionTitle ) {
 						if ( $title->isTalkPage() ) {
@@ -646,7 +637,7 @@ class LibertyTemplate extends BaseTemplate {
 				<li class="designedbylibre">
 					<a href="//librewiki.net">
 						<?php // @codingStandardsIgnoreLine ?>
-						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki"> 
+						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki">
 					</a>
 				</li>
 			</ul>
