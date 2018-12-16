@@ -279,6 +279,10 @@ td.mw-label {
 	padding-right:10px;
 }
 
+#mw-upload-form > .mw-htmlform-submit-buttons > .mw-htmlform-submit {
+	margin-top:20px;
+}
+
 /* Input End */
 
 /* Postedit */
