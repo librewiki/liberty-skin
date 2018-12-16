@@ -270,6 +270,10 @@ button:hover {
 	background-color: #449d44;
 }
 
+#wpDestFile {
+	width:100%;
+}
+
 /* Input End */
 
 /* Postedit */
