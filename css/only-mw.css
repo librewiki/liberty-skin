@@ -274,6 +274,11 @@ button:hover {
 	width:100%;
 }
 
+td.mw-label {
+	width:15%;
+	padding-right:10px;
+}
+
 /* Input End */
 
 /* Postedit */
