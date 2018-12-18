@@ -117,7 +117,30 @@ class SkinLiberty extends SkinTemplate {
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
 		}" );
-		// @codingStandardsIgnoreEnd
+
+				// 폰트 설정
+				$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
+				if ( $LibertyUserFontSettings != "default") {
+					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6 {
+					font-family: $LibertyUserFontSettings;
+					}");
+				}
+				
+				// 웹폰트 로딩
+				$LibertyUserWebFontSettings = $this->getUser()->getOption( 'liberty-font-web' );
+				$LibertyAvailableWebFonts = ['Nanum Gothic', 'Nanum Myeongjo', 'KoPubDotum', 'Noto Sans CJK KR'  ];
+				$LibertyWebFontAvailableCheck = in_array ( $LibertyUserFontSettings , $LibertyAvailableWebFonts);
+				if ( $LibertyUserFontSettings != "default" && $LibertyUserWebFontSettings == True && $LibertyWebFontAvailableCheck == True) {
+					$LibertyWebFontAddress = $this -> getSkin() -> getSkinStylePath ('fonts/'.$LibertyUserFontSettings.".woff");
+					$out->addInlineStyle( "
+					@font-face {
+						font-family: $LibertyUserFontSettings; 
+						src: url('$LibertyWebFontAddress')  format('woff')
+					  }
+					  ");
+				}
+
+				// @codingStandardsIgnoreEnd
 	}
 
 	/**

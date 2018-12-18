@@ -8,7 +8,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.14",
+	"version": "1.3.0",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -25,12 +25,6 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
-				"css/font/Nanum Gothic.css": {
-					"media": "all"
-				},
-				"css/font/Noto Sans KR.css": {
-					"media": "all"
-				},
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},

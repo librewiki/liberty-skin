@@ -19,5 +19,27 @@ class LibertyHooks extends Hooks {
 			'section' => 'liberty/color',
 			'help-message' => 'liberty-pref-color-second-help'
 		];
+
+		$preferences['liberty-font'] = [
+			'type' => 'selectorother',
+			'label-message' => 'liberty-pref-fonts',
+			'section' => 'liberty/font',
+			'options' => [
+				'기본값' => "default",
+				'본고딕' => "Noto Sans CJK KR",
+				'나눔고딕' => "Nanum Gothic",
+				'나눔명조' => 'Nanum Myeongjo',
+				'KoPub돋움' => 'KoPubDotum',
+				'맑은 고딕' => 'Malgun Gothic'
+			],
+			'help-message' => 'liberty-pref-fonts-help'
+		];
+
+		$preferences['liberty-font-web'] = [
+			'type' => 'check',
+			'label-message' => 'liberty-pref-fonts-web',
+			'section' => 'liberty/font/web',
+			'help-message' => 'liberty-pref-fonts-web-help'
+		];
 	}
 }
