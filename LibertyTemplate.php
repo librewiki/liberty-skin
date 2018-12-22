@@ -556,6 +556,15 @@ class LibertyTemplate extends BaseTemplate {
 								'accesskey' => Linker::accesskey( 't-whatlinkshere' )
 							]
 						);
+						echo Linker::linkKnown(
+							$title,
+							$skin->msg( 'liberty-info' )->plain(),
+							[
+								'class' => 'btn btn-secondary tools-btn',
+								'title' => $skin->msg( 'liberty-tooltip-info' )->plain() ,
+							],
+							[ 'action' => 'info' ]
+						);
 						if ( $title->quickUserCan( 'move', $user ) && $title->exists() ) {
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Movepage', $title ),
