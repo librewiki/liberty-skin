@@ -560,7 +560,7 @@ class LibertyTemplate extends BaseTemplate {
 							$title,
 							$skin->msg( 'liberty-info' )->plain(),
 							[
-								'class' => 'btn btn-secondary tools-btn',
+								'class' => 'dropdown-item',
 								'title' => $skin->msg( 'liberty-tooltip-info' )->plain() ,
 							],
 							[ 'action' => 'info' ]
