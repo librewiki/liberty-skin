@@ -459,7 +459,7 @@ class LibertyTemplate extends BaseTemplate {
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
 		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
-		$editable = isset($this->data['content_navigation']['views']['edit']);
+		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 			?>
