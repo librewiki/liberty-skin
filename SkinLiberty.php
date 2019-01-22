@@ -121,7 +121,7 @@ class SkinLiberty extends SkinTemplate {
 				// 폰트 설정
 				$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
 				if ( $LibertyUserFontSettings != "default") {
-					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6 {
+					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;
 					}");
 				}
