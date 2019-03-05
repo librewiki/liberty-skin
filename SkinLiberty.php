@@ -11,6 +11,7 @@ class SkinLiberty extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+
 		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
 		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
 
@@ -82,7 +83,7 @@ class SkinLiberty extends SkinTemplate {
 			$modules[] = 'skins.liberty.loginjs';
 		}
 
-		$out->addModuleScripts( $modules );
+		$out->addModules( $modules );
 
 		// @codingStandardsIgnoreStart
 		$out->addInlineStyle( ".Liberty .nav-wrapper,
@@ -98,19 +99,19 @@ class SkinLiberty extends SkinTemplate {
 		.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
 			background-color: $mainColor;
 		}
-		
+
 		.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:focus {
 			border-color: $secondColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
 			border-bottom: 2px solid $mainColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus,
