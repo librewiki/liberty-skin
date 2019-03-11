@@ -8,7 +8,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.12",
+	"version": "1.2.13",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -61,7 +61,6 @@
 		"skins.liberty.bootstrap": {
 			"scripts": [
 				"js/lib/jquery.ba-throttle-debounce.js",
-				"js/lib/jquery.min.js",
 				"js/lib/bootstrap.min.js"
 			]
 		},
