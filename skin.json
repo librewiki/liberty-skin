@@ -1,14 +1,15 @@
 {
 	"name": "Liberty",
 	"author": [
-		"Librewiki developers", "..."
+		"Librewiki developers",
+		"..."
 	],
 	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
 	"descriptionmsg": "liberty-desc",
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.13",
+	"version": "1.2.14",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -57,14 +58,15 @@
 				}
 			}
 		},
-
+		"skins.liberty.ads": {
+			"scripts": "js/ads.js"
+		},
 		"skins.liberty.bootstrap": {
 			"scripts": [
 				"js/lib/jquery.ba-throttle-debounce.js",
 				"js/lib/bootstrap.min.js"
 			]
 		},
-
 		"skins.liberty.layoutjs": {
 			"scripts": [
 				"js/index-button.js",
