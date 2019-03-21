@@ -10,14 +10,14 @@ class SkinLiberty extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting;
 
 		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
 		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
 
 		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
-		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#' . strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
 		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
@@ -71,6 +71,11 @@ class SkinLiberty extends SkinTemplate {
 			'skins.liberty.bootstrap',
 			'skins.liberty.layoutjs'
 		];
+
+		// Only load ad-related JS if ads are enabled in site configuration
+		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+			$modules[] = 'skins.liberty.ads';
+		}
 
 		// Only load LiveRC JS is we have enabled that feature in site config
 		if ( $wgLibertyEnableLiveRC ) {
@@ -136,7 +141,7 @@ class SkinLiberty extends SkinTemplate {
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
 		);
 
-		// Only load AdSense JS is ads are enabled in site configuration
+		// Only load AdSense JS if ads are enabled in site configuration
 		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
 			$out->addHeadItem(
 				'google-ads',
