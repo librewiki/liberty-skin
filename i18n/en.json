@@ -8,7 +8,7 @@
 	"skinname-liberty": "Liberty",
 	"liberty-btn-close": "Close",
 	"liberty-btn-save-changes": "Save changes",
-	"liberty-desc": "Responsive skin for LibreWiki.",
+	"liberty-desc": "Responsive skin for [https://librewiki.net/ LibreWiki]",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[New]",
 	"liberty-forgot-pw": "Forgot your password?",
@@ -25,10 +25,10 @@
 	"liberty-warning-text": "Enter your username and password correctly.",
 	"liberty.css": "/* CSS placed here will affect users of the Liberty skin */",
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
-	"prefs-liberty": "Liberty Skin",
-	"prefs-color": "Color Setting",
-	"liberty-pref-color-main": "Main Color",
-	"liberty-pref-color-main-help": "Main Color that will be used in this site.",
-	"liberty-pref-color-second": "Second Color",
-	"liberty-pref-color-second-help": "Second Color that will be used in this site."
+	"prefs-liberty": "Liberty skin",
+	"prefs-color": "Color setting",
+	"liberty-pref-color-main": "Main color",
+	"liberty-pref-color-main-help": "Main color that will be used in this site.",
+	"liberty-pref-color-second": "Second color",
+	"liberty-pref-color-second-help": "Second color that will be used in this site."
 }
