@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.14",
+	"version": "1.2.15",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -52,9 +52,6 @@
 				},
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
-				},
-				"css/extensions/RelatedArticles.css": {
-					"media": "all"
 				}
 			}
 		},
@@ -95,6 +92,7 @@
 	},
 	"ResourceModuleSkinStyles": {
 		"liberty": {
+			"+ext.relatedArticles.readMore": "css/extensions/RelatedArticles.css",
 			"+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
 			"+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
 		}
