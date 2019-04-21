@@ -222,8 +222,9 @@ html .suggestions-result-current {
 /* Left ToC End */
 
 /* Input */
+/* The OOUI selector is a horrible hack for the new Recent Changes Filters in MW 1.32+ */
 select,
-input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
+input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ):not( [class=oo-ui-inputWidget-input] ) {
 	display: inline-block;
 	padding: 0.2rem 0.4rem;
 	font-size: 1rem;
