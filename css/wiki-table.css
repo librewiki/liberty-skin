@@ -98,13 +98,13 @@
 	border-bottom: 1px solid #e1e8ed;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>th:nth-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>td:nth-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>th:nth-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>td:nth-child( 1 ) {
 	border-radius: 0.35rem 0 0 0;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>th:nth-last-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>td:nth-last-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>th:nth-last-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:first-child>td:nth-last-child( 1 ) {
 	border-radius: 0 0.35rem 0 0;
 }
 
@@ -113,28 +113,27 @@
 	border-radius: 0.35rem 0.35rem 0 0;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>th:nth-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>td:nth-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>th:nth-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>td:nth-child( 1 ) {
 	border-radius: 0 0 0 0.35rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>th:nth-last-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>td:nth-last-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>th:nth-last-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>td:nth-last-child( 1 ) {
 	border-radius: 0 0 0.35rem 0;
 }
-
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>th:only-child,
 .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:last-child>td:only-child {
 	border-radius: 0 0 0.35rem 0.35rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>th:nth-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>td:nth-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>th:nth-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>td:nth-child( 1 ) {
 	border-radius: 0.35rem 0 0 0.35rem
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>th:nth-last-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>td:nth-last-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>th:nth-last-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr:only-child>td:nth-last-child( 1 ) {
 	border-radius: 0 0.35rem 0.35rem 0
 }
 
@@ -154,10 +153,10 @@
 	border-right: 0;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child+td,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child+th,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child+td,
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child+th {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>th[rowspan]:first-child + th,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child + td,
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox tr>td[rowspan]:first-child + th {
 	border-left: 1px solid #e1e8ed;
 }
 
@@ -188,7 +187,7 @@
 	border-bottom: 0;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child>th:nth-child(1),
-.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child>td:nth-child(1) {
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child>th:nth-child( 1 ),
+.Liberty .content-wrapper .liberty-content .liberty-content-main table.subbox tr:last-child>td:nth-child( 1 ) {
 	border-radius: 0;
 }

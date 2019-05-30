@@ -3,8 +3,7 @@
 	background-color: #0275d8;
 }
 
-#wpSave:hover,
-#wpSave:active {
+#wpSave:hover, #wpSave:active {
 	background-color: #025aa5;
 }
 
@@ -35,11 +34,9 @@ html .editButtons input:first-child {
 .editButtons .cancelLink {
 	margin: 0;
 }
-
 .editButtons * {
 	margin-top: 0.2rem;
 }
-
 /* Button End */
 
 html .wikiEditor-ui-tabs {

@@ -91,7 +91,6 @@
 		padding: 0.5rem;
 	}
 }
-
 /* Max-width: 890 convert for tablet mode alt */
 @media screen and (max-width: 890px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
@@ -107,12 +106,10 @@
 		width: 90%;
 		height: 20rem;
 	}
-
-	#searchform {
+		#searchform {
 		width: 100%;
 	}
 }
-
 /* Max-width: 798 Menu deadline, convert for tablet mode */
 @media screen and (max-width: 798px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
@@ -130,7 +127,6 @@
 	}
 
 }
-
 /* Max-width: 520px Under tablet */
 @media screen and (max-width: 520px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
@@ -167,7 +163,7 @@
 @media screen and (max-width: 397px) {
 	.Liberty .nav-wrapper .navbar .navbar-brand {
 		width: 5rem;
-		background: transparent url(../img/logo.png ) no-repeat scroll left center/auto 1.5rem;
+		background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.5rem;
 	}
 
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link::after {
