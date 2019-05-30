@@ -11,6 +11,6 @@
     "dot-notation": 0
   },
   "plugins": [
-    "json"
+    "eslint-plugin-json"
   ]
 }
