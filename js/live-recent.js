@@ -1,4 +1,4 @@
-$(window).load( function () {
+$( window ).load( function () {
 	'use strict';
 	var documentNamespaces, topicNamespaces, isDocumentTab, limit;
 	documentNamespaces = '0|4|10|12|14|1600';
@@ -66,9 +66,9 @@ $(window).load( function () {
 					text = text.substr( 0, 13 );
 					text += '...';
 				}
-				// @todo FIXME: This just doesn't work and I've no idea why.
-				// The i18n msg is properly defined etc. yet it shows up as <liberty-feed-new>
-				// when called by the below line :-(
+				/* @todo FIXME: This just doesn't work and I've no idea why.
+				The i18n msg is properly defined etc. yet it shows up as <liberty-feed-new>
+				when called by the below line :-( */
 				// text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
 				text = text.replace( '[New]', '<span class="new">[New] </span>' );
 				line += text;
