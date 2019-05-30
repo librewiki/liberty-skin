@@ -52,6 +52,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc a>.tocnumber:hover {
 	text-decoration: underline;
 }
+
 /* Toc End */
 
 /* Title */
@@ -72,6 +73,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-headline-number {
 	color: #4188f1;
 }
+
 /* Title End */
 
 /* Content */
@@ -108,6 +110,7 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul>li {
 	margin: 0;
 }
+
 /* Content */
 
 /* Special Pages */
@@ -127,6 +130,7 @@
 	width: auto;
 	margin: 0;
 }
+
 /* Special Pages End */
 
 /* Search results */
@@ -148,6 +152,7 @@ html .suggestions-result-current {
 	color: #373a3c;
 	transition: 0.3s;
 }
+
 /* Search results End */
 
 /* Thumbnail */
@@ -159,12 +164,14 @@ html .suggestions-result-current {
 .Liberty .content-wrapper .liberty-content .liberty-content-main .thumbinner {
 	margin: auto;
 }
+
 /* Thumbnail End */
 
 /* Recent Changes (Menu) */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-changeslist>h4 {
 	margin-bottom: 0.2rem;
 }
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main .special {
 	margin: 0;
 	padding: 0;
@@ -180,6 +187,7 @@ html .suggestions-result-current {
 	border-bottom: 1px solid #e1e8ed;
 	padding: 0.5rem 0;
 }
+
 /* Recent Changes (Menu) End */
 
 /* Image */
@@ -196,6 +204,7 @@ html .suggestions-result-current {
 .Liberty .content-wrapper .liberty-content .liberty-content-main .thumb img {
 	box-shadow: 0.25rem 0.25rem 0 0 #e1e8ed;
 }
+
 /* Image End */
 
 /* Left ToC */
@@ -219,11 +228,12 @@ html .suggestions-result-current {
 #fixed-toc ul ul {
 	margin-left: 1rem;
 }
+
 /* Left ToC End */
 
 /* Input */
 select,
-input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
+input:not([type=button]):not([type=checkbox]):not([type=submit]) {
 	display: inline-block;
 	padding: 0.2rem 0.4rem;
 	font-size: 1rem;
@@ -235,12 +245,12 @@ input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
 	border-radius: .25rem;
 }
 
-html input.oo-ui-inputWidget-input[type=search]{
-	padding-left: 2.5em!important;
+html input.oo-ui-inputWidget-input[type=search] {
+	padding-left: 2.5em !important;
 }
 
 select:focus,
-input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ):focus {
+input:not([type=button]):not([type=checkbox]):not([type=submit]):focus {
 	border-color: #66afe9;
 	outline: 0;
 }
@@ -271,16 +281,16 @@ button:hover {
 }
 
 #wpDestFile {
-	width:100%;
+	width: 100%;
 }
 
 td.mw-label {
-	width:15%;
-	padding-right:10px;
+	width: 15%;
+	padding-right: 10px;
 }
 
-#mw-upload-form > .mw-htmlform-submit-buttons > .mw-htmlform-submit {
-	margin-top:20px;
+#mw-upload-form>.mw-htmlform-submit-buttons>.mw-htmlform-submit {
+	margin-top: 20px;
 }
 
 /* Input End */
@@ -302,7 +312,7 @@ fieldset {
 html #msupload-dropzone {
 	height: auto;
 }
+
 /* MsUpload End */
 
 /* Extensions End */
-

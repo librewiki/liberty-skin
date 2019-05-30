@@ -109,7 +109,7 @@ p {
 }
 
 ul {
-	list-style-image: url( data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%23373a3c%22%2F%3E%0A%3C%2Fsvg%3E%0A );
+	list-style-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%23373a3c%22%2F%3E%0A%3C%2Fsvg%3E%0A );
 }
 
 img {
@@ -166,12 +166,14 @@ s,
 strike {
 	color: gray;
 }
+
 /* HTML Tag End */
 
 /* Background Color */
 .Liberty {
 	background-color: #f5f5f5;
 }
+
 /* Background Color End*/
 
 /* Content width, alian center */
@@ -180,13 +182,14 @@ strike {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
 /* Content width, alian center End */
 
 /* Nav */
 .Liberty .nav-wrapper {
 	min-height: 2.8rem;
 	z-index: 1001;
-	box-shadow: 0 2px 4px 0 rgba( 0, 0, 0, 0.16 ), 0 2px 10px 0 rgba( 0, 0, 0, 0.12 );
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .Liberty .nav-wrapper .navbar {
@@ -198,7 +201,7 @@ strike {
 .Liberty .nav-wrapper .navbar .navbar-brand {
 	height: 2.8rem;
 	width: 6.6rem;
-	background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.9rem;
+	background: transparent url(../img/logo.png ) no-repeat scroll left center/auto 1.9rem;
 	padding: 0;
 	margin: 0;
 }
@@ -351,6 +354,7 @@ strike {
 	position: relative;
 	min-width: 158px;
 }
+
 /* Nav End */
 
 /* Right menu */
@@ -427,7 +431,7 @@ strike {
 	background-color: #fff;
 	border: 1px solid #e1e8ed;
 	border-top: 0;
-	z-index : 1;
+	z-index: 1;
 }
 
 .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list {
@@ -478,6 +482,7 @@ strike {
 	top: 25.73rem;
 	width: 15rem;
 }
+
 /* Right menu End */
 
 /* Content */
@@ -601,6 +606,7 @@ strike {
 	background-color: #eb5e4c;
 	display: none;
 }
+
 /* Content End */
 
 /* Footer */
@@ -637,6 +643,7 @@ strike {
 	margin-right: 0.8rem;
 	float: left;
 }
+
 /* Footer End */
 
 /* Login model */
@@ -690,16 +697,16 @@ strike {
 	font: inherit;
 }
 
-.Liberty .login-modal .modal-checkbox:not( #noop ) input[type='checkbox']+label {
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox']+label {
 	padding-left: 0.4em;
 	display: table-cell;
 }
 
-.Liberty .login-modal .modal-checkbox:not( #noop ) input[type='checkbox']+label::before {
-	-webkit-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
-	-moz-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
-	-o-transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
-	transition: 0.2s cubic-bezier( 0.175, 0.885, 0.32, 1.275 );
+.Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox']+label::before {
+	-webkit-transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-moz-transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-o-transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	content: '';
 	cursor: pointer;
 	-webkit-box-sizing: border-box;
@@ -722,7 +729,7 @@ strike {
 
 .Liberty .login-modal .modal-checkbox:not(#noop) input[type='checkbox']:checked+label::before {
 	border: 3px solid #777;
-	background-image: linear-gradient( transparent, transparent ), url( data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A );
+	background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M4%2012l5%205L20%205%22%20stroke%3D%22%2300B78C%22%20stroke-width%3D%223%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E%0A );
 }
 
 .Liberty .login-modal .btn {
@@ -732,12 +739,13 @@ strike {
 .Liberty .login-modal .modal-footer {
 	display: none;
 }
+
 /* Login model End*/
 
 /* Bootstrap Custom */
 .dropdown-menu {
 	font-size: 0.95rem;
-	box-shadow: 0 6px 12px rgba( 0, 0, 0, .175 );
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 	border-color: #e1e8ed;
 }
 
@@ -757,7 +765,7 @@ strike {
 .form-control:focus {
 	border-color: #66afe9;
 	outline: 0;
-	box-shadow: inset 0 1px 1px rgba( 0, 0, 0, .075 ), 0 0 8px rgba( 102, 175, 233, .6 );
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 	transition: 0.3s;
 }
 
@@ -775,9 +783,10 @@ strike {
 	outline: 0;
 }
 
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group {
-	z-index: 3; /* Firefox, IE border bug fix */
+.input-group-btn:last-child>.btn,
+.input-group-btn:last-child>.btn-group {
+	z-index: 3;
+	/* Firefox, IE border bug fix */
 }
 
 .close:focus,
@@ -789,6 +798,7 @@ caption {
 	color: #373a3c;
 	caption-side: top;
 }
+
 /* Bootstrap Custom End*/
 
 /* Adsense */
@@ -805,4 +815,5 @@ ins.adsbygoogle {
 .right-ads>ins {
 	min-width: 15rem;
 }
+
 /* Adsense End */
