@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Librewiki developers",
+			"Revi",
 			"..."
 		]
 	},
@@ -10,7 +11,7 @@
 	"liberty-facebook": "페이스북",
 	"liberty-forgot-pw": "비밀번호를 잊으셨나요?",
 	"liberty-login": "로그인",
-    "liberty-login-alter": "다른 방법으로 로그인하기",
+	"liberty-login-alter": "다른 방법으로 로그인하기",
 	"liberty-login-btn": "로그인",
 	"liberty-purge": "갱신",
 	"liberty-recent-discussions": "최근토론",
