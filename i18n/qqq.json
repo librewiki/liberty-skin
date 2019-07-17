@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi"
+		]
+	},
+	"skinname-liberty": "{{skinname}}",
+	"liberty-desc": "{{desc|what=skin|name=Liberty|url=https://www.mediawiki.org/wiki/Skin:Liberty}}",
+    "liberty-facebook": "Tag for Facebook sharing button.",
+    "liberty-feed-new": "Tag for "Recent Changes" tab, displayed when the Recent Change entry is new page creation.",
+	"liberty-forgot-pw": "Tab label for Reset Password",
+	"liberty-login": "The text for a toggle box in [[Special:UserLogin]].",
+	"liberty-login-alter": "The text for a check box in [[Special:UserLogin]].",
+	"liberty-login-btn": "The text for a toggle box in [[Special:UserLogin]].",
+	"liberty-purge": "Tab label for purge button. {{identical|purge}}",
+	"liberty-recent-discussions": "Section name for the "Recent Discussion" tab.",
+	"liberty-remember": "The text for a check box in [[Special:UserLogin]].",
+	"liberty-tooltip-purge": "Help text for the purge button.",
+	"liberty-twitter": "Tag for Twitter sharing button.",
+	"liberty-view-more": "Label in the Liberty skin's menu for the less-important or rarer actions which are not shown as tabs (like moving the page, or for sysops deleting or protecting the page), as well as (for users with a narrow viewing window in their browser) the less-important tab actions which the user's browser is unable to fit in. {{Identical|More}}",
+	"liberty-warning": "Used as a warning message.",
+	"liberty-warning-text": "Used as a warning message displayed when the user types wrong ID or Password. ",
+	"liberty.css": "{{optional}}",
+	"liberty.js": "{{optional}}",
+	"prefs-liberty": "Preferences tab name for Liberty skin specific preferences.",
+	"prefs-color": "Preferences tab name for customizing Liberty skin colors.",
+	"liberty-pref-color-main": "[[Special:Preferences]], liberty tab. Offers user to set a main color scheme for the skin.",
+	"liberty-pref-color-main-help": "[[Special:Preferences]], liberty tab. Offers user to set a main color scheme for the skin.",
+	"liberty-pref-color-second": "[[Special:Preferences]], liberty tab. Offers user to set a sub color scheme for the skin.",
+	"liberty-pref-color-second-help": "[[Special:Preferences]], liberty tab. Offers user to set a sub color scheme for the skin."
+}
