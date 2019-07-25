@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"skinname-liberty": "الحرية",
+	"liberty-desc": "مظهر استجابة لـ[https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "فيسبوك",
+	"liberty-feed-new": "[جديد]",
+	"liberty-forgot-pw": "نسيت كلمة مرورك؟",
+	"liberty-login": "تسجيل الدخول",
+	"liberty-login-alter": "تسجيل الدخول بطريقة أخرى",
+	"liberty-login-btn": "تسجيل الدخول",
+	"liberty-purge": "تطهير",
+	"liberty-recent-discussions": "المناقشات الأخيرة",
+	"liberty-remember": "تذكر تسجيل دخولي",
+	"liberty-tooltip-purge": "تطهير ذاكرة التخزين المؤقت لهذه الصفحة.",
+	"liberty-twitter": "تويتر",
+	"liberty-view-more": "عرض المزيد",
+	"liberty-warning": "تحذير",
+	"liberty-warning-text": "أدخل اسم المستخدم وكلمة المرور الخاصين بك بشكل صحيح.",
+	"liberty.css": "/* CSS الموضوعة هنا ستؤثر على مستخدمي مظهر الحرية */",
+	"liberty.js": "/* سيتم تحميل أي جافا سكريبت هنا للمستخدمين الذين يستخدمون مظهر الحرية */",
+	"prefs-liberty": "مظهر الحرية",
+	"prefs-color": "إعداد اللون",
+	"liberty-pref-color-main": "اللون الأساسي",
+	"liberty-pref-color-main-help": "اللون الرئيسي الذي سيتم استخدامه في هذا الموقع.",
+	"liberty-pref-color-second": "اللون الثانوي",
+	"liberty-pref-color-second-help": "اللون الثانوي الذي سيتم استخدامه في هذا الموقع."
+}

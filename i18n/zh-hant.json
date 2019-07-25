@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "響應 [https://librewiki.net/ LibreWiki] 的外觀",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[新]",
+	"liberty-forgot-pw": "忘記您的密碼？",
+	"liberty-login": "登入",
+	"liberty-login-alter": "以其它方法登入",
+	"liberty-login-btn": "登入",
+	"liberty-purge": "清除",
+	"liberty-recent-discussions": "最近討論",
+	"liberty-remember": "記住我的登入",
+	"liberty-tooltip-purge": "清除此頁面的快取。",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "檢視更多",
+	"liberty-warning": "警告",
+	"liberty-warning-text": "請正確輸入您的使用者名稱和密碼。",
+	"liberty.css": "/* 此處的 CSS 會影響使用 Liberty 外觀的使用者 */",
+	"liberty.js": "/* 在使用者使用 Liberty 外觀時，任何在此的 JavaScript 都會被載入 */",
+	"prefs-liberty": "Liberty 外觀",
+	"prefs-color": "色彩設定",
+	"liberty-pref-color-main": "主色彩",
+	"liberty-pref-color-main-help": "主色彩將會使用在此站台。",
+	"liberty-pref-color-second": "次要色彩",
+	"liberty-pref-color-second-help": "次要色彩將會使用在此站台。"
+}

@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"skinname-liberty": "Liberdade",
+	"liberty-desc": "Tema de resposta rápida para [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Novo]",
+	"liberty-forgot-pw": "Esqueceu-se da palavra-passe?",
+	"liberty-login": "Entrar",
+	"liberty-login-alter": "Entrar por outro método",
+	"liberty-login-btn": "Entrar",
+	"liberty-purge": "Purgar",
+	"liberty-recent-discussions": "Discussões recentes",
+	"liberty-remember": "Recordar a minha palavra-passe",
+	"liberty-tooltip-purge": "Purgue a cache desta página.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Ver mais",
+	"liberty-warning": "Aviso",
+	"liberty-warning-text": "Introduza o seu nome de utilizador e palavra-passe corretamente.",
+	"liberty.css": "/* Código CSS colocado aqui afetará os utilizadores do tema Liberdade */",
+	"liberty.js": "/* Todo o código Javascript colocado aqui será carregado para utilizadores do tema Liberdade */",
+	"prefs-liberty": "Tema Liberdade",
+	"prefs-color": "Configuração de cores",
+	"liberty-pref-color-main": "Cor principal",
+	"liberty-pref-color-main-help": "Cor principal que será usada neste ''site''.",
+	"liberty-pref-color-second": "Cor secundária",
+	"liberty-pref-color-second-help": "Cor secundária que será usada neste ''site''."
+}

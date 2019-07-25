@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"liberty-feed-new": "[Nieuw]",
+	"liberty-forgot-pw": "Wachtwoord vergeten?",
+	"liberty-login": "Aanmelden",
+	"liberty-login-btn": "Aanmelden",
+	"liberty-purge": "Vernieuwen",
+	"liberty-view-more": "Meer weergeven¡",
+	"liberty-warning": "Waarschuwing",
+	"liberty-warning-text": "Voer uw gebruikersnaam en wachtwoord in.",
+	"liberty.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op de vormgeving Liberty */",
+	"liberty.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die de vormgeving Liberty gebruiken */",
+	"prefs-liberty": "Liberty vormgeving",
+	"prefs-color": "Kleureninstelling",
+	"liberty-pref-color-main": "Primaire kleur",
+	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
+	"liberty-pref-color-second": "Secundaire kleur",
+	"liberty-pref-color-second-help": "De secundaire kleur die voor deze site gebruikt zal worden."
+}

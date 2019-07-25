@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"skinname-liberty": "Frihet",
+	"liberty-desc": "Responsivt utseende för [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nytt]",
+	"liberty-forgot-pw": "Glömt ditt lösenord?",
+	"liberty-login": "Logga in",
+	"liberty-login-alter": "Logga in på ett annat sätt",
+	"liberty-login-btn": "Logga in",
+	"liberty-purge": "Rensa",
+	"liberty-recent-discussions": "Nyliga diskussioner",
+	"liberty-remember": "Kom ihåg min inloggning",
+	"liberty-tooltip-purge": "Rensa cache för denna sida.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Visa mer",
+	"liberty-warning": "Varning",
+	"liberty-warning-text": "Ange ditt användarnamn och lösenord korrekt.",
+	"liberty.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Liberty */",
+	"liberty.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Liberty */",
+	"prefs-liberty": "Utseendet Liberty",
+	"prefs-color": "Färginställning",
+	"liberty-pref-color-main": "Primär färg",
+	"liberty-pref-color-main-help": "Primära färgen som kommer att användas på denna webbplats.",
+	"liberty-pref-color-second": "Sekundär färg",
+	"liberty-pref-color-second-help": "Sekundära färgen som kommer att användas på denna webbplats."
+}

@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nuovo]",
+	"liberty-forgot-pw": "Hai dimenticato la password?",
+	"liberty-login": "Entra",
+	"liberty-login-alter": "Accedi con un altro metodo",
+	"liberty-login-btn": "Entra",
+	"liberty-tooltip-purge": "Pulisci la cache di questa pagina.",
+	"liberty-twitter": "Twitter",
+	"liberty-warning": "Attenzione",
+	"liberty.css": "/* Gli stili CSS inseriti qui si applicano agli utenti che usano il tema Liberty */",
+	"liberty.js": "/* Il codice JavaScript inserito qui viene caricato dagli utenti che usano il tema Liberty */",
+	"liberty-pref-color-main": "Colore principale",
+	"liberty-pref-color-main-help": "Colore principale che sarà utilizzato in questo sito.",
+	"liberty-pref-color-second": "Colore secondario",
+	"liberty-pref-color-second-help": "Colore secondario che sarà utilizzato in questo sito."
+}

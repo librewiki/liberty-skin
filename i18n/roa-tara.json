@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Skin responsive pe [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Feisbuc",
+	"liberty-feed-new": "[Nuève]",
+	"liberty-forgot-pw": "T'è scurdate 'a passuord toje?",
+	"liberty-login": "Tràse",
+	"liberty-login-alter": "Tràse cu 'n'otre metode",
+	"liberty-login-btn": "Tràse",
+	"liberty-purge": "Sdevache",
+	"liberty-recent-discussions": "Urteme 'ngazzaminde",
+	"liberty-remember": "Arrecuerdate ca agghie trasute",
+	"liberty-tooltip-purge": "Pulizze 'a cache de sta pàgene.",
+	"liberty-twitter": "Tuitter",
+	"liberty-view-more": "'Ndruche de cchiù",
+	"liberty-warning": "Avvertimende",
+	"liberty-warning-text": "Mitte 'u nome utende tune e 'a passuord.",
+	"liberty.css": "/* 'U CSS ca se iacchie aqquà 'u 'ndrucane le utinde d'a masckere Liberty */",
+	"liberty.js": "/* Ogne JavaScript aqquà avène carecate pe le utinde ca ausane 'a masckere Liberty */",
+	"prefs-liberty": "Skin Liberty",
+	"prefs-color": "'mBostaziune d'u culore",
+	"liberty-pref-color-main": "Culore prengepàle",
+	"liberty-pref-color-main-help": "Culore prengèpale ca avpne ausate jndr'à stu site.",
+	"liberty-pref-color-second": "Culore secondarie",
+	"liberty-pref-color-second-help": "Culore secondarie ca avène ausate jndr'à stu site."
+}
