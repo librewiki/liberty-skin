@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Gam3"
 		]
 	},
 	"liberty-feed-new": "[Nieuw]",
@@ -15,7 +16,7 @@
 	"liberty.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op de vormgeving Liberty */",
 	"liberty.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die de vormgeving Liberty gebruiken */",
 	"prefs-liberty": "Liberty vormgeving",
-	"prefs-color": "Kleureninstelling",
+	"prefs-color": "Kleurinstelling",
 	"liberty-pref-color-main": "Primaire kleur",
 	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
 	"liberty-pref-color-second": "Secundaire kleur",
