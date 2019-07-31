@@ -125,20 +125,6 @@ class SkinLiberty extends SkinTemplate {
 					font-family: $LibertyUserFontSettings;
 					}");
 				}
-				
-				// 웹폰트 로딩
-				$LibertyUserWebFontSettings = $this->getUser()->getOption( 'liberty-font-web' );
-				$LibertyAvailableWebFonts = ['Nanum Gothic', 'Nanum Myeongjo', 'KoPubDotum', 'Noto Sans CJK KR'  ];
-				$LibertyWebFontAvailableCheck = in_array ( $LibertyUserFontSettings , $LibertyAvailableWebFonts);
-				if ( $LibertyUserFontSettings != "default" && $LibertyUserWebFontSettings == True && $LibertyWebFontAvailableCheck == True) {
-					$LibertyWebFontAddress = $this -> getSkin() -> getSkinStylePath ('fonts/'.$LibertyUserFontSettings.".woff");
-					$out->addInlineStyle( "
-					@font-face {
-						font-family: $LibertyUserFontSettings; 
-						src: url('$LibertyWebFontAddress')  format('woff')
-					  }
-					  ");
-				}
 
 				// @codingStandardsIgnoreEnd
 	}
