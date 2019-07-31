@@ -144,6 +144,17 @@ class SkinLiberty extends SkinTemplate {
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
 		);
 
+		$out->addHeadItem(
+			'webfonts',
+			// @codingStandardsIgnoreLine
+			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
+		);
+
+		$out->addHeadItem(
+			'webfonts-kopub',
+			// @codingStandardsIgnoreLine
+			'<link rel="stylesheet" href="//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css">'
+		);
 		// Only load AdSense JS is ads are enabled in site configuration
 		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
 			$out->addHeadItem(

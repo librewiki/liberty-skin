@@ -49,9 +49,6 @@
 				"css/extensions/RelatedArticles.css": {
 					"media": "all"
 				},
-				"css/font/webfont.css": {
-					"media": "all"
-				},
 				"css/print.css": {
 					"media": "print"
 				}
