@@ -1,5 +1,4 @@
 {
-  "extends": "wikimedia",
   "env": {
     "browser": true,
     "jquery": true
