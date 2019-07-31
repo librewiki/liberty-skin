@@ -8,8 +8,5 @@
   },
   "rules": {
     "dot-notation": 0
-  },
-  "plugins": [
-    "eslint-plugin-json"
-  ]
+  }
 }
