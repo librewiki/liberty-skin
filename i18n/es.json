@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nuevo]",
+	"liberty-purge": "Purgar",
+	"liberty-recent-discussions": "Debates recientes",
+	"liberty-tooltip-purge": "Purgar la antememoria de esta página.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Ver más",
+	"liberty-pref-color-main": "Color principal"
+}
