@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"skinname-liberty": "Liberty",
-	"liberty-desc": "響應 [https://librewiki.net/ LibreWiki] 的外觀",
+	"liberty-desc": "響應 [https://librewiki.net/ LibreWiki] 的佈景主題",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[新]",
 	"liberty-forgot-pw": "忘記您的密碼？",
@@ -20,9 +21,9 @@
 	"liberty-view-more": "檢視更多",
 	"liberty-warning": "警告",
 	"liberty-warning-text": "請正確輸入您的使用者名稱和密碼。",
-	"liberty.css": "/* 此處的 CSS 會影響使用 Liberty 外觀的使用者 */",
-	"liberty.js": "/* 在使用者使用 Liberty 外觀時，任何在此的 JavaScript 都會被載入 */",
-	"prefs-liberty": "Liberty 外觀",
+	"liberty.css": "/* 此處的 CSS 會影響使用 Liberty 佈景主題的使用者 */",
+	"liberty.js": "/* 任何在此的 JavaScript 都會在使用者使用 Liberty 佈景主題時被載入 */",
+	"prefs-liberty": "Liberty 佈景主題",
 	"prefs-color": "色彩設定",
 	"liberty-pref-color-main": "主色彩",
 	"liberty-pref-color-main-help": "主色彩將會使用在此站台。",
