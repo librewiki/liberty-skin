@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Новий]",
+	"liberty-forgot-pw": "Забули пароль?",
+	"liberty-login": "Увійти",
+	"liberty-login-alter": "Увійти іншим методом",
+	"liberty-login-btn": "Увійти",
+	"liberty-purge": "Очистити",
+	"liberty-tooltip-purge": "Очистити кеш цієї сторінки.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Показати більше",
+	"liberty-warning": "Попередження",
+	"liberty-warning-text": "Введіть ваше ім'я користувача і пароль коректно.",
+	"liberty.css": "/* Розміщений тут CSS-код буде використаний в темі оформлення Свобода */",
+	"liberty.js": "/* Розміщений тут код JavaScript буде завантажений для всіх користувачів, що використовують тему оформлення Свобода */",
+	"prefs-color": "Налаштування кольору",
+	"liberty-pref-color-main": "Основний колір",
+	"liberty-pref-color-main-help": "Основний колір, що використовуватиметься в цьому сайті.",
+	"liberty-pref-color-second": "Вторинний колір",
+	"liberty-pref-color-second-help": "Вторинний колір, що використовуватиметься в цьому сайті."
+}

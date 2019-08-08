@@ -11,5 +11,6 @@
 	"liberty-tooltip-purge": "Purgar la antememoria de esta página.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver más",
-	"liberty-pref-color-main": "Color principal"
+	"liberty-pref-color-main": "Color principal",
+	"liberty-pref-color-second": "Color secundario"
 }
