@@ -123,7 +123,16 @@ class SkinLiberty extends SkinTemplate {
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
 		}" );
-		// @codingStandardsIgnoreEnd
+
+				// 폰트 설정
+				$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
+				if ( $LibertyUserFontSettings != "default") {
+					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6, b {
+					font-family: $LibertyUserFontSettings;
+					}");
+				}
+
+				// @codingStandardsIgnoreEnd
 	}
 
 	/**
@@ -141,7 +150,13 @@ class SkinLiberty extends SkinTemplate {
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
 		);
 
-		// Only load AdSense JS if ads are enabled in site configuration
+		$out->addHeadItem(
+			'webfonts',
+			// @codingStandardsIgnoreLine
+			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
+		);
+
+		// Only load AdSense JS is ads are enabled in site configuration
 		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
 			$out->addHeadItem(
 				'google-ads',

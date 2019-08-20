@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.2.16",
+	"version": "1.3.3",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -26,12 +26,6 @@
 	"ResourceModules": {
 		"skins.liberty.styles": {
 			"styles": {
-				"css/font/Nanum Gothic.css": {
-					"media": "all"
-				},
-				"css/font/Noto Sans KR.css": {
-					"media": "all"
-				},
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
 				},
@@ -47,11 +41,20 @@
 				"css/only-mw.css": {
 					"media": "all"
 				},
+				"css/webfont.css": {
+					"media" : "all"
+				},
 				"css/wiki-table.css": {
 					"media": "all"
 				},
 				"css/wikiedittor-liberty.css": {
 					"media": "all"
+				},
+				"css/extensions/RelatedArticles.css": {
+					"media": "all"
+				},
+				"css/print.css": {
+					"media": "print"
 				}
 			}
 		},
