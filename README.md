@@ -36,8 +36,3 @@
 * 커스텀 클래스는 `,`로 구분하여 작성해주세요. (예시: `classA, classB`를 적어서 `classA`와 `classB` 클래스 추가)
 
 예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에서 보실 수 있습니다. 
-
-## 라이선스 정보
-* 이 스킨은 Noto Sans CJK KR 폰트를 포함하고 있으며 해당 폰트는 OFL 1.1 라이선스로 배포되었습니다.
-* 이 스킨은 나눔고딕, 나눔명조 폰트를 포함하고 있으며 해당 폰트는 OFL 1.1 라이선스로 배포되었습니다.
-* 이 스킨은 KoPub돋움 폰트를 포함하고 있습니다.
