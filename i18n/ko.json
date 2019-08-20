@@ -20,6 +20,8 @@
 	"liberty-recent-discussions": "최근 토론",
 	"liberty-remember": "로그인 상태를 유지하기",
 	"liberty-tooltip-purge": "이 문서의 캐시를 새로 고칩니다.",
+	"liberty-info": "문서 정보",
+	"liberty-tooltip-info": "문서의 정보를 열람합니다",
 	"liberty-twitter": "트위터",
 	"liberty-view-more": "더 보기",
 	"liberty-warning": "경고",
@@ -30,6 +32,11 @@
 	"prefs-color": "색상 설정",
 	"liberty-pref-color-main": "주 색상",
 	"liberty-pref-color-main-help": "이 사이트에서 주로 사용할 색상입니다.",
+	"prefs-font": "글꼴 설정",
+	"prefs-web": "웹폰트 로딩",
 	"liberty-pref-color-second": "보조 색상 지정",
-	"liberty-pref-color-second-help": "사이트에서 보조로 사용할 색상을 정합니다."
+	"liberty-pref-color-second-help": "사이트에서 보조로 사용할 색상을 정합니다.",
+	"liberty-pref-fonts": "사용하실 폰트를 선택하세요.",
+	"liberty-pref-fonts-helplabel": "설명",
+	"liberty-pref-fonts-help": "선택하신 폰트는 웹폰트로 로드됩니다. 하지만 맑은 고딕은 사용자의 시스템에 설치되어 있어야 적용됩니다."
 }

@@ -1,5 +1,5 @@
 /* Max-width: 1023 Desktop deadline */
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
 	.Liberty .nav-wrapper .navbar {
 		padding: 0 0.5rem;
 	}
@@ -92,7 +92,7 @@
 	}
 }
 /* Max-width: 890 convert for tablet mode alt */
-@media (max-width: 890px) {
+@media screen and (max-width: 890px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
 		text-align: center;
 		margin: 0 0.25rem;
@@ -108,10 +108,10 @@
 	}
 		#searchform {
 		width: 100%;
-	}	
+	}
 }
 /* Max-width: 798 Menu deadline, convert for tablet mode */
-@media (max-width: 798px) {
+@media screen and (max-width: 798px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
 		text-align: center;
 		margin: 0 0.25rem;
@@ -128,7 +128,7 @@
 
 }
 /* Max-width: 520px Under tablet */
-@media (max-width: 520px) {
+@media screen and (max-width: 520px) {
 	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link {
 		padding: 0.7rem 0.3rem;
 	}
@@ -146,20 +146,21 @@
 		float: none;
 		width: 100%;
 		margin: auto;
+		margin-bottom: 1rem;
 	}
 
 	.Liberty .content-wrapper .liberty-content .liberty-content-main iframe {
 		width: 100%;
 		height: 15rem;
 	}
-	
+
 	#searchform {
 		width: 100%;
 	}
 }
 
 /* Max-width: 397px Under Big-phone */
-@media (max-width: 397px) {
+@media screen and (max-width: 397px) {
 	.Liberty .nav-wrapper .navbar .navbar-brand {
 		width: 5rem;
 		background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.5rem;
@@ -187,7 +188,7 @@
 }
 
 /* Max-width: 34rem; */
-@media ( max-width: 34rem ) {
+@media screen and (max-width: 34rem) {
 	.Liberty .login-modal .modal-sm {
 		width: auto;
 	}

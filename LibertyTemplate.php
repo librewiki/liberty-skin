@@ -459,25 +459,17 @@ class LibertyTemplate extends BaseTemplate {
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
 		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
-
+		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 			?>
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
-					<?php echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'liberty-purge' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
-							'accesskey' => 'p'
-						],
-						[ 'action' => 'purge' ]
-					);
+					<?php
+					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
 					echo Linker::linkKnown(
 						$title,
-						$skin->msg( 'edit' )->plain(),
+						$editIcon . $skin->msg( 'edit' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
@@ -485,23 +477,12 @@ class LibertyTemplate extends BaseTemplate {
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					);
-					echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'addsection' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => Linker::titleAttrib( 'ca-addsection', 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'ca-addsection' )
-						],
-						[ 'action' => 'edit', 'section' => 'new' ]
-					);
 					if ( $companionTitle ) {
 						if ( $title->isTalkPage() ) {
-							$titlename = $skin->msg( 'articlepage' )->plain();
+							$titlename = $skin->msg( 'nstab-main' )->plain();
 							$additionalArrayStuff = [
-								// @todo FIXME!
-								'title' => $titlename . '을 불러옵니다. [alt+shift+t]',
-								'accesskey' => 't'
+								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
 							];
 						} else {
 							$titlename = $skin->msg( 'talk' )->plain();
@@ -548,6 +529,16 @@ class LibertyTemplate extends BaseTemplate {
 						}
 						echo Linker::linkKnown(
 							$title,
+							$skin->msg( 'liberty-purge' )->plain(),
+							[
+								'class' => 'dropdown-item',
+								'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
+								'accesskey' => 'p'
+							],
+							[ 'action' => 'purge' ]
+						);
+						echo Linker::linkKnown(
+							$title,
 							$skin->msg( $watched )->plain(),
 							[
 								'class' => 'dropdown-item',
@@ -564,6 +555,15 @@ class LibertyTemplate extends BaseTemplate {
 								'title' => Linker::titleAttrib( 't-whatlinkshere', 'withaccess' ),
 								'accesskey' => Linker::accesskey( 't-whatlinkshere' )
 							]
+						);
+						echo Linker::linkKnown(
+							$title,
+							$skin->msg( 'liberty-info' )->plain(),
+							[
+								'class' => 'dropdown-item',
+								'title' => $skin->msg( 'liberty-tooltip-info' )->plain() ,
+							],
+							[ 'action' => 'info' ]
 						);
 						if ( $title->quickUserCan( 'move', $user ) && $title->exists() ) {
 							echo Linker::linkKnown(
@@ -646,7 +646,7 @@ class LibertyTemplate extends BaseTemplate {
 				<li class="designedbylibre">
 					<a href="//librewiki.net">
 						<?php // @codingStandardsIgnoreLine ?>
-						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki"> 
+						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki">
 					</a>
 				</li>
 			</ul>
