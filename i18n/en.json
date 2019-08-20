@@ -29,5 +29,9 @@
 	"liberty-pref-color-main": "Main color",
 	"liberty-pref-color-main-help": "Main color that will be used in this site.",
 	"liberty-pref-color-second": "Secondary color",
-	"liberty-pref-color-second-help": "Secondary color that will be used in this site."
+	"liberty-pref-color-second-help": "Secondary color that will be used in this site.",
+	"prefs-font": "Font preference",
+	"liberty-pref-fonts": "Select the font you want to use",
+	"liberty-pref-fonts-helplabel": "Help",
+	"liberty-pref-fonts-help": "The font will be loaded by remote location except the Malgun Gothic."
 }
