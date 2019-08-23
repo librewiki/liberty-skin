@@ -13,9 +13,11 @@
 	"liberty-login": "登入",
 	"liberty-login-alter": "以其它方法登入",
 	"liberty-login-btn": "登入",
+	"liberty-info": "資訊",
 	"liberty-purge": "清除",
 	"liberty-recent-discussions": "最近討論",
 	"liberty-remember": "記住我的登入",
+	"liberty-tooltip-info": "檢視文件的資訊",
 	"liberty-tooltip-purge": "清除此頁面的快取。",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "檢視更多",
@@ -28,5 +30,9 @@
 	"liberty-pref-color-main": "主色彩",
 	"liberty-pref-color-main-help": "主色彩將會使用在此站台。",
 	"liberty-pref-color-second": "次要色彩",
-	"liberty-pref-color-second-help": "次要色彩將會使用在此站台。"
+	"liberty-pref-color-second-help": "次要色彩將會使用在此站台。",
+	"prefs-font": "字型偏好設定",
+	"liberty-pref-fonts": "選擇您想使用的字型",
+	"liberty-pref-fonts-helplabel": "幫助",
+	"liberty-pref-fonts-help": "Malgun Gothic 以外的字型會由遠端位置來載入。"
 }

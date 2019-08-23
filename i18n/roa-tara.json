@@ -12,9 +12,11 @@
 	"liberty-login": "Tràse",
 	"liberty-login-alter": "Tràse cu 'n'otre metode",
 	"liberty-login-btn": "Tràse",
+	"liberty-info": "'Mbormazione",
 	"liberty-purge": "Sdevache",
 	"liberty-recent-discussions": "Urteme 'ngazzaminde",
 	"liberty-remember": "Arrecuerdate ca agghie trasute",
+	"liberty-tooltip-info": "'Ndruche le 'mbormaziune d'u documende",
 	"liberty-tooltip-purge": "Pulizze 'a cache de sta pàgene.",
 	"liberty-twitter": "Tuitter",
 	"liberty-view-more": "'Ndruche de cchiù",
@@ -27,5 +29,9 @@
 	"liberty-pref-color-main": "Culore prengepàle",
 	"liberty-pref-color-main-help": "Culore prengèpale ca avpne ausate jndr'à stu site.",
 	"liberty-pref-color-second": "Culore secondarie",
-	"liberty-pref-color-second-help": "Culore secondarie ca avène ausate jndr'à stu site."
+	"liberty-pref-color-second-help": "Culore secondarie ca avène ausate jndr'à stu site.",
+	"prefs-font": "Preferenze d'u stile d'u carattere",
+	"liberty-pref-fonts": "Scacchie 'nu stile de carattere ca vuè ccu ause",
+	"liberty-pref-fonts-helplabel": "Aijute",
+	"liberty-pref-fonts-help": "'U stile d'u carattere avène carecate da 'nu luèche lundane tranne 'u Malgun Gothic."
 }

@@ -19,5 +19,8 @@
 	"liberty-pref-color-main": "Colore principale",
 	"liberty-pref-color-main-help": "Colore principale che sarà utilizzato in questo sito.",
 	"liberty-pref-color-second": "Colore secondario",
-	"liberty-pref-color-second-help": "Colore secondario che sarà utilizzato in questo sito."
+	"liberty-pref-color-second-help": "Colore secondario che sarà utilizzato in questo sito.",
+	"prefs-font": "Preferenze font",
+	"liberty-pref-fonts": "Seleziona il carattere che vuoi utilizzare",
+	"liberty-pref-fonts-helplabel": "Aiuto"
 }

@@ -12,9 +12,11 @@
 	"liberty-login": "تسجيل الدخول",
 	"liberty-login-alter": "تسجيل الدخول بطريقة أخرى",
 	"liberty-login-btn": "تسجيل الدخول",
+	"liberty-info": "معلومات",
 	"liberty-purge": "تطهير",
 	"liberty-recent-discussions": "المناقشات الأخيرة",
 	"liberty-remember": "تذكر تسجيل دخولي",
+	"liberty-tooltip-info": "عرض معلومات المستند",
 	"liberty-tooltip-purge": "تطهير ذاكرة التخزين المؤقت لهذه الصفحة.",
 	"liberty-twitter": "تويتر",
 	"liberty-view-more": "عرض المزيد",
@@ -27,5 +29,9 @@
 	"liberty-pref-color-main": "اللون الأساسي",
 	"liberty-pref-color-main-help": "اللون الرئيسي الذي سيتم استخدامه في هذا الموقع.",
 	"liberty-pref-color-second": "اللون الثانوي",
-	"liberty-pref-color-second-help": "اللون الثانوي الذي سيتم استخدامه في هذا الموقع."
+	"liberty-pref-color-second-help": "اللون الثانوي الذي سيتم استخدامه في هذا الموقع.",
+	"prefs-font": "تفضيلات الخط",
+	"liberty-pref-fonts": "حدد الخط الذي تريد استخدامه",
+	"liberty-pref-fonts-helplabel": "مساعدة",
+	"liberty-pref-fonts-help": "سيتم تحميل الخط بواسطة الموقع البعيد باستثناء Malgun Gothic."
 }

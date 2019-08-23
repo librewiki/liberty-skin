@@ -10,11 +10,13 @@
 	"liberty-forgot-pw": "Hutt Dir Äert Passwuert vergiess?",
 	"liberty-login": "Aloggen",
 	"liberty-login-btn": "Aloggen",
+	"liberty-info": "Informatioun",
 	"liberty-purge": "Botzen",
 	"liberty-recent-discussions": "Rezent Diskussiounen",
 	"liberty-remember": "Mäi Login verhalen",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Méi weisen",
 	"liberty-warning": "Warnung",
-	"prefs-color": "Faarwastellung"
+	"prefs-color": "Faarwastellung",
+	"liberty-pref-fonts-helplabel": "Hëllef"
 }
