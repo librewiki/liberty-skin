@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"Gam3"
+			"Gam3",
+			"RadioAzureus"
 		]
 	},
 	"liberty-feed-new": "[Nieuw]",
@@ -10,7 +11,9 @@
 	"liberty-login": "Aanmelden",
 	"liberty-login-alter": "Aanmelden met een andere methode",
 	"liberty-login-btn": "Aanmelden",
+	"liberty-info": "Informatie",
 	"liberty-purge": "Vernieuwen",
+	"liberty-tooltip-info": "Bekijk document informatie",
 	"liberty-view-more": "Meer weergeven",
 	"liberty-warning": "Waarschuwing",
 	"liberty-warning-text": "Voer uw gebruikersnaam en wachtwoord in.",
@@ -21,5 +24,9 @@
 	"liberty-pref-color-main": "Primaire kleur",
 	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
 	"liberty-pref-color-second": "Secundaire kleur",
-	"liberty-pref-color-second-help": "De secundaire kleur die voor deze site gebruikt zal worden."
+	"liberty-pref-color-second-help": "De secundaire kleur die voor deze site gebruikt zal worden.",
+	"prefs-font": "Lettertypevoorkeur",
+	"liberty-pref-fonts": "Selecteer het te gebruiken lettertype",
+	"liberty-pref-fonts-helplabel": "Hulp",
+	"liberty-pref-fonts-help": "Het lettertype zal vanaf een externe locatie worden geladen, met uitzondering van Malgun Gothic."
 }
