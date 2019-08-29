@@ -3,7 +3,8 @@
 		"authors": [
 			"Mainframe98",
 			"Gam3",
-			"RadioAzureus"
+			"RadioAzureus",
+			"Siebrand"
 		]
 	},
 	"liberty-feed-new": "[Nieuw]",
@@ -13,7 +14,7 @@
 	"liberty-login-btn": "Aanmelden",
 	"liberty-info": "Informatie",
 	"liberty-purge": "Vernieuwen",
-	"liberty-tooltip-info": "Bekijk document informatie",
+	"liberty-tooltip-info": "Documentgegevens bekijken",
 	"liberty-view-more": "Meer weergeven",
 	"liberty-warning": "Waarschuwing",
 	"liberty-warning-text": "Voer uw gebruikersnaam en wachtwoord in.",
