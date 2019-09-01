@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko",
+			"Wladek92"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Habillage réactif pour [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nouveau]",
+	"liberty-forgot-pw": "Mot de passe oublié ?",
+	"liberty-login": "Connexion",
+	"liberty-login-alter": "Connexion avec une autre méthode",
+	"liberty-login-btn": "Connexion",
+	"liberty-info": "Info",
+	"liberty-purge": "Purger",
+	"liberty-recent-discussions": "Discussions récentes",
+	"liberty-remember": "Se souvenir de mon identifiant",
+	"liberty-tooltip-info": "Afficher les informations du document",
+	"liberty-tooltip-purge": "Purger le cache de cette page.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Afficher plus",
+	"liberty-warning": "Avertisssement",
+	"liberty-warning-text": "Saisir correctement votre nom d’utilisateur et votre mot de passe.",
+	"liberty.css": "/* Le CSS placé ici affectera les utilisateurs de l’habillage Liberty */",
+	"liberty.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs utilisant l’habillage Liberty */",
+	"prefs-liberty": "Habillage Liberty",
+	"prefs-color": "Paramètre de couleur",
+	"liberty-pref-color-main": "Couleur principale",
+	"liberty-pref-color-main-help": "Couleur principale qui sera utilisée pour ce site.",
+	"liberty-pref-color-second": "Couleur secondaire",
+	"liberty-pref-color-second-help": "Couleur secondaire qui sera utilisée pour ce site.",
+	"prefs-font": "Préférence de police",
+	"liberty-pref-fonts": "Sélectionner la police que vous voulez utiliser",
+	"liberty-pref-fonts-helplabel": "Aide",
+	"liberty-pref-fonts-help": "La police sera chargée par l'emplacement distant, sauf Malgun Gothic."
+}

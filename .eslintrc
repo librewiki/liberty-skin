@@ -1,5 +1,4 @@
 {
-  "extends": "wikimedia",
   "env": {
     "browser": true,
     "jquery": true
@@ -9,8 +8,5 @@
   },
   "rules": {
     "dot-notation": 0
-  },
-  "plugins": [
-    "eslint-plugin-json"
-  ]
+  }
 }

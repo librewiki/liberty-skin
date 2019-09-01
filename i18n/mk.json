@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"skinname-liberty": "Слобода",
+	"liberty-desc": "Одѕивно руво за [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Ново]",
+	"liberty-forgot-pw": "Ја заборавивте лозинката?",
+	"liberty-login": "Најава",
+	"liberty-login-alter": "Најва на друг начин",
+	"liberty-login-btn": "Најава",
+	"liberty-info": "Инфо",
+	"liberty-purge": "Превчитај",
+	"liberty-recent-discussions": "Скорешни разговори",
+	"liberty-remember": "Запамти ме",
+	"liberty-tooltip-info": "Погл. информации на документот",
+	"liberty-tooltip-purge": "Исчисти го меѓускладот на страницава.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Погл. уште",
+	"liberty-warning": "Предупредување",
+	"liberty-warning-text": "Исправно внесете ги корисничкото име и лозинката.",
+	"liberty.css": "/* Тука поставениот CSS се однесува на корисниците на рувото „Слобода“ */",
+	"liberty.js": "/* Тука поставениот JavaScript ќе им се вчитува на корисниците што го користат рувото „Слобода“ */",
+	"prefs-liberty": "Слобода",
+	"prefs-color": "Бојни поставки",
+	"liberty-pref-color-main": "Главна боја",
+	"liberty-pref-color-main-help": "Главата боја за мрежново место.",
+	"liberty-pref-color-second": "Споредна боја",
+	"liberty-pref-color-second-help": "Споредната боја за мрежново место.",
+	"prefs-font": "Претпочитан фонт",
+	"liberty-pref-fonts": "Одберете го претпочитаниот фонт",
+	"liberty-pref-fonts-helplabel": "Помош",
+	"liberty-pref-fonts-help": "Фонтот ќе се вчита од друго место (освен Malgun Gothic)."
+}

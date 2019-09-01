@@ -26,20 +26,17 @@ class LibertyHooks extends Hooks {
 			'section' => 'liberty/font',
 			'options' => [
 				'기본값' => "default",
-				'본고딕' => "Noto Sans CJK KR",
+				'본고딕' => "Noto Sans KR",
+				'스포카 한 산스' => "Spoqa Han Sans",
 				'나눔고딕' => "Nanum Gothic",
 				'나눔명조' => 'Nanum Myeongjo',
-				'KoPub돋움' => 'KoPubDotum',
+				'독도' => 'Dokdo',
+				'개구쟁이' => 'Gaegu',
+				'한겨레결체' => 'Hankc',
+				'청소년체' => 'Youth',
 				'맑은 고딕' => 'Malgun Gothic'
 			],
 			'help-message' => 'liberty-pref-fonts-help'
-		];
-
-		$preferences['liberty-font-web'] = [
-			'type' => 'check',
-			'label-message' => 'liberty-pref-fonts-web',
-			'section' => 'liberty/font/web',
-			'help-message' => 'liberty-pref-fonts-web-help'
 		];
 	}
 }

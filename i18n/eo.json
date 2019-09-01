@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Respondema etoso por [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nova]",
+	"liberty-forgot-pw": "Ĉu vi forgesis vian pasvorton?",
+	"liberty-login": "Ensaluti",
+	"liberty-login-alter": "Ensaluti alimaniere",
+	"liberty-login-btn": "Ensaluti",
+	"liberty-purge": "Forviŝi",
+	"liberty-recent-discussions": "Lastatempaj diskutoj",
+	"liberty-remember": "Memori mian ensaluton",
+	"liberty-tooltip-purge": "Forviŝi la kaŝmemoron de tiu ĉi paĝo.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Montri pli",
+	"liberty-warning": "Averto",
+	"liberty-warning-text": "Ĝuste enigu viajn salutnomon kaj pasvorton.",
+	"liberty.css": "/* Jen CSS videbla al uzantoj de la etoso Liberty */",
+	"liberty.js": "/* Jen JavaScript ŝargata por uzantoj de la etoso Liberty */",
+	"prefs-liberty": "Etoso Liberty",
+	"prefs-color": "Agordo pri koloroj",
+	"liberty-pref-color-main": "Ĉefkoloro",
+	"liberty-pref-color-main-help": "Ĉefkoloro uzata de ĉi tiu retejo.",
+	"liberty-pref-color-second": "Vickoloro",
+	"liberty-pref-color-second-help": "Vickoloro uzata de ĉi tiu retejo."
+}

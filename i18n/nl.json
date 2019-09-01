@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98",
+			"Gam3",
+			"RadioAzureus",
+			"Siebrand"
+		]
+	},
+	"liberty-feed-new": "[Nieuw]",
+	"liberty-forgot-pw": "Wachtwoord vergeten?",
+	"liberty-login": "Aanmelden",
+	"liberty-login-alter": "Aanmelden met een andere methode",
+	"liberty-login-btn": "Aanmelden",
+	"liberty-info": "Informatie",
+	"liberty-purge": "Vernieuwen",
+	"liberty-tooltip-info": "Documentgegevens bekijken",
+	"liberty-view-more": "Meer weergeven",
+	"liberty-warning": "Waarschuwing",
+	"liberty-warning-text": "Voer uw gebruikersnaam en wachtwoord in.",
+	"liberty.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op de vormgeving Liberty */",
+	"liberty.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die de vormgeving Liberty gebruiken */",
+	"prefs-liberty": "Liberty vormgeving",
+	"prefs-color": "Kleurinstelling",
+	"liberty-pref-color-main": "Primaire kleur",
+	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
+	"liberty-pref-color-second": "Secundaire kleur",
+	"liberty-pref-color-second-help": "De secundaire kleur die voor deze site gebruikt zal worden.",
+	"prefs-font": "Lettertypevoorkeur",
+	"liberty-pref-fonts": "Selecteer het te gebruiken lettertype",
+	"liberty-pref-fonts-helplabel": "Hulp",
+	"liberty-pref-fonts-help": "Het lettertype zal vanaf een externe locatie worden geladen, met uitzondering van Malgun Gothic."
+}

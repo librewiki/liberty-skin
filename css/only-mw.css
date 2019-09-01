@@ -1,4 +1,4 @@
-/* Toc */
+/* ToC */
 .Liberty .content-wrapper .liberty-content .liberty-content-main .toc {
 	border-bottom-right-radius: 0.35rem;
 	border-bottom-left-radius: 0.35rem;
@@ -28,7 +28,7 @@
 	list-style-image: none;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc>ul {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc > ul {
 	margin: 0;
 	padding: 0.6rem 1.2rem;
 	border: 1px solid #e1e8ed;
@@ -49,10 +49,10 @@
 	text-decoration: none;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a>.tocnumber:hover {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .toc a > .tocnumber:hover {
 	text-decoration: underline;
 }
-/* Toc End */
+/* ToC End */
 
 /* Title */
 .Liberty .content-wrapper .liberty-content .liberty-content-main h1,
@@ -105,7 +105,7 @@
 	margin-left: 0.5rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul>li {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul > li {
 	margin: 0;
 }
 /* Content */
@@ -222,8 +222,9 @@ html .suggestions-result-current {
 /* Left ToC End */
 
 /* Input */
+/* The OOUI selector is a horrible hack for the new Recent Changes Filters in MW 1.32+ */
 select,
-input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ) {
+input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ):not( [class=oo-ui-inputWidget-input] ) {
 	display: inline-block;
 	padding: 0.2rem 0.4rem;
 	font-size: 1rem;
@@ -285,7 +286,7 @@ td.mw-label {
 
 /* Input End */
 
-/* Postedit */
+/* PostEdit */
 html .postedit-container {
 	z-index: 3000;
 }
@@ -295,6 +296,10 @@ fieldset {
 	overflow-x: scroll;
 }
 
+/* Hide empty list elements (T192446) */
+.mw-empty-elt {
+	display: none;
+}
 
 /* Extensions */
 

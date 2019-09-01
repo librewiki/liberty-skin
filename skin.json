@@ -1,14 +1,15 @@
 {
 	"name": "Liberty",
 	"author": [
-		"Librewiki developers", "..."
+		"Librewiki developers",
+		"..."
 	],
 	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
 	"descriptionmsg": "liberty-desc",
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0+",
 	"type": "skin",
-	"version": "1.3.1",
+	"version": "1.3.3",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},
@@ -40,6 +41,9 @@
 				"css/only-mw.css": {
 					"media": "all"
 				},
+				"css/webfont.css": {
+					"media" : "all"
+				},
 				"css/wiki-table.css": {
 					"media": "all"
 				},
@@ -54,15 +58,15 @@
 				}
 			}
 		},
-
+		"skins.liberty.ads": {
+			"scripts": "js/ads.js"
+		},
 		"skins.liberty.bootstrap": {
 			"scripts": [
 				"js/lib/jquery.ba-throttle-debounce.js",
-				"js/lib/jquery.min.js",
 				"js/lib/bootstrap.min.js"
 			]
 		},
-
 		"skins.liberty.layoutjs": {
 			"scripts": [
 				"js/index-button.js",
@@ -91,6 +95,7 @@
 	},
 	"ResourceModuleSkinStyles": {
 		"liberty": {
+			"+ext.relatedArticles.readMore": "css/extensions/RelatedArticles.css",
 			"+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
 			"+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
 		}

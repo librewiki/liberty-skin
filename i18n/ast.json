@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Aspeutu reactivu pa [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nuevu]",
+	"liberty-forgot-pw": "¿Escaecisti la contraseña?",
+	"liberty-login": "Aniciar sesión",
+	"liberty-login-alter": "Aniciar sesión con otru métodu",
+	"liberty-login-btn": "Aniciar sesión",
+	"liberty-purge": "Purgar",
+	"liberty-recent-discussions": "Alderiques recién",
+	"liberty-remember": "Recordar el mio aniciu de sesión",
+	"liberty-tooltip-purge": "Purgar la caché d'esta páxina.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Ver más",
+	"liberty-warning": "Avisu",
+	"liberty-warning-text": "Escribi correutamente'l nome d'usuariu y la contraseña.",
+	"liberty.css": "/* Los CSS allugaos equí afeutarán a los usuarios del aspeutu Liberty */",
+	"liberty.js": "/* Cualesquier JavaScript que tea equí cargaráse pa los usuarios del aspeutu Liberty */",
+	"prefs-liberty": "Aspeutu Liberty",
+	"prefs-color": "Configuración del color",
+	"liberty-pref-color-main": "Color principal",
+	"liberty-pref-color-main-help": "Color principal que s'usará nesti sitiu.",
+	"liberty-pref-color-second": "Color secundariu",
+	"liberty-pref-color-second-help": "Color secundariu que s'usará nesti sitiu."
+}

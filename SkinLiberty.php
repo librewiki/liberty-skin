@@ -10,13 +10,14 @@ class SkinLiberty extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting;
+
 		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
 		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
 
 		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
-		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#' . strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
 		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
@@ -71,6 +72,11 @@ class SkinLiberty extends SkinTemplate {
 			'skins.liberty.layoutjs'
 		];
 
+		// Only load ad-related JS if ads are enabled in site configuration
+		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+			$modules[] = 'skins.liberty.ads';
+		}
+
 		// Only load LiveRC JS is we have enabled that feature in site config
 		if ( $wgLibertyEnableLiveRC ) {
 			$modules[] = 'skins.liberty.liverc';
@@ -82,7 +88,7 @@ class SkinLiberty extends SkinTemplate {
 			$modules[] = 'skins.liberty.loginjs';
 		}
 
-		$out->addModuleScripts( $modules );
+		$out->addModules( $modules );
 
 		// @codingStandardsIgnoreStart
 		$out->addInlineStyle( ".Liberty .nav-wrapper,
@@ -98,19 +104,19 @@ class SkinLiberty extends SkinTemplate {
 		.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
 			background-color: $mainColor;
 		}
-		
+
 		.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:focus {
 			border-color: $secondColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
 			border-bottom: 2px solid $mainColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus,
@@ -124,20 +130,6 @@ class SkinLiberty extends SkinTemplate {
 					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;
 					}");
-				}
-				
-				// 웹폰트 로딩
-				$LibertyUserWebFontSettings = $this->getUser()->getOption( 'liberty-font-web' );
-				$LibertyAvailableWebFonts = ['Nanum Gothic', 'Nanum Myeongjo', 'KoPubDotum', 'Noto Sans CJK KR'  ];
-				$LibertyWebFontAvailableCheck = in_array ( $LibertyUserFontSettings , $LibertyAvailableWebFonts);
-				if ( $LibertyUserFontSettings != "default" && $LibertyUserWebFontSettings == True && $LibertyWebFontAvailableCheck == True) {
-					$LibertyWebFontAddress = $this -> getSkin() -> getSkinStylePath ('fonts/'.$LibertyUserFontSettings.".woff");
-					$out->addInlineStyle( "
-					@font-face {
-						font-family: $LibertyUserFontSettings; 
-						src: url('$LibertyWebFontAddress')  format('woff')
-					  }
-					  ");
 				}
 
 				// @codingStandardsIgnoreEnd
@@ -156,6 +148,12 @@ class SkinLiberty extends SkinTemplate {
 			'font-awesome',
 			// @codingStandardsIgnoreLine
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+		);
+
+		$out->addHeadItem(
+			'webfonts',
+			// @codingStandardsIgnoreLine
+			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
 		);
 
 		// Only load AdSense JS is ads are enabled in site configuration

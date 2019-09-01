@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Steeve815"
+		]
+	},
+	"skinname-liberty": "ליברטי",
+	"liberty-facebook": "פייסבוק",
+	"liberty-forgot-pw": "שכחת את הסיסמה?",
+	"liberty-login": "כניסה",
+	"liberty-login-alter": "כניסה באמצעות שיטה אחרת",
+	"liberty-login-btn": "כניסה",
+	"liberty-purge": "ניקוי מטמון",
+	"liberty-recent-discussions": "דיונים אחרונים",
+	"liberty-remember": "להשאיר אותי מחובר",
+	"liberty-tooltip-purge": "ניקוי המטמון של דף זה.",
+	"liberty-twitter": "טוויטר",
+	"liberty-view-more": "להציג עוד",
+	"liberty-warning": "אזהרה",
+	"liberty-warning-text": "יש להקליד את שם המשתמש והסיסמה שלך באופן תקין.",
+	"liberty.css": "/* הסגנונות הנכתבים כאן ישפיעו על העיצוב \"ליברטי\" בלבד */",
+	"liberty.js": "/* כל הסקריפטים הנכתבים כאן ייטענו עבור מי שמשתמש בעיצוב \"ליברטי\" בלבד */",
+	"prefs-liberty": "עיצוב \"ליברטי\"",
+	"prefs-color": "הגדרת צבע",
+	"liberty-pref-color-main": "צבע ראשי",
+	"liberty-pref-color-main-help": "הצבע הראשי שהאתר יעשה בו שימוש.",
+	"liberty-pref-color-second": "צבע משני",
+	"liberty-pref-color-second-help": "הצבע המשני שהאתר יעשה בו שימוש."
+}

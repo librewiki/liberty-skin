@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Railfail536"
+		]
+	},
+	"skinname-liberty": "Wolność",
+	"liberty-desc": "Responsywna skórka dla [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nowe]",
+	"liberty-forgot-pw": "Nie pamiętasz hasła?",
+	"liberty-login": "Zaloguj się",
+	"liberty-login-alter": "Zaloguj się inną metodą",
+	"liberty-login-btn": "Zaloguj",
+	"liberty-purge": "Odśwież",
+	"liberty-recent-discussions": "Ostatnie dyskusje",
+	"liberty-remember": "Zapamiętaj mnie",
+	"liberty-tooltip-purge": "Wyczyść pamięć podręczną dla tej strony.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Zobacz więcej",
+	"liberty-warning": "Ostrzeżenie",
+	"liberty-warning-text": "Wprowadź poprawnie nazwę użytkownika i hasło.",
+	"liberty.css": "/* Umieszczony tutaj kod CSS wpłynie na wygląd skórki Wolność */",
+	"liberty.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Wolność */",
+	"prefs-liberty": "Skórka Wolność",
+	"prefs-color": "Schemat kolorystyczny",
+	"liberty-pref-color-main": "Główny kolor",
+	"liberty-pref-color-main-help": "Główny kolor który będzie używany na tej stronie.",
+	"liberty-pref-color-second": "Kolor dodatkowy",
+	"liberty-pref-color-second-help": "Dodatkowy kolor który będzie używany na tej stronie."
+}

@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jack Phoenix"
+		]
+	},
+	"skinname-liberty": "Vapaus",
+	"liberty-desc": "[https://librewiki.net/ LibreWikiä] varten kehitetty reagoiva ulkoasu",
+	"liberty-feed-new": "[Uusi]",
+	"liberty-forgot-pw": "Unohditko salasanasi?",
+	"liberty-login": "Kirjaudu",
+	"liberty-login-alter": "Kirjaudu toisella tavalla",
+	"liberty-login-btn": "Kirjaudu",
+	"liberty-purge": "Päivitä",
+	"liberty-recent-discussions": "Tuoreet keskustelut",
+	"liberty-remember": "Muista kirjautumiseni",
+	"liberty-tooltip-purge": "Tyhjennä tämän sivun välimuisti.",
+	"liberty-view-more": "Katso lisää",
+	"liberty-warning": "Varoitus",
+	"liberty-warning-text": "Anna oikea käyttäjänimi ja salasana.",
+	"liberty.css": "/* Tämä sivu sisältää Vapaus-ulkoasua muuttavia tyylejä */",
+	"liberty.js": "/* Tämän sivun JavaScript-koodi liitetään Vapaus-tyyliin */",
+	"prefs-liberty": "Vapaus-ulkoasu",
+	"prefs-color": "Väriasetus",
+	"liberty-pref-color-main": "Pääväri",
+	"liberty-pref-color-main-help": "Tällä sivustolla käytettävä päävärikoodi.",
+	"liberty-pref-color-second": "Toissijainen väri",
+	"liberty-pref-color-second-help": "Tällä sivustolla toissijaisesti käytettävä värikoodi."
+}
