@@ -800,6 +800,7 @@ ins.adsbygoogle {
 
 .header-ads>ins {
 	min-width: 20rem;
+	height: 90px;
 }
 
 .right-ads>ins {
