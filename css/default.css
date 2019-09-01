@@ -794,12 +794,13 @@ caption {
 /* Adsense */
 ins.adsbygoogle {
 	display: block;
-	width: 100%!important;
-	height: 90px!important;
+	width: 100%;
+	height: 90px;
 }
 
 .header-ads>ins {
 	min-width: 20rem;
+	height: 90px;
 }
 
 .right-ads>ins {
