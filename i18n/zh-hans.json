@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Viztor",
-			"Looong"
+			"Looong",
+			"A Chinese Wikipedian"
 		]
 	},
 	"skinname-liberty": "Liberty",
@@ -13,6 +14,7 @@
 	"liberty-login": "登录",
 	"liberty-login-alter": "其他方式登录",
 	"liberty-login-btn": "登陆",
+	"liberty-info": "信息",
 	"liberty-purge": "清除",
 	"liberty-recent-discussions": "最近讨论",
 	"liberty-remember": "记住登陆",
@@ -28,5 +30,6 @@
 	"liberty-pref-color-main": "主要颜色",
 	"liberty-pref-color-main-help": "本站会使用的主要颜色",
 	"liberty-pref-color-second": "次要颜色",
-	"liberty-pref-color-second-help": "本站会使用的次要颜色"
+	"liberty-pref-color-second-help": "本站会使用的次要颜色",
+	"liberty-pref-fonts-helplabel": "帮助"
 }

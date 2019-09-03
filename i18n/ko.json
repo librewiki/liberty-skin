@@ -37,5 +37,5 @@
 	"prefs-font": "글꼴 설정",
 	"liberty-pref-fonts": "사용할 글꼴을 선택하십시오",
 	"liberty-pref-fonts-helplabel": "도움말",
-	"liberty-pref-fonts-help": "선택하신 폰트는 웹폰트로 로드됩니다. 하지만 맑은 고딕은 사용자의 시스템에 설치되어 있어야 적용됩니다."
+	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 원격 위치로부터 로드됩니다."
 }
