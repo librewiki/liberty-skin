@@ -12,9 +12,11 @@
 	"liberty-login": "Entrar",
 	"liberty-login-alter": "Entrar por outro método",
 	"liberty-login-btn": "Entrar",
+	"liberty-info": "Informação",
 	"liberty-purge": "Purgar",
 	"liberty-recent-discussions": "Discussões recentes",
 	"liberty-remember": "Recordar a minha palavra-passe",
+	"liberty-tooltip-info": "Ver as informações do documento",
 	"liberty-tooltip-purge": "Purgue a cache desta página.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver mais",
@@ -27,5 +29,9 @@
 	"liberty-pref-color-main": "Cor principal",
 	"liberty-pref-color-main-help": "Cor principal que será usada neste ''site''.",
 	"liberty-pref-color-second": "Cor secundária",
-	"liberty-pref-color-second-help": "Cor secundária que será usada neste ''site''."
+	"liberty-pref-color-second-help": "Cor secundária que será usada neste ''site''.",
+	"prefs-font": "Preferência de fonte",
+	"liberty-pref-fonts": "Selecionar o tipo de letra que pretende usar",
+	"liberty-pref-fonts-helplabel": "Ajuda",
+	"liberty-pref-fonts-help": "A fonte será carregada da localização remota exceto Malgun Gothic."
 }
