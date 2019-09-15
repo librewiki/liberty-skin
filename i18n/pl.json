@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Railfail536"
+			"Railfail536",
+			"Rail"
 		]
 	},
 	"skinname-liberty": "Wolność",
@@ -12,6 +13,7 @@
 	"liberty-login": "Zaloguj się",
 	"liberty-login-alter": "Zaloguj się inną metodą",
 	"liberty-login-btn": "Zaloguj",
+	"liberty-info": "Informacje",
 	"liberty-purge": "Odśwież",
 	"liberty-recent-discussions": "Ostatnie dyskusje",
 	"liberty-remember": "Zapamiętaj mnie",
@@ -27,5 +29,8 @@
 	"liberty-pref-color-main": "Główny kolor",
 	"liberty-pref-color-main-help": "Główny kolor który będzie używany na tej stronie.",
 	"liberty-pref-color-second": "Kolor dodatkowy",
-	"liberty-pref-color-second-help": "Dodatkowy kolor który będzie używany na tej stronie."
+	"liberty-pref-color-second-help": "Dodatkowy kolor który będzie używany na tej stronie.",
+	"prefs-font": "Preferencje czcionek",
+	"liberty-pref-fonts": "Wybierz czcionkę, której chcesz używać",
+	"liberty-pref-fonts-helplabel": "Pomoc"
 }

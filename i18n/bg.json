@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"liberty-facebook": "Фейсбук",
+	"liberty-forgot-pw": "Забравена парола?",
+	"liberty-login": "Влизане",
+	"liberty-login-btn": "Влизане",
+	"liberty-info": "Информация",
+	"liberty-purge": "Почистване",
+	"liberty-tooltip-purge": "Изчистване на складираното копие на страницата.",
+	"liberty-view-more": "Вижте още",
+	"liberty-warning": "Предупреждение",
+	"liberty-pref-fonts-helplabel": "Помощ"
+}

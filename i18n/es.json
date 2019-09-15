@@ -12,5 +12,9 @@
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver más",
 	"liberty-pref-color-main": "Color principal",
-	"liberty-pref-color-second": "Color secundario"
+	"liberty-pref-color-second": "Color secundario",
+	"prefs-font": "Preferencia tipográfica",
+	"liberty-pref-fonts": "Selecciona el tipo de letra que quieres utilizar",
+	"liberty-pref-fonts-helplabel": "Ayuda",
+	"liberty-pref-fonts-help": "La ubicación remota cargará el tipo de letra, con la excepción de Malgun Gothic."
 }
