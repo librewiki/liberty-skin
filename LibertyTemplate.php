@@ -78,16 +78,14 @@ class LibertyTemplate extends BaseTemplate {
 					<article class="mw-body-content">
 						<?php $this->html( 'bodycontent' ); ?>
 					</article>
+				</div>
+				<footer>
+				<div class="liberty-footer">
 					<?php
 					if ( $this->data['dataAfterContent'] ) {
 						$this->html( 'dataAfterContent' );
 					}
 					?>
-				</div>
-				<footer>
-				<div class="liberty-footer">
-					<div class="read-more-container post-content">
-					</div>
 					<div class="bottom-ads"></div>
 					<?php $this->footer(); ?>
 				</div>
