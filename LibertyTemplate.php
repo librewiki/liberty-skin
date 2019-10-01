@@ -1045,12 +1045,15 @@ class LibertyTemplate extends BaseTemplate {
 	protected function buildAd( $position ) {
 		global $wgLibertyAdSetting;
 		$adFormat = "auto";
+		$fullWidthResponsive = "true";
 		if ( $position === "header" ) {
 			$adFormat = "horizontal";
+			$fullWidthResponsive = "false";
 		}
 		?>
 			<div class="<?php echo $position; ?>-ads">
 				<ins class="adsbygoogle"
+					data-full-width-responsive="<?php echo $fullWidthResponsive; ?>"
 					data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
 					data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>"
 					data-ad-format="<?php echo $adFormat; ?>">
