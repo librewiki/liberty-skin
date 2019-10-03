@@ -180,12 +180,12 @@ class LibertyTemplate extends BaseTemplate {
 
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
-		$personalTools = $this->getPersonalTools();
 		?>
 		<div class="navbar-login">
 			<?php
 			// If the user is logged in...
 			if ( $user->isLoggedIn() ) {
+				$personalTools = $this->getPersonalTools();
 				// ...and Gravatar is enabled in site config...
 				if ( $wgLibertyUseGravatar ) {
 					// ...and the user has a confirmed email...
@@ -291,27 +291,10 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
-						<?php echo Linker::linkKnown(
-							$personalTools['logout']['links'][0]['href'],
-							$skin->msg( 'logout' )->plain(),
-							[
-								'class' => 'dropdown-item view-logout',
-								'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'pt-logout' )
-							]
-						); ?>
+						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" class="dropdown-item view-logout" title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"><?php echo $skin->msg( 'logout' )->plain(); ?></a>
 					</div>
 				</div>
-				<?php echo Linker::linkKnown(
-						$personalTools['logout']['links'][0]['href'],
-						'<span class="fa fa-sign-out"></span>',
-						[
-							'class' => 'hide-logout logout-btn',
-							'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'pt-logout' )
-						]
-					);
-				?>
+				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" class="hide-logout logout-btn" title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"><span class="fa fa-sign-out"></span></a>
 			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
 					<span class="fa fa-sign-in"></span>
