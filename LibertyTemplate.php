@@ -180,6 +180,7 @@ class LibertyTemplate extends BaseTemplate {
 
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
+		$personalTools = $this->getPersonalTools();
 		?>
 		<div class="navbar-login">
 			<?php
@@ -232,16 +233,15 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="dropdown-divider"></div>
 						<?php
 						if ( class_exists( 'EchoEvent' ) ) {
-							$personalTools = $this->getPersonalTools();
 							$notiCount = 0;
 							if (
 								isset( $personalTools['notifications-alert'] ) &&
 								$personalTools['notifications-alert'] &&
-								isset( $personalTools['notifications-message'] ) &&
-								$personalTools['notifications-message']
+								isset( $personalTools['notifications-notice'] ) &&
+								$personalTools['notifications-notice']
 							) {
-								$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
-											$personalTools['notifications-message']['links'][0]['text'];
+								$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
+											$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
@@ -292,7 +292,7 @@ class LibertyTemplate extends BaseTemplate {
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
 						<?php echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'UserLogout' ),
+							$personalTools['logout']['links'][0]['href'],
 							$skin->msg( 'logout' )->plain(),
 							[
 								'class' => 'dropdown-item view-logout',
@@ -303,7 +303,7 @@ class LibertyTemplate extends BaseTemplate {
 					</div>
 				</div>
 				<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'UserLogout' ),
+						$personalTools['logout']['links'][0]['href'],
 						'<span class="fa fa-sign-out"></span>',
 						[
 							'class' => 'hide-logout logout-btn',
@@ -663,11 +663,11 @@ class LibertyTemplate extends BaseTemplate {
 		if (
 			isset( $personalTools['notifications-alert'] ) &&
 			$personalTools['notifications-alert'] &&
-			isset( $personalTools['notifications-message'] ) &&
-			$personalTools['notifications-message']
+			isset( $personalTools['notifications-notice'] ) &&
+			$personalTools['notifications-notice']
 		) {
-			$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
-						 $personalTools['notifications-message']['links'][0]['text'];
+			$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
+						$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
 		}
 		if ( $notiCount ) {
 		?>
