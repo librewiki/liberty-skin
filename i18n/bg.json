@@ -1,17 +1,39 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"StanProg",
+			"Ted Masters"
 		]
 	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Адаптивен облик за [https://librewiki.net/ ЛибреУики]",
 	"liberty-facebook": "Фейсбук",
+	"liberty-feed-new": "[Нова]",
 	"liberty-forgot-pw": "Забравена парола?",
 	"liberty-login": "Влизане",
+	"liberty-login-alter": "Влизане по друг начин",
 	"liberty-login-btn": "Влизане",
 	"liberty-info": "Информация",
 	"liberty-purge": "Почистване",
+	"liberty-recent-discussions": "Последни дискусии",
+	"liberty-remember": "Запомнете ме",
+	"liberty-tooltip-info": "Преглед на информацията за документа",
 	"liberty-tooltip-purge": "Изчистване на складираното копие на страницата.",
+	"liberty-twitter": "Туитър",
 	"liberty-view-more": "Вижте още",
 	"liberty-warning": "Предупреждение",
-	"liberty-pref-fonts-helplabel": "Помощ"
+	"liberty-warning-text": "Въведете вашето потребителско име и парола коректно.",
+	"liberty.css": "/* CSS кодът, поставен тук, ще бъде приложен за потребителите използващи облика Liberty */",
+	"liberty.js": "/* JavaScript кодът, поставен тук, ще бъде зареден за потребителите използващи облика Liberty */",
+	"prefs-liberty": "Облик Liberty",
+	"prefs-color": "Настройка на цветовете",
+	"liberty-pref-color-main": "Основен цвят",
+	"liberty-pref-color-main-help": "Основният цвят, който ще се използва в този сайт.",
+	"liberty-pref-color-second": "Вторичен цвят",
+	"liberty-pref-color-second-help": "Вторичният цвят, който ще се използва в този сайт.",
+	"prefs-font": "Предпочитан шрифт",
+	"liberty-pref-fonts": "Изберете шрифта, който искате да използвате",
+	"liberty-pref-fonts-helplabel": "Помощ",
+	"liberty-pref-fonts-help": "Шрифтът ще се зареди от отдалеченото местоположение, освен ако не е Malgun Gothic."
 }

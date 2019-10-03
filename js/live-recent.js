@@ -1,4 +1,4 @@
-$( window ).load( function () {
+$( function () {
 	'use strict';
 	var documentNamespaces, topicNamespaces, isDocumentTab, limit;
 	documentNamespaces = '0|4|10|12|14|1600';
