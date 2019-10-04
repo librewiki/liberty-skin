@@ -663,7 +663,13 @@ class LibertyTemplate extends BaseTemplate {
 		if ( $notiCount ) {
 		?>
 			<div id="pt-notifications" class="navbar-notification">
-				<a href="#"><span class="label label-danger"><?php echo $notiCount; ?></span></a>
+				<?php echo Linker::linkKnown(
+					SpecialPage::getTitleFor( 'Notifications' ),
+					'<span class="label label-danger">' . $notiCount . '</span>',
+					[
+						'title' => $this->getSkin()->msg( 'tooltip-pt-notifications-notice' )->text()
+					]
+				); ?>
 			</div>
 		<?php
 		}
