@@ -291,10 +291,18 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
-						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" class="dropdown-item view-logout" title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"><?php echo $skin->msg( 'logout' )->plain(); ?></a>
+						<a
+							href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
+							class="dropdown-item view-logout"
+							title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"
+						><?php echo $skin->msg( 'logout' )->plain(); ?></a>
 					</div>
 				</div>
-				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" class="hide-logout logout-btn" title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"><span class="fa fa-sign-out"></span></a>
+				<a
+					href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
+					class="hide-logout logout-btn"
+					title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"
+				><span class="fa fa-sign-out"></span></a>
 			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
 					<span class="fa fa-sign-in"></span>
