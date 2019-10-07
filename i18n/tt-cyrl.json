@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ерней"
+		]
+	},
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Яңа]",
+	"liberty-login": "Керү",
+	"liberty-login-btn": "Керү",
+	"liberty-info": "Мәгълүмат",
+	"liberty-twitter": "Twitter",
+	"liberty-warning": "Игътибар",
+	"prefs-color": "Төс көйләнмәләре",
+	"liberty-pref-color-main": "Төп төс",
+	"liberty-pref-color-second": "Икенчел төс",
+	"liberty-pref-fonts-helplabel": "Белешмә"
+}
