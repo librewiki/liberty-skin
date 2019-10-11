@@ -245,17 +245,14 @@ strike {
 	height: 2rem;
 	width: 10.8rem;
 	padding: 0.2rem 0.4rem;
-	border-color: #e1e8ed;
+	border-color: #ccc;
 	border-radius: 0;
 	border-top-left-radius: 0.35rem;
 	border-bottom-left-radius: 0.35rem;
 }
 
-.Liberty .nav-wrapper .navbar .form-inline .form-control:focus {
-	border-right-color: #e1e8ed;
-}
-
 .Liberty .nav-wrapper .navbar .form-inline .btn {
+	height: 2rem;
 	color: #4f5b63;
 	padding: 0.2rem 0.4rem;
 	line-height: 22px;
