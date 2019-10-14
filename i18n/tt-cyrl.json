@@ -6,13 +6,17 @@
 	},
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Яңа]",
+	"liberty-forgot-pw": "Серсүзегезне оныттыгызмы?",
 	"liberty-login": "Керү",
 	"liberty-login-btn": "Керү",
 	"liberty-info": "Мәгълүмат",
+	"liberty-recent-discussions": "Соңгы фикер алышулар",
 	"liberty-twitter": "Twitter",
 	"liberty-warning": "Игътибар",
+	"prefs-liberty": "Liberty бизәлеше",
 	"prefs-color": "Төс көйләнмәләре",
 	"liberty-pref-color-main": "Төп төс",
 	"liberty-pref-color-second": "Икенчел төс",
+	"prefs-font": "Хәрефләр көйләнмәләре",
 	"liberty-pref-fonts-helplabel": "Белешмә"
 }
