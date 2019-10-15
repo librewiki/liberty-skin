@@ -684,17 +684,18 @@ class LibertyTemplate extends BaseTemplate {
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
 				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 1) {
 					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
 				}
 
 				echo Html::openElement( 'a', [
 					'class' => $content['classes'],
-					'data-toggle' => 'dropdown',
+					'data-toggle' => count( $content['children'] ) > 1 ? 'dropdown' : '',
 					'role' => 'button',
 					'aria-haspopup' => 'true',
 					'aria-expanded' => 'true',
-					'title' => $content['title']
+					'title' => $content['title'],
+					'href' => $content['href']
 				] );
 					if ( isset( $content['icon'] ) ) {
 						echo Html::rawElement( 'span', [
