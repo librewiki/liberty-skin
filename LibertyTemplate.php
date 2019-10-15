@@ -689,7 +689,7 @@ class LibertyTemplate extends BaseTemplate {
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
 				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) && count( $content['children'] ) > 1) {
+				if ( is_array( $content['children'] ) && count( $content['children'] ) > 1 ) {
 					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
 				}
 
