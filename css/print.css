@@ -1,0 +1,89 @@
+body {
+  color: black !important;
+}
+header,
+#fixed-toc-button,
+.liberty-sidebar,
+.content-tools,
+.social-buttons,
+.footer-places,
+.catlinks,
+.liberty-notice,
+.header-ads {
+  display: none !important;
+}
+
+.content-wrapper {
+  margin: 0 !important;
+}
+
+.liberty-content {
+  margin-right: 0 !important;
+}
+
+.liberty-content-header,
+.liberty-content-main,
+.liberty-footer {
+  border: 0 !important;
+}
+
+.liberty-content-main {
+  padding: 0 !important;
+}
+
+.title {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0.3rem !important;
+  border-bottom: 3px solid black !important;
+}
+
+.title>h1 {
+  border-bottom: 0 !important;
+}
+
+a.external::before {
+  content: "" !important;
+}
+
+p {
+  font-size: 12pt !important;
+  line-height: 18pt !important;
+  text-align: justify !important;
+}
+
+.toc {
+  border: 0 !important;
+}
+
+.toc a {
+  border-bottom: 0 !important;
+}
+
+.toctitle {
+  padding: 0 !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 3px solid black !important;
+}
+
+.toctitle>h2 {
+  border-bottom: 0 !important;
+}
+
+.toc>ul {
+  border: 0 !important;
+}
+
+h1,
+h2 {
+  border-bottom: 3px solid black !important;
+}
+
+h3,
+h4,
+h5 {
+  border-color: #aaa !important;
+}

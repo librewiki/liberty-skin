@@ -1,25 +1,41 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liberty LLC",
-			"..."
+			"Librewiki developers",
+			"Revi",
+			"...",
+			"Ykhwong",
+			"코코아"
 		]
 	},
 	"skinname-liberty": "리버티",
-	"liberty-desc": "리브레 위키의 기본스킨입니다.",
+	"liberty-desc": "[https://librewiki.net/ 리브레 위키]를 위한 반응형 스킨",
 	"liberty-facebook": "페이스북",
+	"liberty-feed-new": "[신규]",
 	"liberty-forgot-pw": "비밀번호를 잊으셨나요?",
 	"liberty-login": "로그인",
-    "liberty-login-alter": "다른 방법으로 로그인하기",
+	"liberty-login-alter": "다른 방법으로 로그인하기",
 	"liberty-login-btn": "로그인",
-	"liberty-purge": "갱신",
-	"liberty-recent-discussions": "최근토론",
+	"liberty-info": "정보",
+	"liberty-purge": "새로 고침",
+	"liberty-recent-discussions": "최근 토론",
 	"liberty-remember": "로그인 상태를 유지하기",
-	"liberty-tooltip-purge": "문서 캐쉬를 새로 지정하여 문서를 불러옵니다.",
+	"liberty-tooltip-info": "문서의 정보를 열람합니다",
+	"liberty-tooltip-purge": "이 문서의 캐시를 새로 고칩니다.",
 	"liberty-twitter": "트위터",
-	"liberty-view-more": "더보기",
+	"liberty-view-more": "더 보기",
 	"liberty-warning": "경고",
-	"liberty-warning-text": "아이디와 비밀번호를 정확히 입력하세요.",
+	"liberty-warning-text": "사용자 이름과 비밀번호를 정확히 입력하세요.",
 	"liberty.css": "/* 이 CSS 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
-	"liberty.js": "/* 이 자바스크립트 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */"
+	"liberty.js": "/* 이 자바스크립트 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
+	"prefs-liberty": "리버티 스킨",
+	"prefs-color": "색상 설정",
+	"liberty-pref-color-main": "주 색상",
+	"liberty-pref-color-main-help": "이 사이트에서 주로 사용할 색상입니다.",
+	"liberty-pref-color-second": "보조 색상 지정",
+	"liberty-pref-color-second-help": "사이트에서 보조로 사용할 색상을 정합니다.",
+	"prefs-font": "글꼴 설정",
+	"liberty-pref-fonts": "사용할 글꼴을 선택하십시오",
+	"liberty-pref-fonts-helplabel": "도움말",
+	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 원격 위치로부터 로드됩니다."
 }

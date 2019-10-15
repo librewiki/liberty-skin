@@ -56,7 +56,7 @@ $( function () {
 			recentChanges = data.query.recentchanges;
 			html = recentChanges.map( function ( item ) {
 				time = new Date( item.timestamp );
-				line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
+				line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title.replace( / /g, '_' ) ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
 				text = '';
 				if ( item.type === 'new' ) {
 					text += '[New]';
@@ -66,11 +66,11 @@ $( function () {
 					text = text.substr( 0, 13 );
 					text += '...';
 				}
-				// @todo FIXME: This just doesn't work and I've no idea why.
-				// The i18n msg is properly defined etc. yet it shows up as <liberty-feed-new>
-				// when called by the below line :-(
+				text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
+				/* @todo FIXME: This just doesn't work and I've no idea why.
+				The i18n msg is properly defined etc. yet it shows up as <liberty-feed-new>
+				when called by the below line :-( */
 				// text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
-				text = text.replace( '[New]', '<span class="new">[New] </span>' );
 				line += text;
 				line += '</a></li>';
 				return line;

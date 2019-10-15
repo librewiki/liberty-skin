@@ -78,14 +78,14 @@ class LibertyTemplate extends BaseTemplate {
 					<article class="mw-body-content">
 						<?php $this->html( 'bodycontent' ); ?>
 					</article>
+				</div>
+				<footer>
+				<div class="liberty-footer">
 					<?php
 					if ( $this->data['dataAfterContent'] ) {
 						$this->html( 'dataAfterContent' );
 					}
 					?>
-				</div>
-				<footer>
-				<div class="liberty-footer">
 					<div class="bottom-ads"></div>
 					<?php $this->footer(); ?>
 				</div>
@@ -243,7 +243,7 @@ class LibertyTemplate extends BaseTemplate {
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
-								$skin->msg( 'notifications' )->plain().( $notiCount ?  " ($notiCount)" : "" ),
+								$skin->msg( 'notifications' )->plain() . ( $notiCount ? " ($notiCount)" : "" ),
 								[
 									'class' => 'dropdown-item',
 									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
@@ -457,25 +457,17 @@ class LibertyTemplate extends BaseTemplate {
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
 		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
-
+		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 			?>
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
-					<?php echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'liberty-purge' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
-							'accesskey' => 'p'
-						],
-						[ 'action' => 'purge' ]
-					);
+					<?php
+					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
 					echo Linker::linkKnown(
 						$title,
-						$skin->msg( 'edit' )->plain(),
+						$editIcon . $skin->msg( 'edit' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
@@ -483,23 +475,12 @@ class LibertyTemplate extends BaseTemplate {
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					);
-					echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'addsection' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => Linker::titleAttrib( 'ca-addsection', 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'ca-addsection' )
-						],
-						[ 'action' => 'edit', 'section' => 'new' ]
-					);
 					if ( $companionTitle ) {
 						if ( $title->isTalkPage() ) {
-							$titlename = $skin->msg( 'articlepage' )->plain();
+							$titlename = $skin->msg( 'nstab-main' )->plain();
 							$additionalArrayStuff = [
-								// @todo FIXME!
-								'title' => $titlename . '을 불러옵니다. [alt+shift+t]',
-								'accesskey' => 't'
+								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
 							];
 						} else {
 							$titlename = $skin->msg( 'talk' )->plain();
@@ -546,6 +527,16 @@ class LibertyTemplate extends BaseTemplate {
 						}
 						echo Linker::linkKnown(
 							$title,
+							$skin->msg( 'liberty-purge' )->plain(),
+							[
+								'class' => 'dropdown-item',
+								'title' => $skin->msg( 'liberty-tooltip-purge' )->plain() . ' [alt+shift+p]',
+								'accesskey' => 'p'
+							],
+							[ 'action' => 'purge' ]
+						);
+						echo Linker::linkKnown(
+							$title,
 							$skin->msg( $watched )->plain(),
 							[
 								'class' => 'dropdown-item',
@@ -562,6 +553,15 @@ class LibertyTemplate extends BaseTemplate {
 								'title' => Linker::titleAttrib( 't-whatlinkshere', 'withaccess' ),
 								'accesskey' => Linker::accesskey( 't-whatlinkshere' )
 							]
+						);
+						echo Linker::linkKnown(
+							$title,
+							$skin->msg( 'liberty-info' )->plain(),
+							[
+								'class' => 'dropdown-item',
+								'title' => $skin->msg( 'liberty-tooltip-info' )->plain() ,
+							],
+							[ 'action' => 'info' ]
 						);
 						if ( $title->quickUserCan( 'move', $user ) && $title->exists() ) {
 							echo Linker::linkKnown(
@@ -641,6 +641,12 @@ class LibertyTemplate extends BaseTemplate {
 					<?php
 				}
 				?>
+				<li class="designedbylibre">
+					<a href="//librewiki.net">
+						<?php // @codingStandardsIgnoreLine ?>
+						<img src="<?php echo $this->getSkin()->getSkinStylePath( 'img/designedbylibre.png' ); //phpcs:ignore ?>" style="height:31px" alt="Designed by Librewiki">
+					</a>
+				</li>
 			</ul>
 		<?php
 		}
@@ -699,7 +705,7 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 					if ( isset( $content['icon'] ) ) {
 						echo Html::rawElement( 'span', [
-							'class' => 'fa fa-'.$content['icon']
+							'class' => "fa fa-".$content['icon']  // phpcs:ignore
 						] );
 					}
 
@@ -731,7 +737,7 @@ class LibertyTemplate extends BaseTemplate {
 							] );
 								if ( isset( $child['icon'] ) ) {
 									echo Html::rawElement( 'span', [
-										'class' => 'fa fa-'.$child['icon']
+										'class' => 'fa fa-'.$child['icon'] // phpcs:ignore
 									] );
 								}
 
@@ -740,7 +746,8 @@ class LibertyTemplate extends BaseTemplate {
 								}
 							echo Html::closeElement( 'a' );
 
-							if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 ) {
+							// @codingStandardsIgnoreLine
+							if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 && !empty( $child['children'] ) ) {
 								echo Html::openElement( 'div', [
 									'class' => 'dropdown-menu dropdown-submenu',
 									'role' => 'menu'
@@ -755,7 +762,7 @@ class LibertyTemplate extends BaseTemplate {
 									] );
 										if ( isset( $sub['icon'] ) ) {
 											echo Html::rawElement( 'span', [
-												'class' => 'fa fa-'.$sub['icon']
+												'class' => 'fa fa-'.$sub['icon'] // phpcs:ignore
 											] );
 										}
 
@@ -845,21 +852,33 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Link href
-				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				if ( isset( $split[3] ) ) {
+					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '$1', $href, $wgArticlePath );
+					}
 				} else {
-					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
-					$href = str_replace( '$1', $href, $wgArticlePath );
+					$href = null;
 				}
 
-				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				if ( isset( $split[4] ) ) {
+					// Access
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				} else {
+					$access = null;
+				}
 
-				// Classes
-				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
-				foreach ( $classes as $key => $value ) {
-					$classes[$key] = trim( $value );
+				if ( isset( $split[5] ) ) {
+					// Classes
+					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					foreach ( $classes as $key => $value ) {
+						$classes[$key] = trim( $value );
+					}
+				} else {
+					$classes = [];
 				}
 
 				$item = [
@@ -912,22 +931,28 @@ class LibertyTemplate extends BaseTemplate {
 					$title = $text;
 				}
 
-				// Link href
-				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
-				} else {
-					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
-					$href = str_replace( '$1', $href, $wgArticlePath );
+				if ( isset( $split[3] ) ) {
+					// Link href
+					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
+						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '$1', $href, $wgArticlePath );
+					}
 				}
 
-				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				if ( isset( $split[4] ) ) {
+					// Access
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				}
 
-				// Classes
-				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
-				foreach ( $classes as $key => $value ) {
-					$classes[$key] = trim( $value );
+				if ( isset( $split[5] ) ) {
+					// Classes
+					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					foreach ( $classes as $key => $value ) {
+						$classes[$key] = trim( $value );
+					}
 				}
 
 				$item = [
@@ -1018,12 +1043,19 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function buildAd( $position ) {
 		global $wgLibertyAdSetting;
+		$adFormat = "auto";
+		$fullWidthResponsive = "true";
+		if ( $position === "header" ) {
+			$adFormat = "horizontal";
+			$fullWidthResponsive = "false";
+		}
 		?>
 			<div class="<?php echo $position; ?>-ads">
 				<ins class="adsbygoogle"
+					data-full-width-responsive="<?php echo $fullWidthResponsive; ?>"
 					data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
 					data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>"
-					data-ad-format="auto">
+					data-ad-format="<?php echo $adFormat; ?>">
 				</ins>
 			</div>
 		<?php

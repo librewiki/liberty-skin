@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"liberty-facebook": "Facebook",
+	"liberty-forgot-pw": "Забыли пароль?",
+	"liberty-login": "Войти",
+	"liberty-login-btn": "Войти",
+	"liberty-info": "Информация",
+	"liberty-recent-discussions": "Последние обсуждения",
+	"liberty-remember": "Запомнить мою учётную запись",
+	"liberty-tooltip-info": "Посмотреть информацию о документе",
+	"liberty-tooltip-purge": "Очистить кэш этой страницы.",
+	"liberty-twitter": "Twitter",
+	"liberty-warning": "Внимание",
+	"prefs-color": "Настройки цвета",
+	"liberty-pref-color-main": "Главный цвет",
+	"prefs-font": "Параметры шрифтов",
+	"liberty-pref-fonts-helplabel": "Справка"
+}

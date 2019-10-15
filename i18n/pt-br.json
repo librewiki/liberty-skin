@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"skinname-liberty": "Liberdade",
+	"liberty-desc": "Pele responsiva para [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Novo]",
+	"liberty-forgot-pw": "Esqueceu sua senha?",
+	"liberty-login": "Entrar",
+	"liberty-login-alter": "Entrar com outro método",
+	"liberty-login-btn": "Entrar",
+	"liberty-info": "Informação",
+	"liberty-purge": "Atualizar",
+	"liberty-recent-discussions": "Discussões recentes",
+	"liberty-remember": "Lembre-se da minha entrada",
+	"liberty-tooltip-info": "Ver informação de documentos",
+	"liberty-tooltip-purge": "Purgue o cache desta página.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Ver mais",
+	"liberty-warning": "Aviso",
+	"liberty-warning-text": "Digite seu nome de usuário e senha corretamente.",
+	"liberty.css": "/* CSS colocado aqui afetará os usuários da skin Liberty */",
+	"liberty.js": "/* Qualquer JavaScript aqui será carregado para usuários que usam a skin Liberty */",
+	"prefs-liberty": "Pele de liberdade",
+	"prefs-color": "Configuração de cor",
+	"liberty-pref-color-main": "Cor principal",
+	"liberty-pref-color-main-help": "Cor principal que será usada neste site.",
+	"liberty-pref-color-second": "Cor secundária",
+	"liberty-pref-color-second-help": "Cor secundária que será usada neste site.",
+	"prefs-font": "Preferência de fonte",
+	"liberty-pref-fonts": "Selecione a fonte que você deseja usar",
+	"liberty-pref-fonts-helplabel": "Ajuda",
+	"liberty-pref-fonts-help": "A fonte será carregada por localização remota, exceto o Malgun Gothic."
+}

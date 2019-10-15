@@ -10,14 +10,18 @@ class SkinLiberty extends SkinTemplate {
 	 */
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC;
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting;
 
-		$mainColor = $GLOBALS['wgLibertyMainColor'];
+		$optionMainColor = $this->getUser()->getOption( 'liberty-color-main' );
+		$optionSecondColor = $this->getUser()->getOption( 'liberty-color-second' );
+
+		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
-		$secondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#'.strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$tempSecondColor = isset( $GLOBALS['wgLibertySecondColor'] ) ? $GLOBALS['wgLibertySecondColor'] : '#' . strtoupper( dechex( hexdec( substr( $mainColor, 1, 6 ) ) - hexdec( '1A1415' ) ) );
+		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
-			$ogLogo = $GLOBALS['wgServer'].$GLOBALS['wgLogo'];
+			$ogLogo = $GLOBALS['wgServer'] . $GLOBALS['wgLogo'];
 		}
 
 		$skin = $this->getSkin();
@@ -56,16 +60,6 @@ class SkinLiberty extends SkinTemplate {
 		// 윈도우 폰
 		$out->addMeta( 'msapplication-navbutton-color', $mainColor );
 
-		/* OpenGraph */
-		$out->addMeta( 'og:title', $skin->getTitle() );
-		$out->addMeta( 'og:description', strip_tags(
-			preg_replace( '/<table[^>]*>([\s\S]*?)<\/table[^>]*>/', '', $out->mBodytext ), '<br>'
-		) );
-		$out->addMeta( 'og:image', $ogLogo );
-		$out->addMeta( 'og:locale', $wgLanguageCode );
-		$out->addMeta( 'og:site_name', $wgSitename );
-		$out->addMeta( 'og:url', $skin->getTitle()->getFullURL() );
-
 		/* 트위터 카드 */
 		$out->addMeta( 'twitter:card', 'summary' );
 		if ( isset( $wgTwitterAccount ) ) {
@@ -78,6 +72,11 @@ class SkinLiberty extends SkinTemplate {
 			'skins.liberty.layoutjs'
 		];
 
+		// Only load ad-related JS if ads are enabled in site configuration
+		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+			$modules[] = 'skins.liberty.ads';
+		}
+
 		// Only load LiveRC JS is we have enabled that feature in site config
 		if ( $wgLibertyEnableLiveRC ) {
 			$modules[] = 'skins.liberty.liverc';
@@ -89,7 +88,7 @@ class SkinLiberty extends SkinTemplate {
 			$modules[] = 'skins.liberty.loginjs';
 		}
 
-		$out->addModuleScripts( $modules );
+		$out->addModules( $modules );
 
 		// @codingStandardsIgnoreStart
 		$out->addInlineStyle( ".Liberty .nav-wrapper,
@@ -105,26 +104,35 @@ class SkinLiberty extends SkinTemplate {
 		.Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:active {
 			background-color: $mainColor;
 		}
-		
+
 		.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:focus {
 			border-color: $secondColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before,
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
 			border-bottom: 2px solid $mainColor;
 		}
-		
+
 		.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer .label:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus,
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
 		}" );
-		// @codingStandardsIgnoreEnd
+
+				// 폰트 설정
+				$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
+				if ( $LibertyUserFontSettings != "default") {
+					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6, b {
+					font-family: $LibertyUserFontSettings;
+					}");
+				}
+
+				// @codingStandardsIgnoreEnd
 	}
 
 	/**
@@ -140,6 +148,12 @@ class SkinLiberty extends SkinTemplate {
 			'font-awesome',
 			// @codingStandardsIgnoreLine
 			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+		);
+
+		$out->addHeadItem(
+			'webfonts',
+			// @codingStandardsIgnoreLine
+			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
 		);
 
 		// Only load AdSense JS is ads are enabled in site configuration

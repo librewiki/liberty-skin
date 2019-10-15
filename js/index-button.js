@@ -35,7 +35,7 @@ $( function () {
 				} );
 				window.damezuma.doc[ 0 ].id = 'fixed-toc';
 				window.damezuma.doc.fadeIn( 200 );
-				$( '#fixed-toc #togglelink' ).click( function () {
+				$( '#fixed-toc > .togglelink' ).click( function () {
 					$( '#fixed-toc-button' ).fadeIn( 200 );
 					$( window.damezuma.doc ).remove();
 					window.damezuma.doc = null;

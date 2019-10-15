@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Viztor",
+			"Looong",
+			"A Chinese Wikipedian"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "[https://librewiki.net/ LibreWiki]的响应式皮肤",
+	"liberty-facebook": "脸书",
+	"liberty-feed-new": "[新]",
+	"liberty-forgot-pw": "忘记密码？",
+	"liberty-login": "登录",
+	"liberty-login-alter": "其他方式登录",
+	"liberty-login-btn": "登陆",
+	"liberty-info": "信息",
+	"liberty-purge": "清除",
+	"liberty-recent-discussions": "最近讨论",
+	"liberty-remember": "记住登陆",
+	"liberty-tooltip-purge": "清除此页面的缓存",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "查看更多",
+	"liberty-warning": "警告",
+	"liberty-warning-text": "请输入正确的用户名和密码。",
+	"liberty.css": "/* 这里放置的CSS将影响使用自由皮肤的用户 */",
+	"liberty.js": "/* 这里的任何JavaScript将为使用自由皮肤的用户加载 */",
+	"prefs-liberty": "自由 皮肤",
+	"prefs-color": "颜色设置",
+	"liberty-pref-color-main": "主要颜色",
+	"liberty-pref-color-main-help": "本站会使用的主要颜色",
+	"liberty-pref-color-second": "次要颜色",
+	"liberty-pref-color-second-help": "本站会使用的次要颜色",
+	"liberty-pref-fonts-helplabel": "帮助"
+}

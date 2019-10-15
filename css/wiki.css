@@ -52,3 +52,14 @@ a.external:before {
 .plainlinks a.external:before {
 	content: '';
 }
+
+.selflink {
+	color: unset;
+	font-weight: bold;
+}
+
+.selflink:hover,
+.selflink:focus {
+	color: unset;
+	text-decoration: none;
+}
