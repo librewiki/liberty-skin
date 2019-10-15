@@ -794,9 +794,18 @@ class LibertyTemplate extends BaseTemplate {
 
 		$headings = [];
 		$currentHeading = null;
-		$data = ContentHandler::getContentText( WikiPage::factory(
+		$this->getSkin()->getUser()->getName();
+		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
 		)->getContent( Revision::RAW ) );
+		$userData = ContentHandler::getContentText( WikiPage::factory(
+			Title::newFromText( $this->getSkin()->getUser()->getName() . '/Liberty-Navbar', NS_USER )
+		)->getContent( Revision::RAW ) );
+		if( !empty( $userData ) ) {
+			$data = $userData;
+		} else {
+			$data = $globalData;
+		}
 		// Well, [[MediaWiki:Liberty-Navbar]] *should* have some content, but
 		// if it doesn't, bail out here so that we don't trigger E_NOTICEs
 		// about undefined indexes later on
