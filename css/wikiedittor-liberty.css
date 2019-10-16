@@ -3,7 +3,8 @@
 	background-color: #0275d8;
 }
 
-#wpSave:hover, #wpSave:active {
+#wpSave:hover,
+#wpSave:active {
 	background-color: #025aa5;
 }
 

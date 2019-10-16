@@ -162,7 +162,7 @@ html .suggestions-result-current {
 /* Thumbnail End */
 
 /* Recent Changes (Menu) */
-.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-changeslist>h4 {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-changeslist > h4 {
 	margin-bottom: 0.2rem;
 }
 .Liberty .content-wrapper .liberty-content .liberty-content-main .special {
@@ -176,7 +176,7 @@ html .suggestions-result-current {
 	display: none;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .special>li {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .special > li {
 	border-bottom: 1px solid #e1e8ed;
 	padding: 0.5rem 0;
 }
@@ -236,8 +236,8 @@ input:not( [type=button] ):not( [type=checkbox] ):not( [type=submit] ):not( [cla
 	border-radius: .25rem;
 }
 
-html input.oo-ui-inputWidget-input[type=search]{
-	padding-left: 2.5em!important;
+html input.oo-ui-inputWidget-input[type=search] {
+	padding-left: 2.5em !important;
 }
 
 select:focus,
@@ -272,16 +272,16 @@ button:hover {
 }
 
 #wpDestFile {
-	width:100%;
+	width: 100%;
 }
 
 td.mw-label {
-	width:15%;
-	padding-right:10px;
+	width: 15%;
+	padding-right: 10px;
 }
 
 #mw-upload-form > .mw-htmlform-submit-buttons > .mw-htmlform-submit {
-	margin-top:20px;
+	margin-top: 20px;
 }
 
 /* Input End */
