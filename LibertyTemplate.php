@@ -243,7 +243,7 @@ class LibertyTemplate extends BaseTemplate {
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
-								$skin->msg( 'notifications' )->plain() . ( $notiCount ? " ($notiCount)" : "" ),
+								$skin->msg( 'notifications' )->plain() . ( $notiCount ? " ($notiCount)" : '' ),
 								[
 									'class' => 'dropdown-item',
 									'title' => $skin->msg( 'tooltip-pt-notifications-notice' )->text()
@@ -678,6 +678,7 @@ class LibertyTemplate extends BaseTemplate {
 
 	/**
 	 * Render Portal function, build top menu contents.
+	 *
 	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
 	protected function renderPortal( $contents ) {
@@ -689,93 +690,112 @@ class LibertyTemplate extends BaseTemplate {
 			echo Html::openElement( 'li', [
 				'class' => [ 'dropdown', 'nav-item' ]
 			] );
-				array_push( $content['classes'], 'nav-link' );
-				if ( is_array( $content['children'] ) && count( $content['children'] ) > 1 ) {
-					array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
-				}
 
-				echo Html::openElement( 'a', [
-					'class' => $content['classes'],
-					'data-toggle' => count( $content['children'] ) > 1 ? 'dropdown' : '',
-					'role' => 'button',
-					'aria-haspopup' => 'true',
-					'aria-expanded' => 'true',
-					'title' => $content['title'],
-					'href' => $content['href']
+			array_push( $content['classes'], 'nav-link' );
+
+			if ( is_array( $content['children'] ) && count( $content['children'] ) > 1 ) {
+				array_push( $content['classes'], 'dropdown-toggle', 'dropdown-toggle-fix' );
+			}
+
+			echo Html::openElement( 'a', [
+				'class' => $content['classes'],
+				'data-toggle' => count( $content['children'] ) > 1 ? 'dropdown' : '',
+				'role' => 'button',
+				'aria-haspopup' => 'true',
+				'aria-expanded' => 'true',
+				'title' => $content['title'],
+				'href' => $content['href']
+			] );
+
+			if ( isset( $content['icon'] ) ) {
+				echo Html::rawElement( 'span', [
+					'class' => 'fa fa-' . $content['icon']
 				] );
-					if ( isset( $content['icon'] ) ) {
+			}
+
+			if ( isset( $content['text'] ) ) {
+				echo Html::rawElement( 'span', [
+					'class' => 'hide-title'
+				], $content['text'] );
+			}
+
+			echo Html::closeElement( 'a' );
+
+			if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
+				// We should fix this
+				array_shift( $content['children'] );
+
+				echo Html::openElement( 'div', [
+					'class' => 'dropdown-menu',
+					'role' => 'menu'
+				] );
+
+				foreach ( $content['children'] as $child ) {
+					array_push( $child['classes'], 'dropdown-item' );
+
+					if ( is_array( $child['children'] ) ) {
+						array_push( $child['classes'], 'dropdown-toggle', 'dropdown-toggle-sub' );
+					}
+
+					echo Html::openElement( 'a', [
+						'accesskey' => $child['access'],
+						'class' => $child['classes'],
+						'href' => $child['href'],
+						'title' => $child['title']
+					] );
+
+					if ( isset( $child['icon'] ) ) {
 						echo Html::rawElement( 'span', [
-							'class' => "fa fa-".$content['icon']  // phpcs:ignore
+							'class' => 'fa fa-' . $child['icon']
 						] );
 					}
 
-					if ( isset( $content['text'] ) ) {
-						echo Html::rawElement( 'span', [
-							'class' => 'hide-title'
-						], $content['text'] );
+					if ( isset( $child['text'] ) ) {
+						echo $child['text'];
 					}
-				echo Html::closeElement( 'a' );
 
-				if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
-					// We should fix this
-					array_shift( $content['children'] );
-					echo Html::openElement( 'div', [
-						'class' => 'dropdown-menu',
-						'role' => 'menu'
-					] );
-						foreach ( $content['children'] as $child ) {
-							array_push( $child['classes'], 'dropdown-item' );
-							if ( is_array( $child['children'] ) ) {
-								array_push( $child['classes'], 'dropdown-toggle', 'dropdown-toggle-sub' );
-							}
+					echo Html::closeElement( 'a' );
+
+					if (
+						is_array( $content['children'] ) &&
+						count( $content['children'] ) > 2 &&
+						!empty( $child['children'] )
+					) {
+						echo Html::openElement( 'div', [
+							'class' => 'dropdown-menu dropdown-submenu',
+							'role' => 'menu'
+						] );
+
+						foreach ( $child['children'] as $sub ) {
+							array_push( $sub['classes'], 'dropdown-item' );
 
 							echo Html::openElement( 'a', [
-								'accesskey' => $child['access'],
-								'class' => $child['classes'],
-								'href' => $child['href'],
-								'title' => $child['title']
+								'accesskey' => $sub['access'],
+								'class' => $sub['classes'],
+								'href' => $sub['href'],
+								'title' => $sub['title']
 							] );
-								if ( isset( $child['icon'] ) ) {
-									echo Html::rawElement( 'span', [
-										'class' => 'fa fa-'.$child['icon'] // phpcs:ignore
-									] );
-								}
 
-								if ( isset( $child['text'] ) ) {
-									echo $child['text'];
-								}
-							echo Html::closeElement( 'a' );
-
-							// @codingStandardsIgnoreLine
-							if ( is_array( $content['children'] ) && count( $content['children'] ) > 2 && !empty( $child['children'] ) ) {
-								echo Html::openElement( 'div', [
-									'class' => 'dropdown-menu dropdown-submenu',
-									'role' => 'menu'
+							if ( isset( $sub['icon'] ) ) {
+								echo Html::rawElement( 'span', [
+									'class' => 'fa fa-' . $sub['icon']
 								] );
-								foreach ( $child['children'] as $sub ) {
-									array_push( $sub['classes'], 'dropdown-item' );
-									echo Html::openElement( 'a', [
-										'accesskey' => $sub['access'],
-										'class' => $sub['classes'],
-										'href' => $sub['href'],
-										'title' => $sub['title']
-									] );
-										if ( isset( $sub['icon'] ) ) {
-											echo Html::rawElement( 'span', [
-												'class' => 'fa fa-'.$sub['icon'] // phpcs:ignore
-											] );
-										}
-
-										if ( isset( $sub['text'] ) ) {
-											echo $sub['text'];
-										}
-									echo Html::closeElement( 'a' );
-								}
-								echo Html::closeElement( 'div' );
 							}
+
+							if ( isset( $sub['text'] ) ) {
+								echo $sub['text'];
+							}
+
+							echo Html::closeElement( 'a' );
 						}
-					echo Html::closeElement( 'div' );
+
+						echo Html::closeElement( 'div' );
+					}
 				}
+
+				echo Html::closeElement( 'div' );
+			}
+
 			echo Html::closeElement( 'li' );
 		}
 	}
@@ -794,14 +814,14 @@ class LibertyTemplate extends BaseTemplate {
 
 		$headings = [];
 		$currentHeading = null;
-		$this->getSkin()->getUser()->getName();
+		$userName = $this->getSkin()->getUser()->getName();
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
 		)->getContent( Revision::RAW ) );
 		$userData = ContentHandler::getContentText( WikiPage::factory(
-			Title::newFromText( $this->getSkin()->getUser()->getName() . '/Liberty-Navbar', NS_USER )
+			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
 		)->getContent( Revision::RAW ) );
-		if( !empty( $userData ) ) {
+		if ( !empty( $userData ) ) {
 			$data = $userData;
 		} else {
 			$data = $globalData;
@@ -1047,16 +1067,18 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	/**
-	 * Build Adsense Function.
+	 * Build an AdSense ad unit wrapped in a div tag.
+	 *
 	 * @param string $position Ad position
 	 */
 	protected function buildAd( $position ) {
 		global $wgLibertyAdSetting;
-		$adFormat = "auto";
-		$fullWidthResponsive = "true";
-		if ( $position === "header" ) {
-			$adFormat = "horizontal";
-			$fullWidthResponsive = "false";
+
+		$adFormat = 'auto';
+		$fullWidthResponsive = 'true';
+		if ( $position === 'header' ) {
+			$adFormat = 'horizontal';
+			$fullWidthResponsive = 'false';
 		}
 		?>
 			<div class="<?php echo $position; ?>-ads">

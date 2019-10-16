@@ -1,6 +1,7 @@
 body {
-  color: black !important;
+	color: #000 !important;
 }
+
 header,
 #fixed-toc-button,
 .liberty-sidebar,
@@ -10,80 +11,80 @@ header,
 .catlinks,
 .liberty-notice,
 .header-ads {
-  display: none !important;
+	display: none !important;
 }
 
 .content-wrapper {
-  margin: 0 !important;
+	margin: 0 !important;
 }
 
 .liberty-content {
-  margin-right: 0 !important;
+	margin-right: 0 !important;
 }
 
 .liberty-content-header,
 .liberty-content-main,
 .liberty-footer {
-  border: 0 !important;
+	border: 0 !important;
 }
 
 .liberty-content-main {
-  padding: 0 !important;
+	padding: 0 !important;
 }
 
 .title {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0.3rem !important;
-  border-bottom: 3px solid black !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0.3rem !important;
+	border-bottom: 3px solid #000 !important;
 }
 
-.title>h1 {
-  border-bottom: 0 !important;
+.title > h1 {
+	border-bottom: 0 !important;
 }
 
 a.external::before {
-  content: "" !important;
+	content: "" !important;
 }
 
 p {
-  font-size: 12pt !important;
-  line-height: 18pt !important;
-  text-align: justify !important;
+	font-size: 12pt !important;
+	line-height: 18pt !important;
+	text-align: justify !important;
 }
 
 .toc {
-  border: 0 !important;
+	border: 0 !important;
 }
 
 .toc a {
-  border-bottom: 0 !important;
+	border-bottom: 0 !important;
 }
 
 .toctitle {
-  padding: 0 !important;
-  border-top: 0 !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
-  border-bottom: 3px solid black !important;
+	padding: 0 !important;
+	border-top: 0 !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-bottom: 3px solid #000 !important;
 }
 
-.toctitle>h2 {
-  border-bottom: 0 !important;
+.toctitle > h2 {
+	border-bottom: 0 !important;
 }
 
-.toc>ul {
-  border: 0 !important;
+.toc > ul {
+	border: 0 !important;
 }
 
 h1,
 h2 {
-  border-bottom: 3px solid black !important;
+	border-bottom: 3px solid #000 !important;
 }
 
 h3,
 h4,
 h5 {
-  border-color: #aaa !important;
+	border-color: #aaa !important;
 }

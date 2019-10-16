@@ -6,6 +6,7 @@ class SkinLiberty extends SkinTemplate {
 
 	/**
 	 * Page initialize.
+	 *
 	 * @param OutputPage $out OutputPage
 	 */
 	public function initPage( OutputPage $out ) {
@@ -124,19 +125,21 @@ class SkinLiberty extends SkinTemplate {
 			background-color: $secondColor;
 		}" );
 
-				// 폰트 설정
-				$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
-				if ( $LibertyUserFontSettings != "default") {
-					$out->addInlineStyle( "body, h1, h2, h3, h4, h5, h6, b {
+		// 폰트 설정
+		$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
+		if ( $LibertyUserFontSettings != 'default' ) {
+			$out->addInlineStyle(
+				"body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;
-					}");
-				}
-
-				// @codingStandardsIgnoreEnd
+				}"
+			);
+		}
+		// @codingStandardsIgnoreEnd
 	}
 
 	/**
-	 * Setup Skin CSS.
+	 * Setup skin CSS.
+	 *
 	 * @param OutputPage $out OutputPage
 	 */
 	public function setupSkinUserCss( OutputPage $out ) {
@@ -170,8 +173,9 @@ class SkinLiberty extends SkinTemplate {
 
 	/**
 	 * Set body class.
+	 *
 	 * @param OutputPage $out OutputPage
-	 * @param Mixed &$bodyAttrs Body Attributes
+	 * @param array &$bodyAttrs Body attributes
 	 */
 	public function addToBodyAttributes( $out, &$bodyAttrs ) {
 		$bodyAttrs['class'] .= ' Liberty width-size';

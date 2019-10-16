@@ -164,7 +164,7 @@ label {
 del,
 s,
 strike {
-	color: gray;
+	color: #808080;
 }
 /* HTML Tag End */
 
@@ -297,7 +297,7 @@ strike {
 	padding: 0.4rem 0;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-login .login-menu>a:after {
+.Liberty .nav-wrapper .navbar .navbar-login .login-menu > a:after {
 	display: none;
 }
 
@@ -377,7 +377,7 @@ strike {
 	background-color: #f5f8fa;
 }
 
-.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item+.nav-item {
+.Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item + .nav-item {
 	margin-left: 0;
 	border-left: 0;
 	border-top-left-radius: 0;
@@ -569,7 +569,7 @@ strike {
 	width: 100%;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>div {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > div {
 	float: right;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -586,15 +586,15 @@ strike {
 	font-size: 1.8rem;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.facebook {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .facebook {
 	background-color: #5d82d1;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.twitter {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .twitter {
 	background-color: #40bff5;
 }
 
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons>.google {
+.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .google {
 	background-color: #eb5e4c;
 	display: none;
 }
@@ -729,7 +729,7 @@ strike {
 .Liberty .login-modal .modal-footer {
 	display: none;
 }
-/* Login model End*/
+/* Login model End */
 
 /* Bootstrap Custom */
 .dropdown-menu {
@@ -786,20 +786,20 @@ caption {
 	color: #373a3c;
 	caption-side: top;
 }
-/* Bootstrap Custom End*/
+/* Bootstrap Custom End */
 
-/* Adsense */
+/* AdSense */
 ins.adsbygoogle {
 	display: block;
 	width: 100%;
 	height: 90px;
 }
 
-.header-ads>ins {
+.header-ads > ins {
 	min-width: 20rem;
 }
 
-.right-ads>ins {
+.right-ads > ins {
 	min-width: 15rem;
 }
-/* Adsense End */
+/* AdSense End */
