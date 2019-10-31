@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Zoranzoki21"
 		]
 	},
+	"skinname-liberty": "{{optional}}",
 	"liberty-pref-fonts-helplabel": "{{Identical|Help}}"
 }

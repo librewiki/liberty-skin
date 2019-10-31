@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK",
+			"Suvarioglu"
+		]
+	},
+	"skinname-liberty": "Özgürlük",
+	"liberty-desc": "[https://librewiki.net/ LibreWiki] için duyarlı görünüm",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Yeni]",
+	"liberty-forgot-pw": "Parolanızı mı unuttunuz?",
+	"liberty-login": "Giriş",
+	"liberty-login-alter": "Diğer yöntemle giriş yapın",
+	"liberty-login-btn": "Giriş",
+	"liberty-info": "Bilgi",
+	"liberty-purge": "Temizle",
+	"liberty-recent-discussions": "Son tartışmalar",
+	"liberty-remember": "Giriş bilgilerimi hatırla",
+	"liberty-tooltip-info": "Belge bilgilerini görüntüleyin",
+	"liberty-tooltip-purge": "Bu sayfanın önbelleğini temizle.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Daha fazla göster",
+	"liberty-warning": "Uyarı",
+	"liberty-warning-text": "Kullanıcı adınızı ve şifrenizi doğru giriniz.",
+	"liberty.css": "/* Buraya yerleştirilen CSS, Özgürlük görünümün kullanıcılarını etkileyecektir */",
+	"liberty.js": "/* Buradaki herhangi bir JavaScript, Özgürlük görünümü kullanan kullanıcılar için yüklenecek */",
+	"prefs-liberty": "Özgürlük görünümü",
+	"prefs-color": "Renk ayarı",
+	"liberty-pref-color-main": "Ana renk",
+	"liberty-pref-color-main-help": "Bu sitede kullanılacak ana renk.",
+	"liberty-pref-color-second": "İkincil renk",
+	"liberty-pref-color-second-help": "Bu sitede kullanılacak ikincil renk.",
+	"prefs-font": "Font tercihleri",
+	"liberty-pref-fonts": "Kullanmak istediğiniz fontu seçiniz",
+	"liberty-pref-fonts-helplabel": "Yardım",
+	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic dışında uzak bir yere yüklenecek."
+}

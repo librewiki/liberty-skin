@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zoranzoki21"
+		]
+	},
+	"skinname-liberty": "Либерти",
+	"liberty-desc": "Респонзивна тема за [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Фејсбук",
+	"liberty-feed-new": "[Ново]",
+	"liberty-forgot-pw": "Заборавили сте лозинку?",
+	"liberty-login": "Пријавите се",
+	"liberty-login-alter": "Пријавите се осталим методама",
+	"liberty-login-btn": "Пријави ме",
+	"liberty-info": "Информација",
+	"liberty-purge": "Освежи",
+	"liberty-recent-discussions": "Недавне дискусије",
+	"liberty-remember": "Запамти моју пријаву",
+	"liberty-tooltip-info": "Види информацију документа",
+	"liberty-tooltip-purge": "Освежи кеш меморију ове странице.",
+	"liberty-twitter": "Твитер",
+	"liberty-view-more": "Прикажи више",
+	"liberty-warning": "Упозорење",
+	"liberty-warning-text": "Унесите ваше корисничко име и лозинку коректно.",
+	"liberty.css": "/* CSS постављен овде ће утицати на све кориснике Liberty теме */",
+	"liberty.js": "/* Јаваскрипт постављен овде ће се учитати за све оне који користе Liberty тему */",
+	"prefs-liberty": "Liberty тема",
+	"prefs-color": "Подешавања боје",
+	"liberty-pref-color-main": "Главна боја",
+	"liberty-pref-color-main-help": "Главна боја која ће бити коришћена на овом сајту.",
+	"liberty-pref-color-second": "Секундарна боја",
+	"liberty-pref-color-second-help": "Секундарна боја која ће бити коришћена на овом сајту.",
+	"prefs-font": "Подешавања фонта",
+	"liberty-pref-fonts": "Одаберите фонт који желите да користите",
+	"liberty-pref-fonts-helplabel": "Помоћ",
+	"liberty-pref-fonts-help": "Фонт ће се учитавати с удаљене локације, осим Malgun Gothic."
+}
