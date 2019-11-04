@@ -876,6 +876,9 @@ class LibertyTemplate extends BaseTemplate {
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
+				if ( !$data['display'] ) {
+					continue;
+				}
 				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
 					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
@@ -967,6 +970,9 @@ class LibertyTemplate extends BaseTemplate {
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
+				if ( !$data['display'] ) {
+					continue;
+				}
 				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
 					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
@@ -1051,6 +1057,9 @@ class LibertyTemplate extends BaseTemplate {
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
+				if ( !$data['display'] ) {
+					continue;
+				}
 				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
 					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
