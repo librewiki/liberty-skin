@@ -38,5 +38,12 @@ class LibertyHooks extends Hooks {
 			],
 			'help-message' => 'liberty-pref-fonts-help'
 		];
+
+		$preferences['liberty-dark'] = [
+			'type' => 'check',
+			'label-message' => 'liberty-pref-dark',
+			'section' => 'liberty/color',
+			'help-message' => 'liberty-pref-dark-help'
+		];
 	}
 }

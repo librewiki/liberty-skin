@@ -134,6 +134,30 @@ class SkinLiberty extends SkinTemplate {
 				}"
 			);
 		}
+
+		$LibertyDarkCss = "body, .Liberty, .dropdown-menu, .dropdown-item, .Liberty .nav-wrapper .navbar .form-inline .btn, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox th, #preferences fieldset:not(.prefsection), #preferences div.mw-prefs-buttons {
+			background-color: #000;
+			color: #DDD;
+		}
+	
+		.liberty-content-header, .liberty-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-footer, .editOptions, html .wikiEditor-ui-toolbar, #pagehistory li.selected, .mw-datatable td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox, #preferences {
+			background-color: #1F2023;
+			color: #DDD;
+		}
+	
+		.Liberty .content-wrapper .liberty-content .liberty-content-main, .mw-datatable th, .mw-datatable tr:hover td, textarea, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
+			background-color: #000;
+		}
+	
+		.Liberty .content-wrapper .liberty-content .liberty-content-header .title>h1, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item, caption { color: #DDD; }
+	
+		.btn-secondary { background: transparent; color: #DDD; }";
+		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' ) ? 'html' : '';
+		if( $LibertyUserDarkSetting ) {
+			$out->addInlineStyle( $LibertyDarkCss );
+		} else {
+			$out->addInlineStyle( "@media (prefers-color-scheme: dark) { $LibertyDarkCss }" );
+		}
 		// @codingStandardsIgnoreEnd
 	}
 
