@@ -689,7 +689,10 @@ class LibertyTemplate extends BaseTemplate {
 			if ( !$content ) {
 				break;
 			}
-			if( ( $content['right'] && !in_array( $content['right'], $userRights ) ) || ( $content['group'] && !in_array( $content['group'], $userGroup ) ) ) continue;
+			if ( ( $content['right'] && !in_array( $content['right'], $userRights ) ) ||
+				( $content['group'] && !in_array( $content['group'], $userGroup ) ) ) {
+				continue;
+			}
 
 			echo Html::openElement( 'li', [
 				'class' => [ 'dropdown', 'nav-item' ]
@@ -732,7 +735,10 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 
 				foreach ( $content['children'] as $child ) {
-					if( ( $child['right'] && !in_array( $child['right'], $userRights ) ) || ( $child['group'] && !in_array( $child['group'], $userGroup ) ) ) continue;
+					if ( ( $child['right'] && !in_array( $child['right'], $userRights ) ) ||
+						( $child['group'] && !in_array( $child['group'], $userGroup ) ) ) {
+						continue;
+					}
 					array_push( $child['classes'], 'dropdown-item' );
 
 					if ( is_array( $child['children'] ) ) {
@@ -769,7 +775,10 @@ class LibertyTemplate extends BaseTemplate {
 						] );
 
 						foreach ( $child['children'] as $sub ) {
-							if( ( $sub['right'] && !in_array( $sub['right'], $userRights ) ) || ( $sub['group'] && !in_array( $sub['group'], $userGroup ) ) ) continue;
+							if ( ( $sub['right'] && !in_array( $sub['right'], $userRights ) ) ||
+								( $sub['group'] && !in_array( $sub['group'], $userGroup ) ) ) {
+								continue;
+							}
 							array_push( $sub['classes'], 'dropdown-item' );
 
 							echo Html::openElement( 'a', [
@@ -850,7 +859,7 @@ class LibertyTemplate extends BaseTemplate {
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 1 );
 				foreach ( $split as $value ) {
-					$value = explode( '=', trim ( $value) );
+					$value = explode( '=', trim( $value ) );
 					$data[$value[0]] = $value[1];
 				}
 
@@ -861,7 +870,7 @@ class LibertyTemplate extends BaseTemplate {
 				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );				
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
@@ -941,7 +950,7 @@ class LibertyTemplate extends BaseTemplate {
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
 				foreach ( $split as $value ) {
-					$value = explode( '=', trim ( $value) );
+					$value = explode( '=', trim( $value ) );
 					$data[$value[0]] = $value[1];
 				}
 
@@ -952,7 +961,7 @@ class LibertyTemplate extends BaseTemplate {
 				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );	
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
@@ -1036,7 +1045,7 @@ class LibertyTemplate extends BaseTemplate {
 				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );	
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
