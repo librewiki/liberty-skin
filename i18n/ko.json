@@ -37,5 +37,6 @@
 	"prefs-font": "글꼴 설정",
 	"liberty-pref-fonts": "사용할 글꼴을 선택하십시오",
 	"liberty-pref-fonts-helplabel": "도움말",
-	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 원격 위치로부터 로드됩니다."
+	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 원격 위치로부터 로드됩니다.",
+	"liberty-pref-dark": "어두운 모드 강제 활성화"
 }
