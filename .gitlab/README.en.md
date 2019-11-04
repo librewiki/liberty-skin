@@ -21,16 +21,17 @@ Security vulnerability should be reported using [Phabricator](https://issue.libr
 | `$wgLibertyMaxRecent` | Recent X edits appearing in 'Recent Changes' bar in the skin | `10` | `10` |
 
 ## Navbar
-Please fill out `MediaWiki:Liberty-Navbar` article in the following format.  
+Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 
-First-Level menu : `* Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`  
-Second-Level menu : `** Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`  
-Third-Level menu : `*** Icon (Optional) | Text to display (Optional) | Text to display when hover (Optional) | Link or Article name to connect when click (Optional) | Shortcut (Optional) | Custom class (Optional)`
-* One of `Icon` or `Text to display` must be set.
+First-Level menu : `* icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`  
+Second-Level menu : `** icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`  
+Third-Level menu : `*** icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`
+* All settings are optional, but One of `Icon` or `Text to display` must be set.
 * If `Text to display when hover` is not set, It is set to `Text to display` value automatically.
+* If you not want set some value, just skip that. As an example, If you not want to set icon, you can skip include `icon=`.
 * When set `Text to display` or `Text to display when hover`, You can type MediaWiki i18n message name to display that i18n message value. (Example: Displays `Recent changes` when type `recentchanges`)
 * Shortcut can be used by `Alt-Shift-(Key)`.
 * When setting shortcut, Please be careful not to overlap the basic shortcut provided by MediaWiki.
 * Set custom class separated by `,`. (Example: Type `classA, classB` to add `classA` and `classB` class)
 
-You can see an example at [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
+You can see an example at [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar), But not that site always use latest version of this skin.
