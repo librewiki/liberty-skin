@@ -682,10 +682,14 @@ class LibertyTemplate extends BaseTemplate {
 	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
 	protected function renderPortal( $contents ) {
+		$userGroup = $this->getSkin()->getUser()->getGroups();
+		$userRights = $this->getSkin()->getUser()->getRights();
+
 		foreach ( $contents as $content ) {
 			if ( !$content ) {
 				break;
 			}
+			if( ( $content['right'] && !in_array( $content['right'], $userRights ) ) || ( $content['group'] && !in_array( $content['group'], $userGroup ) ) ) continue;
 
 			echo Html::openElement( 'li', [
 				'class' => [ 'dropdown', 'nav-item' ]
@@ -722,15 +726,13 @@ class LibertyTemplate extends BaseTemplate {
 			echo Html::closeElement( 'a' );
 
 			if ( is_array( $content['children'] ) && count( $content['children'] ) ) {
-				// We should fix this
-				array_shift( $content['children'] );
-
 				echo Html::openElement( 'div', [
 					'class' => 'dropdown-menu',
 					'role' => 'menu'
 				] );
 
 				foreach ( $content['children'] as $child ) {
+					if( ( $child['right'] && !in_array( $child['right'], $userRights ) ) || ( $child['group'] && !in_array( $child['group'], $userGroup ) ) ) continue;
 					array_push( $child['classes'], 'dropdown-item' );
 
 					if ( is_array( $child['children'] ) ) {
@@ -767,6 +769,7 @@ class LibertyTemplate extends BaseTemplate {
 						] );
 
 						foreach ( $child['children'] as $sub ) {
+							if( ( $sub['right'] && !in_array( $sub['right'], $userRights ) ) || ( $sub['group'] && !in_array( $sub['group'], $userGroup ) ) ) continue;
 							array_push( $sub['classes'], 'dropdown-item' );
 
 							echo Html::openElement( 'a', [
@@ -843,22 +846,30 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[1] !== '*' ) {
 				// First level menu
+				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 1 );
-				foreach ( $split as $key => $value ) {
-					$split[$key] = trim( $value );
+				foreach ( $split as $value ) {
+					$value = explode( '=', trim ( $value) );
+					$data[$value[0]] = $value[1];
 				}
 
 				// Icon
-				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+
+				// Group
+				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+
+				// Right
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );				
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$textObj = wfMessage( $split[1] );
+				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
+					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 				} else {
 					$text = $textObj->text();
 				}
@@ -869,10 +880,10 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Title
-				if ( isset( $split[2] ) ) {
-					$titleObj = wfMessage( $split[2] );
+				if ( isset( $data['title'] ) ) {
+					$titleObj = wfMessage( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
-						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
 						$title = $titleObj->text();
 					}
@@ -881,28 +892,28 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Link href
-				if ( isset( $split[3] ) ) {
+				if ( isset( $data['link'] ) ) {
 					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $data['link'] ) ) {
+						$href = htmlentities( $data['link'], ENT_QUOTES, 'UTF-8' );
 					} else {
-						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '%3A', ':', urlencode( $data['link'] ) );
 						$href = str_replace( '$1', $href, $wgArticlePath );
 					}
 				} else {
 					$href = null;
 				}
 
-				if ( isset( $split[4] ) ) {
+				if ( isset( $data['access'] ) ) {
 					// Access
-					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
 				} else {
 					$access = null;
 				}
 
-				if ( isset( $split[5] ) ) {
+				if ( isset( $data['class'] ) ) {
 					// Classes
-					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					$classes = explode( ',', htmlentities( $data['class'], ENT_QUOTES, 'UTF-8' ) );
 					foreach ( $classes as $key => $value ) {
 						$classes[$key] = trim( $value );
 					}
@@ -916,29 +927,40 @@ class LibertyTemplate extends BaseTemplate {
 					'href' => $href,
 					'icon' => $icon,
 					'text' => $text,
-					'title' => $title
+					'title' => $title,
+					'group' => $group,
+					'right' => $right
 				];
 				$level2Children = &$item['children'];
 				$headings[] = $item;
+				continue;
 			}
 			if ( $line[2] !== '*' ) {
 				// Second level menu
+				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
-				foreach ( $split as $key => $value ) {
-					$split[$key] = trim( $value );
+				foreach ( $split as $value ) {
+					$value = explode( '=', trim ( $value) );
+					$data[$value[0]] = $value[1];
 				}
 
 				// Icon
-				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+
+				// Group
+				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+
+				// Right
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );	
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$textObj = wfMessage( $split[1] );
+				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
+					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 				} else {
 					$text = $textObj->text();
 				}
@@ -949,10 +971,10 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Title
-				if ( isset( $split[2] ) ) {
-					$titleObj = wfMessage( $split[2] );
+				if ( isset( $data['title'] ) ) {
+					$titleObj = wfMessage( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
-						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
 						$title = $titleObj->text();
 					}
@@ -960,25 +982,25 @@ class LibertyTemplate extends BaseTemplate {
 					$title = $text;
 				}
 
-				if ( isset( $split[3] ) ) {
+				if ( isset( $data['link'] ) ) {
 					// Link href
 					// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-						$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+					if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $data['link'] ) ) {
+						$href = htmlentities( $data['link'], ENT_QUOTES, 'UTF-8' );
 					} else {
-						$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+						$href = str_replace( '%3A', ':', urlencode( $data['link'] ) );
 						$href = str_replace( '$1', $href, $wgArticlePath );
 					}
 				}
 
-				if ( isset( $split[4] ) ) {
+				if ( isset( $data['access'] ) ) {
 					// Access
-					$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
 				}
 
-				if ( isset( $split[5] ) ) {
+				if ( isset( $data['class'] ) ) {
 					// Classes
-					$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+					$classes = explode( ',', htmlentities( $data['class'], ENT_QUOTES, 'UTF-8' ) );
 					foreach ( $classes as $key => $value ) {
 						$classes[$key] = trim( $value );
 					}
@@ -990,12 +1012,17 @@ class LibertyTemplate extends BaseTemplate {
 					'href' => $href,
 					'icon' => $icon,
 					'text' => $text,
-					'title' => $title
+					'title' => $title,
+					'group' => $group,
+					'right' => $right
 				];
 				$level3Children = &$item['children'];
 				$level2Children[] = $item;
-			} else {
+				continue;
+			}
+			if ( $line[3] !== '*' ) {
 				// Third level menu
+				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 3 );
 				foreach ( $split as $key => $value ) {
@@ -1003,15 +1030,21 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Icon
-				$icon = htmlentities( $split[0], ENT_QUOTES, 'UTF-8' );
+				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+
+				// Group
+				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+
+				// Right
+				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );	
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				$textObj = wfMessage( $split[1] );
+				$textObj = wfMessage( $data['display'] );
 				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $split[1], ENT_QUOTES, 'UTF-8' );
+					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 				} else {
 					$text = $textObj->text();
 				}
@@ -1022,10 +1055,10 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Title
-				if ( isset( $split[2] ) ) {
-					$titleObj = wfMessage( $split[2] );
+				if ( isset( $data['title'] ) ) {
+					$titleObj = wfMessage( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
-						$title = htmlentities( $split[2], ENT_QUOTES, 'UTF-8' );
+						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
 						$title = $titleObj->text();
 					}
@@ -1035,18 +1068,18 @@ class LibertyTemplate extends BaseTemplate {
 
 				// Link href
 				// @todo CHECKME: Should this use wfUrlProtocols() or somesuch instead?
-				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $split[3] ) ) {
-					$href = htmlentities( $split[3], ENT_QUOTES, 'UTF-8' );
+				if ( preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $data['link'] ) ) {
+					$href = htmlentities( $data['link'], ENT_QUOTES, 'UTF-8' );
 				} else {
-					$href = str_replace( '%3A', ':', urlencode( $split[3] ) );
+					$href = str_replace( '%3A', ':', urlencode( $data['link'] ) );
 					$href = str_replace( '$1', $href, $wgArticlePath );
 				}
 
 				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $split[4] ) ? $split[4] : '';
+				$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
 
 				// Classes
-				$classes = explode( ',', htmlentities( $split[5], ENT_QUOTES, 'UTF-8' ) );
+				$classes = explode( ',', htmlentities( $data['class'], ENT_QUOTES, 'UTF-8' ) );
 				foreach ( $classes as $key => $value ) {
 					$classes[$key] = trim( $value );
 				}
@@ -1057,9 +1090,15 @@ class LibertyTemplate extends BaseTemplate {
 					'href' => $href,
 					'icon' => $icon,
 					'text' => $text,
-					'title' => $title
+					'title' => $title,
+					'group' => $group,
+					'right' => $right
 				];
 				$level3Children[] = $item;
+				continue;
+			} else {
+				// Not supported
+				continue;
 			}
 		}
 
