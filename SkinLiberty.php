@@ -140,18 +140,20 @@ class SkinLiberty extends SkinTemplate {
 			color: #DDD;
 		}
 	
-		.liberty-content-header, .liberty-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-footer, .editOptions, html .wikiEditor-ui-toolbar, #pagehistory li.selected, .mw-datatable td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox, #preferences {
+		.liberty-content-header, .liberty-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-footer, .editOptions, html .wikiEditor-ui-toolbar, #pagehistory li.selected, .mw-datatable td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox, #preferences, .navbox-list {
 			background-color: #1F2023;
 			color: #DDD;
 		}
 	
-		.Liberty .content-wrapper .liberty-content .liberty-content-main, .mw-datatable th, .mw-datatable tr:hover td, textarea, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content {
+		.Liberty .content-wrapper .liberty-content .liberty-content-main, .mw-datatable th, .mw-datatable tr:hover td, textarea, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content, div.mw-warning-with-logexcerpt, div.mw-lag-warn-high, div.mw-cascadeprotectedwarning, div#mw-protect-cascadeon {
 			background-color: #000;
 		}
 	
 		.Liberty .content-wrapper .liberty-content .liberty-content-header .title>h1, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list .recent-item, caption { color: #DDD; }
 	
-		.btn-secondary { background: transparent; color: #DDD; }";
+		.btn-secondary { background: transparent; color: #DDD; }
+		
+		#pagehistory li { border: 0; }";
 		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' ) ? 'html' : '';
 		if( $LibertyUserDarkSetting ) {
 			$out->addInlineStyle( $LibertyDarkCss );
