@@ -25,15 +25,19 @@
 ## 상단바
 다음과 같은 형식을 따라서 `미디어위키:Liberty-Navbar` 문서에 작성해주세요.
 
-최상단 메뉴 : `* icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`  
-하위 메뉴 : `** icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`  
-최하위 메뉴 : `*** icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`
-* 모든 내용은 선택이나, `아이콘`과 `표시 될 문구` 중 한가지는 설정되어 있어야 합니다.
-* 설정하지 않을 내용은 적지 않으면 됩니다. 가령, 아이콘을 설정하시지 않을 것이라면 `icon=`을 포함하여 생략하여도 됩니다.
-* `Hover 상태에서 표시 될 문구`가 설정되어 있지 않다면 `표시 될 문구`로 자동 설정 됩니다.
-* `표시 될 문구`나 `Hover 상태에서 표시 될 문구`를 설정 할 때 미디어위키 i18n 메시지의 이름을 작성하여 해당 i18n 메시지의 내용이 출력되게 할 수 있습니다. (예시: `recentchanges`를 적으면 `최근 바뀜` 출력)
-* 단축키는 `Alt-Shift-(키)`로 사용 가능합니다.
-* 단축키 설정 시 미디어위키에서 제공하는 기본 단축키와 겹치지 않도록 주의해주세요.
-* 커스텀 클래스는 `,`로 구분하여 작성해주세요. (예시: `classA, classB`를 적어서 `classA`와 `classB` 클래스 추가)
+* 최상단 메뉴:
+  * `* icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`
+* 하위 메뉴:
+  * `** icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`
+* 최하위 메뉴:
+  * `*** icon=아이콘 | display=표시 내용 | title=Hover 문구 | link=클릭시 링크 | access=단축키 | class=커스텀 HTML 클래스 | group=필요 그룹 | right=필요 권한`
+---
+* 모든 내용은 선택이나, `icon`과 `display` 중 적어도 하나는 설정되어 있어야 합니다.
+* 설정하지 않을 내용은 적지 않으면 됩니다. 예를 들어, 아이콘을 설정하지 않으려면 `icon=...`을 생략하면 됩니다.
+* `title`이 설정되어 있지 않다면 `display`로 자동 설정 됩니다.
+* `display`나 `title`을 설정할 때 미디어위키 i18n 메시지의 이름을 작성하여 해당 i18n 메시지의 내용이 출력되게 할 수 있습니다. (예시: `recentchanges`를 적으면 `최근 바뀜` 출력)
+* 단축키는 `Alt-Shift-(키)`로 사용할 수 있습니다.
+* 단축키를 설정할 때는 미디어위키에서 제공하는 기본 단축키와 겹치지 않도록 주의해 주세요.
+* 커스텀 클래스는 `,`로 구분하여 작성해 주세요. (예시: `classA, classB`를 적어서 `classA`와 `classB` 클래스 추가)
 
-예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에서 보실 수 있습니다만, 최신 버전의 리버티 스킨이 적용되어 있지 않을 수도 있습니다.
+예시는 [리브레 위키](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar)에서 확인할 수 있습니다.
