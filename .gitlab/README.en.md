@@ -23,15 +23,19 @@ Security vulnerability should be reported using [Phabricator](https://issue.libr
 ## Navbar
 Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 
-First-Level menu : `* icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`
-Second-Level menu : `** icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`
-Third-Level menu : `*** icon=Icon | display=Display Text | title=Hover Text | link=Link | access=Shortcut Key | class=Custom HTML Class | group=Needed user group | right=Needed user right`
-* All settings are optional, but one of `Icon` or `Display Text` must be set.
-* If `Hover Text` is not set, `Display Text` will be used.
+* First-Level menu:
+  * `* icon=icon | display=display text | title=hover text | link=link | access=shortcut key | class=custom HTML classes | group=required user group | right=required user right`
+* Second-Level menu:
+  * `** icon=icon | display=display text | title=hover text | link=link | access=shortcut key | class=custom HTML classes | group=required user group | right=required user right`
+* Third-Level menu:
+  * `*** icon=icon | display=display text | title=hover text | link=link | access=shortcut key | class=custom HTML classes | group=required user group | right=required user right`
+---
+* All values are optional, but at least one of `icon` or `display` must be set.
+* If `title` is not set, `display` is used instead.
 * If you don't want to set some parameters, you can skip them. As an example, if you don't want to set an icon, skip `icon=...`.
-* You can use i18n message names of MediaWiki for the values of `Display Text` and `Hover Text` to show the i18n message (e.g., write `recentchanges` to show `Recent changes`).
+* You can use i18n message names of MediaWiki for the values of `display` and `title` to show the i18n messages (e.g., write `recentchanges` to show `Recent changes`).
 * Shortcut keys can be used as `Alt-Shift-(Key)`.
-* When setting shortcuts, please be careful not to overlap the basic shortcut provided by MediaWiki.
-* Set custom class separated by `,`. (Example: Type `classA, classB` to add `classA` and `classB` class)
+* When setting shortcuts, be careful not to overlap with the default shortcuts provided by MediaWiki.
+* Custom classes are separated by `,` (e.g., write `classA, classB` to add `classA` and `classB` class).
 
-You can see an example at [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
+You can see an example on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
