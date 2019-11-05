@@ -847,6 +847,8 @@ class LibertyTemplate extends BaseTemplate {
 
 		$lines = explode( "\n", $data );
 
+		$types = [ 'icon', 'display', 'title', 'link', 'access', 'class' ];
+
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line, "\r" );
 			if ( $line[0] !== '*' ) {
@@ -858,9 +860,13 @@ class LibertyTemplate extends BaseTemplate {
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 1 );
-				foreach ( $split as $value ) {
-					$value = explode( '=', trim( $value ) );
-					$data[$value[0]] = $value[1];
+				foreach ( $split as $key => $value ) {
+					$valueArr = explode( '=', trim( $value ) );
+					if ( $valueArr[1] ) {
+						$data[$valueArr[0]] = $valueArr[1];
+					} else {
+						$data[$types[$key]] = trim( $value );
+					}
 				}
 
 				// Icon
@@ -952,9 +958,13 @@ class LibertyTemplate extends BaseTemplate {
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
-				foreach ( $split as $value ) {
-					$value = explode( '=', trim( $value ) );
-					$data[$value[0]] = $value[1];
+				foreach ( $split as $key => $value ) {
+					$valueArr = explode( '=', trim( $value ) );
+					if ( $valueArr[1] ) {
+						$data[$valueArr[0]] = $valueArr[1];
+					} else {
+						$data[$types[$key]] = trim( $value );
+					}
 				}
 
 				// Icon
@@ -1041,7 +1051,12 @@ class LibertyTemplate extends BaseTemplate {
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 3 );
 				foreach ( $split as $key => $value ) {
-					$split[$key] = trim( $value );
+					$valueArr = explode( '=', trim( $value ) );
+					if ( $valueArr[1] ) {
+						$data[$valueArr[0]] = $valueArr[1];
+					} else {
+						$data[$types[$key]] = trim( $value );
+					}
 				}
 
 				// Icon
