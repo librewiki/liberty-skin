@@ -140,7 +140,7 @@ class SkinLiberty extends SkinTemplate {
 			color: #DDD;
 		}
 	
-		.liberty-content-header, .liberty-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-footer, .editOptions, html .wikiEditor-ui-toolbar, #pagehistory li.selected, .mw-datatable td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox, #preferences, .navbox-list {
+		.liberty-content-header, .liberty-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-footer, .editOptions, html .wikiEditor-ui-toolbar, #pagehistory li.selected, .mw-datatable td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata td, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox, #preferences, .navbox-list, .dropdown-divider {
 			background-color: #1F2023;
 			color: #DDD;
 		}
@@ -153,7 +153,9 @@ class SkinLiberty extends SkinTemplate {
 	
 		.btn-secondary { background: transparent; color: #DDD; }
 		
-		#pagehistory li { border: 0; }";
+		#pagehistory li { border: 0; }
+		
+		.Liberty .content-wrapper .liberty-footer, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-content .liberty-content-main, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item + .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn, .dropdown-menu, .dropdown-divider, .Liberty .content-wrapper .liberty-content .liberty-content-main fieldset, hr, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li, .mw-changeslist-legend { border-color: #555; }";
 		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' ) ? 'html' : '';
 		if( $LibertyUserDarkSetting ) {
 			$out->addInlineStyle( $LibertyDarkCss );
