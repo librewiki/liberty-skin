@@ -156,10 +156,10 @@ class SkinLiberty extends SkinTemplate {
 		#pagehistory li { border: 0; }
 		
 		.Liberty .content-wrapper .liberty-footer, .Liberty .content-wrapper .liberty-content .liberty-content-header, .Liberty .content-wrapper .liberty-content .liberty-content-main, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-footer, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-header .nav .nav-item + .nav-item, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:hover, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn:focus, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools .tools-btn, .dropdown-menu, .dropdown-divider, .Liberty .content-wrapper .liberty-content .liberty-content-main fieldset, hr, .Liberty .content-wrapper .liberty-sidebar .liberty-right-fixed .live-recent .live-recent-content .live-recent-list li, .mw-changeslist-legend, .Liberty .content-wrapper .liberty-content .liberty-content-header .content-tools { border-color: #555; }";
-		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' ) ? 'html' : '';
-		if( $LibertyUserDarkSetting ) {
+		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' );
+		if ( $LibertyUserDarkSetting === 'dark' ) {
 			$out->addInlineStyle( $LibertyDarkCss );
-		} else {
+		} else if ( $LibertyUserDarkSetting === 'none' ) {
 			$out->addInlineStyle( "@media (prefers-color-scheme: dark) { $LibertyDarkCss }" );
 		}
 		// @codingStandardsIgnoreEnd
