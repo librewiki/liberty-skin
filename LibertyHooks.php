@@ -40,10 +40,16 @@ class LibertyHooks extends Hooks {
 		];
 
 		$preferences['liberty-dark'] = [
-			'type' => 'check',
+			'type' => 'select',
 			'label-message' => 'liberty-pref-dark',
 			'section' => 'liberty/color',
-			'help-message' => 'liberty-pref-dark-help'
+			'options' => [
+				'무시하지 않음' => 'none',
+				'무시하고 어두운 모드 활성화' => 'dark',
+				'무시하고 밝은 모드 활성화' => 'light'
+			],
+			'help-message' => 'liberty-pref-dark-help',
+			'default' => 'none'
 		];
 	}
 }
