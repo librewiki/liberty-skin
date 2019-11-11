@@ -3,7 +3,8 @@
 		"authors": [
 			"Viztor",
 			"Looong",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"Ywang"
 		]
 	},
 	"skinname-liberty": "Liberty",
@@ -31,5 +32,6 @@
 	"liberty-pref-color-main-help": "本站会使用的主要颜色",
 	"liberty-pref-color-second": "次要颜色",
 	"liberty-pref-color-second-help": "本站会使用的次要颜色",
-	"liberty-pref-fonts-helplabel": "帮助"
+	"liberty-pref-fonts-helplabel": "帮助",
+	"liberty-pref-dark": "忽略系统夜间模式设置"
 }

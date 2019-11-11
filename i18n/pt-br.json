@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Dianakc"
 		]
 	},
 	"skinname-liberty": "Liberdade",
@@ -33,5 +34,7 @@
 	"prefs-font": "Preferência de fonte",
 	"liberty-pref-fonts": "Selecione a fonte que você deseja usar",
 	"liberty-pref-fonts-helplabel": "Ajuda",
-	"liberty-pref-fonts-help": "A fonte será carregada por localização remota, exceto o Malgun Gothic."
+	"liberty-pref-fonts-help": "A fonte será carregada por localização remota, exceto o Malgun Gothic.",
+	"liberty-pref-dark": "Ignorar configuração do modo escuro do sistema?",
+	"liberty-pref-dark-help": "Escolha se deseja seguir as configurações do sistema ao ativar o modo escuro."
 }

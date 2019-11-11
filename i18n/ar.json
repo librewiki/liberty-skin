@@ -33,5 +33,7 @@
 	"prefs-font": "تفضيلات الخط",
 	"liberty-pref-fonts": "حدد الخط الذي تريد استخدامه",
 	"liberty-pref-fonts-helplabel": "مساعدة",
-	"liberty-pref-fonts-help": "سيتم تحميل الخط بواسطة الموقع البعيد باستثناء Malgun Gothic."
+	"liberty-pref-fonts-help": "سيتم تحميل الخط بواسطة الموقع البعيد باستثناء Malgun Gothic.",
+	"liberty-pref-dark": "تجاهل إعداد وضع النظام المظلم؟",
+	"liberty-pref-dark-help": "اختر ما إذا كنت تريد اتباع إعدادات النظام عند تنشيط الوضع المظلم."
 }

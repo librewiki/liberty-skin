@@ -33,5 +33,7 @@
 	"prefs-font": "Претпочитан фонт",
 	"liberty-pref-fonts": "Одберете го претпочитаниот фонт",
 	"liberty-pref-fonts-helplabel": "Помош",
-	"liberty-pref-fonts-help": "Фонтот ќе се вчита од друго место (освен Malgun Gothic)."
+	"liberty-pref-fonts-help": "Фонтот ќе се вчита од друго место (освен Malgun Gothic).",
+	"liberty-pref-dark": "Да ја занемарам системската поставеност за темен изглед?",
+	"liberty-pref-dark-help": "Изберете дали да ги следите системските псотавки за вклучување на темниот изглед."
 }
