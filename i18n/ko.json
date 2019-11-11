@@ -38,6 +38,6 @@
 	"liberty-pref-fonts": "사용할 글꼴을 선택하십시오",
 	"liberty-pref-fonts-helplabel": "도움말",
 	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 원격 위치로부터 로드됩니다.",
-	"liberty-pref-dark": "시스템의 어두운 모드 설정을",
-	"liberty-pref-dark-help": "어두운 모드를 활성화 할 때 시스템 설정을 따를 것인지 선택합니다."
+	"liberty-pref-dark": "시스템의 어두운 모드 설정을 무시하시겠습니까?",
+	"liberty-pref-dark-help": "어두운 모드를 활성화할 때 시스템 설정을 따를 것인지 선택합니다."
 }

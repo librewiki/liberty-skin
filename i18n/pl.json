@@ -32,5 +32,7 @@
 	"liberty-pref-color-second-help": "Dodatkowy kolor który będzie używany na tej stronie.",
 	"prefs-font": "Preferencje czcionek",
 	"liberty-pref-fonts": "Wybierz czcionkę, której chcesz używać",
-	"liberty-pref-fonts-helplabel": "Pomoc"
+	"liberty-pref-fonts-helplabel": "Pomoc",
+	"liberty-pref-dark": "Zignorować systemowe ustawienia trybu ciemnego?",
+	"liberty-pref-dark-help": "Czy korzystać z ustawień systemowych przy aktywacji trybu ciemnego."
 }

@@ -27,7 +27,7 @@
 	"liberty.css": "/* Le CSS placé ici affectera les utilisateurs de l’habillage Liberté */",
 	"liberty.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs utilisant l’habillage Liberté */",
 	"prefs-liberty": "Habillage Liberté",
-	"prefs-color": "Paramètre de couleur",
+	"prefs-color": "Paramètres de couleurs",
 	"liberty-pref-color-main": "Couleur principale",
 	"liberty-pref-color-main-help": "Couleur principale qui sera utilisée pour ce site.",
 	"liberty-pref-color-second": "Couleur secondaire",
@@ -35,5 +35,7 @@
 	"prefs-font": "Préférence de police",
 	"liberty-pref-fonts": "Sélectionner la police que vous voulez utiliser",
 	"liberty-pref-fonts-helplabel": "Aide",
-	"liberty-pref-fonts-help": "La police sera chargée depuis l’emplacement distant, sauf ''Malgun Gothic''."
+	"liberty-pref-fonts-help": "La police sera chargée depuis l’emplacement distant, sauf ''Malgun Gothic''.",
+	"liberty-pref-dark": "Ignorer le paramètre mode sombre du système ?",
+	"liberty-pref-dark-help": "Choisissez s’il faut suivre les paramètres du système pour l’activation du mode sombre."
 }

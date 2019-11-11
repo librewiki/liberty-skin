@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"skinname-liberty": "Liberty",
+	"liberty-desc": "Responsiv drakt for [https://librewiki.net/ LibreWiki]",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Nytt]",
+	"liberty-forgot-pw": "Glemt passordet ditt?",
+	"liberty-login": "Logg inn",
+	"liberty-login-alter": "Logg inn med en annen metode",
+	"liberty-login-btn": "Logg inn",
+	"liberty-info": "Info",
+	"liberty-purge": "Gjenoppfrisk",
+	"liberty-recent-discussions": "Nylige diskusjoner",
+	"liberty-remember": "Husk innloggingen min",
+	"liberty-tooltip-info": "Vis dokumentets informasjon",
+	"liberty-tooltip-purge": "Gjenoppfrisk mellomlageret til denne siden.",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Vis mer",
+	"liberty-warning": "Advarsel",
+	"liberty-warning-text": "Skriv inn brukernavnet og passordet ditt korrekt.",
+	"liberty.css": "/* CSS i denne fila vil gjelde alle som bruker drakta Liberty */",
+	"liberty.js": "/* JavaScript i denne fila vil gjelde for brukere av drakta Liberty */",
+	"prefs-liberty": "Drakta Liberty",
+	"prefs-color": "Fargeinnstilling",
+	"liberty-pref-color-main": "Hovedfarge",
+	"liberty-pref-color-main-help": "Hovedfargen som skal brukes på dette nettstedet.",
+	"liberty-pref-color-second": "Sekundærfarge",
+	"liberty-pref-color-second-help": "Sekundærfarge som skal brukes på dette nettstedet.",
+	"prefs-font": "Skrifttypepreferanser",
+	"liberty-pref-fonts": "Velg hvilken skrifttype du ønsker å bruke",
+	"liberty-pref-fonts-helplabel": "Hjelp",
+	"liberty-pref-fonts-help": "Skrifttypen lastes fra ekstern beligenhet, med unntak av Malgun Gothic.",
+	"liberty-pref-dark": "Ignorer systemets innstilling for mørk modus?",
+	"liberty-pref-dark-help": "Velg hvorvidt systemets innstilling skal følges når mørk modus aktiveres."
+}
