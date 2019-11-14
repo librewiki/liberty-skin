@@ -33,5 +33,7 @@
 	"prefs-font": "Typsnittsinställningar",
 	"liberty-pref-fonts": "Välj typsnittet du vill använda",
 	"liberty-pref-fonts-helplabel": "Hjälp",
-	"liberty-pref-fonts-help": "Typsnittet kommer läsas in från en fjärrplats förutom Malgun Gothic."
+	"liberty-pref-fonts-help": "Typsnittet kommer läsas in från en fjärrplats förutom Malgun Gothic.",
+	"liberty-pref-dark": "Ignorera systemets inställning för mörkt läge?",
+	"liberty-pref-dark-help": "Välj om systeminställningarna ska följas när mörkt läge aktiveras."
 }
