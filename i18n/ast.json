@@ -12,9 +12,11 @@
 	"liberty-login": "Aniciar sesión",
 	"liberty-login-alter": "Aniciar sesión con otru métodu",
 	"liberty-login-btn": "Aniciar sesión",
+	"liberty-info": "Información",
 	"liberty-purge": "Purgar",
 	"liberty-recent-discussions": "Alderiques recién",
 	"liberty-remember": "Recordar el mio aniciu de sesión",
+	"liberty-tooltip-info": "Ver la información del documentu",
 	"liberty-tooltip-purge": "Purgar la caché d'esta páxina.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver más",
@@ -27,5 +29,11 @@
 	"liberty-pref-color-main": "Color principal",
 	"liberty-pref-color-main-help": "Color principal que s'usará nesti sitiu.",
 	"liberty-pref-color-second": "Color secundariu",
-	"liberty-pref-color-second-help": "Color secundariu que s'usará nesti sitiu."
+	"liberty-pref-color-second-help": "Color secundariu que s'usará nesti sitiu.",
+	"prefs-font": "Preferencies de tipografía",
+	"liberty-pref-fonts": "Escueye'l tipu de lletra que quies utilizar",
+	"liberty-pref-fonts-helplabel": "Ayuda",
+	"liberty-pref-fonts-help": "El tipu de lletra va cargase dende un allugamientu remotu , cola esceición de Malgun Gothic.",
+	"liberty-pref-dark": "¿Inorar la preferencia del sistema de mou escuru?",
+	"liberty-pref-dark-help": "Escoyer si siguir les preferencies del sistema al activar el mou escuru"
 }
