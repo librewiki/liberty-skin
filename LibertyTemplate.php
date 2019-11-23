@@ -410,10 +410,14 @@ class LibertyTemplate extends BaseTemplate {
 		$skin = $this->getSkin();
 		$wgLibertyMaxRecent = isset( $GLOBALS['wgLibertyMaxRecent'] ) ?
 								$GLOBALS['wgLibertyMaxRecent'] : 10;
-		$articleNS = implode("|", $wgLibertyLiveRCArticleNamespaces);
-		$talkNS = implode("|", $wgLibertyLiveRCTalkNamespaces);
+		$articleNS = implode( "|", $wgLibertyLiveRCArticleNamespaces );
+		$talkNS = implode( "|", $wgLibertyLiveRCTalkNamespaces );
 		?>
-		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" data-talk-ns="<?php echo $talkNS ?>">
+		<div
+			class="live-recent"
+			data-article-ns="<?php echo $articleNS ?>"
+			data-talk-ns="<?php echo $talkNS ?>"
+		>
 			<div class="live-recent-header">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
