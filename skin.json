@@ -28,7 +28,7 @@
 		"TwitterAccount": null,
 		"NaverVerification": null,
 		"LibertyLiveRCArticleNamespaces": [0, 4, 10, 12, 14],
-		"LibertyLiveRCTopicNamespaces": [1, 3, 5, 7, 9, 11, 13, 15],
+		"LibertyLiveRCTalkNamespaces": [1, 3, 5, 7, 9, 11, 13, 15],
 		"LibertyMaxRecent": 10
 	},
 	"ResourceModules": {
