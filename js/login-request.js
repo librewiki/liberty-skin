@@ -2,65 +2,44 @@
 function LoginManage() {
 	'use strict';
 	try {
-		// @todo FIXME: could probably simplify this code a bit by using
-		// ( new mw.Api() ).postWithToken( 'edit', paramsGoHere ).done( ... );
-		$.ajax( {
-			url: mw.util.wikiScript( 'api' ),
-			type: 'post',
-			data: {
-				action: 'query',
-				meta: 'tokens',
-				type: 'login',
-				format: 'json'
-			},
-			dataType: 'json'
+		// new mw.Api().postWithToken does not work with clientlogin
+		var api = new mw.Api();
+		api.post( {
+			action: 'query',
+			meta: 'tokens',
+			type: 'login'
 		} )
-			.done( function ( result ) {
+			.then( function ( result ) {
 				var token = result.query.tokens.logintoken;
-				$.ajax( {
-					url: mw.util.wikiScript( 'api' ),
-					type: 'post',
-					data: {
-						action: 'clientlogin',
-						loginreturnurl: location.href,
-						username: $( '#wpName1' ).val(),
-						password: $( '#wpPassword1' ).val(),
-						rememberMe: $( '#lgremember' ).prop( 'checked' ) ? 1 : 0,
-						logintoken: token,
-						format: 'json'
-					},
-					dataType: 'json'
+				return api.post( {
+					action: 'clientlogin',
+					loginreturnurl: location.href,
+					username: $( '#wpName1' ).val(),
+					password: $( '#wpPassword1' ).val(),
+					rememberMe: $( '#lgremember' ).prop( 'checked' ) ? 1 : 0,
+					logintoken: token
 				} )
-					.done( function ( result ) {
-						if ( result.clientlogin.status !== 'PASS' ) {
-							switch ( result.clientlogin.status ) {
-								case 'FAIL':
-									// @todo CHECKME: Isn't this rather English-specific?
-									if ( result.clientlogin.message === 'The supplied credentials could not be authenticated.' ) {
-										$( '#modal-login-alert' ).addClass( 'alert-warning' );
-										$( '#modal-login-alert' ).fadeIn( 'slow' );
-										$( '#modal-login-alert' ).html(
-											'<strong>' + mw.msg( 'liberty-warning' ) +
-											'</strong><br />' + mw.msg( 'liberty-warning-text' )
-										);
-									} else {
-										$( '#modal-login-alert' ).addClass( 'alert-warning' );
-										$( '#modal-login-alert' ).fadeIn( 'slow' );
-										$( '#modal-login-alert' ).html( result.clientlogin.message );
-									}
-									break;
-								default:
+			} )
+			.then( function ( result ) {
+				if ( result.clientlogin.status !== 'PASS' ) {
+					switch ( result.clientlogin.status ) {
+						case 'FAIL':
+							$( '#modal-login-alert' ).addClass( 'alert-warning' );
+							$( '#modal-login-alert' ).fadeIn( 'slow' );
+							$( '#modal-login-alert' ).text( result.clientlogin.message );
+							break;
+						default:
 
-							}
-						} else {
-							if ( mw.config.get( 'wgNamespaceNumber' ) === -1 ) {
-								$( location ).attr( 'href', mw.config.get( 'wgArticlePath' ).replace( '$1', '' ) );
-							} else {
-								window.location.reload();
-							}
-						}
-					} );
-			} );
+					}
+				} else {
+					if ( mw.config.get( 'wgNamespaceNumber' ) === -1 ) {
+						$( location ).attr( 'href', mw.config.get( 'wgArticlePath' ).replace( '$1', '' ) );
+					} else {
+						window.location.reload();
+					}
+				}
+			} )
+			.catch( function () {} );
 		return false;
 	} catch ( e ) {
 		return false;

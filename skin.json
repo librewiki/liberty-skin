@@ -93,8 +93,7 @@
 		},
 		"skins.liberty.loginjs": {
 			"scripts": "js/login-request.js",
-			"dependencies": "mediawiki.util",
-			"messages": [ "liberty-warning", "liberty-warning-text" ]
+			"dependencies": "mediawiki.util"
 		}
 	},
 	"ResourceFileModulePaths": {
