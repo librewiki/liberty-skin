@@ -21,7 +21,9 @@
 	"config": {
 		"LibertyEnableLiveRC": true,
 		"LibertyUseGravatar": true,
-		"LibertyMainColor": "#4188F1"
+		"LibertyMainColor": "#4188F1",
+		"LibertyLiveRCArticleNamespaces": [0, 4, 10, 12, 14],
+		"LibertyLiveRCTopicNamespaces": [1, 3, 5, 7, 9, 11, 13, 15]
 	},
 	"ResourceModules": {
 		"skins.liberty.styles": {
