@@ -1,8 +1,8 @@
 $( function () {
 	'use strict';
 	var articleNamespaces, talkNamespaces, isArticleTab, limit;
-	articleNamespaces = $( '.live-recent' )[ 0 ].attr( 'data-article-ns' );
-	talkNamespaces = $( '.live-recent' )[ 0 ].attr( 'data-talk-ns' );
+	articleNamespaces = $( '.live-recent' ).attr( 'data-article-ns' );
+	talkNamespaces = $( '.live-recent' ).attr( 'data-talk-ns' );
 	isArticleTab = true;
 	limit = $( '#live-recent-list' )[ 0 ].childElementCount;
 
