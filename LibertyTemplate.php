@@ -867,7 +867,7 @@ class LibertyTemplate extends BaseTemplate {
 				$split[0] = substr( $split[0], 1 );
 				foreach ( $split as $key => $value ) {
 					$valueArr = explode( '=', trim( $value ) );
-					if ( $valueArr[1] ) {
+					if ( isset( $valueArr[1] ) ) {
 						$data[$valueArr[0]] = $valueArr[1];
 					} else {
 						$data[$types[$key]] = trim( $value );
@@ -875,26 +875,27 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Icon
-				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Group
-				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
+				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				if ( !$data['display'] ) {
-					continue;
-				}
-				$textObj = wfMessage( $data['display'] );
-				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+				if ( isset( $data['display'] ) ) {
+					$textObj = wfMessage( $data['display'] );
+					if ( $textObj->isDisabled() ) {
+						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$text = $textObj->text();
+					}
 				} else {
-					$text = $textObj->text();
+					$text = "";
 				}
 
 				// If icon and text both empty
@@ -965,7 +966,7 @@ class LibertyTemplate extends BaseTemplate {
 				$split[0] = substr( $split[0], 2 );
 				foreach ( $split as $key => $value ) {
 					$valueArr = explode( '=', trim( $value ) );
-					if ( $valueArr[1] ) {
+					if ( isset( $valueArr[1] ) ) {
 						$data[$valueArr[0]] = $valueArr[1];
 					} else {
 						$data[$types[$key]] = trim( $value );
@@ -973,26 +974,27 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Icon
-				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Group
-				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
+				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				if ( !$data['display'] ) {
-					continue;
-				}
-				$textObj = wfMessage( $data['display'] );
-				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+				if ( isset( $data['display'] ) ) {
+					$textObj = wfMessage( $data['display'] );
+					if ( $textObj->isDisabled() ) {
+						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$text = $textObj->text();
+					}
 				} else {
-					$text = $textObj->text();
+					$text = "";
 				}
 
 				// If icon and text both empty
@@ -1026,6 +1028,8 @@ class LibertyTemplate extends BaseTemplate {
 				if ( isset( $data['access'] ) ) {
 					// Access
 					$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
+				} else {
+					$access = null;
 				}
 
 				if ( isset( $data['class'] ) ) {
@@ -1034,6 +1038,8 @@ class LibertyTemplate extends BaseTemplate {
 					foreach ( $classes as $key => $value ) {
 						$classes[$key] = trim( $value );
 					}
+				} else {
+					$classes = [];
 				}
 
 				$item = [
@@ -1057,7 +1063,7 @@ class LibertyTemplate extends BaseTemplate {
 				$split[0] = substr( $split[0], 3 );
 				foreach ( $split as $key => $value ) {
 					$valueArr = explode( '=', trim( $value ) );
-					if ( $valueArr[1] ) {
+					if ( isset( $valueArr[1] ) ) {
 						$data[$valueArr[0]] = $valueArr[1];
 					} else {
 						$data[$types[$key]] = trim( $value );
@@ -1065,26 +1071,27 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Icon
-				$icon = htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' );
+				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Group
-				$group = htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' );
+				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// Right
-				$right = htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' );
+				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
 				// ** link target|<some MW: message name> and if the
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
-				if ( !$data['display'] ) {
-					continue;
-				}
-				$textObj = wfMessage( $data['display'] );
-				if ( $textObj->isDisabled() ) {
-					$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+				if ( isset( $data['display'] ) ) {
+					$textObj = wfMessage( $data['display'] );
+					if ( $textObj->isDisabled() ) {
+						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$text = $textObj->text();
+					}
 				} else {
-					$text = $textObj->text();
+					$text = "";
 				}
 
 				// If icon and text both empty
@@ -1114,12 +1121,20 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// Access
-				$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
+				if ( isset( $data['access'] ) ) {
+					$access = preg_match( '/^([0-9a-z]{1})$/i', $data['access'] ) ? $data['access'] : '';
+				} else {
+					$access = null;
+				}
 
-				// Classes
-				$classes = explode( ',', htmlentities( $data['class'], ENT_QUOTES, 'UTF-8' ) );
-				foreach ( $classes as $key => $value ) {
-					$classes[$key] = trim( $value );
+				if ( isset( $data['class'] ) ) {
+					// Classes
+					$classes = explode( ',', htmlentities( $data['class'], ENT_QUOTES, 'UTF-8' ) );
+					foreach ( $classes as $key => $value ) {
+						$classes[$key] = trim( $value );
+					}
+				} else {
+					$classes = [];
 				}
 
 				$item = [
