@@ -44,41 +44,31 @@ $( function () {
 			rcnamespace: isArticleTab ? articleNamespaces : talkNamespaces,
 			rctoponly: true
 		};
-		$.ajax( {
-			url: mw.util.wikiScript( 'api' ),
-			data: getParameter,
-			xhrFields: {
-				withCredentials: true
-			},
-			dataType: 'json'
-		} ).then( function ( data ) {
-			var recentChanges, html, time, line, text;
-			recentChanges = data.query.recentchanges;
-			html = recentChanges.map( function ( item ) {
-				time = new Date( item.timestamp );
-				line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title.replace( / /g, '_' ) ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
-				text = '';
-				if ( item.type === 'new' ) {
-					text += '[New]';
-				}
-				text += item.title;
-				if ( text.length > 13 ) {
-					text = text.substr( 0, 13 );
-					text += '...';
-				}
-				text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
-				/* @todo FIXME: This just doesn't work and I've no idea why.
-				The i18n msg is properly defined etc. yet it shows up as <liberty-feed-new>
-				when called by the below line :-( */
-				// text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
-				line += text;
-				line += '</a></li>';
-				return line;
-			} ).join( '\n' );
-			$( '#live-recent-list' ).html( html );
-		}, function () {
-			return;
-		} );
+		var api = new mw.Api();
+		api.get( getParameter )
+			.then( function ( data ) {
+				var recentChanges, html, time, line, text;
+				recentChanges = data.query.recentchanges;
+				html = recentChanges.map( function ( item ) {
+					time = new Date( item.timestamp );
+					line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title.replace( / /g, '_' ) ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
+					text = '';
+					if ( item.type === 'new' ) {
+						text += '[New]';
+					}
+					text += item.title;
+					if ( text.length > 13 ) {
+						text = text.substr( 0, 13 );
+						text += '...';
+					}
+					text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
+					line += text;
+					line += '</a></li>';
+					return line;
+				} ).join( '\n' );
+				$( '#live-recent-list' ).html( html );
+			})
+			.catch( function () {} );
 	}
 
 	$( '#liberty-recent-tab1' ).click( function () {

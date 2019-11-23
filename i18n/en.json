@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Purge the cache of this page.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "View more",
-	"liberty-warning": "Warning",
-	"liberty-warning-text": "Enter your username and password correctly.",
 	"liberty.css": "/* CSS placed here will affect users of the Liberty skin */",
 	"liberty.js": "/* Any JavaScript here will be loaded for users using the Liberty skin */",
 	"prefs-liberty": "Liberty skin",
