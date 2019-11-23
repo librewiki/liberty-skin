@@ -1,9 +1,9 @@
 $( function () {
 	'use strict';
-	var documentNamespaces, topicNamespaces, isDocumentTab, limit;
-	documentNamespaces = '0|4|10|12|14|1600';
-	topicNamespaces = '1|3|5|7|9|11|13|15|2600|1601|1063';
-	isDocumentTab = true;
+	var articleNamespaces, talkNamespaces, isArticleTab, limit;
+	articleNamespaces = $( '.live-recent' )[ 0 ].attr( 'data-article-ns' );
+	talkNamespaces = $( '.live-recent' )[ 0 ].attr( 'data-talk-ns' );
+	isArticleTab = true;
 	limit = $( '#live-recent-list' )[ 0 ].childElementCount;
 
 	function timeFormat( time ) {
@@ -41,7 +41,7 @@ $( function () {
 			rctype: 'edit|new',
 			rclimit: limit,
 			format: 'json',
-			rcnamespace: isDocumentTab ? documentNamespaces : topicNamespaces,
+			rcnamespace: isArticleTab ? articleNamespaces : talkNamespaces,
 			rctoponly: true
 		};
 		$.ajax( {
@@ -84,14 +84,14 @@ $( function () {
 	$( '#liberty-recent-tab1' ).click( function () {
 		$( this ).addClass( 'active' );
 		$( '#liberty-recent-tab2' ).removeClass( 'active' );
-		isDocumentTab = true;
+		isArticleTab = true;
 		refreshLiveRecent();
 	} );
 
 	$( '#liberty-recent-tab2' ).click( function () {
 		$( this ).addClass( 'active' );
 		$( '#liberty-recent-tab1' ).removeClass( 'active' );
-		isDocumentTab = false;
+		isArticleTab = false;
 		refreshLiveRecent();
 	} );
 

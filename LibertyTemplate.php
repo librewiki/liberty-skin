@@ -394,19 +394,19 @@ class LibertyTemplate extends BaseTemplate {
 	 * Live recent function, build right side's Recent menus.
 	 */
 	protected function liveRecent() {
-		global $wgLibertyEnableLiveRC;
-
-		$skin = $this->getSkin();
-		$wgLibertyMaxRecent = isset( $GLOBALS['wgLibertyMaxRecent'] ) ?
-							  $GLOBALS['wgLibertyMaxRecent'] : 10;
-
+		global $wgLibertyEnableLiveRC, $wgLibertyLiveRCArticleNamespaces, $wgLibertyLiveRCTalkNamespaces;
 		// Don't bother outputting this if the live RC feature is disabled in
 		// site configuration
 		if ( !$wgLibertyEnableLiveRC ) {
 			return;
 		}
+		$skin = $this->getSkin();
+		$wgLibertyMaxRecent = isset( $GLOBALS['wgLibertyMaxRecent'] ) ?
+								$GLOBALS['wgLibertyMaxRecent'] : 10;
+		$articleNS = implode("|", $wgLibertyLiveRCArticleNamespaces);
+		$talkNS = implode("|", $wgLibertyLiveRCTalkNamespaces);
 		?>
-		<div class="live-recent">
+		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" data-talk-ns="<?php echo $talkNS ?>">
 			<div class="live-recent-header">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
