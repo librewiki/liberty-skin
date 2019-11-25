@@ -21,8 +21,6 @@
 	"liberty-tooltip-purge": "Bu sayfanın önbelleğini temizle.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Daha fazla göster",
-	"liberty-warning": "Uyarı",
-	"liberty-warning-text": "Kullanıcı adınızı ve şifrenizi doğru giriniz.",
 	"liberty.css": "/* Buraya yerleştirilen CSS, Özgürlük görünümün kullanıcılarını etkileyecektir */",
 	"liberty.js": "/* Buradaki herhangi bir JavaScript, Özgürlük görünümü kullanan kullanıcılar için yüklenecek */",
 	"prefs-liberty": "Özgürlük görünümü",

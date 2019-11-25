@@ -24,8 +24,6 @@
 	"liberty-tooltip-purge": "이 문서의 캐시를 새로 고칩니다.",
 	"liberty-twitter": "트위터",
 	"liberty-view-more": "더 보기",
-	"liberty-warning": "경고",
-	"liberty-warning-text": "사용자 이름과 비밀번호를 정확히 입력하세요.",
 	"liberty.css": "/* 이 CSS 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
 	"liberty.js": "/* 이 자바스크립트 설정은 리버티 스킨을 사용하는 사용자에게 적용됩니다 */",
 	"prefs-liberty": "리버티 스킨",

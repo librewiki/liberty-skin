@@ -22,8 +22,6 @@
 	"liberty-tooltip-purge": "Изчистване на складираното копие на страницата.",
 	"liberty-twitter": "Туитър",
 	"liberty-view-more": "Вижте още",
-	"liberty-warning": "Предупреждение",
-	"liberty-warning-text": "Въведете вашето потребителско име и парола коректно.",
 	"liberty.css": "/* CSS кодът, поставен тук, ще бъде приложен за потребителите използващи облика Liberty */",
 	"liberty.js": "/* JavaScript кодът, поставен тук, ще бъде зареден за потребителите използващи облика Liberty */",
 	"prefs-liberty": "Облик Liberty",

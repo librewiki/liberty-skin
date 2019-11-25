@@ -22,8 +22,6 @@
 	"liberty-tooltip-purge": "清除此页面的缓存",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "查看更多",
-	"liberty-warning": "警告",
-	"liberty-warning-text": "请输入正确的用户名和密码。",
 	"liberty.css": "/* 这里放置的CSS将影响使用自由皮肤的用户 */",
 	"liberty.js": "/* 这里的任何JavaScript将为使用自由皮肤的用户加载 */",
 	"prefs-liberty": "自由 皮肤",

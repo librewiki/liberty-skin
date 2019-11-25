@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Освежи кеш меморију ове странице.",
 	"liberty-twitter": "Твитер",
 	"liberty-view-more": "Прикажи више",
-	"liberty-warning": "Упозорење",
-	"liberty-warning-text": "Унесите ваше корисничко име и лозинку коректно.",
 	"liberty.css": "/* CSS постављен овде ће утицати на све кориснике Liberty теме */",
 	"liberty.js": "/* Јаваскрипт постављен овде ће се учитати за све оне који користе Liberty тему */",
 	"prefs-liberty": "Liberty тема",

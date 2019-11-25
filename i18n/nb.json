@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Gjenoppfrisk mellomlageret til denne siden.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Vis mer",
-	"liberty-warning": "Advarsel",
-	"liberty-warning-text": "Skriv inn brukernavnet og passordet ditt korrekt.",
 	"liberty.css": "/* CSS i denne fila vil gjelde alle som bruker drakta Liberty */",
 	"liberty.js": "/* JavaScript i denne fila vil gjelde for brukere av drakta Liberty */",
 	"prefs-liberty": "Drakta Liberty",

@@ -21,8 +21,6 @@
 	"liberty-tooltip-purge": "清除此頁面的快取。",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "檢視更多",
-	"liberty-warning": "警告",
-	"liberty-warning-text": "請正確輸入您的使用者名稱和密碼。",
 	"liberty.css": "/* 此處的 CSS 會影響使用 Liberty 佈景主題的使用者 */",
 	"liberty.js": "/* 任何在此的 JavaScript 都會在使用者使用 Liberty 佈景主題時被載入 */",
 	"prefs-liberty": "Liberty 佈景主題",

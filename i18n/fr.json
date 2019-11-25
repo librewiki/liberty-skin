@@ -22,8 +22,6 @@
 	"liberty-tooltip-purge": "Purger le cache de cette page.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Afficher plus",
-	"liberty-warning": "Avertisssement",
-	"liberty-warning-text": "Saisir correctement votre nom d’utilisateur et votre mot de passe.",
 	"liberty.css": "/* Le CSS placé ici affectera les utilisateurs de l’habillage Liberté */",
 	"liberty.js": "/* Tout JavaScript ici sera chargé pour les utilisateurs utilisant l’habillage Liberté */",
 	"prefs-liberty": "Habillage Liberté",
