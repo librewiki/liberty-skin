@@ -32,5 +32,7 @@
 	"prefs-font": "Font tercihleri",
 	"liberty-pref-fonts": "Kullanmak istediğiniz fontu seçiniz",
 	"liberty-pref-fonts-helplabel": "Yardım",
-	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic dışında uzak bir yere yüklenecek."
+	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic dışında uzak bir yere yüklenecek.",
+	"liberty-pref-dark": "Sistem karanlık modu ayarını yoksayılsın mı?",
+	"liberty-pref-dark-help": "Karanlık modu etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin."
 }

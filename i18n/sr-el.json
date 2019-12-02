@@ -27,5 +27,7 @@
 	"prefs-font": "Podešavanja fonta",
 	"liberty-pref-fonts": "Odaberite font koji želite da koristite",
 	"liberty-pref-fonts-helplabel": "Pomoć",
-	"liberty-pref-fonts-help": "Font će se učitavati s udaljene lokacije, osim Malgun Gothic."
+	"liberty-pref-fonts-help": "Font će se učitavati s udaljene lokacije, osim Malgun Gothic.",
+	"liberty-pref-dark": "Ignoriši sistemsko podešavanje mračnog režima?",
+	"liberty-pref-dark-help": "Odaberite da li da sledite sistemske postavke prilikom aktiviranja mračnog režima."
 }
