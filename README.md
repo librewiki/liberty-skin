@@ -11,6 +11,7 @@
 보안 취약점은 [Phabricator](https://issue.librewiki.net/maniphest/task/edit/form/7/)로 보고해 주세요.
 
 ## 설정
+Please set these variables in the LocalSettings.php file.
 
 | 이름 | 설명 | 예시 값 | 기본 값 |
 | ---- | ---- | ---- | ---- |
@@ -23,7 +24,7 @@
 | `$wgLibertyEnableLiveRC` | 사이드바 최근 변경 사용 여부 | `true` | `true` |
 | `$wgLibertyMaxRecent` | 사이드바 최근 변경에 등장하는 편집의 최대 개수 | `10` | `10` |
 | `$wgLibertyLiveRCArticleNamespaces` | 사이드바 최근 변경 왼쪽 탭에 보여질 네임스페이스 목록 | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` |
-| `$wgLibertyLiveRCArticleNamespaces` | 사이드바 최근 변경 오른쪽 탭에 보여질 네임스페이스 목록 | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` |
+| `$wgLibertyLiveRCTalkNamespaces` | 사이드바 최근 변경 오른쪽 탭에 보여질 네임스페이스 목록 | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` |
 
 ## 상단바
 다음과 같은 형식을 따라서 `미디어위키:Liberty-Navbar` 문서에 작성해주세요.
