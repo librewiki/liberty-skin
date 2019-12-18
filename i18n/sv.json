@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Rensa cache för denna sida.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Visa mer",
-	"liberty-warning": "Varning",
-	"liberty-warning-text": "Ange ditt användarnamn och lösenord korrekt.",
 	"liberty.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Liberty */",
 	"liberty.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Liberty */",
 	"prefs-liberty": "Utseendet Liberty",

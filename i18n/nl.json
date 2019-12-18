@@ -16,8 +16,6 @@
 	"liberty-purge": "Vernieuwen",
 	"liberty-tooltip-info": "Documentgegevens bekijken",
 	"liberty-view-more": "Meer weergeven",
-	"liberty-warning": "Waarschuwing",
-	"liberty-warning-text": "Voer uw gebruikersnaam en wachtwoord in.",
 	"liberty.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op de vormgeving Liberty */",
 	"liberty.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die de vormgeving Liberty gebruiken */",
 	"prefs-liberty": "Liberty vormgeving",

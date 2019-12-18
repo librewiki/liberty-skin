@@ -21,8 +21,6 @@
 	"liberty-tooltip-purge": "Purgue o cache desta página.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver mais",
-	"liberty-warning": "Aviso",
-	"liberty-warning-text": "Digite seu nome de usuário e senha corretamente.",
 	"liberty.css": "/* CSS colocado aqui afetará os usuários da skin Liberty */",
 	"liberty.js": "/* Qualquer JavaScript aqui será carregado para usuários que usam a skin Liberty */",
 	"prefs-liberty": "Pele de liberdade",

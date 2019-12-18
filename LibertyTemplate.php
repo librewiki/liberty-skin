@@ -78,16 +78,14 @@ class LibertyTemplate extends BaseTemplate {
 					<article class="mw-body-content">
 						<?php $this->html( 'bodycontent' ); ?>
 					</article>
+				</div>
+				<footer>
+				<div class="liberty-footer">
 					<?php
 					if ( $this->data['dataAfterContent'] ) {
 						$this->html( 'dataAfterContent' );
 					}
 					?>
-				</div>
-				<footer>
-				<div class="liberty-footer">
-					<div class="read-more-container post-content">
-					</div>
 					<div class="bottom-ads"></div>
 					<?php $this->footer(); ?>
 				</div>
@@ -831,14 +829,29 @@ class LibertyTemplate extends BaseTemplate {
 		$headings = [];
 		$currentHeading = null;
 		$userName = $this->getSkin()->getUser()->getName();
+<<<<<<< HEAD
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
 		)->getContent( Revision::RAW ) );
+=======
+		$userLang = $this->getSkin()->getLanguage()->mCode;
+		$globalData = ContentHandler::getContentText( WikiPage::factory(
+			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
+		)->getContent( Revision::RAW ) );
+		$globalLangData = ContentHandler::getContentText( WikiPage::factory(
+			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
+		)->getContent( Revision::RAW ) );
+>>>>>>> refs/heads/master
 		$userData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
 		)->getContent( Revision::RAW ) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
+<<<<<<< HEAD
+=======
+		} else if ( !empty( $globalLangData ) ) {
+			$data = $globalLangData;
+>>>>>>> refs/heads/master
 		} else {
 			$data = $globalData;
 		}

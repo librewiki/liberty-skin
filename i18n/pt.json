@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Purgue a cache desta página.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver mais",
-	"liberty-warning": "Aviso",
-	"liberty-warning-text": "Introduza o seu nome de utilizador e palavra-passe corretamente.",
 	"liberty.css": "/* Código CSS colocado aqui afetará os utilizadores do tema Liberdade */",
 	"liberty.js": "/* Todo o código Javascript colocado aqui será carregado para utilizadores do tema Liberdade */",
 	"prefs-liberty": "Tema Liberdade",

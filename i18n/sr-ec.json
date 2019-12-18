@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Освежи кеш меморију ове странице.",
 	"liberty-twitter": "Твитер",
 	"liberty-view-more": "Прикажи више",
-	"liberty-warning": "Упозорење",
-	"liberty-warning-text": "Унесите ваше корисничко име и лозинку коректно.",
 	"liberty.css": "/* CSS постављен овде ће утицати на све кориснике Liberty теме */",
 	"liberty.js": "/* Јаваскрипт постављен овде ће се учитати за све оне који користе Liberty тему */",
 	"prefs-liberty": "Liberty тема",
@@ -33,5 +31,7 @@
 	"prefs-font": "Подешавања фонта",
 	"liberty-pref-fonts": "Одаберите фонт који желите да користите",
 	"liberty-pref-fonts-helplabel": "Помоћ",
-	"liberty-pref-fonts-help": "Фонт ће се учитавати с удаљене локације, осим Malgun Gothic."
+	"liberty-pref-fonts-help": "Фонт ће се учитавати с удаљене локације, осим Malgun Gothic.",
+	"liberty-pref-dark": "Игнориши системско подешавање мрачног режима?",
+	"liberty-pref-dark-help": "Одаберите да ли да следите системске поставке приликом активирања мрачног режима."
 }

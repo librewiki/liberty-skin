@@ -20,8 +20,6 @@
 	"liberty-tooltip-purge": "Wyczyść pamięć podręczną dla tej strony.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Zobacz więcej",
-	"liberty-warning": "Ostrzeżenie",
-	"liberty-warning-text": "Wprowadź poprawnie nazwę użytkownika i hasło.",
 	"liberty.css": "/* Umieszczony tutaj kod CSS wpłynie na wygląd skórki Wolność */",
 	"liberty.js": "/* Umieszczony tutaj kod JavaScript zostanie załadowany wyłącznie przez użytkowników korzystających ze skórki Wolność */",
 	"prefs-liberty": "Skórka Wolność",

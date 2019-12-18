@@ -16,8 +16,6 @@
 	"liberty-tooltip-purge": "Osveži keš memoriju ove stranice.",
 	"liberty-twitter": "Tviter",
 	"liberty-view-more": "Prikaži više",
-	"liberty-warning": "Upozorenje",
-	"liberty-warning-text": "Unesite vaše korisničko ime i lozinku korektno.",
 	"liberty.css": "/* CSS postavljen ovde će uticati na sve korisnike Liberty teme */",
 	"liberty.js": "/* Javaskript postavljen ovde će se učitati za sve one koji koriste Liberty temu */",
 	"prefs-liberty": "Liberty tema",
@@ -29,5 +27,7 @@
 	"prefs-font": "Podešavanja fonta",
 	"liberty-pref-fonts": "Odaberite font koji želite da koristite",
 	"liberty-pref-fonts-helplabel": "Pomoć",
-	"liberty-pref-fonts-help": "Font će se učitavati s udaljene lokacije, osim Malgun Gothic."
+	"liberty-pref-fonts-help": "Font će se učitavati s udaljene lokacije, osim Malgun Gothic.",
+	"liberty-pref-dark": "Ignoriši sistemsko podešavanje mračnog režima?",
+	"liberty-pref-dark-help": "Odaberite da li da sledite sistemske postavke prilikom aktiviranja mračnog režima."
 }
