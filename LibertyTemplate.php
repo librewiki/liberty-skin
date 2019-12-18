@@ -844,7 +844,7 @@ class LibertyTemplate extends BaseTemplate {
 		)->getContent( Revision::RAW ) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
-		} else if ( !empty( $globalLangData ) ) {
+		} elseif ( !empty( $globalLangData ) ) {
 			$data = $globalLangData;
 		} else {
 			$data = $globalData;
