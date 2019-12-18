@@ -832,14 +832,20 @@ class LibertyTemplate extends BaseTemplate {
 		$headings = [];
 		$currentHeading = null;
 		$userName = $this->getSkin()->getUser()->getName();
+		$userLang = $this->getSkin()->getLanguage()->mCode;
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
+		)->getContent( Revision::RAW ) );
+		$globalLangData = ContentHandler::getContentText( WikiPage::factory(
+			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
 		)->getContent( Revision::RAW ) );
 		$userData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
 		)->getContent( Revision::RAW ) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
+		} else if ( !empty( $globalLangData ) ) {
+			$data = $globalLangData;
 		} else {
 			$data = $globalData;
 		}
