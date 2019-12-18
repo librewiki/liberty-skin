@@ -48,8 +48,7 @@ class LibertyHooks extends Hooks {
 				'무시하고 어두운 모드 활성화' => 'dark',
 				'무시하고 밝은 모드 활성화' => 'light'
 			],
-			'help-message' => 'liberty-pref-dark-help',
-			'default' => 'none'
+			'help-message' => 'liberty-pref-dark-help'
 		];
 	}
 }
