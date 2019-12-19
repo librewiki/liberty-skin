@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tobi 406",
+			"WikiBayer"
+		]
+	},
+	"liberty-feed-new": "[Neu]",
+	"liberty-forgot-pw": "Passwort vergessen?",
+	"liberty-login": "Anmelden",
+	"liberty-login-btn": "Anmelden",
+	"liberty-purge": "Cache leeren",
+	"liberty-recent-discussions": "Neueste Diskussionen",
+	"liberty-view-more": "Mehr ansehen",
+	"liberty-pref-fonts-helplabel": "Hilfe"
+}
