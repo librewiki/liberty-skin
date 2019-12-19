@@ -183,7 +183,6 @@ class LibertyTemplate extends BaseTemplate {
 			<?php
 			// If the user is logged in...
 			if ( $user->isLoggedIn() ) {
-				$personalTools = $this->getPersonalTools();
 				// ...and Gravatar is enabled in site config...
 				if ( $wgLibertyUseGravatar ) {
 					// ...and the user has a confirmed email...
@@ -231,15 +230,16 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="dropdown-divider"></div>
 						<?php
 						if ( class_exists( 'EchoEvent' ) ) {
+							$personalTools = $this->getPersonalTools();
 							$notiCount = 0;
 							if (
 								isset( $personalTools['notifications-alert'] ) &&
 								$personalTools['notifications-alert'] &&
-								isset( $personalTools['notifications-notice'] ) &&
-								$personalTools['notifications-notice']
+								isset( $personalTools['notifications-message'] ) &&
+								$personalTools['notifications-message']
 							) {
-								$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
-											$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
+								$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
+											$personalTools['notifications-message']['links'][0]['text'];
 							}
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Notifications' ),
@@ -289,18 +289,27 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
-						<a
-							href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
-							class="dropdown-item view-logout"
-							title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"
-						><?php echo $skin->msg( 'logout' )->plain(); ?></a>
+						<?php echo Linker::linkKnown(
+							SpecialPage::getTitleFor( 'UserLogout' ),
+							$skin->msg( 'logout' )->plain(),
+							[
+								'class' => 'dropdown-item view-logout',
+								'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'pt-logout' )
+							]
+						); ?>
 					</div>
 				</div>
-				<a
-					href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
-					class="hide-logout logout-btn"
-					title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>"
-				><span class="fa fa-sign-out"></span></a>
+				<?php echo Linker::linkKnown(
+						SpecialPage::getTitleFor( 'UserLogout' ),
+						'<span class="fa fa-sign-out"></span>',
+						[
+							'class' => 'hide-logout logout-btn',
+							'title' => Linker::titleAttrib( 'pt-logout', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'pt-logout' )
+						]
+					);
+				?>
 			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
 					<span class="fa fa-sign-in"></span>
@@ -657,22 +666,16 @@ class LibertyTemplate extends BaseTemplate {
 		if (
 			isset( $personalTools['notifications-alert'] ) &&
 			$personalTools['notifications-alert'] &&
-			isset( $personalTools['notifications-notice'] ) &&
-			$personalTools['notifications-notice']
+			isset( $personalTools['notifications-message'] ) &&
+			$personalTools['notifications-message']
 		) {
-			$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
-						$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
+			$notiCount = $personalTools['notifications-alert']['links'][0]['text'] +
+						 $personalTools['notifications-message']['links'][0]['text'];
 		}
 		if ( $notiCount ) {
 		?>
 			<div id="pt-notifications" class="navbar-notification">
-				<?php echo Linker::linkKnown(
-					SpecialPage::getTitleFor( 'Notifications' ),
-					'<span class="label label-danger">' . $notiCount . '</span>',
-					[
-						'title' => $this->getSkin()->msg( 'tooltip-pt-notifications-notice' )->text()
-					]
-				); ?>
+				<a href="#"><span class="label label-danger"><?php echo $notiCount; ?></span></a>
 			</div>
 		<?php
 		}
@@ -829,11 +832,6 @@ class LibertyTemplate extends BaseTemplate {
 		$headings = [];
 		$currentHeading = null;
 		$userName = $this->getSkin()->getUser()->getName();
-<<<<<<< HEAD
-		$globalData = ContentHandler::getContentText( WikiPage::factory(
-			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
-		)->getContent( Revision::RAW ) );
-=======
 		$userLang = $this->getSkin()->getLanguage()->mCode;
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
@@ -841,17 +839,13 @@ class LibertyTemplate extends BaseTemplate {
 		$globalLangData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
 		)->getContent( Revision::RAW ) );
->>>>>>> refs/heads/master
 		$userData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
 		)->getContent( Revision::RAW ) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
-<<<<<<< HEAD
-=======
-		} else if ( !empty( $globalLangData ) ) {
+		} elseif ( !empty( $globalLangData ) ) {
 			$data = $globalLangData;
->>>>>>> refs/heads/master
 		} else {
 			$data = $globalData;
 		}
