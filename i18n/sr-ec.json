@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"BadDog"
 		]
 	},
 	"skinname-liberty": "Либерти",
@@ -32,6 +33,6 @@
 	"liberty-pref-fonts": "Одаберите фонт који желите да користите",
 	"liberty-pref-fonts-helplabel": "Помоћ",
 	"liberty-pref-fonts-help": "Фонт ће се учитавати с удаљене локације, осим Malgun Gothic.",
-	"liberty-pref-dark": "Игнориши системско подешавање мрачног режима?",
+	"liberty-pref-dark": "Занемарити системско подешавање тамног режима?",
 	"liberty-pref-dark-help": "Одаберите да ли да следите системске поставке приликом активирања мрачног режима."
 }
