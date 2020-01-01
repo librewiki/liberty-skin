@@ -25,16 +25,16 @@ class LibertyHooks extends Hooks {
 			'label-message' => 'liberty-pref-fonts',
 			'section' => 'liberty/font',
 			'options' => [
-				'기본값' => "default",
-				'본고딕' => "Noto Sans KR",
-				'스포카 한 산스' => "Spoqa Han Sans",
-				'나눔고딕' => "Nanum Gothic",
-				'나눔명조' => 'Nanum Myeongjo',
-				'독도' => 'Dokdo',
-				'개구쟁이' => 'Gaegu',
-				'한겨레결체' => 'Hankc',
-				'청소년체' => 'Youth',
-				'맑은 고딕' => 'Malgun Gothic'
+				wfMessage( 'liberty-font-name-default' )->text() => 'default',
+				wfMessage( 'liberty-font-name-noto-sans-kr' )->text() => 'Noto Sans KR',
+				wfMessage( 'liberty-font-name-spoqa-han-sans' )->text() => 'Spoqa Han Sans',
+				wfMessage( 'liberty-font-name-nanum-gothic' )->text() => 'Nanum Gothic',
+				wfMessage( 'liberty-font-name-nanum-myeongjo' )->text() => 'Nanum Myeongjo',
+				wfMessage( 'liberty-font-name-dokdo' )->text() => 'Dokdo',
+				wfMessage( 'liberty-font-name-gaegu' )->text() => 'Gaegu',
+				wfMessage( 'liberty-font-name-hankc' )->text() => 'Hankc',
+				wfMessage( 'liberty-font-name-youth' )->text() => 'Youth',
+				wfMessage( 'liberty-font-name-malgun-gothic' )->text() => 'Malgun Gothic'
 			],
 			'help-message' => 'liberty-pref-fonts-help'
 		];
@@ -44,9 +44,9 @@ class LibertyHooks extends Hooks {
 			'label-message' => 'liberty-pref-dark',
 			'section' => 'liberty/color',
 			'options' => [
-				'무시하지 않음' => 'none',
-				'무시하고 어두운 모드 활성화' => 'dark',
-				'무시하고 밝은 모드 활성화' => 'light'
+				wfMessage( 'liberty-dark-default' )->text() => 'none',
+				wfMessage( 'liberty-dark-dark' )->text() => 'dark',
+				wfMessage( 'liberty-dark-light' )->text() => 'light'
 			],
 			'help-message' => 'liberty-pref-dark-help'
 		];
