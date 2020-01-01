@@ -165,7 +165,7 @@ class SkinLiberty extends SkinTemplate {
 		$LibertyUserDarkSetting = $this->getUser()->getOption( 'liberty-dark' );
 		if ( $LibertyUserDarkSetting === 'dark' ) {
 			$out->addInlineStyle( $LibertyDarkCss );
-		} else if ( $LibertyUserDarkSetting === 'none' ) {
+		} elseif ( $LibertyUserDarkSetting === null ) {
 			$out->addInlineStyle( "@media (prefers-color-scheme: dark) { $LibertyDarkCss }" );
 		}
 		// @codingStandardsIgnoreEnd

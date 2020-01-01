@@ -44,7 +44,7 @@ class LibertyHooks extends Hooks {
 			'label-message' => 'liberty-pref-dark',
 			'section' => 'liberty/color',
 			'options' => [
-				wfMessage( 'liberty-dark-default' )->text() => 'none',
+				wfMessage( 'liberty-dark-default' )->text() => null,
 				wfMessage( 'liberty-dark-dark' )->text() => 'dark',
 				wfMessage( 'liberty-dark-light' )->text() => 'light'
 			],
