@@ -51,7 +51,7 @@ $( function () {
 				recentChanges = data.query.recentchanges;
 				html = recentChanges.map( function ( item ) {
 					time = new Date( item.timestamp );
-					line = '<li><a class="recent-item" href = "' + ( mw.config.get( 'wgArticlePath' ) ).replace( '$1', encodeURIComponent( item.title.replace( / /g, '_' ) ) ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
+					line = '<li><a class="recent-item" href="' + mw.util.getUrl( item.title ) + '" title="' + item.title + '">[' + timeFormat( time ) + '] ';
 					text = '';
 					if ( item.type === 'new' ) {
 						text += '[New]';
