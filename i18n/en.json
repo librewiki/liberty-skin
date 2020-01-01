@@ -44,7 +44,7 @@
 	"prefs-font": "Font preference",
 	"liberty-pref-fonts": "Select the font you want to use",
 	"liberty-pref-fonts-helplabel": "Help",
-	"liberty-pref-fonts-help": "The font will be loaded by remote location except the Malgun Gothic.",
+	"liberty-pref-fonts-help": "The font will be loaded from Google's servers except for the Malgun Gothic font.",
 	"liberty-pref-dark": "Ignore system dark mode setting?",
 	"liberty-pref-dark-help": "Choose whether to follow system settings when activating dark mode."
 }
