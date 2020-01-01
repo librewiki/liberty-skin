@@ -55,6 +55,9 @@ class LibertyTemplate extends BaseTemplate {
 					</div>
 				</div>
 				<div class="liberty-content-main">
+					<?php if ( $this->data['newtalk'] ) { ?>
+					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
+					<?php } ?>
 					<?php
 					// @codingStandardsIgnoreStart
 					if ( $title->getNamespace() != NS_SPECIAL &&

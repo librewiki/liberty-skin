@@ -301,6 +301,21 @@ fieldset {
 	display: none;
 }
 
+/**
+ * Old-school "you have new messages" notification bar for when the Echo
+ * extension isn't installed
+ * Styles copied from /resources/src/mediawiki.skinning/interface.css@REL1_34
+ */
+.usermessage {
+ 	background-color: #ffce7b;
+	border: 1px solid #ffa500;
+	color: #000;
+	font-weight: bold;
+	margin: 2em 0 1em;
+	padding: 0.5em 1em;
+	vertical-align: middle;
+}
+
 /* Extensions */
 
 /* MsUpload */
