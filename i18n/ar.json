@@ -1,13 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"skinname-liberty": "الحرية",
 	"liberty-desc": "مظهر استجابة لـ[https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "لا تتجاهل",
+	"liberty-dark-dark": "تجاهل وتفعيل وضع الظلام",
+	"liberty-dark-light": "تجاهل وتفعيل وضع المشرق",
 	"liberty-facebook": "فيسبوك",
 	"liberty-feed-new": "[جديد]",
+	"liberty-font-name-default": "الافتراضي",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "نسيت كلمة مرورك؟",
 	"liberty-login": "تسجيل الدخول",
 	"liberty-login-alter": "تسجيل الدخول بطريقة أخرى",
@@ -31,7 +45,7 @@
 	"prefs-font": "تفضيلات الخط",
 	"liberty-pref-fonts": "حدد الخط الذي تريد استخدامه",
 	"liberty-pref-fonts-helplabel": "مساعدة",
-	"liberty-pref-fonts-help": "سيتم تحميل الخط بواسطة الموقع البعيد باستثناء Malgun Gothic.",
+	"liberty-pref-fonts-help": "سيتم تحميل الخط من خوادم جوجل باستثناء الخط Malgun Gothic.",
 	"liberty-pref-dark": "تجاهل إعداد وضع النظام المظلم؟",
 	"liberty-pref-dark-help": "اختر ما إذا كنت تريد اتباع إعدادات النظام عند تنشيط الوضع المظلم."
 }

@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
 	"skinname-liberty": "Frihet",
 	"liberty-desc": "Responsivt utseende för [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Ignorera inte",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Nytt]",
+	"liberty-font-name-default": "standard",
 	"liberty-forgot-pw": "Glömt ditt lösenord?",
 	"liberty-login": "Logga in",
 	"liberty-login-alter": "Logga in på ett annat sätt",
@@ -17,7 +20,7 @@
 	"liberty-recent-discussions": "Nyliga diskussioner",
 	"liberty-remember": "Kom ihåg min inloggning",
 	"liberty-tooltip-info": "Visa dokumentinformation",
-	"liberty-tooltip-purge": "Rensa cache för denna sida.",
+	"liberty-tooltip-purge": "Rensa mellanlager för denna sida.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Visa mer",
 	"liberty.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Liberty */",

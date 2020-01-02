@@ -4,13 +4,27 @@
 			"Gomoko",
 			"Wladek92",
 			"Verdy p",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Pamputt"
 		]
 	},
 	"skinname-liberty": "Liberté",
 	"liberty-desc": "Habillage réactif pour [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Ne pas ignorer",
+	"liberty-dark-dark": "Ignorer et activer le mode sombre",
+	"liberty-dark-light": "Ignorer et activer le mode clair",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Nouveau]",
+	"liberty-font-name-default": "par défaut",
+	"liberty-font-name-noto-sans-kr": "Noto sans KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Votre mot de passe oublié ?",
 	"liberty-login": "Connexion",
 	"liberty-login-alter": "Se connecter avec une autre méthode",
@@ -34,7 +48,7 @@
 	"prefs-font": "Préférence de police",
 	"liberty-pref-fonts": "Sélectionner la police que vous voulez utiliser",
 	"liberty-pref-fonts-helplabel": "Aide",
-	"liberty-pref-fonts-help": "La police sera chargée depuis l’emplacement distant, sauf ''Malgun Gothic''.",
+	"liberty-pref-fonts-help": "La police sera chargée depuis les serveurs de Google, sauf pour ''Malgun Gothic''.",
 	"liberty-pref-dark": "Ignorer le paramètre mode sombre du système ?",
 	"liberty-pref-dark-help": "Choisissez s’il faut suivre les paramètres du système pour l’activation du mode sombre."
 }
