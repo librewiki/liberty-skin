@@ -1,13 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Mansil"
 		]
 	},
 	"skinname-liberty": "Liberdade",
 	"liberty-desc": "Tema de resposta rápida para [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Não ignorar",
+	"liberty-dark-dark": "Ignorar e ativar o modo escuro",
+	"liberty-dark-light": "Ignorar e ativar o modo claro",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Novo]",
+	"liberty-font-name-default": "padrão",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Esqueceu-se da palavra-passe?",
 	"liberty-login": "Entrar",
 	"liberty-login-alter": "Entrar por outro método",
@@ -31,7 +45,7 @@
 	"prefs-font": "Preferência de fonte",
 	"liberty-pref-fonts": "Selecionar o tipo de letra que pretende usar",
 	"liberty-pref-fonts-helplabel": "Ajuda",
-	"liberty-pref-fonts-help": "A fonte será carregada da localização remota exceto Malgun Gothic.",
+	"liberty-pref-fonts-help": "A fonte será carregada dos servidores da Google, exceto Malgun Gothic.",
 	"liberty-pref-dark": "Ignorar configuração de modo escuro do sistema?",
 	"liberty-pref-dark-help": "Escolha se deseja seguir as configurações do sistema ao ativar o modo escuro."
 }

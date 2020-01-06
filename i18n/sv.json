@@ -2,15 +2,27 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Mjälten"
+			"Mjälten",
+			"Tölvuforritari"
 		]
 	},
 	"skinname-liberty": "Frihet",
 	"liberty-desc": "Responsivt utseende för [https://librewiki.net/ LibreWiki]",
 	"liberty-dark-default": "Ignorera inte",
+	"liberty-dark-dark": "Ignorera och aktivera mörkt läge",
+	"liberty-dark-light": "Ignorera och aktivera ljust läge",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Nytt]",
 	"liberty-font-name-default": "standard",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Glömt ditt lösenord?",
 	"liberty-login": "Logga in",
 	"liberty-login-alter": "Logga in på ett annat sätt",
@@ -34,7 +46,7 @@
 	"prefs-font": "Typsnittsinställningar",
 	"liberty-pref-fonts": "Välj typsnittet du vill använda",
 	"liberty-pref-fonts-helplabel": "Hjälp",
-	"liberty-pref-fonts-help": "Typsnittet kommer läsas in från en fjärrplats förutom Malgun Gothic.",
+	"liberty-pref-fonts-help": "Typsnittet kommer att läsas in från Googles servrar, med undantag för Malgun Gothic.",
 	"liberty-pref-dark": "Ignorera systemets inställning för mörkt läge?",
 	"liberty-pref-dark-help": "Välj om systeminställningarna ska följas när mörkt läge aktiveras."
 }

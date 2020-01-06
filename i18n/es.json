@@ -4,8 +4,12 @@
 			"Fitoschido"
 		]
 	},
+	"liberty-dark-default": "No ignorar",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Nuevo]",
+	"liberty-font-name-default": "predeterminado",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-purge": "Purgar",
 	"liberty-recent-discussions": "Debates recientes",
 	"liberty-tooltip-purge": "Purgar la antememoria de esta página.",
@@ -16,5 +20,5 @@
 	"prefs-font": "Preferencia tipográfica",
 	"liberty-pref-fonts": "Selecciona el tipo de letra que quieres utilizar",
 	"liberty-pref-fonts-helplabel": "Ayuda",
-	"liberty-pref-fonts-help": "La ubicación remota cargará el tipo de letra, con la excepción de Malgun Gothic."
+	"liberty-pref-fonts-help": "El tipo de letra se cargará desde los servidores de Google, con la excepción de Malgun Gothic."
 }

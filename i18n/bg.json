@@ -33,5 +33,5 @@
 	"prefs-font": "Предпочитан шрифт",
 	"liberty-pref-fonts": "Изберете шрифта, който искате да използвате",
 	"liberty-pref-fonts-helplabel": "Помощ",
-	"liberty-pref-fonts-help": "Шрифтът ще се зареди от отдалеченото местоположение, освен ако не е Malgun Gothic."
+	"liberty-pref-fonts-help": "Шрифтът ще се зареди от сървърите на Google, освен ако шрифтът не е Malgun Gothic."
 }
