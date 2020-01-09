@@ -4,13 +4,16 @@
 			"Viztor",
 			"Looong",
 			"A Chinese Wikipedian",
-			"Ywang"
+			"Ywang",
+			"沈澄心"
 		]
 	},
 	"skinname-liberty": "Liberty",
 	"liberty-desc": "[https://librewiki.net/ LibreWiki]的响应式皮肤",
 	"liberty-facebook": "脸书",
 	"liberty-feed-new": "[新]",
+	"liberty-font-name-default": "默认",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
 	"liberty-forgot-pw": "忘记密码？",
 	"liberty-login": "登录",
 	"liberty-login-alter": "其他方式登录",
