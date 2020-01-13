@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Orbot707"
+		]
+	},
+	"skinname-liberty": "Xoseriye",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
+	"liberty-forgot-pw": "Parola xo kerda xo vira?",
+	"liberty-login": "Cıkewtış",
+	"liberty-info": "Melumat",
+	"liberty-purge": "Pak kerê",
+	"liberty-recent-discussions": "Werênayışê peyêni",
+	"liberty-twitter": "Twitter",
+	"liberty-view-more": "Zêde bıvêne",
+	"liberty-pref-fonts-helplabel": "Pheşti"
+}

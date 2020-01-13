@@ -12,7 +12,7 @@
 	"liberty-dark-light": "Ignorar e ativar o modo claro",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Novo]",
-	"liberty-font-name-default": "padrão",
+	"liberty-font-name-default": "por omissão",
 	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
 	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
 	"liberty-font-name-nanum-gothic": "Nanum Gothic",
@@ -45,7 +45,7 @@
 	"prefs-font": "Preferência de fonte",
 	"liberty-pref-fonts": "Selecionar o tipo de letra que pretende usar",
 	"liberty-pref-fonts-helplabel": "Ajuda",
-	"liberty-pref-fonts-help": "A fonte será carregada dos servidores da Google, exceto Malgun Gothic.",
+	"liberty-pref-fonts-help": "A fonte será carregada dos servidores da Google, exceto a Malgun Gothic.",
 	"liberty-pref-dark": "Ignorar configuração de modo escuro do sistema?",
 	"liberty-pref-dark-help": "Escolha se deseja seguir as configurações do sistema ao ativar o modo escuro."
 }
