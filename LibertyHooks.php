@@ -24,6 +24,7 @@ class LibertyHooks extends Hooks {
 			'type' => 'selectorother',
 			'label-message' => 'liberty-pref-fonts',
 			'section' => 'liberty/font',
+			'default' => 'default',
 			'options' => [
 				wfMessage( 'liberty-font-name-default' )->text() => 'default',
 				wfMessage( 'liberty-font-name-noto-sans-kr' )->text() => 'Noto Sans KR',
@@ -48,7 +49,8 @@ class LibertyHooks extends Hooks {
 				wfMessage( 'liberty-dark-dark' )->text() => 'dark',
 				wfMessage( 'liberty-dark-light' )->text() => 'light'
 			],
-			'help-message' => 'liberty-pref-dark-help'
+			'help-message' => 'liberty-pref-dark-help',
+			'default' => null
 		];
 	}
 }
