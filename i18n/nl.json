@@ -15,6 +15,7 @@
 	"liberty-info": "Informatie",
 	"liberty-purge": "Vernieuwen",
 	"liberty-tooltip-info": "Documentgegevens bekijken",
+	"liberty-tooltip-purge": "Leeg de cache van deze pagina.",
 	"liberty-view-more": "Meer weergeven",
 	"liberty.css": "/* CSS die hier wordt geplaatst heeft alleen invloed op de vormgeving Liberty */",
 	"liberty.js": "/* JavaScript die hier wordt geplaatst heeft alleen invloed op gebruikers die de vormgeving Liberty gebruiken */",
@@ -27,5 +28,5 @@
 	"prefs-font": "Lettertypevoorkeur",
 	"liberty-pref-fonts": "Selecteer het te gebruiken lettertype",
 	"liberty-pref-fonts-helplabel": "Hulp",
-	"liberty-pref-fonts-help": "Het lettertype zal vanaf een externe locatie worden geladen, met uitzondering van Malgun Gothic."
+	"liberty-pref-fonts-help": "Het lettertype zal vanaf de servers van Google worden geladen, met uitzondering van het Malgun Gothic lettertype."
 }
