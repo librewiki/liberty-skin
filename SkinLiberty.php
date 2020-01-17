@@ -190,7 +190,7 @@ class SkinLiberty extends SkinTemplate {
 		$out->addHeadItem(
 			'webfonts',
 			// @codingStandardsIgnoreLine
-			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
+			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
 		);
 
 		// Only load AdSense JS is ads are enabled in site configuration

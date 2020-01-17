@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.5.5",
+	"version": "1.5.6",
 	"ValidSkinNames": {
 		"liberty": "Liberty"
 	},

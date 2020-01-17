@@ -28,6 +28,7 @@ class LibertyHooks extends Hooks {
 			'options' => [
 				wfMessage( 'liberty-font-name-default' )->text() => 'default',
 				wfMessage( 'liberty-font-name-noto-sans-kr' )->text() => 'Noto Sans KR',
+				wfMessage( 'liberty-font-name-noto-serif-kr' )->text() => 'Noto Serif KR',
 				wfMessage( 'liberty-font-name-spoqa-han-sans' )->text() => 'Spoqa Han Sans',
 				wfMessage( 'liberty-font-name-nanum-gothic' )->text() => 'Nanum Gothic',
 				wfMessage( 'liberty-font-name-nanum-myeongjo' )->text() => 'Nanum Myeongjo',
