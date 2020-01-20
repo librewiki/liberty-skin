@@ -6,7 +6,8 @@
 			"Verdy p",
 			"Thibaut120094",
 			"Pamputt",
-			"Eneelk"
+			"Eneelk",
+			"Symsym"
 		]
 	},
 	"skinname-liberty": "Liberté",
@@ -18,6 +19,7 @@
 	"liberty-feed-new": "[Nouveau]",
 	"liberty-font-name-default": "par défaut",
 	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
 	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
 	"liberty-font-name-nanum-gothic": "Nanum Gothic",
 	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
