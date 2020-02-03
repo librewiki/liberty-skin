@@ -7,6 +7,9 @@
 			"Siebrand"
 		]
 	},
+	"liberty-dark-default": "Niet negeren",
+	"liberty-dark-dark": "Negeer en activeer de donkere modus",
+	"liberty-dark-light": "Negeer en activeer de heldere modus",
 	"liberty-feed-new": "[Nieuw]",
 	"liberty-forgot-pw": "Wachtwoord vergeten?",
 	"liberty-login": "Aanmelden",
