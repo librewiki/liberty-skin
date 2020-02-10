@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Violetova"
 		]
 	},
 	"skinname-liberty": "Слобода",
@@ -22,7 +23,7 @@
 	"liberty-font-name-hankc": "Hankc",
 	"liberty-font-name-youth": "Youth",
 	"liberty-font-name-malgun-gothic": "Malgun Gothic",
-	"liberty-forgot-pw": "Ја заборавивте јавката?",
+	"liberty-forgot-pw": "Ја заборавивте лозинката?",
 	"liberty-login": "Најава",
 	"liberty-login-alter": "Најва на друг начин",
 	"liberty-login-btn": "Најава",
