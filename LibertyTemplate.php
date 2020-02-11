@@ -575,7 +575,7 @@ class LibertyTemplate extends BaseTemplate {
 							],
 							[ 'action' => 'info' ]
 						);
-						if ( $permissionManager->quickUserCan( 'move', $user , $title) && $title->exists() ) {
+						if ( $permissionManager->quickUserCan( 'move', $user, $title ) && $title->exists() ) {
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Movepage', $title ),
 								$skin->msg( 'move' )->plain(),
@@ -586,7 +586,7 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							);
 						};
-						if ( $permissionManager->quickUserCan( 'protect', $user , $title) ) { ?>
+						if ( $permissionManager->quickUserCan( 'protect', $user, $title ) ) { ?>
 							<div class="dropdown-divider"></div>
 							<?php
 							// different labels depending on whether the page is or isn't protected
@@ -602,7 +602,7 @@ class LibertyTemplate extends BaseTemplate {
 								[ 'action' => 'protect' ]
 							); ?>
 						<?php } ?>
-						<?php if ( $permissionManager->quickUserCan( 'delete', $user , $title ) && $title->exists() ) { ?>
+						<?php if ( $permissionManager->quickUserCan( 'delete', $user, $title ) && $title->exists() ) { ?>
 							<div class="dropdown-divider"></div>
 							<?php echo Linker::linkKnown(
 								$title,
