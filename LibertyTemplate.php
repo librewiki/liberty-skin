@@ -602,7 +602,8 @@ class LibertyTemplate extends BaseTemplate {
 								[ 'action' => 'protect' ]
 							); ?>
 						<?php } ?>
-						<?php if ( $permissionManager->quickUserCan( 'delete', $user, $title ) && $title->exists() ) { ?>
+						<?php if ( $permissionManager->quickUserCan( 'delete', $user, $title ) && $title->exists() ) {
+						?>
 							<div class="dropdown-divider"></div>
 							<?php echo Linker::linkKnown(
 								$title,
