@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"skinname-liberty": "Libertate",
+	"liberty-desc": "Apparentia responsive pro [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Non ignorar",
+	"liberty-dark-dark": "Ignorar e activar modo obscur",
+	"liberty-dark-light": "Ignorar e activar modo clar",
+	"liberty-feed-new": "[Nove]",
+	"liberty-font-name-default": "predefinite",
+	"liberty-forgot-pw": "Contrasigno oblidate?",
+	"liberty-login": "Aperir session",
+	"liberty-login-alter": "Aperir session con altere methodo",
+	"liberty-login-btn": "Aperir session",
+	"liberty-info": "Info",
+	"liberty-purge": "Purgar",
+	"liberty-recent-discussions": "Discussiones recente",
+	"liberty-remember": "Rememorar mi session",
+	"liberty-tooltip-info": "Vider information sur documento",
+	"liberty-tooltip-purge": "Purgar le cache de iste pagina.",
+	"liberty-view-more": "Vider plus",
+	"liberty.css": "/* Le CSS placiate hic afficera le usatores del apparentia Libertate */",
+	"liberty.js": "/* Omne JavaScript hic se executara pro le usatores del apparentia Libertate */",
+	"prefs-liberty": "Apparentia Libertate",
+	"prefs-color": "Parametros de colores",
+	"liberty-pref-color-main": "Color principal",
+	"liberty-pref-color-main-help": "Le color principal que essera usate sur iste sito.",
+	"liberty-pref-color-second": "Color secundari",
+	"liberty-pref-color-second-help": "Le color secundari que essera usate sur iste sito.",
+	"prefs-font": "Preferentia de typo de litteras",
+	"liberty-pref-fonts": "Selige le typo de litteras que tu vole usar",
+	"liberty-pref-fonts-helplabel": "Adjuta",
+	"liberty-pref-fonts-help": "Le typo de litteras essera cargate ab le servitores de Google, excepte le typo de litteras Malgun Gothic.",
+	"liberty-pref-dark": "Ignorar le parametro de modo obscur del systema?",
+	"liberty-pref-dark-help": "Selige si sequer le configuration del systema quando se activa le modo obscur."
+}

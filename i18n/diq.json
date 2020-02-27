@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Orbot707"
+			"Orbot707",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"skinname-liberty": "Xoseriye",
+	"liberty-facebook": "Facebook",
+	"liberty-feed-new": "[Newe]",
+	"liberty-font-name-default": "hesabiyaye",
 	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
 	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
 	"liberty-font-name-nanum-gothic": "Nanum Gothic",
 	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
@@ -16,9 +21,12 @@
 	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Parola xo kerda xo vira?",
 	"liberty-login": "Cıkewtış",
+	"liberty-login-alter": "Metodê biniya cıkewe",
+	"liberty-login-btn": "Cıkewtış",
 	"liberty-info": "Melumat",
 	"liberty-purge": "Pak kerê",
 	"liberty-recent-discussions": "Werênayışê peyêni",
+	"liberty-remember": "Cıkewtışê mı ho vira mekı",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Zêde bıvêne",
 	"liberty-pref-fonts-helplabel": "Pheşti"
