@@ -22,7 +22,7 @@ class LibertyTemplate extends BaseTemplate {
 		<div class="content-wrapper">
 			<aside>
 			<div class="liberty-sidebar">
-				<div class="liberty-right-fixed">
+				<div class="live-recent-wrapper">
 					<?php $this->liveRecent(); ?>
 				</div>
 				<?php if ( !is_null( $wgLibertyAdSetting['right'] ) ) {
