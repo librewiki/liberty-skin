@@ -33,6 +33,7 @@
 	},
 	"ResourceModules": {
 		"skins.liberty.styles": {
+			"class": "ResourceLoaderSkinModule",
 			"styles": {
 				"bootstrap/css/bootstrap.min.css": {
 					"media": "all"
