@@ -667,11 +667,7 @@ class LibertyTemplate extends BaseTemplate {
 							$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
 		}
 		if ( $notiCount ) {
-		?>
-			<div id="pt-notifications" class="navbar-notification">
-				<a href="#"><span class="label label-danger"><?php echo $notiCount; ?></span></a>
-			</div>
-		<?php
+			echo $this->makeListItem( 'notifications-alert', $personalTools['notifications-alert'] );
 		}
 	}
 
