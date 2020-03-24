@@ -268,17 +268,6 @@ strike {
 	width: 0.9rem;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-notification {
-	float: right;
-	padding-left: 0.8rem;
-}
-
-.Liberty .nav-wrapper .navbar .navbar-notification .label {
-	padding: 0.25rem 0.4rem;
-	line-height: 1rem;
-	margin: 0.6rem 0;
-}
-
 .Liberty .nav-wrapper .navbar .navbar-login {
 	float: right;
 	padding-left: 0.8rem;
@@ -802,3 +791,19 @@ ins.adsbygoogle {
 	min-width: 15rem;
 }
 /* AdSense End */
+
+/* Echo */
+.mw-echo-ui-overlay {
+	z-index: 10000 !important;
+}
+
+#pt-notifications-alert {
+	position: relative;
+	float: right;
+	list-style: none;
+	top: 0.8rem;
+	font-size: 0.9rem;
+	margin-right: 0.6rem;
+	margin-left: 0.8rem;
+}
+/* Echo End */
