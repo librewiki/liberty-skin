@@ -104,6 +104,7 @@
 	"ResourceModuleSkinStyles": {
 		"liberty": {
 			"+ext.relatedArticles.readMore": "css/extensions/RelatedArticles.css",
+			"+ext.echo.api": "css/extensions/Echo.css",
 			"+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
 			"+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
 		}

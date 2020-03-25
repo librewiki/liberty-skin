@@ -791,19 +791,3 @@ ins.adsbygoogle {
 	min-width: 15rem;
 }
 /* AdSense End */
-
-/* Echo */
-.mw-echo-ui-overlay {
-	z-index: 10000 !important;
-}
-
-#pt-notifications-alert {
-	position: relative;
-	float: right;
-	list-style: none;
-	top: 0.8rem;
-	font-size: 0.9rem;
-	margin-right: 0.6rem;
-	margin-left: 0.8rem;
-}
-/* Echo End */
