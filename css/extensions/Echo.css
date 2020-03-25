@@ -1,0 +1,27 @@
+
+#pt-notifications-alert {
+	position: relative;
+	float: right;
+	list-style: none;
+	top: 0.8rem;
+	font-size: 0.9rem;
+	margin-right: 0.6rem;
+	margin-left: 0.8rem;
+}
+
+.mw-echo-ui-overlay {
+	z-index: 10000 !important;
+}
+
+@media screen and (max-width: 539px) {
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup {
+    left: 10px !important;
+    padding-right: 10px;
+  }
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup>.oo-ui-popupWidget-popup {
+    width: auto !important;
+  }
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup>.oo-ui-popupWidget-anchor {
+    display: none;
+  }
+}
