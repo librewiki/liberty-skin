@@ -793,7 +793,8 @@ ins.adsbygoogle {
 /* AdSense End */
 
 /* Echo */
-#pt-notifications-alert {
+#pt-notifications-alert,
+#pt-notifications-notice {
 	position: relative;
 	float: right;
 	list-style: none;
