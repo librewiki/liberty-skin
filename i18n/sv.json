@@ -3,7 +3,8 @@
 		"authors": [
 			"WikiPhoenix",
 			"Mjälten",
-			"Tölvuforritari"
+			"Tölvuforritari",
+			"Paracel63"
 		]
 	},
 	"skinname-liberty": "Frihet",
@@ -30,7 +31,7 @@
 	"liberty-login-btn": "Logga in",
 	"liberty-info": "Info",
 	"liberty-purge": "Rensa",
-	"liberty-recent-discussions": "Nyliga diskussioner",
+	"liberty-recent-discussions": "Färska diskussioner",
 	"liberty-remember": "Kom ihåg min inloggning",
 	"liberty-tooltip-info": "Visa dokumentinformation",
 	"liberty-tooltip-purge": "Rensa mellanlager för denna sida.",
