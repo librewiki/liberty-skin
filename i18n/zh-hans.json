@@ -6,7 +6,8 @@
 			"A Chinese Wikipedian",
 			"Ywang",
 			"沈澄心",
-			"Gokouruki"
+			"Gokouruki",
+			"500000000006城"
 		]
 	},
 	"skinname-liberty": "Liberty",
@@ -18,6 +19,7 @@
 	"liberty-feed-new": "[新]",
 	"liberty-font-name-default": "默认",
 	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
 	"liberty-forgot-pw": "忘记密码？",
 	"liberty-login": "登录",
 	"liberty-login-alter": "其他方式登录",
@@ -42,5 +44,6 @@
 	"liberty-pref-fonts": "选择您想使用的字体",
 	"liberty-pref-fonts-helplabel": "帮助",
 	"liberty-pref-fonts-help": "除Malgun Gothic以外的字体将从Google的服务器上加载。",
-	"liberty-pref-dark": "忽略系统暗色模式设置？"
+	"liberty-pref-dark": "忽略系统暗色模式设置？",
+	"liberty-pref-dark-help": "选择在激活暗模式时是否遵循系统设置。"
 }
