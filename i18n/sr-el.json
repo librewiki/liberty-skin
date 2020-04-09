@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"skinname-liberty": "Liberti",
 	"liberty-desc": "Responzivna tema za [https://librewiki.net/ LibreWiki]",
 	"liberty-facebook": "Fejsbuk",
