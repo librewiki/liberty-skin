@@ -1,0 +1,16 @@
+.mw-echo-ui-overlay {
+	z-index: 10000 !important;
+}
+
+@media screen and (max-width: 539px) {
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup {
+    left: 10px !important;
+    padding-right: 10px;
+  }
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup>.oo-ui-popupWidget-popup {
+    width: auto !important;
+  }
+  .mw-echo-ui-notificationBadgeButtonPopupWidget-popup>.oo-ui-popupWidget-anchor {
+    display: none;
+  }
+}

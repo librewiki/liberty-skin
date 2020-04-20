@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"FarsiNevis"
+		]
+	},
+	"liberty-facebook": "فیس‌بوک",
+	"liberty-font-name-default": "پیش‌فرض",
+	"liberty-info": "اطلاعات",
+	"liberty-twitter": "توئیتر",
+	"liberty-view-more": "مشاهدهٔ بیشتر",
+	"prefs-color": "تنظیمات رنگ",
+	"liberty-pref-color-main": "رنگ اصلی",
+	"liberty-pref-color-second": "رنگ فرعی",
+	"prefs-font": "ترجیحات قلم",
+	"liberty-pref-fonts": "قلم مورد نظرتان را انتخاب کنید",
+	"liberty-pref-fonts-helplabel": "راهنما"
+}

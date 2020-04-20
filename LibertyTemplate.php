@@ -656,22 +656,17 @@ class LibertyTemplate extends BaseTemplate {
 	 */
 	protected function getNotification() {
 		$personalTools = $this->getPersonalTools();
-		$notiCount = 0;
 		if (
 			isset( $personalTools['notifications-alert'] ) &&
-			$personalTools['notifications-alert'] &&
-			isset( $personalTools['notifications-notice'] ) &&
-			$personalTools['notifications-notice']
+			$personalTools['notifications-alert']['links'][0]['data']['counter-num']
 		) {
-			$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
-							$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
+			echo $this->makeListItem( 'notifications-alert', $personalTools['notifications-alert'] );
 		}
-		if ( $notiCount ) {
-		?>
-			<div id="pt-notifications" class="navbar-notification">
-				<a href="#"><span class="label label-danger"><?php echo $notiCount; ?></span></a>
-			</div>
-		<?php
+		if (
+			isset( $personalTools['notifications-notice'] ) &&
+			$personalTools['notifications-notice']['links'][0]['data']['counter-num']
+		) {
+			echo $this->makeListItem( 'notifications-notice', $personalTools['notifications-notice'] );
 		}
 	}
 
