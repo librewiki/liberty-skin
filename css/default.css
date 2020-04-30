@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Apple SD Gothic Neo', 'Spoqa Han Sans', 'Noto Sans KR', 'Noto Sans', 'Noto Sans CJK KR', 'NanumBarunGothic', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Apple SD Gothic Neo', 'Spoqa Han Sans', 'SpoqaHanSans', 'Noto Sans KR', 'Noto Sans', 'Noto Sans CJK KR', 'NanumBarunGothic', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 	margin: 0;
 }
 
@@ -38,7 +38,7 @@ h4,
 h5,
 h6,
 b {
-	font-family: 'Apple SD Gothic Neo', 'Spoqa Han Sans', 'Noto Sans KR', 'Noto Sans', 'Noto Sans CJK KR', 'NanumBarunGothic', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	font-family: 'Apple SD Gothic Neo', 'Spoqa Han Sans', 'SpoqaHanSans', 'Noto Sans KR', 'Noto Sans', 'Noto Sans CJK KR', 'NanumBarunGothic', 'Nanum Gothic', 'KoPub Dotum', 'Malgun Gothic', '맑은 고딕', sans-serif;
 }
 
 input[type=password] {
