@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Orbot707",
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Orbot707"
 		]
 	},
 	"skinname-liberty": "Xoseriye",
+	"liberty-desc": "Serva [https://librewiki.net/ LibreWiki] asayışê hesasi",
+	"liberty-dark-default": "Peygoş mekerê",
+	"liberty-dark-dark": "Modê tarıy mêhesıbne u aktiv kerê",
+	"liberty-dark-light": "Modê berqıni mêhesıbne u aktiv kerê",
 	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Newe]",
 	"liberty-font-name-default": "hesabiyaye",
@@ -27,7 +31,22 @@
 	"liberty-purge": "Pak kerê",
 	"liberty-recent-discussions": "Werênayışê peyêni",
 	"liberty-remember": "Cıkewtışê mı ho vira mekı",
+	"liberty-tooltip-info": "Melumatê dokumani bımocne",
+	"liberty-tooltip-purge": "Vervirê na pele bıesternê",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Zêde bıvêne",
-	"liberty-pref-fonts-helplabel": "Pheşti"
+	"liberty.css": "/* Debiyaye CSS, Skinê Liberty rê tesir do bıkero */",
+	"liberty.js": "/* Her JavaScript karberanê Liberty de skin gurenayış de tiya de bar bo*/",
+	"prefs-liberty": "Asayışê xoseriye",
+	"prefs-color": "Eyarê rengi",
+	"liberty-pref-color-main": "Renga esase",
+	"liberty-pref-color-main-help": "Ena sita de karniyaye renga esase",
+	"liberty-pref-color-second": "Renga dıyıne",
+	"liberty-pref-color-second-help": "Ena sita de karniyaye renga dıyıne",
+	"prefs-font": "Tercihê fonti",
+	"liberty-pref-fonts": "Fontê ho weçine",
+	"liberty-pref-fonts-helplabel": "Pheşti",
+	"liberty-pref-fonts-help": "Tewrê nuştışi, tipê nuştışê Malgun Gothici ciya  serveranê Googley ra do bar bo.",
+	"liberty-pref-dark": "Sistem wa eyarê modê tarıy mêhesıbno?",
+	"liberty-pref-dark-help": "Modê tarıy aktiv kerdışi de taqibiya eyarê sistemi weçinê"
 }
