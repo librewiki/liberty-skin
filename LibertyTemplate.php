@@ -700,7 +700,7 @@ class LibertyTemplate extends BaseTemplate {
 
 			echo Html::openElement( 'a', [
 				'class' => $content['classes'],
-				'data-toggle' => count( $content['children'] ) > 1 ? 'dropdown' : '',
+				'data-toggle' => is_array( $content['children'] ) && count( $content['children'] ) > 1 ? 'dropdown' : '',
 				'role' => 'button',
 				'aria-haspopup' => 'true',
 				'aria-expanded' => 'true',
