@@ -556,42 +556,6 @@ strike {
 	overflow: hidden;
 	line-height: 1.6rem;
 }
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons {
-	float: right;
-	margin-bottom: 1rem;
-	width: 100%;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > div {
-	float: right;
-	width: 2.5rem;
-	height: 2.5rem;
-	margin: 0;
-	padding: 0;
-	padding-top: 0.45rem;
-	margin-left: 0.25rem;
-	border-radius: 0.35rem;
-	text-align: center;
-	cursor: pointer;
-	background: #ccc;
-	color: #fff;
-	position: relative;
-	font-size: 1.8rem;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .facebook {
-	background-color: #5d82d1;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .twitter {
-	background-color: #40bff5;
-}
-
-.Liberty .content-wrapper .liberty-content .liberty-content-main .social-buttons > .google {
-	background-color: #eb5e4c;
-	display: none;
-}
 /* Content End */
 
 /* Footer */
@@ -809,3 +773,9 @@ ins.adsbygoogle {
 	margin-left: 0.8rem;
 }
 /* Echo End */
+
+#shareAPIPolyfill-container button {
+	color: inherit;
+	white-space: inherit;
+	line-height: inherit;
+}

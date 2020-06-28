@@ -199,6 +199,12 @@ class SkinLiberty extends SkinTemplate {
 			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
 		);
 
+		$out->addHeadItem(
+			'share-api-polyfill',
+			// @codingStandardsIgnoreLine
+			'<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
+		);
+
 		// Only load AdSense JS is ads are enabled in site configuration
 		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
 			$out->addHeadItem(

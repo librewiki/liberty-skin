@@ -81,7 +81,7 @@
 				"js/index-button.js",
 				"js/delay-scrolling.js",
 				"js/disable-notice.js",
-				"js/sns-button.js",
+				"js/share-button.js",
 				"js/layout.js",
 				"js/table.js"
 			],
