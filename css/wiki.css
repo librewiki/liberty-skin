@@ -32,7 +32,8 @@ a.external:focus {
 }
 
 a.external:before {
-	font: normal normal normal 14px/1 FontAwesome;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 600;
 	text-align: center;
 	color: #33b733;
 	content: '\f0c1';
