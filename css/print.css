@@ -45,7 +45,7 @@ header,
 }
 
 a.external::before {
-	content: "" !important;
+	content: '' !important;
 }
 
 p {
