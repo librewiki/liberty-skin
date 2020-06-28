@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DannyS712",
-			"Fitoschido"
+			"Fitoschido",
+			"MarcoAurelio"
 		]
 	},
 	"liberty-dark-default": "No ignorar",
@@ -19,6 +20,8 @@
 	"liberty-tooltip-purge": "Purgar la antememoria de esta página.",
 	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver más",
+	"liberty.css": "/* El CSS colocado en esta página afectará a los usuarios que usen la apariencia \"Liberty\" */",
+	"liberty.js": "/* Cualquier código JavaScript escrito aquí se cargará para todos los usuarios que usen la apariencia Liberty */",
 	"liberty-pref-color-main": "Color principal",
 	"liberty-pref-color-second": "Color secundario",
 	"prefs-font": "Preferencia tipográfica",

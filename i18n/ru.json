@@ -5,10 +5,12 @@
 		]
 	},
 	"liberty-facebook": "Facebook",
+	"liberty-font-name-default": "по умолчанию",
 	"liberty-forgot-pw": "Забыли пароль?",
 	"liberty-login": "Войти",
 	"liberty-login-btn": "Войти",
 	"liberty-info": "Информация",
+	"liberty-purge": "Очистить",
 	"liberty-recent-discussions": "Последние обсуждения",
 	"liberty-remember": "Запомнить мою учётную запись",
 	"liberty-tooltip-info": "Посмотреть информацию о документе",
@@ -17,5 +19,8 @@
 	"prefs-color": "Настройки цвета",
 	"liberty-pref-color-main": "Главный цвет",
 	"prefs-font": "Параметры шрифтов",
-	"liberty-pref-fonts-helplabel": "Справка"
+	"liberty-pref-fonts": "Выберите шрифт, который вы хотите использовать",
+	"liberty-pref-fonts-helplabel": "Справка",
+	"liberty-pref-fonts-help": "Шрифт будет загружен с серверов Google, за исключением шрифта Malgun Gothic.",
+	"liberty-pref-dark": "Игнорировать системную настройку тёмного режима?"
 }

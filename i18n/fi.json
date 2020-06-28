@@ -1,20 +1,34 @@
 {
 	"@metadata": {
 		"authors": [
+			"01miki10",
 			"Jack Phoenix"
 		]
 	},
 	"skinname-liberty": "Vapaus",
 	"liberty-desc": "[https://librewiki.net/ LibreWikiä] varten kehitetty reagoiva ulkoasu",
 	"liberty-feed-new": "[Uusi]",
+	"liberty-font-name-default": "oletus",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Unohditko salasanasi?",
 	"liberty-login": "Kirjaudu",
 	"liberty-login-alter": "Kirjaudu toisella tavalla",
 	"liberty-login-btn": "Kirjaudu",
+	"liberty-info": "Tiedot",
 	"liberty-purge": "Päivitä",
 	"liberty-recent-discussions": "Tuoreet keskustelut",
 	"liberty-remember": "Muista kirjautumiseni",
 	"liberty-tooltip-purge": "Tyhjennä tämän sivun välimuisti.",
+	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Katso lisää",
 	"liberty.css": "/* Tämä sivu sisältää Vapaus-ulkoasua muuttavia tyylejä */",
 	"liberty.js": "/* Tämän sivun JavaScript-koodi liitetään Vapaus-tyyliin */",
@@ -23,5 +37,8 @@
 	"liberty-pref-color-main": "Pääväri",
 	"liberty-pref-color-main-help": "Tällä sivustolla käytettävä päävärikoodi.",
 	"liberty-pref-color-second": "Toissijainen väri",
-	"liberty-pref-color-second-help": "Tällä sivustolla toissijaisesti käytettävä värikoodi."
+	"liberty-pref-color-second-help": "Tällä sivustolla toissijaisesti käytettävä värikoodi.",
+	"liberty-pref-fonts": "Valitse fontti, jota haluat käyttää",
+	"liberty-pref-fonts-helplabel": "Ohje",
+	"liberty-pref-fonts-help": "Fontti ladataan Googlen palvelimilta, poikkeuksena Malgun Gothic."
 }

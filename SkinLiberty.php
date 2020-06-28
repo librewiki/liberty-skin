@@ -184,13 +184,25 @@ class SkinLiberty extends SkinTemplate {
 		$out->addHeadItem(
 			'font-awesome',
 			// @codingStandardsIgnoreLine
-			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/all.css" />'
+		);
+
+		$out->addHeadItem(
+			'font-awesome-shims',
+			// @codingStandardsIgnoreLine
+			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/v4-shims.css" />'
 		);
 
 		$out->addHeadItem(
 			'webfonts',
 			// @codingStandardsIgnoreLine
 			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
+		);
+
+		$out->addHeadItem(
+			'share-api-polyfill',
+			// @codingStandardsIgnoreLine
+			'<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
 		);
 
 		// Only load AdSense JS is ads are enabled in site configuration

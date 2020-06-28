@@ -57,23 +57,7 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="liberty-content-main">
 					<?php if ( $this->data['newtalk'] ) { ?>
 					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
-					<?php } ?>
-					<?php
-					// @codingStandardsIgnoreStart
-					if ( $title->getNamespace() != NS_SPECIAL &&
-							   $action != 'edit' && $action != 'history' ) { ?>
-						<div class="social-buttons">
-							<div class="twitter" data-text="<?php echo htmlspecialchars( $title, ENT_QUOTES ); ?>" title="<?php echo $skin->msg( 'liberty-twitter' )->escaped() ?>">
-								<div><i class="fa fa-twitter"></i></div>
-							</div>
-							<div class="facebook" data-text="<?php echo htmlspecialchars( $title, ENT_QUOTES ); ?>" title="<?php echo $skin->msg( 'liberty-facebook' )->escaped() ?>">
-								<div><i class="fa fa-facebook"></i></div>
-							</div>
-						</div>
-					<?php
-					}
-					// @codingStandardsIgnoreEnd
-
+					<?php }
 					if ( $this->data['catlinks'] ) {
 						$this->html( 'catlinks' );
 					}
@@ -120,7 +104,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo Linker::linkKnown(
 						SpecialPage::getTitleFor( 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						'<span class="fa fa-refresh"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
+						'<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',
@@ -459,6 +443,7 @@ class LibertyTemplate extends BaseTemplate {
 		$revid = $skin->getRequest()->getText( 'oldid' );
 		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
+		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 			?>
@@ -507,7 +492,13 @@ class LibertyTemplate extends BaseTemplate {
 							'accesskey' => Linker::accesskey( 'ca-history' )
 						],
 						[ 'action' => 'history' ]
-					); ?>
+					);
+					if ( $action == 'view' ) { ?>
+					<button type="button" class="btn btn-secondary tools-btn tools-share">
+						<i class="far fa-share-square"></i>
+						<?php echo $skin->msg( 'liberty-share' )->plain() ?>
+					</button>
+					<?php } ?>
 					<button type="button" class="btn btn-secondary tools-btn dropdown-toggle"
 							data-toggle="dropdown" aria-expanded="false">
 						<span class="caret"></span>
@@ -702,7 +693,8 @@ class LibertyTemplate extends BaseTemplate {
 
 			echo Html::openElement( 'a', [
 				'class' => $content['classes'],
-				'data-toggle' => count( $content['children'] ) > 1 ? 'dropdown' : '',
+				'data-toggle' => is_array( $content['children'] ) &&
+					count( $content['children'] ) > 1 ? 'dropdown' : '',
 				'role' => 'button',
 				'aria-haspopup' => 'true',
 				'aria-expanded' => 'true',
