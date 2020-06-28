@@ -93,7 +93,9 @@
 }
 /* Max-width: 890 convert for tablet mode alt */
 @media screen and (max-width: 890px) {
-	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa,
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fas,
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .far {
 		text-align: center;
 		margin: 0 0.25rem;
 	}
@@ -112,7 +114,9 @@
 }
 /* Max-width: 798 Menu deadline, convert for tablet mode */
 @media screen and (max-width: 798px) {
-	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa,
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fas,
+	.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .far {
 		text-align: center;
 		margin: 0 0.25rem;
 	}

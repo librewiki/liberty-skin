@@ -118,7 +118,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo Linker::linkKnown(
 						SpecialPage::getTitleFor( 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						'<span class="fa fa-refresh"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
+						'<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',

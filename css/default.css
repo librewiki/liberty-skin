@@ -207,7 +207,9 @@ strike {
 	margin: 0;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa {
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fa,
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .fas,
+.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .far {
 	margin-right: 0.5rem;
 	font-size: 1rem;
 }
@@ -264,7 +266,9 @@ strike {
 	outline: 0;
 }
 
-.Liberty .nav-wrapper .navbar .form-inline .btn .fa {
+.Liberty .nav-wrapper .navbar .form-inline .btn .fa,
+.Liberty .nav-wrapper .navbar .form-inline .btn .fas,
+.Liberty .nav-wrapper .navbar .form-inline .btn .far {
 	width: 0.9rem;
 }
 
@@ -273,7 +277,9 @@ strike {
 	padding-left: 0.8rem;
 }
 
-.Liberty .nav-wrapper .navbar .navbar-login .fa {
+.Liberty .nav-wrapper .navbar .navbar-login .fa,
+.Liberty .nav-wrapper .navbar .navbar-login .fas,
+.Liberty .nav-wrapper .navbar .navbar-login .far {
 	color: #fff;
 	padding: 0.7rem 0;
 	font-size: 1.5rem;

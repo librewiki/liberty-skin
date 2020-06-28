@@ -184,7 +184,13 @@ class SkinLiberty extends SkinTemplate {
 		$out->addHeadItem(
 			'font-awesome',
 			// @codingStandardsIgnoreLine
-			'<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />'
+			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/all.css" />'
+		);
+
+		$out->addHeadItem(
+			'font-awesome-shims',
+			// @codingStandardsIgnoreLine
+			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/v4-shims.css" />'
 		);
 
 		$out->addHeadItem(
