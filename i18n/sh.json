@@ -4,7 +4,6 @@
 			"Vlad5250"
 		]
 	},
-	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Novo]",
 	"liberty-forgot-pw": "Zaboravili ste lozinku?",
 	"liberty-login": "Prijava",
@@ -15,7 +14,6 @@
 	"liberty-recent-discussions": "Nedavne diskusije",
 	"liberty-remember": "Zapamti me",
 	"liberty-tooltip-purge": "Očistiti međuspremnik ove stranice.",
-	"liberty-twitter": "Twitter",
 	"liberty-pref-fonts-helplabel": "Pomoć",
 	"liberty-pref-fonts-help": "Font će se učitati s drugog mjesta (osim Malgun Gothic)."
 }

@@ -4,7 +4,6 @@
 			"Okras"
 		]
 	},
-	"liberty-facebook": "Facebook",
 	"liberty-font-name-default": "по умолчанию",
 	"liberty-forgot-pw": "Забыли пароль?",
 	"liberty-login": "Войти",
@@ -15,7 +14,6 @@
 	"liberty-remember": "Запомнить мою учётную запись",
 	"liberty-tooltip-info": "Посмотреть информацию о документе",
 	"liberty-tooltip-purge": "Очистить кэш этой страницы.",
-	"liberty-twitter": "Twitter",
 	"prefs-color": "Настройки цвета",
 	"liberty-pref-color-main": "Главный цвет",
 	"prefs-font": "Параметры шрифтов",

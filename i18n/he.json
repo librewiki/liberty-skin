@@ -5,7 +5,6 @@
 		]
 	},
 	"skinname-liberty": "ליברטי",
-	"liberty-facebook": "פייסבוק",
 	"liberty-forgot-pw": "שכחת את הסיסמה?",
 	"liberty-login": "כניסה",
 	"liberty-login-alter": "כניסה באמצעות שיטה אחרת",
@@ -14,7 +13,6 @@
 	"liberty-recent-discussions": "דיונים אחרונים",
 	"liberty-remember": "להשאיר אותי מחובר",
 	"liberty-tooltip-purge": "ניקוי המטמון של דף זה.",
-	"liberty-twitter": "טוויטר",
 	"liberty-view-more": "להציג עוד",
 	"liberty.css": "/* הסגנונות הנכתבים כאן ישפיעו על העיצוב \"ליברטי\" בלבד */",
 	"liberty.js": "/* כל הסקריפטים הנכתבים כאן ייטענו עבור מי שמשתמש בעיצוב \"ליברטי\" בלבד */",

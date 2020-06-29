@@ -7,7 +7,6 @@
 		]
 	},
 	"liberty-dark-default": "No ignorar",
-	"liberty-facebook": "Facebook",
 	"liberty-feed-new": "[Nuevo]",
 	"liberty-font-name-default": "predeterminado",
 	"liberty-font-name-youth": "Youth",
@@ -18,7 +17,6 @@
 	"liberty-purge": "Purgar",
 	"liberty-recent-discussions": "Debates recientes",
 	"liberty-tooltip-purge": "Purgar la antememoria de esta página.",
-	"liberty-twitter": "Twitter",
 	"liberty-view-more": "Ver más",
 	"liberty.css": "/* El CSS colocado en esta página afectará a los usuarios que usen la apariencia \"Liberty\" */",
 	"liberty.js": "/* Cualquier código JavaScript escrito aquí se cargará para todos los usuarios que usen la apariencia Liberty */",
