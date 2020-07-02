@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"01miki10",
+			"Actuallyisjoha",
 			"Jack Phoenix"
 		]
 	},
@@ -27,6 +28,7 @@
 	"liberty-purge": "Päivitä",
 	"liberty-recent-discussions": "Tuoreet keskustelut",
 	"liberty-remember": "Muista kirjautumiseni",
+	"liberty-share": "Jaa",
 	"liberty-tooltip-purge": "Tyhjennä tämän sivun välimuisti.",
 	"liberty-view-more": "Katso lisää",
 	"liberty.css": "/* Tämä sivu sisältää Vapaus-ulkoasua muuttavia tyylejä */",
