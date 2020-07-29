@@ -4,9 +4,9 @@ Default skin of [LibreWiki](https://librewiki.net). This skin will be the main s
 
 ## Development
 
-Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin), and we receive bug reports via [LibreWiki Phabricator](https://issue.librewiki.net) and patches via GitLab.com only. Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
+Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin), and we receive bug reports via [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin/-/issues) and patches via GitLab.com only. Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
 
-Security vulnerability should be reported using [Phabricator](https://issue.librewiki.net/maniphest/task/edit/form/7/).
+Security vulnerability should be reported using email (dev (골뱅이!) librewiki.net) (replace (Korean text) with @).
 
 ## Configurations
 Please set these variables in the LocalSettings.php file.

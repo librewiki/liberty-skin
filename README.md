@@ -6,9 +6,9 @@
 
 ## 개발
 
-원본 소스는 [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin)에 존재하며, 버그 리포팅은 [Phabricator](https://issue.librewiki.net/)에서, 패치는 GitLab.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
+원본 소스는 [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin)에 존재하며, 버그 리포팅은 [bbs.librewiki.net](https://bbs.librewiki.net/dev_issue)에서, 패치는 GitLab.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
 
-보안 취약점은 [Phabricator](https://issue.librewiki.net/maniphest/task/edit/form/7/)로 보고해 주세요.
+보안 취약점은 이메일 (dev(골뱅이!)librewiki.net) 로 보고해 주세요.
 
 ## 설정
 Please set these variables in the LocalSettings.php file.
