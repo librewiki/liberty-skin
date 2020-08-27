@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"skinname-liberty": "Свобода",
@@ -30,6 +31,7 @@
 	"liberty-purge": "Очистити",
 	"liberty-recent-discussions": "Останні обговорення",
 	"liberty-remember": "Запам'ятати мій обліковий запис",
+	"liberty-share": "Поділитися",
 	"liberty-tooltip-info": "Переглянути інформацію про документ",
 	"liberty-tooltip-purge": "Очистити кеш цієї сторінки.",
 	"liberty-view-more": "Показати більше",

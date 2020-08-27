@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Dianakc",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Jaideraf"
 		]
 	},
 	"skinname-liberty": "Liberdade",
-	"liberty-desc": "Pele responsiva para [https://librewiki.net/ LibreWiki]",
+	"liberty-desc": "Tema responsivo para [https://librewiki.net/ LibreWiki]",
 	"liberty-dark-default": "Não ignore",
 	"liberty-dark-dark": "Ignorar e ativar o modo escuro",
 	"liberty-dark-light": "Ignorar e ativar o modo claro",
@@ -36,7 +37,7 @@
 	"liberty-view-more": "Ver mais",
 	"liberty.css": "/* CSS colocado aqui afetará os usuários da skin Liberty */",
 	"liberty.js": "/* Qualquer JavaScript aqui será carregado para usuários que usam a skin Liberty */",
-	"prefs-liberty": "Pele de liberdade",
+	"prefs-liberty": "Tema Liberty",
 	"prefs-color": "Configuração de cor",
 	"liberty-pref-color-main": "Cor principal",
 	"liberty-pref-color-main-help": "Cor principal que será usada neste site.",

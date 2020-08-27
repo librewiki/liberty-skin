@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ainali",
 			"Mjälten",
 			"Paracel63",
 			"Tölvuforritari",
@@ -34,7 +35,7 @@
 	"liberty-remember": "Kom ihåg min inloggning",
 	"liberty-share": "Dela",
 	"liberty-tooltip-info": "Visa dokumentinformation",
-	"liberty-tooltip-purge": "Rensa mellanlager för denna sida.",
+	"liberty-tooltip-purge": "Rensa cache för denna sida.",
 	"liberty-view-more": "Visa mer",
 	"liberty.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Liberty */",
 	"liberty.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Liberty */",
