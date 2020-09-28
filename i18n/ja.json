@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"A2y4",
+			"Aefgh39622"
+		]
+	},
+	"liberty-feed-new": "[新]",
+	"liberty-font-name-default": "既定",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
+	"liberty-forgot-pw": "パスワードをお忘れですか?",
+	"liberty-login": "ログイン",
+	"liberty-login-btn": "ログイン",
+	"liberty-pref-fonts-helplabel": "ヘルプ"
+}
