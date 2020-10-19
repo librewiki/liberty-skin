@@ -8,6 +8,9 @@
 	},
 	"skinname-liberty": "Vapaus",
 	"liberty-desc": "[https://librewiki.net/ LibreWikiä] varten kehitetty reagoiva ulkoasu",
+	"liberty-dark-default": "Huomioi",
+	"liberty-dark-dark": "Älä huomioi ja aktivoi tumma tila",
+	"liberty-dark-light": "Älä huomioi ja aktivoi vaalea tila",
 	"liberty-feed-new": "[Uusi]",
 	"liberty-font-name-default": "oletus",
 	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
@@ -29,6 +32,7 @@
 	"liberty-recent-discussions": "Tuoreet keskustelut",
 	"liberty-remember": "Muista kirjautumiseni",
 	"liberty-share": "Jaa",
+	"liberty-tooltip-info": "Näytä dokumentin tiedot",
 	"liberty-tooltip-purge": "Tyhjennä tämän sivun välimuisti.",
 	"liberty-view-more": "Katso lisää",
 	"liberty.css": "/* Tämä sivu sisältää Vapaus-ulkoasua muuttavia tyylejä */",
@@ -39,7 +43,10 @@
 	"liberty-pref-color-main-help": "Tällä sivustolla käytettävä päävärikoodi.",
 	"liberty-pref-color-second": "Toissijainen väri",
 	"liberty-pref-color-second-help": "Tällä sivustolla toissijaisesti käytettävä värikoodi.",
+	"prefs-font": "Fonttiasetukset",
 	"liberty-pref-fonts": "Valitse fontti, jota haluat käyttää",
 	"liberty-pref-fonts-helplabel": "Ohje",
-	"liberty-pref-fonts-help": "Fontti ladataan Googlen palvelimilta, poikkeuksena Malgun Gothic."
+	"liberty-pref-fonts-help": "Fontti ladataan Googlen palvelimilta, poikkeuksena Malgun Gothic.",
+	"liberty-pref-dark": "Huomioidaanko järjestelmän tumman tilan asetus?",
+	"liberty-pref-dark-help": "Valitse, noudatetaanko järjestelmän asetuksia tumman tilan aktivointiin."
 }
