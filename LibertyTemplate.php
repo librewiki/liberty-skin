@@ -340,7 +340,7 @@ class LibertyTemplate extends BaseTemplate {
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
 							<?php echo Linker::linkKnown(
-								SpecialPage::getTitleFor( 'UserLogin' ),
+								SpecialPage::getTitleFor( 'Userlogin' ),
 								$skin->msg( 'userlogin-joinproject' ), [
 									'class' => 'btn btn-primary btn-block',
 									'tabindex' => 5,
@@ -356,7 +356,7 @@ class LibertyTemplate extends BaseTemplate {
 							); ?>
                             <br>
 							<?php echo Linker::linkKnown(
-								SpecialPage::getTitleFor( 'login' ),
+								SpecialPage::getTitleFor( 'Userlogin' ),
 								$skin->msg( 'liberty-login-alter' )->plain()
 							); ?>
 							<input type="hidden" name="action" value="login" />
@@ -536,7 +536,7 @@ class LibertyTemplate extends BaseTemplate {
 							[ 'action' => $watched ]
 						);
 						echo Linker::linkKnown(
-							SpecialPage::getTitleFor( 'WhatLinksHere', $title ),
+							SpecialPage::getTitleFor( 'Whatlinkshere', $title ),
 							$skin->msg( 'whatlinkshere' )->plain(),
 							[
 								'class' => 'dropdown-item',
