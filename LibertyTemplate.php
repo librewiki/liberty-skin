@@ -25,7 +25,7 @@ class LibertyTemplate extends BaseTemplate {
 				<div class="live-recent-wrapper">
 					<?php $this->liveRecent(); ?>
 				</div>
-				<?php if ( !is_null( $wgLibertyAdSetting['right'] ) ) {
+				<?php if ( isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] ) {
 					$this->buildAd( 'right' );
 				} ?>
 			</div>
@@ -41,7 +41,7 @@ class LibertyTemplate extends BaseTemplate {
 							<?php $this->html( 'sitenotice' ); ?>
 						</div>
 					<?php } ?>
-					<?php if ( !is_null( $wgLibertyAdSetting['header'] ) ) {
+					<?php if ( isset( $wgLibertyAdSetting['header'] ) && $wgLibertyAdSetting['header'] ) {
 						$this->buildAd( 'header' );
 					}
 					$this->contentsToolbox(); ?>

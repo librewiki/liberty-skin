@@ -74,7 +74,7 @@ class SkinLiberty extends SkinTemplate {
 		];
 
 		// Only load ad-related JS if ads are enabled in site configuration
-		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] ) {
 			$modules[] = 'skins.liberty.ads';
 		}
 
@@ -206,7 +206,7 @@ class SkinLiberty extends SkinTemplate {
 		);
 
 		// Only load AdSense JS is ads are enabled in site configuration
-		if ( !is_null( $wgLibertyAdSetting['client'] ) ) {
+		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] ) {
 			$out->addHeadItem(
 				'google-ads',
 				// @codingStandardsIgnoreLine
