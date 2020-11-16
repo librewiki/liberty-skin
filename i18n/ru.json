@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Helpau",
 			"Okras"
 		]
 	},
@@ -12,8 +13,10 @@
 	"liberty-purge": "Очистить",
 	"liberty-recent-discussions": "Последние обсуждения",
 	"liberty-remember": "Запомнить мою учётную запись",
+	"liberty-share": "Поделиться",
 	"liberty-tooltip-info": "Посмотреть информацию о документе",
 	"liberty-tooltip-purge": "Очистить кэш этой страницы.",
+	"prefs-liberty": "Liberty skin",
 	"prefs-color": "Настройки цвета",
 	"liberty-pref-color-main": "Главный цвет",
 	"prefs-font": "Параметры шрифтов",
