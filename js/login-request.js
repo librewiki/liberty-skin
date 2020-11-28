@@ -52,10 +52,12 @@ $( function () {
 	$( '#modal-loginform' ).on( {
 		keypress: function ( e ) {
 			if ( e.which === 13 /* Enter was pressed */ ) {
+				e.preventDefault();
 				return LoginManage();
 			}
 		},
-		submit: function () {
+		submit: function ( e ) {
+			e.preventDefault();
 			return LoginManage();
 		}
 	} );
