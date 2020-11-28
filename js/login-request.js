@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 function LoginManage() {
 	'use strict';
-	mw.loader.using( 'mw.Api' ).then(function() {
+	mw.loader.using( 'mediawiki.api' ).then(function() {
 		try {
 			// new mw.Api().postWithToken does not work with clientlogin
 			var api = new mw.Api();

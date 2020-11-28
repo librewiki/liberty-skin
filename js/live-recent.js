@@ -44,7 +44,7 @@ $( function () {
 			rcnamespace: isArticleTab ? articleNamespaces : talkNamespaces,
 			rctoponly: true
 		};
-		mw.loader.using( 'mw.Api' ).then(function() {
+		mw.loader.using( 'mediawiki.api' ).then(function() {
 			var api = new mw.Api();
 			api.get( getParameter ).then( function ( data ) {
 				var recentChanges, html, time, line, text;
