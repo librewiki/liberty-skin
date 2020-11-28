@@ -1,5 +1,5 @@
 {
-	"name": "Liberty-MW-Skin",
+	"name": "librewiki/liberty-mw-skin",
 	"description": "Liberty MediaWiki Skin",
 	"license": "GPL-3.0+",
 	"require-dev": {
