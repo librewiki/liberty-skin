@@ -44,9 +44,9 @@ $( function () {
 			rcnamespace: isArticleTab ? articleNamespaces : talkNamespaces,
 			rctoponly: true
 		};
-		var api = new mw.Api();
-		api.get( getParameter )
-			.then( function ( data ) {
+		mw.loader.using( 'mw.Api' ).then(function() {
+			var api = new mw.Api();
+			api.get( getParameter ).then( function ( data ) {
 				var recentChanges, html, time, line, text;
 				recentChanges = data.query.recentchanges;
 				html = recentChanges.map( function ( item ) {
@@ -69,6 +69,7 @@ $( function () {
 				$( '#live-recent-list' ).html( html );
 			})
 			.catch( function () {} );
+		});
 	}
 
 	$( '#liberty-recent-tab1' ).click( function () {
