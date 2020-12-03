@@ -2,12 +2,30 @@
 	"@metadata": {
 		"authors": [
 			"Helpau",
-			"Okras"
+			"Okras",
+			"PlushBoy"
 		]
 	},
+	"skinname-liberty": "Свобода",
+	"liberty-desc": "Скин для [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Не игнорировать",
+	"liberty-dark-dark": "Игнорировать и активировать тёмную тему",
+	"liberty-dark-light": "Игнорировать и активировать светлую тему",
+	"liberty-feed-new": "[Новое]",
 	"liberty-font-name-default": "по умолчанию",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Забыли пароль?",
 	"liberty-login": "Войти",
+	"liberty-login-alter": "Войти другим способом",
 	"liberty-login-btn": "Войти",
 	"liberty-info": "Информация",
 	"liberty-purge": "Очистить",
@@ -16,12 +34,19 @@
 	"liberty-share": "Поделиться",
 	"liberty-tooltip-info": "Посмотреть информацию о документе",
 	"liberty-tooltip-purge": "Очистить кэш этой страницы.",
+	"liberty-view-more": "Показать все",
+	"liberty.css": "/* Размещённый здесь CSS будет применяться к теме оформления Liberty */",
+	"liberty.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления Liberty */",
 	"prefs-liberty": "Liberty skin",
 	"prefs-color": "Настройки цвета",
 	"liberty-pref-color-main": "Главный цвет",
+	"liberty-pref-color-main-help": "Основной цвет, используемый на этом сайте.",
+	"liberty-pref-color-second": "Второстепенный цвет",
+	"liberty-pref-color-second-help": "Второстепенный цвет, используемый на этом сайте.",
 	"prefs-font": "Параметры шрифтов",
 	"liberty-pref-fonts": "Выберите шрифт, который вы хотите использовать",
 	"liberty-pref-fonts-helplabel": "Справка",
 	"liberty-pref-fonts-help": "Шрифт будет загружен с серверов Google, за исключением шрифта Malgun Gothic.",
-	"liberty-pref-dark": "Игнорировать системную настройку тёмного режима?"
+	"liberty-pref-dark": "Игнорировать системную настройку тёмного режима?",
+	"liberty-pref-dark-help": "Выберите, следует ли следовать настройкам системы при активации темного режима."
 }
