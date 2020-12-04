@@ -452,6 +452,7 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
 					<?php
+					if ($action != 'edit') {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
 					echo Linker::linkKnown(
 						$title,
@@ -464,6 +465,18 @@ class LibertyTemplate extends BaseTemplate {
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					);
+				};
+				if ($action == 'edit' || $action == 'history') {
+					echo Linker::linkKnown(
+						$title,
+						$titlename = $skin->msg( 'article' )->plain(),
+						[
+							'class' => 'btn btn-secondary tools-btn',
+							'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
+						],
+					);
+				};
 					if ( $companionTitle ) {
 						if ( $title->isTalkPage() ) {
 							$titlename = $skin->msg( 'nstab-main' )->plain();
@@ -520,6 +533,7 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							);
 						}
+						
 						echo Linker::linkKnown(
 							$title,
 							$skin->msg( 'liberty-purge' )->plain(),

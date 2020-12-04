@@ -199,6 +199,7 @@ strike {
 	height: 2.8rem;
 	width: 6.6rem;
 	background: transparent url( ../img/logo.png ) no-repeat scroll left center/auto 1.9rem;
+	background-size: contain;
 	padding: 0;
 	margin: 0;
 }
