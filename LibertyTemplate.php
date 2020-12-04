@@ -478,8 +478,8 @@ class LibertyTemplate extends BaseTemplate {
 					);
 				};
 					if ( $companionTitle ) {
-						if ( $title->isTalkPage() ) {
-							$titlename = $skin->msg( 'nstab-main' )->plain();
+						if ( $title->isTalkPage() && $action != 'history' ) {
+							$titlename = $skin->msg( 'article' )->plain();
 							$additionalArrayStuff = [
 								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
 								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
@@ -499,16 +499,18 @@ class LibertyTemplate extends BaseTemplate {
 							] + $additionalArrayStuff
 						);
 					}
-					echo Linker::linkKnown(
-						$title,
-						$skin->msg( 'history' )->plain(),
-						[
-							'class' => 'btn btn-secondary tools-btn',
-							'title' => Linker::titleAttrib( 'ca-history', 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'ca-history' )
-						],
-						[ 'action' => 'history' ]
-					);
+					if ( $action != 'history' ) {
+						echo Linker::linkKnown(
+							$title,
+							$skin->msg( 'history' )->plain(),
+							[
+								'class' => 'btn btn-secondary tools-btn',
+								'title' => Linker::titleAttrib( 'ca-history', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-history' )
+							],
+							[ 'action' => 'history' ]
+						);
+					}
 					if ( $action == 'view' ) { ?>
 					<button type="button" class="btn btn-secondary tools-btn tools-share">
 						<i class="far fa-share-square"></i>
