@@ -1,4 +1,7 @@
 <?php // @codingStandardsIgnoreLine
+
+use MediaWiki\MediaWikiServices;
+
 class LibertyTemplate extends BaseTemplate {
 	/**
 	 * execute() Method
@@ -442,6 +445,7 @@ class LibertyTemplate extends BaseTemplate {
 		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 			?>
@@ -553,7 +557,7 @@ class LibertyTemplate extends BaseTemplate {
 							],
 							[ 'action' => 'info' ]
 						);
-						if ( $title->quickUserCan( 'move', $user ) && $title->exists() ) {
+						if ( $permissionManager->quickUserCan( 'move', $user, $title ) && $title->exists() ) {
 							echo Linker::linkKnown(
 								SpecialPage::getTitleFor( 'Movepage', $title ),
 								$skin->msg( 'move' )->plain(),
@@ -563,8 +567,8 @@ class LibertyTemplate extends BaseTemplate {
 									'accesskey' => Linker::accesskey( 'ca-move' )
 								]
 							);
-						}
-						if ( $title->quickUserCan( 'protect', $user ) ) { ?>
+						};
+						if ( $permissionManager->quickUserCan( 'protect', $user, $title ) ) { ?>
 							<div class="dropdown-divider"></div>
 							<?php
 							// different labels depending on whether the page is or isn't protected
@@ -580,7 +584,8 @@ class LibertyTemplate extends BaseTemplate {
 								[ 'action' => 'protect' ]
 							); ?>
 						<?php } ?>
-						<?php if ( $title->quickUserCan( 'delete', $user ) && $title->exists() ) { ?>
+						<?php if ( $permissionManager->quickUserCan( 'delete', $user, $title ) && $title->exists() ) {
+						?>
 							<div class="dropdown-divider"></div>
 							<?php echo Linker::linkKnown(
 								$title,
