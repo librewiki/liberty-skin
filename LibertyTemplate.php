@@ -477,9 +477,9 @@ class LibertyTemplate extends BaseTemplate {
 						],
 					);
 				};
-					if ( $companionTitle ) {
+					if ( $companionTitle && $action != 'edit' ) {
 						if ( $title->isTalkPage() && $action != 'history' ) {
-							$titlename = $skin->msg( 'article' )->plain();
+							$titlename = $skin->msg( 'nstab-main' )->plain();
 							$additionalArrayStuff = [
 								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
 								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
