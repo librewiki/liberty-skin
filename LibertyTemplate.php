@@ -452,7 +452,7 @@ class LibertyTemplate extends BaseTemplate {
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
 					<?php
-					if ($action != 'edit') {
+			    if ($action != 'edit') {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
 					echo Linker::linkKnown(
 						$title,
@@ -533,7 +533,6 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							);
 						}
-						
 						echo Linker::linkKnown(
 							$title,
 							$skin->msg( 'liberty-purge' )->plain(),
