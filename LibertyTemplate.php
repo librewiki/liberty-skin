@@ -57,7 +57,7 @@ class LibertyTemplate extends BaseTemplate {
 						<?php $this->html( 'subtitle' ); ?>
 					</div>
 				</div>
-				<div class="liberty-content-main">
+				<div class="liberty-content-main" id="content">
 					<?php if ( $this->data['newtalk'] ) { ?>
 					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
 					<?php }
@@ -458,6 +458,7 @@ class LibertyTemplate extends BaseTemplate {
 						$editIcon . $skin->msg( 'edit' )->plain(),
 						[
 							'class' => 'btn btn-secondary tools-btn',
+							'id' => 'ca-edit',
 							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
 							'accesskey' => Linker::accesskey( 'ca-edit' )
 						],
