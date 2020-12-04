@@ -284,6 +284,12 @@ td.mw-label {
 	margin-top: 20px;
 }
 
+/* Fix for visualeditor */
+.mw-body-content > .ve-ui-surface  > .ve-ce-surface {
+	min-height:80vh;
+}
+
+
 /* Input End */
 
 /* PostEdit */
