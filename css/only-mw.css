@@ -286,7 +286,7 @@ td.mw-label {
 
 /* Fix for visualeditor */
 .mw-body-content > .ve-ui-surface  > .ve-ce-surface {
-	min-height:400px;
+	min-height:600px;
 }
 
 
