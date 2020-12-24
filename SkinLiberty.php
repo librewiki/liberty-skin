@@ -124,10 +124,45 @@ class SkinLiberty extends SkinTemplate {
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
 		}" );
+		
+		// layout settings 
+		global $wgLibertyUserSidebarSettings;
+
+		$LibertyUserWidthSettings = $this->getUser()->getOption( 'liberty-layout-width' );
+		$wgLibertyUserSidebarSettings = $this->getUser()->getOption( 'liberty-layout-sidebar' );
+		$LibertyUserNavbarSettings = $this->getUser()->getOption( 'liberty-layout-navfix' );
+		
+		if (isset($LibertyUserNavbarSettings ) && $LibertyUserNavbarSettings ) {
+			$out->addInlineStyle(
+				".navbar-fixed-top {
+					position: absolute;
+				}"
+			);
+		};
+
+		if (isset($wgLibertyUserSidebarSettings ) && $wgLibertyUserSidebarSettings  ) {
+			$out->addInlineStyle(
+				".Liberty .content-wrapper .liberty-content {
+					margin-right: 0;
+				}"
+			);
+		};
+
+		if ($LibertyUserWidthSettings != null ) {
+			$out->addInlineStyle(
+				".Liberty .content-wrapper {
+					max-width: $LibertyUserWidthSettings;
+				}
+
+				.Liberty .nav-wrapper .navbar {
+					max-width: $LibertyUserWidthSettings;
+				}"
+			);
+		}
 
 		// 폰트 설정
 		$LibertyUserFontSettings = $this->getUser()->getOption( 'liberty-font' );
-		if ( $LibertyUserFontSettings != 'default' ) {
+		if ( $LibertyUserFontSettings != null ) {
 			$out->addInlineStyle(
 				"body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;

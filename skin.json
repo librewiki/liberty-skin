@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.8.0",
+	"version": "1.8.1",
 	"requires": {
 		"MediaWiki": ">= 1.35.0"
 	},
@@ -81,7 +81,6 @@
 		},
 		"skins.liberty.layoutjs": {
 			"scripts": [
-				"js/index-button.js",
 				"js/delay-scrolling.js",
 				"js/disable-notice.js",
 				"js/share-button.js",

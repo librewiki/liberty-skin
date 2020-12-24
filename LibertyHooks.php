@@ -6,6 +6,35 @@ class LibertyHooks extends Hooks {
 	 * @param Preferences &$preferences preferences
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
+		$preferences['liberty-layout-width'] = [
+			'type' => 'select',
+			'label-message' => 'liberty-pref-layout-width',
+			'section' => 'liberty/layout',
+			'options' => [
+				wfMessage( 'liberty-layout-select-1000' )->text() => '1000px',
+				wfMessage( 'liberty-layout-select-1000' )->text() => '1100px',
+				wfMessage( 'liberty-layout-select-1200' )->text() => '1200px',
+				wfMessage( 'liberty-layout-select-1000' )->text() => '1300px',
+				wfMessage( 'liberty-layout-select-1400' )->text() => '1400px',
+				wfMessage( 'liberty-layout-select-1000' )->text() => '1500px',
+				wfMessage( 'liberty-layout-select-1600' )->text() => '1600px',
+			],
+			'help-message' => 'liberty-pref-layout-width-help',
+			'default' => null
+		];
+
+		$preferences['liberty-layout-navfix'] = [
+			'type' => 'toggle',
+			'label-message' => 'liberty-pref-layout-navfix',
+			'section' => 'liberty/layout',
+		];
+
+		$preferences['liberty-layout-sidebar'] = [
+			'type' => 'toggle',
+			'label-message' => 'liberty-pref-layout-sidebar',
+			'section' => 'liberty/layout',
+		];
+
 		$preferences['liberty-color-main'] = [
 			'type' => 'text',
 			'label-message' => 'liberty-pref-color-main',
@@ -24,7 +53,6 @@ class LibertyHooks extends Hooks {
 			'type' => 'selectorother',
 			'label-message' => 'liberty-pref-fonts',
 			'section' => 'liberty/font',
-			'default' => 'default',
 			'options' => [
 				wfMessage( 'liberty-font-name-default' )->text() => 'default',
 				wfMessage( 'liberty-font-name-noto-sans-kr' )->text() => 'Noto Sans KR',
@@ -38,7 +66,8 @@ class LibertyHooks extends Hooks {
 				wfMessage( 'liberty-font-name-youth' )->text() => 'Youth',
 				wfMessage( 'liberty-font-name-malgun-gothic' )->text() => 'Malgun Gothic'
 			],
-			'help-message' => 'liberty-pref-fonts-help'
+			'help-message' => 'liberty-pref-fonts-help',
+			'default' => null,
 		];
 
 		$preferences['liberty-dark'] = [

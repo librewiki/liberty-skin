@@ -7,7 +7,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * execute() Method
 	 */
 	public function execute() {
-		global $wgLibertyAdSetting;
+		global $wgLibertyAdSetting, $wgLibertyUserSidebarSettings;
 
 		$skin = $this->getSkin();
 		$request = $skin->getRequest();
@@ -23,16 +23,18 @@ class LibertyTemplate extends BaseTemplate {
 		</header>
 		<section>
 		<div class="content-wrapper">
-			<aside>
-			<div class="liberty-sidebar">
-				<div class="live-recent-wrapper">
-					<?php $this->liveRecent(); ?>
+			<?php if ( $wgLibertyUserSidebarSettings == false ) { ?>
+				<aside>
+				<div class="liberty-sidebar">
+					<div class="live-recent-wrapper">
+						<?php $this->liveRecent(); ?>
+					</div>
+					<?php if ( isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] ) {
+						$this->buildAd( 'right' );
+					} ?>
 				</div>
-				<?php if ( isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] ) {
-					$this->buildAd( 'right' );
-				} ?>
-			</div>
-			</aside>
+				</aside> 
+			<?php } ?>
 			<div class="container-fluid liberty-content">
 				<div class="liberty-content-header">
 					<?php if ( $this->data['sitenotice'] &&

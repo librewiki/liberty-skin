@@ -322,6 +322,11 @@ fieldset {
 	vertical-align: middle;
 }
 
+/* Preferences */
+#mw-prefsection-liberty {
+	padding-top:1rem;
+}
+
 /* Extensions */
 
 /* MsUpload */
