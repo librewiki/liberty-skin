@@ -474,7 +474,7 @@ class LibertyTemplate extends BaseTemplate {
 							'class' => 'btn btn-secondary tools-btn',
 							'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
 							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
-						],
+						]
 					);
 				};
 					if ( $companionTitle && $action != 'edit' ) {

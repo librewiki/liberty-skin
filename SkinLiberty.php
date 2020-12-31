@@ -169,6 +169,7 @@ class SkinLiberty extends SkinTemplate {
 			$out->addInlineStyle( "@media (prefers-color-scheme: dark) { $LibertyDarkCss }" );
 		}
 		// @codingStandardsIgnoreEnd
+		$this->setupCss( $out );
 	}
 
 	/**
@@ -176,10 +177,8 @@ class SkinLiberty extends SkinTemplate {
 	 *
 	 * @param OutputPage $out OutputPage
 	 */
-	public function setupSkinUserCss( OutputPage $out ) {
+	public function setupCss( OutputPage $out ) {
 		global $wgLibertyAdSetting;
-
-		parent::setupSkinUserCss( $out );
 
 		$out->addHeadItem(
 			'font-awesome',
@@ -215,15 +214,5 @@ class SkinLiberty extends SkinTemplate {
 		}
 
 		$out->addModuleStyles( [ 'skins.liberty.styles' ] );
-	}
-
-	/**
-	 * Set body class.
-	 *
-	 * @param OutputPage $out OutputPage
-	 * @param array &$bodyAttrs Body attributes
-	 */
-	public function addToBodyAttributes( $out, &$bodyAttrs ) {
-		$bodyAttrs['class'] .= ' Liberty width-size';
 	}
 }
