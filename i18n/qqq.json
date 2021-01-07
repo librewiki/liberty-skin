@@ -3,6 +3,7 @@
 		"authors": [
 			"Kizule",
 			"Robby",
+			"Verdy p",
 			"Zoranzoki21"
 		]
 	},
@@ -10,14 +11,15 @@
 	"liberty-dark-default": "{{optional}}",
 	"liberty-dark-dark": "{{optional}}",
 	"liberty-dark-light": "{{optional}}",
-	"liberty-font-name-noto-sans-kr": "{{optional}}",
-	"liberty-font-name-spoqa-han-sans": "{{optional}}",
-	"liberty-font-name-nanum-gothic": "{{optional}}",
-	"liberty-font-name-nanum-myeongjo": "{{optional}}",
-	"liberty-font-name-dokdo": "{{optional}}",
-	"liberty-font-name-gaegu": "{{optional}}",
-	"liberty-font-name-hankc": "{{optional}}",
-	"liberty-font-name-youth": "{{optional}}",
-	"liberty-font-name-malgun-gothic": "{{optional}}",
+	"liberty-font-name-noto-sans-kr": "{{optional}}\nFont name",
+	"liberty-font-name-noto-serif-kr": "{{optional}}\nFont name",
+	"liberty-font-name-spoqa-han-sans": "{{optional}}\nFont name",
+	"liberty-font-name-nanum-gothic": "{{optional}}\nFont name",
+	"liberty-font-name-nanum-myeongjo": "{{optional}}\nFont name",
+	"liberty-font-name-dokdo": "{{optional}}\nFont name",
+	"liberty-font-name-gaegu": "{{optional}}\nFont name",
+	"liberty-font-name-hankc": "{{optional}}\nFont name",
+	"liberty-font-name-youth": "{{optional}}\nFont name",
+	"liberty-font-name-malgun-gothic": "{{optional}}\nFont name",
 	"liberty-pref-fonts-helplabel": "{{Identical|Help}}"
 }
