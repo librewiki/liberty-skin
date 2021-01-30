@@ -12,11 +12,11 @@ class LibertyHooks extends Hooks {
 			'section' => 'liberty/layout',
 			'options' => [
 				wfMessage( 'liberty-layout-select-1000' )->text() => '1000px',
-				wfMessage( 'liberty-layout-select-1000' )->text() => '1100px',
-				wfMessage( 'liberty-layout-select-1200' )->text() => '1200px',
-				wfMessage( 'liberty-layout-select-1000' )->text() => '1300px',
+				wfMessage( 'liberty-layout-select-1100' )->text() => '1100px',
+				wfMessage( 'liberty-layout-select-1200' )->text() => null,
+				wfMessage( 'liberty-layout-select-1300' )->text() => '1300px',
 				wfMessage( 'liberty-layout-select-1400' )->text() => '1400px',
-				wfMessage( 'liberty-layout-select-1000' )->text() => '1500px',
+				wfMessage( 'liberty-layout-select-1500' )->text() => '1500px',
 				wfMessage( 'liberty-layout-select-1600' )->text() => '1600px',
 			],
 			'help-message' => 'liberty-pref-layout-width-help',
@@ -32,6 +32,12 @@ class LibertyHooks extends Hooks {
 		$preferences['liberty-layout-sidebar'] = [
 			'type' => 'toggle',
 			'label-message' => 'liberty-pref-layout-sidebar',
+			'section' => 'liberty/layout',
+		];
+
+		$preferences['liberty-layout-controlbar'] = [
+			'type' => 'toggle',
+			'label-message' => 'liberty-pref-layout-controlbar',
 			'section' => 'liberty/layout',
 		];
 
@@ -54,7 +60,7 @@ class LibertyHooks extends Hooks {
 			'label-message' => 'liberty-pref-fonts',
 			'section' => 'liberty/font',
 			'options' => [
-				wfMessage( 'liberty-font-name-default' )->text() => 'default',
+				wfMessage( 'liberty-font-name-default' )->text() => null,
 				wfMessage( 'liberty-font-name-noto-sans-kr' )->text() => 'Noto Sans KR',
 				wfMessage( 'liberty-font-name-noto-serif-kr' )->text() => 'Noto Serif KR',
 				wfMessage( 'liberty-font-name-spoqa-han-sans' )->text() => 'Spoqa Han Sans',
