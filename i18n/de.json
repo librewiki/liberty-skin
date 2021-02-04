@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bxalber",
 			"Tobi 406",
 			"WikiBayer"
 		]
@@ -11,6 +12,7 @@
 	"liberty-login-btn": "Anmelden",
 	"liberty-purge": "Cache leeren",
 	"liberty-recent-discussions": "Neueste Diskussionen",
+	"liberty-share": "Teilen",
 	"liberty-view-more": "Mehr ansehen",
 	"liberty-pref-fonts-helplabel": "Hilfe"
 }
