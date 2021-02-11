@@ -3,7 +3,8 @@
 		"authors": [
 			"01miki10",
 			"Actuallyisjoha",
-			"Jack Phoenix"
+			"Jack Phoenix",
+			"Nike"
 		]
 	},
 	"skinname-liberty": "Vapaus",
@@ -24,6 +25,13 @@
 	"liberty-font-name-youth": "Youth",
 	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Unohditko salasanasi?",
+	"liberty-layout-select-1000": "1000px",
+	"liberty-layout-select-1100": "1100px",
+	"liberty-layout-select-1200": "1200px (oletus)",
+	"liberty-layout-select-1300": "1300px",
+	"liberty-layout-select-1400": "1400px",
+	"liberty-layout-select-1500": "1500px",
+	"liberty-layout-select-1600": "1600px",
 	"liberty-login": "Kirjaudu",
 	"liberty-login-alter": "Kirjaudu toisella tavalla",
 	"liberty-login-btn": "Kirjaudu",
@@ -39,6 +47,9 @@
 	"liberty.js": "/* Tämän sivun JavaScript-koodi liitetään Vapaus-tyyliin */",
 	"prefs-liberty": "Vapaus-ulkoasu",
 	"prefs-color": "Väriasetus",
+	"prefs-layout": "Asetteluasetukset",
+	"liberty-pref-layout-sidebar": "Poista oikea sivupalkki",
+	"liberty-pref-layout-width": "Staattinen leveys",
 	"liberty-pref-color-main": "Pääväri",
 	"liberty-pref-color-main-help": "Tällä sivustolla käytettävä päävärikoodi.",
 	"liberty-pref-color-second": "Toissijainen väri",
