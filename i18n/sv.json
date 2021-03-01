@@ -46,7 +46,7 @@
 	"liberty-tooltip-purge": "Rensa cache för denna sida.",
 	"liberty-view-more": "Visa mer",
 	"liberty.css": "/* CSS som skrivs här kommer att påverka alla användare av utseendet Liberty */",
-	"liberty.js": "/* JavaScript här kommer att laddas för dem som använder utseendet Liberty */",
+	"liberty.js": "/* All JavaScript här kommer att läsas in för de som använder utseendet Liberty */",
 	"prefs-liberty": "Utseendet Liberty",
 	"prefs-color": "Färginställning",
 	"prefs-layout": "Layoutinställning",
