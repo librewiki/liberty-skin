@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bikarhêner"
+		]
+	},
+	"liberty-feed-new": "[Nû]",
+	"liberty-font-name-default": "standard",
+	"liberty-layout-select-1000": "1000px",
+	"liberty-layout-select-1100": "1100px",
+	"liberty-layout-select-1200": "1200px (Standard)",
+	"liberty-layout-select-1300": "1300px",
+	"liberty-layout-select-1400": "1400px",
+	"liberty-layout-select-1500": "1500px",
+	"liberty-layout-select-1600": "1600px",
+	"liberty-login": "Têketin",
+	"liberty-login-alter": "Bi awayê din têkeve",
+	"liberty-login-btn": "Têkeve",
+	"liberty-info": "Agahî",
+	"liberty-share": "Parve bike",
+	"liberty-pref-fonts-helplabel": "Alîkarî"
+}
