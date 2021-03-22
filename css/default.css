@@ -925,6 +925,7 @@ strike {
   grid-template-columns: 1fr 1fr;
   border-radius: 5px 5px 0 0;
 }
+
 #liberty-bottombtn .scroll-button {
   font-size: 40px;
   line-height: 40px;
@@ -932,6 +933,12 @@ strike {
   text-align: center;
   cursor: pointer;
 }
+
+#liberty-bottombtn .scroll-button:hover {
+  background-color:#2774DC;
+  transition: 500ms;
+}
+
 #liberty-bottombtn #scrollup {
   border-right: 1px solid white;
 }

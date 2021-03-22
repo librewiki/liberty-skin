@@ -85,7 +85,8 @@
 				"js/disable-notice.js",
 				"js/share-button.js",
 				"js/layout.js",
-				"js/table.js"
+				"js/table.js",
+				"js/scroll-button.js"
 			],
 			"dependencies": "mediawiki.cookie"
 		},

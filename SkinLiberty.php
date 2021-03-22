@@ -125,6 +125,12 @@ class SkinLiberty extends SkinTemplate
 		.Liberty .nav-wrapper .navbar .navbar-nav .nav-item .nav-link:focus,
 		.dropdown-menu .dropdown-item:hover {
 			background-color: $secondColor;
+		}
+
+
+		.Liberty .content-wrapper #liberty-bottombtn,
+		.Liberty .content-wrapper #liberty-bottombtn:hover {
+			background-color: $mainColor;
 		}");
 
 		// layout settings 
