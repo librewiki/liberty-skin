@@ -87,8 +87,8 @@ class LibertyTemplate extends BaseTemplate
 						</div>
 					</footer>
 					<div id="liberty-bottombtn">
-						<div class="scroll-button" id="scrollup"><i class="fas fa-angle-up"></i></div>
-						<div class="scroll-button" id="scrolldown"><i class="fas fa-angle-down"></i></div>
+						<div class="scroll-button" id="liberty-scrollup"><i class="fas fa-angle-up"></i></div>
+						<div class="scroll-button" id="liberty-scrolldown"><i class="fas fa-angle-down"></i></div>
 					</div>
 				</div>
 			</div>

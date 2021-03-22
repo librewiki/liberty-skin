@@ -939,7 +939,7 @@ strike {
   transition: 500ms;
 }
 
-#liberty-bottombtn #scrollup {
+#liberty-bottombtn #liberty-scrollup {
   border-right: 1px solid white;
 }
 /* scroll button end */
