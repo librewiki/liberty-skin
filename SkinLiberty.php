@@ -13,10 +13,14 @@ class SkinLiberty extends SkinTemplate
 	public function initPage(OutputPage $out)
 	{
 		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting;
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
+		$user = $this->getUser();
+		$userGroups = $user->UserGroupManager->getUserGroups();
 
-		$optionMainColor = $this->getUser()->getOption('liberty-color-main');
-		$optionSecondColor = $this->getUser()->getOption('liberty-color-second');
+		// 테스트용 코드
+		$out->addMeta('test',implode(", ",$userGroups));
+		$optionMainColor = $user->getOption('liberty-color-main');
+		$optionSecondColor = $user->getOption('liberty-color-second');
 
 		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
@@ -136,10 +140,10 @@ class SkinLiberty extends SkinTemplate
 		// layout settings 
 		global $wgLibertyUserSidebarSettings;
 
-		$LibertyUserWidthSettings = $this->getUser()->getOption('liberty-layout-width');
-		$wgLibertyUserSidebarSettings = $this->getUser()->getOption('liberty-layout-sidebar');
-		$LibertyUserNavbarSettings = $this->getUser()->getOption('liberty-layout-navfix');
-		$LibertyUsercontrolbarSettings = $this->getUser()->getOption('liberty-layout-controlbar');
+		$LibertyUserWidthSettings = $user->getOption('liberty-layout-width');
+		$wgLibertyUserSidebarSettings = $user->getOption('liberty-layout-sidebar');
+		$LibertyUserNavbarSettings = $user->getOption('liberty-layout-navfix');
+		$LibertyUsercontrolbarSettings = $user->getOption('liberty-layout-controlbar');
 
 
 		if (isset($LibertyUserNavbarSettings) && $LibertyUserNavbarSettings) {
@@ -179,13 +183,29 @@ class SkinLiberty extends SkinTemplate
 		};
 
 		// 폰트 설정
-		$LibertyUserFontSettings = $this->getUser()->getOption('liberty-font');
+		$LibertyUserFontSettings = $user->getOption('liberty-font');
 		if ($LibertyUserFontSettings != null) {
 			$out->addInlineStyle(
 				"body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;
 				}"
 			);
+		}
+
+		// Ads setting
+		$LibertyUserMoreArticleSettings = $user->getOption('liberty-layout-morearticle');
+		if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
+			// if user is login, reduce ads
+			if ( isset($wgLibertyAdGroup) && $wgLibertyAdGroup == 'differ' && $user->isLoggedIn()) {
+				$wgLibertyAdSetting['header'] == null;
+				$wgLibertyAdSetting['footer'] == null;
+				if ($user->isNewbie() == False) {
+					$wgLibertyAdSetting['sidebar'] == null;
+				}
+				if (isset($LibertyUserMoreArticleSettings) && $LibertyUserMoreArticleSettings) {
+					$wgLibertyAdSetting['belowarticle'] == null;
+				}
+			}
 		}
 
 		$LibertyDarkCss = "body, .Liberty, .dropdown-menu, .dropdown-item, .Liberty .nav-wrapper .navbar .form-inline .btn, .Liberty .content-wrapper .liberty-sidebar .live-recent-wrapper .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox th, #preferences fieldset:not(.prefsection), #preferences div.mw-prefs-buttons, .navbox, .navbox-subgroup, .navbox > tbody > tr:nth-child(even) > .navbox-list {
@@ -215,7 +235,7 @@ class SkinLiberty extends SkinTemplate
 		.flow-ui-navigationWidget { color: #FFF; }
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc li { background-color: #000; }
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle { background-color: #1F2023; }";
-		$LibertyUserDarkSetting = $this->getUser()->getOption('liberty-dark');
+		$LibertyUserDarkSetting = $user->getOption('liberty-dark');
 		if ($LibertyUserDarkSetting === 'dark') {
 			$out->addInlineStyle($LibertyDarkCss);
 		} elseif ($LibertyUserDarkSetting === null) {
@@ -258,16 +278,6 @@ class SkinLiberty extends SkinTemplate
 			// @codingStandardsIgnoreLine
 			'<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
 		);
-
-		// Only load AdSense JS is ads are enabled in site configuration
-		if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
-			$out->addHeadItem(
-				'google-ads',
-				// @codingStandardsIgnoreLine
-				'<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
-			);
-		}
-
 		$out->addModuleStyles(['skins.liberty.styles']);
 	}
 

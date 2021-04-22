@@ -41,6 +41,12 @@ class LibertyHooks extends Hooks {
 			'section' => 'liberty/layout',
 		];
 
+		$preferences['liberty-layout-morearticle'] = [
+			'type' => 'toggle',
+			'label-message' => 'liberty-pref-layout-morearticle',
+			'section' => 'liberty/layout',
+		];
+
 		$preferences['liberty-color-main'] = [
 			'type' => 'text',
 			'label-message' => 'liberty-pref-color-main',

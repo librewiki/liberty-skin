@@ -74,25 +74,38 @@ class LibertyTemplate extends BaseTemplate
 						<article class="mw-body-content">
 							<?php $this->html('bodycontent'); ?>
 						</article>
-					</div>
+						<?php if (isset($wgLibertyAdSetting['belowarticle']) && $wgLibertyAdSetting['belowarticle']) {
+								$this->buildAd('belowarticle');
+							} ?>
+						</div>
 					<footer>
+
 						<div class="liberty-footer">
 							<?php
 							if ($this->data['dataAfterContent']) {
 								$this->html('dataAfterContent');
 							}
 							?>
+						<?php if (isset($wgLibertyAdSetting['footer']) && $wgLibertyAdSetting['footer']) {
+							$this->buildAd('footer');
+						} ?>
 							<div class="bottom-ads"></div>
 							<?php $this->footer(); ?>
 						</div>
 					</footer>
 					<div id="liberty-bottombtn">
-						<div class="scroll-button" id="scrollup"><i class="fas fa-angle-up"></i></div>
-						<div class="scroll-button" id="scrolldown"><i class="fas fa-angle-down"></i></div>
+						<div class="scroll-button" id="liberty-scrollup"><i class="fas fa-angle-up"></i></div>
+						<div class="scroll-button" id="liberty-scrolldown"><i class="fas fa-angle-down"></i></div>
 					</div>
 				</div>
 			</div>
 		</section>
+		<?php
+		// Only load AdSense JS is ads are enabled in site configuration
+		if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
+			echo('<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
+		}
+		?>
 		<?php $this->loginModal(); ?>
 	<?php
 		$this->printTrail();

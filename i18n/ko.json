@@ -35,6 +35,7 @@
 	"liberty-layout-select-1500": "1500px",
 	"liberty-layout-select-1600": "1600px",
 	"liberty-pref-layout-controlbar": "내비게이션 컨트롤 바 제거",
+	"liberty-pref-layout-morearticle": "문서 영역 하단 추천문서식 광고를 제거합니다.",
 	"liberty-login": "로그인",
 	"liberty-login-alter": "다른 방법으로 로그인하기",
 	"liberty-login-btn": "로그인",
