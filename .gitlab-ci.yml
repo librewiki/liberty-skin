@@ -12,7 +12,7 @@ eslint:
       - node_modules/
 
 phpcs:
-  image: php:7.1
+  image: php:7.4
   stage: lint
   script:
     - php composer.phar test
@@ -26,4 +26,3 @@ phpcs:
     - apt-get install git -yqq
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install
-

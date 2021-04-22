@@ -103,6 +103,7 @@ class LibertyTemplate extends BaseTemplate {
 		<?php
 		// Only load AdSense JS is ads are enabled in site configuration
 		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] ) {
+			// @codingStandardsIgnoreLine
 			echo( '<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
 		}
 		?>
@@ -231,7 +232,8 @@ class LibertyTemplate extends BaseTemplate {
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<?php echo $avatar; ?>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu" aria-labelledby="login-menu">
+					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu" 
+						aria-labelledby="login-menu">
 						<?php echo Linker::linkKnown(
 							Title::makeTitle( NS_USER, $user->getName() ),
 							$user->getName(),
@@ -309,7 +311,8 @@ class LibertyTemplate extends BaseTemplate {
 							<?php echo $skin->msg( 'logout' )->plain(); ?></a>
 					</div>
 				</div>
-				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" class="hide-logout logout-btn" 
+				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
+					class="hide-logout logout-btn" 
 					title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>">
 					<span class="fa fa-sign-out"></span></a>
 			<?php } else { ?>
@@ -414,7 +417,8 @@ class LibertyTemplate extends BaseTemplate {
 		$articleNS = implode( "|", $wgLibertyLiveRCArticleNamespaces );
 		$talkNS = implode( "|", $wgLibertyLiveRCTalkNamespaces );
 	?>
-		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" data-talk-ns="<?php echo $talkNS ?>">
+		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" 
+			data-talk-ns="<?php echo $talkNS ?>">
 			<div class="live-recent-header">
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
@@ -1207,9 +1211,11 @@ class LibertyTemplate extends BaseTemplate {
 		}
 		?>
 		<div class="<?php echo $position; ?>-ads">
-			<ins class="adsbygoogle" data-full-width-responsive="<?php echo $fullWidthResponsive; ?>" 
+			<ins class="adsbygoogle" 
+				data-full-width-responsive="<?php echo $fullWidthResponsive; ?>" 
 				data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>" 
-				data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>" data-ad-format="<?php echo $adFormat; ?>">
+				data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>"
+				data-ad-format="<?php echo $adFormat; ?>">
 			</ins>
 		</div>
 <?php

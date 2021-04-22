@@ -46,8 +46,8 @@ class LibertyHooks extends Hooks {
 			'section' => 'liberty/layout',
 		];
 
-		if ( isset( $wgLibertyAdSetting['below'] ) && $wgLibertyAdSetting['below'] && isset( $wgLibertyAdGroup )
-		&& $wgLibertyAdGroup == 'differ' && in_array( 'sysop', $userGroups ) ) {
+		if ( isset( $wgLibertyAdSetting['below'] ) && $wgLibertyAdSetting['below']
+		&& isset( $wgLibertyAdGroup ) && $wgLibertyAdGroup == 'differ' && in_array( 'sysop', $userGroups ) ) {
 			$preferences['liberty-layout-morearticle'] = [
 				'type' => 'toggle',
 				'label-message' => 'liberty-pref-layout-morearticle',
