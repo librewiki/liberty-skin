@@ -8,8 +8,8 @@ class LibertyHooks extends Hooks {
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgLibertyAdSetting, $wgLibertyAdGroup;
 		$service = MediaWiki\MediaWikiServices::getInstance();
-		$usergroupemanager = $service->getUserGroupManager();
-		$userGroups = $usergroupemanager->getUserGroups($user);
+		$usergroupmanager = $service->getUserGroupManager();
+		$userGroups = $usergroupmanager->getUserGroups($user);
 		
 
 		$preferences['liberty-layout-width'] = [
