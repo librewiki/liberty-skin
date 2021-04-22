@@ -2,21 +2,19 @@
 
 use MediaWiki\MediaWikiServices;
 
-class LibertyTemplate extends BaseTemplate
-{
+class LibertyTemplate extends BaseTemplate {
 	/**
 	 * execute() Method
 	 */
-	public function execute()
-	{
+	public function execute() {
 		global $wgLibertyAdSetting, $wgLibertyUserSidebarSettings;
 
 		$skin = $this->getSkin();
 		$request = $skin->getRequest();
-		$action = $request->getVal('action', 'view');
+		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
 
-		$this->html('headelement');
+		$this->html( 'headelement' );
 ?>
 		<header>
 			<div class="nav-wrapper navbar-fixed-top">
@@ -25,14 +23,14 @@ class LibertyTemplate extends BaseTemplate
 		</header>
 		<section>
 			<div class="content-wrapper">
-				<?php if ($wgLibertyUserSidebarSettings == false) { ?>
+				<?php if ( $wgLibertyUserSidebarSettings == false ) { ?>
 					<aside>
 						<div class="liberty-sidebar">
 							<div class="live-recent-wrapper">
 								<?php $this->liveRecent(); ?>
 							</div>
-							<?php if (isset($wgLibertyAdSetting['right']) && $wgLibertyAdSetting['right']) {
-								$this->buildAd('right');
+							<?php if ( isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) {
+								$this->buildAd( 'right' );
 							} ?>
 						</div>
 					</aside>
@@ -41,53 +39,55 @@ class LibertyTemplate extends BaseTemplate
 					<div class="liberty-content-header">
 						<?php if (
 							$this->data['sitenotice'] &&
-							!$request->getCookie('disable-notice')
+							!$request->getCookie( 'disable-notice' )
 						) { ?>
 							<div class="alert alert-dismissible fade in alert-info liberty-notice" role="alert">
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<?php $this->html('sitenotice'); ?>
+								<?php $this->html( 'sitenotice' ); ?>
 							</div>
 						<?php } ?>
-						<?php if (isset($wgLibertyAdSetting['header']) && $wgLibertyAdSetting['header']) {
-							$this->buildAd('header');
+						<?php if ( isset( $wgLibertyAdSetting['header'] ) && $wgLibertyAdSetting['header'] ) {
+							$this->buildAd( 'header' );
 						}
 						$this->contentsToolbox(); ?>
 						<div class="title">
 							<h1>
-								<?php $this->html('title'); ?>
+								<?php $this->html( 'title' ); ?>
 							</h1>
 						</div>
-						<div class="contentSub" <?php $this->html('userlangattributes'); ?>>
-							<?php $this->html('subtitle'); ?>
+						<div class="contentSub" <?php $this->html( 'userlangattributes' ); ?>>
+							<?php $this->html( 'subtitle' ); ?>
 						</div>
 					</div>
 					<div class="liberty-content-main" id="content">
-						<?php if ($this->data['newtalk']) { ?>
-							<div class="usermessage"><?php $this->html('newtalk') ?></div>
+						<?php if ( $this->data['newtalk'] ) { ?>
+							<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
 						<?php }
-						if ($this->data['catlinks']) {
-							$this->html('catlinks');
+						if ( $this->data['catlinks'] ) {
+							$this->html( 'catlinks' );
 						}
 						?>
 						<article class="mw-body-content">
-							<?php $this->html('bodycontent'); ?>
+							<?php $this->html( 'bodycontent' ); ?>
 						</article>
-						<?php if (isset($wgLibertyAdSetting['belowarticle']) && $wgLibertyAdSetting['belowarticle']) {
-								$this->buildAd('belowarticle');
-							} ?>
+						<?php
+						if ( isset( $wgLibertyAdSetting['belowarticle'] ) && $wgLibertyAdSetting['belowarticle'] ) {
+								$this->buildAd( 'belowarticle' );
+						}
+						?>
 						</div>
 					<footer>
 
 						<div class="liberty-footer">
 							<?php
-							if ($this->data['dataAfterContent']) {
-								$this->html('dataAfterContent');
+							if ( $this->data['dataAfterContent'] ) {
+								$this->html( 'dataAfterContent' );
 							}
 							?>
-						<?php if (isset($wgLibertyAdSetting['footer']) && $wgLibertyAdSetting['footer']) {
-							$this->buildAd('footer');
+						<?php if ( isset( $wgLibertyAdSetting['footer'] ) && $wgLibertyAdSetting['footer'] ) {
+							$this->buildAd( 'footer' );
 						} ?>
 							<div class="bottom-ads"></div>
 							<?php $this->footer(); ?>
@@ -102,24 +102,23 @@ class LibertyTemplate extends BaseTemplate
 		</section>
 		<?php
 		// Only load AdSense JS is ads are enabled in site configuration
-		if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
-			echo('<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
+		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] ) {
+			echo( '<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
 		}
 		?>
 		<?php $this->loginModal(); ?>
 	<?php
 		$this->printTrail();
-		$this->html('debughtml');
-		echo Html::closeElement('body');
-		echo Html::closeElement('html');
+		$this->html( 'debughtml' );
+		echo Html::closeElement( 'body' );
+		echo Html::closeElement( 'html' );
 		echo "\n";
 	}
 
 	/**
 	 * Nav menu function, build top menu.
 	 */
-	protected function navMenu()
-	{
+	protected function navMenu() {
 		$skin = $this->getSkin();
 	?>
 		<nav class="navbar navbar-dark">
@@ -127,20 +126,20 @@ class LibertyTemplate extends BaseTemplate
 			<ul class="nav navbar-nav">
 				<li class="nav-item">
 					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor('Recentchanges'),
+						SpecialPage::getTitleFor( 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						'<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg('recentchanges')->plain() . '</span>',
+						'<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',
-							'title' => Linker::titleAttrib('n-recentchanges', 'withaccess'),
-							'accesskey' => Linker::accesskey('n-recentchanges')
+							'title' => Linker::titleAttrib( 'n-recentchanges', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'n-recentchanges' )
 						]
 					); ?>
 				</li>
 				<li class="nav-item">
 					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor('Randompage'),
+						SpecialPage::getTitleFor( 'Randompage' ),
 						// @codingStandardsIgnoreStart
 						'<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg('randompage')->plain() . '</span>',
 						// @codingStandardsIgnoreEnd
@@ -163,8 +162,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Search box function, build top menu's search box.
 	 */
-	protected function searchBox()
-	{
+	protected function searchBox() {
 		$skin = $this->getSkin();
 	?>
 		<form action="<?php $this->text('wgScript'); ?>" id="searchform" class="form-inline">
@@ -184,8 +182,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Login box function, build top menu's login button.
 	 */
-	protected function loginBox()
-	{
+	protected function loginBox() {
 		global $wgLibertyUseGravatar;
 
 		$skin = $this->getSkin();
@@ -315,8 +312,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Login model function, build login menu model.
 	 */
-	protected function loginModal()
-	{
+	protected function loginModal() {
 		$skin = $this->getSkin();
 		$title = $skin->getTitle();
 
@@ -392,8 +388,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Live recent function, build right side's Recent menus.
 	 */
-	protected function liveRecent()
-	{
+	protected function liveRecent() {
 		global $wgLibertyEnableLiveRC,
 			$wgLibertyMaxRecent,
 			$wgLibertyLiveRCArticleNamespaces,
@@ -445,8 +440,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Contents tool box function, build article tool menu that will show at article title right.
 	 */
-	protected function contentsToolbox()
-	{
+	protected function contentsToolbox() {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
 		$title = $skin->getTitle();
@@ -632,8 +626,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Footer function, build footer.
 	 */
-	protected function footer()
-	{
+	protected function footer() {
 		foreach ($this->getFooterLinks() as $category => $links) { ?>
 			<ul class="footer-<?php echo $category; ?>">
 				<?php foreach ($links as $link) { ?>
@@ -677,8 +670,7 @@ class LibertyTemplate extends BaseTemplate
 	/**
 	 * Get Notification function, build notification menu.
 	 */
-	protected function getNotification()
-	{
+	protected function getNotification() {
 		$personalTools = $this->getPersonalTools();
 		if (
 			isset($personalTools['notifications-alert']) &&
@@ -699,8 +691,7 @@ class LibertyTemplate extends BaseTemplate
 	 *
 	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
-	protected function renderPortal($contents)
-	{
+	protected function renderPortal( $contents ) {
 		$userGroup = $this->getSkin()->getUser()->getGroups();
 		$userRights = $this->getSkin()->getUser()->getRights();
 
@@ -844,8 +835,7 @@ class LibertyTemplate extends BaseTemplate
 	 *
 	 * @return array Menu data
 	 */
-	protected function parseNavbar()
-	{
+	protected function parseNavbar() {
 		global $wgArticlePath;
 
 		$headings = [];
@@ -1188,8 +1178,7 @@ class LibertyTemplate extends BaseTemplate
 	 *
 	 * @param string $position Ad position
 	 */
-	protected function buildAd($position)
-	{
+	protected function buildAd( $position ) {
 		global $wgLibertyAdSetting;
 
 		$adFormat = 'auto';

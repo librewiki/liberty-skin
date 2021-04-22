@@ -10,7 +10,6 @@ class LibertyHooks extends Hooks {
 		$service = MediaWiki\MediaWikiServices::getInstance();
 		$usergroupemanager = $service->getUserGroupManager();
 		$userGroups = $usergroupemanager->getUserGroups($user);
-		
 
 		$preferences['liberty-layout-width'] = [
 			'type' => 'select',

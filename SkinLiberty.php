@@ -1,28 +1,28 @@
-<?php 
+<?php
 // @codingStandardsIgnoreLine
-class SkinLiberty extends SkinTemplate
-{
+class SkinLiberty extends SkinTemplate {
+	// @codingStandardsIgnoreStart
 	public $skinname = 'liberty';
 	public $stylename = 'Liberty';
 	public $template = 'LibertyTemplate';
+	// @codingStandardsIgnoreEnd
 
 	/**
 	 * Page initialize.
 	 *
 	 * @param OutputPage $out OutputPage
 	 */
-	public function initPage(OutputPage $out)
-	{
+	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
-		
+
 		$user = $this->getUser();
 		/* uncomment if needs to use UserGroupeManager
 		$service = MediaWiki\MediaWikiServices::getInstance();
 		$usergroupemanager = $service->getUserGroupManager();
 		$userGroups = $usergroupemanager->getUserGroups($user);
 		*/
-		
+
 		$optionMainColor = $user->getOption('liberty-color-main');
 		$optionSecondColor = $user->getOption('liberty-color-second');
 
@@ -253,8 +253,7 @@ class SkinLiberty extends SkinTemplate
 	 *
 	 * @param OutputPage $out OutputPage
 	 */
-	public function setupSkinUserCss(OutputPage $out)
-	{
+	public function setupSkinUserCss( OutputPage $out ) {
 		global $wgLibertyAdSetting;
 
 		parent::setupSkinUserCss($out);
@@ -291,8 +290,7 @@ class SkinLiberty extends SkinTemplate
 	 * @param OutputPage $out OutputPage
 	 * @param array &$bodyAttrs Body attributes
 	 */
-	public function addToBodyAttributes($out, &$bodyAttrs)
-	{
+	public function addToBodyAttributes( $out, &$bodyAttrs ) {
 		$bodyAttrs['class'] .= ' Liberty width-size';
 	}
 }
