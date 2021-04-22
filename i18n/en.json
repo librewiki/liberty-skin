@@ -30,6 +30,7 @@
 	"liberty-layout-select-1500":"1500px",
 	"liberty-layout-select-1600":"1600px",
 	"liberty-pref-layout-controlbar":"Remove navigation control bar",
+	"liberty-pref-layout-morearticle": "Remove ads below article area",
 	"liberty-login": "Login",
 	"liberty-login-alter": "Login with other method",
 	"liberty-login-btn": "Login",
