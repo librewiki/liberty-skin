@@ -17,10 +17,10 @@ class SkinLiberty extends SkinTemplate {
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
 
 		$user = $this->getUser();
-		/* uncomment if needs to use UserGroupeManager
+		/* uncomment if needs to use UserGroupManager
 		$service = MediaWiki\MediaWikiServices::getInstance();
-		$usergroupemanager = $service->getUserGroupManager();
-		$userGroups = $usergroupemanager->getUserGroups($user);
+		$usergroupmanager = $service->getUserGroupManager();
+		$userGroups = $usergroupmanager->getUserGroups($user);
 		*/
 
 		$optionMainColor = $user->getOption('liberty-color-main');
