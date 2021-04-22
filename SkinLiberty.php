@@ -1,4 +1,5 @@
-<?php // @codingStandardsIgnoreLine
+<?php 
+// @codingStandardsIgnoreLine
 class SkinLiberty extends SkinTemplate
 {
 	public $skinname = 'liberty';
@@ -14,11 +15,14 @@ class SkinLiberty extends SkinTemplate
 	{
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
-		$user = $this->getUser();
-		$userGroups = User::UserGroupManager::getUserGroups();
 		
-		// 테스트용 코드
-		$out->addMeta('test',implode(", ",$userGroups));
+		$user = $this->getUser();
+		/* uncomment if needs to use UserGroupeManager
+		$service = MediaWiki\MediaWikiServices::getInstance();
+		$usergroupemanager = $service->getUserGroupManager();
+		$userGroups = $usergroupemanager->getUserGroups($user);
+		*/
+		
 		$optionMainColor = $user->getOption('liberty-color-main');
 		$optionSecondColor = $user->getOption('liberty-color-second');
 
