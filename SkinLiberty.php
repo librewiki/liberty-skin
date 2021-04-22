@@ -15,7 +15,7 @@ class SkinLiberty extends SkinTemplate
 		// @codingStandardsIgnoreLine
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
 		$user = $this->getUser();
-		$userGroups = $user->UserGroupManager->getUserGroups($user);
+		$userGroups = User::UserGroupManager->getUserGroups($user);
 		
 		// 테스트용 코드
 		$out->addMeta('test',implode(", ",$userGroups));
