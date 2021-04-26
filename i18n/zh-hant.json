@@ -31,6 +31,7 @@
 	"liberty-layout-select-1500": "1500px",
 	"liberty-layout-select-1600": "1600px",
 	"liberty-pref-layout-controlbar": "移除導覽控制列",
+	"liberty-pref-layout-morearticle": "移除條目區域下方的廣告",
 	"liberty-login": "登入",
 	"liberty-login-alter": "以其它方法登入",
 	"liberty-login-btn": "登入",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AJBot2",
 			"Kizule",
 			"Robby",
 			"Verdy p",
@@ -8,6 +9,7 @@
 		]
 	},
 	"skinname-liberty": "{{optional}}",
+	"liberty-desc": "Kulit responsif untuk [https://LibreWiki.net/ LibreWiki]",
 	"liberty-dark-default": "{{optional}}",
 	"liberty-dark-dark": "{{optional}}",
 	"liberty-dark-light": "{{optional}}",
