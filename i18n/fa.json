@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"FarsiNevis",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
 	"liberty-font-name-default": "پیش‌فرض",
 	"liberty-font-name-youth": "جوان",
 	"liberty-forgot-pw": "آیا اسم رمزتان را فراموش کرده‌اید؟",
+	"liberty-pref-layout-morearticle": "حذف تبلیغات از زیر مقاله",
 	"liberty-login": "ورود به سامانه",
 	"liberty-login-btn": "ورود به سامانه",
 	"liberty-info": "اطلاعات",
