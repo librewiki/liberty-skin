@@ -32,7 +32,7 @@
 	"prefs-font": "Подешавања фонта",
 	"liberty-pref-fonts": "Одаберите фонт који желите да користите",
 	"liberty-pref-fonts-helplabel": "Помоћ",
-	"liberty-pref-fonts-help": "Фонт ће се учитавати с удаљене локације, осим Malgun Gothic.",
+	"liberty-pref-fonts-help": "Фонт ће се учитавати са Гуглових сервера, осим Malgun Gothic.",
 	"liberty-pref-dark": "Занемарити системско подешавање тамног режима?",
 	"liberty-pref-dark-help": "Одаберите да ли да следите системске поставке приликом активирања мрачног режима."
 }
