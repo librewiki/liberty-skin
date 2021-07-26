@@ -13,6 +13,8 @@
 	"liberty-feed-new": "[Nowe]",
 	"liberty-font-name-default": "domyślny",
 	"liberty-forgot-pw": "Nie pamiętasz hasła?",
+	"liberty-pref-layout-controlbar": "Usuń pasek zarządzania nawigacją",
+	"liberty-pref-layout-morearticle": "Usuń reklamy poniżej obszaru artykułu",
 	"liberty-login": "Zaloguj się",
 	"liberty-login-alter": "Zaloguj się inną metodą",
 	"liberty-login-btn": "Zaloguj",
