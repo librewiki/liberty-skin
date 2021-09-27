@@ -7,8 +7,10 @@
 			"WikiBayer"
 		]
 	},
+	"skinname-liberty": "Liberty",
 	"liberty-feed-new": "[Neu]",
 	"liberty-font-name-default": "Standard",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
 	"liberty-forgot-pw": "Passwort vergessen?",
 	"liberty-layout-select-1000": "1000px",
 	"liberty-layout-select-1100": "1100px",
