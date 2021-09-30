@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AJBot2",
+			"Amire80",
 			"Kizule",
 			"Robby",
 			"Verdy p",
@@ -9,10 +10,7 @@
 		]
 	},
 	"skinname-liberty": "{{optional}}",
-	"liberty-desc": "Kulit responsif untuk [https://LibreWiki.net/ LibreWiki]",
-	"liberty-dark-default": "{{optional}}",
-	"liberty-dark-dark": "{{optional}}",
-	"liberty-dark-light": "{{optional}}",
+	"liberty-desc": "Description.",
 	"liberty-font-name-noto-sans-kr": "{{optional}}\nFont name",
 	"liberty-font-name-noto-serif-kr": "{{optional}}\nFont name",
 	"liberty-font-name-spoqa-han-sans": "{{optional}}\nFont name",
@@ -23,5 +21,12 @@
 	"liberty-font-name-hankc": "{{optional}}\nFont name",
 	"liberty-font-name-youth": "{{optional}}\nFont name",
 	"liberty-font-name-malgun-gothic": "{{optional}}\nFont name",
+	"liberty-layout-select-1000": "Layout size.",
+	"liberty-layout-select-1100": "Layout size.",
+	"liberty-layout-select-1200": "Layout size.",
+	"liberty-layout-select-1300": "Layout size.",
+	"liberty-layout-select-1400": "Layout size.",
+	"liberty-layout-select-1500": "Layout size.",
+	"liberty-layout-select-1600": "Layout size.",
 	"liberty-pref-fonts-helplabel": "{{Identical|Help}}"
 }
