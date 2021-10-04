@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fnielsen",
+			"Saederup92"
+		]
+	},
+	"liberty-dark-default": "Ignorer ikke",
+	"liberty-font-name-default": "standard",
+	"liberty-forgot-pw": "Glemt din adgangskode?",
+	"liberty-layout-select-1000": "1000px",
+	"liberty-layout-select-1100": "1100px",
+	"liberty-layout-select-1200": "1200px (standard)",
+	"liberty-layout-select-1300": "1300px",
+	"liberty-layout-select-1400": "1400px",
+	"liberty-layout-select-1500": "1500px",
+	"liberty-layout-select-1600": "1600px",
+	"liberty-share": "Del",
+	"liberty-pref-layout-width": "Statisk bredde",
+	"liberty-pref-fonts-helplabel": "Hjælp"
+}
