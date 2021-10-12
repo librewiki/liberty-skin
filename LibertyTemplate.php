@@ -1,6 +1,7 @@
 <?php // @codingStandardsIgnoreLine
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
@@ -866,13 +867,13 @@ class LibertyTemplate extends BaseTemplate {
 		$userLang = $this->getSkin()->getLanguage()->mCode;
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
-		)->getContent( Revision::RAW ) );
+		)->getContent( RevisionRecord::RAW ) );
 		$globalLangData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
-		)->getContent( Revision::RAW ) );
+		)->getContent( RevisionRecord::RAW ) );
 		$userData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
-		)->getContent( Revision::RAW ) );
+		)->getContent( RevisionRecord::RAW ) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
 		} elseif ( !empty( $globalLangData ) ) {
