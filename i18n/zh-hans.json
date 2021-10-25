@@ -8,7 +8,8 @@
 			"Looong",
 			"Viztor",
 			"Ywang",
-			"沈澄心"
+			"沈澄心",
+			"落花有意12138"
 		]
 	},
 	"skinname-liberty": "Liberty",
@@ -27,6 +28,7 @@
 	"liberty-layout-select-1500": "1500px",
 	"liberty-layout-select-1600": "1600px",
 	"liberty-pref-layout-controlbar": "移除导航控制栏",
+	"liberty-pref-layout-morearticle": "移除文章区域下方的广告",
 	"liberty-login": "登录",
 	"liberty-login-alter": "其他方式登录",
 	"liberty-login-btn": "登录",
