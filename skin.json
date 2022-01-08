@@ -1,125 +1,125 @@
 {
-	"name": "Liberty",
-	"author": [
-		"Librewiki developers",
-		"..."
-	],
-	"url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
-	"descriptionmsg": "liberty-desc",
-	"namemsg": "skinname-liberty",
-	"license-name": "GPL-3.0-or-later",
-	"type": "skin",
-	"version": "1.10.0",
-	"requires": {
-		"MediaWiki": ">= 1.35.0"
-	},
-	"ValidSkinNames": {
-		"liberty": "Liberty"
-	},
-	"MessagesDirs": {
-		"Liberty": [
-			"i18n"
-		]
-	},
-	"config": {
-		"LibertyEnableLiveRC": true,
-		"LibertyUseGravatar": true,
-		"LibertyMainColor": "#4188F1",
-		"LibertySecondColor": null,
-		"LibertyAdSetting": null,
-		"LibertyOgLogo": null,
-		"TwitterAccount": null,
-		"NaverVerification": null,
-		"LibertyLiveRCArticleNamespaces": [0, 4, 10, 12, 14],
-		"LibertyLiveRCTalkNamespaces": [1, 3, 5, 7, 9, 11, 13, 15],
-		"LibertyMaxRecent": 10
-	},
-	"ResourceModules": {
-		"skins.liberty.styles": {
-			"class": "ResourceLoaderSkinModule",
-			"styles": {
-				"bootstrap/css/bootstrap.min.css": {
-					"media": "all"
-				},
-				"css/default.css": {
-					"media": "all"
-				},
-				"css/default_mobile.css": {
-					"media": "all"
-				},
-				"css/wiki.css": {
-					"media": "all"
-				},
-				"css/only-mw.css": {
-					"media": "all"
-				},
-				"css/webfont.css": {
-					"media" : "all"
-				},
-				"css/wiki-table.css": {
-					"media": "all"
-				},
-				"css/wikiedittor-liberty.css": {
-					"media": "all"
-				},
-				"css/extensions/RelatedArticles.css": {
-					"media": "all"
-				},
-				"css/print.css": {
-					"media": "print"
-				}
-			}
-		},
-		"skins.liberty.ads": {
-			"scripts": "js/ads.js"
-		},
-		"skins.liberty.bootstrap": {
-			"scripts": [
-				"js/lib/jquery.ba-throttle-debounce.js",
-				"js/lib/bootstrap.min.js"
-			]
-		},
-		"skins.liberty.layoutjs": {
-			"scripts": [
-				"js/delay-scrolling.js",
-				"js/disable-notice.js",
-				"js/share-button.js",
-				"js/layout.js",
-				"js/table.js",
-				"js/scroll-button.js"
-			],
-			"dependencies": "mediawiki.cookie"
-		},
-		"skins.liberty.liverc": {
-			"scripts": "js/live-recent.js",
-			"messages": [ "liberty-feed-new" ],
-			"dependencies": "mediawiki.util"
-		},
-		"skins.liberty.loginjs": {
-			"scripts": "js/login-request.js",
-			"dependencies": "mediawiki.util"
-		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteSkinPath": "Liberty"
-	},
-	"ResourceModuleSkinStyles": {
-		"liberty": {
-			"+ext.relatedArticles.readMore": "css/extensions/RelatedArticles.css",
-			"+ext.echo.ui": "css/extensions/Echo.css",
-			"+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
-			"+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
-		}
-	},
-	"AutoloadClasses": {
-		"SkinLiberty": "SkinLiberty.php",
-		"LibertyTemplate": "LibertyTemplate.php",
-		"LibertyHooks": "LibertyHooks.php"
-	},
-	"Hooks": {
-		"GetPreferences": "LibertyHooks::onGetPreferences",
-		"OutputPageBodyAttributes": "LibertyHooks::onOutputPageBodyAttributes"
-	},
-	"manifest_version": 1
+    "name": "Liberty",
+    "author": [
+        "Librewiki developers",
+        "..."
+    ],
+    "url": "https://gitlab.com/librewiki/Liberty-MW-Skin",
+    "descriptionmsg": "liberty-desc",
+    "namemsg": "skinname-liberty",
+    "license-name": "GPL-3.0-or-later",
+    "type": "skin",
+    "version": "1.10.0",
+    "requires": {
+        "MediaWiki": ">= 1.35.0"
+    },
+    "ValidSkinNames": {
+        "liberty": "Liberty"
+    },
+    "MessagesDirs": {
+        "Liberty": [
+            "i18n"
+        ]
+    },
+    "config": {
+        "LibertyEnableLiveRC": true,
+        "LibertyUseGravatar": true,
+        "LibertyMainColor": "#4188F1",
+        "LibertySecondColor": null,
+        "LibertyAdSetting": null,
+        "LibertyOgLogo": null,
+        "TwitterAccount": null,
+        "NaverVerification": null,
+        "LibertyLiveRCArticleNamespaces": [0, 4, 10, 12, 14],
+        "LibertyLiveRCTalkNamespaces": [1, 3, 5, 7, 9, 11, 13, 15],
+        "LibertyMaxRecent": 10
+    },
+    "ResourceModules": {
+        "skins.liberty.styles": {
+            "class": "ResourceLoaderSkinModule",
+            "styles": {
+                "bootstrap/css/bootstrap.min.css": {
+                    "media": "all"
+                },
+                "css/default.css": {
+                    "media": "all"
+                },
+                "css/default_mobile.css": {
+                    "media": "all"
+                },
+                "css/wiki.css": {
+                    "media": "all"
+                },
+                "css/only-mw.css": {
+                    "media": "all"
+                },
+                "css/webfont.css": {
+                    "media": "all"
+                },
+                "css/wiki-table.css": {
+                    "media": "all"
+                },
+                "css/wikiedittor-liberty.css": {
+                    "media": "all"
+                },
+                "css/extensions/RelatedArticles.css": {
+                    "media": "all"
+                },
+                "css/print.css": {
+                    "media": "print"
+                }
+            }
+        },
+        "skins.liberty.ads": {
+            "scripts": "js/ads.js"
+        },
+        "skins.liberty.bootstrap": {
+            "scripts": [
+                "js/lib/jquery.ba-throttle-debounce.js",
+                "js/lib/bootstrap.min.js"
+            ]
+        },
+        "skins.liberty.layoutjs": {
+            "scripts": [
+                "js/delay-scrolling.js",
+                "js/disable-notice.js",
+                "js/share-button.js",
+                "js/layout.js",
+                "js/table.js",
+                "js/scroll-button.js"
+            ],
+            "dependencies": "mediawiki.cookie"
+        },
+        "skins.liberty.liverc": {
+            "scripts": "js/live-recent.js",
+            "messages": ["liberty-feed-new"],
+            "dependencies": "mediawiki.util"
+        },
+        "skins.liberty.loginjs": {
+            "scripts": "js/login-request.js",
+            "dependencies": "mediawiki.util"
+        }
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "",
+        "remoteSkinPath": "Liberty"
+    },
+    "ResourceModuleSkinStyles": {
+        "liberty": {
+            "+ext.relatedArticles.readMore": "css/extensions/RelatedArticles.css",
+            "+ext.echo.ui": "css/extensions/Echo.css",
+            "+mediawiki.action.view.filepage": "css/skinStyles/mediawiki.action.view.filepage.css",
+            "+mediawiki.special.preferences.styles": "css/skinStyles/mediawiki.special.preferences.styles.css"
+        }
+    },
+    "AutoloadClasses": {
+        "SkinLiberty": "SkinLiberty.php",
+        "LibertyTemplate": "LibertyTemplate.php",
+        "LibertyHooks": "LibertyHooks.php"
+    },
+    "Hooks": {
+        "GetPreferences": "LibertyHooks::onGetPreferences",
+        "OutputPageBodyAttributes": "LibertyHooks::onOutputPageBodyAttributes"
+    },
+    "manifest_version": 1
 }

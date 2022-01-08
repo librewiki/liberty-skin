@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use Mediawiki\Watchlist\WatchlistManager;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
@@ -199,7 +200,7 @@ class LibertyTemplate extends BaseTemplate {
 		<div class="navbar-login">
 			<?php
 			// If the user is logged in...
-			if ( $user->isLoggedIn() ) {
+			if ( $user->isRegistered() ) {
 				$personalTools = $this->getPersonalTools();
 				// ...and Gravatar is enabled in site config...
 				if ( $wgLibertyUseGravatar ) {
@@ -334,7 +335,7 @@ class LibertyTemplate extends BaseTemplate {
 
 		// Probably no point in rendering a login window for the users who are
 		// already logged in?
-		if ( $skin->getUser()->isLoggedIn() ) {
+		if ( $skin->getUser()->isRegistered() ) {
 			return;
 		}
 
@@ -460,9 +461,10 @@ class LibertyTemplate extends BaseTemplate {
 	protected function contentsToolbox() {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
+		$watchlistManager = MediaWikiServices::getInstance()->getWatchlistManager();
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
-		$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		$watched = $watchlistManager->isWatchedIgnoringRights( $user ,$skin->getRelevantTitle() ) 	 ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
@@ -660,7 +662,7 @@ class LibertyTemplate extends BaseTemplate {
 			</ul>
 		<?php
 		}
-		$footericons = $this->getFooterIcons( 'icononly' );
+		$footericons = $this->get('footericons');
 		if ( count( $footericons ) ) {
 		?>
 			<ul class="footer-icons">
@@ -715,8 +717,10 @@ class LibertyTemplate extends BaseTemplate {
 	 * @param array $contents Menu data that will made by parseNavbar function.
 	 */
 	protected function renderPortal( $contents ) {
-		$userGroup = $this->getSkin()->getUser()->getGroups();
-		$userRights = $this->getSkin()->getUser()->getRights();
+		$skin = $this->getSkin();
+		$user = $skin->getUser();
+		$userGroup = $user->getGroups();
+		$userRights = MediaWikiServices::getInstance()->getPermissionManager()->getUserPermissions($user);
 
 		foreach ( $contents as $content ) {
 			if ( !$content ) {
