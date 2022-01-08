@@ -1,6 +1,18 @@
 <?php //phpcs:ignore
 class LibertyHooks extends Hooks {
 	/**
+	 * @since 1.17.0
+	 * @param OutputPage $out
+	 * @param Skin $sk
+	 * @param array &$bodyAttrs
+	 */
+	public static function onOutputPageBodyAttributes( OutputPage $out, Skin $sk, &$bodyAttrs ) {
+		if ( $sk->getSkinName() === 'liberty' ) {
+			$bodyAttrs['class'] .= ' Liberty width-size';
+		}
+	}
+
+	/**
 	 * Preference
 	 * @param User $user user
 	 * @param Preferences &$preferences preferences

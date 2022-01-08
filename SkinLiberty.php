@@ -246,6 +246,7 @@ class SkinLiberty extends SkinTemplate {
 			$out->addInlineStyle("@media (prefers-color-scheme: dark) { $LibertyDarkCss }");
 		}
 		// @codingStandardsIgnoreEnd
+		$this->setupCss( $out );
 	}
 
 	/**
@@ -253,8 +254,8 @@ class SkinLiberty extends SkinTemplate {
 	 *
 	 * @param OutputPage $out OutputPage
 	 */
-	public function setupSkinUserCss( OutputPage $out ) {
-		parent::setupSkinUserCss( $out );
+	public function setupCss( OutputPage $out ) {
+		global $wgLibertyAdSetting;
 
 		$out->addHeadItem(
 			'font-awesome',
@@ -280,15 +281,5 @@ class SkinLiberty extends SkinTemplate {
 			'<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
 		);
 		$out->addModuleStyles( [ 'skins.liberty.styles' ] );
-	}
-
-	/**
-	 * Set body class.
-	 *
-	 * @param OutputPage $out OutputPage
-	 * @param array &$bodyAttrs Body attributes
-	 */
-	public function addToBodyAttributes( $out, &$bodyAttrs ) {
-		$bodyAttrs['class'] .= ' Liberty width-size';
 	}
 }

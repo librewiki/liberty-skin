@@ -118,7 +118,8 @@
 		"LibertyHooks": "LibertyHooks.php"
 	},
 	"Hooks": {
-		"GetPreferences": "LibertyHooks::onGetPreferences"
+		"GetPreferences": "LibertyHooks::onGetPreferences",
+		"OutputPageBodyAttributes": "LibertyHooks::onOutputPageBodyAttributes"
 	},
 	"manifest_version": 1
 }

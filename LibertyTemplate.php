@@ -471,32 +471,32 @@ class LibertyTemplate extends BaseTemplate {
 		?>
 			<div class="content-tools">
 				<div class="btn-group" role="group" aria-label="content-tools">
-					<?php
-					if ( $action != 'edit' ) {
-						$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
-						echo Linker::linkKnown(
-							$title,
-							$editIcon . $skin->msg( 'edit' )->plain(),
-							[
-								'class' => 'btn btn-secondary tools-btn',
-								'id' => 'ca-edit',
-								'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'ca-edit' )
-							],
-							$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
-						);
-					}
-					if ( $action == 'edit' || $action == 'history' ) {
-						echo Linker::linkKnown(
-							$title,
-							$titlename = $skin->msg( 'article' )->plain(),
-							[
-								'class' => 'btn btn-secondary tools-btn',
-								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
-							],
-						);
-					}
+				<?php
+				if ( $action != 'edit' ) {
+					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
+					echo Linker::linkKnown(
+						$title,
+						$editIcon . $skin->msg( 'edit' )->plain(),
+						[
+							'class' => 'btn btn-secondary tools-btn',
+							'id' => 'ca-edit',
+							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-edit' )
+						],
+						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
+					);
+				};
+				if ( $action == 'edit' || $action == 'history' ) {
+					echo Linker::linkKnown(
+						$title,
+						$titlename = $skin->msg( 'article' )->plain(),
+						[
+							'class' => 'btn btn-secondary tools-btn',
+							'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
+						]
+					);
+				};
 					if ( $companionTitle && $action != 'edit' ) {
 						if ( $title->isTalkPage() && $action != 'history' ) {
 							$titlename = $skin->msg( 'nstab-main' )->plain();
