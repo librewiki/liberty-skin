@@ -2,7 +2,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
-use Mediawiki\Watchlist\WatchlistManager;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
@@ -464,7 +463,7 @@ class LibertyTemplate extends BaseTemplate {
 		$watchlistManager = MediaWikiServices::getInstance()->getWatchlistManager();
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
-		$watched = $watchlistManager->isWatchedIgnoringRights( $user ,$skin->getRelevantTitle() ) 	 ? 'unwatch' : 'watch';
+		$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) 	 ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
