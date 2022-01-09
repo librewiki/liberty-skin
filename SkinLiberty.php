@@ -255,7 +255,6 @@ class SkinLiberty extends SkinTemplate {
 	 * @param OutputPage $out OutputPage
 	 */
 	public function setupCss( OutputPage $out ) {
-		global $wgLibertyAdSetting;
 
 		$out->addHeadItem(
 			'font-awesome',
