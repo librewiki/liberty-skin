@@ -463,7 +463,7 @@ class LibertyTemplate extends BaseTemplate {
 		$watchlistManager = MediaWikiServices::getInstance()->getWatchlistManager();
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
-		$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) 	 ? 'unwatch' : 'watch';
+		$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
@@ -486,7 +486,7 @@ class LibertyTemplate extends BaseTemplate {
 						],
 						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					);
-				};
+				}
 				if ( $action == 'edit' || $action == 'history' ) {
 					echo Linker::linkKnown(
 						$title,
@@ -497,7 +497,7 @@ class LibertyTemplate extends BaseTemplate {
 							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
 						]
 					);
-				};
+				}
 					if ( $companionTitle && $action != 'edit' ) {
 						if ( $title->isTalkPage() && $action != 'history' ) {
 							$titlename = $skin->msg( 'nstab-main' )->plain();
@@ -661,7 +661,7 @@ class LibertyTemplate extends BaseTemplate {
 			</ul>
 		<?php
 		}
-		$footericons = $this->get('footericons');
+		$footericons = $this->get( 'footericons' );
 		if ( count( $footericons ) ) {
 		?>
 			<ul class="footer-icons">
@@ -682,8 +682,8 @@ class LibertyTemplate extends BaseTemplate {
 					<a href="//librewiki.net">
 						<?php // @codingStandardsIgnoreLine 
 						?>
-						<img src="<?php echo $this->getSkin()->getSkinStylePath('img/designedbylibre.png'); //phpcs:ignore 
-									?>" style="height:31px" alt="Designed by Librewiki">
+						<img src="<?php echo $this->getSkin()->getConfig()->get( 'StylePath' ); //phpcs:ignore 
+									?>/Liberty/img/designedbylibre.png" style="height:31px" alt="Designed by Librewiki">
 					</a>
 				</li>
 			</ul>
@@ -719,7 +719,7 @@ class LibertyTemplate extends BaseTemplate {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
 		$userGroup = $user->getGroups();
-		$userRights = MediaWikiServices::getInstance()->getPermissionManager()->getUserPermissions($user);
+		$userRights = MediaWikiServices::getInstance()->getPermissionManager()->getUserPermissions( $user );
 
 		foreach ( $contents as $content ) {
 			if ( !$content ) {

@@ -18,7 +18,8 @@ Please set these variables in the LocalSettings.php file.
 | `$wgTwitterAccount` | Default Twitter account to set a mention | `librewiki` | (none) |
 | `$wgLibertyOgLogo` | OpenGraph Image Logo | `https://librewiki.net/images/6/6a/Libre_favicon.png` | (Value of `$wgLogo`) |
 | `$wgNaverVerification` | Naver Webmater Tool Verification Code | (Value supplied by Naver.com) | (none) |
-| `$wgLibertyAdSetting` | Google Adsense Settings | `array( 'client' => '(Value supplied by Google)', 'header' => '1234567890', 'right' => '0987654321' )` | (none) |
+| `$wgLibertyAdSetting` | Google Adsense Settings | `array( 'client' => '(Value supplied by Google)', 'header' => '1234567890', 'right' => '0987654321', 'belowarticle' => 1313135452 )` | (none) |
+| `$wgLibertyAdGroupwgLibertyAdGroup` | Differentiation of ads by usergroup | `differ` | `null`|
 | `$wgLibertyEnableLiveRC` | Enables 'Recent Cahnges' on the right side | `true` | `true` |
 | `$wgLibertyMaxRecent` | Recent X edits appearing in 'Recent Changes' | `10` | `10` |
 | `$wgLibertyLiveRCArticleNamespaces` | Namespaces for the first tab in 'Recent Changes' | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` |
