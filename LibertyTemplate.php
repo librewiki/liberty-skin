@@ -8,12 +8,14 @@ class LibertyTemplate extends BaseTemplate {
 	 * execute() Method
 	 */
 	public function execute() {
-		global $wgLibertyAdSetting, $wgLibertyUserSidebarSettings;
+		global $wgLibertyAdSetting, $wgLibertyMobileReplaceAd;
 
 		$skin = $this->getSkin();
+		$user = $skin->getUser();
 		$request = $skin->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
+		$LibertyUserSidebarSettings = $user->getOption('liberty-layout-sidebar');
 
 		$this->html( 'headelement' );
 ?>
@@ -24,7 +26,7 @@ class LibertyTemplate extends BaseTemplate {
 		</header>
 		<section>
 			<div class="content-wrapper">
-				<?php if ( $wgLibertyUserSidebarSettings == false ) { ?>
+				<?php if ( $LibertyUserSidebarSettings == false ) { ?>
 					<aside>
 						<div class="liberty-sidebar">
 							<div class="live-recent-wrapper">
@@ -87,10 +89,12 @@ class LibertyTemplate extends BaseTemplate {
 								$this->html( 'dataAfterContent' );
 							}
 							?>
-						<?php if ( isset( $wgLibertyAdSetting['footer'] ) && $wgLibertyAdSetting['footer'] ) {
-							$this->buildAd( 'footer' );
-						} ?>
-							<div class="bottom-ads"></div>
+						<?php if ( isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] ) {
+							$this->buildAd( 'bottom' );
+						} 
+						if ( $wgLibertyMobileReplaceAd && isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) { ?>
+							<div class="mobile-ads"></div>
+						<?php } ?>
 							<?php $this->footer(); ?>
 						</div>
 					</footer>

@@ -52,6 +52,7 @@
 	"prefs-liberty": "리버티 스킨",
 	"prefs-color": "색상 설정",
 	"prefs-layout": "레이아웃 설정",
+	"prefs-ads": "광고 설정",
 	"liberty-pref-layout-navfix": "고정형 내비게이션 바 해제",
 	"liberty-pref-layout-sidebar": "우측 사이드바 제거",
 	"liberty-pref-layout-width": "고정폭",
@@ -65,5 +66,13 @@
 	"liberty-pref-fonts-helplabel": "도움말",
 	"liberty-pref-fonts-help": "글꼴은 맑은 고딕을 제외하고 구글 서버로부터 로드됩니다.",
 	"liberty-pref-dark": "시스템의 어두운 모드 설정을 무시하시겠습니까?",
-	"liberty-pref-dark-help": "어두운 모드를 활성화할 때 시스템 설정을 따를 것인지 선택합니다."
+	"liberty-pref-dark-help": "어두운 모드를 활성화할 때 시스템 설정을 따를 것인지 선택합니다.",
+	"liberty-pref-ads-header": "헤더 광고를 제거합니다.",
+	"liberty-pref-ads-right": "우측 광고를 제거합니다.",
+	"liberty-pref-ads-bottom": "하단 광고를 제거합니다.",
+	"liberty-pref-ads-belowarticle": "글 하단 광고를 제거합니다.",
+	"right-blockads-header": "리버티 스킨에서 헤더 광고를 제거할 수 있습니다.",
+	"right-blockads-right": "리버티 스킨에서 우측 광고를 제거할 수 있습니다.",
+	"right-blockads-belowarticle": "리버티 스킨에서 글 하단 광고를 제거할 수 있습니다.",
+	"right-blockads-bottom": "리버티 스킨에서 하단 광고를 제거할 수 있습니다."
 }

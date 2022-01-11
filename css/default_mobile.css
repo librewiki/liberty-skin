@@ -87,6 +87,13 @@
 		border-right: 1px solid #e1e8ed;
 	}
 
+	.Liberty .content-wrapper .liberty-content .mobile-ads {
+		padding: 0.5rem;
+		background-color: #fff;
+		border-left: 1px solid #e1e8ed;
+		border-right: 1px solid #e1e8ed;
+	}
+
 	.Liberty .content-wrapper .liberty-footer {
 		padding: 0.5rem;
 	}

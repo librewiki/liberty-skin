@@ -1,11 +1,11 @@
 <?php
 // @codingStandardsIgnoreLine
-class SkinLiberty extends SkinTemplate {
-	// @codingStandardsIgnoreStart
-	public $skinname = 'liberty';
-	public $stylename = 'Liberty';
-	public $template = 'LibertyTemplate';
-	// @codingStandardsIgnoreEnd
+class SkinLiberty extends SkinTemplate{
+    // @codingStandardsIgnoreStart
+    public $skinname = 'liberty';
+    public $stylename = 'Liberty';
+    public $template = 'LibertyTemplate';
+    // @codingStandardsIgnoreEnd
 
 	/**
 	 * Page initialize.
@@ -13,8 +13,8 @@ class SkinLiberty extends SkinTemplate {
 	 * @param OutputPage $out OutputPage
 	 */
 	public function initPage( OutputPage $out ) {
-		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
+        // @codingStandardsIgnoreLine
+        global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
 
 		$user = $this->getUser();
 		/* uncomment if needs to use UserGroupManager
@@ -27,8 +27,8 @@ class SkinLiberty extends SkinTemplate {
 		$optionSecondColor = $user->getOption( 'liberty-color-second' );
 
 		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
-		// @codingStandardsIgnoreLine
-		$tempSecondColor = isset($GLOBALS['wgLibertySecondColor']) ? $GLOBALS['wgLibertySecondColor'] : '#' . strtoupper(dechex(hexdec(substr($mainColor, 1, 6)) - hexdec('1A1415')));
+        // @codingStandardsIgnoreLine
+        $tempSecondColor = isset($GLOBALS['wgLibertySecondColor']) ? $GLOBALS['wgLibertySecondColor'] : '#' . strtoupper(dechex(hexdec(substr($mainColor, 1, 6)) - hexdec('1A1415')));
 		$secondColor = $optionSecondColor ? $optionSecondColor : $tempSecondColor;
 		$ogLogo = isset( $GLOBALS['wgLibertyOgLogo'] ) ? $GLOBALS['wgLibertyOgLogo'] : $wgLogo;
 		if ( !preg_match( '/^((?:(?:http(?:s)?)?:)?\/\/(?:.{4,}))$/i', $ogLogo ) ) {
@@ -101,8 +101,8 @@ class SkinLiberty extends SkinTemplate {
 
 		$out->addModules( $modules );
 
-		// @codingStandardsIgnoreStart
-		$out->addInlineStyle(".Liberty .nav-wrapper,
+        // @codingStandardsIgnoreStart
+        $out->addInlineStyle(".Liberty .nav-wrapper,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:hover,
 		.Liberty .nav-wrapper .navbar .form-inline .btn:focus,
 		.Liberty .content-wrapper .liberty-sidebar .live-recent-wrapper .live-recent .live-recent-header .nav .nav-item .nav-link.active::before,
@@ -141,78 +141,79 @@ class SkinLiberty extends SkinTemplate {
 			background-color: $mainColor;
 		}");
 
-		// layout settings 
-		global $wgLibertyUserSidebarSettings;
-
-		$LibertyUserWidthSettings = $user->getOption( 'liberty-layout-width' );
-		$wgLibertyUserSidebarSettings = $user->getOption( 'liberty-layout-sidebar' );
-		$LibertyUserNavbarSettings = $user->getOption( 'liberty-layout-navfix' );
-		$LibertyUsercontrolbarSettings = $user->getOption( 'liberty-layout-controlbar' );
+        // layout settings
+        $LibertyUserWidthSettings = $user->getOption('liberty-layout-width');
+        $LibertyUserSidebarSettings = $user->getOption('liberty-layout-sidebar');
+        $LibertyUserNavbarSettings = $user->getOption('liberty-layout-navfix');
+        $LibertyUsercontrolbarSettings = $user->getOption('liberty-layout-controlbar');
 
 
-		if ( isset( $LibertyUserNavbarSettings ) && $LibertyUserNavbarSettings ) {
-			$out->addInlineStyle(
-				".navbar-fixed-top {
+        if (isset($LibertyUserNavbarSettings) && $LibertyUserNavbarSettings) {
+            $out->addInlineStyle(
+                ".navbar-fixed-top {
 					position: absolute;
 				}"
-			);
-		};
+            );
+        };
 
-		if ( isset( $wgLibertyUserSidebarSettings ) && $wgLibertyUserSidebarSettings ) {
-			$out->addInlineStyle(
-				".Liberty .content-wrapper .liberty-content {
+        if (isset($LibertyUserSidebarSettings) && $LibertyUserSidebarSettings) {
+            $out->addInlineStyle(
+                ".Liberty .content-wrapper .liberty-content {
 					margin-right: 0;
 				}"
-			);
-		};
+            );
+        };
 
-		if ( $LibertyUserWidthSettings != null ) {
-			$out->addInlineStyle(
-				".Liberty .content-wrapper {
+        if ($LibertyUserWidthSettings != null) {
+            $out->addInlineStyle(
+                ".Liberty .content-wrapper {
 					max-width: $LibertyUserWidthSettings;
 				}
 
 				.Liberty .nav-wrapper .navbar {
 					max-width: $LibertyUserWidthSettings;
 				}"
-			);
-		}
+            );
+        }
 
-		if ( isset($LibertyUsercontrolbarSettings ) && $LibertyUsercontrolbarSettings ) {
-			$out->addInlineStyle(
-				".Liberty .content-wrapper #liberty-bottombtn {
+        if (isset($LibertyUsercontrolbarSettings) && $LibertyUsercontrolbarSettings) {
+            $out->addInlineStyle(
+                ".Liberty .content-wrapper #liberty-bottombtn {
 					display: none;
 				}"
-			);
-		};
+            );
+        };
 
-		// 폰트 설정
-		$LibertyUserFontSettings = $user->getOption('liberty-font');
-		if ($LibertyUserFontSettings != null) {
-			$out->addInlineStyle(
-				"body, h1, h2, h3, h4, h5, h6, b {
+        // 폰트 설정
+        $LibertyUserFontSettings = $user->getOption('liberty-font');
+        if ($LibertyUserFontSettings != null) {
+            $out->addInlineStyle(
+                "body, h1, h2, h3, h4, h5, h6, b {
 					font-family: $LibertyUserFontSettings;
 				}"
-			);
-		}
+            );
+        }
 
-		// Ads setting
-		$LibertyUserMoreArticleSettings = $user->getOption('liberty-layout-morearticle');
-		if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
-			// if user is login, reduce ads
-			if ( isset($wgLibertyAdGroup) && $wgLibertyAdGroup == 'differ' && $user->isLoggedIn()) {
-				$wgLibertyAdSetting['header'] == null;
-				$wgLibertyAdSetting['footer'] == null;
-				if ($user->isNewbie() == False) {
-					$wgLibertyAdSetting['sidebar'] == null;
-				}
-				if (isset($LibertyUserMoreArticleSettings) && $LibertyUserMoreArticleSettings) {
-					$wgLibertyAdSetting['belowarticle'] == null;
-				}
-			}
-		}
+        // Ads setting
+        if (isset($wgLibertyAdSetting['client']) && $wgLibertyAdSetting['client']) {
+            // change ads option by rights
+            if (isset($wgLibertyAdGroup) && $wgLibertyAdGroup == 'differ') {
+                if (isset($wgLibertyAdSetting['header']) && $wgLibertyAdSetting['header'] && $user->getOption('liberty-ads-header')) {
+                    $wgLibertyAdSetting['header'] == null;
+                }
+                if (isset($wgLibertyAdSetting['right']) && $wgLibertyAdSetting['right'] && $user->getOption('liberty-ads-right')) {
+                    $wgLibertyAdSetting['right'] == null;
+                }
+                if (isset($wgLibertyAdSetting['bottom']) && $wgLibertyAdSetting['bottom'] && $user->getOption('liberty-ads-bottom')) {
+                    $wgLibertyAdSetting['bottom'] == null;
+                }
+                if (isset($wgLibertyAdSetting['belowarticle']) && $wgLibertyAdSetting['belowarticle'] && $user->getOption('liberty-ads-belowarticle')) {
+                    $wgLibertyAdSetting['belowarticle'] == null;
+                }
+            }
+        }
 
-		$LibertyDarkCss = "body, .Liberty, .dropdown-menu, .dropdown-item, .Liberty .nav-wrapper .navbar .form-inline .btn, .Liberty .content-wrapper .liberty-sidebar .live-recent-wrapper .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox th, #preferences fieldset:not(.prefsection), #preferences div.mw-prefs-buttons, .navbox, .navbox-subgroup, .navbox > tbody > tr:nth-child(even) > .navbox-list {
+        $LibertyDarkCss = "body, .Liberty, .dropdown-menu, .dropdown-item, .Liberty .nav-wrapper .navbar .form-inline .btn, .Liberty .content-wrapper .liberty-sidebar .live-recent-wrapper .live-recent .live-recent-header .nav .nav-item .nav-link.active, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.wikitable tr > td, table.mw_metadata th, .Liberty .content-wrapper .liberty-content .liberty-content-main table.infobox th, #preferences fieldset:not(.prefsection), #preferences div.mw-prefs-buttons, .navbox, .navbox-subgroup, .navbox > tbody > tr:nth-child(even) > .navbox-list {
 			background-color: #000;
 			color: #DDD;
 		}
@@ -239,13 +240,13 @@ class SkinLiberty extends SkinTemplate {
 		.flow-ui-navigationWidget { color: #FFF; }
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc li { background-color: #000; }
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle { background-color: #1F2023; }";
-		$LibertyUserDarkSetting = $user->getOption('liberty-dark');
-		if ($LibertyUserDarkSetting === 'dark') {
-			$out->addInlineStyle($LibertyDarkCss);
-		} elseif ($LibertyUserDarkSetting === null) {
-			$out->addInlineStyle("@media (prefers-color-scheme: dark) { $LibertyDarkCss }");
-		}
-		// @codingStandardsIgnoreEnd
+        $LibertyUserDarkSetting = $user->getOption('liberty-dark');
+        if ($LibertyUserDarkSetting === 'dark') {
+            $out->addInlineStyle($LibertyDarkCss);
+        } elseif ($LibertyUserDarkSetting === null) {
+            $out->addInlineStyle("@media (prefers-color-scheme: dark) { $LibertyDarkCss }");
+        }
+        // @codingStandardsIgnoreEnd
 		$this->setupCss( $out );
 	}
 
@@ -255,29 +256,28 @@ class SkinLiberty extends SkinTemplate {
 	 * @param OutputPage $out OutputPage
 	 */
 	public function setupCss( OutputPage $out ) {
-
 		$out->addHeadItem(
 			'font-awesome',
-			// @codingStandardsIgnoreLine
-			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/all.css" />'
+            // @codingStandardsIgnoreLine
+            '<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/all.css" />'
 		);
 
 		$out->addHeadItem(
 			'font-awesome-shims',
-			// @codingStandardsIgnoreLine
-			'<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/v4-shims.css" />'
+            // @codingStandardsIgnoreLine
+            '<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.1/css/v4-shims.css" />'
 		);
 
 		$out->addHeadItem(
 			'webfonts',
-			// @codingStandardsIgnoreLine
-			'<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
+            // @codingStandardsIgnoreLine
+            '<link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&display=swap&subset=korean" rel="stylesheet">'
 		);
 
 		$out->addHeadItem(
 			'share-api-polyfill',
-			// @codingStandardsIgnoreLine
-			'<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
+            // @codingStandardsIgnoreLine
+            '<script async src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>'
 		);
 		$out->addModuleStyles( [ 'skins.liberty.styles' ] );
 	}

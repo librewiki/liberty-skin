@@ -8,6 +8,10 @@ Our canonical source is [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Ski
 
 Security vulnerability should be reported using email (dev (골뱅이!) librewiki.net) (replace (Korean text) with @).
 
+## Installation
+* Unzip to the MediaWiki Skins folder or perform a git clone. The name of the unzipped folder should be `Liberty`.
+* Add `wfLoadSkin( 'Liberty' );` to your LocalSettings.php file.
+
 ## Configurations
 Please set these variables in the LocalSettings.php file.
 
@@ -20,6 +24,7 @@ Please set these variables in the LocalSettings.php file.
 | `$wgNaverVerification` | Naver Webmater Tool Verification Code | (Value supplied by Naver.com) | (none) |
 | `$wgLibertyAdSetting` | Google Adsense Settings | `array( 'client' => '(Value supplied by Google)', 'header' => '1234567890', 'right' => '0987654321', 'belowarticle' => 1313135452 )` | (none) |
 | `$wgLibertyAdGroupwgLibertyAdGroup` | Differentiation of ads by usergroup | `differ` | `null`|
+| `$wgLibertyMobileReplaceAd` | In a mobile environment, move the sidebar ads to the bottom. | `true` | `false` |
 | `$wgLibertyEnableLiveRC` | Enables 'Recent Cahnges' on the right side | `true` | `true` |
 | `$wgLibertyMaxRecent` | Recent X edits appearing in 'Recent Changes' | `10` | `10` |
 | `$wgLibertyLiveRCArticleNamespaces` | Namespaces for the first tab in 'Recent Changes' | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` |
@@ -44,3 +49,10 @@ Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 * Custom classes are separated by `,` (e.g., write `classA, classB` to add `classA` and `classB` class).
 
 You can see an example on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
+
+## Rights
+Four rights have been added to this to implement ad differentiation by user rights. if $wgLibertyAdGroup is set to 'differ', add user preferences to remove ads.
+* blockads-header : User can remove header ads.
+* blockads-right : User can remove header ads.
+* blockads-belowarticle : User can remove ads below article.
+* blockads-bottom : User can remove bottom ads.
