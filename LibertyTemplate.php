@@ -15,7 +15,7 @@ class LibertyTemplate extends BaseTemplate {
 		$request = $skin->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
-		$LibertyUserSidebarSettings = $user->getOption('liberty-layout-sidebar');
+		$LibertyUserSidebarSettings = $user->getOption( 'liberty-layout-sidebar' );
 
 		$this->html( 'headelement' );
 ?>
@@ -91,8 +91,9 @@ class LibertyTemplate extends BaseTemplate {
 							?>
 						<?php if ( isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] ) {
 							$this->buildAd( 'bottom' );
-						} 
-						if ( $wgLibertyMobileReplaceAd && isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) { ?>
+						}
+						if ( isset( $wgLibertyMobileReplaceAd ) && $wgLibertyMobileReplaceAd &&
+						isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) { ?>
 							<div class="mobile-ads"></div>
 						<?php } ?>
 							<?php $this->footer(); ?>
