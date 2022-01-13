@@ -45,6 +45,7 @@
 	"prefs-liberty": "Habillage Liberté",
 	"prefs-color": "Paramètres de couleurs",
 	"prefs-layout": "Paramètre de mise en page",
+	"prefs-ads": "Paramètres publicitaires",
 	"liberty-pref-layout-navfix": "Hors barre de navigation statique",
 	"liberty-pref-layout-sidebar": "Supprimer la barre latérale droite",
 	"liberty-pref-layout-width": "Largeur statique",
@@ -58,5 +59,13 @@
 	"liberty-pref-fonts-helplabel": "Aide",
 	"liberty-pref-fonts-help": "La police sera téléchargée depuis les serveurs de Google, sauf pour ''Malgun Gothic''.",
 	"liberty-pref-dark": "Ignorer le paramètre mode sombre du système ?",
-	"liberty-pref-dark-help": "Choisissez s’il faut suivre les paramètres du système pour l’activation du mode sombre."
+	"liberty-pref-dark-help": "Choisissez s’il faut suivre les paramètres du système pour l’activation du mode sombre.",
+	"liberty-pref-ads-header": "Supprimer les publicités d’entête.",
+	"liberty-pref-ads-right": "Supprimer les publicités à droite.",
+	"liberty-pref-ads-bottom": "Supprimer les publicités en bas.",
+	"liberty-pref-ads-belowarticle": "Supprimer les publicités dans l’article ci-dessous.",
+	"right-blockads-header": "Pouvoir supprimer les publicités d’entête sur l’habillage Liberty.",
+	"right-blockads-right": "Pouvoir supprimer les publicités à droite dans l’habillage Liberty.",
+	"right-blockads-belowarticle": "Pouvoir supprimer les publicités dans l’article ci-dessous dans l’habillage Liberty.",
+	"right-blockads-bottom": "Pouvoir supprimer les publicités en bas dans l’habillage Liberty."
 }

@@ -4,6 +4,7 @@
 			"01miki10",
 			"Actuallyisjoha",
 			"Jack Phoenix",
+			"MITO",
 			"Nike"
 		]
 	},
@@ -38,6 +39,7 @@
 	"prefs-liberty": "Vapaus-ulkoasu",
 	"prefs-color": "Väriasetus",
 	"prefs-layout": "Asetteluasetukset",
+	"prefs-ads": "Mainosasetukset",
 	"liberty-pref-layout-sidebar": "Poista oikea sivupalkki",
 	"liberty-pref-layout-width": "Staattinen leveys",
 	"liberty-pref-color-main": "Pääväri",
@@ -49,5 +51,11 @@
 	"liberty-pref-fonts-helplabel": "Ohje",
 	"liberty-pref-fonts-help": "Fontti ladataan Googlen palvelimilta, poikkeuksena Malgun Gothic.",
 	"liberty-pref-dark": "Huomioidaanko järjestelmän tumman tilan asetus?",
-	"liberty-pref-dark-help": "Valitse, noudatetaanko järjestelmän asetuksia tumman tilan aktivointiin."
+	"liberty-pref-dark-help": "Valitse, noudatetaanko järjestelmän asetuksia tumman tilan aktivointiin.",
+	"liberty-pref-ads-header": "Poista yläpalkin mainokset.",
+	"liberty-pref-ads-bottom": "Poista mainokset alapalkista.",
+	"liberty-pref-ads-belowarticle": "Poista mainokset alla olevasta artikkelista.",
+	"right-blockads-header": "Voi poistaa mainokset Liberty-ulkoasun yläpalkista.",
+	"right-blockads-belowarticle": "Voi poistaa mainokset Liberty-ulkoasun artikkelista.",
+	"right-blockads-bottom": "Voi poistaa mainokset Liberty-ulkoasun alapalkista."
 }

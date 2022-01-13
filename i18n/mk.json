@@ -38,6 +38,7 @@
 	"prefs-liberty": "Слобода",
 	"prefs-color": "Бојни поставки",
 	"prefs-layout": "Нагодување на распоредот",
+	"prefs-ads": "Поставки за реклами",
 	"liberty-pref-layout-navfix": "Вон неподвижниот прегледник",
 	"liberty-pref-layout-sidebar": "Отстрани десен страничник",
 	"liberty-pref-layout-width": "Неподвижна ширина",
@@ -51,5 +52,13 @@
 	"liberty-pref-fonts-helplabel": "Помош",
 	"liberty-pref-fonts-help": "Фонтот ќе се вчита од опслужувачите на Гугл (освен Malgun Gothic).",
 	"liberty-pref-dark": "Да ја занемарам системската поставеност за темен изглед?",
-	"liberty-pref-dark-help": "Изберете дали да ги следите системските псотавки за вклучување на темниот изглед."
+	"liberty-pref-dark-help": "Изберете дали да ги следите системските псотавки за вклучување на темниот изглед.",
+	"liberty-pref-ads-header": "Отстрани заглавни реклами",
+	"liberty-pref-ads-right": "Отстрани реклами десно",
+	"liberty-pref-ads-bottom": "Отстрани реклами долу",
+	"liberty-pref-ads-belowarticle": "Отстрани реклами на статијата подолу.",
+	"right-blockads-header": "Може да отстранува заглавни реклами од рувото „Слобода“.",
+	"right-blockads-right": "Може да отстранува десноприкажани реклами од рувото „Слобода“.",
+	"right-blockads-belowarticle": "Може да отстранува потстатиски реклами од рувото „Слобода“.",
+	"right-blockads-bottom": "Може да отстранува долуприкажани реклами од рувото „Слобода“."
 }
