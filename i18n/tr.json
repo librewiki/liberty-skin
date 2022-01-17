@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Can",
 			"Joseph",
 			"MuratTheTurkish",
 			"Suvarioglu",
@@ -41,6 +42,7 @@
 	"prefs-liberty": "Liberty görünümü",
 	"prefs-color": "Renk ayarı",
 	"prefs-layout": "Yerleşim ayarı",
+	"prefs-ads": "Reklam seçenekleri",
 	"liberty-pref-layout-navfix": "Sabit gezinti çubuğu kapalı",
 	"liberty-pref-layout-sidebar": "Sağ kenar çubuğunu kaldır",
 	"liberty-pref-layout-width": "Sabit genişlik",
@@ -54,5 +56,7 @@
 	"liberty-pref-fonts-helplabel": "Yardım",
 	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic yazı tipi hariç Google'ın sunucularından yüklenecek.",
 	"liberty-pref-dark": "Sistem karanlık modu ayarını yoksayılsın mı?",
-	"liberty-pref-dark-help": "Karanlık modu etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin."
+	"liberty-pref-dark-help": "Karanlık modu etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin.",
+	"liberty-pref-ads-bottom": "Alttaki reklamları kaldır",
+	"liberty-pref-ads-belowarticle": "Aşağıdaki makalenin reklamlarını kaldır."
 }
