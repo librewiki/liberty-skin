@@ -38,6 +38,7 @@
 	"prefs-liberty": "עיצוב \"ליברטי\"",
 	"prefs-color": "הגדרת צבע",
 	"prefs-layout": "הגדרות עיצוב",
+	"prefs-ads": "הגדרות פרסומות",
 	"liberty-pref-layout-navfix": "כיבוי סרגל ניווט סטטי",
 	"liberty-pref-layout-sidebar": "הסרת סרגל צד שמאלי",
 	"liberty-pref-layout-width": "רוחב סטטי",
@@ -51,5 +52,13 @@
 	"liberty-pref-fonts-helplabel": "עזרה",
 	"liberty-pref-fonts-help": "הגופן ייטען מהשרתים של גוגל, למעט גופן Malgun Gothic.",
 	"liberty-pref-dark": "להתעלם מהגדרות המערכת על מצב חשוך?",
-	"liberty-pref-dark-help": "אפשר לבחור האם לכבד את הגדרות המערכת בעת הפעלת המצב החשוך."
+	"liberty-pref-dark-help": "אפשר לבחור האם לכבד את הגדרות המערכת בעת הפעלת המצב החשוך.",
+	"liberty-pref-ads-header": "הסרת פרסומות בכותרת עליונה.",
+	"liberty-pref-ads-right": "הסרת פרסומות משמאל.",
+	"liberty-pref-ads-bottom": "הסרת פרסומות בתחתית.",
+	"liberty-pref-ads-belowarticle": "הסרת פרסומות מתחת לערך.",
+	"right-blockads-header": "יכול להסיר פרסומות בכותרת העליונה בעיצוב ליברטי.",
+	"right-blockads-right": "יכול להסיר פרסומות משמאל בעיצוב ליברטי.",
+	"right-blockads-belowarticle": "יכול להסיר פרסומות מתחת לערך בעיצוב ליברטי.",
+	"right-blockads-bottom": "יכול להסיר פרסומות בתחתית בעיצוב ליברטי."
 }

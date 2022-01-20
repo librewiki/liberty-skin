@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Khun Kt",
+			"咽頭べさ"
+		]
+	},
+	"liberty-feed-new": "[တသာ]",
+	"liberty-font-name-default": "နုဲင်းမူလအတွိုင်ꩻ",
+	"liberty-forgot-pw": "အွောန်ႏဖေင်ꩻထိုꩻ နာꩻငဝ်းဗိဉ်ႏပလို့ꩻနဲ့?",
+	"liberty-layout-select-1000": "1000px",
+	"liberty-layout-select-1100": "1100px",
+	"liberty-layout-select-1200": "1200px (မူလအတွိုင်ꩻ)",
+	"liberty-layout-select-1300": "1300px",
+	"liberty-layout-select-1400": "1400px",
+	"liberty-layout-select-1500": "1500px",
+	"liberty-layout-select-1600": "1600px",
+	"liberty-login": "နွို့အကောက်",
+	"liberty-login-alter": "နွို့အကောက် တောမ်ႏအနယ်ꩻလင်",
+	"liberty-login-btn": "နွို့အကောက်",
+	"liberty-info": "အချက်လျက်",
+	"liberty-purge": "မာꩻကြောင်းစင်",
+	"liberty-recent-discussions": "အိုင်ကိုမ်ချက်ကျာꩻယို",
+	"liberty-remember": "တောင်ꩻခါꩻသွော့ ခွေသွဉ်းနွို့ခါꩻဒါႏအကောက်",
+	"liberty-share": "ဖန်းဖြယ်",
+	"liberty-tooltip-purge": "သျင်ꩻကြောင်း လိတ်မဲ့ငါယို cache။",
+	"liberty-view-more": "ထွားသမ်းထဲင်း",
+	"prefs-color": "အရောင်ႏ အဖျင်အဆင်",
+	"prefs-ads": "ကျောႏညာႏ အဖျင်အဆင်",
+	"liberty-pref-color-main": "အဓိကအရောင်ႏ",
+	"liberty-pref-color-main-help": "အဓိကအရောင်ႏနဝ်ꩻ အီႏသုင်ꩻအီ သုဲက်ယိုအကိုသွူ။",
+	"liberty-pref-color-second": "ဒုတိယအရောင်ႏ",
+	"liberty-pref-color-second-help": "ဒုတိယအရောင်ႏနဝ်ꩻ အီႏသုင်ꩻအီ သုဲက်ယိုအကိုသွူ။",
+	"liberty-pref-fonts": "လွိုက်သွော့ နာꩻကမဲဉ်သုင်ꩻဒါႏ လိတ်ဖြုံႏဖောင့်",
+	"liberty-pref-fonts-helplabel": "အစွဲးအကမ်း"
+}
