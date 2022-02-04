@@ -126,29 +126,29 @@ class LibertyTemplate extends BaseTemplate {
 	 * Nav menu function, build top menu.
 	 */
 	protected function navMenu() {
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$skin = $this->getSkin();
 	?>
 		<nav class="navbar navbar-dark">
 			<a class="navbar-brand" href="<?php echo Title::newMainPage()->getLocalURL(); ?>"></a>
 			<ul class="nav navbar-nav">
 				<li class="nav-item">
-					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'Recentchanges' ),
+					<?php echo $linkRenderer->makeKnownLink(
+						new TitleValue( NS_SPECIAL, 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						'<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>',
-						// @codingStandardsIgnoreEnd
+						new HtmlArmor('<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>'),
+						// @codingStandardsIgnoreEnd )
 						[
 							'class' => 'nav-link',
 							'title' => Linker::titleAttrib( 'n-recentchanges', 'withaccess' ),
 							'accesskey' => Linker::accesskey( 'n-recentchanges' )
-						]
-					); ?>
+						] );?>
 				</li>
 				<li class="nav-item">
-					<?php echo Linker::linkKnown(
-						SpecialPage::getTitleFor( 'Randompage' ),
+					<?php echo $linkRenderer->makeKnownLink(
+						new TitleValue( NS_SPECIAL, 'Randompage' ),
 						// @codingStandardsIgnoreStart
-						'<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg('randompage')->plain() . '</span>',
+						new HtmlArmor('<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg('randompage')->plain() . '</span>'),
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',
@@ -200,6 +200,7 @@ class LibertyTemplate extends BaseTemplate {
 
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 	?>
 		<div class="navbar-login">
 			<?php
@@ -240,7 +241,7 @@ class LibertyTemplate extends BaseTemplate {
 					</a>
 					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu" 
 						aria-labelledby="login-menu">
-						<?php echo Linker::linkKnown(
+						<?php echo $linkRenderer->makeKnownLink(
 							Title::makeTitle( NS_USER, $user->getName() ),
 							$user->getName(),
 							[
@@ -263,8 +264,8 @@ class LibertyTemplate extends BaseTemplate {
 								$notiCount = $personalTools['notifications-alert']['links'][0]['data']['counter-num'] +
 									$personalTools['notifications-notice']['links'][0]['data']['counter-num'];
 							}
-							echo Linker::linkKnown(
-								SpecialPage::getTitleFor( 'Notifications' ),
+							echo $linkRenderer->makeKnownLink(
+								new TitleValue( NS_SPECIAL, 'Notifications' ),
 								$skin->msg( 'notifications' )->plain() . ( $notiCount ? " ($notiCount)" : '' ),
 								[
 									'class' => 'dropdown-item',
@@ -273,7 +274,7 @@ class LibertyTemplate extends BaseTemplate {
 							);
 						}
 						?>
-						<?php echo Linker::linkKnown(
+						<?php echo $linkRenderer->makeKnownLink(
 							SpecialPage::getTitleFor( 'Contributions', $user->getName() ),
 							$skin->msg( 'mycontris' )->plain(),
 							[
@@ -282,7 +283,7 @@ class LibertyTemplate extends BaseTemplate {
 								'accesskey' => Linker::accesskey( 'pt-mycontris' )
 							]
 						); ?>
-						<?php echo Linker::linkKnown(
+						<?php echo $linkRenderer->makeKnownLink(
 							Title::makeTitle( NS_USER_TALK, $user->getName() ),
 							$skin->msg( 'mytalk' )->plain(),
 							[
@@ -291,7 +292,7 @@ class LibertyTemplate extends BaseTemplate {
 								'accesskey' => Linker::accesskey( 'pt-mytalk' )
 							]
 						); ?>
-						<?php echo Linker::linkKnown(
+						<?php echo $linkRenderer->makeKnownLink(
 							SpecialPage::getTitleFor( 'Watchlist' ),
 							$skin->msg( 'watchlist' )->plain(),
 							[
@@ -301,7 +302,7 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider"></div>
-						<?php echo Linker::linkKnown(
+						<?php echo $linkRenderer->makeKnownLink(
 							SpecialPage::getTitleFor( 'Preferences' ),
 							$skin->msg( 'preferences' )->plain(),
 							[
@@ -368,7 +369,7 @@ class LibertyTemplate extends BaseTemplate {
 								<label for="lgremember"><?php echo $skin->msg('liberty-remember')->plain() ?></label>
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg('liberty-login-btn')->plain() ?>" tabindex="4">
-							<?php echo Linker::linkKnown(
+							<?php echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor('Userlogin'),
 								$skin->msg('userlogin-joinproject'),
 								[
@@ -381,12 +382,12 @@ class LibertyTemplate extends BaseTemplate {
 									'returnto' => $title
 								]
 							); ?>
-							<?php echo Linker::linkKnown(
+							<?php echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor('PasswordReset'),
 								$skin->msg('liberty-forgot-pw')->plain()
 							); ?>
 							<br>
-							<?php echo Linker::linkKnown(
+							<?php echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor('Userlogin'),
 								$skin->msg('liberty-login-alter')->plain()
 							); ?>
@@ -420,6 +421,7 @@ class LibertyTemplate extends BaseTemplate {
 			return;
 		}
 		$skin = $this->getSkin();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$articleNS = implode( "|", $wgLibertyLiveRCArticleNamespaces );
 		$talkNS = implode( "|", $wgLibertyLiveRCTalkNamespaces );
 	?>
@@ -448,11 +450,11 @@ class LibertyTemplate extends BaseTemplate {
 				</ul>
 			</div>
 			<div class="live-recent-footer">
-				<?php echo Linker::linkKnown(
+				<?php echo $linkRenderer->makeKnownLink(
 					SpecialPage::getTitleFor( 'Recentchanges' ),
-					'<span class="label label-info">' .
+					new HtmlArmor( '<span class="label label-info">' .
 						$skin->msg( 'liberty-view-more' )->plain() .
-						'</span>'
+						'</span>' )
 				); ?>
 			</div>
 		</div>
@@ -472,6 +474,7 @@ class LibertyTemplate extends BaseTemplate {
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 		?>
@@ -480,9 +483,9 @@ class LibertyTemplate extends BaseTemplate {
 				<?php
 				if ( $action != 'edit' ) {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
-					echo Linker::linkKnown(
+					echo $linkRenderer->makeKnownLink(
 						$title,
-						$editIcon . $skin->msg( 'edit' )->plain(),
+						new HtmlArmor( $editIcon . $skin->msg( 'edit' )->plain() ),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'id' => 'ca-edit',
@@ -493,7 +496,7 @@ class LibertyTemplate extends BaseTemplate {
 					);
 				}
 				if ( $action == 'edit' || $action == 'history' ) {
-					echo Linker::linkKnown(
+					echo $linkRenderer->makeKnownLink(
 						$title,
 						$titlename = $skin->msg( 'article' )->plain(),
 						[
@@ -517,7 +520,7 @@ class LibertyTemplate extends BaseTemplate {
 								'accesskey' => Linker::accesskey( 'ca-talk' )
 							];
 						}
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							$companionTitle,
 							$titlename,
 							[
@@ -526,7 +529,7 @@ class LibertyTemplate extends BaseTemplate {
 						);
 					}
 					if ( $action != 'history' ) {
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							$title,
 							$skin->msg( 'history' )->plain(),
 							[
@@ -556,7 +559,7 @@ class LibertyTemplate extends BaseTemplate {
 						<?php
 						if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
 							// "User contributions" link on user and user talk pages
-							echo Linker::linkKnown(
+							echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor( 'Contributions', $title->getText() ),
 								$skin->msg( 'contributions' )->escaped(),
 								[
@@ -566,7 +569,7 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							);
 						}
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							$title,
 							$skin->msg( 'liberty-purge' )->plain(),
 							[
@@ -576,7 +579,7 @@ class LibertyTemplate extends BaseTemplate {
 							],
 							[ 'action' => 'purge' ]
 						);
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							$title,
 							$skin->msg( $watched )->plain(),
 							[
@@ -586,7 +589,7 @@ class LibertyTemplate extends BaseTemplate {
 							],
 							[ 'action' => $watched ]
 						);
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							SpecialPage::getTitleFor( 'Whatlinkshere', $title ),
 							$skin->msg( 'whatlinkshere' )->plain(),
 							[
@@ -595,7 +598,7 @@ class LibertyTemplate extends BaseTemplate {
 								'accesskey' => Linker::accesskey( 't-whatlinkshere' )
 							]
 						);
-						echo Linker::linkKnown(
+						echo $linkRenderer->makeKnownLink(
 							$title,
 							$skin->msg( 'liberty-info' )->plain(),
 							[
@@ -605,7 +608,7 @@ class LibertyTemplate extends BaseTemplate {
 							[ 'action' => 'info' ]
 						);
 						if ( $permissionManager->quickUserCan( 'move', $user, $title ) && $title->exists() ) {
-							echo Linker::linkKnown(
+							echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor( 'Movepage', $title ),
 								$skin->msg( 'move' )->plain(),
 								[
@@ -620,7 +623,7 @@ class LibertyTemplate extends BaseTemplate {
 							<?php
 							// different labels depending on whether the page is or isn't protected
 							$protectionMsg = $title->isProtected() ? 'unprotect' : 'protect';
-							echo Linker::linkKnown(
+							echo $linkRenderer->makeKnownLink(
 								$title,
 								$skin->msg( $protectionMsg )->plain(),
 								[
@@ -634,7 +637,7 @@ class LibertyTemplate extends BaseTemplate {
 						<?php if ( $permissionManager->quickUserCan( 'delete', $user, $title ) && $title->exists() ) {
 						?>
 							<div class="dropdown-divider"></div>
-							<?php echo Linker::linkKnown(
+							<?php echo $linkRenderer->makeKnownLink(
 								$title,
 								$skin->msg( 'delete' )->plain(),
 								[
