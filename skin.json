@@ -59,6 +59,11 @@
     "ResourceModules": {
         "skins.liberty.styles": {
             "class": "ResourceLoaderSkinModule",
+            "features": {
+                "legacy": false,
+                "interface": false,
+                "toc": false
+            },
             "styles": {
                 "bootstrap/css/bootstrap.min.css": {
                     "media": "all"
