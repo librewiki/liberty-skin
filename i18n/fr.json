@@ -64,8 +64,8 @@
 	"liberty-pref-ads-right": "Supprimer les publicités à droite.",
 	"liberty-pref-ads-bottom": "Supprimer les publicités en bas.",
 	"liberty-pref-ads-belowarticle": "Supprimer les publicités dans l’article ci-dessous.",
-	"right-blockads-header": "Pouvoir supprimer les publicités d’entête sur l’habillage Liberty.",
-	"right-blockads-right": "Pouvoir supprimer les publicités à droite dans l’habillage Liberty.",
-	"right-blockads-belowarticle": "Pouvoir supprimer les publicités sous les articles dans l’habillage Liberty.",
-	"right-blockads-bottom": "Pouvoir supprimer les publicités en bas dans l’habillage Liberty."
+	"right-blockads-header": "Peut supprimer les publicités d’entête sur l’habillage Liberty.",
+	"right-blockads-right": "Peut supprimer les publicités à droite dans l’habillage Liberty.",
+	"right-blockads-belowarticle": "Peut supprimer les publicités sous les articles dans l’habillage Liberty.",
+	"right-blockads-bottom": "Peut supprimer les publicités en bas dans l’habillage Liberty."
 }
