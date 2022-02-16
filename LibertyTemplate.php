@@ -72,7 +72,7 @@ class LibertyTemplate extends BaseTemplate {
 							$this->html( 'catlinks' );
 						}
 						?>
-						<article class="mw-body-content">
+						<article class="mw-body-content" id="mw-content-text">
 							<?php $this->html( 'bodycontent' ); ?>
 						</article>
 						<?php
@@ -337,6 +337,8 @@ class LibertyTemplate extends BaseTemplate {
 	protected function loginModal() {
 		$skin = $this->getSkin();
 		$title = $skin->getTitle();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+
 
 		// Probably no point in rendering a login window for the users who are
 		// already logged in?
