@@ -3,6 +3,7 @@
 		"authors": [
 			"Gam3",
 			"Mainframe98",
+			"Nickthijssen1994",
 			"RadioAzureus",
 			"Romaine",
 			"Siebrand"
@@ -39,6 +40,7 @@
 	"prefs-liberty": "Liberty vormgeving",
 	"prefs-color": "Kleurinstelling",
 	"prefs-layout": "Lay-out instelling",
+	"prefs-ads": "Advertentie instellingen",
 	"liberty-pref-layout-width": "Vaste breedte",
 	"liberty-pref-color-main": "Primaire kleur",
 	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
@@ -47,5 +49,7 @@
 	"prefs-font": "Lettertypevoorkeur",
 	"liberty-pref-fonts": "Selecteer het te gebruiken lettertype",
 	"liberty-pref-fonts-helplabel": "Hulp",
-	"liberty-pref-fonts-help": "Het lettertype zal vanaf de servers van Google worden geladen, met uitzondering van het Malgun Gothic lettertype."
+	"liberty-pref-fonts-help": "Het lettertype zal vanaf de servers van Google worden geladen, met uitzondering van het Malgun Gothic lettertype.",
+	"liberty-pref-ads-header": "Header advertenties verwijderen",
+	"liberty-pref-ads-right": "Rechter advertenties verwijderen"
 }
