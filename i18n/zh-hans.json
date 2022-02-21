@@ -45,6 +45,7 @@
 	"prefs-liberty": "Liberty皮肤",
 	"prefs-color": "颜色设置",
 	"prefs-layout": "布局设置",
+	"prefs-ads": "广告设置",
 	"liberty-pref-layout-navfix": "关闭静态导航栏",
 	"liberty-pref-layout-sidebar": "移除右侧栏",
 	"liberty-pref-layout-width": "静态宽度",
@@ -58,5 +59,13 @@
 	"liberty-pref-fonts-helplabel": "帮助",
 	"liberty-pref-fonts-help": "除Malgun Gothic以外的字体将从Google的服务器上加载。",
 	"liberty-pref-dark": "忽略系统暗色模式设置？",
-	"liberty-pref-dark-help": "选择在激活暗模式时是否遵循系统设置。"
+	"liberty-pref-dark-help": "选择在激活暗模式时是否遵循系统设置。",
+	"liberty-pref-ads-header": "移除顶部广告。",
+	"liberty-pref-ads-right": "移除右侧广告。",
+	"liberty-pref-ads-bottom": "移除底部广告。",
+	"liberty-pref-ads-belowarticle": "移除文章下方广告。",
+	"right-blockads-header": "可以在皮肤Liberty中移除顶部广告",
+	"right-blockads-right": "可以在皮肤Liberty中移除右侧广告",
+	"right-blockads-belowarticle": "可以在皮肤Liberty中移除文章下方广告",
+	"right-blockads-bottom": "可以在皮肤Liberty中移除底部广告"
 }
