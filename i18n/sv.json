@@ -41,6 +41,7 @@
 	"prefs-liberty": "Utseendet Liberty",
 	"prefs-color": "Färginställning",
 	"prefs-layout": "Layoutinställning",
+	"prefs-ads": "Annonsinställningar",
 	"liberty-pref-layout-navfix": "Inaktivera statiskt navigeringsfält",
 	"liberty-pref-layout-sidebar": "Ta bort sidofältet till höger",
 	"liberty-pref-layout-width": "Fast bredd",
@@ -54,5 +55,13 @@
 	"liberty-pref-fonts-helplabel": "Hjälp",
 	"liberty-pref-fonts-help": "Typsnittet kommer att läsas in från Googles servrar, med undantag för Malgun Gothic.",
 	"liberty-pref-dark": "Ignorera systemets inställning för mörkt läge?",
-	"liberty-pref-dark-help": "Välj om systeminställningarna ska följas när mörkt läge aktiveras."
+	"liberty-pref-dark-help": "Välj om systeminställningarna ska följas när mörkt läge aktiveras.",
+	"liberty-pref-ads-header": "Ta bort annonser i sidhuvudet.",
+	"liberty-pref-ads-right": "Ta bort annonser på högerkanten.",
+	"liberty-pref-ads-bottom": "Ta bort annonser längst ned.",
+	"liberty-pref-ads-belowarticle": "Ta bort annonser nedanför artikeln.",
+	"right-blockads-header": "Kan ta bort annonser i sidhuvudet för Liberty-utseendet.",
+	"right-blockads-right": "Kan ta bort annonser på högerkanten för Liberty-utseendet.",
+	"right-blockads-belowarticle": "Kan ta bort annonser nedanför artikeln för Liberty-utseendet.",
+	"right-blockads-bottom": "Kan ta bort annonser längst ned för Liberty-utseendet."
 }
