@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer",
 			"Reza1615"
 		]
 	},
 	"liberty-font-name-default": "پیش‌فرض",
-	"liberty-forgot-pw": "آیا اسم رمزتان را فراموش کرده‌اید؟",
+	"liberty-forgot-pw": "رمز عبورتان را فراموش کرده‌اید؟",
 	"liberty-pref-layout-morearticle": "حذف تبلیغات از زیر مقاله",
 	"liberty-login": "ورود به سامانه",
 	"liberty-login-btn": "ورود به سامانه",
 	"liberty-info": "اطلاعات",
-	"liberty-purge": "پاک‌سازی میانگیر",
+	"liberty-purge": "پاک‌سازی",
 	"liberty-view-more": "مشاهدهٔ بیشتر",
 	"prefs-color": "تنظیمات رنگ",
 	"liberty-pref-color-main": "رنگ اصلی",
