@@ -5,7 +5,8 @@
 			"Actuallyisjoha",
 			"Jack Phoenix",
 			"MITO",
-			"Nike"
+			"Nike",
+			"Rönttönen"
 		]
 	},
 	"skinname-liberty": "Vapaus",
@@ -42,6 +43,7 @@
 	"prefs-ads": "Mainosasetukset",
 	"liberty-pref-layout-sidebar": "Poista oikea sivupalkki",
 	"liberty-pref-layout-width": "Staattinen leveys",
+	"liberty-pref-layout-width-help": "Aseta asiakirjan alueen maksimikoko",
 	"liberty-pref-color-main": "Pääväri",
 	"liberty-pref-color-main-help": "Tällä sivustolla käytettävä päävärikoodi.",
 	"liberty-pref-color-second": "Toissijainen väri",
@@ -53,6 +55,7 @@
 	"liberty-pref-dark": "Huomioidaanko järjestelmän tumman tilan asetus?",
 	"liberty-pref-dark-help": "Valitse, noudatetaanko järjestelmän asetuksia tumman tilan aktivointiin.",
 	"liberty-pref-ads-header": "Poista yläpalkin mainokset.",
+	"liberty-pref-ads-right": "Poista oikeanpuoleiset mainokset.",
 	"liberty-pref-ads-bottom": "Poista mainokset alapalkista.",
 	"liberty-pref-ads-belowarticle": "Poista mainokset alla olevasta artikkelista.",
 	"right-blockads-header": "Voi poistaa mainokset Liberty-ulkoasun yläpalkista.",
