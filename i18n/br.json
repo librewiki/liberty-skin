@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Huñvreüs"
+		]
+	},
+	"liberty-feed-new": "[Nevez]",
+	"liberty-font-name-default": "dre ziouer",
+	"liberty-forgot-pw": "Ankouaet ho ker-tremen ganeoc'h ?",
+	"liberty-layout-select-1000": "1000px",
+	"liberty-layout-select-1100": "1100px",
+	"liberty-layout-select-1200": "1200px (dre ziouer)",
+	"liberty-layout-select-1300": "1300px",
+	"liberty-layout-select-1400": "1400px",
+	"liberty-layout-select-1500": "1500px",
+	"liberty-layout-select-1600": "1600px",
+	"liberty-login": "Kevreañ",
+	"liberty-login-alter": "Kevreañ en ur mod all",
+	"liberty-login-btn": "Kevreañ",
+	"liberty-info": "Titouroù",
+	"liberty-purge": "Spurjañ",
+	"liberty-remember": "Kaout soñj eus ma anv implijer",
+	"liberty-share": "Rannañ",
+	"liberty-tooltip-purge": "Spurjañ krubuilh ar bajenn-mañ.",
+	"liberty-view-more": "Gwelet muioc'h",
+	"liberty.css": "/* Talvezout a raio ar CSS lakaet amañ evit implijerien ar gwiskadur Liberty */",
+	"liberty.js": "/* Kement JavaScript amañ a vo karget evit an implijerien a ra gant ar gwiskadur Liberty */",
+	"prefs-liberty": "Gwiskadur Liberty",
+	"liberty-pref-fonts-helplabel": "Skoazell"
+}
