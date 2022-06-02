@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gulka.nik",
 			"Helpau",
 			"Okras",
 			"PlushBoy"
@@ -39,6 +40,7 @@
 	"prefs-liberty": "Liberty skin",
 	"prefs-color": "Настройки цвета",
 	"prefs-layout": "Настройка макета",
+	"prefs-ads": "Настройки рекламы",
 	"liberty-pref-layout-sidebar": "Убрать правую боковую панель",
 	"liberty-pref-layout-width": "Статическая ширина",
 	"liberty-pref-layout-width-help": "Установить максимальный размер области документа",
