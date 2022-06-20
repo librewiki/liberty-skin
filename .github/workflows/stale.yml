@@ -6,16 +6,18 @@ on:
     # Runs at 3AM UTC (noon KST) every Monday.
 
 jobs:
-  stale:
+  stale: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v4
-      with:
-        stale-issue-message: 'This issue is stale because it has been open for 180 days with no activity. Remove stale label or comment on it or it will be closed in 2 weeks.'
-        stale-pr-message: 'This pull request is stale because it has been open for 180 days with no activity. Remove stale label or comment on it or it will be closed in 2 weeks.'
-        close-issue-message: 'This issue is closed because there was no activity for 2 weeks.'
-        close-pr-message: 'This pull request is closed because there was no activity for 2 weeks.'
-        days-before-issue-stale: 180
-        days-beffore-pr-stale: 180
-        days-before-issue-close: 14
-        days-before-pr-close: 14
+        with:
+          stale-issue-message: 'This issue is stale because it has been open for 180 days with no activity. Remove stale label or comment on it or it will be closed in 2 weeks.'
+          stale-pr-message: 'This pull request is stale because it has been open for 180 days with no activity. Remove stale label or comment on it or it will be closed in 2 weeks.'
+          close-issue-message: 'This issue is closed because there was no activity for 2 weeks.'
+          close-pr-message: 'This pull request is closed because there was no activity for 2 weeks.'
+          days-before-issue-stale: 180
+          days-beffore-pr-stale: 180
+          days-before-issue-close: 14
+          days-before-pr-close: 14
+          stale-pr-label: "stale"
+          stale-issue-label: "stale"
