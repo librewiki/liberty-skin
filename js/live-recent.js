@@ -1,6 +1,7 @@
 $( function () {
 	'use strict';
 	var articleNamespaces, talkNamespaces, isArticleTab, limit;
+
 	articleNamespaces = $( '.live-recent' ).attr( 'data-article-ns' );
 	talkNamespaces = $( '.live-recent' ).attr( 'data-talk-ns' );
 	isArticleTab = true;
@@ -30,9 +31,11 @@ $( function () {
 
 	function refreshLiveRecent() {
 		var getParameter;
+
 		if ( !$( '#live-recent-list' ).length || $( '#live-recent-list' ).is( ':hidden' ) ) {
 			return;
 		}
+
 		getParameter = {
 			action: 'query',
 			list: 'recentchanges',
@@ -44,7 +47,8 @@ $( function () {
 			rcnamespace: isArticleTab ? articleNamespaces : talkNamespaces,
 			rctoponly: true
 		};
-		mw.loader.using( 'mediawiki.api' ).then(function() {
+
+		mw.loader.using( 'mediawiki.api' ).then( function () {
 			var api = new mw.Api();
 			api.get( getParameter ).then( function ( data ) {
 				var recentChanges, html, time, line, text;
@@ -67,7 +71,7 @@ $( function () {
 					return line;
 				} ).join( '\n' );
 				$( '#live-recent-list' ).html( html );
-			})
+			} )
 			.catch( function () {} );
 		});
 	}
