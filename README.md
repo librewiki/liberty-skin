@@ -1,12 +1,12 @@
 # Liberty MediaWiki Skin
 
-[English](.gitlab/README.en.md)
+[English](.github/README.en.md)
 
 [리브레 위키](https://librewiki.net)의 기본 스킨입니다. 위키 엔진 '리버티'의 기본 레이아웃입니다.
 
 ## 개발
 
-원본 소스는 [GitLab.com](https://gitlab.com/librewiki/Liberty-MW-Skin)에 존재하며, 버그 리포팅은 [bbs.librewiki.net](https://bbs.librewiki.net/)에서, 패치는 GitLab.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
+원본 소스는 [GitLab.com](https://github.com/librewiki/liberty-skin)에 존재하며, 버그 리포팅은 [bbs.librewiki.net](https://bbs.librewiki.net/)에서, 패치는 GitHub.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
 
 보안 취약점은 이메일 (dev(골뱅이!)librewiki.net) 로 보고해 주세요.
 
