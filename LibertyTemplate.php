@@ -32,7 +32,7 @@ class LibertyTemplate extends BaseTemplate {
 							<div class="live-recent-wrapper">
 								<?php $this->liveRecent(); ?>
 							</div>
-							<?php if ( isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) {
+							<?php if ( isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] ) {
 								$this->buildAd( 'right' );
 							} ?>
 						</div>
@@ -77,7 +77,7 @@ class LibertyTemplate extends BaseTemplate {
 						</article>
 						<?php
 						if ( isset( $wgLibertyAdSetting['belowarticle'] ) && $wgLibertyAdSetting['belowarticle'] ) {
-								$this->buildAd( 'belowarticle' );
+							$this->buildAd( 'belowarticle' );
 						}
 						?>
 						</div>
@@ -92,8 +92,10 @@ class LibertyTemplate extends BaseTemplate {
 						<?php if ( isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] ) {
 							$this->buildAd( 'bottom' );
 						}
-						if ( isset( $wgLibertyMobileReplaceAd ) && $wgLibertyMobileReplaceAd &&
-						isset( $wgLibertyAdSetting[ 'right' ] ) && $wgLibertyAdSetting[ 'right' ] ) { ?>
+						if (
+							isset( $wgLibertyMobileReplaceAd ) && $wgLibertyMobileReplaceAd &&
+							isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right']
+						) { ?>
 							<div class="mobile-ads"></div>
 						<?php } ?>
 							<?php $this->footer(); ?>
@@ -110,7 +112,7 @@ class LibertyTemplate extends BaseTemplate {
 		// Only load AdSense JS is ads are enabled in site configuration
 		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] ) {
 			// @codingStandardsIgnoreLine
-			echo( '<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>' );
+			echo '<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
 		}
 		?>
 		<?php $this->loginModal(); ?>
@@ -136,7 +138,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo $linkRenderer->makeKnownLink(
 						new TitleValue( NS_SPECIAL, 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						new HtmlArmor('<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>'),
+						new HtmlArmor( '<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>' ),
 						// @codingStandardsIgnoreEnd )
 						[
 							'class' => 'nav-link',
@@ -148,7 +150,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo $linkRenderer->makeKnownLink(
 						new TitleValue( NS_SPECIAL, 'Randompage' ),
 						// @codingStandardsIgnoreStart
-						new HtmlArmor('<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg('randompage')->plain() . '</span>'),
+						new HtmlArmor( '<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg( 'randompage' )->plain() . '</span>' ),
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',
@@ -356,23 +358,23 @@ class LibertyTemplate extends BaseTemplate {
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title"><?php echo $skin->msg('liberty-login')->plain() ?></h4>
+						<h4 class="modal-title"><?php echo $skin->msg( 'liberty-login' )->plain() ?></h4>
 					</div>
 					<div class="modal-body">
 						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
 						</div>
 						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post">
-							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?php echo $skin->msg('userlogin-yourname-ph')->plain() ?>" value="" name="lgname">
-							<label for="inputPassword" class="sr-only"><?php echo $skin->msg('userlogin-yourpassword')->plain() ?></label>
-							<input class="loginPassword form-control" id="wpPassword1" tabindex="2" placeholder="<?php echo $skin->msg('userlogin-yourpassword-ph')->plain() ?>" type="password" name="lgpassword">
+							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?php echo $skin->msg( 'userlogin-yourname-ph' )->plain() ?>" value="" name="lgname">
+							<label for="inputPassword" class="sr-only"><?php echo $skin->msg( 'userlogin-yourpassword' )->plain() ?></label>
+							<input class="loginPassword form-control" id="wpPassword1" tabindex="2" placeholder="<?php echo $skin->msg( 'userlogin-yourpassword-ph' )->plain() ?>" type="password" name="lgpassword">
 							<div class="modal-checkbox">
 								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-								<label for="lgremember"><?php echo $skin->msg('liberty-remember')->plain() ?></label>
+								<label for="lgremember"><?php echo $skin->msg( 'liberty-remember' )->plain() ?></label>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg('liberty-login-btn')->plain() ?>" tabindex="4">
+							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
 							<?php echo $linkRenderer->makeKnownLink(
-								SpecialPage::getTitleFor('Userlogin'),
-								$skin->msg('userlogin-joinproject'),
+								SpecialPage::getTitleFor( 'Userlogin' ),
+								$skin->msg( 'userlogin-joinproject' ),
 								[
 									'class' => 'btn btn-primary btn-block',
 									'tabindex' => 5,
@@ -384,21 +386,21 @@ class LibertyTemplate extends BaseTemplate {
 								]
 							); ?>
 							<?php echo $linkRenderer->makeKnownLink(
-								SpecialPage::getTitleFor('PasswordReset'),
-								$skin->msg('liberty-forgot-pw')->plain()
+								SpecialPage::getTitleFor( 'PasswordReset' ),
+								$skin->msg( 'liberty-forgot-pw' )->plain()
 							); ?>
 							<br>
 							<?php echo $linkRenderer->makeKnownLink(
-								SpecialPage::getTitleFor('Userlogin'),
-								$skin->msg('liberty-login-alter')->plain()
+								SpecialPage::getTitleFor( 'Userlogin' ),
+								$skin->msg( 'liberty-login-alter' )->plain()
 							); ?>
 							<input type="hidden" name="action" value="login" />
 							<input type="hidden" name="format" value="json" />
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg('liberty-btn-close')->plain(); ?></button>
-						<button type="button" class="btn btn-primary"><?php echo $skin->msg('liberty-btn-save-changes')->plain(); ?></button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain(); ?></button>
+						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain(); ?></button>
 					</div>
 				</div>
 			</div>
@@ -416,15 +418,17 @@ class LibertyTemplate extends BaseTemplate {
 			$wgLibertyMaxRecent,
 			$wgLibertyLiveRCArticleNamespaces,
 			$wgLibertyLiveRCTalkNamespaces;
+
 		// Don't bother outputting this if the live RC feature is disabled in
 		// site configuration
 		if ( !$wgLibertyEnableLiveRC ) {
 			return;
 		}
+
 		$skin = $this->getSkin();
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$articleNS = implode( "|", $wgLibertyLiveRCArticleNamespaces );
-		$talkNS = implode( "|", $wgLibertyLiveRCTalkNamespaces );
+		$articleNS = implode( '|', $wgLibertyLiveRCArticleNamespaces );
+		$talkNS = implode( '|', $wgLibertyLiveRCTalkNamespaces );
 	?>
 		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" 
 			data-talk-ns="<?php echo $talkNS ?>">
@@ -734,7 +738,8 @@ class LibertyTemplate extends BaseTemplate {
 			if ( !$content ) {
 				break;
 			}
-			if ( ( $content['right'] && !in_array( $content['right'], $userRights ) ) ||
+			if (
+				( $content['right'] && !in_array( $content['right'], $userRights ) ) ||
 				( $content['group'] && !in_array( $content['group'], $userGroup ) )
 			) {
 				continue;
@@ -782,7 +787,8 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 
 				foreach ( $content['children'] as $child ) {
-					if ( ( $child['right'] && !in_array( $child['right'], $userRights ) ) ||
+					if (
+						( $child['right'] && !in_array( $child['right'], $userRights ) ) ||
 						( $child['group'] && !in_array( $child['group'], $userGroup ) )
 					) {
 						continue;
@@ -823,7 +829,8 @@ class LibertyTemplate extends BaseTemplate {
 						] );
 
 						foreach ( $child['children'] as $sub ) {
-							if ( ( $sub['right'] && !in_array( $sub['right'], $userRights ) ) ||
+							if (
+								( $sub['right'] && !in_array( $sub['right'], $userRights ) ) ||
 								( $sub['group'] && !in_array( $sub['group'], $userGroup ) )
 							) {
 								continue;
@@ -945,7 +952,7 @@ class LibertyTemplate extends BaseTemplate {
 						$text = $textObj->text();
 					}
 				} else {
-					$text = "";
+					$text = '';
 				}
 
 				// If icon and text both empty
@@ -1044,7 +1051,7 @@ class LibertyTemplate extends BaseTemplate {
 						$text = $textObj->text();
 					}
 				} else {
-					$text = "";
+					$text = '';
 				}
 
 				// If icon and text both empty
