@@ -41,7 +41,7 @@
 	"liberty-tooltip-purge": "Purger le cache de cette page.",
 	"liberty-view-more": "Afficher plus",
 	"liberty.css": "/* Le CSS placé ici affectera les utilisateurs de l’habillage Liberté */",
-	"liberty.js": "/* Tout JavaScript ici sera chargé avec les pages accédées par les utilisateurs de l’habillage Liberté */",
+	"liberty.js": "/* Tout code JavaScript placé ici sera chargé avec les pages accédées par les utilisateurs de l’habillage Liberté */",
 	"prefs-liberty": "Habillage Liberté",
 	"prefs-color": "Paramètres de couleurs",
 	"prefs-layout": "Paramètre de mise en page",
