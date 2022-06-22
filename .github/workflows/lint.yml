@@ -21,12 +21,12 @@ jobs:
 
       - run: php composer.phar test
 
-    eslint:
-      name: Run eslint
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
+  eslint:
+    name: Run eslint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
 
-      - run: |
-          npm install -g eslint eslint-config-wikimedia eslint-plugin-json
-          eslint js --ignore-pattern 'lib/'
+    - run: |
+        npm install -g eslint eslint-config-wikimedia eslint-plugin-json
+        eslint js --ignore-pattern 'lib/'
