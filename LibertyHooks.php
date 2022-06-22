@@ -1,5 +1,5 @@
 <?php //phpcs:ignore
-class LibertyHooks extends Hooks{
+class LibertyHooks extends Hooks {
 	/**
 	 * @since 1.17.0
 	 * @param OutputPage $out
@@ -13,15 +13,17 @@ class LibertyHooks extends Hooks{
 	}
 
 	/**
-	 * Preference
+	 * Set up user preferences specific to the Liberty skin.
+	 *
 	 * @param User $user user
 	 * @param Preferences &$preferences preferences
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
 		global $wgLibertyAdSetting, $wgLibertyAdGroup;
+
 		$service = MediaWiki\MediaWikiServices::getInstance();
-		$usergroupemanager = $service->getUserGroupManager();
-		$userGroups = $usergroupemanager->getUserGroups( $user );
+		$userGroupManager = $service->getUserGroupManager();
+		$userGroups = $userGroupManager->getUserGroups( $user );
 		$permissionManager = $service->getPermissionManager();
 
 		$preferences['liberty-layout-width'] = [
@@ -59,10 +61,14 @@ class LibertyHooks extends Hooks{
 			'section' => 'liberty/layout',
 		];
 
-		if ( isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] &&
-		isset( $wgLibertyAdGroup ) && $wgLibertyAdGroup == 'differ' ) {
-			if ( isset( $wgLibertyAdSetting['belowarticle'] ) && $wgLibertyAdSetting['belowarticle']
-			&& $permissionManager->userHasRight( $user, 'blockads-belowarticle' ) ) {
+		if (
+			isset( $wgLibertyAdSetting['client'] ) && $wgLibertyAdSetting['client'] &&
+			isset( $wgLibertyAdGroup ) && $wgLibertyAdGroup == 'differ'
+		) {
+			if (
+				isset( $wgLibertyAdSetting['belowarticle'] ) && $wgLibertyAdSetting['belowarticle'] &&
+				$permissionManager->userHasRight( $user, 'blockads-belowarticle' )
+			) {
 				$preferences['liberty-ads-morearticle'] = [
 					'type' => 'toggle',
 					'label-message' => 'liberty-pref-ads-belowarticle',
@@ -70,8 +76,10 @@ class LibertyHooks extends Hooks{
 				];
 			}
 
-			if ( isset( $wgLibertyAdSetting['header'] ) && $wgLibertyAdSetting['header'] &&
-			$permissionManager->userHasRight( $user, 'blockads-header' ) ) {
+			if (
+				isset( $wgLibertyAdSetting['header'] ) && $wgLibertyAdSetting['header'] &&
+				$permissionManager->userHasRight( $user, 'blockads-header' )
+			) {
 				$preferences['liberty-ads-header'] = [
 					'type' => 'toggle',
 					'label-message' => 'liberty-pref-ads-header',
@@ -79,8 +87,10 @@ class LibertyHooks extends Hooks{
 				];
 			}
 
-			if ( isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] &&
-			$permissionManager->userHasRight( $user, 'blockads-right' ) ) {
+			if (
+				isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] &&
+				$permissionManager->userHasRight( $user, 'blockads-right' )
+			) {
 				$preferences['liberty-ads-rightads'] = [
 					'type' => 'toggle',
 					'label-message' => 'liberty-pref-ads-right',
@@ -88,8 +98,10 @@ class LibertyHooks extends Hooks{
 				];
 			}
 
-			if ( isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] &&
-			$permissionManager->userHasRight( $user, 'blockads-bottom' ) ) {
+			if (
+				isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] &&
+				$permissionManager->userHasRight( $user, 'blockads-bottom' )
+			) {
 				$preferences['liberty-ads-bottom'] = [
 					'type' => 'toggle',
 					'label-message' => 'liberty-pref-ads-bottom',
