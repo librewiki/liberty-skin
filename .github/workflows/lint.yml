@@ -14,8 +14,8 @@ jobs:
           php-version: '7.4'
 
       - run: |
-          apt-get update -yqq
-          apt-get install git -yqq
+          sudo apt-get update -yqq
+          sudo apt-get install git -yqq
           curl -sS https://getcomposer.org/installer | php
           php composer.phar install
 
@@ -26,7 +26,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - run: |
-        npm install -g eslint eslint-config-wikimedia eslint-plugin-json
-        eslint js --ignore-pattern 'lib/'
+    - run: npm install --location=global eslint eslint-config-wikimedia eslint-plugin-json
+    - run: eslint js --ignore-pattern 'lib/'
