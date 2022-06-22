@@ -1,0 +1,32 @@
+name: "Lint code"
+on:
+  push
+
+jobs:
+  phpcs:
+    name: Run phpcs
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - run: |
+          apt-get update -yqq
+          apt-get install git -yqq
+          curl -sS https://getcomposer.org/installer | php
+          php composer.phar install
+
+      - run: php composer.phar test
+
+    eslint:
+      name: Run eslint
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+
+      - run: |
+          npm install -g eslint eslint-config-wikimedia eslint-plugin-json
+          eslint js --ignore-pattern 'lib/'
