@@ -472,14 +472,23 @@ class LibertyTemplate extends BaseTemplate {
 	protected function contentsToolbox() {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
-		$watchlistManager = MediaWikiServices::getInstance()->getWatchlistManager();
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
-		$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		$services = MediaWikiServices::getInstance();
+
+		if ( method_exists( MediaWikiServices::class, 'getWatchlistManager' ) ) {
+			// MediaWiki 1.36+
+			$watchlistManager = $services->getWatchlistManager();
+			$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		} else {
+			// @phan-suppress-next-line PhanUndeclaredMethod
+			$watched = $user->isWatched( $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
+		}
+
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$permissionManager = $services->getPermissionManager();
+		$linkRenderer = $services->getLinkRenderer();
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 		?>
