@@ -1,6 +1,5 @@
 name: "Lint code"
-on:
-  push
+on: [pull_request, push]
 
 jobs:
   phpcs:
@@ -12,14 +11,9 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
+          tools: composer:v2
 
-      - run: |
-          sudo apt-get update -yqq
-          sudo apt-get install git -yqq
-          curl -sS https://getcomposer.org/installer | php
-          php composer.phar install
-
-      - run: php composer.phar test
+      - run: composer test
 
   eslint:
     name: Run eslint
