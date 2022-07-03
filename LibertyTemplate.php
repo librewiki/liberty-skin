@@ -182,8 +182,8 @@ class LibertyTemplate extends BaseTemplate {
 					<?php
 					// @codingStandardsIgnoreStart 
 					?>
-					<button type="submit" name="go" value="<?php echo $skin->msg( 'go' )->plain() ?>"id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
-					<button type="submit" name="fulltext" value="<?php echo $skin->msg( 'searchbutton' )->plain() ?>"id="mw-searchButton" class="btn btn-secondary" type="button">
+					<button type="submit" name="go" value="<?php echo $skin->msg( 'go' )->escaped() ?>"id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
+					<button type="submit" name="fulltext" value="<?php echo $skin->msg( 'searchbutton' )->escaped() ?>"id="mw-searchButton" class="btn btn-secondary" type="button">
 						<span class="fa fa-search"></span></button>
 					<?php
 					// @codingStandardsIgnoreEnd
@@ -317,7 +317,7 @@ class LibertyTemplate extends BaseTemplate {
 						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" 
 							class="dropdown-item view-logout" 
 							title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>">
-							<?php echo $skin->msg( 'logout' )->plain(); ?></a>
+							<?php echo $skin->msg( 'logout' )->escaped(); ?></a>
 					</div>
 				</div>
 				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
@@ -358,20 +358,20 @@ class LibertyTemplate extends BaseTemplate {
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title"><?php echo $skin->msg( 'liberty-login' )->plain() ?></h4>
+						<h4 class="modal-title"><?php echo $skin->msg( 'liberty-login' )->escaped() ?></h4>
 					</div>
 					<div class="modal-body">
 						<div id="modal-login-alert" class="alert alert-hidden alert-danger" role="alert">
 						</div>
 						<form id="modal-loginform" name="userlogin" class="modal-loginform" method="post">
-							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?php echo $skin->msg( 'userlogin-yourname-ph' )->plain() ?>" value="" name="lgname">
-							<label for="inputPassword" class="sr-only"><?php echo $skin->msg( 'userlogin-yourpassword' )->plain() ?></label>
-							<input class="loginPassword form-control" id="wpPassword1" tabindex="2" placeholder="<?php echo $skin->msg( 'userlogin-yourpassword-ph' )->plain() ?>" type="password" name="lgpassword">
+							<input class="loginText form-control" id="wpName1" tabindex="1" placeholder="<?php echo $skin->msg( 'userlogin-yourname-ph' )->escaped() ?>" value="" name="lgname">
+							<label for="inputPassword" class="sr-only"><?php echo $skin->msg( 'userlogin-yourpassword' )->escaped() ?></label>
+							<input class="loginPassword form-control" id="wpPassword1" tabindex="2" placeholder="<?php echo $skin->msg( 'userlogin-yourpassword-ph' )->escaped() ?>" type="password" name="lgpassword">
 							<div class="modal-checkbox">
 								<input name="lgremember" type="checkbox" value="1" id="lgremember" tabindex="3">
-								<label for="lgremember"><?php echo $skin->msg( 'liberty-remember' )->plain() ?></label>
+								<label for="lgremember"><?php echo $skin->msg( 'liberty-remember' )->escaped() ?></label>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->plain() ?>" tabindex="4">
+							<input class="btn btn-success btn-block" type="submit" value="<?php echo $skin->msg( 'liberty-login-btn' )->escaped() ?>" tabindex="4">
 							<?php echo $linkRenderer->makeKnownLink(
 								SpecialPage::getTitleFor( 'Userlogin' ),
 								$skin->msg( 'userlogin-joinproject' ),
@@ -399,8 +399,8 @@ class LibertyTemplate extends BaseTemplate {
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->plain(); ?></button>
-						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->plain(); ?></button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->escaped(); ?></button>
+						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->escaped(); ?></button>
 					</div>
 				</div>
 			</div>
@@ -436,12 +436,12 @@ class LibertyTemplate extends BaseTemplate {
 				<ul class="nav nav-tabs">
 					<li class="nav-item">
 						<a href="javascript:" class="nav-link active" id="liberty-recent-tab1">
-							<?php echo $skin->msg( 'recentchanges' )->plain() ?>
+							<?php echo $skin->msg( 'recentchanges' )->escaped() ?>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a href="javascript:" class="nav-link" id="liberty-recent-tab2">
-							<?php echo $skin->msg( 'liberty-recent-discussions' )->plain() ?>
+							<?php echo $skin->msg( 'liberty-recent-discussions' )->escaped() ?>
 						</a>
 					</li>
 				</ul>
@@ -548,7 +548,7 @@ class LibertyTemplate extends BaseTemplate {
 					if ( $action == 'view' ) { ?>
 						<button type="button" class="btn btn-secondary tools-btn tools-share">
 							<i class="far fa-share-square"></i>
-							<?php echo $skin->msg( 'liberty-share' )->plain() ?>
+							<?php echo $skin->msg( 'liberty-share' )->escaped() ?>
 						</button>
 					<?php } ?>
 					<?php
