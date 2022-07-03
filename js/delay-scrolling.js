@@ -75,7 +75,7 @@ $( window ).on( 'load', function () {
 			}
 			$( 'html,body' ).animate( {
 				scrollTop: ( $( id ).offset().top - navHeight - 10 )
-			}, 400);
+			}, 400 );
 			return false;
 		}
 	} );
@@ -90,7 +90,7 @@ $( window ).on( 'load', function () {
 			}
 			$( 'html,body' ).animate( {
 				scrollTop: ( 0 )
-			}, 350);
+			}, 350 );
 		}
 	} );
 	/* Preference Tab Click Process End */
