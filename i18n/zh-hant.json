@@ -39,6 +39,7 @@
 	"prefs-liberty": "Liberty外觀",
 	"prefs-color": "色彩設定",
 	"prefs-layout": "版型設定",
+	"prefs-ads": "廣告設定",
 	"liberty-pref-layout-navfix": "關閉靜態導覽列",
 	"liberty-pref-layout-sidebar": "移除右側欄",
 	"liberty-pref-layout-width": "固定寬度",
@@ -52,5 +53,13 @@
 	"liberty-pref-fonts-helplabel": "說明",
 	"liberty-pref-fonts-help": "Malgun Gothic 以外的字型會從 Google 伺服器來載入。",
 	"liberty-pref-dark": "忽略系統暗黑模式設定？",
-	"liberty-pref-dark-help": "選擇當暗黑模式生效時，是否允許系統設定。"
+	"liberty-pref-dark-help": "選擇當暗黑模式生效時，是否允許系統設定。",
+	"liberty-pref-ads-header": "移除頂部廣告。",
+	"liberty-pref-ads-right": "移除右側廣告。",
+	"liberty-pref-ads-bottom": "移除底部廣告。",
+	"liberty-pref-ads-belowarticle": "移除條目下方廣告。",
+	"right-blockads-header": "可在 Liberty 外觀移除頂部廣告。",
+	"right-blockads-right": "可在 Liberty 外觀移除右側廣告。",
+	"right-blockads-belowarticle": "可在 Liberty 外觀移除條目下方廣告。",
+	"right-blockads-bottom": "可在 Liberty 外觀移除底部廣告。"
 }
