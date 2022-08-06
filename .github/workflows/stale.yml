@@ -16,7 +16,7 @@ jobs:
           close-issue-message: 'This issue is closed because there was no activity for 2 weeks.'
           close-pr-message: 'This pull request is closed because there was no activity for 2 weeks.'
           days-before-issue-stale: 180
-          days-beffore-pr-stale: 180
+          days-before-pr-stale: 180
           days-before-issue-close: 14
           days-before-pr-close: 14
           stale-pr-label: "stale"
