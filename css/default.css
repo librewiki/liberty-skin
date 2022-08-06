@@ -706,6 +706,7 @@ strike {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	border-radius: 5px 5px 0 0;
+	z-index: 2;
 }
 
 #liberty-bottombtn .scroll-button {
