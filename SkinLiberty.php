@@ -14,7 +14,7 @@ class SkinLiberty extends SkinTemplate{
 	 */
 	public function initPage( OutputPage $out ) {
 		// @codingStandardsIgnoreLine
-		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup;
+		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup, $wgLibertyNavBarLogoImage;
 
 		$user = $this->getUser();
 		/* uncomment if needs to use UserGroupManager
@@ -142,6 +142,15 @@ class SkinLiberty extends SkinTemplate{
 			background-color: $mainColor;
 		}"
 		);
+
+		// navbar image settings
+		if ( isset( $wgLibertyNavBarLogoImage ) ) {
+			$out->addInlineStyle(
+				".Liberty .nav-wrapper .navbar .navbar-brand {
+					background: transparent url($wgLibertyNavBarLogoImage) no-repeat scroll left center/auto 1.9rem;
+				}"
+			);
+		}
 
 		// layout settings
 		$LibertyUserWidthSettings = $user->getOption( 'liberty-layout-width' );

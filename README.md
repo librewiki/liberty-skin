@@ -29,6 +29,7 @@ LocalSettings.php 파일에 아래와 같이 작성해주세요.
 | `$wgLibertyMobileReplaceAd` | 모바일 환경일 시 사이드바 광고를 하단으로 옮깁니다. | `true` | `false` |
 | `$wgLibertyEnableLiveRC` | 사이드바 최근 변경 사용 여부 | `true` | `true` |
 | `$wgLibertyMaxRecent` | 사이드바 최근 변경에 등장하는 편집의 최대 개수 | `10` | `10` |
+| `$wgLibertyNavBarLogoImage` | 내비게이션 바에 표시되는 로고 이미지  | `./image.png` | `null` |
 | `$wgLibertyLiveRCArticleNamespaces` | 사이드바 최근 변경 왼쪽 탭에 보여질 네임스페이스 목록 | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` |
 | `$wgLibertyLiveRCTalkNamespaces` | 사이드바 최근 변경 오른쪽 탭에 보여질 네임스페이스 목록 | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` |
 

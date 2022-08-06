@@ -27,6 +27,7 @@ Please set these variables in the LocalSettings.php file.
 | `$wgLibertyMobileReplaceAd` | In a mobile environment, move the sidebar ads to the bottom. | `true` | `false` |
 | `$wgLibertyEnableLiveRC` | Enables 'Recent Cahnges' on the right side | `true` | `true` |
 | `$wgLibertyMaxRecent` | Recent X edits appearing in 'Recent Changes' | `10` | `10` |
+| `$wgLibertyNavBarLogoImage` | Logo image displayed on navigation bar  | `./image.png` | `null` |
 | `$wgLibertyLiveRCArticleNamespaces` | Namespaces for the first tab in 'Recent Changes' | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` | `[NS_MAIN, NS_PROJECT, NS_TEMPLATE, NS_HELP, NS_CATEGORY]` |
 | `$wgLibertyLiveRCTalkNamespaces` | Namespaces for the second tab in 'Recent Changes' | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` |
 
