@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bxalber",
+			"ThisCarthing",
 			"Tobi 406",
 			"Umlaut",
 			"WikiBayer"
@@ -33,5 +34,7 @@
 	"prefs-layout": "Layouteinstellung",
 	"liberty-pref-layout-width": "Feste Breite",
 	"liberty-pref-layout-width-help": "Maximalgröße des Dokumentenbereiches",
+	"liberty-pref-color-main": "Hauptfarbe",
+	"liberty-pref-fonts": "Wähle die Schriftart aus, die du verwenden möchtest",
 	"liberty-pref-fonts-helplabel": "Hilfe"
 }
