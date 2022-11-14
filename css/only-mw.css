@@ -96,21 +96,24 @@
 	width: 100%;
 }
 
-.Liberty
-	.content-wrapper
-	.liberty-content
-	.liberty-content-main
-	.catlinks-allhidden {
-	display: none;
-}
-
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul {
 	padding: 0;
 	margin-left: 0.5rem;
+	list-style: none;
+	display: inline;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul > li {
 	margin: 0;
+	display: inline-block;
+	padding: 0 0.5em;
+	border-left: 1px solid #a2a9b1;
+	line-height: 1.25em;
+}
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks ul > li:first-child {
+	padding-left: 0.25em;
+	border-left: 0;
 }
 /* Content */
 
