@@ -115,6 +115,10 @@
 	padding-left: 0.25em;
 	border-left: 0;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks-allhidden {
+	display: none;
+}
 /* Content */
 
 /* Special Pages */
