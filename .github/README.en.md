@@ -4,7 +4,7 @@ Default skin of [LibreWiki](https://librewiki.net). This skin will be the main s
 
 ## Development
 
-Our canonical source is [GitLab.com](https://github.com/librewiki/liberty-skin), and we receive bug reports via [GitHub.com](https://github.com/librewiki/liberty-skin/issues) and patches via Github.com only. Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
+Our canonical source is [GitHub.com](https://github.com/librewiki/liberty-skin), and we receive bug reports via [GitHub.com](https://github.com/librewiki/liberty-skin/issues) and patches via Github.com only. Any source code found elsewhere is mirrored there, and developers do not guarantee about the code found elsewhere to work.
 
 Security vulnerability should be reported using email (dev (골뱅이!) librewiki.net) (replace (Korean text) with @).
 

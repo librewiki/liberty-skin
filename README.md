@@ -6,7 +6,7 @@
 
 ## 개발
 
-원본 소스는 [GitLab.com](https://github.com/librewiki/liberty-skin)에 존재하며, 버그 리포팅은 [bbs.librewiki.net](https://bbs.librewiki.net/)에서, 패치는 GitHub.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
+원본 소스는 [GitHub.com](https://github.com/librewiki/liberty-skin)에 존재하며, 버그 리포팅은 [bbs.librewiki.net](https://bbs.librewiki.net/)에서, 패치는 GitHub.com 에서만 받고 있습니다. 이 외의 호스팅에서 발견되는 코드는 모두 미러링이며, 코드의 최신성을 보증하지 않습니다.
 
 보안 취약점은 이메일 (dev(골뱅이!)librewiki.net) 로 보고해 주세요.
 
