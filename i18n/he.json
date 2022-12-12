@@ -6,7 +6,7 @@
 		]
 	},
 	"skinname-liberty": "ליברטי",
-	"liberty-desc": "עיצוב רספונסיבי בשביל [https://librewiki.net/ LibreWiki]",
+	"liberty-desc": "עיצוב מסתגל בשביל [https://librewiki.net/ LibreWiki]",
 	"liberty-dark-default": "לא להתעלם",
 	"liberty-dark-dark": "להתעלם ולהפעיל מצב חשוך",
 	"liberty-dark-light": "להתעלם ולהפעיל מצב בהיר",
@@ -56,7 +56,7 @@
 	"liberty-pref-ads-header": "הסרת פרסומות בכותרת עליונה.",
 	"liberty-pref-ads-right": "הסרת פרסומות משמאל.",
 	"liberty-pref-ads-bottom": "הסרת פרסומות בתחתית.",
-	"liberty-pref-ads-belowarticle": "הסרת פרסומות מתחת לערך.",
+	"liberty-pref-ads-belowarticle": "הסרת הפרסומות מתחת למרחב הערך.",
 	"right-blockads-header": "יכול להסיר פרסומות בכותרת העליונה בעיצוב ליברטי.",
 	"right-blockads-right": "יכול להסיר פרסומות משמאל בעיצוב ליברטי.",
 	"right-blockads-belowarticle": "יכול להסיר פרסומות מתחת לערך בעיצוב ליברטי.",
