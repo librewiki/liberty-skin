@@ -3,7 +3,8 @@
 		"authors": [
 			"Kly",
 			"LNDDYL",
-			"Winston Sung"
+			"Winston Sung",
+			"捍粵者"
 		]
 	},
 	"skinname-liberty": "Liberty",
@@ -57,7 +58,7 @@
 	"liberty-pref-ads-header": "移除頂部廣告。",
 	"liberty-pref-ads-right": "移除右側廣告。",
 	"liberty-pref-ads-bottom": "移除底部廣告。",
-	"liberty-pref-ads-belowarticle": "移除條目下方廣告。",
+	"liberty-pref-ads-belowarticle": "移除條目下方廣告",
 	"right-blockads-header": "可在 Liberty 外觀移除頂部廣告。",
 	"right-blockads-right": "可在 Liberty 外觀移除右側廣告。",
 	"right-blockads-belowarticle": "可在 Liberty 外觀移除條目下方廣告。",
