@@ -37,6 +37,7 @@
 	"prefs-liberty": "Apparentia Libertate",
 	"prefs-color": "Parametros de colores",
 	"prefs-layout": "Parametros de disposition",
+	"prefs-ads": "Parametros de publicitate",
 	"liberty-pref-layout-navfix": "Foras del barra de navigation static",
 	"liberty-pref-layout-sidebar": "Remover le barra lateral a dextra",
 	"liberty-pref-layout-width": "Latitude static",
@@ -50,5 +51,13 @@
 	"liberty-pref-fonts-helplabel": "Adjuta",
 	"liberty-pref-fonts-help": "Le typo de litteras essera cargate ab le servitores de Google, excepte le typo de litteras Malgun Gothic.",
 	"liberty-pref-dark": "Ignorar le parametro de modo obscur del systema?",
-	"liberty-pref-dark-help": "Selige si sequer le configuration del systema quando se activa le modo obscur."
+	"liberty-pref-dark-help": "Selige si sequer le configuration del systema quando se activa le modo obscur.",
+	"liberty-pref-ads-header": "Remover le publicitate del capite.",
+	"liberty-pref-ads-right": "Remover le publicitate al dextra.",
+	"liberty-pref-ads-bottom": "Remover le publicitate al fundo.",
+	"liberty-pref-ads-belowarticle": "Remover le publicitate sub le spatio del articulo.",
+	"right-blockads-header": "Pote remover le publicate sur le apparentia Liberty.",
+	"right-blockads-right": "Pote remover le publicitate al dextra sur le apparentia Liberty.",
+	"right-blockads-belowarticle": "Pote remover le publicitate sub le articulo sur le apparentia Liberty.",
+	"right-blockads-bottom": "Pote remover le publicitate al fundo sur le apparentia Liberty."
 }
