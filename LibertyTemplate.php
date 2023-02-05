@@ -15,7 +15,9 @@ class LibertyTemplate extends BaseTemplate {
 		$request = $skin->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
+		// @codingStandardsIgnoreStart
 		$LibertyUserSidebarSettings = MediaWikiServices::getInstance()->getUserOptionsLookup()->getOption( $user, 'liberty-layout-sidebar' );
+		// @codingStandardsIgnoreEnd
 ?>
 		<header>
 			<div class="nav-wrapper navbar-fixed-top">
