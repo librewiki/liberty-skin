@@ -15,9 +15,7 @@ class LibertyTemplate extends BaseTemplate {
 		$request = $skin->getRequest();
 		$action = $request->getVal( 'action', 'view' );
 		$title = $skin->getTitle();
-		$LibertyUserSidebarSettings = $user->getOption( 'liberty-layout-sidebar' );
-
-		$this->html( 'headelement' );
+		$LibertyUserSidebarSettings = MediaWikiServices::getInstance()->getUserOptionsLookup()->getOption( $user, 'liberty-layout-sidebar' );
 ?>
 		<header>
 			<div class="nav-wrapper navbar-fixed-top">
@@ -80,9 +78,8 @@ class LibertyTemplate extends BaseTemplate {
 							$this->buildAd( 'belowarticle' );
 						}
 						?>
-						</div>
+					</div>
 					<footer>
-
 						<div class="liberty-footer">
 							<?php
 							if ( $this->data['dataAfterContent'] ) {
@@ -114,13 +111,11 @@ class LibertyTemplate extends BaseTemplate {
 			// @codingStandardsIgnoreLine
 			echo '<script async defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>';
 		}
-		?>
-		<?php $this->loginModal(); ?>
-	<?php
-		$this->printTrail();
+
+		$this->loginModal();
+
 		$this->html( 'debughtml' );
-		echo Html::closeElement( 'body' );
-		echo Html::closeElement( 'html' );
+
 		echo "\n";
 	}
 

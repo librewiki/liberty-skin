@@ -1,6 +1,8 @@
 <?php
-// @codingStandardsIgnoreLine
-class SkinLiberty extends SkinTemplate{
+
+use MediaWiki\MediaWikiServices;
+
+class SkinLiberty extends SkinTemplate {
 	// @codingStandardsIgnoreStart
 	public $skinname = 'liberty';
 	public $stylename = 'Liberty';
@@ -17,14 +19,15 @@ class SkinLiberty extends SkinTemplate{
 		global $wgSitename, $wgTwitterAccount, $wgLanguageCode, $wgNaverVerification, $wgLogo, $wgLibertyEnableLiveRC, $wgLibertyAdSetting, $wgLibertyAdGroup, $wgLibertyNavBarLogoImage;
 
 		$user = $this->getUser();
+		$services = MediaWikiServices::getInstance();
+		$userOptionsLookup = $services->getUserOptionsLookup();
 		/* uncomment if needs to use UserGroupManager
-		$service = MediaWiki\MediaWikiServices::getInstance();
-		$usergroupmanager = $service->getUserGroupManager();
-		$userGroups = $usergroupmanager->getUserGroups($user);
+		$userGroupManager = $services->getUserGroupManager();
+		$userGroups = $userGroupManager->getUserGroups( $user );
 		*/
 
-		$optionMainColor = $user->getOption( 'liberty-color-main' );
-		$optionSecondColor = $user->getOption( 'liberty-color-second' );
+		$optionMainColor = $userOptionsLookup->getOption( $user, 'liberty-color-main' );
+		$optionSecondColor = $userOptionsLookup->getOption( $user, 'liberty-color-second' );
 
 		$mainColor = $optionMainColor ? $optionMainColor : $GLOBALS['wgLibertyMainColor'];
 		// @codingStandardsIgnoreLine
@@ -153,11 +156,10 @@ class SkinLiberty extends SkinTemplate{
 		}
 
 		// layout settings
-		$LibertyUserWidthSettings = $user->getOption( 'liberty-layout-width' );
-		$LibertyUserSidebarSettings = $user->getOption( 'liberty-layout-sidebar' );
-		$LibertyUserNavbarSettings = $user->getOption( 'liberty-layout-navfix' );
-		$LibertyUsercontrolbarSettings = $user->getOption( 'liberty-layout-controlbar' );
-
+		$LibertyUserWidthSettings = $userOptionsLookup->getOption( $user, 'liberty-layout-width' );
+		$LibertyUserSidebarSettings = $userOptionsLookup->getOption( $user, 'liberty-layout-sidebar' );
+		$LibertyUserNavbarSettings = $userOptionsLookup->getOption( $user, 'liberty-layout-navfix' );
+		$LibertyUsercontrolbarSettings = $userOptionsLookup->getOption( $user, 'liberty-layout-controlbar' );
 
 		if ( isset( $LibertyUserNavbarSettings ) && $LibertyUserNavbarSettings ) {
 			$out->addInlineStyle(
@@ -195,8 +197,8 @@ class SkinLiberty extends SkinTemplate{
 			);
 		}
 
-		// 폰트 설정
-		$LibertyUserFontSettings = $user->getOption( 'liberty-font' );
+		// Font settings
+		$LibertyUserFontSettings = $userOptionsLookup->getOption( $user, 'liberty-font' );
 		if ( $LibertyUserFontSettings !== null ) {
 			$out->addInlineStyle(
 				"body, h1, h2, h3, h4, h5, h6, b {
@@ -211,27 +213,27 @@ class SkinLiberty extends SkinTemplate{
 			if ( isset( $wgLibertyAdGroup ) && $wgLibertyAdGroup == 'differ' ) {
 				if (
 					isset( $wgLibertyAdSetting['header'] ) && $wgLibertyAdSetting['header'] &&
-					$user->getOption( 'liberty-ads-header' )
+					$userOptionsLookup->getOption( $user, 'liberty-ads-header' )
 				) {
-					$wgLibertyAdSetting['header'] == null;
+					$wgLibertyAdSetting['header'] = null;
 				}
 				if (
 					isset( $wgLibertyAdSetting['right'] ) && $wgLibertyAdSetting['right'] &&
-					$user->getOption( 'liberty-ads-right' )
+					$userOptionsLookup->getOption( $user, 'liberty-ads-right' )
 				) {
-					$wgLibertyAdSetting['right'] == null;
+					$wgLibertyAdSetting['right'] = null;
 				}
 				if (
 					isset( $wgLibertyAdSetting['bottom'] ) && $wgLibertyAdSetting['bottom'] &&
-					$user->getOption( 'liberty-ads-bottom' )
+					$userOptionsLookup->getOption( $user, 'liberty-ads-bottom' )
 				) {
-					$wgLibertyAdSetting['bottom'] == null;
+					$wgLibertyAdSetting['bottom'] = null;
 				}
 				if (
 					isset( $wgLibertyAdSetting['belowarticle'] ) && $wgLibertyAdSetting['belowarticle'] &&
-					$user->getOption( 'liberty-ads-belowarticle' )
+					$userOptionsLookup->getOption( $user, 'liberty-ads-belowarticle' )
 				) {
-					$wgLibertyAdSetting['belowarticle'] == null;
+					$wgLibertyAdSetting['belowarticle'] = null;
 				}
 			}
 		}
@@ -264,7 +266,7 @@ class SkinLiberty extends SkinTemplate{
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toccolours, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc ul, .Liberty .content-wrapper .liberty-content .liberty-content-main .toc li { background-color: #000; }
 		.Liberty .content-wrapper .liberty-content .liberty-content-main .toc .toctitle { background-color: #1F2023; }";
 
-		$LibertyUserDarkSetting = $user->getOption( 'liberty-dark' );
+		$LibertyUserDarkSetting = $userOptionsLookup->getOption( $user, 'liberty-dark' );
 		if ( $LibertyUserDarkSetting === 'dark' ) {
 			$out->addInlineStyle( $LibertyDarkCss );
 		} elseif ( $LibertyUserDarkSetting === null ) {
