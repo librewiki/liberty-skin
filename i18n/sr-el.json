@@ -13,6 +13,7 @@
 	"liberty-purge": "Osveži",
 	"liberty-recent-discussions": "Nedavne diskusije",
 	"liberty-remember": "Zapamti moju prijavu",
+	"liberty-share": "Deli",
 	"liberty-tooltip-info": "Vidi informaciju dokumenta",
 	"liberty-tooltip-purge": "Osveži keš memoriju ove stranice.",
 	"liberty-view-more": "Prikaži više",
@@ -27,7 +28,7 @@
 	"prefs-font": "Podešavanja fonta",
 	"liberty-pref-fonts": "Odaberite font koji želite da koristite",
 	"liberty-pref-fonts-helplabel": "Pomoć",
-	"liberty-pref-fonts-help": "Font će se učitavati s udaljene lokacije, osim Malgun Gothic.",
-	"liberty-pref-dark": "Ignoriši sistemsko podešavanje mračnog režima?",
+	"liberty-pref-fonts-help": "Font će se učitavati sa Guglovih servera, osim Malgun Gothic.",
+	"liberty-pref-dark": "Zanemariti sistemsko podešavanje tamnog režima?",
 	"liberty-pref-dark-help": "Odaberite da li da sledite sistemske postavke prilikom aktiviranja mračnog režima."
 }
