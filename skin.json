@@ -9,12 +9,25 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.12.0",
+	"version": "1.13.0",
 	"requires": {
-		"MediaWiki": ">= 1.37.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"ValidSkinNames": {
-		"liberty": "Liberty"
+		"liberty": {
+			"displayname": "Liberty",
+			"class": "SkinLiberty",
+			"args": [ {
+				"name": "liberty",
+				"bodyClasses": [ "Liberty", "width-size" ],
+				"bodyOnly": true,
+				"responsive": true,
+				"template": "LibertyTemplate",
+				"styles": [
+					"skins.liberty.styles"
+				]
+			} ]
+		}
 	},
 	"MessagesDirs": {
 		"Liberty": [
@@ -30,7 +43,7 @@
 		"LibertyOgLogo": null,
 		"TwitterAccount": null,
 		"NaverVerification": null,
-		"wgLibertyMobileReplaceAd": false,
+		"LibertyMobileReplaceAd": false,
 		"LibertyLiveRCArticleNamespaces": [
 			0,
 			4,
