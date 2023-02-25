@@ -575,7 +575,7 @@ class LibertyTemplate extends BaseTemplate {
 						// The JS will transform the edit button *above* into the VE-ful one,
 						// whereas _this_ one will become the "edit source" button
 						if ( $hasVisualEditor ) {
-							if ( $action !== 'edit' && $editable == true) {
+							if ( $action !== 'edit' && $editable == true ) {
 								$editLabel = 'visualeditor-ca-editsource';
 								echo $linkRenderer->makeKnownLink(
 									$title,
