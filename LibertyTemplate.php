@@ -469,14 +469,16 @@ class LibertyTemplate extends BaseTemplate {
 	protected function contentsToolbox() {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
-		$watchlistManager = MediaWikiServices::getInstance()->getWatchlistManager();
+		$services = MediaWikiServices::getInstance();
+		$watchlistManager = $services->getWatchlistManager();
 		$title = $skin->getTitle();
 		$revid = $skin->getRequest()->getText( 'oldid' );
 		$watched = $watchlistManager->isWatchedIgnoringRights( $user, $skin->getRelevantTitle() ) ? 'unwatch' : 'watch';
 		$editable = isset( $this->data['content_navigation']['views']['edit'] );
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
-		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$permissionManager = $services->getPermissionManager();
+		$linkRenderer = $services->getLinkRenderer();
+		$hasVisualEditor = ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 		?>
@@ -485,9 +487,17 @@ class LibertyTemplate extends BaseTemplate {
 				<?php
 				if ( $action != 'edit' ) {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
+					$editLabel = 'edit';
+					// If VE is enabled, the regular button becomes the "edit source" button
+					// @todo FIXME: for a bunch of other skins, this happens automatically.
+					// For Liberty I had to manually do this and add the VE edit button (below).
+					// But why?
+					if ( $hasVisualEditor ) {
+						$editLabel = 'visualeditor-ca-editsource';
+					}
 					echo $linkRenderer->makeKnownLink(
 						$title,
-						new HtmlArmor( $editIcon . $skin->msg( 'edit' )->plain() ),
+						new HtmlArmor( $editIcon . $skin->msg( $editLabel )->plain() ),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'id' => 'ca-edit',
@@ -507,6 +517,27 @@ class LibertyTemplate extends BaseTemplate {
 							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
 						]
 					);
+				}
+				// If VisualEditor is installed, it needs an "edit" button in order
+				// to correctly set up its JS
+				// The JS will transform the edit button *above* into the VE-ful one,
+				// whereas _this_ one will become the "edit source" button
+				if ( $hasVisualEditor ) {
+					if ( $action !== 'edit' ) {
+						$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
+						$editMsg = $editable ? 'edit' : 'viewsource';
+						echo $linkRenderer->makeKnownLink(
+							$title,
+							new HtmlArmor( $editIcon . $skin->msg( $editMsg )->plain() ),
+							[
+								'class' => 'btn btn-secondary tools-btn',
+								'id' => 'ca-ve-edit',
+								'title' => Linker::titleAttrib( 'ca-ve-edit', 'withaccess' ),
+								'accesskey' => Linker::accesskey( 'ca-ve-edit' )
+							],
+							$revid ? [ 'action' => 'veedit', 'oldid' => $revid ] : [ 'action' => 'veedit' ]
+						);
+					}
 				}
 					if ( $companionTitle && $action != 'edit' ) {
 						if ( $title->isTalkPage() && $action != 'history' ) {
