@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.13.2",
+	"version": "1.13.3",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
@@ -73,9 +73,11 @@
 		"skins.liberty.styles": {
 			"class": "ResourceLoaderSkinModule",
 			"features": {
-				"legacy": false,
 				"interface": false,
-				"toc": false
+				"toc": false,
+				"content-media": true,
+				"content-links": true,
+				"content-tables": true
 			},
 			"styles": {
 				"bootstrap/css/bootstrap.min.css": {
