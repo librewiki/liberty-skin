@@ -85,6 +85,11 @@
 	border-radius: 0.35rem;
 }
 
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-editsection {
+	font-size: 1rem;
+	margin-left: 0.5rem;
+}
+
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks {
 	border: 1px solid #e1e8ed;
 	padding: 0.4rem;

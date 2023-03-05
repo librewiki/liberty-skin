@@ -478,7 +478,7 @@ class LibertyTemplate extends BaseTemplate {
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = $services->getPermissionManager();
 		$linkRenderer = $services->getLinkRenderer();
-		$hasVisualEditor = ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' );
+		//$hasVisualEditor = ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 		?>
@@ -487,25 +487,16 @@ class LibertyTemplate extends BaseTemplate {
 				<?php
 				if ( $action != 'edit' ) {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
-					$editLabel = 'edit';
-					$editLink = 'edit';
-					// If VE is enabled, the regular button becomes the "edit source" button
-					// @todo FIXME: for a bunch of other skins, this happens automatically.
-					// For Liberty I had to manually do this and add the VE edit button (below).
-					// But why?
-					if ( $hasVisualEditor ) {
-						$editLink = 've-edit';
-					}
 					echo $linkRenderer->makeKnownLink(
 						$title,
-						new HtmlArmor( $editIcon . $skin->msg( $editLabel )->plain() ),
+						new HtmlArmor( $editIcon . $skin->msg( "edit" )->plain() ),
 						[
 							'class' => 'btn btn-secondary tools-btn',
-							'id' => 'ca-' . $editLink,
-							'title' => Linker::titleAttrib( 'ca-' . $editLink, 'withaccess' ),
-							'accesskey' => Linker::accesskey( 'ca-' . $editLink )
+							'id' => 'ca-edit',
+							'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-edit' )
 						],
-						$revid ? [ 'action' => $editLink, 'oldid' => $revid ] : [ 'action' => $editLink ]
+						$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
 					);
 				}
 				if ( $action == 'edit' || $action == 'history' ) {
@@ -570,26 +561,6 @@ class LibertyTemplate extends BaseTemplate {
 					?>
 					<div class="dropdown-menu dropdown-menu-right" role="menu">
 						<?php
-						// If VisualEditor is installed, it needs an "edit" button in order
-						// to correctly set up its JS
-						// The JS will transform the edit button *above* into the VE-ful one,
-						// whereas _this_ one will become the "edit source" button
-						if ( $hasVisualEditor ) {
-							if ( $action !== 'edit' && $editable == true ) {
-								$editLabel = 'visualeditor-ca-editsource';
-								echo $linkRenderer->makeKnownLink(
-									$title,
-									new HtmlArmor( $skin->msg( $editLabel )->plain() ),
-									[
-										'class' => 'dropdown-item',
-										'id' => 'ca-edit',
-										'title' => Linker::titleAttrib( 'ca-edit', 'withaccess' ),
-										'accesskey' => Linker::accesskey( 'ca-edit' )
-									],
-									$revid ? [ 'action' => 'edit', 'oldid' => $revid ] : [ 'action' => 'edit' ]
-								);
-							}
-						}
 						if ( $title->inNamespaces( NS_USER, NS_USER_TALK ) ) {
 							// "User contributions" link on user and user talk pages
 							echo $linkRenderer->makeKnownLink(
