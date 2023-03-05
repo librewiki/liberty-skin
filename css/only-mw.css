@@ -124,6 +124,10 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .catlinks-allhidden {
 	display: none;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main .mw-hidden-cats-hidden {
+	display: none;
+}
 /* Content */
 
 /* Special Pages */
@@ -202,6 +206,8 @@ html .suggestions-result-current {
 .Liberty .content-wrapper .liberty-content .liberty-content-main .tright {
 	margin-left: 0.8rem;
 	margin-bottom: 0.8rem;
+	float: right;
+	clear: right;
 }
 
 .Liberty .content-wrapper .liberty-content .liberty-content-main .thumb .thumbcaption {

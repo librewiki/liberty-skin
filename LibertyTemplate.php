@@ -478,7 +478,7 @@ class LibertyTemplate extends BaseTemplate {
 		$action = $skin->getRequest()->getVal( 'action', 'view' );
 		$permissionManager = $services->getPermissionManager();
 		$linkRenderer = $services->getLinkRenderer();
-		//$hasVisualEditor = ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' );
+		// $hasVisualEditor = ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' );
 		if ( $title->getNamespace() != NS_SPECIAL ) {
 			$companionTitle = $title->isTalkPage() ? $title->getSubjectPage() : $title->getTalkPage();
 		?>
