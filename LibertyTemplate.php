@@ -395,10 +395,6 @@ class LibertyTemplate extends BaseTemplate {
 							<input type="hidden" name="format" value="json" />
 						</form>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $skin->msg( 'liberty-btn-close' )->escaped(); ?></button>
-						<button type="button" class="btn btn-primary"><?php echo $skin->msg( 'liberty-btn-save-changes' )->escaped(); ?></button>
-					</div>
 				</div>
 			</div>
 		</div>
