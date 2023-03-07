@@ -151,6 +151,11 @@ class SkinLiberty extends SkinTemplate {
 			$out->addInlineStyle(
 				".Liberty .nav-wrapper .navbar .navbar-brand {
 					background: transparent url($wgLibertyNavBarLogoImage) no-repeat scroll left center/auto 1.9rem;
+				}
+				@media screen and (max-width: 397px){
+					.Liberty .nav-wrapper .navbar .navbar-brand {
+						background: transparent url($wgLibertyNavBarLogoImage) no-repeat scroll left center/auto 1.5rem;
+					}
 				}"
 			);
 		}
