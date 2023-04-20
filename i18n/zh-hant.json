@@ -39,7 +39,7 @@
 	"liberty.js": "/* 任何此處的JavaScript都會在使用者使用Liberty外觀時載入 */",
 	"prefs-liberty": "Liberty外觀",
 	"prefs-color": "色彩設定",
-	"prefs-layout": "版型設定",
+	"prefs-layout": "版面設定",
 	"prefs-ads": "廣告設定",
 	"liberty-pref-layout-navfix": "關閉靜態導覽列",
 	"liberty-pref-layout-sidebar": "移除右側欄",
