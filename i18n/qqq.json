@@ -5,6 +5,7 @@
 			"Amire80",
 			"Kizule",
 			"Robby",
+			"Shirayuki",
 			"Verdy p",
 			"Zoranzoki21"
 		]
@@ -28,5 +29,6 @@
 	"liberty-layout-select-1400": "Layout size.",
 	"liberty-layout-select-1500": "Layout size.",
 	"liberty-layout-select-1600": "Layout size.",
+	"liberty.css": "{{related/css}}",
 	"liberty-pref-fonts-helplabel": "{{Identical|Help}}"
 }
