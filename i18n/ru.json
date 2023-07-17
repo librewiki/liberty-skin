@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BerryAVGN",
 			"Gulka.nik",
 			"Helpau",
 			"Okras",
@@ -8,7 +9,7 @@
 		]
 	},
 	"skinname-liberty": "Свобода",
-	"liberty-desc": "Скин для [https://librewiki.net/ LibreWiki]",
+	"liberty-desc": "Тема оформления для [https://librewiki.net/ LibreWiki]",
 	"liberty-dark-default": "Не игнорировать",
 	"liberty-dark-dark": "Игнорировать и активировать тёмную тему",
 	"liberty-dark-light": "Игнорировать и активировать светлую тему",
@@ -17,7 +18,7 @@
 	"liberty-forgot-pw": "Забыли пароль?",
 	"liberty-layout-select-1000": "1000px",
 	"liberty-layout-select-1100": "1100px",
-	"liberty-layout-select-1200": "1200px (по умолчанию)",
+	"liberty-layout-select-1200": "1200 пикс. (по умолчанию)",
 	"liberty-layout-select-1300": "1300px",
 	"liberty-layout-select-1400": "1400px",
 	"liberty-layout-select-1500": "1500px",
@@ -35,12 +36,13 @@
 	"liberty-tooltip-info": "Посмотреть информацию о документе",
 	"liberty-tooltip-purge": "Очистить кэш этой страницы.",
 	"liberty-view-more": "Показать все",
-	"liberty.css": "/* Размещённый здесь CSS будет применяться к теме оформления Liberty */",
-	"liberty.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления Liberty */",
-	"prefs-liberty": "Liberty skin",
+	"liberty.css": "/* Размещённый здесь CSS будет применяться к теме оформления «Свобода» */",
+	"liberty.js": "/* Размещённый здесь код JavaScript будет загружаться пользователям, использующим тему оформления «Свобода» */",
+	"prefs-liberty": "Тема оформления «Свобода»",
 	"prefs-color": "Настройки цвета",
 	"prefs-layout": "Настройка макета",
 	"prefs-ads": "Настройки рекламы",
+	"liberty-pref-layout-navfix": "Отключение статической навигационной панели",
 	"liberty-pref-layout-sidebar": "Убрать правую боковую панель",
 	"liberty-pref-layout-width": "Статическая ширина",
 	"liberty-pref-layout-width-help": "Установить максимальный размер области документа",
@@ -53,5 +55,13 @@
 	"liberty-pref-fonts-helplabel": "Справка",
 	"liberty-pref-fonts-help": "Шрифт будет загружен с серверов Google, за исключением шрифта Malgun Gothic.",
 	"liberty-pref-dark": "Игнорировать системную настройку тёмного режима?",
-	"liberty-pref-dark-help": "Выберите, следует ли следовать настройкам системы при активации темного режима."
+	"liberty-pref-dark-help": "Выберите, следует ли следовать настройкам системы при активации тёмного режима.",
+	"liberty-pref-ads-header": "Убрать рекламу в заголовке.",
+	"liberty-pref-ads-right": "Убрать рекламу справа.",
+	"liberty-pref-ads-bottom": "Убрать нижнюю рекламу.",
+	"liberty-pref-ads-belowarticle": "Убрать рекламу, расположенную ниже места для статьи",
+	"right-blockads-header": "Возможность удаления рекламы в заголовках на теме оформления «Свобода».",
+	"right-blockads-right": "Возможность удаления рекламы в правой части на теме оформления «Свобода».",
+	"right-blockads-belowarticle": "Возможность удаления рекламы ниже статьи на теме оформления «Свобода».",
+	"right-blockads-bottom": "Возможность удаления нижней рекламы на теме оформления «Свобода»."
 }
