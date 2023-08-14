@@ -3,6 +3,7 @@
 		"authors": [
 			"500000000006城",
 			"A Chinese Wikipedian",
+			"CrownedWharf566",
 			"Gokouruki",
 			"Lakejason0",
 			"Looong",
@@ -63,7 +64,7 @@
 	"liberty-pref-ads-header": "移除顶部广告。",
 	"liberty-pref-ads-right": "移除右侧广告。",
 	"liberty-pref-ads-bottom": "移除底部广告。",
-	"liberty-pref-ads-belowarticle": "移除文章下方广告。",
+	"liberty-pref-ads-belowarticle": "移除条目空间下方广告。",
 	"right-blockads-header": "可以在皮肤Liberty中移除顶部广告",
 	"right-blockads-right": "可以在皮肤Liberty中移除右侧广告",
 	"right-blockads-belowarticle": "可以在皮肤Liberty中移除文章下方广告",
