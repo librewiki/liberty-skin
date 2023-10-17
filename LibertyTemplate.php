@@ -545,7 +545,7 @@ class LibertyTemplate extends BaseTemplate {
 							<i class="far fa-share-square"></i>
 							<?php echo $skin->msg( 'liberty-share' )->escaped() ?>
 						</button>
-					<?php
+				<?php
 				}
 				// @codingStandardsIgnoreStart 
 					?>
