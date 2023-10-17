@@ -506,46 +506,46 @@ class LibertyTemplate extends BaseTemplate {
 						]
 					);
 				}
-					if ( $companionTitle && $action != 'edit' ) {
-						if ( $title->isTalkPage() && $action != 'history' ) {
-							$titlename = $skin->msg( 'nstab-main' )->plain();
-							$additionalArrayStuff = [
-								'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'ca-nstab-main' )
-							];
-						} else {
-							$titlename = $skin->msg( 'talk' )->plain();
-							$additionalArrayStuff = [
-								'title' => Linker::titleAttrib( 'ca-talk', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'ca-talk' )
-							];
-						}
-						echo $linkRenderer->makeKnownLink(
-							$companionTitle,
-							$titlename,
-							[
-								'class' => 'btn btn-secondary tools-btn',
-							] + $additionalArrayStuff
-						);
+				if ( $companionTitle && $action != 'edit' ) {
+					if ( $title->isTalkPage() && $action != 'history' ) {
+						$titlename = $skin->msg( 'nstab-main' )->plain();
+						$additionalArrayStuff = [
+							'title' => Linker::titleAttrib( 'ca-nstab-main', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-nstab-main' )
+						];
+					} else {
+						$titlename = $skin->msg( 'talk' )->plain();
+						$additionalArrayStuff = [
+							'title' => Linker::titleAttrib( 'ca-talk', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-talk' )
+						];
 					}
-					if ( $action != 'history' ) {
-						echo $linkRenderer->makeKnownLink(
-							$title,
-							$skin->msg( 'history' )->plain(),
-							[
-								'class' => 'btn btn-secondary tools-btn',
-								'title' => Linker::titleAttrib( 'ca-history', 'withaccess' ),
-								'accesskey' => Linker::accesskey( 'ca-history' )
-							],
-							[ 'action' => 'history' ]
-						);
-					}
-					if ( $action == 'view' ) { ?>
+					echo $linkRenderer->makeKnownLink(
+						$companionTitle,
+						$titlename,
+						[
+							'class' => 'btn btn-secondary tools-btn',
+						] + $additionalArrayStuff
+					);
+				}
+				if ( $action != 'history' ) {
+					echo $linkRenderer->makeKnownLink(
+						$title,
+						$skin->msg( 'history' )->plain(),
+						[
+							'class' => 'btn btn-secondary tools-btn',
+							'title' => Linker::titleAttrib( 'ca-history', 'withaccess' ),
+							'accesskey' => Linker::accesskey( 'ca-history' )
+						],
+						[ 'action' => 'history' ]
+					);
+				}
+				if ( $action == 'view' ) { ?>
 						<button type="button" class="btn btn-secondary tools-btn tools-share">
 							<i class="far fa-share-square"></i>
 							<?php echo $skin->msg( 'liberty-share' )->escaped() ?>
 						</button>
-					<?php } ?>
+				<?php } ?>
 					<?php
 					// @codingStandardsIgnoreStart 
 					?>
