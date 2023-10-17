@@ -877,8 +877,9 @@ class LibertyTemplate extends BaseTemplate {
 
 		$headings = [];
 		$currentHeading = null;
-		$userName = $this->getSkin()->getUser()->getName();
-		$userLang = $this->getSkin()->getLanguage()->mCode;
+		$skin = $this->getSkin();
+		$userName = $skin->getUser()->getName();
+		$userLang = $skin->getLanguage()->mCode;
 		$globalData = ContentHandler::getContentText( WikiPage::factory(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
 		)->getContent( RevisionRecord::RAW ) );
@@ -940,7 +941,7 @@ class LibertyTemplate extends BaseTemplate {
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
 				if ( isset( $data['display'] ) ) {
-					$textObj = wfMessage( $data['display'] );
+					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
 						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 					} else {
@@ -957,7 +958,7 @@ class LibertyTemplate extends BaseTemplate {
 
 				// Title
 				if ( isset( $data['title'] ) ) {
-					$titleObj = wfMessage( $data['title'] );
+					$titleObj = $skin->msg( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
 						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
@@ -1039,7 +1040,7 @@ class LibertyTemplate extends BaseTemplate {
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
 				if ( isset( $data['display'] ) ) {
-					$textObj = wfMessage( $data['display'] );
+					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
 						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 					} else {
@@ -1056,7 +1057,7 @@ class LibertyTemplate extends BaseTemplate {
 
 				// Title
 				if ( isset( $data['title'] ) ) {
-					$titleObj = wfMessage( $data['title'] );
+					$titleObj = $skin->msg( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
 						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
@@ -1136,14 +1137,14 @@ class LibertyTemplate extends BaseTemplate {
 				// thing on the right side of the pipe isn't the name of a MW:
 				// message, then and _only_ then render it as-is
 				if ( isset( $data['display'] ) ) {
-					$textObj = wfMessage( $data['display'] );
+					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
 						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 					} else {
 						$text = $textObj->text();
 					}
 				} else {
-					$text = "";
+					$text = '';
 				}
 
 				// If icon and text both empty
@@ -1153,7 +1154,7 @@ class LibertyTemplate extends BaseTemplate {
 
 				// Title
 				if ( isset( $data['title'] ) ) {
-					$titleObj = wfMessage( $data['title'] );
+					$titleObj = $skin->msg( $data['title'] );
 					if ( $titleObj->isDisabled() ) {
 						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
 					} else {
