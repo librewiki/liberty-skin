@@ -726,8 +726,10 @@ class LibertyTemplate extends BaseTemplate {
 	protected function renderPortal( $contents ) {
 		$skin = $this->getSkin();
 		$user = $skin->getUser();
-		$userGroup = $user->getGroups();
-		$userRights = MediaWikiServices::getInstance()->getPermissionManager()->getUserPermissions( $user );
+		$services = MediaWikiServices::getInstance();
+		$userGroupManager = $services->getUserGroupManager();
+		$userGroup = $userGroupManager->getUserGroups( $user );
+		$userRights = $services->getPermissionManager()->getUserPermissions( $user );
 
 		foreach ( $contents as $content ) {
 			if ( !$content ) {
