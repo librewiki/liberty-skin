@@ -1,8 +1,8 @@
 <?php // @codingStandardsIgnoreLine
 
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Permissions\RestrictionStore;
+use MediaWiki\Revision\RevisionRecord;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
