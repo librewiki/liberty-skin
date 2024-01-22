@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Permissions\RestrictionStore;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
@@ -622,7 +623,7 @@ class LibertyTemplate extends BaseTemplate {
 							<div class="dropdown-divider"></div>
 							<?php
 							// different labels depending on whether the page is or isn't protected
-							$protectionMsg = $title->isProtected() ? 'unprotect' : 'protect';
+							$protectionMsg = $this->isProtectedTitle( $title ) ? 'unprotect' : 'protect';
 							echo $linkRenderer->makeKnownLink(
 								$title,
 								$skin->msg( $protectionMsg )->plain(),
@@ -882,15 +883,15 @@ class LibertyTemplate extends BaseTemplate {
 		$skin = $this->getSkin();
 		$userName = $skin->getUser()->getName();
 		$userLang = $skin->getLanguage()->mCode;
-		$globalData = ContentHandler::getContentText( WikiPage::factory(
+		$globalData = ContentHandler::getContentText( $this->getContentOfTitle(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
-		)->getContent( RevisionRecord::RAW ) );
-		$globalLangData = ContentHandler::getContentText( WikiPage::factory(
+		) );
+		$globalLangData = ContentHandler::getContentText( $this->getContentOfTitle(
 			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
-		)->getContent( RevisionRecord::RAW ) );
-		$userData = ContentHandler::getContentText( WikiPage::factory(
+		) );
+		$userData = ContentHandler::getContentText( $this->getContentOfTitle(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
-		)->getContent( RevisionRecord::RAW ) );
+		) );
 		if ( !empty( $userData ) ) {
 			$data = $userData;
 		} elseif ( !empty( $globalLangData ) ) {
@@ -1238,4 +1239,26 @@ class LibertyTemplate extends BaseTemplate {
 		</div>
 <?php
 	}
+
+	private function getContentOfTitle( Title $title ): ?Content {
+		$page = null;
+
+		if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+			$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+			$page = $wikiPageFactory->newFromTitle( $title );
+		} else {
+			$page = WikiPage::factory( $title );
+		}
+
+		return $page->getContent( RevisionRecord::RAW );
+	}
+
+	private function isProtectedTitle( Title $title ): bool {
+		if ( method_exists( RestrictionStore::class, 'isProtected' ) ) {
+			return MediaWikiServices::getInstance()->getRestrictionStore()->isProtected( $title );
+		} else {
+			return $title->isProtected();
+		}
+	}
 }
+
