@@ -1,5 +1,7 @@
-<?php //phpcs:ignore
-class LibertyHooks extends Hooks {
+<?php
+
+//phpcs:ignore
+class LibertyHooks {
 	/**
 	 * @since 1.17.0
 	 * @param OutputPage $out
