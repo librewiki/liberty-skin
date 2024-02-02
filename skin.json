@@ -71,7 +71,7 @@
 	],
 	"ResourceModules": {
 		"skins.liberty.styles": {
-			"class": "ResourceLoaderSkinModule",
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
 			"features": {
 				"interface": false,
 				"toc": false,
