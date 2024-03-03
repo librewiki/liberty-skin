@@ -924,7 +924,8 @@ class LibertyTemplate extends BaseTemplate {
 				foreach ( $split as $key => $value ) {
 					$valueArr = explode( '=', trim( $value ) );
 					if ( isset( $valueArr[1] ) ) {
-						$data[$valueArr[0]] = $valueArr[1];
+						$newValue = implode( '=', array_slice($valueArr, 1));
+						$data[$valueArr[0]] = $newValue;
 					} else {
 						$data[$types[$key]] = trim( $value );
 					}
@@ -946,7 +947,7 @@ class LibertyTemplate extends BaseTemplate {
 				if ( isset( $data['display'] ) ) {
 					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
-						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+						$href = $data['link'];
 					} else {
 						$text = $textObj->text();
 					}
