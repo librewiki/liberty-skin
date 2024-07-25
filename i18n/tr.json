@@ -12,7 +12,7 @@
 	"skinname-liberty": "Liberty",
 	"liberty-desc": "[https://librewiki.net/ LibreWiki] için duyarlı görünüm",
 	"liberty-dark-default": "Görmezden gelme",
-	"liberty-dark-dark": "Karanlık modu yoksay ve etkinleştir",
+	"liberty-dark-dark": "Koyu kipi yok say ve etkinleştir",
 	"liberty-dark-light": "Parlak modu yoksay ve etkinleştir",
 	"liberty-feed-new": "[Yeni]",
 	"liberty-font-name-default": "varsayılan",
@@ -55,8 +55,8 @@
 	"liberty-pref-fonts": "Kullanmak istediğiniz yazı tipini seçin",
 	"liberty-pref-fonts-helplabel": "Yardım",
 	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic yazı tipi hariç Google'ın sunucularından yüklenecek.",
-	"liberty-pref-dark": "Sistem karanlık modu ayarını yoksayılsın mı?",
-	"liberty-pref-dark-help": "Karanlık modu etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin.",
+	"liberty-pref-dark": "Sistem koyu kip ayarı yok sayılsın mı?",
+	"liberty-pref-dark-help": "Koyu kipi etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin.",
 	"liberty-pref-ads-bottom": "Alttaki reklamları kaldır",
 	"liberty-pref-ads-belowarticle": "Aşağıdaki makalenin reklamlarını kaldır."
 }
