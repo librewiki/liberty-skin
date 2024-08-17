@@ -947,7 +947,7 @@ class LibertyTemplate extends BaseTemplate {
 				if ( isset( $data['display'] ) ) {
 					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
-						$href = $data['link'];
+						if( array_key_exists( 'link', $data ) ) $href = $data['link'];
 					} else {
 						$text = $textObj->text();
 					}
@@ -956,7 +956,7 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// If icon and text both empty
-				if ( empty( $icon ) && empty( $text ) ) {
+				if ( !isset( $icon ) && !isset( $text ) && empty( $icon ) && empty( $text ) ) {
 					continue;
 				}
 
@@ -969,7 +969,7 @@ class LibertyTemplate extends BaseTemplate {
 						$title = $titleObj->text();
 					}
 				} else {
-					$title = $text;
+					if( isset( $text ) ) $title = $text;
 				}
 
 				// Link href
