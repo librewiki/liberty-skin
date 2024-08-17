@@ -956,7 +956,7 @@ class LibertyTemplate extends BaseTemplate {
 				}
 
 				// If icon and text both empty
-				if ( !isset( $icon ) && !isset( $text ) && empty( $icon ) && empty( $text ) ) {
+				if ( ( !isset( $icon ) && !isset( $text ) ) || ( empty( $icon ) && empty( $text ) ) ) {
 					continue;
 				}
 
