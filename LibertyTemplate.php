@@ -1006,8 +1006,8 @@ class LibertyTemplate extends BaseTemplate {
 					'access' => $access,
 					'classes' => $classes,
 					'href' => $href,
-					'icon' => $icon,
-					'text' => $text,
+					'icon' => @$icon,
+					'text' => @$text,
 					'title' => $title,
 					'group' => $group,
 					'right' => $right
