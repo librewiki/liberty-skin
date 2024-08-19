@@ -24,6 +24,7 @@
 	"liberty-layout-select-1400": "1400px",
 	"liberty-layout-select-1500": "1500px",
 	"liberty-layout-select-1600": "1600px",
+	"liberty-pref-layout-morearticle": "Poista mainokset artikkelialueen alapuolelta",
 	"liberty-login": "Kirjaudu",
 	"liberty-login-alter": "Kirjaudu toisella tavalla",
 	"liberty-login-btn": "Kirjaudu",
@@ -57,8 +58,9 @@
 	"liberty-pref-ads-header": "Poista yläpalkin mainokset.",
 	"liberty-pref-ads-right": "Poista oikeanpuoleiset mainokset.",
 	"liberty-pref-ads-bottom": "Poista mainokset alapalkista.",
-	"liberty-pref-ads-belowarticle": "Poista mainokset alla olevasta artikkelista.",
+	"liberty-pref-ads-belowarticle": "Poista mainokset artikkelialueen alapuolelta",
 	"right-blockads-header": "Voi poistaa mainokset Liberty-ulkoasun yläpalkista.",
+	"right-blockads-right": "Voi poistaa Vapaus-ulkoasun mainokset",
 	"right-blockads-belowarticle": "Voi poistaa mainokset Liberty-ulkoasun artikkelista.",
 	"right-blockads-bottom": "Voi poistaa mainokset Liberty-ulkoasun alapalkista."
 }
