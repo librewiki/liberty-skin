@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dreamy Jazz"
+			"Dreamy Jazz",
+			"Reedy"
 		]
 	},
-	"prefs-color": "Colour setting"
+	"prefs-color": "Colour setting",
+	"liberty-pref-color-main": "Main colour",
+	"liberty-pref-color-main-help": "Main colour that will be used in this site.",
+	"liberty-pref-color-second": "Secondary colour",
+	"liberty-pref-color-second-help": "Secondary colour that will be used in this site."
 }
