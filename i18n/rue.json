@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Constraque"
+		]
+	},
+	"skinname-liberty": "Слобода",
+	"liberty-desc": "Тема оформлїня на [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "Не іґноровати",
+	"liberty-dark-dark": "Іґноровати і актівовати чорный режім",
+	"liberty-dark-light": "Іґноровати і актівовати світлый режім",
+	"liberty-feed-new": "[Новый]",
+	"liberty-font-name-default": "штандардна",
+	"liberty-forgot-pw": "Забыли сьте гесло?",
+	"liberty-layout-select-1200": "1200 пікс. (штандардна)",
+	"liberty-pref-layout-controlbar": "Прибрати панель керованя навіґаціёв",
+	"liberty-pref-layout-morearticle": "Прибрати рекламу під областю статї",
+	"liberty-login": "Приголошіня",
+	"liberty-login-alter": "Приголосити ся іншым способом",
+	"liberty-login-btn": "Приголошіня",
+	"liberty-info": "інформація",
+	"liberty-purge": "Очістити",
+	"liberty-recent-discussions": "Остатнї діскусії",
+	"liberty-remember": "Запамятати моє конто",
+	"liberty-share": "Подїлити ся"
+}
