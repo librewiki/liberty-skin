@@ -59,8 +59,8 @@
 	"liberty-pref-ads-right": "Poista oikeanpuoleiset mainokset.",
 	"liberty-pref-ads-bottom": "Poista mainokset alapalkista.",
 	"liberty-pref-ads-belowarticle": "Poista mainokset artikkelialueen alapuolelta",
-	"right-blockads-header": "Voi poistaa mainokset Liberty-ulkoasun yläpalkista.",
+	"right-blockads-header": "Voi poistaa mainokset Vapaus-ulkoasun yläpalkista.",
 	"right-blockads-right": "Voi poistaa Vapaus-ulkoasun mainokset",
-	"right-blockads-belowarticle": "Voi poistaa mainokset Liberty-ulkoasun artikkelista.",
-	"right-blockads-bottom": "Voi poistaa mainokset Liberty-ulkoasun alapalkista."
+	"right-blockads-belowarticle": "Voi poistaa mainokset Vapaus-ulkoasun artikkelista.",
+	"right-blockads-bottom": "Voi poistaa mainokset Vapaus-ulkoasun alapalkista."
 }
