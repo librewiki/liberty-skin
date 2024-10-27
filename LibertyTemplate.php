@@ -883,13 +883,13 @@ class LibertyTemplate extends BaseTemplate {
 		$skin = $this->getSkin();
 		$userName = $skin->getUser()->getName();
 		$userLang = $skin->getLanguage()->mCode;
-		$globalData = ContentHandler::getContentText( $this->getContentOfTitle(
+		$globalData = $this->getContentText( $this->getContentOfTitle(
 			Title::newFromText( 'Liberty-Navbar', NS_MEDIAWIKI )
 		) );
-		$globalLangData = ContentHandler::getContentText( $this->getContentOfTitle(
+		$globalLangData = $this->getContentText( $this->getContentOfTitle(
 			Title::newFromText( 'Liberty-Navbar/' . $userLang, NS_MEDIAWIKI )
 		) );
-		$userData = ContentHandler::getContentText( $this->getContentOfTitle(
+		$userData = $this->getContentText( $this->getContentOfTitle(
 			Title::newFromText( $userName . '/Liberty-Navbar', NS_USER )
 		) );
 		if ( !empty( $userData ) ) {
@@ -1239,6 +1239,25 @@ class LibertyTemplate extends BaseTemplate {
 			</ins>
 		</div>
 <?php
+	}
+
+	/**
+	 * Helper function for parseNavbar() to not trigger deprecation warnings on MW 1.37+ and to continue
+	 * functioning on MW 1.43+.
+	 *
+	 * @param Content|null $content
+	 * @return string|null Textual form of the content, if available.
+	 */
+	private function getContentText( Content $content = null ) {
+		if ( $content === null ) {
+			return '';
+		}
+
+		if ( $content instanceof TextContent ) {
+			return $content->getText();
+		}
+
+		return null;
 	}
 
 	private function getContentOfTitle( Title $title ): ?Content {
