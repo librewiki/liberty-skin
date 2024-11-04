@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Polda18"
+		]
+	},
+	"skinname-liberty": "Svoboda",
+	"liberty-desc": "Odzyvačna tema dlja [https://librewiki.net/ LibreViki]",
+	"liberty-dark-default": "Ne ignorujte",
+	"liberty-dark-dark": "Ignorovati i aktivovati temny režim",
+	"liberty-dark-light": "Ignorovati i aktivovati světly režim",
+	"liberty-feed-new": "[Novy]",
+	"liberty-font-name-default": "standardno",
+	"liberty-forgot-pw": "Zabyli jeste svoju parolu?",
+	"liberty-layout-select-1200": "1200px (Standardno)",
+	"liberty-pref-layout-controlbar": "Udaljati vladačno tablo navigacije",
+	"liberty-pref-layout-morearticle": "Udaljati reklamy poniže oblasti članka",
+	"liberty-login": "Prijaviti se",
+	"liberty-login-alter": "Prijaviti se s inoju metodoju",
+	"liberty-login-btn": "Prijaviti se",
+	"liberty-info": "Informacije",
+	"liberty-purge": "Izčistiti keš",
+	"liberty-recent-discussions": "Nedavne diskusije",
+	"liberty-remember": "Pomněti moje prijavjenje",
+	"liberty-share": "Poděliti"
+}
