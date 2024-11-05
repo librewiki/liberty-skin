@@ -1,12 +1,14 @@
+---
 name: "Lint code"
 on: [pull_request, push]
 
 jobs:
   phpcs:
     name: Run phpcs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -21,6 +23,6 @@ jobs:
     name: Run eslint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - run: npm install --location=global eslint eslint-config-wikimedia eslint-plugin-json
     - run: eslint js --ignore-pattern 'lib/'
