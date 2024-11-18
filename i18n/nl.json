@@ -3,12 +3,15 @@
 		"authors": [
 			"Gam3",
 			"Mainframe98",
+			"McDutchie",
 			"Nickthijssen1994",
 			"RadioAzureus",
 			"Romaine",
 			"Siebrand"
 		]
 	},
+	"skinname-liberty": "Vrijheid",
+	"liberty-desc": "Responsieve vormgeving voor [https://librewiki.net/ LibreWiki]",
 	"liberty-dark-default": "Niet negeren",
 	"liberty-dark-dark": "Negeer en activeer de donkere modus",
 	"liberty-dark-light": "Negeer en activeer de heldere modus",
@@ -41,7 +44,10 @@
 	"prefs-color": "Kleurinstelling",
 	"prefs-layout": "Lay-out instelling",
 	"prefs-ads": "Advertentie instellingen",
+	"liberty-pref-layout-navfix": "Buiten statische navigatiebalk",
+	"liberty-pref-layout-sidebar": "Rechterzijbalk verwijderen",
 	"liberty-pref-layout-width": "Vaste breedte",
+	"liberty-pref-layout-width-help": "Stel de maximale grootte van het documentgebied in",
 	"liberty-pref-color-main": "Primaire kleur",
 	"liberty-pref-color-main-help": "De primaire kleur die voor deze site gebruikt zal worden.",
 	"liberty-pref-color-second": "Secundaire kleur",
@@ -50,6 +56,14 @@
 	"liberty-pref-fonts": "Selecteer het te gebruiken lettertype",
 	"liberty-pref-fonts-helplabel": "Hulp",
 	"liberty-pref-fonts-help": "Het lettertype zal vanaf de servers van Google worden geladen, met uitzondering van het Malgun Gothic lettertype.",
+	"liberty-pref-dark": "Systeeminstellingen voor donkere modus negeren?",
+	"liberty-pref-dark-help": "Kies of de systeeminstellingen gevolgd moeten worden bij het activeren van de donkere modus.",
 	"liberty-pref-ads-header": "Header advertenties verwijderen",
-	"liberty-pref-ads-right": "Rechter advertenties verwijderen"
+	"liberty-pref-ads-right": "Rechter advertenties verwijderen",
+	"liberty-pref-ads-bottom": "Advertenties onderaan verwijderen.",
+	"liberty-pref-ads-belowarticle": "Advertenties onder de artikelruimte verwijderen",
+	"right-blockads-header": "Kan kopadvertenties in de vormgeving Vrijheid verwijderen.",
+	"right-blockads-right": "Kan rechteradvertenties in de vormgeving Vrijheid verwijderen.",
+	"right-blockads-belowarticle": "Kan advertenties onder artikelen in de vormgeving Vrijheid verwijderen.",
+	"right-blockads-bottom": "Kan advertenties onderaan in de vormgeving Vrijheid verwijderen."
 }
