@@ -5,24 +5,33 @@ on: [pull_request, push]
 jobs:
   phpcs:
     name: Run phpcs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: shivammathur/setup-php@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.1'
           tools: composer:v2
 
       - run: composer install
 
-      - run: composer test
+      - name: Excute test
+        run: composer test
 
   eslint:
     name: Run eslint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - run: npm install --location=global eslint eslint-config-wikimedia eslint-plugin-json
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+
+    - run: npm install --location=global eslint@^8.0.0 eslint-config-wikimedia eslint-plugin-json
     - run: eslint js --ignore-pattern 'lib/'

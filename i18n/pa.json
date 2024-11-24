@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal",
+			"Kuldeepburjbhalaike"
+		]
+	},
+	"skinname-liberty": "ਆਜ਼ਾਦੀ",
+	"liberty-dark-default": "ਨਜ਼ਰਅੰਦਾਜ਼ ਨਾ ਕਰੋ",
+	"liberty-feed-new": "[ਨਵਾਂ]",
+	"liberty-font-name-default": "ਮੂਲ",
+	"liberty-forgot-pw": "ਆਪਣਾ ਲੰਘ-ਸ਼ਬਦ ਭੁੱਲ ਗਏ ਹੋ?",
+	"liberty-layout-select-1200": "1200px (ਮੂਲ-ਰੂਪ)",
+	"liberty-login": "ਦਾਖ਼ਲ ਹੋਵੋ",
+	"liberty-login-alter": "ਹੋਰ ਢੰਗ ਨਾਲ ਦਾਖਲ ਹੋਵੋ",
+	"liberty-login-btn": "ਦਾਖ਼ਲ ਹੋਵੋ",
+	"liberty-info": "ਜਾਣਕਾਰੀ",
+	"liberty-purge": "ਸਾਫ਼ ਕਰੋ",
+	"liberty-recent-discussions": "ਹਾਲੀਆ ਚਰਚਾਵਾਂ",
+	"liberty-remember": "ਮੇਰਾ ਦਾਖ਼ਲਾ ਯਾਦ ਰੱਖੋ",
+	"liberty-share": "ਸਾਂਝਾ ਕਰੋ",
+	"liberty-tooltip-purge": "ਇਸ ਸਫ਼ੇ ਦੀ ਕੈਸ਼ ਨੂੰ ਸਾਫ਼ ਕਰੋ।",
+	"liberty-view-more": "ਹੋਰ ਵੇਖੋ",
+	"liberty-pref-color-main": "ਮੁੱਖ ਰੰਗ",
+	"liberty-pref-fonts-helplabel": "ਮਦਦ"
+}

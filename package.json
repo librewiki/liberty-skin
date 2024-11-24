@@ -1,6 +1,6 @@
 {
   "name": "liberty-mw-skin",
-  "version": "1.6.6",
+  "version": "1.13.8",
   "description": "ESLint for Developers.",
   "main": "eslint.js",
   "scripts": {

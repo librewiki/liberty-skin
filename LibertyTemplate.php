@@ -924,7 +924,7 @@ class LibertyTemplate extends BaseTemplate {
 				foreach ( $split as $key => $value ) {
 					$valueArr = explode( '=', trim( $value ) );
 					if ( isset( $valueArr[1] ) ) {
-						$newValue = implode( '=', array_slice($valueArr, 1));
+						$newValue = implode( '=', array_slice( $valueArr, 1 ) );
 						$data[$valueArr[0]] = $newValue;
 					} else {
 						$data[$types[$key]] = trim( $value );
@@ -947,7 +947,9 @@ class LibertyTemplate extends BaseTemplate {
 				if ( isset( $data['display'] ) ) {
 					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
-						if( array_key_exists( 'link', $data ) ) $href = $data['link'];
+						if ( array_key_exists( 'link', $data ) ) {
+							$href = $data['link'];
+						}
 					} else {
 						$text = $textObj->text();
 					}
@@ -969,7 +971,9 @@ class LibertyTemplate extends BaseTemplate {
 						$title = $titleObj->text();
 					}
 				} else {
-					if( isset( $text ) ) $title = $text;
+					if ( isset( $text ) ) {
+						$title = $text;
+					}
 				}
 
 				// Link href
@@ -1001,7 +1005,7 @@ class LibertyTemplate extends BaseTemplate {
 				} else {
 					$classes = [];
 				}
-
+				// @codingStandardsIgnoreStart
 				$item = [
 					'access' => $access,
 					'classes' => $classes,
@@ -1012,6 +1016,7 @@ class LibertyTemplate extends BaseTemplate {
 					'group' => $group,
 					'right' => $right
 				];
+				// @codingStandardsIgnoreEnd
 				$level2Children = &$item['children'];
 				$headings[] = $item;
 				continue;
@@ -1248,7 +1253,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * @param Content|null $content
 	 * @return string|null Textual form of the content, if available.
 	 */
-	private function getContentText( Content $content = null ) {
+	private function getContentText( ?Content $content = null ) {
 		if ( $content === null ) {
 			return '';
 		}
