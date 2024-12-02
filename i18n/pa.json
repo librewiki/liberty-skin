@@ -21,6 +21,13 @@
 	"liberty-share": "ਸਾਂਝਾ ਕਰੋ",
 	"liberty-tooltip-purge": "ਇਸ ਸਫ਼ੇ ਦੀ ਕੈਸ਼ ਨੂੰ ਸਾਫ਼ ਕਰੋ।",
 	"liberty-view-more": "ਹੋਰ ਵੇਖੋ",
+	"prefs-color": "ਰੰਗ ਤਰਜੀਹਾਂ",
+	"prefs-layout": "ਖਾਕਾ ਤਰਜੀਹਾਂ",
+	"prefs-ads": "ਮਸ਼ਹੂਰੀ ਤਰਜੀਹਾਂ",
 	"liberty-pref-color-main": "ਮੁੱਖ ਰੰਗ",
-	"liberty-pref-fonts-helplabel": "ਮਦਦ"
+	"prefs-font": "ਅੱਖਰ ਤਰਜੀਹਾਂ",
+	"liberty-pref-fonts": "ਉਹ ਅੱਖਰ ਚੁਣੋ ਜੋ ਤੁਸੀਂ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ",
+	"liberty-pref-fonts-helplabel": "ਮਦਦ",
+	"liberty-pref-ads-header": "ਸਿਰਲੇਖ ਮਸ਼ਹੂਰੀਆ ਹਟਾਓ।",
+	"liberty-pref-ads-bottom": "ਹੇਠਲੇ ਇਸ਼ਤਿਹਾਰਾਂ ਨੂੰ ਹਟਾਓ।"
 }
