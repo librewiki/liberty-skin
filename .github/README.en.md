@@ -9,10 +9,12 @@ Our canonical source is [GitHub.com](https://github.com/librewiki/liberty-skin),
 Security vulnerability should be reported using email (dev (골뱅이!) librewiki.net) (replace (Korean text) with @).
 
 ## Installation
+
 * Unzip to the MediaWiki Skins folder or perform a git clone. The name of the unzipped folder should be `Liberty`.
 * Add `wfLoadSkin( 'Liberty' );` to your LocalSettings.php file.
 
 ## Configurations
+
 Please set these variables in the LocalSettings.php file.
 
 | Name | Description | Example Variable | Default Variable |
@@ -32,6 +34,7 @@ Please set these variables in the LocalSettings.php file.
 | `$wgLibertyLiveRCTalkNamespaces` | Namespaces for the second tab in 'Recent Changes' | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` | `[NS_TALK, NS_USER_TALK, NS_PROJECT_TALK, NS_FILE_TALK, NS_MEDIAWIKI_TALK, NS_TEMPLATE_TALK, NS_HELP_TALK, NS_CATEGORY_TALK]` |
 
 ## Navbar
+
 Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 
 * First-Level menu:
@@ -40,7 +43,9 @@ Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
   * `** icon=icon | display=display text | title=hover text | link=link | access=shortcut key | class=custom HTML classes | group=required user group | right=required user right`
 * Third-Level menu:
   * `*** icon=icon | display=display text | title=hover text | link=link | access=shortcut key | class=custom HTML classes | group=required user group | right=required user right`
+
 ---
+
 * All values are optional, but at least one of `icon` or `display` must be set.
 * If `title` is not set, `display` is used instead.
 * If you don't want to set some parameters, you can skip them. As an example, if you don't want to set an icon, skip `icon=...`.
@@ -52,6 +57,7 @@ Please fill out `MediaWiki:Liberty-Navbar` article in the following format.
 You can see an example on [LibreWiki](https://librewiki.net/wiki/MediaWiki:Liberty-Navbar).
 
 ## Rights
+
 Four rights have been added to this to implement ad differentiation by user rights. if $wgLibertyAdGroup is set to 'differ', add user preferences to remove ads.
 * blockads-header : User can remove header ads.
 * blockads-right : User can remove header ads.

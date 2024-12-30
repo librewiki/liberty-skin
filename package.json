@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/librewiki/Liberty-MW-Skin.git"
+    "url": "git+ssh://git@github.com/librewiki/liberty-skin.git"
   },
   "author": "SEE AUTHOR IN <AUTHORS.txt>",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://gitlab.com/librewiki/Liberty-MW-Skin/issues"
+    "url": "https://github.com/librewiki/liberty-skin/issues"
   },
-  "homepage": "https://gitlab.com/librewiki/Liberty-MW-Skin#README",
+  "homepage": "https://github.com/librewiki/liberty-skin#README",
   "devDependencies": {
     "eslint": "^4.1.0",
     "eslint-config-wikimedia": "^0.4.0",
