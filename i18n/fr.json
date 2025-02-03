@@ -70,7 +70,7 @@
 	"liberty-pref-fonts-helplabel": "Aide",
 	"liberty-pref-fonts-help": "La police sera téléchargée depuis les serveurs de Google, à l’exception de la police ''Malgun Gothic''.",
 	"liberty-pref-dark": "Ignorer le paramètre mode sombre du système ?",
-	"liberty-pref-dark-help": "Choisissez s’il faut suivre les paramètres du système pour l’activation du mode sombre.",
+	"liberty-pref-dark-help": "Choisir s’il faut suivre les paramètres du système pour l’activation du mode sombre.",
 	"liberty-pref-ads-header": "Supprimer les publicités d’entête.",
 	"liberty-pref-ads-right": "Supprimer les publicités à droite.",
 	"liberty-pref-ads-bottom": "Supprimer les publicités en bas.",
