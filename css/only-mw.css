@@ -128,6 +128,10 @@
 .Liberty .content-wrapper .liberty-content .liberty-content-main .mw-hidden-cats-hidden {
 	display: none;
 }
+
+.Liberty .content-wrapper .liberty-content .liberty-content-main dd {
+	margin-inline: 1.6em 0;
+}
 /* Content */
 
 /* Special Pages */

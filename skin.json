@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.13.7",
+	"version": "1.13.8",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
@@ -78,7 +78,6 @@
 				"content-media": true,
 				"content-tables": true,
 				"i18n-ordered-lists": true,
-				"i18n-all-lists-margins": true,
 				"i18n-headings": true
 			},
 			"styles": {
