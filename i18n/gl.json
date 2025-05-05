@@ -24,7 +24,7 @@
 	"liberty-remember": "Lembrar o meu inicio de sesión",
 	"liberty-share": "Compartir",
 	"liberty-tooltip-info": "Ver a información do documento",
-	"liberty-tooltip-purge": "Limpar a memoria caché desta páxina.",
+	"liberty-tooltip-purge": "Limpar a caché desta páxina.",
 	"liberty-view-more": "Ollar máis",
 	"liberty.css": "/* O CSS colocado aquí afectará aos usuarios da aparencia Liberdade */",
 	"liberty.js": "/* O código JavaScript colocado aquí cargarase para os usuarios que utilicen a aparencia Liberdade */",
