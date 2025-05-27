@@ -770,7 +770,7 @@ class LibertyTemplate extends BaseTemplate {
 				] );
 			}
 
-			if ( isset( $content['text'] ) ) {
+			if ( isset( $content['text'] ) && !empty( $content['text'] ) ) {
 				echo Html::rawElement( 'span', [
 					'class' => 'hide-title'
 				], $content['text'] );
@@ -931,6 +931,45 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				}
 
+				// 변수 초기화
+				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
+				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
+				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
+				
+				// Text 처리
+				$text = '';
+				if ( isset( $data['display'] ) ) {
+					$textObj = $skin->msg( $data['display'] );
+					if ( $textObj->isDisabled() ) {
+						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$text = $textObj->text();
+					}
+				}
+				
+				// Title 처리
+				$title = '';
+				if ( isset( $data['title'] ) ) {
+					$titleObj = $skin->msg( $data['title'] );
+					if ( $titleObj->isDisabled() ) {
+						$title = htmlentities( $data['title'], ENT_QUOTES, 'UTF-8' );
+					} else {
+						$title = $titleObj->text();
+					}
+				} else {
+					$title = $text;
+				}
+				$split[0] = substr( $split[0], 1 );
+				foreach ( $split as $key => $value ) {
+					$valueArr = explode( '=', trim( $value ) );
+					if ( isset( $valueArr[1] ) ) {
+						$newValue = implode( '=', array_slice( $valueArr, 1 ) );
+						$data[$valueArr[0]] = $newValue;
+					} else {
+						$data[$types[$key]] = trim( $value );
+					}
+				}
+
 				// Icon
 				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 
@@ -947,9 +986,7 @@ class LibertyTemplate extends BaseTemplate {
 				if ( isset( $data['display'] ) ) {
 					$textObj = $skin->msg( $data['display'] );
 					if ( $textObj->isDisabled() ) {
-						if ( array_key_exists( 'link', $data ) ) {
-							$href = $data['link'];
-						}
+						$text = htmlentities( $data['display'], ENT_QUOTES, 'UTF-8' );
 					} else {
 						$text = $textObj->text();
 					}
@@ -1023,6 +1060,16 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[2] !== '*' ) {
 				// Second level menu
+				// 변수 초기화 추가
+				$icon = null;
+				$text = null;
+				$title = null;
+				$href = null;
+				$access = null;
+				$classes = [];
+				$group = null;
+				$right = null;
+				
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
@@ -1120,6 +1167,16 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[3] !== '*' ) {
 				// Third level menu
+				// 변수 초기화 추가
+				$icon = null;
+				$text = null;
+				$title = null;
+				$href = null;
+				$access = null;
+				$classes = [];
+				$group = null;
+				$right = null;
+				
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 3 );
@@ -1170,7 +1227,11 @@ class LibertyTemplate extends BaseTemplate {
 						$title = $titleObj->text();
 					}
 				} else {
-					$title = $text;
+					if ( isset( $text ) ) {
+						$title = $text;
+					} else {
+						$title = '';
+					}
 				}
 
 				// Link href
