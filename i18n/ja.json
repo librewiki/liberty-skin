@@ -16,7 +16,7 @@
 	"liberty-login-btn": "ログイン",
 	"liberty.css": "/* ここに記述したCSSはLiberty外装の利用者に影響します */",
 	"liberty.js": "/* ここにあるすべてのJavaScriptは、Liberty外装を使用している利用者に対して読み込まれます */",
-	"prefs-liberty": "Libertyスキン",
+	"prefs-liberty": "Liberty 外装",
 	"prefs-font": "フォントの設定",
 	"liberty-pref-fonts": "使いたいフォントを選択",
 	"liberty-pref-fonts-helplabel": "ヘルプ",
