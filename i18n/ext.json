@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"HackerPunki"
+		]
+	},
+	"liberty-dark-default": "Favol de no desaculal",
+	"liberty-feed-new": "[Nueu]",
+	"liberty-forgot-pw": "Olvió la su contrasseña?",
+	"liberty-login": "Prencipial sessión",
+	"liberty-login-alter": "Prencipial sessión d'otra horma",
+	"liberty-login-btn": "Prencipial sessión",
+	"liberty-info": "Información",
+	"liberty-purge": "Espurgal",
+	"liberty-recent-discussions": "Caravas rezientis",
+	"liberty-remember": "Recordal la mi sessión",
+	"liberty-tooltip-info": "Vél información dela decumentación",
+	"liberty-tooltip-purge": "Purgal la caché desta página",
+	"liberty-view-more": "Vél más",
+	"prefs-color": "Ajustamientus de colol",
+	"prefs-ads": "Ajustamientus de propaganda",
+	"liberty-pref-color-main": "Colol prencipal",
+	"liberty-pref-color-main-help": "Colol prencipal que se gastará nesti sitiu.",
+	"liberty-pref-color-second": "colol segundariu",
+	"liberty-pref-color-second-help": "Colol segundaria que se gastará nesti sitiu.",
+	"liberty-pref-fonts-helplabel": "Ayúa",
+	"liberty-pref-ads-right": "Aborral las propagandas dela derecha.",
+	"liberty-pref-ads-bottom": "Aborral las propagandas d'abaxu."
+}
