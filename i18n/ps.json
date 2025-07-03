@@ -39,6 +39,7 @@
 	"liberty-pref-color-main": "ار رنگ",
 	"liberty-pref-color-main-help": "ار رنگ چې په دې وېبځي کې به کارول کېږي.",
 	"liberty-pref-color-second": "دوهم رنگ",
+	"liberty-pref-color-second-help": "دوهم رنگ چې په دې وېبځي کې به کارول کېږي.",
 	"prefs-font": "دوهم رنگ چې په دې وېبځي کې به کارول کېږي.",
 	"liberty-pref-fonts": "هغه ليکبڼه غوره کړئ چې تاسو يې کارول غواړئ",
 	"liberty-pref-fonts-helplabel": "لارښود",
@@ -49,5 +50,8 @@
 	"liberty-pref-ads-right": "ښي خبرتياوې لرې کول",
 	"liberty-pref-ads-bottom": "لاندې خبرتياوې لرې کول.",
 	"liberty-pref-ads-belowarticle": "د ليکنې لاندې تشيال کې خبرتياوې لرې کول",
-	"right-blockads-header": "په خپلواکۍ پوښۍ کې سرليک خبرتياوې لرې کولی شي."
+	"right-blockads-header": "په خپلواکۍ پوښۍ کې سرليک خبرتياوې لرې کولی شي.",
+	"right-blockads-right": "په خپلواکۍ پوښۍ کې ښي خبرتياوې لرې کولی شي.",
+	"right-blockads-belowarticle": "په خپلواکۍ پوښۍ کې ليکنې لاندې خبرتياوې لرې کولی شي.",
+	"right-blockads-bottom": "په خپلواکۍ پوښۍ کې کښتنۍ خبرتياوې لرې کولی شي."
 }
