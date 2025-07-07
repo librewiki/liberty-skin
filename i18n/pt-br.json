@@ -55,5 +55,9 @@
 	"liberty-pref-fonts-helplabel": "Ajuda",
 	"liberty-pref-fonts-help": "A fonte será carregada dos servidores do Google, exceto a fonte Malgun Gothic.",
 	"liberty-pref-dark": "Ignorar configuração do modo escuro do sistema?",
-	"liberty-pref-dark-help": "Escolha se deseja seguir as configurações do sistema ao ativar o modo escuro."
+	"liberty-pref-dark-help": "Escolha se deseja seguir as configurações do sistema ao ativar o modo escuro.",
+	"liberty-pref-ads-header": "Remover os anúncios de cabeçalho.",
+	"liberty-pref-ads-right": "Remover os anúncios à direita.",
+	"liberty-pref-ads-bottom": "Remover os anúncios ao fundo.",
+	"liberty-pref-ads-belowarticle": "Remover os anúncios abaixo do espaço do artigo"
 }
