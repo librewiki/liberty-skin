@@ -931,12 +931,12 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				}
 
-				// 변수 초기화
+				// Initialize item
 				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
 				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
-				
-				// Text 처리
+
+				// Parse display
 				$text = '';
 				if ( isset( $data['display'] ) ) {
 					$textObj = $skin->msg( $data['display'] );
@@ -946,8 +946,8 @@ class LibertyTemplate extends BaseTemplate {
 						$text = $textObj->text();
 					}
 				}
-				
-				// Title 처리
+
+				// Parse iitle
 				$title = '';
 				if ( isset( $data['title'] ) ) {
 					$titleObj = $skin->msg( $data['title'] );
@@ -970,13 +970,13 @@ class LibertyTemplate extends BaseTemplate {
 					}
 				}
 
-				// Icon
+				// Parse Icon
 				$icon = isset( $data['icon'] ) ? htmlentities( $data['icon'], ENT_QUOTES, 'UTF-8' ) : null;
 
-				// Group
+				// Parse Group
 				$group = isset( $data['group'] ) ? htmlentities( $data['group'], ENT_QUOTES, 'UTF-8' ) : null;
 
-				// Right
+				// Parse Right
 				$right = isset( $data['right'] ) ? htmlentities( $data['right'], ENT_QUOTES, 'UTF-8' ) : null;
 
 				// support the usual [[MediaWiki:Sidebar]] syntax of
@@ -1060,7 +1060,7 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[2] !== '*' ) {
 				// Second level menu
-				// 변수 초기화 추가
+				// Initialize item
 				$icon = null;
 				$text = null;
 				$title = null;
@@ -1069,7 +1069,7 @@ class LibertyTemplate extends BaseTemplate {
 				$classes = [];
 				$group = null;
 				$right = null;
-				
+
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 2 );
@@ -1167,7 +1167,7 @@ class LibertyTemplate extends BaseTemplate {
 			}
 			if ( $line[3] !== '*' ) {
 				// Third level menu
-				// 변수 초기화 추가
+				// Initialize item
 				$icon = null;
 				$text = null;
 				$title = null;
@@ -1176,7 +1176,7 @@ class LibertyTemplate extends BaseTemplate {
 				$classes = [];
 				$group = null;
 				$right = null;
-				
+
 				$data = [];
 				$split = explode( '|', $line );
 				$split[0] = substr( $split[0], 3 );

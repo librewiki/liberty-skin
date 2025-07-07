@@ -9,7 +9,7 @@
 	"namemsg": "skinname-liberty",
 	"license-name": "GPL-3.0-or-later",
 	"type": "skin",
-	"version": "1.13.8",
+	"version": "1.13.9",
 	"requires": {
 		"MediaWiki": ">= 1.39.0"
 	},
