@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"Dansita",
+			"Emabarto01",
 			"JackLantern"
 		]
 	},
@@ -13,13 +14,18 @@
 	"liberty-feed-new": "[Nuovo]",
 	"liberty-font-name-default": "predefinito",
 	"liberty-forgot-pw": "Hai dimenticato la password?",
+	"liberty-layout-select-1200": "1200px (predefinito)",
+	"liberty-pref-layout-controlbar": "Rimuovi barra di controllo di navigazione",
+	"liberty-pref-layout-morearticle": "Rimuovi annunci sotto l'area della voce",
 	"liberty-login": "Entra",
 	"liberty-login-alter": "Accedi con un altro metodo",
 	"liberty-login-btn": "Entra",
 	"liberty-share": "Condividi",
 	"liberty-tooltip-purge": "Pulisci la cache di questa pagina.",
+	"liberty-view-more": "Mostra altro",
 	"liberty.css": "/* Gli stili CSS inseriti qui si applicano agli utenti che usano il tema Liberty */",
 	"liberty.js": "/* Il codice JavaScript inserito qui viene caricato dagli utenti che usano il tema Liberty */",
+	"prefs-ads": "Impostazioni annunci",
 	"liberty-pref-color-main": "Colore principale",
 	"liberty-pref-color-main-help": "Colore principale che sarà utilizzato in questo sito.",
 	"liberty-pref-color-second": "Colore secondario",
@@ -27,5 +33,9 @@
 	"prefs-font": "Preferenze font",
 	"liberty-pref-fonts": "Seleziona il carattere che vuoi utilizzare",
 	"liberty-pref-fonts-helplabel": "Aiuto",
-	"liberty-pref-fonts-help": "Il carattere verrà caricato dai server di Google ad eccezione del carattere Malgun Gothic."
+	"liberty-pref-fonts-help": "Il carattere verrà caricato dai server di Google ad eccezione del carattere Malgun Gothic.",
+	"liberty-pref-ads-header": "Rimuovi annunci nell'intestazione.",
+	"liberty-pref-ads-right": "Rimuovi annunci nella destra.",
+	"liberty-pref-ads-bottom": "Rimuovi annunci in fondo.",
+	"liberty-pref-ads-belowarticle": "Rimuovi annunci sotto lo spazio della voce"
 }
