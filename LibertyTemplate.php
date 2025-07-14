@@ -314,19 +314,21 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="dropdown-divider view-logout"></div>
 						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" 
 							class="dropdown-item view-logout" 
-							title="<?php echo htmlspecialchars(
-								Linker::titleAttrib( 'pt-logout', 'withaccess' ),
-								ENT_QUOTES
-							) ?>">
+							title="<?php
+							// @codingStandardsIgnoreStart
+							echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES )
+							// @codingStandardsIgnoreEnd
+							?>">
 							<?php echo $skin->msg( 'logout' )->escaped(); ?></a>
 					</div>
 				</div>
 				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
 					class="hide-logout logout-btn" 
-					title="<?php echo htmlspecialchars(
-						Linker::titleAttrib( 'pt-logout', 'withaccess' ),
-						ENT_QUOTES
-					); ?>">
+					title="<?php
+					// @codingStandardsIgnoreStart
+					echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES );
+					// @codingStandardsIgnoreEnd
+					?>">
 					<span class="fa fa-sign-out"></span></a>
 			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
