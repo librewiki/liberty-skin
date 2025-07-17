@@ -136,7 +136,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo $linkRenderer->makeKnownLink(
 						new TitleValue( NS_SPECIAL, 'Recentchanges' ),
 						// @codingStandardsIgnoreStart
-						new HtmlArmor( '<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->plain() . '</span>' ),
+						new HtmlArmor( '<span class="fas fa-sync"></span><span class="hide-title">' . $skin->msg( 'recentchanges' )->escaped() . '</span>' ),
 						// @codingStandardsIgnoreEnd )
 						[
 							'class' => 'nav-link',
@@ -148,7 +148,7 @@ class LibertyTemplate extends BaseTemplate {
 					<?php echo $linkRenderer->makeKnownLink(
 						new TitleValue( NS_SPECIAL, 'Randompage' ),
 						// @codingStandardsIgnoreStart
-						new HtmlArmor( '<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg( 'randompage' )->plain() . '</span>' ),
+						new HtmlArmor( '<span class="fa fa-random"></span><span class="hide-title">' . $skin->msg( 'randompage' )->escaped() . '</span>' ),
 						// @codingStandardsIgnoreEnd
 						[
 							'class' => 'nav-link',
@@ -314,13 +314,21 @@ class LibertyTemplate extends BaseTemplate {
 						<div class="dropdown-divider view-logout"></div>
 						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" 
 							class="dropdown-item view-logout" 
-							title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>">
+							title="<?php
+							// @codingStandardsIgnoreStart
+							echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES )
+							// @codingStandardsIgnoreEnd
+							?>">
 							<?php echo $skin->msg( 'logout' )->escaped(); ?></a>
 					</div>
 				</div>
 				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
 					class="hide-logout logout-btn" 
-					title="<?php echo Linker::titleAttrib( 'pt-logout', 'withaccess' ); ?>">
+					title="<?php
+					// @codingStandardsIgnoreStart
+					echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES );
+					// @codingStandardsIgnoreEnd
+					?>">
 					<span class="fa fa-sign-out"></span></a>
 			<?php } else { ?>
 				<a href="#" class="none-outline" data-toggle="modal" data-target="#login-modal">
@@ -452,7 +460,7 @@ class LibertyTemplate extends BaseTemplate {
 				<?php echo $linkRenderer->makeKnownLink(
 					SpecialPage::getTitleFor( 'Recentchanges' ),
 					new HtmlArmor( '<span class="label label-info">' .
-						$skin->msg( 'liberty-view-more' )->plain() .
+						$skin->msg( 'liberty-view-more' )->escaped() .
 						'</span>' )
 				); ?>
 			</div>
@@ -486,7 +494,7 @@ class LibertyTemplate extends BaseTemplate {
 					$editIcon = $editable ? '<i class="fa fa-edit"></i> ' : '<i class="fa fa-lock"></i> ';
 					echo $linkRenderer->makeKnownLink(
 						$title,
-						new HtmlArmor( $editIcon . $skin->msg( "edit" )->plain() ),
+						new HtmlArmor( $editIcon . $skin->msg( 'edit' )->escaped() ),
 						[
 							'class' => 'btn btn-secondary tools-btn',
 							'id' => 'ca-edit',

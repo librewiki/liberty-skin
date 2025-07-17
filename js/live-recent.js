@@ -65,7 +65,7 @@ $( function () {
 						text = text.substr( 0, 13 );
 						text += '...';
 					}
-					text = text.replace( '[New]', '<span class="new">' + mw.msg( 'liberty-feed-new' ) + ' </span>' );
+					text = text.replace( '[New]', '<span class="new">' + mw.message( 'liberty-feed-new' ).escaped() + ' </span>' );
 					line += text;
 					line += '</a></li>';
 					return line;
