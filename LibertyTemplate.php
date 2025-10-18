@@ -1,8 +1,11 @@
 <?php // @codingStandardsIgnoreLine
 
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 class LibertyTemplate extends BaseTemplate {
 	/**
