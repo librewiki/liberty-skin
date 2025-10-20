@@ -4,13 +4,16 @@
 			"Aca",
 			"BadDog",
 			"Kizule",
+			"Milicevic01",
 			"Zoranzoki21"
 		]
 	},
 	"skinname-liberty": "Либерти",
 	"liberty-desc": "Респонзивна тема за [https://librewiki.net/ LibreWiki]",
 	"liberty-feed-new": "[Ново]",
+	"liberty-font-name-default": "подразумевано",
 	"liberty-forgot-pw": "Заборавили сте лозинку?",
+	"liberty-layout-select-1200": "1200п (подразумевано)",
 	"liberty-login": "Пријавите се",
 	"liberty-login-alter": "Пријавите се осталим методама",
 	"liberty-login-btn": "Пријави ме",
