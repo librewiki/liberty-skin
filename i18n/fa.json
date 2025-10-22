@@ -4,6 +4,7 @@
 			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer",
+			"LordProfo",
 			"Reza1615"
 		]
 	},
@@ -20,5 +21,7 @@
 	"liberty-pref-color-second": "رنگ فرعی",
 	"prefs-font": "ترجیحات قلم",
 	"liberty-pref-fonts": "قلم مورد نظرتان را انتخاب کنید",
-	"liberty-pref-fonts-helplabel": "راهنما"
+	"liberty-pref-fonts-helplabel": "راهنما",
+	"liberty-pref-dark": "تنظیمات حالت تاریک سامانه را نادیده می‌گیرید؟",
+	"liberty-pref-dark-help": "انتخاب کنید که آیا هنگام فعال کردن حالت تاریک، از تنظیمات سامانه پیروی کنید یا خیر."
 }
