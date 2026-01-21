@@ -1,11 +1,16 @@
 <?php // @codingStandardsIgnoreLine
 
-use MediaWiki\Html\Html;
-use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\RestrictionStore;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
+
+if ( !class_exists( 'MediaWiki\\Html\\Html' ) ) {
+	class_alias( 'Html', 'MediaWiki\\Html\\Html' );
+}
+if ( !class_exists( 'MediaWiki\\Linker\\Linker' ) ) {
+	class_alias( 'Linker', 'MediaWiki\\Linker\\Linker' );
+}
 
 class LibertyTemplate extends BaseTemplate {
 	/**
@@ -181,7 +186,7 @@ class LibertyTemplate extends BaseTemplate {
 				<?php echo $this->makeSearchInput( [ 'class' => 'form-control', 'id' => 'searchInput' ] ); ?>
 				<span class="input-group-btn">
 					<?php
-					// @codingStandardsIgnoreStart 
+					// @codingStandardsIgnoreStart
 					?>
 					<button type="submit" name="go" value="<?php echo $skin->msg( 'go' )->escaped() ?>"id="searchGoButton" class="btn btn-secondary" type="button"><span class="fa fa-eye"></span></button>
 					<button type="submit" name="fulltext" value="<?php echo $skin->msg( 'searchbutton' )->escaped() ?>"id="mw-searchButton" class="btn btn-secondary" type="button">
@@ -238,11 +243,11 @@ class LibertyTemplate extends BaseTemplate {
 				}
 			?>
 				<div class="dropdown login-menu">
-					<a class="dropdown-toggle" type="button" id="login-menu" 
+					<a class="dropdown-toggle" type="button" id="login-menu"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<?php echo $avatar; ?>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu" 
+					<div class="dropdown-menu dropdown-menu-right login-dropdown-menu"
 						aria-labelledby="login-menu">
 						<?php echo $linkRenderer->makeKnownLink(
 							Title::makeTitle( NS_USER, $user->getName() ),
@@ -315,8 +320,8 @@ class LibertyTemplate extends BaseTemplate {
 							]
 						); ?>
 						<div class="dropdown-divider view-logout"></div>
-						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>" 
-							class="dropdown-item view-logout" 
+						<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
+							class="dropdown-item view-logout"
 							title="<?php
 							// @codingStandardsIgnoreStart
 							echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES )
@@ -326,7 +331,7 @@ class LibertyTemplate extends BaseTemplate {
 					</div>
 				</div>
 				<a href="<?php echo $personalTools['logout']['links'][0]['href']; ?>"
-					class="hide-logout logout-btn" 
+					class="hide-logout logout-btn"
 					title="<?php
 					// @codingStandardsIgnoreStart
 					echo htmlspecialchars( Linker::titleAttrib( 'pt-logout', 'withaccess' ), ENT_QUOTES );
@@ -435,7 +440,7 @@ class LibertyTemplate extends BaseTemplate {
 		$articleNS = implode( '|', $wgLibertyLiveRCArticleNamespaces );
 		$talkNS = implode( '|', $wgLibertyLiveRCTalkNamespaces );
 	?>
-		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>" 
+		<div class="live-recent" data-article-ns="<?php echo $articleNS ?>"
 			data-talk-ns="<?php echo $talkNS ?>">
 			<div class="live-recent-header">
 				<ul class="nav nav-tabs">
@@ -559,7 +564,7 @@ class LibertyTemplate extends BaseTemplate {
 						</button>
 				<?php
 				}
-				// @codingStandardsIgnoreStart 
+				// @codingStandardsIgnoreStart
 					?>
 					<button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 						<span class="caret"></span>
@@ -700,9 +705,9 @@ class LibertyTemplate extends BaseTemplate {
 				?>
 				<li class="designedbylibre">
 					<a href="//librewiki.net">
-						<?php // @codingStandardsIgnoreLine 
+						<?php // @codingStandardsIgnoreLine
 						?>
-						<img src="<?php echo $this->getSkin()->getConfig()->get( 'StylePath' ); //phpcs:ignore 
+						<img src="<?php echo $this->getSkin()->getConfig()->get( 'StylePath' ); //phpcs:ignore
 									?>/Liberty/img/designedbylibre.png" style="height:31px" alt="Designed by Librewiki">
 					</a>
 				</li>
@@ -1308,9 +1313,9 @@ class LibertyTemplate extends BaseTemplate {
 		}
 		?>
 		<div class="<?php echo $position; ?>-ads">
-			<ins class="adsbygoogle" 
-				data-full-width-responsive="<?php echo $fullWidthResponsive; ?>" 
-				data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>" 
+			<ins class="adsbygoogle"
+				data-full-width-responsive="<?php echo $fullWidthResponsive; ?>"
+				data-ad-client="<?php echo $wgLibertyAdSetting['client']; ?>"
 				data-ad-slot="<?php echo $wgLibertyAdSetting[$position]; ?>"
 				data-ad-format="<?php echo $adFormat; ?>">
 			</ins>
