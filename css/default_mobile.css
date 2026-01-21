@@ -28,6 +28,10 @@
 		margin-top: 5.89rem;
 	}
 
+	.Liberty.user-logged-in .content-wrapper {
+		margin-top: 7.89rem;
+	}
+
 	.Liberty .content-wrapper .liberty-sidebar {
 		display: none;
 	}

@@ -481,6 +481,10 @@ strike {
 	z-index: -1;
 }
 
+.Liberty.user-logged-in .content-wrapper {
+	margin-top: 6.8rem;
+}
+
 .Liberty .content-wrapper .liberty-content {
 	margin-right: 16rem;
 	padding: 0;

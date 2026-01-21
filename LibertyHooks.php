@@ -10,7 +10,13 @@ class LibertyHooks {
 	 */
 	public static function onOutputPageBodyAttributes( OutputPage $out, Skin $sk, &$bodyAttrs ) {
 		if ( $sk->getSkinName() === 'liberty' ) {
+			if ( !isset( $bodyAttrs['class'] ) ) {
+				$bodyAttrs['class'] = '';
+			}
 			$bodyAttrs['class'] .= ' Liberty width-size';
+			if ( $sk->getUser()->isRegistered() ) {
+				$bodyAttrs['class'] .= ' user-logged-in';
+			}
 		}
 	}
 
