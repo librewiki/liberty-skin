@@ -59,5 +59,9 @@
 	"liberty-pref-ads-header": "Remover os anúncios de cabeçalho.",
 	"liberty-pref-ads-right": "Remover os anúncios à direita.",
 	"liberty-pref-ads-bottom": "Remover os anúncios ao fundo.",
-	"liberty-pref-ads-belowarticle": "Remover os anúncios abaixo do espaço do artigo"
+	"liberty-pref-ads-belowarticle": "Remover os anúncios abaixo do espaço do artigo",
+	"right-blockads-header": "Pode remover os anúncios de cabeçalho no tema Liberty.",
+	"right-blockads-right": "Pode remover os anúncios da direita no tema Liberty.",
+	"right-blockads-belowarticle": "Pode remover os anúncios abaixo do artigo no tema Liberty.",
+	"right-blockads-bottom": "Pode remover os anúncios do fundo no tema Liberty."
 }
