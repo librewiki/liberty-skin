@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kallmemel"
+		]
+	},
+	"skinname-liberty": "Libertat",
+	"liberty-desc": "Aparensia adaptabel pa [https://librewiki.net/ LibreWiki]",
+	"liberty-dark-default": "No ignorá",
+	"liberty-dark-dark": "Ignorá i aktivá modo sukú",
+	"liberty-feed-new": "[Nobo]",
+	"liberty-font-name-default": "standart",
+	"liberty-forgot-pw": "Bo a lubidá bo kontraseña?",
+	"liberty-layout-select-1200": "1200px (Standart)",
+	"liberty-pref-layout-controlbar": "Kita bara di kontrol di nabegashon",
+	"liberty-login": "Registrá",
+	"liberty-login-btn": "Registrá",
+	"liberty-info": "Info",
+	"liberty-purge": "Purga",
+	"liberty-recent-discussions": "Diskushon resien",
+	"liberty-share": "Kompartí",
+	"liberty.css": "/* CSS apliká akinan lo afektá usadó di aparensia Liberty */",
+	"liberty.js": "/* Kalke JavaScript akinan lo wòrdu kargá pa usadónan ku ta usa e aparensia Liberty */",
+	"prefs-liberty": "Aparensia Liberty",
+	"liberty-pref-layout-sidebar": "Kita bara lateral na man drechi"
+}
