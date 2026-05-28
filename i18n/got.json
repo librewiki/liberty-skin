@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gothicspeaker"
+		]
+	},
+	"skinname-liberty": "𐍆𐍂𐌴𐌹𐌷𐌰𐌻𐍃",
+	"liberty-feed-new": "[𐌽𐌹𐍅𐌹]",
+	"liberty-forgot-pw": "𐌿𐍆𐌰𐍂𐌼𐌿𐌽𐌽𐍉𐌳𐌴𐍃 𐍂𐌿𐌽𐌰𐍅𐌰𐌿𐍂𐌳𐌰 𐌸𐌴𐌹𐌽𐌰𐌼𐌼𐌰?",
+	"liberty-login": "𐌰𐍄𐌲𐌰𐌲𐌲",
+	"liberty-login-alter": "𐌰𐍄𐌲𐌰𐌲𐌲 𐌰𐌽𐌸𐌰𐍂𐌰𐌼𐌼𐌰 𐌷𐌰𐌹𐌳𐌰𐌿",
+	"liberty-login-btn": "𐌰𐍄𐌲𐌰𐌲𐌲",
+	"liberty-share": "𐌳𐌰𐌹𐌻𐌴𐌹",
+	"liberty-view-more": "𐌼𐌰𐌹𐍃 𐍃𐌰𐌹𐍈𐌰𐌽",
+	"prefs-liberty": "𐍆𐌹𐌻𐌻 𐍆𐍂𐌴𐌹𐌷𐌰𐌻𐍃𐌹𐍃",
+	"prefs-color": "𐍃𐌰𐍄𐌴𐌹𐌽𐍃 𐍆𐌰𐌹𐌷𐌴𐌹𐌽𐍃",
+	"liberty-pref-color-main": "𐌲𐌰𐌼𐌰𐌹𐌽𐌰 𐍆𐌰𐌹𐌷𐌴𐌹",
+	"liberty-pref-color-main-help": "𐌲𐌰𐌼𐌰𐌹𐌽𐌰 𐍆𐌰𐌹𐌷𐌴𐌹 𐍃𐌴𐌹 𐌱𐍂𐌿𐌺𐌾𐌰𐌳𐌰 𐌰𐌽𐌰 𐌽𐌰𐍄𐌾𐌰𐍃𐍄𐌰𐌳𐌰 𐌸𐌰𐌼𐌼𐌰.",
+	"liberty-pref-color-second": "𐌰𐌽𐌸𐌰𐍂𐌰 𐍆𐌰𐌹𐌷𐌴𐌹",
+	"liberty-pref-color-second-help": "𐌰𐌽𐌸𐌰𐍂𐌰 𐍆𐌰𐌹𐌷𐌴𐌹 𐍃𐌴𐌹 𐌱𐍂𐌿𐌺𐌾𐌰𐌳𐌰 𐌰𐌽𐌰 𐌽𐌰𐍄𐌾𐌰𐍃𐍄𐌰𐌳𐌰 𐌸𐌰𐌼𐌼𐌰."
+}
