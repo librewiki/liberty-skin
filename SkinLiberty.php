@@ -206,7 +206,7 @@ class SkinLiberty extends SkinTemplate {
 		$LibertyUserFontSettings = $userOptionsLookup->getOption( $user, 'liberty-font' );
 		if ( $LibertyUserFontSettings !== null ) {
 			$out->addInlineStyle(
-				"body, h1, h2, h3, h4, h5, h6, b {
+				"body, h1, h2, h3, h4, h5, h6, mw-heading, b {
 					font-family: $LibertyUserFontSettings;
 				}"
 			);
