@@ -3,6 +3,7 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Can",
+			"HakanIST",
 			"Joseph",
 			"MuratTheTurkish",
 			"SaldırganSincap",
@@ -17,6 +18,16 @@
 	"liberty-dark-light": "Parlak modu yoksay ve etkinleştir",
 	"liberty-feed-new": "[Yeni]",
 	"liberty-font-name-default": "varsayılan",
+	"liberty-font-name-noto-sans-kr": "Noto Sans KR",
+	"liberty-font-name-noto-serif-kr": "Noto Serif KR",
+	"liberty-font-name-spoqa-han-sans": "Spoqa Han Sans",
+	"liberty-font-name-nanum-gothic": "Nanum Gothic",
+	"liberty-font-name-nanum-myeongjo": "Nanum Myeongjo",
+	"liberty-font-name-dokdo": "Dokdo",
+	"liberty-font-name-gaegu": "Gaegu",
+	"liberty-font-name-hankc": "Hankc",
+	"liberty-font-name-youth": "Youth",
+	"liberty-font-name-malgun-gothic": "Malgun Gothic",
 	"liberty-forgot-pw": "Parolanızı mı unuttunuz?",
 	"liberty-layout-select-1000": "1000px",
 	"liberty-layout-select-1100": "1100px",
@@ -58,6 +69,12 @@
 	"liberty-pref-fonts-help": "Yazı tipi, Malgun Gothic yazı tipi hariç Google'ın sunucularından yüklenecek.",
 	"liberty-pref-dark": "Sistem koyu kip ayarı yok sayılsın mı?",
 	"liberty-pref-dark-help": "Koyu kipi etkinleştirirken sistem ayarlarının takip edilip edilmeyeceğini seçin.",
+	"liberty-pref-ads-header": "Başlık reklamlarını kaldır.",
+	"liberty-pref-ads-right": "Sağ reklamları kaldır.",
 	"liberty-pref-ads-bottom": "Alttaki reklamları kaldır",
-	"liberty-pref-ads-belowarticle": "Madde alanının altındaki reklamları kaldır"
+	"liberty-pref-ads-belowarticle": "Madde alanının altındaki reklamları kaldır",
+	"right-blockads-header": "Liberty görünümünde başlık reklamlarını kaldırabilir.",
+	"right-blockads-right": "Liberty görünümünde sağ reklamları kaldırabilir.",
+	"right-blockads-belowarticle": "Liberty görünümünde makale altı reklamları kaldırabilir.",
+	"right-blockads-bottom": "Liberty görünümünde alt reklamları kaldırabilir."
 }
