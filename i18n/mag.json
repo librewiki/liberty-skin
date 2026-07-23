@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"ऐक्टिवेटेड्"
+		]
+	},
+	"skinname-liberty": "स्वाधिनता",
+	"liberty-desc": "[https://librewiki.net/ LibreWiki] लागि अनुक्रियाशील त्वचा",
+	"liberty-dark-default": "अनदेखा न करथिन",
+	"liberty-feed-new": "[नया]",
+	"liberty-font-name-default": "पूर्वनिर्धारित",
+	"liberty-forgot-pw": "अपन कूटशब्द भुला गेलथिन ?",
+	"liberty-layout-select-1200": "1200px (पूर्वनिर्धारित)",
+	"liberty-login": "प्रवेश करथिन",
+	"liberty-login-alter": "दोसर विधिसे प्रवेश करथिन",
+	"liberty-login-btn": "प्रवेश करथिन",
+	"liberty-info": "जानकारी",
+	"liberty-purge": "शुद्ध करथिन",
+	"liberty-recent-discussions": "हालिया चर्चा",
+	"liberty-remember": "हमर प्रवेश याद रखथिन",
+	"liberty-share": "साझा करथिन",
+	"liberty-pref-fonts-helplabel": "सहयोग"
+}
