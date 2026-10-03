@@ -23,6 +23,12 @@
 				"bodyOnly": true,
 				"responsive": true,
 				"template": "LibertyTemplate",
+				 "menus": [
+					"user-menu",
+					"notifications",
+					"user-interface-preferences",
+					"user-page"
+				],
 				"styles": [
 					"skins.liberty.styles"
 				]

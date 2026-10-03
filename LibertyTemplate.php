@@ -196,6 +196,24 @@ class LibertyTemplate extends BaseTemplate {
 	}
 
 	/**
+	 * Backwards compatibility method to get personal tools the "classic way" that doesn't trigger
+	 * deprecation warnings (T422975).
+	 *
+	 * @return array
+	 */
+	private function getPersonalToolsClassic() {
+		$cNav = $this->get( 'content_navigation' );
+		$personalTools = array_merge(
+			$cNav['user-interface-preferences'],
+			$cNav['user-page'],
+			$cNav['notifications'],
+			$cNav['user-menu']
+		);
+
+		return $this->getSkin()->getPersonalToolsForMakeListItem( $personalTools );
+	}
+
+	/**
 	 * Login box function, build top menu's login button.
 	 */
 	protected function loginBox() {
@@ -209,7 +227,7 @@ class LibertyTemplate extends BaseTemplate {
 			<?php
 			// If the user is logged in...
 			if ( $user->isRegistered() ) {
-				$personalTools = $this->getPersonalTools();
+				$personalTools = $this->getPersonalToolsClassic();
 				// ...and Gravatar is enabled in site config...
 				if ( $wgLibertyUseGravatar ) {
 					// ...and the user has a confirmed email...
@@ -715,7 +733,7 @@ class LibertyTemplate extends BaseTemplate {
 	 * Get Notification function, build notification menu.
 	 */
 	protected function getNotification() {
-		$personalTools = $this->getPersonalTools();
+		$personalTools = $this->getPersonalToolsClassic();
 		if (
 			isset( $personalTools['notifications-alert'] ) &&
 			$personalTools['notifications-alert']['links'][0]['data']['counter-num']
