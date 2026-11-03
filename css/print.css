@@ -78,13 +78,24 @@ p {
 	border: 0 !important;
 }
 
-h1,
-h2 {
+.mw-heading1, h1,
+.mw-heading2, h2 {
 	border-bottom: 3px solid #000 !important;
 }
 
-h3,
-h4,
-h5 {
+.mw-heading h1,
+.mw-heading h2 {
+    border-bottom: none !important;
+}
+
+.mw-heading3, h3,
+.mw-heading4, h4,
+.mw-heading5, h5 {
 	border-color: #aaa !important;
+}
+
+.mw-heading h3,
+.mw-heading h4,
+.mw-heading h5 {
+	border-color: inherit !important;
 }
